@@ -7,7 +7,7 @@
 ## Features
 
 * No need for COM support.
-* It is very simple to use, only need to declare the types and methods in .NET.
+* It is very simple to use, just declare the type and method of .NET in Delphi.
 * Dedicated translation tool, input a .NET assembly dll, output one or more Delphi import units.
  
 ## Requires

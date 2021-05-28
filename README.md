@@ -98,7 +98,7 @@ var
   LStartV, LStepV, LStopV: Single;
 //  YV, LStartV, LStepV, LStopV: DNObject;
 begin
-  Writeln('PowDLL.dll: ', LongWord( TBridge.LoadAssemblyModule(ExtractFilePath(ParamStr(0)) + 'PowDLL.dll')));
+  Writeln('PowDLL.dll: ', LongWord( LoadAssemblyModule(ExtractFilePath(ParamStr(0)) + 'PowDLL.dll')));
   LDoc := TDNPowderFileTypes.Create;
   LObj := nil;
   Writeln('Result:', LDoc.LoadDataFromFile('1.raw', LObj, DNPowderFileTypes_ShowErrors.ShowErr));

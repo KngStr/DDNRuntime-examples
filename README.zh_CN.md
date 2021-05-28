@@ -1,4 +1,4 @@
-[中文](README.zh-CN.md)   | English      
+中文   | [English](README.md)    
 
 -----
 
@@ -6,23 +6,23 @@
 
  DDNRuntime(Delphi .NET Runtime)  
  
- **This is not an open source and free project. Only examples are stored here.**  
+ **这不是一个开源和免费的项目。这里只存放一些示例。**  
  
-## Features
+## 特性
 
-* No need for COM support.
-* It is very simple to use, just declare the type and method of .NET in Delphi.
-* Dedicated translation tool, input a .NET assembly dll, output one or more Delphi import units.
-* Support generic interface types and interfaces.
-* Support dynamic array (one-dimensional array).
+* 不需要COM的支持。
+* 使用非常的简单，只需要在Delphi中申明.NET的类型和方法即可。
+* 专门的翻译工具，输入一个.NET的程序集dll，即可输出一个或者多个Delphi导入单元。
+* 支持泛型类接口和普通接口。
+* 支持动态数组（一维数组）。
  
-## Requires
+## 要求
 
 * .NET Framework v4.0 
-* vs2017 runtime library(msvcp140.dll, vcruntime140.dll).
-* Delphi Unicode version and support System.Rtti. 
+* vs2017运行库(msvcp140.dll, vcruntime140.dll).
+* Delphi Unicode版本且支持System.Rtti。 
 
-## Usage:
+## 使用方法：
 
 ```pascal
 

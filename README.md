@@ -1,5 +1,11 @@
 # DDNRuntime-examples
  Delphi .NET Runtime example
+ 
+## Requires
+
+* .NETFramework v4.0 
+* vs2017 runtime library(msvcp140.dll, vcruntime140.dll).
+* Delphi Unicode version and support System.Rtti. 
 
 ## Usage:
 

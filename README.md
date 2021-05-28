@@ -9,6 +9,8 @@
 * No need for COM support.
 * It is very simple to use, just declare the type and method of .NET in Delphi.
 * Dedicated translation tool, input a .NET assembly dll, output one or more Delphi import units.
+* Support generic interface types and interfaces.
+* Support dynamic array (one-dimensional array).
  
 ## Requires
 

@@ -4,6 +4,12 @@
  
  **This is not an open source and free project. Only examples are stored here.**  
  
+## Features
+
+* No need for COM support.
+* It is very simple to use, only need to declare the types and methods in .NET.
+* Dedicated translation tool, input a .NET assembly dll, output one or more Delphi import units.
+ 
 ## Requires
 
 * .NET Framework v4.0 

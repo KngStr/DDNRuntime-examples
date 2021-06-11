@@ -17,7 +17,7 @@
 * No need for COM support.
 * It is very simple to use, just declare the type and method of .NET in Delphi.
 * Dedicated translation tool, input a .NET assembly dll, output one or more Delphi import units.
-* Support generic interface types and interfaces.
+* Support interface types (including generic interface).
 * Support dynamic array (one-dimensional array).
  
 ## Requires
@@ -25,6 +25,11 @@
 * .NET Framework v4.0 
 * vs2017 runtime library(msvcp140.dll, vcruntime140.dll).
 * Delphi Unicode version and support System.Rtti. 
+
+## Not supported
+
+* Generic type (excluding generic interface).
+* Delegate type.
 
 ## Usage:
 

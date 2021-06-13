@@ -1,0 +1,92 @@
+program ProWeb_HTTP;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils,
+  DDN.Runtime,
+  DDN.mscorlib,
+  DDN.System,
+  uReg in '..\uReg.pas';
+
+
+const
+  TestURL = 'http://www.kngstr.com/'; //'https://z-kit.cc'
+
+// 没得委托实现
+//  ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(CheckValidationResult);
+//  request = WebRequest.Create(url) as HttpWebRequest;
+//  request.ProtocolVersion=HttpVersion.Version10;
+// private static bool CheckValidationResult(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
+// {
+//   return true;
+// }
+
+procedure Http_HEAD();
+var
+  req: DNHttpWebRequest;
+  resp: DNHttpWebResponse ;
+begin
+  Writeln('---------------Http_HEAD---------------');
+  req := TDNHttpWebRequest.Wrap(TDNWebRequest.DNClass.Create(TestURL));
+  req.Method := 'HEAD';
+  req.ContentType := 'text/html; charset=utf-8';
+//  req.UserAgent := '';
+
+  resp := TDNHttpWebResponse.Wrap(req.GetResponse());
+  if resp <> nil then
+  begin
+    Writeln('StatusCode: ',  resp.StatusCode);
+    Writeln('StatusDescription: ', resp.StatusDescription);
+    Writeln('ContentLength: ', resp.ContentLength);
+  end;
+end;
+
+procedure Http_GET();
+var
+  req: DNHttpWebRequest;
+  resp: DNHttpWebResponse;
+  stream: DNStream;
+  reader: DNStreamReader;
+begin
+  Writeln('---------------Http_GET---------------');
+  req := TDNHttpWebRequest.Wrap(TDNWebRequest.DNClass.Create(TestURL));
+  req.Method := 'GET';
+  req.ContentType := 'text/html; charset=utf-8';
+//  req.UserAgent := '';
+  resp := TDNHttpWebResponse.Wrap(req.GetResponse());
+  if resp <> nil then
+  begin
+    Writeln('StatusCode: ',  resp.StatusCode);
+    Writeln('StatusDescription: ', resp.StatusDescription);
+    Writeln('ContentLength: ', resp.ContentLength);
+    stream := resp.GetResponseStream;
+    if stream <> nil then
+    begin
+      reader := TDNStreamReader.DNClass.init(stream);
+      Writeln( reader.ReadToEnd );
+    end;
+    resp.Close;
+    stream.Close;
+  end;
+end;
+
+procedure TestProc;
+begin
+  Http_HEAD;
+  Http_GET;
+end;
+
+begin
+  ReportMemoryLeaksOnShutdown := True;
+  try
+    TestProc;
+    { TODO -oUser -cConsole Main : Insert code here }
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+  Readln;
+end.

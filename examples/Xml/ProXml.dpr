@@ -7,7 +7,6 @@ program ProXml;
 uses
   System.SysUtils,
   DDN.Runtime,
-  DDN.Xml.System,
   DDN.mscorlib,
   DDN.System.Xml,
   uReg in '..\uReg.pas';

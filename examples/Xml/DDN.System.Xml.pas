@@ -1,4 +1,4 @@
-﻿// System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+// System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
 //-----------------------------------------------------------//
 //                                                           //
 //     DDN.System.Xml                               
@@ -15,7 +15,7 @@ interface
 uses
   DDN.Runtime,
   DDN.mscorlib,
-  DDN.Xml.System;
+  DDN.Xml.Common;
 
 type
 
@@ -4300,7 +4300,7 @@ type
     ///  在该索引处 <see cref="T:System.Xml.Schema.XmlSchema" />
     ///  添加。
     ///</returns>
-    function Add(schema: DNXmlSchema; baseUri: DDN.Xml.System.DNUri): Int32; overload;
+    function Add(schema: DNXmlSchema; baseUri: DDN.Xml.Common.DNUri): Int32; overload;
     ///<summary>
     ///  添加的一个实例 <see cref="T:System.Xml.Serialization.XmlSchemas" />
     ///  类传递给集合的末尾。
@@ -4457,7 +4457,7 @@ type
   TDNXmlSchemas = class(TDNGenericImport<DNXmlSchemasClass, DNXmlSchemas>) end;
 
   //-------------namespace: System.Xml.Serialization.Configuration----------------
-  DNSchemaImporterExtensionElementCollectionClass = interface(DDN.Xml.System.DNConfigurationElementCollectionClass)
+  DNSchemaImporterExtensionElementCollectionClass = interface(DDN.Xml.Common.DNConfigurationElementCollectionClass)
   ['{110B1F6B-D2E2-5D82-8175-6B62082D7F9A}']
   { constructors } 
 
@@ -4475,7 +4475,7 @@ type
   ///  此类不能被继承。
   ///</summary>
   [DNTypeName('System.Xml.Serialization.Configuration.SchemaImporterExtensionElementCollection')]
-  DNSchemaImporterExtensionElementCollection = interface(DDN.Xml.System.DNConfigurationElementCollection)
+  DNSchemaImporterExtensionElementCollection = interface(DDN.Xml.Common.DNConfigurationElementCollection)
   ['{E2B75A98-6D02-32C9-90E0-CD01176AA03F}']
   { getters & setters } 
 
@@ -4488,15 +4488,15 @@ type
     procedure set_EmitClear(value: Boolean);
     function get_IsSynchronized: Boolean;
     function get_SyncRoot: DDN.mscorlib.DNObject;
-    function get_CollectionType: DDN.Xml.System.DNConfigurationElementCollectionType;
-    function get_LockAttributes: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockAllAttributesExcept: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockElements: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockAllElementsExcept: DDN.Xml.System.DNConfigurationLockCollection;
+    function get_CollectionType: DDN.Xml.Common.DNConfigurationElementCollectionType;
+    function get_LockAttributes: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockAllAttributesExcept: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockElements: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockAllElementsExcept: DDN.Xml.Common.DNConfigurationLockCollection;
     function get_LockItem: Boolean;
     procedure set_LockItem(value: Boolean);
-    function get_ElementInformation: DDN.Xml.System.DNElementInformation;
-    function get_CurrentConfiguration: DDN.Xml.System.DNConfiguration;
+    function get_ElementInformation: DDN.Xml.Common.DNElementInformation;
+    function get_CurrentConfiguration: DDN.Xml.Common.DNConfiguration;
 
   { methods } 
 
@@ -4548,7 +4548,7 @@ type
     function IsReadOnly: Boolean;
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
-    procedure CopyTo(&array: TArray<DDN.Xml.System.DNConfigurationElement>; index: Int32);
+    procedure CopyTo(&array: TArray<DDN.Xml.Common.DNConfigurationElement>; index: Int32);
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
@@ -4561,20 +4561,20 @@ type
     property EmitClear: Boolean read get_EmitClear write set_EmitClear;
     property IsSynchronized: Boolean read get_IsSynchronized;
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
-    property CollectionType: DDN.Xml.System.DNConfigurationElementCollectionType read get_CollectionType;
-    property LockAttributes: DDN.Xml.System.DNConfigurationLockCollection read get_LockAttributes;
-    property LockAllAttributesExcept: DDN.Xml.System.DNConfigurationLockCollection read get_LockAllAttributesExcept;
-    property LockElements: DDN.Xml.System.DNConfigurationLockCollection read get_LockElements;
-    property LockAllElementsExcept: DDN.Xml.System.DNConfigurationLockCollection read get_LockAllElementsExcept;
+    property CollectionType: DDN.Xml.Common.DNConfigurationElementCollectionType read get_CollectionType;
+    property LockAttributes: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAttributes;
+    property LockAllAttributesExcept: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    property LockElements: DDN.Xml.Common.DNConfigurationLockCollection read get_LockElements;
+    property LockAllElementsExcept: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAllElementsExcept;
     property LockItem: Boolean read get_LockItem write set_LockItem;
-    property ElementInformation: DDN.Xml.System.DNElementInformation read get_ElementInformation;
-    property CurrentConfiguration: DDN.Xml.System.DNConfiguration read get_CurrentConfiguration;
+    property ElementInformation: DDN.Xml.Common.DNElementInformation read get_ElementInformation;
+    property CurrentConfiguration: DDN.Xml.Common.DNConfiguration read get_CurrentConfiguration;
   end;
 
   TDNSchemaImporterExtensionElementCollection = class(TDNGenericImport<DNSchemaImporterExtensionElementCollectionClass, DNSchemaImporterExtensionElementCollection>) end;
 
   //-------------namespace: System.Xml.Serialization.Configuration----------------
-  DNDateTimeSerializationSectionClass = interface(DDN.Xml.System.DNConfigurationSectionClass)
+  DNDateTimeSerializationSectionClass = interface(DDN.Xml.Common.DNConfigurationSectionClass)
   ['{796F86F5-CB76-54E2-B20A-42C047545297}']
   { constructors } 
 
@@ -4591,21 +4591,21 @@ type
   ///  实例。
   ///</summary>
   [DNTypeName('System.Xml.Serialization.Configuration.DateTimeSerializationSection')]
-  DNDateTimeSerializationSection = interface(DDN.Xml.System.DNConfigurationSection)
+  DNDateTimeSerializationSection = interface(DDN.Xml.Common.DNConfigurationSection)
   ['{67363D2C-6267-3FBF-8D4F-F8234D512220}']
   { getters & setters } 
 
     function get_Mode: DNDateTimeSerializationSection_DateTimeSerializationMode;
     procedure set_Mode(value: DNDateTimeSerializationSection_DateTimeSerializationMode);
-    function get_SectionInformation: DDN.Xml.System.DNSectionInformation;
-    function get_LockAttributes: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockAllAttributesExcept: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockElements: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockAllElementsExcept: DDN.Xml.System.DNConfigurationLockCollection;
+    function get_SectionInformation: DDN.Xml.Common.DNSectionInformation;
+    function get_LockAttributes: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockAllAttributesExcept: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockElements: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockAllElementsExcept: DDN.Xml.Common.DNConfigurationLockCollection;
     function get_LockItem: Boolean;
     procedure set_LockItem(value: Boolean);
-    function get_ElementInformation: DDN.Xml.System.DNElementInformation;
-    function get_CurrentConfiguration: DDN.Xml.System.DNConfiguration;
+    function get_ElementInformation: DDN.Xml.Common.DNElementInformation;
+    function get_CurrentConfiguration: DDN.Xml.Common.DNConfiguration;
 
   { methods } 
 
@@ -4624,20 +4624,20 @@ type
     ///  值之一。
     ///</returns>
     property Mode: DNDateTimeSerializationSection_DateTimeSerializationMode read get_Mode write set_Mode;
-    property SectionInformation: DDN.Xml.System.DNSectionInformation read get_SectionInformation;
-    property LockAttributes: DDN.Xml.System.DNConfigurationLockCollection read get_LockAttributes;
-    property LockAllAttributesExcept: DDN.Xml.System.DNConfigurationLockCollection read get_LockAllAttributesExcept;
-    property LockElements: DDN.Xml.System.DNConfigurationLockCollection read get_LockElements;
-    property LockAllElementsExcept: DDN.Xml.System.DNConfigurationLockCollection read get_LockAllElementsExcept;
+    property SectionInformation: DDN.Xml.Common.DNSectionInformation read get_SectionInformation;
+    property LockAttributes: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAttributes;
+    property LockAllAttributesExcept: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    property LockElements: DDN.Xml.Common.DNConfigurationLockCollection read get_LockElements;
+    property LockAllElementsExcept: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAllElementsExcept;
     property LockItem: Boolean read get_LockItem write set_LockItem;
-    property ElementInformation: DDN.Xml.System.DNElementInformation read get_ElementInformation;
-    property CurrentConfiguration: DDN.Xml.System.DNConfiguration read get_CurrentConfiguration;
+    property ElementInformation: DDN.Xml.Common.DNElementInformation read get_ElementInformation;
+    property CurrentConfiguration: DDN.Xml.Common.DNConfiguration read get_CurrentConfiguration;
   end;
 
   TDNDateTimeSerializationSection = class(TDNGenericImport<DNDateTimeSerializationSectionClass, DNDateTimeSerializationSection>) end;
 
   //-------------namespace: System.Xml.Serialization.Configuration----------------
-  DNSchemaImporterExtensionsSectionClass = interface(DDN.Xml.System.DNConfigurationSectionClass)
+  DNSchemaImporterExtensionsSectionClass = interface(DDN.Xml.Common.DNConfigurationSectionClass)
   ['{86B5D172-4D4F-5D71-B1D6-CC0307916C1E}']
   { constructors } 
 
@@ -4655,20 +4655,20 @@ type
   ///  此类不能被继承。
   ///</summary>
   [DNTypeName('System.Xml.Serialization.Configuration.SchemaImporterExtensionsSection')]
-  DNSchemaImporterExtensionsSection = interface(DDN.Xml.System.DNConfigurationSection)
+  DNSchemaImporterExtensionsSection = interface(DDN.Xml.Common.DNConfigurationSection)
   ['{67BECEB9-94EA-3674-A085-2940A30B400F}']
   { getters & setters } 
 
     function get_SchemaImporterExtensions: DNSchemaImporterExtensionElementCollection;
-    function get_SectionInformation: DDN.Xml.System.DNSectionInformation;
-    function get_LockAttributes: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockAllAttributesExcept: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockElements: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockAllElementsExcept: DDN.Xml.System.DNConfigurationLockCollection;
+    function get_SectionInformation: DDN.Xml.Common.DNSectionInformation;
+    function get_LockAttributes: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockAllAttributesExcept: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockElements: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockAllElementsExcept: DDN.Xml.Common.DNConfigurationLockCollection;
     function get_LockItem: Boolean;
     procedure set_LockItem(value: Boolean);
-    function get_ElementInformation: DDN.Xml.System.DNElementInformation;
-    function get_CurrentConfiguration: DDN.Xml.System.DNConfiguration;
+    function get_ElementInformation: DDN.Xml.Common.DNElementInformation;
+    function get_CurrentConfiguration: DDN.Xml.Common.DNConfiguration;
 
   { methods } 
 
@@ -4688,20 +4688,20 @@ type
     ///  ，包含表示配置元素的对象。
     ///</returns>
     property SchemaImporterExtensions: DNSchemaImporterExtensionElementCollection read get_SchemaImporterExtensions;
-    property SectionInformation: DDN.Xml.System.DNSectionInformation read get_SectionInformation;
-    property LockAttributes: DDN.Xml.System.DNConfigurationLockCollection read get_LockAttributes;
-    property LockAllAttributesExcept: DDN.Xml.System.DNConfigurationLockCollection read get_LockAllAttributesExcept;
-    property LockElements: DDN.Xml.System.DNConfigurationLockCollection read get_LockElements;
-    property LockAllElementsExcept: DDN.Xml.System.DNConfigurationLockCollection read get_LockAllElementsExcept;
+    property SectionInformation: DDN.Xml.Common.DNSectionInformation read get_SectionInformation;
+    property LockAttributes: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAttributes;
+    property LockAllAttributesExcept: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    property LockElements: DDN.Xml.Common.DNConfigurationLockCollection read get_LockElements;
+    property LockAllElementsExcept: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAllElementsExcept;
     property LockItem: Boolean read get_LockItem write set_LockItem;
-    property ElementInformation: DDN.Xml.System.DNElementInformation read get_ElementInformation;
-    property CurrentConfiguration: DDN.Xml.System.DNConfiguration read get_CurrentConfiguration;
+    property ElementInformation: DDN.Xml.Common.DNElementInformation read get_ElementInformation;
+    property CurrentConfiguration: DDN.Xml.Common.DNConfiguration read get_CurrentConfiguration;
   end;
 
   TDNSchemaImporterExtensionsSection = class(TDNGenericImport<DNSchemaImporterExtensionsSectionClass, DNSchemaImporterExtensionsSection>) end;
 
   //-------------namespace: System.Xml.Serialization.Configuration----------------
-  DNXmlSerializerSectionClass = interface(DDN.Xml.System.DNConfigurationSectionClass)
+  DNXmlSerializerSectionClass = interface(DDN.Xml.Common.DNConfigurationSectionClass)
   ['{273E89BE-C5DB-5016-9D74-778FFF4E25B7}']
   { constructors } 
 
@@ -4717,7 +4717,7 @@ type
   ///  处理用于配置 XML 序列化的 XML 元素。
   ///</summary>
   [DNTypeName('System.Xml.Serialization.Configuration.XmlSerializerSection')]
-  DNXmlSerializerSection = interface(DDN.Xml.System.DNConfigurationSection)
+  DNXmlSerializerSection = interface(DDN.Xml.Common.DNConfigurationSection)
   ['{4F36F333-4341-3E5B-97C3-E99EADAB829E}']
   { getters & setters } 
 
@@ -4727,15 +4727,15 @@ type
     procedure set_TempFilesLocation(value: string);
     function get_UseLegacySerializerGeneration: Boolean;
     procedure set_UseLegacySerializerGeneration(value: Boolean);
-    function get_SectionInformation: DDN.Xml.System.DNSectionInformation;
-    function get_LockAttributes: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockAllAttributesExcept: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockElements: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockAllElementsExcept: DDN.Xml.System.DNConfigurationLockCollection;
+    function get_SectionInformation: DDN.Xml.Common.DNSectionInformation;
+    function get_LockAttributes: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockAllAttributesExcept: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockElements: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockAllElementsExcept: DDN.Xml.Common.DNConfigurationLockCollection;
     function get_LockItem: Boolean;
     procedure set_LockItem(value: Boolean);
-    function get_ElementInformation: DDN.Xml.System.DNElementInformation;
-    function get_CurrentConfiguration: DDN.Xml.System.DNConfiguration;
+    function get_ElementInformation: DDN.Xml.Common.DNElementInformation;
+    function get_CurrentConfiguration: DDN.Xml.Common.DNConfiguration;
 
   { methods } 
 
@@ -4773,20 +4773,20 @@ type
     ///  。
     ///</returns>
     property UseLegacySerializerGeneration: Boolean read get_UseLegacySerializerGeneration write set_UseLegacySerializerGeneration;
-    property SectionInformation: DDN.Xml.System.DNSectionInformation read get_SectionInformation;
-    property LockAttributes: DDN.Xml.System.DNConfigurationLockCollection read get_LockAttributes;
-    property LockAllAttributesExcept: DDN.Xml.System.DNConfigurationLockCollection read get_LockAllAttributesExcept;
-    property LockElements: DDN.Xml.System.DNConfigurationLockCollection read get_LockElements;
-    property LockAllElementsExcept: DDN.Xml.System.DNConfigurationLockCollection read get_LockAllElementsExcept;
+    property SectionInformation: DDN.Xml.Common.DNSectionInformation read get_SectionInformation;
+    property LockAttributes: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAttributes;
+    property LockAllAttributesExcept: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    property LockElements: DDN.Xml.Common.DNConfigurationLockCollection read get_LockElements;
+    property LockAllElementsExcept: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAllElementsExcept;
     property LockItem: Boolean read get_LockItem write set_LockItem;
-    property ElementInformation: DDN.Xml.System.DNElementInformation read get_ElementInformation;
-    property CurrentConfiguration: DDN.Xml.System.DNConfiguration read get_CurrentConfiguration;
+    property ElementInformation: DDN.Xml.Common.DNElementInformation read get_ElementInformation;
+    property CurrentConfiguration: DDN.Xml.Common.DNConfiguration read get_CurrentConfiguration;
   end;
 
   TDNXmlSerializerSection = class(TDNGenericImport<DNXmlSerializerSectionClass, DNXmlSerializerSection>) end;
 
   //-------------namespace: System.Xml.XmlConfiguration----------------
-  DNXmlReaderSectionClass = interface(DDN.Xml.System.DNConfigurationSectionClass)
+  DNXmlReaderSectionClass = interface(DDN.Xml.Common.DNConfigurationSectionClass)
   ['{293A92D6-AEF9-58DF-A5B1-6BA3861F2E94}']
   { constructors } 
 
@@ -4802,7 +4802,7 @@ type
   ///  表示 XML 读取器部分。
   ///</summary>
   [DNTypeName('System.Xml.XmlConfiguration.XmlReaderSection')]
-  DNXmlReaderSection = interface(DDN.Xml.System.DNConfigurationSection)
+  DNXmlReaderSection = interface(DDN.Xml.Common.DNConfigurationSection)
   ['{EA347DAF-7390-3B48-9D4C-FB9DF63C7405}']
   { getters & setters } 
 
@@ -4810,15 +4810,15 @@ type
     procedure set_ProhibitDefaultResolverString(value: string);
     function get_CollapseWhiteSpaceIntoEmptyStringString: string;
     procedure set_CollapseWhiteSpaceIntoEmptyStringString(value: string);
-    function get_SectionInformation: DDN.Xml.System.DNSectionInformation;
-    function get_LockAttributes: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockAllAttributesExcept: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockElements: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockAllElementsExcept: DDN.Xml.System.DNConfigurationLockCollection;
+    function get_SectionInformation: DDN.Xml.Common.DNSectionInformation;
+    function get_LockAttributes: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockAllAttributesExcept: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockElements: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockAllElementsExcept: DDN.Xml.Common.DNConfigurationLockCollection;
     function get_LockItem: Boolean;
     procedure set_LockItem(value: Boolean);
-    function get_ElementInformation: DDN.Xml.System.DNElementInformation;
-    function get_CurrentConfiguration: DDN.Xml.System.DNConfiguration;
+    function get_ElementInformation: DDN.Xml.Common.DNElementInformation;
+    function get_CurrentConfiguration: DDN.Xml.Common.DNConfiguration;
 
   { methods } 
 
@@ -4846,20 +4846,20 @@ type
     ///  一个表示布尔值的字符串，该值指示是否已将空格折叠为空字符串。
     ///</returns>
     property CollapseWhiteSpaceIntoEmptyStringString: string read get_CollapseWhiteSpaceIntoEmptyStringString write set_CollapseWhiteSpaceIntoEmptyStringString;
-    property SectionInformation: DDN.Xml.System.DNSectionInformation read get_SectionInformation;
-    property LockAttributes: DDN.Xml.System.DNConfigurationLockCollection read get_LockAttributes;
-    property LockAllAttributesExcept: DDN.Xml.System.DNConfigurationLockCollection read get_LockAllAttributesExcept;
-    property LockElements: DDN.Xml.System.DNConfigurationLockCollection read get_LockElements;
-    property LockAllElementsExcept: DDN.Xml.System.DNConfigurationLockCollection read get_LockAllElementsExcept;
+    property SectionInformation: DDN.Xml.Common.DNSectionInformation read get_SectionInformation;
+    property LockAttributes: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAttributes;
+    property LockAllAttributesExcept: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    property LockElements: DDN.Xml.Common.DNConfigurationLockCollection read get_LockElements;
+    property LockAllElementsExcept: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAllElementsExcept;
     property LockItem: Boolean read get_LockItem write set_LockItem;
-    property ElementInformation: DDN.Xml.System.DNElementInformation read get_ElementInformation;
-    property CurrentConfiguration: DDN.Xml.System.DNConfiguration read get_CurrentConfiguration;
+    property ElementInformation: DDN.Xml.Common.DNElementInformation read get_ElementInformation;
+    property CurrentConfiguration: DDN.Xml.Common.DNConfiguration read get_CurrentConfiguration;
   end;
 
   TDNXmlReaderSection = class(TDNGenericImport<DNXmlReaderSectionClass, DNXmlReaderSection>) end;
 
   //-------------namespace: System.Xml.XmlConfiguration----------------
-  DNXsltConfigSectionClass = interface(DDN.Xml.System.DNConfigurationSectionClass)
+  DNXsltConfigSectionClass = interface(DDN.Xml.Common.DNConfigurationSectionClass)
   ['{A33C0589-2404-58C8-84B6-3E4B9D33A8DD}']
   { constructors } 
 
@@ -4875,21 +4875,21 @@ type
   ///  表示 XSLT 配置节。
   ///</summary>
   [DNTypeName('System.Xml.XmlConfiguration.XsltConfigSection')]
-  DNXsltConfigSection = interface(DDN.Xml.System.DNConfigurationSection)
+  DNXsltConfigSection = interface(DDN.Xml.Common.DNConfigurationSection)
   ['{B2BD5B40-20F9-3AE2-84E2-4626C5C4C2C9}']
   { getters & setters } 
 
     function get_ProhibitDefaultResolverString: string;
     procedure set_ProhibitDefaultResolverString(value: string);
-    function get_SectionInformation: DDN.Xml.System.DNSectionInformation;
-    function get_LockAttributes: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockAllAttributesExcept: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockElements: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockAllElementsExcept: DDN.Xml.System.DNConfigurationLockCollection;
+    function get_SectionInformation: DDN.Xml.Common.DNSectionInformation;
+    function get_LockAttributes: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockAllAttributesExcept: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockElements: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockAllElementsExcept: DDN.Xml.Common.DNConfigurationLockCollection;
     function get_LockItem: Boolean;
     procedure set_LockItem(value: Boolean);
-    function get_ElementInformation: DDN.Xml.System.DNElementInformation;
-    function get_CurrentConfiguration: DDN.Xml.System.DNConfiguration;
+    function get_ElementInformation: DDN.Xml.Common.DNElementInformation;
+    function get_CurrentConfiguration: DDN.Xml.Common.DNConfiguration;
 
   { methods } 
 
@@ -4908,20 +4908,20 @@ type
     ///  一个字符串，表示 XSLT 禁止默认冲突解决程序。
     ///</returns>
     property ProhibitDefaultResolverString: string read get_ProhibitDefaultResolverString write set_ProhibitDefaultResolverString;
-    property SectionInformation: DDN.Xml.System.DNSectionInformation read get_SectionInformation;
-    property LockAttributes: DDN.Xml.System.DNConfigurationLockCollection read get_LockAttributes;
-    property LockAllAttributesExcept: DDN.Xml.System.DNConfigurationLockCollection read get_LockAllAttributesExcept;
-    property LockElements: DDN.Xml.System.DNConfigurationLockCollection read get_LockElements;
-    property LockAllElementsExcept: DDN.Xml.System.DNConfigurationLockCollection read get_LockAllElementsExcept;
+    property SectionInformation: DDN.Xml.Common.DNSectionInformation read get_SectionInformation;
+    property LockAttributes: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAttributes;
+    property LockAllAttributesExcept: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    property LockElements: DDN.Xml.Common.DNConfigurationLockCollection read get_LockElements;
+    property LockAllElementsExcept: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAllElementsExcept;
     property LockItem: Boolean read get_LockItem write set_LockItem;
-    property ElementInformation: DDN.Xml.System.DNElementInformation read get_ElementInformation;
-    property CurrentConfiguration: DDN.Xml.System.DNConfiguration read get_CurrentConfiguration;
+    property ElementInformation: DDN.Xml.Common.DNElementInformation read get_ElementInformation;
+    property CurrentConfiguration: DDN.Xml.Common.DNConfiguration read get_CurrentConfiguration;
   end;
 
   TDNXsltConfigSection = class(TDNGenericImport<DNXsltConfigSectionClass, DNXsltConfigSection>) end;
 
   //-------------namespace: System.Xml.Serialization.Configuration----------------
-  DNSchemaImporterExtensionElementClass = interface(DDN.Xml.System.DNConfigurationElementClass)
+  DNSchemaImporterExtensionElementClass = interface(DDN.Xml.Common.DNConfigurationElementClass)
   ['{C7ACCF49-26E1-544E-BE23-0935BBAEE364}']
   { constructors } 
 
@@ -4963,7 +4963,7 @@ type
   ///  此类不能被继承。
   ///</summary>
   [DNTypeName('System.Xml.Serialization.Configuration.SchemaImporterExtensionElement')]
-  DNSchemaImporterExtensionElement = interface(DDN.Xml.System.DNConfigurationElement)
+  DNSchemaImporterExtensionElement = interface(DDN.Xml.Common.DNConfigurationElement)
   ['{AD1B0AF4-0B28-3D88-AE92-989DEDBCACF8}']
   { getters & setters } 
 
@@ -4971,14 +4971,14 @@ type
     procedure set_Name(value: string);
     function get_Type: DDN.mscorlib.DNType;
     procedure set_Type(value: DDN.mscorlib.DNType);
-    function get_LockAttributes: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockAllAttributesExcept: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockElements: DDN.Xml.System.DNConfigurationLockCollection;
-    function get_LockAllElementsExcept: DDN.Xml.System.DNConfigurationLockCollection;
+    function get_LockAttributes: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockAllAttributesExcept: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockElements: DDN.Xml.Common.DNConfigurationLockCollection;
+    function get_LockAllElementsExcept: DDN.Xml.Common.DNConfigurationLockCollection;
     function get_LockItem: Boolean;
     procedure set_LockItem(value: Boolean);
-    function get_ElementInformation: DDN.Xml.System.DNElementInformation;
-    function get_CurrentConfiguration: DDN.Xml.System.DNConfiguration;
+    function get_ElementInformation: DDN.Xml.Common.DNElementInformation;
+    function get_CurrentConfiguration: DDN.Xml.Common.DNConfiguration;
 
   { methods } 
 
@@ -5004,19 +5004,19 @@ type
     ///  一种扩展类型。
     ///</returns>
     property &Type: DDN.mscorlib.DNType read get_Type write set_Type;
-    property LockAttributes: DDN.Xml.System.DNConfigurationLockCollection read get_LockAttributes;
-    property LockAllAttributesExcept: DDN.Xml.System.DNConfigurationLockCollection read get_LockAllAttributesExcept;
-    property LockElements: DDN.Xml.System.DNConfigurationLockCollection read get_LockElements;
-    property LockAllElementsExcept: DDN.Xml.System.DNConfigurationLockCollection read get_LockAllElementsExcept;
+    property LockAttributes: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAttributes;
+    property LockAllAttributesExcept: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    property LockElements: DDN.Xml.Common.DNConfigurationLockCollection read get_LockElements;
+    property LockAllElementsExcept: DDN.Xml.Common.DNConfigurationLockCollection read get_LockAllElementsExcept;
     property LockItem: Boolean read get_LockItem write set_LockItem;
-    property ElementInformation: DDN.Xml.System.DNElementInformation read get_ElementInformation;
-    property CurrentConfiguration: DDN.Xml.System.DNConfiguration read get_CurrentConfiguration;
+    property ElementInformation: DDN.Xml.Common.DNElementInformation read get_ElementInformation;
+    property CurrentConfiguration: DDN.Xml.Common.DNConfiguration read get_CurrentConfiguration;
   end;
 
   TDNSchemaImporterExtensionElement = class(TDNGenericImport<DNSchemaImporterExtensionElementClass, DNSchemaImporterExtensionElement>) end;
 
   //-------------namespace: System.Xml.Serialization.Configuration----------------
-  DNSerializationSectionGroupClass = interface(DDN.Xml.System.DNConfigurationSectionGroupClass)
+  DNSerializationSectionGroupClass = interface(DDN.Xml.Common.DNConfigurationSectionGroupClass)
   ['{EC5EBDC1-E595-5BD8-A897-5A2260CAF41C}']
   { constructors } 
 
@@ -5032,7 +5032,7 @@ type
   ///  处理用于配置 XML 序列化的 XML 元素。
   ///</summary>
   [DNTypeName('System.Xml.Serialization.Configuration.SerializationSectionGroup')]
-  DNSerializationSectionGroup = interface(DDN.Xml.System.DNConfigurationSectionGroup)
+  DNSerializationSectionGroup = interface(DDN.Xml.Common.DNConfigurationSectionGroup)
   ['{F62E01F9-355F-3CAC-8D6F-BCCF033573FF}']
   { getters & setters } 
 
@@ -5045,8 +5045,8 @@ type
     function get_Name: string;
     function get_Type: string;
     procedure set_Type(value: string);
-    function get_Sections: DDN.Xml.System.DNConfigurationSectionCollection;
-    function get_SectionGroups: DDN.Xml.System.DNConfigurationSectionGroupCollection;
+    function get_Sections: DDN.Xml.Common.DNConfigurationSectionCollection;
+    function get_SectionGroups: DDN.Xml.Common.DNConfigurationSectionGroupCollection;
 
   { methods } 
 
@@ -5090,14 +5090,14 @@ type
     property SectionGroupName: string read get_SectionGroupName;
     property Name: string read get_Name;
     property &Type: string read get_Type write set_Type;
-    property Sections: DDN.Xml.System.DNConfigurationSectionCollection read get_Sections;
-    property SectionGroups: DDN.Xml.System.DNConfigurationSectionGroupCollection read get_SectionGroups;
+    property Sections: DDN.Xml.Common.DNConfigurationSectionCollection read get_Sections;
+    property SectionGroups: DDN.Xml.Common.DNConfigurationSectionGroupCollection read get_SectionGroups;
   end;
 
   TDNSerializationSectionGroup = class(TDNGenericImport<DNSerializationSectionGroupClass, DNSerializationSectionGroup>) end;
 
   //-------------namespace: System.Xml.Serialization.Configuration----------------
-  DNRootedPathValidatorClass = interface(DDN.Xml.System.DNConfigurationValidatorBaseClass)
+  DNRootedPathValidatorClass = interface(DDN.Xml.Common.DNConfigurationValidatorBaseClass)
   ['{5850549E-2A8A-55F8-B8BD-5635916D114E}']
   { constructors } 
 
@@ -5113,7 +5113,7 @@ type
   ///  验证这些规则控制的使用 tempFilesLocation 配置开关。
   ///</summary>
   [DNTypeName('System.Xml.Serialization.Configuration.RootedPathValidator')]
-  DNRootedPathValidator = interface(DDN.Xml.System.DNConfigurationValidatorBase)
+  DNRootedPathValidator = interface(DDN.Xml.Common.DNConfigurationValidatorBase)
   ['{CCD7A295-38B9-3662-B614-E4C4CCC9BC38}']
   { methods } 
 
@@ -7317,7 +7317,7 @@ type
     ///<returns>
     ///  应用程序资源流。
     ///</returns>
-    function GetApplicationResourceStream(relativeUri: DDN.Xml.System.DNUri): DDN.mscorlib.DNStream;
+    function GetApplicationResourceStream(relativeUri: DDN.Xml.Common.DNUri): DDN.mscorlib.DNStream;
 
   end;
 
@@ -15603,8 +15603,8 @@ type
     procedure set_XmlResolver(value: DNXmlResolver);
     function get_LineInfoProvider: DNIXmlLineInfo;
     procedure set_LineInfoProvider(value: DNIXmlLineInfo);
-    function get_SourceUri: DDN.Xml.System.DNUri;
-    procedure set_SourceUri(value: DDN.Xml.System.DNUri);
+    function get_SourceUri: DDN.Xml.Common.DNUri;
+    procedure set_SourceUri(value: DDN.Xml.Common.DNUri);
     function get_ValidationEventSender: DDN.mscorlib.DNObject;
     procedure set_ValidationEventSender(value: DDN.mscorlib.DNObject);
 
@@ -16022,7 +16022,7 @@ type
     ///  对象表示所验证的 XML 节点的源 URI; 默认值为 <see langword="null" />
     ///  。
     ///</returns>
-    property SourceUri: DDN.Xml.System.DNUri read get_SourceUri write set_SourceUri;
+    property SourceUri: DDN.Xml.Common.DNUri read get_SourceUri write set_SourceUri;
     ///<summary>
     ///  获取或设置作为验证事件的发件人对象所发送的对象。
     ///</summary>
@@ -16085,7 +16085,7 @@ type
     ///<returns>
     ///  此方法映射到 CLR 类型的名称。
     ///</returns>
-    function ImportSchemaType(name: string; ns: string; context: DNXmlSchemaObject; schemas: DNXmlSchemas; importer: DNXmlSchemaImporter; compileUnit: DDN.Xml.System.DNCodeCompileUnit; mainNamespace: DDN.Xml.System.DNCodeNamespace; options: DNCodeGenerationOptions; codeProvider: DDN.Xml.System.DNCodeDomProvider): string; overload;
+    function ImportSchemaType(name: string; ns: string; context: DNXmlSchemaObject; schemas: DNXmlSchemas; importer: DNXmlSchemaImporter; compileUnit: DDN.Xml.Common.DNCodeCompileUnit; mainNamespace: DDN.Xml.Common.DNCodeNamespace; options: DNCodeGenerationOptions; codeProvider: DDN.Xml.Common.DNCodeDomProvider): string; overload;
     ///<summary>
     ///  使您可以操作︰ 检查导入的架构，并指定 CLR 类型映射到生成的代码。
     ///</summary>
@@ -16120,7 +16120,7 @@ type
     ///<returns>
     ///  此方法映射到 CLR 类型的名称。
     ///</returns>
-    function ImportSchemaType(&type: DNXmlSchemaType; context: DNXmlSchemaObject; schemas: DNXmlSchemas; importer: DNXmlSchemaImporter; compileUnit: DDN.Xml.System.DNCodeCompileUnit; mainNamespace: DDN.Xml.System.DNCodeNamespace; options: DNCodeGenerationOptions; codeProvider: DDN.Xml.System.DNCodeDomProvider): string; overload;
+    function ImportSchemaType(&type: DNXmlSchemaType; context: DNXmlSchemaObject; schemas: DNXmlSchemas; importer: DNXmlSchemaImporter; compileUnit: DDN.Xml.Common.DNCodeCompileUnit; mainNamespace: DDN.Xml.Common.DNCodeNamespace; options: DNCodeGenerationOptions; codeProvider: DDN.Xml.Common.DNCodeDomProvider): string; overload;
     ///<summary>
     ///  处理的导入 &lt; xsd︰ 任何 &gt; 架构中的元素。
     ///</summary>
@@ -16161,7 +16161,7 @@ type
     ///<returns>
     ///  该元素映射到 CLR 类型的名称。
     ///</returns>
-    function ImportAnyElement(any: DNXmlSchemaAny; mixed: Boolean; schemas: DNXmlSchemas; importer: DNXmlSchemaImporter; compileUnit: DDN.Xml.System.DNCodeCompileUnit; mainNamespace: DDN.Xml.System.DNCodeNamespace; options: DNCodeGenerationOptions; codeProvider: DDN.Xml.System.DNCodeDomProvider): string;
+    function ImportAnyElement(any: DNXmlSchemaAny; mixed: Boolean; schemas: DNXmlSchemas; importer: DNXmlSchemaImporter; compileUnit: DDN.Xml.Common.DNCodeCompileUnit; mainNamespace: DDN.Xml.Common.DNCodeNamespace; options: DNCodeGenerationOptions; codeProvider: DDN.Xml.Common.DNCodeDomProvider): string;
     ///<summary>
     ///  可以指定要导入的 XSD 类型的默认值。
     ///</summary>
@@ -16175,7 +16175,7 @@ type
     ///  一个 <see cref="T:System.CodeDom.CodeExpression" />
     ///  设置新的默认值。
     ///</returns>
-    function ImportDefaultValue(value: string; &type: string): DDN.Xml.System.DNCodeExpression;
+    function ImportDefaultValue(value: string; &type: string): DDN.Xml.Common.DNCodeExpression;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -16198,7 +16198,7 @@ type
   ['{58980885-AB07-3408-B0DA-A1F804A75F85}']
   { getters & setters } 
 
-    function get_IncludeMetadata: DDN.Xml.System.DNCodeAttributeDeclarationCollection;
+    function get_IncludeMetadata: DDN.Xml.Common.DNCodeAttributeDeclarationCollection;
 
   { methods } 
 
@@ -16216,7 +16216,7 @@ type
     ///  一套 <see cref="T:System.CodeDom.CodeAttributeDeclaration" />
     ///  表示导出代码时，将包含的元数据的对象。
     ///</returns>
-    property IncludeMetadata: DDN.Xml.System.DNCodeAttributeDeclarationCollection read get_IncludeMetadata;
+    property IncludeMetadata: DDN.Xml.Common.DNCodeAttributeDeclarationCollection read get_IncludeMetadata;
   end;
 
   TDNCodeExporter = class(TDNGenericImport<DNCodeExporterClass, DNCodeExporter>) end;
@@ -16234,7 +16234,7 @@ type
     ///  一个 <see cref="T:System.CodeDom.CodeNamespace" />
     ///  ，它指定要生成的类型的命名空间。
     ///</param>
-    {class} function init(codeNamespace: DDN.Xml.System.DNCodeNamespace): DNSoapCodeExporter; overload;
+    {class} function init(codeNamespace: DDN.Xml.Common.DNCodeNamespace): DNSoapCodeExporter; overload;
     ///<summary>
     ///  新实例初始化 <see cref="T:System.Xml.Serialization.SoapCodeExporter" />
     ///  类，同时指定命名空间参数，还代码编译单元参数。
@@ -16247,7 +16247,7 @@ type
     ///  一个 <see cref="T:System.CodeDom.CodeCompileUnit" />
     ///  ，它标识用的程序集引用自动添加到其中的程序图容器。
     ///</param>
-    {class} function init(codeNamespace: DDN.Xml.System.DNCodeNamespace; codeCompileUnit: DDN.Xml.System.DNCodeCompileUnit): DNSoapCodeExporter; overload;
+    {class} function init(codeNamespace: DDN.Xml.Common.DNCodeNamespace; codeCompileUnit: DDN.Xml.Common.DNCodeCompileUnit): DNSoapCodeExporter; overload;
     ///<summary>
     ///  新实例初始化 <see cref="T:System.Xml.Serialization.SoapCodeExporter" />
     ///  类，同时指定代码命名空间、 代码编译单元中和代码生成选项。
@@ -16264,7 +16264,7 @@ type
     ///  一个 <see cref="T:System.Xml.Serialization.CodeGenerationOptions" />
     ///  枚举，用于指定生成导出的代码时的选项。
     ///</param>
-    {class} function init(codeNamespace: DDN.Xml.System.DNCodeNamespace; codeCompileUnit: DDN.Xml.System.DNCodeCompileUnit; options: DNCodeGenerationOptions): DNSoapCodeExporter; overload;
+    {class} function init(codeNamespace: DDN.Xml.Common.DNCodeNamespace; codeCompileUnit: DDN.Xml.Common.DNCodeCompileUnit; options: DNCodeGenerationOptions): DNSoapCodeExporter; overload;
     ///<summary>
     ///  新实例初始化 <see cref="T:System.Xml.Serialization.SoapCodeExporter" />
     ///  类，同时指定代码命名空间、 代码编译单元、 代码生成选项和映射。
@@ -16286,7 +16286,7 @@ type
     ///  对象的 <see cref="T:System.Xml.Serialization.XmlMapping" />
     ///  。
     ///</param>
-    {class} function init(codeNamespace: DDN.Xml.System.DNCodeNamespace; codeCompileUnit: DDN.Xml.System.DNCodeCompileUnit; options: DNCodeGenerationOptions; mappings: DDN.mscorlib.DNHashtable): DNSoapCodeExporter; overload;
+    {class} function init(codeNamespace: DDN.Xml.Common.DNCodeNamespace; codeCompileUnit: DDN.Xml.Common.DNCodeCompileUnit; options: DNCodeGenerationOptions; mappings: DDN.mscorlib.DNHashtable): DNSoapCodeExporter; overload;
     ///<summary>
     ///  新实例初始化 <see cref="T:System.Xml.Serialization.SoapCodeExporter" />
     ///  类，同时指定代码命名空间、 代码编译单元、 代码生成器、 代码生成选项和映射。
@@ -16312,7 +16312,7 @@ type
     ///  对象的 <see cref="T:System.Xml.Serialization.XmlMapping" />
     ///  。
     ///</param>
-    {class} function init(codeNamespace: DDN.Xml.System.DNCodeNamespace; codeCompileUnit: DDN.Xml.System.DNCodeCompileUnit; codeProvider: DDN.Xml.System.DNCodeDomProvider; options: DNCodeGenerationOptions; mappings: DDN.mscorlib.DNHashtable): DNSoapCodeExporter; overload;
+    {class} function init(codeNamespace: DDN.Xml.Common.DNCodeNamespace; codeCompileUnit: DDN.Xml.Common.DNCodeCompileUnit; codeProvider: DDN.Xml.Common.DNCodeDomProvider; options: DNCodeGenerationOptions; mappings: DDN.mscorlib.DNHashtable): DNSoapCodeExporter; overload;
 
   end;
 
@@ -16324,7 +16324,7 @@ type
   ['{8ED80F9A-1628-3366-8861-5316E25A64F8}']
   { getters & setters } 
 
-    function get_IncludeMetadata: DDN.Xml.System.DNCodeAttributeDeclarationCollection;
+    function get_IncludeMetadata: DDN.Xml.Common.DNCodeAttributeDeclarationCollection;
 
   { methods } 
 
@@ -16357,7 +16357,7 @@ type
     ///  若要添加包含正在生成; 的特性声明的 XML 元素名称的初始参数否则为 <see langword="false" />
     ///  。
     ///</param>
-    procedure AddMappingMetadata(metadata: DDN.Xml.System.DNCodeAttributeDeclarationCollection; member: DNXmlMemberMapping; forceUseMemberName: Boolean); overload;
+    procedure AddMappingMetadata(metadata: DDN.Xml.Common.DNCodeAttributeDeclarationCollection; member: DNXmlMemberMapping; forceUseMemberName: Boolean); overload;
     ///<summary>
     ///  添加 <see cref="T:System.Xml.Serialization.SoapElementAttribute" />
     ///  声明移到 WSDL 文档中的 SOAP 消息定义的一部分元素相对应的方法参数或返回值。
@@ -16369,7 +16369,7 @@ type
     ///  <param name="member">
     ///  WSDL 消息定义单个部件内部.NET Framework 类型映射。
     ///</param>
-    procedure AddMappingMetadata(metadata: DDN.Xml.System.DNCodeAttributeDeclarationCollection; member: DNXmlMemberMapping); overload;
+    procedure AddMappingMetadata(metadata: DDN.Xml.Common.DNCodeAttributeDeclarationCollection; member: DNXmlMemberMapping); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -16384,7 +16384,7 @@ type
     ///  一套 <see cref="T:System.CodeDom.CodeAttributeDeclaration" />
     ///  表示导出代码时，将包含的元数据的对象。
     ///</returns>
-    property IncludeMetadata: DDN.Xml.System.DNCodeAttributeDeclarationCollection read get_IncludeMetadata;
+    property IncludeMetadata: DDN.Xml.Common.DNCodeAttributeDeclarationCollection read get_IncludeMetadata;
   end;
 
   TDNSoapCodeExporter = class(TDNGenericImport<DNSoapCodeExporterClass, DNSoapCodeExporter>) end;
@@ -16401,7 +16401,7 @@ type
     ///  <param name="codeNamespace">
     ///  要生成的类型的命名空间。
     ///</param>
-    {class} function init(codeNamespace: DDN.Xml.System.DNCodeNamespace): DNXmlCodeExporter; overload;
+    {class} function init(codeNamespace: DDN.Xml.Common.DNCodeNamespace): DNXmlCodeExporter; overload;
     ///<summary>
     ///  新实例初始化 <see cref="T:System.Xml.Serialization.XmlCodeExporter" />
     ///  类使用指定的命名空间和代码编译单元。
@@ -16412,7 +16412,7 @@ type
     ///  <param name="codeCompileUnit">
     ///  其中的 CodeDOM 图形容器使用程序集引用会自动添加。
     ///</param>
-    {class} function init(codeNamespace: DDN.Xml.System.DNCodeNamespace; codeCompileUnit: DDN.Xml.System.DNCodeCompileUnit): DNXmlCodeExporter; overload;
+    {class} function init(codeNamespace: DDN.Xml.Common.DNCodeNamespace; codeCompileUnit: DDN.Xml.Common.DNCodeCompileUnit): DNXmlCodeExporter; overload;
     ///<summary>
     ///  新实例初始化 <see cref="T:System.Xml.Serialization.XmlCodeExporter" />
     ///  类使用指定的命名空间、 代码编译单元和代码生成选项。
@@ -16427,7 +16427,7 @@ type
     ///  <param name="options">
     ///  一个枚举值，提供了用于从 XML 架构的自定义数据类型生成.NET Framework 类型的选项。
     ///</param>
-    {class} function init(codeNamespace: DDN.Xml.System.DNCodeNamespace; codeCompileUnit: DDN.Xml.System.DNCodeCompileUnit; options: DNCodeGenerationOptions): DNXmlCodeExporter; overload;
+    {class} function init(codeNamespace: DDN.Xml.Common.DNCodeNamespace; codeCompileUnit: DDN.Xml.Common.DNCodeCompileUnit; options: DNCodeGenerationOptions): DNXmlCodeExporter; overload;
     ///<summary>
     ///  新实例初始化 <see cref="T:System.Xml.Serialization.XmlCodeExporter" />
     ///  类使用指定的.NET Framework 命名空间、 代码编译单元包含图的对象，表示代码生成选项和映射对象的集合的对象。
@@ -16447,7 +16447,7 @@ type
     ///  对象的 <see cref="T:System.Xml.Serialization.XmlMapping" />
     ///  。
     ///</param>
-    {class} function init(codeNamespace: DDN.Xml.System.DNCodeNamespace; codeCompileUnit: DDN.Xml.System.DNCodeCompileUnit; options: DNCodeGenerationOptions; mappings: DDN.mscorlib.DNHashtable): DNXmlCodeExporter; overload;
+    {class} function init(codeNamespace: DDN.Xml.Common.DNCodeNamespace; codeCompileUnit: DDN.Xml.Common.DNCodeCompileUnit; options: DNCodeGenerationOptions; mappings: DDN.mscorlib.DNHashtable): DNXmlCodeExporter; overload;
     ///<summary>
     ///  新实例初始化 <see cref="T:System.Xml.Serialization.XmlCodeExporter" />
     ///  类使用指定的.NET Framework 命名空间、 代码编译单元包含图的对象，指定代码选项和映射对象的集合的枚举。
@@ -16471,7 +16471,7 @@ type
     ///  对象的 <see cref="T:System.Xml.Serialization.XmlMapping" />
     ///  。
     ///</param>
-    {class} function init(codeNamespace: DDN.Xml.System.DNCodeNamespace; codeCompileUnit: DDN.Xml.System.DNCodeCompileUnit; codeProvider: DDN.Xml.System.DNCodeDomProvider; options: DNCodeGenerationOptions; mappings: DDN.mscorlib.DNHashtable): DNXmlCodeExporter; overload;
+    {class} function init(codeNamespace: DDN.Xml.Common.DNCodeNamespace; codeCompileUnit: DDN.Xml.Common.DNCodeCompileUnit; codeProvider: DDN.Xml.Common.DNCodeDomProvider; options: DNCodeGenerationOptions; mappings: DDN.mscorlib.DNHashtable): DNXmlCodeExporter; overload;
 
   end;
 
@@ -16483,7 +16483,7 @@ type
   ['{9AF1261D-D0F6-3C58-A06A-2957418A2C43}']
   { getters & setters } 
 
-    function get_IncludeMetadata: DDN.Xml.System.DNCodeAttributeDeclarationCollection;
+    function get_IncludeMetadata: DDN.Xml.Common.DNCodeAttributeDeclarationCollection;
 
   { methods } 
 
@@ -16516,7 +16516,7 @@ type
     ///  <param name="ns">
     ///  XML 命名空间的 soap 消息的部分为其生成成员参数中的类型映射信息。
     ///</param>
-    procedure AddMappingMetadata(metadata: DDN.Xml.System.DNCodeAttributeDeclarationCollection; mapping: DNXmlTypeMapping; ns: string); overload;
+    procedure AddMappingMetadata(metadata: DDN.Xml.Common.DNCodeAttributeDeclarationCollection; mapping: DNXmlTypeMapping; ns: string); overload;
     ///<summary>
     ///  添加 <see cref="T:System.Xml.Serialization.XmlElementAttribute" />
     ///  声明移到对应于方法参数或返回值 <see langword="&lt;part&gt;" />
@@ -16535,7 +16535,7 @@ type
     ///  <param name="forceUseMemberName">
     ///  该标志可帮助确定是否添加初始参数，其中包含要生成的属性声明的 XML 元素名称。
     ///</param>
-    procedure AddMappingMetadata(metadata: DDN.Xml.System.DNCodeAttributeDeclarationCollection; member: DNXmlMemberMapping; ns: string; forceUseMemberName: Boolean); overload;
+    procedure AddMappingMetadata(metadata: DDN.Xml.Common.DNCodeAttributeDeclarationCollection; member: DNXmlMemberMapping; ns: string; forceUseMemberName: Boolean); overload;
     ///<summary>
     ///  添加 <see cref="T:System.Xml.Serialization.XmlElementAttribute" />
     ///  声明移到对应于方法参数或返回值 <see langword="&lt;part&gt;" />
@@ -16551,7 +16551,7 @@ type
     ///  <param name="ns">
     ///  XML 命名空间的 soap 消息的部分为其生成成员参数中的类型映射信息。
     ///</param>
-    procedure AddMappingMetadata(metadata: DDN.Xml.System.DNCodeAttributeDeclarationCollection; member: DNXmlMemberMapping; ns: string); overload;
+    procedure AddMappingMetadata(metadata: DDN.Xml.Common.DNCodeAttributeDeclarationCollection; member: DNXmlMemberMapping; ns: string); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -16566,7 +16566,7 @@ type
     ///  一套 <see cref="T:System.CodeDom.CodeAttributeDeclaration" />
     ///  表示导出代码时，将包含的元数据的对象。
     ///</returns>
-    property IncludeMetadata: DDN.Xml.System.DNCodeAttributeDeclarationCollection read get_IncludeMetadata;
+    property IncludeMetadata: DDN.Xml.Common.DNCodeAttributeDeclarationCollection read get_IncludeMetadata;
   end;
 
   TDNXmlCodeExporter = class(TDNGenericImport<DNXmlCodeExporterClass, DNXmlCodeExporter>) end;
@@ -16821,7 +16821,7 @@ type
 
     function get_TypeIdentifiers: DNCodeIdentifiers;
     function get_ShareTypes: Boolean;
-    function get_Warnings: DDN.Xml.System.DNStringCollection;
+    function get_Warnings: DDN.Xml.Common.DNStringCollection;
 
   { methods } 
 
@@ -16855,7 +16855,7 @@ type
     ///  一个 <see cref="T:System.Collections.Specialized.StringCollection" />
     ///  ，其中包含在导入代码实体说明时生成的警告。
     ///</returns>
-    property Warnings: DDN.Xml.System.DNStringCollection read get_Warnings;
+    property Warnings: DDN.Xml.Common.DNStringCollection read get_Warnings;
   end;
 
   TDNImportContext = class(TDNGenericImport<DNImportContextClass, DNImportContext>) end;
@@ -17051,7 +17051,7 @@ type
     ///  <param name="context"><see cref="T:System.Xml.Serialization.ImportContext" />
     ///  ，它描述在该架构的一组绑定到.NET Framework 代码实体的上下文。
     ///</param>
-    {class} function init(schemas: DNXmlSchemas; options: DNCodeGenerationOptions; codeProvider: DDN.Xml.System.DNCodeDomProvider; context: DNImportContext): DNSoapSchemaImporter; overload;
+    {class} function init(schemas: DNXmlSchemas; options: DNCodeGenerationOptions; codeProvider: DDN.Xml.Common.DNCodeDomProvider; context: DNImportContext): DNSoapSchemaImporter; overload;
 
   end;
 
@@ -17267,7 +17267,7 @@ type
     ///  一个 <see cref="T:System.Xml.Serialization.ImportContext" />
     ///  实例，指定的导入上下文。
     ///</param>
-    {class} function init(schemas: DNXmlSchemas; options: DNCodeGenerationOptions; codeProvider: DDN.Xml.System.DNCodeDomProvider; context: DNImportContext): DNXmlSchemaImporter; overload;
+    {class} function init(schemas: DNXmlSchemas; options: DNCodeGenerationOptions; codeProvider: DDN.Xml.Common.DNCodeDomProvider; context: DNImportContext): DNXmlSchemaImporter; overload;
 
   end;
 
@@ -18512,7 +18512,7 @@ type
     ///<returns>
     ///  类型的名称。
     ///</returns>
-    function GenerateTypeName(codeProvider: DDN.Xml.System.DNCodeDomProvider): string;
+    function GenerateTypeName(codeProvider: DDN.Xml.Common.DNCodeDomProvider): string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -19422,7 +19422,7 @@ type
     ///  包含的特殊版本 <see cref="T:System.Xml.Serialization.XmlSerializer" />
     ///  。
     ///</returns>
-    {class} function GenerateSerializer(types: TArray<DDN.mscorlib.DNType>; mappings: TArray<DNXmlMapping>; parameters: DDN.Xml.System.DNCompilerParameters): DDN.mscorlib.DNAssembly; overload;
+    {class} function GenerateSerializer(types: TArray<DDN.mscorlib.DNType>; mappings: TArray<DNXmlMapping>; parameters: DDN.Xml.Common.DNCompilerParameters): DDN.mscorlib.DNAssembly; overload;
     ///<summary>
     ///  返回的数组 <see cref="T:System.Xml.Serialization.XmlSerializer" />
     ///  创建从数组类型的对象。
@@ -40602,7 +40602,7 @@ type
   ['{EDE29340-6461-5FEC-9331-2E67780C1D99}']
   { static getter & setter } 
 
-    procedure set_Credentials(value: DDN.Xml.System.DNICredentials);
+    procedure set_Credentials(value: DDN.Xml.Common.DNICredentials);
 
   { static propertys } 
 
@@ -40615,7 +40615,7 @@ type
     ///  ；即 <see langword="XmlResolver" />
     ///  没有用户凭据。
     ///</returns>
-    {class} property Credentials: DDN.Xml.System.DNICredentials write set_Credentials;
+    {class} property Credentials: DDN.Xml.Common.DNICredentials write set_Credentials;
   end;
 
   ///<summary>
@@ -40626,7 +40626,7 @@ type
   ['{F2DEB691-8A4B-36EE-9262-ED43949B7CC1}']
   { getters & setters } 
 
-    procedure set_Credentials(value: DDN.Xml.System.DNICredentials);
+    procedure set_Credentials(value: DDN.Xml.Common.DNICredentials);
 
   { methods } 
 
@@ -40652,7 +40652,7 @@ type
     ///  为 <see langword="null" />
     ///  。
     ///</exception>
-    function ResolveUri(baseUri: DDN.Xml.System.DNUri; relativeUri: string): DDN.Xml.System.DNUri;
+    function ResolveUri(baseUri: DDN.Xml.Common.DNUri; relativeUri: string): DDN.Xml.Common.DNUri;
     ///<summary>
     ///  使之外的返回类型的解析程序 <see cref="T:System.IO.Stream" />
     ///  。
@@ -40668,7 +40668,7 @@ type
     ///  受支持; 否则为 <see langword="false" />
     ///  。
     ///</returns>
-    function SupportsType(absoluteUri: DDN.Xml.System.DNUri; &type: DDN.mscorlib.DNType): Boolean;
+    function SupportsType(absoluteUri: DDN.Xml.Common.DNUri; &type: DDN.mscorlib.DNType): Boolean;
     ///<summary>
     ///  当在派生类中被重写时，将 URI 映射到包含实际资源的对象。
     ///</summary>
@@ -40698,7 +40698,7 @@ type
     ///</exception><exception cref="T:System.Exception">
     ///  没有运行时错误 （例如，中断的服务器连接）。
     ///</exception>
-    function GetEntity(absoluteUri: DDN.Xml.System.DNUri; role: string; ofObjectToReturn: DDN.mscorlib.DNType): DDN.mscorlib.DNObject;
+    function GetEntity(absoluteUri: DDN.Xml.Common.DNUri; role: string; ofObjectToReturn: DDN.mscorlib.DNType): DDN.mscorlib.DNObject;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -40715,7 +40715,7 @@ type
     ///  ；即 <see langword="XmlResolver" />
     ///  没有用户凭据。
     ///</returns>
-    property Credentials: DDN.Xml.System.DNICredentials write set_Credentials;
+    property Credentials: DDN.Xml.Common.DNICredentials write set_Credentials;
   end;
 
   TDNXmlResolver = class(TDNGenericImport<DNXmlResolverClass, DNXmlResolver>) end;
@@ -40725,7 +40725,7 @@ type
   ['{D6792A31-45EC-5D74-9A1A-53860DAB4F1A}']
   { static getter & setter } 
 
-    procedure set_Credentials(value: DDN.Xml.System.DNICredentials);
+    procedure set_Credentials(value: DDN.Xml.Common.DNICredentials);
 
   { constructors } 
 
@@ -40763,7 +40763,7 @@ type
     ///  应预填充到缓存中的已知 Dtd。
     ///</param>
     {class} function init(fallbackResolver: DNXmlResolver; preloadedDtds: DNXmlKnownDtds): DNXmlPreloadedResolver; overload;
-    {class} function init(fallbackResolver: DNXmlResolver; preloadedDtds: DNXmlKnownDtds; uriComparer: DDN.mscorlib.DNIEqualityComparer<DDN.Xml.System.DNUri>): DNXmlPreloadedResolver; overload;
+    {class} function init(fallbackResolver: DNXmlResolver; preloadedDtds: DNXmlKnownDtds; uriComparer: DDN.mscorlib.DNIEqualityComparer<DDN.Xml.Common.DNUri>): DNXmlPreloadedResolver; overload;
 
   { static propertys } 
 
@@ -40774,7 +40774,7 @@ type
     ///<returns>
     ///  使用基础 web 请求进行身份验证的凭据。
     ///</returns>
-    {class} property Credentials: DDN.Xml.System.DNICredentials write set_Credentials;
+    {class} property Credentials: DDN.Xml.Common.DNICredentials write set_Credentials;
   end;
 
   ///<summary>
@@ -40785,8 +40785,8 @@ type
   ['{25F71FE6-DA1F-37E0-8D82-9E600E6214DA}']
   { getters & setters } 
 
-    procedure set_Credentials(value: DDN.Xml.System.DNICredentials);
-    function get_PreloadedUris: DDN.mscorlib.DNIEnumerable<DDN.Xml.System.DNUri>;
+    procedure set_Credentials(value: DDN.Xml.Common.DNICredentials);
+    function get_PreloadedUris: DDN.mscorlib.DNIEnumerable<DDN.Xml.Common.DNUri>;
 
   { methods } 
 
@@ -40811,7 +40811,7 @@ type
     ///  为 <see langword="null" />
     ///  。
     ///</exception>
-    function SupportsType(absoluteUri: DDN.Xml.System.DNUri; &type: DDN.mscorlib.DNType): Boolean;
+    function SupportsType(absoluteUri: DDN.Xml.Common.DNUri; &type: DDN.mscorlib.DNType): Boolean;
     ///<summary>
     ///  将字节数组转换为 <see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />
     ///  存储并将其映射到的 URI。
@@ -40829,7 +40829,7 @@ type
     ///  为 <see langword="null" />
     ///  。
     ///</exception>
-    procedure Add(uri: DDN.Xml.System.DNUri; value: TArray<Byte>); overload;
+    procedure Add(uri: DDN.Xml.Common.DNUri; value: TArray<Byte>); overload;
     ///<summary>
     ///  将字节数组转换为 <see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />
     ///  存储并将其映射到的 URI。
@@ -40860,7 +40860,7 @@ type
     ///  减去 <paramref name="offset" />
     ///  是小于 <paramref name="count." />
     ///</exception>
-    procedure Add(uri: DDN.Xml.System.DNUri; value: TArray<Byte>; offset: Int32; count: Int32); overload;
+    procedure Add(uri: DDN.Xml.Common.DNUri; value: TArray<Byte>; offset: Int32; count: Int32); overload;
     ///<summary>
     ///  将一个字符串与预加载数据添加 <see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />
     ///  存储并将其映射到的 URI。
@@ -40879,7 +40879,7 @@ type
     ///  为 <see langword="null" />
     ///  。
     ///</exception>
-    procedure Add(uri: DDN.Xml.System.DNUri; value: string); overload;
+    procedure Add(uri: DDN.Xml.Common.DNUri; value: string); overload;
     ///<summary>
     ///  删除与从 URI 相对应的数据 <see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />
     ///  。
@@ -40892,7 +40892,7 @@ type
     ///  为 <see langword="null" />
     ///  。
     ///</exception>
-    procedure Remove(uri: DDN.Xml.System.DNUri);
+    procedure Remove(uri: DDN.Xml.Common.DNUri);
     ///<summary>
     ///  从基 URI 和相对 URI 解析绝对 URI。
     ///</summary>
@@ -40915,7 +40915,7 @@ type
     ///  为 <see langword="null" />
     ///  。
     ///</exception>
-    function ResolveUri(baseUri: DDN.Xml.System.DNUri; relativeUri: string): DDN.Xml.System.DNUri;
+    function ResolveUri(baseUri: DDN.Xml.Common.DNUri; relativeUri: string): DDN.Xml.Common.DNUri;
     ///<summary>
     ///  将 URI 映射到包含实际资源的对象。
     ///</summary>
@@ -40955,7 +40955,7 @@ type
     ///  <paramref name="ofObjectToReturn" />
     ///  不是类型的受支持。
     ///</exception>
-    function GetEntity(absoluteUri: DDN.Xml.System.DNUri; role: string; ofObjectToReturn: DDN.mscorlib.DNType): DDN.mscorlib.DNObject;
+    function GetEntity(absoluteUri: DDN.Xml.Common.DNUri; role: string; ofObjectToReturn: DDN.mscorlib.DNType): DDN.mscorlib.DNObject;
     ///<summary>
     ///  添加 <see cref="T:System.IO.Stream" />
     ///  到 <see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />
@@ -40975,7 +40975,7 @@ type
     ///  为 <see langword="null" />
     ///  。
     ///</exception>
-    procedure Add(uri: DDN.Xml.System.DNUri; value: DDN.mscorlib.DNStream); overload;
+    procedure Add(uri: DDN.Xml.Common.DNUri; value: DDN.mscorlib.DNStream); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -40990,14 +40990,14 @@ type
     ///<returns>
     ///  使用基础 web 请求进行身份验证的凭据。
     ///</returns>
-    property Credentials: DDN.Xml.System.DNICredentials write set_Credentials;
+    property Credentials: DDN.Xml.Common.DNICredentials write set_Credentials;
     ///<summary>
     ///  获取预加载的 Uri 的集合。
     ///</summary>
     ///<returns>
     ///  预加载的 Uri 的集合。
     ///</returns>
-    property PreloadedUris: DDN.mscorlib.DNIEnumerable<DDN.Xml.System.DNUri> read get_PreloadedUris;
+    property PreloadedUris: DDN.mscorlib.DNIEnumerable<DDN.Xml.Common.DNUri> read get_PreloadedUris;
   end;
 
   TDNXmlPreloadedResolver = class(TDNGenericImport<DNXmlPreloadedResolverClass, DNXmlPreloadedResolver>) end;
@@ -41007,7 +41007,7 @@ type
   ['{11A292E9-5293-562F-95D8-41BDF87FA727}']
   { static getter & setter } 
 
-    procedure set_Credentials(value: DDN.Xml.System.DNICredentials);
+    procedure set_Credentials(value: DDN.Xml.Common.DNICredentials);
 
   { constructors } 
 
@@ -41101,7 +41101,7 @@ type
     ///  ；即 <see cref="T:System.Xml.XmlSecureResolver" />
     ///  没有用户凭据。
     ///</returns>
-    {class} property Credentials: DDN.Xml.System.DNICredentials write set_Credentials;
+    {class} property Credentials: DDN.Xml.Common.DNICredentials write set_Credentials;
   end;
 
   ///<summary>
@@ -41115,7 +41115,7 @@ type
   ['{2D1232D7-9DBC-35AD-A3B6-98F6CA04D053}']
   { getters & setters } 
 
-    procedure set_Credentials(value: DDN.Xml.System.DNICredentials);
+    procedure set_Credentials(value: DDN.Xml.Common.DNICredentials);
 
   { methods } 
 
@@ -41159,7 +41159,7 @@ type
     ///</exception><exception cref="T:System.Exception">
     ///  没有运行时错误 （例如，中断的服务器连接）。
     ///</exception>
-    function GetEntity(absoluteUri: DDN.Xml.System.DNUri; role: string; ofObjectToReturn: DDN.mscorlib.DNType): DDN.mscorlib.DNObject;
+    function GetEntity(absoluteUri: DDN.Xml.Common.DNUri; role: string; ofObjectToReturn: DDN.mscorlib.DNType): DDN.mscorlib.DNObject;
     ///<summary>
     ///  通过在基础 <see cref="T:System.Xml.XmlResolver" />
     ///  上调用 <see langword="ResolveUri" />
@@ -41186,7 +41186,7 @@ type
     ///  为 <see langword="null" />
     ///  。
     ///</exception>
-    function ResolveUri(baseUri: DDN.Xml.System.DNUri; relativeUri: string): DDN.Xml.System.DNUri;
+    function ResolveUri(baseUri: DDN.Xml.Common.DNUri; relativeUri: string): DDN.Xml.Common.DNUri;
     ///<summary>
     ///  使之外的返回类型的解析程序 <see cref="T:System.IO.Stream" />
     ///  。
@@ -41202,7 +41202,7 @@ type
     ///  受支持; 否则为 <see langword="false" />
     ///  。
     ///</returns>
-    function SupportsType(absoluteUri: DDN.Xml.System.DNUri; &type: DDN.mscorlib.DNType): Boolean;
+    function SupportsType(absoluteUri: DDN.Xml.Common.DNUri; &type: DDN.mscorlib.DNType): Boolean;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -41222,7 +41222,7 @@ type
     ///  ；即 <see cref="T:System.Xml.XmlSecureResolver" />
     ///  没有用户凭据。
     ///</returns>
-    property Credentials: DDN.Xml.System.DNICredentials write set_Credentials;
+    property Credentials: DDN.Xml.Common.DNICredentials write set_Credentials;
   end;
 
   TDNXmlSecureResolver = class(TDNGenericImport<DNXmlSecureResolverClass, DNXmlSecureResolver>) end;
@@ -41232,9 +41232,9 @@ type
   ['{4ACC9404-F37B-52C5-9DFA-2B613A70A8A1}']
   { static getter & setter } 
 
-    procedure set_Credentials(value: DDN.Xml.System.DNICredentials);
-    procedure set_Proxy(value: DDN.Xml.System.DNIWebProxy);
-    procedure set_CachePolicy(value: DDN.Xml.System.DNRequestCachePolicy);
+    procedure set_Credentials(value: DDN.Xml.Common.DNICredentials);
+    procedure set_Proxy(value: DDN.Xml.Common.DNIWebProxy);
+    procedure set_CachePolicy(value: DDN.Xml.Common.DNRequestCachePolicy);
 
   { constructors } 
 
@@ -41255,7 +41255,7 @@ type
     ///  ；即 <see langword="XmlUrlResolver" />
     ///  没有用户凭据。
     ///</returns>
-    {class} property Credentials: DDN.Xml.System.DNICredentials write set_Credentials;
+    {class} property Credentials: DDN.Xml.Common.DNICredentials write set_Credentials;
     ///<summary>
     ///  获取或设置基础 <see cref="T:System.Net.WebRequest" />
     ///  对象的网络代理。
@@ -41264,7 +41264,7 @@ type
     ///  用于访问 Internet 资源的 <see cref="T:System.Net.IWebProxy" />
     ///  。
     ///</returns>
-    {class} property Proxy: DDN.Xml.System.DNIWebProxy write set_Proxy;
+    {class} property Proxy: DDN.Xml.Common.DNIWebProxy write set_Proxy;
     ///<summary>
     ///  获取或设置基础 <see cref="T:System.Net.WebRequest" />
     ///  对象的缓存策略。
@@ -41272,7 +41272,7 @@ type
     ///<returns>
     ///  基础 Web 请求的缓存策略。
     ///</returns>
-    {class} property CachePolicy: DDN.Xml.System.DNRequestCachePolicy write set_CachePolicy;
+    {class} property CachePolicy: DDN.Xml.Common.DNRequestCachePolicy write set_CachePolicy;
   end;
 
   ///<summary>
@@ -41283,9 +41283,9 @@ type
   ['{7D359CC5-1CE8-3E77-9758-AF340B8CBE01}']
   { getters & setters } 
 
-    procedure set_Credentials(value: DDN.Xml.System.DNICredentials);
-    procedure set_Proxy(value: DDN.Xml.System.DNIWebProxy);
-    procedure set_CachePolicy(value: DDN.Xml.System.DNRequestCachePolicy);
+    procedure set_Credentials(value: DDN.Xml.Common.DNICredentials);
+    procedure set_Proxy(value: DDN.Xml.Common.DNIWebProxy);
+    procedure set_CachePolicy(value: DDN.Xml.Common.DNRequestCachePolicy);
 
   { methods } 
 
@@ -41320,7 +41320,7 @@ type
     ///</exception><exception cref="T:System.Exception">
     ///  没有运行时错误 （例如，中断的服务器连接）。
     ///</exception>
-    function GetEntity(absoluteUri: DDN.Xml.System.DNUri; role: string; ofObjectToReturn: DDN.mscorlib.DNType): DDN.mscorlib.DNObject;
+    function GetEntity(absoluteUri: DDN.Xml.Common.DNUri; role: string; ofObjectToReturn: DDN.mscorlib.DNType): DDN.mscorlib.DNObject;
     ///<summary>
     ///  从基 URI 和相对 URI 解析绝对 URI。
     ///</summary>
@@ -41344,7 +41344,7 @@ type
     ///  为 <see langword="null" />
     ///  。
     ///</exception>
-    function ResolveUri(baseUri: DDN.Xml.System.DNUri; relativeUri: string): DDN.Xml.System.DNUri;
+    function ResolveUri(baseUri: DDN.Xml.Common.DNUri; relativeUri: string): DDN.Xml.Common.DNUri;
     ///<summary>
     ///  使之外的返回类型的解析程序 <see cref="T:System.IO.Stream" />
     ///  。
@@ -41360,7 +41360,7 @@ type
     ///  受支持; 否则为 <see langword="false" />
     ///  。
     ///</returns>
-    function SupportsType(absoluteUri: DDN.Xml.System.DNUri; &type: DDN.mscorlib.DNType): Boolean;
+    function SupportsType(absoluteUri: DDN.Xml.Common.DNUri; &type: DDN.mscorlib.DNType): Boolean;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -41377,7 +41377,7 @@ type
     ///  ；即 <see langword="XmlUrlResolver" />
     ///  没有用户凭据。
     ///</returns>
-    property Credentials: DDN.Xml.System.DNICredentials write set_Credentials;
+    property Credentials: DDN.Xml.Common.DNICredentials write set_Credentials;
     ///<summary>
     ///  获取或设置基础 <see cref="T:System.Net.WebRequest" />
     ///  对象的网络代理。
@@ -41386,7 +41386,7 @@ type
     ///  用于访问 Internet 资源的 <see cref="T:System.Net.IWebProxy" />
     ///  。
     ///</returns>
-    property Proxy: DDN.Xml.System.DNIWebProxy write set_Proxy;
+    property Proxy: DDN.Xml.Common.DNIWebProxy write set_Proxy;
     ///<summary>
     ///  获取或设置基础 <see cref="T:System.Net.WebRequest" />
     ///  对象的缓存策略。
@@ -41394,7 +41394,7 @@ type
     ///<returns>
     ///  基础 Web 请求的缓存策略。
     ///</returns>
-    property CachePolicy: DDN.Xml.System.DNRequestCachePolicy write set_CachePolicy;
+    property CachePolicy: DDN.Xml.Common.DNRequestCachePolicy write set_CachePolicy;
   end;
 
   TDNXmlUrlResolver = class(TDNGenericImport<DNXmlUrlResolverClass, DNXmlUrlResolver>) end;
@@ -41404,7 +41404,7 @@ type
   ['{94880A7B-7E64-56C6-8C7E-9DFFB432FCD4}']
   { static getter & setter } 
 
-    procedure set_Credentials(value: DDN.Xml.System.DNICredentials);
+    procedure set_Credentials(value: DDN.Xml.Common.DNICredentials);
 
   { constructors } 
 
@@ -41435,7 +41435,7 @@ type
     ///  ；即 <see langword="XmlResolver" />
     ///  没有用户凭据。
     ///</returns>
-    {class} property Credentials: DDN.Xml.System.DNICredentials write set_Credentials;
+    {class} property Credentials: DDN.Xml.Common.DNICredentials write set_Credentials;
   end;
 
   ///<summary>
@@ -41446,7 +41446,7 @@ type
   ['{3CDE9F32-B3FA-3958-83FF-AE0C317F169B}']
   { getters & setters } 
 
-    procedure set_Credentials(value: DDN.Xml.System.DNICredentials);
+    procedure set_Credentials(value: DDN.Xml.Common.DNICredentials);
 
   { methods } 
 
@@ -41472,7 +41472,7 @@ type
     ///  对象。
     ///  如果找不到该流，则将引发异常。
     ///</returns>
-    function GetEntity(absoluteUri: DDN.Xml.System.DNUri; role: string; ofObjectToReturn: DDN.mscorlib.DNType): DDN.mscorlib.DNObject;
+    function GetEntity(absoluteUri: DDN.Xml.Common.DNUri; role: string; ofObjectToReturn: DDN.mscorlib.DNType): DDN.mscorlib.DNObject;
     ///<summary>
     ///  当在派生类中被重写时，从基 URI 和相对 URI 解析绝对 URI。
     ///</summary>
@@ -41495,7 +41495,7 @@ type
     ///  为 <see langword="null" />
     ///  。
     ///</exception>
-    function ResolveUri(baseUri: DDN.Xml.System.DNUri; relativeUri: string): DDN.Xml.System.DNUri;
+    function ResolveUri(baseUri: DDN.Xml.Common.DNUri; relativeUri: string): DDN.Xml.Common.DNUri;
     ///<summary>
     ///  使之外的返回类型的解析程序 <see cref="T:System.IO.Stream" />
     ///  。
@@ -41511,7 +41511,7 @@ type
     ///  受支持; 否则为 <see langword="false" />
     ///  。
     ///</returns>
-    function SupportsType(absoluteUri: DDN.Xml.System.DNUri; &type: DDN.mscorlib.DNType): Boolean;
+    function SupportsType(absoluteUri: DDN.Xml.Common.DNUri; &type: DDN.mscorlib.DNType): Boolean;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -41528,7 +41528,7 @@ type
     ///  ；即 <see langword="XmlResolver" />
     ///  没有用户凭据。
     ///</returns>
-    property Credentials: DDN.Xml.System.DNICredentials write set_Credentials;
+    property Credentials: DDN.Xml.Common.DNICredentials write set_Credentials;
   end;
 
   TDNXmlXapResolver = class(TDNGenericImport<DNXmlXapResolverClass, DNXmlXapResolver>) end;
@@ -48677,7 +48677,7 @@ type
     ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" />
     ///  对象，它包含编译器错误和警告指示编译结果。
     ///</returns>
-    {class} function CompileToType(stylesheet: DNXmlReader; settings: DNXsltSettings; stylesheetResolver: DNXmlResolver; debug: Boolean; typeBuilder: DDN.mscorlib.DNTypeBuilder; scriptAssemblyPath: string): DDN.Xml.System.DNCompilerErrorCollection;
+    {class} function CompileToType(stylesheet: DNXmlReader; settings: DNXsltSettings; stylesheetResolver: DNXmlResolver; debug: Boolean; typeBuilder: DDN.mscorlib.DNTypeBuilder; scriptAssemblyPath: string): DDN.Xml.Common.DNCompilerErrorCollection;
 
   end;
 
@@ -48690,7 +48690,7 @@ type
   { getters & setters } 
 
     function get_OutputSettings: DNXmlWriterSettings;
-    function get_TemporaryFiles: DDN.Xml.System.DNTempFileCollection;
+    function get_TemporaryFiles: DDN.Xml.Common.DNTempFileCollection;
 
   { methods } 
 
@@ -49398,7 +49398,7 @@ type
     ///  如果 <see cref="Overload:System.Xml.Xsl.XslCompiledTransform.Load" />
     ///  方法未成功调用，或者如果尚未启用调试。
     ///</returns>
-    property TemporaryFiles: DDN.Xml.System.DNTempFileCollection read get_TemporaryFiles;
+    property TemporaryFiles: DDN.Xml.Common.DNTempFileCollection read get_TemporaryFiles;
   end;
 
   TDNXslCompiledTransform = class(TDNGenericImport<DNXslCompiledTransformClass, DNXslCompiledTransform>) end;

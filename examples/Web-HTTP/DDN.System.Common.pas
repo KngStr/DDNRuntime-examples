@@ -1,13 +1,13 @@
 //-----------------------------------------------------------//
 //                                                           //
-//     DDN.Sys.System                               
+//     DDN.System.Common                            
 //     Delphi .NET Import                                    //
 //     Author: ying32                                        //
 //     .NET Framework: .NET 4.0                              //
 //                                                           //
 //-----------------------------------------------------------//
 
-unit DDN.Sys.System;
+unit DDN.System.Common;
 
 interface
 

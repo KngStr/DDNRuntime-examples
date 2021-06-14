@@ -48,19 +48,9 @@ begin
   req := TDNHttpWebRequest.Wrap(TDNWebRequest.DNClass.Create(TestURL));
   req.Method := 'HEAD';
   req.ContentType := 'text/html; charset=utf-8';
+  req.ProtocolVersion := TDNHttpVersion.DNClass.Version10;
+  //req.Credentials := TDNCredentialCache.DNClass.DefaultCredentials;
 //  req.UserAgent := '';
-  // 暂时委托类型不生效，还得看看情况
-  if TestURL.ToLower.StartsWith('https://') then
-  begin
-    req.Credentials := TDNCredentialCache.DNClass.DefaultCredentials;
-    LType := TDNType.GetType<DNRemoteCertificateValidationCallback>();
-//    Writeln('Version10: ', TDNHttpVersion.DNClass.Version10.ToString);
-    req.ProtocolVersion := TDNHttpVersion.DNClass.Version10;
-    delegate := TDNMarshal.DNClass.GetDelegateForFunctionPointer(IntPtr(@CheckValidationResult), LType);
-    TDNServicePointManager.DNClass.ServerCertificateValidationCallback := DNRemoteCertificateValidationCallback(delegate);
-    TDNServicePointManager.DNClass.SecurityProtocol := DNSecurityProtocolType.Tls12;
-  end;
-
   resp := TDNHttpWebResponse.Wrap(req.GetResponse());
   if resp <> nil then
   begin

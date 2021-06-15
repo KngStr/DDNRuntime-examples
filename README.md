@@ -19,7 +19,7 @@
 * Dedicated translation tool, input a .NET assembly dll, output one or more Delphi import units.
 * Support interface types (including generic interface).
 * Support dynamic array (one-dimensional array).
-* Delegate type(not fully supported).
+
  
 ## Requires
 
@@ -30,7 +30,7 @@
 ## Not supported
 
 * Generic type (excluding generic interface).
-
+* Delegate type(not fully supported).
 
 ## Usage:
 

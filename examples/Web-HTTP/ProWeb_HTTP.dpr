@@ -71,6 +71,7 @@ begin
   req := TDNHttpWebRequest.Wrap(TDNWebRequest.DNClass.Create(TestURL));
   req.Method := 'GET';
   req.ContentType := 'text/html; charset=utf-8';
+  req.ProtocolVersion := TDNHttpVersion.DNClass.Version10;
 //  req.UserAgent := '';
   resp := TDNHttpWebResponse.Wrap(req.GetResponse());
   if resp <> nil then

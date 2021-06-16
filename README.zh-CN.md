@@ -25,7 +25,7 @@
 
 * [.NET Framework v4.0](https://www.microsoft.com/zh-cn/download/details.aspx?id=17851)。
 * [VC++ 2015运行库(msvcp140.dll, vcruntime140.dll)](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145)。
-* `Delphi Unicode`版本、支持`System.Rtti`、支持`record helper for`语法、支持`inline`。 
+* 最低要求`Rad Studio XE3`。
 
 ## 暂不支持
 

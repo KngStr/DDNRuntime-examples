@@ -7,7 +7,7 @@
  DDNRuntime(Delphi .NET Runtime)  
  
  ----  
- **Reminder: It has not been officially released yet.**    
+ **Reminder: alpha test.**    
  ----  
  
  **This is not an open source and free project. Only examples are stored here.**  

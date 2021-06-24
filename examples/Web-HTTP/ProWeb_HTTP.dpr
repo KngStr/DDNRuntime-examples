@@ -28,9 +28,25 @@ const
 //function CheckValidationResult(sender: DNObject; certificate: DNX509Certificate; chain: DNX509Chain; errors: DNSslPolicyErrors): Boolean; cdecl;
 
 // https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.marshal.getdelegateforfunctionpointer?view=net-5.0
-function CheckValidationResult(sender, certificate, chain: Pointer; errors: DNSslPolicyErrors): Boolean; stdcall;
+
+
+type
+  TDelegateClass = class
+  public
+    class function CheckValidationResult(sender: DNObject; certificate: DNX509Certificate; chain: DNX509Chain;  errors: DNSslPolicyErrors): Boolean;
+  end;
+
+class function TDelegateClass.CheckValidationResult(
+  sender: DNObject;
+  certificate: DNX509Certificate;
+  chain: DNX509Chain;
+  errors: DNSslPolicyErrors): Boolean;
 begin
-  Writeln('call CheckValidationResult');
+  Writeln('call TDelegateTest.CheckValidationResult: ');
+  Writeln('call sender: ', sender.ToString);
+  Writeln('call certificate: ',  certificate.ToString);
+  Writeln('call chain: ', chain.ToString);
+  Writeln('call errors: ', errors);
   Result := True;
 end;
 
@@ -92,7 +108,8 @@ end;
 
 procedure TestProc;
 begin
-  TDNServicePointManager.DNClass.ServerCertificateValidationCallback := TDNDelegate.New<DNRemoteCertificateValidationCallback>(@CheckValidationResult);
+  TDNServicePointManager.DNClass.ServerCertificateValidationCallback :=
+     TDNDelegate.New<DNRemoteCertificateValidationCallback>(TDelegateClass, 'CheckValidationResult');
   TDNServicePointManager.DNClass.SecurityProtocol := DNSecurityProtocolType.Tls12;
   Http_HEAD;
   Http_GET;

@@ -16,23 +16,12 @@ const
 //  TestURL = 'http://www.kngstr.com/';
   TestURL = 'https://z-kit.cc';
 
-// 没得委托实现
-//  ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(CheckValidationResult);
-//  request = WebRequest.Create(url) as HttpWebRequest;
-//  request.ProtocolVersion=HttpVersion.Version10;
-// private static bool CheckValidationResult(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
-// {
-//   return true;
-// }
-
-//function CheckValidationResult(sender: DNObject; certificate: DNX509Certificate; chain: DNX509Chain; errors: DNSslPolicyErrors): Boolean; cdecl;
 
 // https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.marshal.getdelegateforfunctionpointer?view=net-5.0
-
-
 type
   TDelegateClass = class
   public
+    [DNDelegate(DNRemoteCertificateValidationCallback)]
     class function CheckValidationResult(sender: DNObject; certificate: DNX509Certificate; chain: DNX509Chain;  errors: DNSslPolicyErrors): Boolean;
   end;
 
@@ -54,8 +43,7 @@ procedure Http_HEAD();
 var
   req: DNHttpWebRequest;
   resp: DNHttpWebResponse;
-  delegate: DNDelegate;
-  LType: DNType;
+//  LType: DNType;
 //  LM: DNMethodInfo;
 //  I: Integer;
 //  LPs: TArray<DNParameterInfo>;
@@ -109,7 +97,7 @@ end;
 procedure TestProc;
 begin
   TDNServicePointManager.DNClass.ServerCertificateValidationCallback :=
-     TDNDelegate.New<DNRemoteCertificateValidationCallback>(TDelegateClass, 'CheckValidationResult');
+     TDNDelegate.CreateDelegate<DNRemoteCertificateValidationCallback>(TDelegateClass);//, 'CheckValidationResult');
   TDNServicePointManager.DNClass.SecurityProtocol := DNSecurityProtocolType.Tls12;
   Http_HEAD;
   Http_GET;

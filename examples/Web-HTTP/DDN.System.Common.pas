@@ -9,6 +9,12 @@
 
 unit DDN.System.Common;
 
+{$IFDEF FPC}
+  {$mode delphi}//{$H+}
+  {$modeswitch advancedrecords}
+  {$modeswitch prefixedattributes} // Custom attributes feature，fpc3.2.2+
+{$ENDIF}
+
 interface
 
 uses
@@ -217,6 +223,62 @@ type
 
   //-------------namespace: System.Xml----------------
   ///<summary>
+  ///  指定读取器的状态。
+  ///</summary>
+  [DNTypeName('System.Xml.ReadState')]
+  DNReadState = type Integer;
+  DNReadStateHelper = record helper for DNReadState
+  public const
+    ///<summary><see langword="Read" />
+    ///  不调用方法。
+    ///</summary>
+    Initial = 0;
+    ///<summary><see langword="Read" />
+    ///  调用方法。
+    ///  可以在读取器上调用其他方法。
+    ///</summary>
+    Interactive = 1;
+    ///<summary>
+    ///  将出现错误，以防止读取的操作继续进行。
+    ///</summary>
+    Error = 2;
+    ///<summary>
+    ///  已成功到达文件末尾。
+    ///</summary>
+    EndOfFile = 3;
+    ///<summary><see cref="M:System.Xml.XmlReader.Close" />
+    ///  调用方法。
+    ///</summary>
+    Closed = 4;
+  end;
+
+
+  //-------------namespace: System.Xml.Schema----------------
+  ///<summary>
+  ///  表示由验证 XML 项的有效性 <see cref="T:System.Xml.Schema.XmlSchemaValidator" />
+  ///  类。
+  ///</summary>
+  [DNTypeName('System.Xml.Schema.XmlSchemaValidity')]
+  DNXmlSchemaValidity = type Integer;
+  DNXmlSchemaValidityHelper = record helper for DNXmlSchemaValidity
+  public const
+    ///<summary>
+    ///  XML 项的有效性未知。
+    ///</summary>
+    NotKnown = 0;
+    ///<summary>
+    ///  XML 项才有效。
+    ///</summary>
+    Valid = 1;
+    ///<summary>
+    ///  XML 项无效。
+    ///</summary>
+    Invalid = 2;
+  end;
+
+
+  //-------------namespace: System.Xml----------------
+  ///<summary>
   ///  指定如何处理空白区域。
   ///</summary>
   [DNTypeName('System.Xml.WhitespaceHandling')]
@@ -246,6 +308,55 @@ type
 
   //-------------namespace: System.Xml----------------
   ///<summary>
+  ///  指定 <see cref="T:System.Xml.XmlWriter" />
+  ///  的状态。
+  ///</summary>
+  [DNTypeName('System.Xml.WriteState')]
+  DNWriteState = type Integer;
+  DNWriteStateHelper = record helper for DNWriteState
+  public const
+    ///<summary>
+    ///  指示尚未调用写入方法。
+    ///</summary>
+    Start = 0;
+    ///<summary>
+    ///  指示正在写入序言中。
+    ///</summary>
+    Prolog = 1;
+    ///<summary>
+    ///  指示正在写入元素开始标记。
+    ///</summary>
+    Element = 2;
+    ///<summary>
+    ///  指示正在写入属性值。
+    ///</summary>
+    Attribute = 3;
+    ///<summary>
+    ///  指示正在写入元素内容。
+    ///</summary>
+    Content = 4;
+    ///<summary>
+    ///  指示 <see cref="M:System.Xml.XmlWriter.Close" />
+    ///  调用方法。
+    ///</summary>
+    Closed = 5;
+    ///<summary>
+    ///  已引发异常，这已离开 <see cref="T:System.Xml.XmlWriter" />
+    ///  处于无效状态。
+    ///  您可以调用 <see cref="M:System.Xml.XmlWriter.Close" />
+    ///  方法将 <see cref="T:System.Xml.XmlWriter" />
+    ///  中 <see cref="F:System.Xml.WriteState.Closed" />
+    ///  状态。
+    ///  任何其他 <see cref="T:System.Xml.XmlWriter" />
+    ///  方法调用都将导致 <see cref="T:System.InvalidOperationException" />
+    ///  。
+    ///</summary>
+    Error = 6;
+  end;
+
+
+  //-------------namespace: System.Xml----------------
+  ///<summary>
   ///  定义命名空间范围。
   ///</summary>
   [DNTypeName('System.Xml.XmlNamespaceScope')]
@@ -267,6 +378,34 @@ type
     ///  在当前节点本地定义的所有命名空间。
     ///</summary>
     Local = 2;
+  end;
+
+
+  //-------------namespace: System.Xml----------------
+  ///<summary>
+  ///  描述某节点相对于第二个节点的文档顺序。
+  ///</summary>
+  [DNTypeName('System.Xml.XmlNodeOrder')]
+  DNXmlNodeOrder = type Integer;
+  DNXmlNodeOrderHelper = record helper for DNXmlNodeOrder
+  public const
+    ///<summary>
+    ///  此导航器的当前节点是提供导航器在当前节点之前。
+    ///</summary>
+    Before = 0;
+    ///<summary>
+    ///  此导航器的当前节点是提供导航器的当前节点之后。
+    ///</summary>
+    After = 1;
+    ///<summary>
+    ///  两种导航器位于同一个节点上。
+    ///</summary>
+    Same = 2;
+    ///<summary>
+    ///  按文档顺序，相对于彼此，无法确定节点位置。
+    ///  如果两个节点驻留在不同的树中，也可能发生。
+    ///</summary>
+    Unknown = 3;
   end;
 
 
@@ -354,6 +493,33 @@ type
     ///  XML 声明 (例如， &lt;?xml version='1.0'?&gt; )。
     ///</summary>
     XmlDeclaration = 17;
+  end;
+
+
+  //-------------namespace: System.Xml----------------
+  ///<summary>
+  ///  指定当前 <see langword="xml:space" />
+  ///  作用域。
+  ///</summary>
+  [DNTypeName('System.Xml.XmlSpace')]
+  DNXmlSpace = type Integer;
+  DNXmlSpaceHelper = record helper for DNXmlSpace
+  public const
+    ///<summary>
+    ///  否 <see langword="xml:space" />
+    ///  作用域。
+    ///</summary>
+    None = 0;
+    ///<summary><see langword="xml:space" />
+    ///  范围等于 <see langword="default" />
+    ///  。
+    ///</summary>
+    Default_ = 1;
+    ///<summary><see langword="xml:space" />
+    ///  范围等于 <see langword="preserve" />
+    ///  。
+    ///</summary>
+    Preserve = 2;
   end;
 
 
@@ -448,17 +614,26 @@ type
 
 { declares }
 
+  DNConfigurationLocationCollection = interface; // type: System.Configuration.ConfigurationLocationCollection, namespace: System.Configuration
+  DNKeysCollection = interface; // type: System.Collections.Specialized.NameObjectCollectionBase+KeysCollection, namespace: System.Collections.Specialized
   DNNameValueCollection = interface; // type: System.Collections.Specialized.NameValueCollection, namespace: System.Collections.Specialized
   DNConfigurationSectionCollection = interface; // type: System.Configuration.ConfigurationSectionCollection, namespace: System.Configuration
   DNConfigurationSectionGroupCollection = interface; // type: System.Configuration.ConfigurationSectionGroupCollection, namespace: System.Configuration
+  DNPropertyInformationCollection = interface; // type: System.Configuration.PropertyInformationCollection, namespace: System.Configuration
   DNConfiguration = interface; // type: System.Configuration.Configuration, namespace: System.Configuration
   DNConfigurationElement = interface; // type: System.Configuration.ConfigurationElement, namespace: System.Configuration
   DNConfigurationElementCollection = interface; // type: System.Configuration.ConfigurationElementCollection, namespace: System.Configuration
   DNConfigurationSection = interface; // type: System.Configuration.ConfigurationSection, namespace: System.Configuration
+  DNAppSettingsSection = interface; // type: System.Configuration.AppSettingsSection, namespace: System.Configuration
+  DNConnectionStringsSection = interface; // type: System.Configuration.ConnectionStringsSection, namespace: System.Configuration
   DNConfigurationLockCollection = interface; // type: System.Configuration.ConfigurationLockCollection, namespace: System.Configuration
   DNConfigurationSectionGroup = interface; // type: System.Configuration.ConfigurationSectionGroup, namespace: System.Configuration
+  DNConfigurationValidatorBase = interface; // type: System.Configuration.ConfigurationValidatorBase, namespace: System.Configuration
+  DNContextInformation = interface; // type: System.Configuration.ContextInformation, namespace: System.Configuration
   DNElementInformation = interface; // type: System.Configuration.ElementInformation, namespace: System.Configuration
   DNProviderBase = interface; // type: System.Configuration.Provider.ProviderBase, namespace: System.Configuration.Provider
+  DNConfigurationBuilder = interface; // type: System.Configuration.ConfigurationBuilder, namespace: System.Configuration
+  DNProtectedConfigurationProvider = interface; // type: System.Configuration.ProtectedConfigurationProvider, namespace: System.Configuration
   DNProviderCollection = interface; // type: System.Configuration.Provider.ProviderCollection, namespace: System.Configuration.Provider
   DNSectionInformation = interface; // type: System.Configuration.SectionInformation, namespace: System.Configuration
   DNValidationEventHandler = interface; // type: System.Xml.Schema.ValidationEventHandler, namespace: System.Xml.Schema
@@ -471,8 +646,14 @@ type
   DNIXmlSchemaInfo = interface; // type: System.Xml.Schema.IXmlSchemaInfo, namespace: System.Xml.Schema
   DNXmlSchemaCompilationSettings = interface; // type: System.Xml.Schema.XmlSchemaCompilationSettings, namespace: System.Xml.Schema
   DNXmlSchema = interface; // type: System.Xml.Schema.XmlSchema, namespace: System.Xml.Schema
+  DNXmlSchemaAttribute = interface; // type: System.Xml.Schema.XmlSchemaAttribute, namespace: System.Xml.Schema
+  DNXmlSchemaElement = interface; // type: System.Xml.Schema.XmlSchemaElement, namespace: System.Xml.Schema
+  DNXmlSchemaType = interface; // type: System.Xml.Schema.XmlSchemaType, namespace: System.Xml.Schema
+  DNXmlSchemaSimpleType = interface; // type: System.Xml.Schema.XmlSchemaSimpleType, namespace: System.Xml.Schema
+  DNXmlSchemaObjectTable = interface; // type: System.Xml.Schema.XmlSchemaObjectTable, namespace: System.Xml.Schema
   DNXmlSchemaSet = interface; // type: System.Xml.Schema.XmlSchemaSet, namespace: System.Xml.Schema
   DNXmlImplementation = interface; // type: System.Xml.XmlImplementation, namespace: System.Xml
+  DNXmlNamedNodeMap = interface; // type: System.Xml.XmlNamedNodeMap, namespace: System.Xml
   DNXmlAttributeCollection = interface; // type: System.Xml.XmlAttributeCollection, namespace: System.Xml
   DNXmlNamespaceManager = interface; // type: System.Xml.XmlNamespaceManager, namespace: System.Xml
   DNXmlNameTable = interface; // type: System.Xml.XmlNameTable, namespace: System.Xml
@@ -504,6 +685,101 @@ type
 
 
 { objects }
+
+  //-------------namespace: System.Configuration----------------
+  DNConfigurationLocationCollectionClass = interface(DDN.mscorlib.DNReadOnlyCollectionBaseClass)
+  ['{02D66BE0-53B8-5F61-97E0-50F521AFCE27}']
+  end;
+
+  ///<summary>
+  ///  包含 <see cref="T:System.Configuration.ConfigurationLocationCollection" />
+  ///  对象的集合。
+  ///</summary>
+  [DNTypeName('System.Configuration.ConfigurationLocationCollection')]
+  DNConfigurationLocationCollection = interface(DDN.mscorlib.DNReadOnlyCollectionBase)
+  ['{858C9C17-6D2C-3327-B1A3-D06DF578E96A}']
+  { getters & setters } 
+
+    function get_Count: Int32;
+
+  { methods } 
+
+    function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    property Count: Int32 read get_Count;
+  end;
+
+  TDNConfigurationLocationCollection = class(TDNGenericImport<DNConfigurationLocationCollectionClass, DNConfigurationLocationCollection>) end;
+
+  //-------------namespace: System.Collections.Specialized----------------
+  DNKeysCollectionClass = interface(DDN.mscorlib.DNObjectClass)
+  ['{8056D97B-E35F-57D6-A66E-94C97EE8836D}']
+  end;
+
+  ///<summary>
+  ///  表示集合中 <see cref="T:System.String" />
+  ///  密钥的集合。
+  ///</summary>
+  [DNTypeName('System.Collections.Specialized.NameObjectCollectionBase+KeysCollection')]
+  DNKeysCollection = interface(DDN.mscorlib.DNObject)
+  ['{4F00D501-6A21-3AF8-8BE7-5B41DF6456A1}']
+  { getters & setters } 
+
+    function get_Item(index: Int32): string;
+    function get_Count: Int32;
+
+  { methods } 
+
+    ///<summary>
+    ///  获取集合的指定索引处的键。
+    ///</summary>
+    ///  <param name="index">
+    ///  要从集合中获取的从零开始的键索引。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  包含集合的指定索引处的键。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />
+    ///  超出了集合的有效索引范围。
+    ///</exception>
+    function Get(index: Int32): string;
+    ///<summary>
+    ///  返回循环访问 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  的枚举数。
+    ///</summary>
+    ///<returns>
+    ///  用于 <see cref="T:System.Collections.IEnumerator" />
+    ///  的 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  。
+    ///</returns>
+    function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    property Item[index: Int32]: string read get_Item; default;
+    ///<summary>
+    ///  获取中的键数 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  中的键数 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  。
+    ///</returns>
+    property Count: Int32 read get_Count;
+  end;
+
+  TDNKeysCollection = class(TDNGenericImport<DNKeysCollectionClass, DNKeysCollection>) end;
 
   //-------------namespace: System.Collections.Specialized----------------
   DNNameValueCollectionClass = interface(DNObjectClass)
@@ -633,6 +909,7 @@ type
     function get_Item(index: Int32): string; overload;
     function get_AllKeys: TArray<string>;
     function get_Count: Int32;
+    function get_Keys: DNKeysCollection;
 
   { methods } 
 
@@ -913,6 +1190,16 @@ type
     ///  实例中的键/值对的数目。
     ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  实例，该实例包含 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase" />
+    ///  实例中的所有键。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  实例，该实例包含 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase" />
+    ///  实例中的所有键。
+    ///</returns>
+    property Keys: DNKeysCollection read get_Keys;
   end;
 
   TDNNameValueCollection = class(TDNGenericImport<DNNameValueCollectionClass, DNNameValueCollection>) end;
@@ -933,6 +1220,7 @@ type
     function get_Item(name: string): DNConfigurationSection; overload;
     function get_Item(index: Int32): DNConfigurationSection; overload;
     function get_Count: Int32;
+    function get_Keys: DNKeysCollection;
 
   { methods } 
 
@@ -1074,6 +1362,16 @@ type
     ///  一个整数，表示集合中的节的数目。
     ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取所有键 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象中包含此 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  对象，其中包含此集合中的所有部分的键。
+    ///</returns>
+    property Keys: DNKeysCollection read get_Keys;
   end;
 
   TDNConfigurationSectionCollection = class(TDNGenericImport<DNConfigurationSectionCollectionClass, DNConfigurationSectionCollection>) end;
@@ -1095,6 +1393,7 @@ type
     function get_Item(name: string): DNConfigurationSectionGroup; overload;
     function get_Item(index: Int32): DNConfigurationSectionGroup; overload;
     function get_Count: Int32;
+    function get_Keys: DNKeysCollection;
 
   { methods } 
 
@@ -1231,9 +1530,81 @@ type
     ///  一个整数，表示集合中的节组的数目。
     ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取所有键 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象中包含此 <see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  对象，其中包含此集合中的所有节组的名称。
+    ///</returns>
+    property Keys: DNKeysCollection read get_Keys;
   end;
 
   TDNConfigurationSectionGroupCollection = class(TDNGenericImport<DNConfigurationSectionGroupCollectionClass, DNConfigurationSectionGroupCollection>) end;
+
+  //-------------namespace: System.Configuration----------------
+  DNPropertyInformationCollectionClass = interface(DNObjectClass)
+  ['{D4484712-AE47-5810-9027-E568B0572B00}']
+  end;
+
+  ///<summary>
+  ///  包含 <see cref="T:System.Configuration.PropertyInformation" />
+  ///  对象的集合。
+  ///  此类不能被继承。
+  ///</summary>
+  [DNTypeName('System.Configuration.PropertyInformationCollection')]
+  DNPropertyInformationCollection = interface(DNObject)
+  ['{F88B5872-E250-3285-9FCE-024B9DE86610}']
+  { getters & setters } 
+
+    function get_Count: Int32;
+    function get_Keys: DNKeysCollection;
+
+  { methods } 
+
+    ///<summary>
+    ///  填充 <see cref="T:System.Runtime.Serialization.SerializationInfo" />
+    ///  对象序列化所需的数据 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  实例。
+    ///</summary>
+    ///  <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" />
+    ///  对象，该对象包含序列化 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  实例所需的信息。
+    ///</param>
+    ///  <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" />
+    ///  对象，该对象包含与 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  实例关联的序列化流的源和目标。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="info" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
+    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
+    ///<summary>
+    ///  获取 <see cref="T:System.Collections.IEnumerator" />
+    ///  对象，用于循环访问此 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  对象，用于循环访问此 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  。
+    ///</returns>
+    function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    property Count: Int32 read get_Count;
+    property Keys: DNKeysCollection read get_Keys;
+  end;
+
+  TDNPropertyInformationCollection = class(TDNGenericImport<DNPropertyInformationCollectionClass, DNPropertyInformationCollection>) end;
 
   //-------------namespace: System.Configuration----------------
   DNConfigurationClass = interface(DDN.mscorlib.DNObjectClass)
@@ -1249,8 +1620,12 @@ type
   ['{147BA60B-D0AD-3CCD-B6E0-0459B8E77A7F}']
   { getters & setters } 
 
+    function get_AppSettings: DNAppSettingsSection;
+    function get_ConnectionStrings: DNConnectionStringsSection;
     function get_FilePath: string;
     function get_HasFile: Boolean;
+    function get_Locations: DNConfigurationLocationCollection;
+    function get_EvaluationContext: DNContextInformation;
     function get_RootSectionGroup: DNConfigurationSectionGroup;
     function get_Sections: DNConfigurationSectionCollection;
     function get_SectionGroups: DNConfigurationSectionGroupCollection;
@@ -1384,6 +1759,29 @@ type
   { propertys } 
 
     ///<summary>
+    ///  获取 <see cref="T:System.Configuration.AppSettingsSection" />
+    ///  应用于此对象配置节 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.AppSettingsSection" />
+    ///  对象，表示 <see langword="appSettings" />
+    ///  应用到此配置节 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
+    property AppSettings: DNAppSettingsSection read get_AppSettings;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ConnectionStringsSection" />
+    ///  应用到此配置节对象 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ConnectionStringsSection" />
+    ///  对象，表示配置节 <see langword="connectionStrings" />
+    ///  应用到此配置节 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
+    property ConnectionStrings: DNConnectionStringsSection read get_ConnectionStrings;
+    ///<summary>
     ///  获取由此配置文件的物理路径 <see cref="T:System.Configuration.Configuration" />
     ///  对象。
     ///</summary>
@@ -1401,6 +1799,26 @@ type
     ///  。
     ///</returns>
     property HasFile: Boolean read get_HasFile;
+    ///<summary>
+    ///  获取定义在此位置 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ConfigurationLocationCollection" />
+    ///  包含在此定义的位置 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
+    property Locations: DNConfigurationLocationCollection read get_Locations;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.Configuration" />
+    ///  对象的 <see cref="T:System.Configuration.ContextInformation" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ContextInformation" />
+    ///  对象 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
+    property EvaluationContext: DNContextInformation read get_EvaluationContext;
     ///<summary>
     ///  获取根 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
     ///  此 <see cref="T:System.Configuration.Configuration" />
@@ -1924,6 +2342,145 @@ type
   TDNConfigurationSection = class(TDNGenericImport<DNConfigurationSectionClass, DNConfigurationSection>) end;
 
   //-------------namespace: System.Configuration----------------
+  DNAppSettingsSectionClass = interface(DNConfigurationSectionClass)
+  ['{C1CFBA23-EC59-5177-9A48-75995F96EE28}']
+  { constructors } 
+
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.AppSettingsSection" />
+    ///  类的新实例。
+    ///</summary>
+    {class} function init: DNAppSettingsSection;
+
+  end;
+
+  ///<summary>
+  ///  提供有关配置系统支持 <see langword="appSettings" />
+  ///  配置节。
+  ///  此类不能被继承。
+  ///</summary>
+  [DNTypeName('System.Configuration.AppSettingsSection')]
+  DNAppSettingsSection = interface(DNConfigurationSection)
+  ['{C67D99B0-1A20-32AA-9C43-22087FDDE286}']
+  { getters & setters } 
+
+    function get_File: string;
+    procedure set_File(value: string);
+    function get_SectionInformation: DNSectionInformation;
+    function get_LockAttributes: DNConfigurationLockCollection;
+    function get_LockAllAttributesExcept: DNConfigurationLockCollection;
+    function get_LockElements: DNConfigurationLockCollection;
+    function get_LockAllElementsExcept: DNConfigurationLockCollection;
+    function get_LockItem: Boolean;
+    procedure set_LockItem(value: Boolean);
+    function get_ElementInformation: DNElementInformation;
+    function get_CurrentConfiguration: DNConfiguration;
+
+  { methods } 
+
+    function IsReadOnly: Boolean;
+    function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取或设置提供其他设置或重写中指定的设置的配置文件 <see langword="appSettings" />
+    ///  元素。
+    ///</summary>
+    ///<returns>
+    ///  提供其他设置或重写中指定的设置的配置文件 <see langword="appSettings" />
+    ///  元素。
+    ///</returns>
+    property &File: string read get_File write set_File;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.SectionInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SectionInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
+    property SectionInformation: DNSectionInformation read get_SectionInformation;
+    property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
+    property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    property LockElements: DNConfigurationLockCollection read get_LockElements;
+    property LockAllElementsExcept: DNConfigurationLockCollection read get_LockAllElementsExcept;
+    property LockItem: Boolean read get_LockItem write set_LockItem;
+    property ElementInformation: DNElementInformation read get_ElementInformation;
+    property CurrentConfiguration: DNConfiguration read get_CurrentConfiguration;
+  end;
+
+  TDNAppSettingsSection = class(TDNGenericImport<DNAppSettingsSectionClass, DNAppSettingsSection>) end;
+
+  //-------------namespace: System.Configuration----------------
+  DNConnectionStringsSectionClass = interface(DNConfigurationSectionClass)
+  ['{A2C5DCAB-F515-522C-9AAA-A5170603BF25}']
+  { constructors } 
+
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConnectionStringsSection" />
+    ///  类的新实例。
+    ///</summary>
+    {class} function init: DNConnectionStringsSection;
+
+  end;
+
+  ///<summary>
+  ///  提供以编程方式访问连接字符串配置文件部分。
+  ///</summary>
+  [DNTypeName('System.Configuration.ConnectionStringsSection')]
+  DNConnectionStringsSection = interface(DNConfigurationSection)
+  ['{CD0C6620-E0F0-3293-8450-2EB8B6E7F0B3}']
+  { getters & setters } 
+
+    function get_SectionInformation: DNSectionInformation;
+    function get_LockAttributes: DNConfigurationLockCollection;
+    function get_LockAllAttributesExcept: DNConfigurationLockCollection;
+    function get_LockElements: DNConfigurationLockCollection;
+    function get_LockAllElementsExcept: DNConfigurationLockCollection;
+    function get_LockItem: Boolean;
+    procedure set_LockItem(value: Boolean);
+    function get_ElementInformation: DNElementInformation;
+    function get_CurrentConfiguration: DNConfiguration;
+
+  { methods } 
+
+    function IsReadOnly: Boolean;
+    function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.SectionInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SectionInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
+    property SectionInformation: DNSectionInformation read get_SectionInformation;
+    property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
+    property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    property LockElements: DNConfigurationLockCollection read get_LockElements;
+    property LockAllElementsExcept: DNConfigurationLockCollection read get_LockAllElementsExcept;
+    property LockItem: Boolean read get_LockItem write set_LockItem;
+    property ElementInformation: DNElementInformation read get_ElementInformation;
+    property CurrentConfiguration: DNConfiguration read get_CurrentConfiguration;
+  end;
+
+  TDNConnectionStringsSection = class(TDNGenericImport<DNConnectionStringsSectionClass, DNConnectionStringsSection>) end;
+
+  //-------------namespace: System.Configuration----------------
   DNConfigurationLockCollectionClass = interface(DDN.mscorlib.DNObjectClass)
   ['{93E9F554-D478-5288-9DE9-EE15D67B1418}']
   end;
@@ -2245,6 +2802,104 @@ type
   TDNConfigurationSectionGroup = class(TDNGenericImport<DNConfigurationSectionGroupClass, DNConfigurationSectionGroup>) end;
 
   //-------------namespace: System.Configuration----------------
+  DNConfigurationValidatorBaseClass = interface(DDN.mscorlib.DNObjectClass)
+  ['{0E873FC7-70A0-5571-99FE-E7B8FE011407}']
+  end;
+
+  ///<summary>
+  ///  作为基类的类用于派生验证类，以便可以验证某个对象的值。
+  ///</summary>
+  [DNTypeName('System.Configuration.ConfigurationValidatorBase')]
+  DNConfigurationValidatorBase = interface(DDN.mscorlib.DNObject)
+  ['{AAAF2860-120E-393D-8451-49B2A6FEE2FA}']
+  { methods } 
+
+    ///<summary>
+    ///  确定是否可以根据类型验证对象。
+    ///</summary>
+    ///  <param name="type">
+    ///  对象类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="type" />
+    ///  参数值与预期匹配 <see langword="type" />
+    ///  ; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    function CanValidate(&type: DDN.mscorlib.DNType): Boolean;
+    ///<summary>
+    ///  确定某个对象的值是否有效。
+    ///</summary>
+    ///  <param name="value">
+    ///  对象值。
+    ///</param>
+    procedure Validate(value: DDN.mscorlib.DNObject);
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  end;
+
+  TDNConfigurationValidatorBase = class(TDNGenericImport<DNConfigurationValidatorBaseClass, DNConfigurationValidatorBase>) end;
+
+  //-------------namespace: System.Configuration----------------
+  DNContextInformationClass = interface(DDN.mscorlib.DNObjectClass)
+  ['{E31BACA7-1537-5A9D-B671-695BEB4FD0B4}']
+  end;
+
+  ///<summary>
+  ///  封装与相关联的上下文信息 <see cref="T:System.Configuration.ConfigurationElement" />
+  ///  对象。
+  ///  此类不能被继承。
+  ///</summary>
+  [DNTypeName('System.Configuration.ContextInformation')]
+  DNContextInformation = interface(DDN.mscorlib.DNObject)
+  ['{0F5DA8AB-826A-3A3F-B325-C5B11EA1EF86}']
+  { getters & setters } 
+
+    function get_HostingContext: DDN.mscorlib.DNObject;
+    function get_IsMachineLevel: Boolean;
+
+  { methods } 
+
+    ///<summary>
+    ///  提供了一个包含基于指定的节名称的配置节信息的对象。
+    ///</summary>
+    ///  <param name="sectionName">
+    ///  配置部分的名称。
+    ///</param>
+    ///<returns>
+    ///  包含配置中指定的节的对象。
+    ///</returns>
+    function GetSection(sectionName: string): DDN.mscorlib.DNObject;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取要计算的配置属性的环境的上下文。
+    ///</summary>
+    ///<returns>
+    ///  一个对象，指定要计算的配置属性的环境。
+    ///</returns>
+    property HostingContext: DDN.mscorlib.DNObject read get_HostingContext;
+    ///<summary>
+    ///  获取一个值，指定在计算机配置级别是否正在计算配置属性。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果在计算机配置级别; 正在计算配置属性否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    property IsMachineLevel: Boolean read get_IsMachineLevel;
+  end;
+
+  TDNContextInformation = class(TDNGenericImport<DNContextInformationClass, DNContextInformation>) end;
+
+  //-------------namespace: System.Configuration----------------
   DNElementInformationClass = interface(DDN.mscorlib.DNObjectClass)
   ['{3E8F35FF-D7E0-597B-B3DE-B81956D05639}']
   end;
@@ -2258,12 +2913,14 @@ type
   ['{EE60054D-6B18-3C2E-9F18-A59E71FAB3A1}']
   { getters & setters } 
 
+    function get_Properties: DNPropertyInformationCollection;
     function get_IsPresent: Boolean;
     function get_IsLocked: Boolean;
     function get_IsCollection: Boolean;
     function get_Source: string;
     function get_LineNumber: Int32;
     function get_Type: DDN.mscorlib.DNType;
+    function get_Validator: DNConfigurationValidatorBase;
     function get_Errors: DDN.mscorlib.DNICollection;
 
   { methods } 
@@ -2275,6 +2932,17 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  中关联属性的集合 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  中关联属性的集合 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</returns>
+    property Properties: DNPropertyInformationCollection read get_Properties;
     ///<summary>
     ///  获取一个值，该值指示是否关联 <see cref="T:System.Configuration.ConfigurationElement" />
     ///  对象是在配置文件中。
@@ -2334,6 +3002,15 @@ type
     ///  对象。
     ///</returns>
     property &Type: DDN.mscorlib.DNType read get_Type;
+    ///<summary>
+    ///  获取用于验证关联的对象 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  用来验证关联的对象 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</returns>
+    property Validator: DNConfigurationValidatorBase read get_Validator;
     ///<summary>
     ///  获取有关关联的元素和子元素的错误
     ///</summary>
@@ -2406,6 +3083,180 @@ type
   end;
 
   TDNProviderBase = class(TDNGenericImport<DNProviderBaseClass, DNProviderBase>) end;
+
+  //-------------namespace: System.Configuration----------------
+  DNConfigurationBuilderClass = interface(DNProviderBaseClass)
+  ['{5906E833-2FEF-5A38-A175-E84485C67BAD}']
+  end;
+
+  ///<summary>
+  ///  表示将由自定义配置生成器实现扩展的基类。
+  ///</summary>
+  [DNTypeName('System.Configuration.ConfigurationBuilder')]
+  DNConfigurationBuilder = interface(DNProviderBase)
+  ['{9C22882E-1C30-3E0F-8C7B-0E0548662990}']
+  { getters & setters } 
+
+    function get_Name: string;
+    function get_Description: string;
+
+  { methods } 
+
+    ///<summary>
+    ///  接受表示配置文件中的原始配置节的 <see cref="T:System.Xml.XmlNode" />
+    ///  ，并返回修改后的或新的 <see cref="T:System.Xml.XmlNode" />
+    ///  供将来使用。
+    ///</summary>
+    ///  <param name="rawXml">
+    ///  要处理的 <see cref="T:System.Xml.XmlNode" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  已处理的 <see cref="T:System.Xml.XmlNode" />
+    ///  。
+    ///</returns>
+    function ProcessRawXml(rawXml: DNXmlNode): DNXmlNode;
+    ///<summary>
+    ///  接受配置系统中的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象，并返回一个修改后的或新的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象供将来使用。
+    ///</summary>
+    ///  <param name="configSection">
+    ///  要处理的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  已处理的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
+    function ProcessConfigurationSection(configSection: DNConfigurationSection): DNConfigurationSection;
+    ///<summary>
+    ///  初始化配置生成器。
+    ///</summary>
+    ///  <param name="name">
+    ///  提供程序的友好名称。
+    ///</param>
+    ///  <param name="config">
+    ///  名称/值对的集合，表示在配置中为该提供程序指定的提供程序特定的属性。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  提供程序的名称是 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException">
+    ///  提供程序名称的长度为零。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  初始化提供程序后尝试在提供程序上调用 <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+    ///  。
+    ///</exception>
+    procedure Initialize(name: string; config: DNNameValueCollection);
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取用于在配置过程中引用该提供程序的友好名称。
+    ///</summary>
+    ///<returns>
+    ///  用于在配置过程中引用该提供程序的友好名称。
+    ///</returns>
+    property Name: string read get_Name;
+    ///<summary>
+    ///  获取一个简短的友好说明适合显示在管理工具或其他用户界面 (Ui)。
+    ///</summary>
+    ///<returns>
+    ///  简短的易懂描述适用于在管理工具或其他用户界面中显示。
+    ///</returns>
+    property Description: string read get_Description;
+  end;
+
+  TDNConfigurationBuilder = class(TDNGenericImport<DNConfigurationBuilderClass, DNConfigurationBuilder>) end;
+
+  //-------------namespace: System.Configuration----------------
+  DNProtectedConfigurationProviderClass = interface(DNProviderBaseClass)
+  ['{9B2F60FD-F53D-5A1D-82A0-8541C40C35CC}']
+  end;
+
+  ///<summary>
+  ///  是用于加密和解密受保护的配置数据创建提供程序的基类。
+  ///</summary>
+  [DNTypeName('System.Configuration.ProtectedConfigurationProvider')]
+  DNProtectedConfigurationProvider = interface(DNProviderBase)
+  ['{0DFE9FBE-E232-3F9E-A512-E86559E3C350}']
+  { getters & setters } 
+
+    function get_Name: string;
+    function get_Description: string;
+
+  { methods } 
+
+    ///<summary>
+    ///  加密传递 <see cref="T:System.Xml.XmlNode" />
+    ///  从配置文件的对象。
+    ///</summary>
+    ///  <param name="node"><see cref="T:System.Xml.XmlNode" />
+    ///  对象进行加密。
+    ///</param>
+    ///<returns><see cref="T:System.Xml.XmlNode" />
+    ///  对象，其中包含加密的数据。
+    ///</returns>
+    function Encrypt(node: DNXmlNode): DNXmlNode;
+    ///<summary>
+    ///  解密传递 <see cref="T:System.Xml.XmlNode" />
+    ///  从配置文件的对象。
+    ///</summary>
+    ///  <param name="encryptedNode"><see cref="T:System.Xml.XmlNode" />
+    ///  对象进行解密。
+    ///</param>
+    ///<returns><see cref="T:System.Xml.XmlNode" />
+    ///  对象，其中包含已解密的数据。
+    ///</returns>
+    function Decrypt(encryptedNode: DNXmlNode): DNXmlNode;
+    ///<summary>
+    ///  初始化配置生成器。
+    ///</summary>
+    ///  <param name="name">
+    ///  提供程序的友好名称。
+    ///</param>
+    ///  <param name="config">
+    ///  名称/值对的集合，表示在配置中为该提供程序指定的提供程序特定的属性。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  提供程序的名称是 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException">
+    ///  提供程序名称的长度为零。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  初始化提供程序后尝试在提供程序上调用 <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+    ///  。
+    ///</exception>
+    procedure Initialize(name: string; config: DNNameValueCollection);
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取用于在配置过程中引用该提供程序的友好名称。
+    ///</summary>
+    ///<returns>
+    ///  用于在配置过程中引用该提供程序的友好名称。
+    ///</returns>
+    property Name: string read get_Name;
+    ///<summary>
+    ///  获取一个简短的友好说明适合显示在管理工具或其他用户界面 (Ui)。
+    ///</summary>
+    ///<returns>
+    ///  简短的易懂描述适用于在管理工具或其他用户界面中显示。
+    ///</returns>
+    property Description: string read get_Description;
+  end;
+
+  TDNProtectedConfigurationProvider = class(TDNGenericImport<DNProtectedConfigurationProviderClass, DNProtectedConfigurationProvider>) end;
 
   //-------------namespace: System.Configuration.Provider----------------
   DNProviderCollectionClass = interface(DDN.mscorlib.DNObjectClass)
@@ -2568,6 +3419,8 @@ type
     function get_IsDeclarationRequired: Boolean;
     function get_IsLocked: Boolean;
     function get_IsProtected: Boolean;
+    function get_ConfigurationBuilder: DNConfigurationBuilder;
+    function get_ProtectionProvider: DNProtectedConfigurationProvider;
     function get_RestartOnExternalChanges: Boolean;
     procedure set_RestartOnExternalChanges(value: Boolean);
     function get_RequirePermission: Boolean;
@@ -2809,6 +3662,23 @@ type
     ///  。
     ///</returns>
     property IsProtected: Boolean read get_IsProtected;
+    ///<summary>
+    ///  获取此配置节的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  此配置节的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  对象。
+    ///</returns>
+    property ConfigurationBuilder: DNConfigurationBuilder read get_ConfigurationBuilder;
+    ///<summary>
+    ///  获取对受保护的配置提供程序关联的配置节。
+    ///</summary>
+    ///<returns>
+    ///  为此保护的配置提供程序 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</returns>
+    property ProtectionProvider: DNProtectedConfigurationProvider read get_ProtectionProvider;
     ///<summary>
     ///  获取或设置一个值，指定是否包含更改对外部配置文件需要重新启动应用程序。
     ///</summary>
@@ -4220,11 +5090,24 @@ type
   ['{B877D1C0-5915-310A-8B75-8937F127300C}']
   { getters & setters } 
 
+    function get_Validity: DNXmlSchemaValidity;
     function get_IsDefault: Boolean;
     function get_IsNil: Boolean;
+    function get_MemberType: DNXmlSchemaSimpleType;
+    function get_SchemaType: DNXmlSchemaType;
+    function get_SchemaElement: DNXmlSchemaElement;
+    function get_SchemaAttribute: DNXmlSchemaAttribute;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Xml.Schema.XmlSchemaValidity" />
+    ///  验证 XML 节点的此值。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.Schema.XmlSchemaValidity" />
+    ///  验证 XML 节点的此值。
+    ///</returns>
+    property Validity: DNXmlSchemaValidity read get_Validity;
     ///<summary>
     ///  获取一个值，该值指示是否这个被验证的 XML 节点被设置为在 XML 架构定义语言 (XSD) 架构验证过程中应用的默认的结果。
     ///</summary>
@@ -4241,6 +5124,36 @@ type
     ///  。
     ///</returns>
     property IsNil: Boolean read get_IsNil;
+    ///<summary>
+    ///  获取此已验证的 XML 节点的动态架构类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.Schema.XmlSchemaSimpleType" />
+    ///  表示此动态架构类型的对象验证 XML 节点。
+    ///</returns>
+    property MemberType: DNXmlSchemaSimpleType read get_MemberType;
+    ///<summary>
+    ///  获取此已验证的 XML 节点的静态 XML 架构定义语言 (XSD) 架构类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.Schema.XmlSchemaType" />
+    ///  此被验证的 XML 节点。
+    ///</returns>
+    property SchemaType: DNXmlSchemaType read get_SchemaType;
+    ///<summary>
+    ///  获取已编译 <see cref="T:System.Xml.Schema.XmlSchemaElement" />
+    ///  对应于这个被验证的 XML 节点。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.Schema.XmlSchemaElement" />
+    ///  对应于这个被验证的 XML 节点。
+    ///</returns>
+    property SchemaElement: DNXmlSchemaElement read get_SchemaElement;
+    ///<summary>
+    ///  获取已编译 <see cref="T:System.Xml.Schema.XmlSchemaAttribute" />
+    ///  对应于这个被验证的 XML 节点。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.Schema.XmlSchemaAttribute" />
+    ///  对应于这个被验证的 XML 节点。
+    ///</returns>
+    property SchemaAttribute: DNXmlSchemaAttribute read get_SchemaAttribute;
   end;
 
   //-------------namespace: System.Xml.Schema----------------
@@ -4393,10 +5306,16 @@ type
     function get_Version: string;
     procedure set_Version(value: string);
     function get_IsCompiled: Boolean;
+    function get_Attributes: DNXmlSchemaObjectTable;
+    function get_AttributeGroups: DNXmlSchemaObjectTable;
+    function get_SchemaTypes: DNXmlSchemaObjectTable;
+    function get_Elements: DNXmlSchemaObjectTable;
     function get_Id: string;
     procedure set_Id(value: string);
     function get_UnhandledAttributes: TArray<DNXmlAttribute>;
     procedure set_UnhandledAttributes(value: TArray<DNXmlAttribute>);
+    function get_Groups: DNXmlSchemaObjectTable;
+    function get_Notations: DNXmlSchemaObjectTable;
     function get_LineNumber: Int32;
     procedure set_LineNumber(value: Int32);
     function get_LinePosition: Int32;
@@ -4527,6 +5446,34 @@ type
     ///</returns>
     property IsCompiled: Boolean read get_IsCompiled;
     ///<summary>
+    ///  获取架构中所有属性的架构编译后值。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.Schema.XmlSchemaObjectTable" />
+    ///  架构中的所有特性的集合。
+    ///</returns>
+    property Attributes: DNXmlSchemaObjectTable read get_Attributes;
+    ///<summary>
+    ///  获取架构中所有全局属性组的架构编译后值。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.Schema.XmlSchemaObjectTable" />
+    ///  架构中的所有全局属性组的集合。
+    ///</returns>
+    property AttributeGroups: DNXmlSchemaObjectTable read get_AttributeGroups;
+    ///<summary>
+    ///  获取架构中所有架构类型的架构编译后值。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.Schema.XmlSchemaObjectCollection" />
+    ///  架构中的所有架构类型。
+    ///</returns>
+    property SchemaTypes: DNXmlSchemaObjectTable read get_SchemaTypes;
+    ///<summary>
+    ///  获取架构中所有元素的架构编译后值。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.Schema.XmlSchemaObjectTable" />
+    ///  架构中的所有元素的集合。
+    ///</returns>
+    property Elements: DNXmlSchemaObjectTable read get_Elements;
+    ///<summary>
     ///  获取或设置字符串 ID。
     ///</summary>
     ///<returns>
@@ -4543,6 +5490,20 @@ type
     ///  对象不属于架构目标命名空间。
     ///</returns>
     property UnhandledAttributes: TArray<DNXmlAttribute> read get_UnhandledAttributes write set_UnhandledAttributes;
+    ///<summary>
+    ///  获取架构中所有组的架构编译后值。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.Schema.XmlSchemaObjectTable" />
+    ///  架构中的所有组的集合。
+    ///</returns>
+    property Groups: DNXmlSchemaObjectTable read get_Groups;
+    ///<summary>
+    ///  获取架构中所有注释的架构编译后值。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.Schema.XmlSchemaObjectTable" />
+    ///  架构中所有注释的集合。
+    ///</returns>
+    property Notations: DNXmlSchemaObjectTable read get_Notations;
     ///<summary>
     ///  获取或设置到的文件中的行号 <see langword="schema" />
     ///  元素引用。
@@ -4581,6 +5542,604 @@ type
     ///</summary>
    InstanceNamespace = 'http://www.w3.org/2001/XMLSchema-instance';
   end;
+
+  //-------------namespace: System.Xml.Schema----------------
+  DNXmlSchemaAttributeClass = interface(DNObjectClass)
+  ['{047C3279-9803-5740-9BDD-5599B358884C}']
+  { constructors } 
+
+    ///<summary>
+    ///  初始化 <see cref="T:System.Xml.Schema.XmlSchemaAttribute" />
+    ///  类的新实例。
+    ///</summary>
+    {class} function init: DNXmlSchemaAttribute;
+
+  end;
+
+  ///<summary>
+  ///  表示 <see langword="attribute" />
+  ///  由 World Wide Web 联合会 (W3C) 指定的 XML 架构元素。
+  ///  属性为其他文档元素提供额外信息。
+  ///  属性标记嵌套在架构的文档元素标记之间。
+  ///  XML 文档将属性显示为元素开始标记中的已命名项。
+  ///</summary>
+  [DNTypeName('System.Xml.Schema.XmlSchemaAttribute')]
+  DNXmlSchemaAttribute = interface(DNObject)
+  ['{BC3ECB9B-06CE-3009-88C0-4148FBB2D47C}']
+  { getters & setters } 
+
+    function get_DefaultValue: string;
+    procedure set_DefaultValue(value: string);
+    function get_FixedValue: string;
+    procedure set_FixedValue(value: string);
+    function get_Name: string;
+    procedure set_Name(value: string);
+    function get_SchemaType: DNXmlSchemaSimpleType;
+    procedure set_SchemaType(value: DNXmlSchemaSimpleType);
+    function get_AttributeType: DDN.mscorlib.DNObject;
+    function get_AttributeSchemaType: DNXmlSchemaSimpleType;
+    function get_Id: string;
+    procedure set_Id(value: string);
+    function get_UnhandledAttributes: TArray<DNXmlAttribute>;
+    procedure set_UnhandledAttributes(value: TArray<DNXmlAttribute>);
+    function get_LineNumber: Int32;
+    procedure set_LineNumber(value: Int32);
+    function get_LinePosition: Int32;
+    procedure set_LinePosition(value: Int32);
+    function get_SourceUri: string;
+    procedure set_SourceUri(value: string);
+
+  { methods } 
+
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取或设置属性的默认值。
+    ///</summary>
+    ///<returns>
+    ///  属性的默认值。
+    ///  默认为空引用。
+    ///  可选。
+    ///</returns>
+    property DefaultValue: string read get_DefaultValue write set_DefaultValue;
+    ///<summary>
+    ///  获取或设置属性的固定值。
+    ///</summary>
+    ///<returns>
+    ///  属性的固定值。
+    ///  默认值为 null。
+    ///  可选。
+    ///</returns>
+    property FixedValue: string read get_FixedValue write set_FixedValue;
+    ///<summary>
+    ///  获取或设置属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  属性名。
+    ///</returns>
+    property Name: string read get_Name write set_Name;
+    ///<summary>
+    ///  获取属性类型或将其设置为简单类型。
+    ///</summary>
+    ///<returns>
+    ///  此架构中定义的简单类型。
+    ///</returns>
+    property SchemaType: DNXmlSchemaSimpleType read get_SchemaType write set_SchemaType;
+    ///<summary>
+    ///  获取公共语言运行时 (CLR) 对象基于 <see cref="P:System.Xml.Schema.XmlSchemaAttribute.SchemaType" />
+    ///  或 <see cref="P:System.Xml.Schema.XmlSchemaAttribute.SchemaTypeName" />
+    ///  持有的编译后值的属性 <see langword="AttributeType" />
+    ///  属性。
+    ///</summary>
+    ///<returns>
+    ///  保存的编译后值的公共运行时库 (CLR) 对象 <see langword="AttributeType" />
+    ///  属性。
+    ///</returns>
+    property AttributeType: DDN.mscorlib.DNObject read get_AttributeType;
+    ///<summary>
+    ///  获取 <see cref="T:System.Xml.Schema.XmlSchemaSimpleType" />
+    ///  对象，表示该特性的类型基于 <see cref="P:System.Xml.Schema.XmlSchemaAttribute.SchemaType" />
+    ///  或 <see cref="P:System.Xml.Schema.XmlSchemaAttribute.SchemaTypeName" />
+    ///  的属性。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Xml.Schema.XmlSchemaSimpleType" />
+    ///  对象。
+    ///</returns>
+    property AttributeSchemaType: DNXmlSchemaSimpleType read get_AttributeSchemaType;
+    ///<summary>
+    ///  获取或设置字符串 id。
+    ///</summary>
+    ///<returns>
+    ///  字符串 id。
+    ///  默认值为 <see langword="String.Empty" />
+    ///  。
+    ///  可选。
+    ///</returns>
+    property Id: string read get_Id write set_Id;
+    ///<summary>
+    ///  获取或设置不属于当前架构目标命名空间的限定的属性。
+    ///</summary>
+    ///<returns>
+    ///  数组的限定 <see cref="T:System.Xml.XmlAttribute" />
+    ///  对象不属于架构目标命名空间。
+    ///</returns>
+    property UnhandledAttributes: TArray<DNXmlAttribute> read get_UnhandledAttributes write set_UnhandledAttributes;
+    property LineNumber: Int32 read get_LineNumber write set_LineNumber;
+    property LinePosition: Int32 read get_LinePosition write set_LinePosition;
+    property SourceUri: string read get_SourceUri write set_SourceUri;
+  end;
+
+  TDNXmlSchemaAttribute = class(TDNGenericImport<DNXmlSchemaAttributeClass, DNXmlSchemaAttribute>) end;
+
+  //-------------namespace: System.Xml.Schema----------------
+  DNXmlSchemaElementClass = interface(DNObjectClass)
+  ['{E37C444F-795F-54AD-9180-ABBA3F64F30C}']
+  { constructors } 
+
+    ///<summary>
+    ///  初始化 <see cref="T:System.Xml.Schema.XmlSchemaElement" />
+    ///  类的新实例。
+    ///</summary>
+    {class} function init: DNXmlSchemaElement;
+
+  end;
+
+  ///<summary>
+  ///  表示 <see langword="element" />
+  ///  由 World Wide Web 联合会 (W3C) 指定来自 XML 架构元素。
+  ///  此类是所有微粒类型的基类，用于描述 XML 文档中的元素。
+  ///</summary>
+  [DNTypeName('System.Xml.Schema.XmlSchemaElement')]
+  DNXmlSchemaElement = interface(DNObject)
+  ['{2FB0DA90-49F6-32E3-9B5F-C95E831179C8}']
+  { getters & setters } 
+
+    function get_IsAbstract: Boolean;
+    procedure set_IsAbstract(value: Boolean);
+    function get_DefaultValue: string;
+    procedure set_DefaultValue(value: string);
+    function get_FixedValue: string;
+    procedure set_FixedValue(value: string);
+    function get_Name: string;
+    procedure set_Name(value: string);
+    function get_IsNillable: Boolean;
+    procedure set_IsNillable(value: Boolean);
+    function get_SchemaType: DNXmlSchemaType;
+    procedure set_SchemaType(value: DNXmlSchemaType);
+    function get_ElementType: DDN.mscorlib.DNObject;
+    function get_ElementSchemaType: DNXmlSchemaType;
+    function get_MinOccursString: string;
+    procedure set_MinOccursString(value: string);
+    function get_MaxOccursString: string;
+    procedure set_MaxOccursString(value: string);
+    function get_MinOccurs: DDN.mscorlib.DNDecimal;
+    procedure set_MinOccurs(value: DDN.mscorlib.DNDecimal);
+    function get_MaxOccurs: DDN.mscorlib.DNDecimal;
+    procedure set_MaxOccurs(value: DDN.mscorlib.DNDecimal);
+    function get_Id: string;
+    procedure set_Id(value: string);
+    function get_UnhandledAttributes: TArray<DNXmlAttribute>;
+    procedure set_UnhandledAttributes(value: TArray<DNXmlAttribute>);
+    function get_LineNumber: Int32;
+    procedure set_LineNumber(value: Int32);
+    function get_LinePosition: Int32;
+    procedure set_LinePosition(value: Int32);
+    function get_SourceUri: string;
+    procedure set_SourceUri(value: string);
+
+  { methods } 
+
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取或设置信息以指示是否可在实例文档中使用该元素。
+    ///</summary>
+    ///<returns>
+    ///  如果 <see langword="true" />
+    ///  , ，则元素不能出现在实例文档。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///  可选。
+    ///</returns>
+    property IsAbstract: Boolean read get_IsAbstract write set_IsAbstract;
+    ///<summary>
+    ///  获取或设置元素的默认值，如果其内容是简单类型或元素的内容是 <see langword="textOnly" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  元素的默认值。
+    ///  默认为空引用。
+    ///  可选。
+    ///</returns>
+    property DefaultValue: string read get_DefaultValue write set_DefaultValue;
+    ///<summary>
+    ///  获取或设置固定值。
+    ///</summary>
+    ///<returns>
+    ///  预设的且不可更改的固定值。
+    ///  默认为空引用。
+    ///  可选。
+    ///</returns>
+    property FixedValue: string read get_FixedValue write set_FixedValue;
+    ///<summary>
+    ///  获取或设置元素的名称。
+    ///</summary>
+    ///<returns>
+    ///  元素的名称。
+    ///  默认值为 <see langword="String.Empty" />
+    ///  。
+    ///</returns>
+    property Name: string read get_Name write set_Name;
+    ///<summary>
+    ///  获取或设置信息，该值指示如果 <see langword="xsi:nil" />
+    ///  实例数据中可能会发生。
+    ///  指示是否可以为元素赋予显式 Nil 值。
+    ///</summary>
+    ///<returns>
+    ///  如果 nillable 为 <see langword="true" />
+    ///  , ，这样，该元素具有实例 <see langword="nil" />
+    ///  属性设置为 <see langword="true" />
+    ///  。
+    ///<see langword="nil" />
+    ///  属性定义的 XML 架构命名空间的一部分实例。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///  可选。
+    ///</returns>
+    property IsNillable: Boolean read get_IsNillable write set_IsNillable;
+    ///<summary>
+    ///  获取或设置元素类型。
+    ///  这可以是复杂类型，也可以是简单类型。
+    ///</summary>
+    ///<returns>
+    ///  元素的类型。
+    ///</returns>
+    property SchemaType: DNXmlSchemaType read get_SchemaType write set_SchemaType;
+    ///<summary>
+    ///  获取一个公共语言运行时 (CLR) 对象基于 <see cref="T:System.Xml.Schema.XmlSchemaElement" />
+    ///  或 <see cref="T:System.Xml.Schema.XmlSchemaElement" />
+    ///  的元素，它保存编译后值的 <see langword="ElementType" />
+    ///  属性。
+    ///</summary>
+    ///<returns>
+    ///  公共语言运行库对象。
+    ///  编译后值的 <see langword="ElementType" />
+    ///  属性。
+    ///</returns>
+    property ElementType: DDN.mscorlib.DNObject read get_ElementType;
+    ///<summary>
+    ///  获取 <see cref="T:System.Xml.Schema.XmlSchemaType" />
+    ///  对象，表示该元素的类型基于 <see cref="P:System.Xml.Schema.XmlSchemaElement.SchemaType" />
+    ///  或 <see cref="P:System.Xml.Schema.XmlSchemaElement.SchemaTypeName" />
+    ///  元素的值。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Xml.Schema.XmlSchemaType" />
+    ///  对象。
+    ///</returns>
+    property ElementSchemaType: DNXmlSchemaType read get_ElementSchemaType;
+    ///<summary>
+    ///  获取或设置作为字符串值的数目。
+    ///  粒子可发生的最小次数。
+    ///</summary>
+    ///<returns>
+    ///  将数字显示为一个字符串值。
+    ///<see langword="String.Empty" />
+    ///  指示 <see langword="MinOccurs" />
+    ///  是否等同于默认值。
+    ///  默认为空引用。
+    ///</returns>
+    property MinOccursString: string read get_MinOccursString write set_MinOccursString;
+    ///<summary>
+    ///  获取或设置作为字符串值的数目。
+    ///  粒子可发生的最大次数。
+    ///</summary>
+    ///<returns>
+    ///  将数字显示为一个字符串值。
+    ///<see langword="String.Empty" />
+    ///  指示 <see langword="MaxOccurs" />
+    ///  是否等同于默认值。
+    ///  默认为空引用。
+    ///</returns>
+    property MaxOccursString: string read get_MaxOccursString write set_MaxOccursString;
+    ///<summary>
+    ///  获取或设置粒子可发生最小次数。
+    ///</summary>
+    ///<returns>
+    ///  粒子可发生的最小次数。
+    ///  默认值为 1。
+    ///</returns>
+    property MinOccurs: DDN.mscorlib.DNDecimal read get_MinOccurs write set_MinOccurs;
+    ///<summary>
+    ///  获取或设置最大数目的粒子可发生的次数。
+    ///</summary>
+    ///<returns>
+    ///  粒子可发生的最大次数。
+    ///  默认值为 1。
+    ///</returns>
+    property MaxOccurs: DDN.mscorlib.DNDecimal read get_MaxOccurs write set_MaxOccurs;
+    property Id: string read get_Id write set_Id;
+    property UnhandledAttributes: TArray<DNXmlAttribute> read get_UnhandledAttributes write set_UnhandledAttributes;
+    property LineNumber: Int32 read get_LineNumber write set_LineNumber;
+    property LinePosition: Int32 read get_LinePosition write set_LinePosition;
+    property SourceUri: string read get_SourceUri write set_SourceUri;
+  end;
+
+  TDNXmlSchemaElement = class(TDNGenericImport<DNXmlSchemaElementClass, DNXmlSchemaElement>) end;
+
+  //-------------namespace: System.Xml.Schema----------------
+  DNXmlSchemaTypeClass = interface(DNObjectClass)
+  ['{8FDF1377-B093-5013-822E-311F8771F20E}']
+  { constructors } 
+
+    ///<summary>
+    ///  初始化 <see cref="T:System.Xml.Schema.XmlSchemaType" />
+    ///  类的新实例。
+    ///</summary>
+    {class} function init: DNXmlSchemaType;
+
+  end;
+
+  ///<summary>
+  ///  所有简单类型和复杂类型的基类。
+  ///</summary>
+  [DNTypeName('System.Xml.Schema.XmlSchemaType')]
+  DNXmlSchemaType = interface(DNObject)
+  ['{034C6617-1C55-3EA2-8010-DFB0CD9A8FFE}']
+  { getters & setters } 
+
+    function get_Name: string;
+    procedure set_Name(value: string);
+    function get_BaseSchemaType: DDN.mscorlib.DNObject;
+    function get_BaseXmlSchemaType: DNXmlSchemaType;
+    function get_IsMixed: Boolean;
+    procedure set_IsMixed(value: Boolean);
+    function get_Id: string;
+    procedure set_Id(value: string);
+    function get_UnhandledAttributes: TArray<DNXmlAttribute>;
+    procedure set_UnhandledAttributes(value: TArray<DNXmlAttribute>);
+    function get_LineNumber: Int32;
+    procedure set_LineNumber(value: Int32);
+    function get_LinePosition: Int32;
+    procedure set_LinePosition(value: Int32);
+    function get_SourceUri: string;
+    procedure set_SourceUri(value: string);
+
+  { methods } 
+
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取或设置类型的名称。
+    ///</summary>
+    ///<returns>
+    ///  类型的名称。
+    ///</returns>
+    property Name: string read get_Name write set_Name;
+    ///<summary>
+    ///  获取编译后的对象类型或内置 XML 架构定义语言 (XSD) 数据类型、 简单类型元素或 complexType 元素。
+    ///  这是后架构编译信息集属性。
+    ///</summary>
+    ///<returns>
+    ///  内置 XSD 数据类型、 简单类型元素或 complexType 元素。
+    ///</returns>
+    property BaseSchemaType: DDN.mscorlib.DNObject read get_BaseSchemaType;
+    ///<summary>
+    ///  获取此架构类型的基类型编译后值。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.Schema.XmlSchemaType" />
+    ///  对象，表示此架构类型的基类型。
+    ///</returns>
+    property BaseXmlSchemaType: DNXmlSchemaType read get_BaseXmlSchemaType;
+    ///<summary>
+    ///  获取或设置一个值，该值指示此类型是否具有混合内容模型。
+    ///  此属性才是有效的复杂类型中。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该类型具有混合内容模型中;否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    property IsMixed: Boolean read get_IsMixed write set_IsMixed;
+    ///<summary>
+    ///  获取或设置字符串 id。
+    ///</summary>
+    ///<returns>
+    ///  字符串 id。
+    ///  默认值为 <see langword="String.Empty" />
+    ///  。
+    ///  可选。
+    ///</returns>
+    property Id: string read get_Id write set_Id;
+    ///<summary>
+    ///  获取或设置不属于当前架构目标命名空间的限定的属性。
+    ///</summary>
+    ///<returns>
+    ///  数组的限定 <see cref="T:System.Xml.XmlAttribute" />
+    ///  对象不属于架构目标命名空间。
+    ///</returns>
+    property UnhandledAttributes: TArray<DNXmlAttribute> read get_UnhandledAttributes write set_UnhandledAttributes;
+    property LineNumber: Int32 read get_LineNumber write set_LineNumber;
+    property LinePosition: Int32 read get_LinePosition write set_LinePosition;
+    property SourceUri: string read get_SourceUri write set_SourceUri;
+  end;
+
+  TDNXmlSchemaType = class(TDNGenericImport<DNXmlSchemaTypeClass, DNXmlSchemaType>) end;
+
+  //-------------namespace: System.Xml.Schema----------------
+  DNXmlSchemaSimpleTypeClass = interface(DNXmlSchemaTypeClass)
+  ['{C2B52D2F-718D-53B4-8C9A-186C5A646571}']
+  { constructors } 
+
+    ///<summary>
+    ///  初始化 <see cref="T:System.Xml.Schema.XmlSchemaSimpleType" />
+    ///  类的新实例。
+    ///</summary>
+    {class} function init: DNXmlSchemaSimpleType;
+
+  end;
+
+  ///<summary>
+  ///  表示 <see langword="simpleType" />
+  ///  从 XML 架构中由 World Wide Web 联合会 (W3C) 指定的简单内容的元素。
+  ///  此类定义简单类型。
+  ///  简单类型可以为具有纯文本内容的属性值或元素值指定信息和约束。
+  ///</summary>
+  [DNTypeName('System.Xml.Schema.XmlSchemaSimpleType')]
+  DNXmlSchemaSimpleType = interface(DNXmlSchemaType)
+  ['{5CF951C1-5287-3510-9277-FD30287ECB0F}']
+  { getters & setters } 
+
+    function get_Name: string;
+    procedure set_Name(value: string);
+    function get_BaseSchemaType: DDN.mscorlib.DNObject;
+    function get_BaseXmlSchemaType: DNXmlSchemaType;
+    function get_IsMixed: Boolean;
+    procedure set_IsMixed(value: Boolean);
+    function get_Id: string;
+    procedure set_Id(value: string);
+    function get_UnhandledAttributes: TArray<DNXmlAttribute>;
+    procedure set_UnhandledAttributes(value: TArray<DNXmlAttribute>);
+    function get_LineNumber: Int32;
+    procedure set_LineNumber(value: Int32);
+    function get_LinePosition: Int32;
+    procedure set_LinePosition(value: Int32);
+    function get_SourceUri: string;
+    procedure set_SourceUri(value: string);
+
+  { methods } 
+
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取或设置类型的名称。
+    ///</summary>
+    ///<returns>
+    ///  类型的名称。
+    ///</returns>
+    property Name: string read get_Name write set_Name;
+    ///<summary>
+    ///  获取编译后的对象类型或内置 XML 架构定义语言 (XSD) 数据类型、 简单类型元素或 complexType 元素。
+    ///  这是后架构编译信息集属性。
+    ///</summary>
+    ///<returns>
+    ///  内置 XSD 数据类型、 简单类型元素或 complexType 元素。
+    ///</returns>
+    property BaseSchemaType: DDN.mscorlib.DNObject read get_BaseSchemaType;
+    ///<summary>
+    ///  获取此架构类型的基类型编译后值。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.Schema.XmlSchemaType" />
+    ///  对象，表示此架构类型的基类型。
+    ///</returns>
+    property BaseXmlSchemaType: DNXmlSchemaType read get_BaseXmlSchemaType;
+    ///<summary>
+    ///  获取或设置一个值，该值指示此类型是否具有混合内容模型。
+    ///  此属性才是有效的复杂类型中。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该类型具有混合内容模型中;否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    property IsMixed: Boolean read get_IsMixed write set_IsMixed;
+    property Id: string read get_Id write set_Id;
+    property UnhandledAttributes: TArray<DNXmlAttribute> read get_UnhandledAttributes write set_UnhandledAttributes;
+    property LineNumber: Int32 read get_LineNumber write set_LineNumber;
+    property LinePosition: Int32 read get_LinePosition write set_LinePosition;
+    property SourceUri: string read get_SourceUri write set_SourceUri;
+  end;
+
+  TDNXmlSchemaSimpleType = class(TDNGenericImport<DNXmlSchemaSimpleTypeClass, DNXmlSchemaSimpleType>) end;
+
+  //-------------namespace: System.Xml.Schema----------------
+  DNXmlSchemaObjectTableClass = interface(DDN.mscorlib.DNObjectClass)
+  ['{07F2185B-B6D2-58A1-B8D9-F2C0C4DF0645}']
+  end;
+
+  ///<summary>
+  ///  中的包含元素的集合提供 <see cref="T:System.Xml.Schema.XmlSchema" />
+  ///  类 （例如，属性、 属性组、 元素和等等）。
+  ///</summary>
+  [DNTypeName('System.Xml.Schema.XmlSchemaObjectTable')]
+  DNXmlSchemaObjectTable = interface(DDN.mscorlib.DNObject)
+  ['{46B8059C-7719-33A6-AA9C-070DB3D6F7F5}']
+  { getters & setters } 
+
+    function get_Count: Int32;
+    function get_Names: DDN.mscorlib.DNICollection;
+    function get_Values: DDN.mscorlib.DNICollection;
+
+  { methods } 
+
+    ///<summary>
+    ///  返回可循环访问 <see cref="T:System.Xml.Schema.XmlSchemaObjectTable" />
+    ///  的枚举器。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IDictionaryEnumerator" />
+    ///  ，它可以循环访问 <see cref="T:System.Xml.Schema.XmlSchemaObjectTable" />
+    ///  。
+    ///</returns>
+    function GetEnumerator: DDN.mscorlib.DNIDictionaryEnumerator;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取 <see cref="T:System.Xml.Schema.XmlSchemaObjectTable" />
+    ///  中包含的项的数量。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.Schema.XmlSchemaObjectTable" />
+    ///  中包含的项的数量。
+    ///</returns>
+    property Count: Int32 read get_Count;
+    ///<summary>
+    ///  返回一个集合中的所有命名元素 <see cref="T:System.Xml.Schema.XmlSchemaObjectTable" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  中的所有命名元素的集合 <see cref="T:System.Xml.Schema.XmlSchemaObjectTable" />
+    ///  。
+    ///</returns>
+    property Names: DDN.mscorlib.DNICollection read get_Names;
+    ///<summary>
+    ///  返回集合中的所有元素的所有值的 <see cref="T:System.Xml.Schema.XmlSchemaObjectTable" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  中的所有元素的所有值的集合 <see cref="T:System.Xml.Schema.XmlSchemaObjectTable" />
+    ///  。
+    ///</returns>
+    property Values: DDN.mscorlib.DNICollection read get_Values;
+  end;
+
+  TDNXmlSchemaObjectTable = class(TDNGenericImport<DNXmlSchemaObjectTableClass, DNXmlSchemaObjectTable>) end;
 
   //-------------namespace: System.Xml.Schema----------------
   DNXmlSchemaSetClass = interface(DDN.mscorlib.DNObjectClass)
@@ -4637,6 +6196,9 @@ type
     function get_CompilationSettings: DNXmlSchemaCompilationSettings;
     procedure set_CompilationSettings(value: DNXmlSchemaCompilationSettings);
     function get_Count: Int32;
+    function get_GlobalElements: DNXmlSchemaObjectTable;
+    function get_GlobalAttributes: DNXmlSchemaObjectTable;
+    function get_GlobalTypes: DNXmlSchemaObjectTable;
 
   { methods } 
 
@@ -4936,6 +6498,30 @@ type
     ///  。
     ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取所有全局元素中所有 XML 架构定义语言 (XSD) 架构中 <see cref="T:System.Xml.Schema.XmlSchemaSet" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  全局元素的集合。
+    ///</returns>
+    property GlobalElements: DNXmlSchemaObjectTable read get_GlobalElements;
+    ///<summary>
+    ///  获取所有全局属性中所有 XML 架构定义语言 (XSD) 架构 <see cref="T:System.Xml.Schema.XmlSchemaSet" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  属性特性的集合。
+    ///</returns>
+    property GlobalAttributes: DNXmlSchemaObjectTable read get_GlobalAttributes;
+    ///<summary>
+    ///  获取所有全局简单和复杂类型中所有 XML 架构定义语言 (XSD) 架构中的 <see cref="T:System.Xml.Schema.XmlSchemaSet" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  全局简单和复杂类型的集合。
+    ///</returns>
+    property GlobalTypes: DNXmlSchemaObjectTable read get_GlobalTypes;
   end;
 
   TDNXmlSchemaSet = class(TDNGenericImport<DNXmlSchemaSetClass, DNXmlSchemaSet>) end;
@@ -5018,7 +6604,153 @@ type
   TDNXmlImplementation = class(TDNGenericImport<DNXmlImplementationClass, DNXmlImplementation>) end;
 
   //-------------namespace: System.Xml----------------
-  DNXmlAttributeCollectionClass = interface(DNObjectClass)
+  DNXmlNamedNodeMapClass = interface(DDN.mscorlib.DNObjectClass)
+  ['{B74D75C0-1E64-5FD7-9BB2-52B25E3AB6A3}']
+  end;
+
+  ///<summary>
+  ///  表示可以按名称或索引访问的节点的集合。
+  ///</summary>
+  [DNTypeName('System.Xml.XmlNamedNodeMap')]
+  DNXmlNamedNodeMap = interface(DDN.mscorlib.DNObject)
+  ['{291396F7-2B76-36E2-8E89-0C2BAB420F83}']
+  { getters & setters } 
+
+    function get_Count: Int32;
+
+  { methods } 
+
+    ///<summary>
+    ///  检索 <see cref="T:System.Xml.XmlNode" />
+    ///  由名称指定。
+    ///</summary>
+    ///  <param name="name">
+    ///  要检索的节点的限定的名称。
+    ///  它针对匹配节点的 <see cref="P:System.Xml.XmlNode.Name" />
+    ///  属性进行匹配。
+    ///</param>
+    ///<returns><see langword="XmlNode" />
+    ///  具有指定名称或 <see langword="null" />
+    ///  如果找不到匹配的节点。
+    ///</returns>
+    function GetNamedItem(name: string): DNXmlNode; overload;
+    ///<summary>
+    ///  添加 <see cref="T:System.Xml.XmlNode" />
+    ///  使用其 <see cref="P:System.Xml.XmlNode.Name" />
+    ///  属性。
+    ///</summary>
+    ///  <param name="node"><see langword="XmlNode" />
+    ///  将存储在 <see langword="XmlNamedNodeMap" />
+    ///  。
+    ///  如果具有该名称的节点已存在于映射，则一个新替换它。
+    ///</param>
+    ///<returns>
+    ///  如果 <paramref name="node" />
+    ///  将取代现有节点具有相同名称，旧的节点是返回; 否则为 <see langword="null" />
+    ///  返回。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="node" />
+    ///  创建来自不同 <see cref="T:System.Xml.XmlDocument" />
+    ///  比创建 <see langword="XmlNamedNodeMap" />
+    ///  ; 或 <see langword="XmlNamedNodeMap" />
+    ///  是只读的。
+    ///</exception>
+    function SetNamedItem(node: DNXmlNode): DNXmlNode;
+    ///<summary>
+    ///  删除从节点 <see langword="XmlNamedNodeMap" />
+    ///  。
+    ///</summary>
+    ///  <param name="name">
+    ///  要移除的节点的限定的名称。
+    ///  名称匹配对 <see cref="P:System.Xml.XmlNode.Name" />
+    ///  匹配节点的属性。
+    ///</param>
+    ///<returns><see langword="XmlNode" />
+    ///  删除从此 <see langword="XmlNamedNodeMap" />
+    ///  或 <see langword="null" />
+    ///  如果找不到匹配的节点。
+    ///</returns>
+    function RemoveNamedItem(name: string): DNXmlNode; overload;
+    ///<summary>
+    ///  检索在指定索引处的节点 <see langword="XmlNamedNodeMap" />
+    ///  。
+    ///</summary>
+    ///  <param name="index">
+    ///  要从检索的节点的索引位置 <see langword="XmlNamedNodeMap" />
+    ///  。
+    ///  索引是从零开始;因此，第一个节点的索引为 0，最后一个节点的索引为 <see cref="P:System.Xml.XmlNamedNodeMap.Count" />
+    ///  -1。
+    ///</param>
+    ///<returns>
+    ///  位于指定索引处的 <see cref="T:System.Xml.XmlNode" />
+    ///  。
+    ///  如果 <paramref name="index" />
+    ///  小于 0 或大于或等于 <see cref="P:System.Xml.XmlNamedNodeMap.Count" />
+    ///  属性， <see langword="null" />
+    ///  返回。
+    ///</returns>
+    function Item(index: Int32): DNXmlNode;
+    ///<summary>
+    ///  检索与匹配的节点 <see cref="P:System.Xml.XmlNode.LocalName" />
+    ///  和 <see cref="P:System.Xml.XmlNode.NamespaceURI" />
+    ///  。
+    ///</summary>
+    ///  <param name="localName">
+    ///  要检索的节点本地名称。
+    ///</param>
+    ///  <param name="namespaceURI">
+    ///  命名空间统一资源标识符 (URI) 的节点来检索。
+    ///</param>
+    ///<returns><see cref="T:System.Xml.XmlNode" />
+    ///  具有匹配的本地名称和命名空间 URI 或 <see langword="null" />
+    ///  如果找不到匹配的节点。
+    ///</returns>
+    function GetNamedItem(localName: string; namespaceURI: string): DNXmlNode; overload;
+    ///<summary>
+    ///  中删除具有匹配节点 <see cref="P:System.Xml.XmlNode.LocalName" />
+    ///  和 <see cref="P:System.Xml.XmlNode.NamespaceURI" />
+    ///  。
+    ///</summary>
+    ///  <param name="localName">
+    ///  要移除的节点本地名称。
+    ///</param>
+    ///  <param name="namespaceURI">
+    ///  命名空间节点的 URI 中删除。
+    ///</param>
+    ///<returns><see cref="T:System.Xml.XmlNode" />
+    ///  删除或 <see langword="null" />
+    ///  如果找不到匹配的节点。
+    ///</returns>
+    function RemoveNamedItem(localName: string; namespaceURI: string): DNXmlNode; overload;
+    ///<summary>
+    ///  中的节点集合上进行"foreach"样式迭代提供支持 <see langword="XmlNamedNodeMap" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  枚举器对象。
+    ///</returns>
+    function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取中的节点数 <see langword="XmlNamedNodeMap" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  节点数。
+    ///</returns>
+    property Count: Int32 read get_Count;
+  end;
+
+  TDNXmlNamedNodeMap = class(TDNGenericImport<DNXmlNamedNodeMapClass, DNXmlNamedNodeMap>) end;
+
+  //-------------namespace: System.Xml----------------
+  DNXmlAttributeCollectionClass = interface(DNXmlNamedNodeMapClass)
   ['{7D8D432B-42C5-5DD1-81AC-C7E940F30448}']
   end;
 
@@ -5026,7 +6758,7 @@ type
   ///  表示可以按名称或索引访问的属性的集合。
   ///</summary>
   [DNTypeName('System.Xml.XmlAttributeCollection')]
-  DNXmlAttributeCollection = interface(DNObject)
+  DNXmlAttributeCollection = interface(DNXmlNamedNodeMap)
   ['{AFF15495-0AAB-3C7F-A744-CB752611089E}']
   { getters & setters } 
 
@@ -10477,6 +12209,8 @@ type
     function get_LocalName: string;
     function get_NodeType: DNXmlNodeType;
     function get_IsReadOnly: Boolean;
+    function get_Entities: DNXmlNamedNodeMap;
+    function get_Notations: DNXmlNamedNodeMap;
     function get_PublicId: string;
     function get_SystemId: string;
     function get_InternalSubset: string;
@@ -10596,6 +12330,28 @@ type
     ///  。
     ///</returns>
     property IsReadOnly: Boolean read get_IsReadOnly;
+    ///<summary>
+    ///  获取的集合 <see cref="T:System.Xml.XmlEntity" />
+    ///  节点在文档类型声明中声明。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlNamedNodeMap" />
+    ///  包含 <see langword="XmlEntity" />
+    ///  节点。
+    ///  返回的 <see langword="XmlNamedNodeMap" />
+    ///  是只读的。
+    ///</returns>
+    property Entities: DNXmlNamedNodeMap read get_Entities;
+    ///<summary>
+    ///  获取的集合 <see cref="T:System.Xml.XmlNotation" />
+    ///  文档中存在的节点类型声明。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlNamedNodeMap" />
+    ///  包含 <see langword="XmlNotation" />
+    ///  节点。
+    ///  返回的 <see langword="XmlNamedNodeMap" />
+    ///  是只读的。
+    ///</returns>
+    property Notations: DNXmlNamedNodeMap read get_Notations;
     ///<summary>
     ///  获取上 DOCTYPE 声明的公共标识符的值。
     ///</summary>
@@ -11664,6 +13420,179 @@ type
   //-------------namespace: System.Xml----------------
   DNXmlParserContextClass = interface(DDN.mscorlib.DNObjectClass)
   ['{0E6B1786-198D-5A8F-8792-DB639A99D507}']
+  { constructors } 
+
+    ///<summary>
+    ///  新实例初始化 <see langword="XmlParserContext" />
+    ///  类与指定 <see cref="T:System.Xml.XmlNameTable" />
+    ///  , ，<see cref="T:System.Xml.XmlNamespaceManager" />
+    ///  , ，<see langword="xml:lang" />
+    ///  , ，和 <see langword="xml:space" />
+    ///  值。
+    ///</summary>
+    ///  <param name="nt"><see cref="T:System.Xml.XmlNameTable" />
+    ///  用于原子化字符串。
+    ///  如果这是 <see langword="null" />
+    ///  , ，用来构造的名称表 <paramref name="nsMgr" />
+    ///  改为使用。
+    ///  有关原子化字符串的详细信息，请参阅 <see cref="T:System.Xml.XmlNameTable" />
+    ///  。
+    ///</param>
+    ///  <param name="nsMgr"><see cref="T:System.Xml.XmlNamespaceManager" />
+    ///  要用于查找命名空间信息或 <see langword="null" />
+    ///  。
+    ///</param>
+    ///  <param name="xmlLang"><see langword="xml:lang" />
+    ///  作用域。
+    ///</param>
+    ///  <param name="xmlSpace"><see cref="T:System.Xml.XmlSpace" />
+    ///  值，该值指示 <see langword="xml:space" />
+    ///  作用域。
+    ///</param>
+    ///<exception cref="T:System.Xml.XmlException"><paramref name="nt" />
+    ///  不相同 <see langword="XmlNameTable" />
+    ///  用于构造 <paramref name="nsMgr" />
+    ///  。
+    ///</exception>
+    {class} function init(nt: DNXmlNameTable; nsMgr: DNXmlNamespaceManager; xmlLang: string; xmlSpace: DNXmlSpace): DNXmlParserContext; overload;
+    ///<summary>
+    ///  新实例初始化 <see langword="XmlParserContext" />
+    ///  类与指定 <see cref="T:System.Xml.XmlNameTable" />
+    ///  , ，<see cref="T:System.Xml.XmlNamespaceManager" />
+    ///  , ，<see langword="xml:lang" />
+    ///  , ，<see langword="xml:space" />
+    ///  , ，和编码。
+    ///</summary>
+    ///  <param name="nt"><see cref="T:System.Xml.XmlNameTable" />
+    ///  用于原子化字符串。
+    ///  如果这是 <see langword="null" />
+    ///  , ，用来构造的名称表 <paramref name="nsMgr" />
+    ///  改为使用。
+    ///  原子化字符串的详细信息，请参阅 <see cref="T:System.Xml.XmlNameTable" />
+    ///  。
+    ///</param>
+    ///  <param name="nsMgr"><see cref="T:System.Xml.XmlNamespaceManager" />
+    ///  要用于查找命名空间信息或 <see langword="null" />
+    ///  。
+    ///</param>
+    ///  <param name="xmlLang"><see langword="xml:lang" />
+    ///  作用域。
+    ///</param>
+    ///  <param name="xmlSpace"><see cref="T:System.Xml.XmlSpace" />
+    ///  值，该值指示 <see langword="xml:space" />
+    ///  作用域。
+    ///</param>
+    ///  <param name="enc"><see cref="T:System.Text.Encoding" />
+    ///  对象，它指示编码设置。
+    ///</param>
+    ///<exception cref="T:System.Xml.XmlException"><paramref name="nt" />
+    ///  不相同 <see langword="XmlNameTable" />
+    ///  用于构造 <paramref name="nsMgr" />
+    ///  。
+    ///</exception>
+    {class} function init(nt: DNXmlNameTable; nsMgr: DNXmlNamespaceManager; xmlLang: string; xmlSpace: DNXmlSpace; enc: DDN.mscorlib.DNEncoding): DNXmlParserContext; overload;
+    ///<summary>
+    ///  新实例初始化 <see langword="XmlParserContext" />
+    ///  类与指定 <see cref="T:System.Xml.XmlNameTable" />
+    ///  , ，<see cref="T:System.Xml.XmlNamespaceManager" />
+    ///  , ，基 URI， <see langword="xml:lang" />
+    ///  , ，<see langword="xml:space" />
+    ///  , ，和文档类型值。
+    ///</summary>
+    ///  <param name="nt"><see cref="T:System.Xml.XmlNameTable" />
+    ///  用于原子化字符串。
+    ///  如果这是 <see langword="null" />
+    ///  , ，用来构造的名称表 <paramref name="nsMgr" />
+    ///  改为使用。
+    ///  有关原子化字符串的详细信息，请参阅 <see cref="T:System.Xml.XmlNameTable" />
+    ///  。
+    ///</param>
+    ///  <param name="nsMgr"><see cref="T:System.Xml.XmlNamespaceManager" />
+    ///  要用于查找命名空间信息或 <see langword="null" />
+    ///  。
+    ///</param>
+    ///  <param name="docTypeName">
+    ///  文档类型声明的名称。
+    ///</param>
+    ///  <param name="pubId">
+    ///  公共标识符。
+    ///</param>
+    ///  <param name="sysId">
+    ///  系统标识符。
+    ///</param>
+    ///  <param name="internalSubset">
+    ///  内部 DTD 子集。
+    ///  DTD 子集用于实体解析，而不能用于文档验证。
+    ///</param>
+    ///  <param name="baseURI">
+    ///  基 URI 的 xml 片段 （从中加载该片段的位置）。
+    ///</param>
+    ///  <param name="xmlLang"><see langword="xml:lang" />
+    ///  作用域。
+    ///</param>
+    ///  <param name="xmlSpace"><see cref="T:System.Xml.XmlSpace" />
+    ///  值，该值指示 <see langword="xml:space" />
+    ///  作用域。
+    ///</param>
+    ///<exception cref="T:System.Xml.XmlException"><paramref name="nt" />
+    ///  不相同 <see langword="XmlNameTable" />
+    ///  用于构造 <paramref name="nsMgr" />
+    ///  。
+    ///</exception>
+    {class} function init(nt: DNXmlNameTable; nsMgr: DNXmlNamespaceManager; docTypeName: string; pubId: string; sysId: string; internalSubset: string; baseURI: string; xmlLang: string; xmlSpace: DNXmlSpace): DNXmlParserContext; overload;
+    ///<summary>
+    ///  新实例初始化 <see langword="XmlParserContext" />
+    ///  类与指定 <see cref="T:System.Xml.XmlNameTable" />
+    ///  , ，<see cref="T:System.Xml.XmlNamespaceManager" />
+    ///  , ，基 URI， <see langword="xml:lang" />
+    ///  , ，<see langword="xml:space" />
+    ///  , 、 编码和文档类型值。
+    ///</summary>
+    ///  <param name="nt"><see cref="T:System.Xml.XmlNameTable" />
+    ///  用于原子化字符串。
+    ///  如果这是 <see langword="null" />
+    ///  , ，用来构造的名称表 <paramref name="nsMgr" />
+    ///  改为使用。
+    ///  有关原子化字符串的详细信息，请参阅 <see cref="T:System.Xml.XmlNameTable" />
+    ///  。
+    ///</param>
+    ///  <param name="nsMgr"><see cref="T:System.Xml.XmlNamespaceManager" />
+    ///  要用于查找命名空间信息或 <see langword="null" />
+    ///  。
+    ///</param>
+    ///  <param name="docTypeName">
+    ///  文档类型声明的名称。
+    ///</param>
+    ///  <param name="pubId">
+    ///  公共标识符。
+    ///</param>
+    ///  <param name="sysId">
+    ///  系统标识符。
+    ///</param>
+    ///  <param name="internalSubset">
+    ///  内部 DTD 子集。
+    ///  DTD 用于实体解析，而不能用于文档验证。
+    ///</param>
+    ///  <param name="baseURI">
+    ///  基 URI 的 xml 片段 （从中加载该片段的位置）。
+    ///</param>
+    ///  <param name="xmlLang"><see langword="xml:lang" />
+    ///  作用域。
+    ///</param>
+    ///  <param name="xmlSpace"><see cref="T:System.Xml.XmlSpace" />
+    ///  值，该值指示 <see langword="xml:space" />
+    ///  作用域。
+    ///</param>
+    ///  <param name="enc"><see cref="T:System.Text.Encoding" />
+    ///  对象，它指示编码设置。
+    ///</param>
+    ///<exception cref="T:System.Xml.XmlException"><paramref name="nt" />
+    ///  不相同 <see langword="XmlNameTable" />
+    ///  用于构造 <paramref name="nsMgr" />
+    ///  。
+    ///</exception>
+    {class} function init(nt: DNXmlNameTable; nsMgr: DNXmlNamespaceManager; docTypeName: string; pubId: string; sysId: string; internalSubset: string; baseURI: string; xmlLang: string; xmlSpace: DNXmlSpace; enc: DDN.mscorlib.DNEncoding): DNXmlParserContext; overload;
+
   end;
 
   ///<summary>
@@ -11691,6 +13620,8 @@ type
     procedure set_InternalSubset(value: string);
     function get_XmlLang: string;
     procedure set_XmlLang(value: string);
+    function get_XmlSpace: DNXmlSpace;
+    procedure set_XmlSpace(value: DNXmlSpace);
     function get_Encoding: DDN.mscorlib.DNEncoding;
     procedure set_Encoding(value: DDN.mscorlib.DNEncoding);
 
@@ -11769,6 +13700,15 @@ type
     ///  返回。
     ///</returns>
     property XmlLang: string read get_XmlLang write set_XmlLang;
+    ///<summary>
+    ///  获取或设置当前 <see langword="xml:space" />
+    ///  作用域。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlSpace" />
+    ///  值，该值指示 <see langword="xml:space" />
+    ///  作用域。
+    ///</returns>
+    property XmlSpace: DNXmlSpace read get_XmlSpace write set_XmlSpace;
     ///<summary>
     ///  获取或设置的编码类型。
     ///</summary>
@@ -12184,6 +14124,7 @@ type
     function get_IsEmptyElement: Boolean;
     function get_IsDefault: Boolean;
     function get_QuoteChar: Char;
+    function get_XmlSpace: DNXmlSpace;
     function get_XmlLang: string;
     function get_SchemaInfo: DNIXmlSchemaInfo;
     function get_ValueType: DDN.mscorlib.DNType;
@@ -12192,6 +14133,7 @@ type
     function get_Item(name: string): string; overload;
     function get_Item(name: string; namespaceURI: string): string; overload;
     function get_EOF: Boolean;
+    function get_ReadState: DNReadState;
     function get_NameTable: DNXmlNameTable;
     function get_CanResolveEntity: Boolean;
     function get_CanReadBinaryContent: Boolean;
@@ -14121,6 +16063,22 @@ type
     ///</exception>
     property QuoteChar: Char read get_QuoteChar;
     ///<summary>
+    ///  当在派生类中重写，获取当前 <see langword="xml:space" />
+    ///  作用域。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlSpace" />
+    ///  值之一。
+    ///  如果不存在任何 <see langword="xml:space" />
+    ///  范围，则该属性默认值为 <see langword="XmlSpace.None" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />
+    ///  上一个异步操作完成之前调用方法。
+    ///  在这种情况下， <see cref="T:System.InvalidOperationException" />
+    ///  引发并显示消息"异步操作正在进行。"
+    ///</exception>
+    property XmlSpace: DNXmlSpace read get_XmlSpace;
+    ///<summary>
     ///  当在派生类中重写，获取当前 <see langword="xml:lang" />
     ///  作用域。
     ///</summary>
@@ -14208,6 +16166,18 @@ type
     ///  引发并显示消息"异步操作正在进行。"
     ///</exception>
     property EOF: Boolean read get_EOF;
+    ///<summary>
+    ///  当在派生类中被重写时，获取读取器的状态。
+    ///</summary>
+    ///<returns>
+    ///  指定读取器的状态的枚举值之一。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlReader" />
+    ///  上一个异步操作完成之前调用方法。
+    ///  在这种情况下， <see cref="T:System.InvalidOperationException" />
+    ///  引发并显示消息"异步操作正在进行。"
+    ///</exception>
+    property ReadState: DNReadState read get_ReadState;
     ///<summary>
     ///  当在派生类中重写时获取 <see cref="T:System.Xml.XmlNameTable" />
     ///  与此实现关联。
@@ -14598,9 +16568,11 @@ type
     function get_IsEmptyElement: Boolean;
     function get_IsDefault: Boolean;
     function get_QuoteChar: Char;
+    function get_XmlSpace: DNXmlSpace;
     function get_XmlLang: string;
     function get_AttributeCount: Int32;
     function get_EOF: Boolean;
+    function get_ReadState: DNReadState;
     function get_NameTable: DNXmlNameTable;
     function get_CanResolveEntity: Boolean;
     function get_CanReadBinaryContent: Boolean;
@@ -16497,6 +18469,17 @@ type
     ///</returns>
     property QuoteChar: Char read get_QuoteChar;
     ///<summary>
+    ///  获取当前 <see langword="xml:space" />
+    ///  范围。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlSpace" />
+    ///  值之一。
+    ///  如果不存在任何 <see langword="xml:space" />
+    ///  范围，则该属性默认值为 <see langword="XmlSpace.None" />
+    ///  。
+    ///</returns>
+    property XmlSpace: DNXmlSpace read get_XmlSpace;
+    ///<summary>
     ///  获取当前 <see langword="xml:lang" />
     ///  范围。
     ///</summary>
@@ -16521,6 +18504,13 @@ type
     ///  。
     ///</returns>
     property EOF: Boolean read get_EOF;
+    ///<summary>
+    ///  获取读取器的状态。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.ReadState" />
+    ///  值之一。
+    ///</returns>
+    property ReadState: DNReadState read get_ReadState;
     ///<summary>
     ///  获取与此实现关联的 <see cref="T:System.Xml.XmlNameTable" />
     ///  。
@@ -17451,6 +19441,8 @@ type
   { getters & setters } 
 
     function get_Settings: DNXmlWriterSettings;
+    function get_WriteState: DNWriteState;
+    function get_XmlSpace: DNXmlSpace;
     function get_XmlLang: string;
 
   { methods } 
@@ -19206,6 +21198,44 @@ type
     ///</exception>
     property Settings: DNXmlWriterSettings read get_Settings;
     ///<summary>
+    ///  当在派生类中被重写时，获取写入器的状态。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.WriteState" />
+    ///  值之一。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlWriter" />
+    ///  上一个异步操作完成之前调用方法。
+    ///  在这种情况下， <see cref="T:System.InvalidOperationException" />
+    ///  引发并显示消息"异步操作正在进行。"
+    ///</exception>
+    property WriteState: DNWriteState read get_WriteState;
+    ///<summary>
+    ///  当在派生类中重写时获取 <see cref="T:System.Xml.XmlSpace" />
+    ///  表示当前 <see langword="xml:space" />
+    ///  作用域。
+    ///</summary>
+    ///<returns><see langword="XmlSpace" />
+    ///  表示当前 <see langword="xml:space" />
+    ///  作用域。
+    ///  值
+    ///  含义
+    ///<see langword="None" />
+    ///  这是默认值，如果没有 <see langword="xml:space" />
+    ///  存在的作用域。
+    ///<see langword="Default" />
+    ///  当前作用域是 <see langword="xml:space" />
+    ///  ="default"。
+    ///<see langword="Preserve" />
+    ///  当前作用域是 <see langword="xml:space" />
+    ///  ="preserve"。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException"><see cref="T:System.Xml.XmlWriter" />
+    ///  上一个异步操作完成之前调用方法。
+    ///  在这种情况下， <see cref="T:System.InvalidOperationException" />
+    ///  引发并显示消息"异步操作正在进行。"
+    ///</exception>
+    property XmlSpace: DNXmlSpace read get_XmlSpace;
+    ///<summary>
     ///  当在派生类中重写，获取当前 <see langword="xml:lang" />
     ///  作用域。
     ///</summary>
@@ -19594,6 +21624,7 @@ type
   { getters & setters } 
 
     function get_IsNode: Boolean;
+    function get_XmlType: DNXmlSchemaType;
     function get_TypedValue: DDN.mscorlib.DNObject;
     function get_ValueType: DDN.mscorlib.DNType;
     function get_ValueAsBoolean: Boolean;
@@ -21135,6 +23166,19 @@ type
     ///</returns>
     function IsSamePosition(other: DNXPathNavigator): Boolean;
     ///<summary>
+    ///  将当前的位置进行比较 <see cref="T:System.Xml.XPath.XPathNavigator" />
+    ///  用的位置 <see cref="T:System.Xml.XPath.XPathNavigator" />
+    ///  指定。
+    ///</summary>
+    ///  <param name="nav"><see cref="T:System.Xml.XPath.XPathNavigator" />
+    ///  要与其进行比较。
+    ///</param>
+    ///<returns><see cref="T:System.Xml.XmlNodeOrder" />
+    ///  值，该值表示两个的相对位置 <see cref="T:System.Xml.XPath.XPathNavigator" />
+    ///  对象。
+    ///</returns>
+    function ComparePosition(nav: DNXPathNavigator): DNXmlNodeOrder;
+    ///<summary>
     ///  验证中的 XML 数据 <see cref="T:System.Xml.XPath.XPathNavigator" />
     ///  符合提供 XML 架构定义语言 (XSD) 架构。
     ///</summary>
@@ -21191,6 +23235,15 @@ type
     ///  。
     ///</returns>
     property IsNode: Boolean read get_IsNode;
+    ///<summary>
+    ///  获取 <see cref="T:System.Xml.Schema.XmlSchemaType" />
+    ///  当前节点的信息。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.Schema.XmlSchemaType" />
+    ///  对象; 默认值是 <see langword="null" />
+    ///  。
+    ///</returns>
+    property XmlType: DNXmlSchemaType read get_XmlType;
     ///<summary>
     ///  获取作为最合适的 .NET Framework 类型的已装箱对象的当前节点。
     ///</summary>

@@ -9,6 +9,12 @@
 
 unit DDN.Xml.Common;
 
+{$IFDEF FPC}
+  {$mode delphi}//{$H+}
+  {$modeswitch advancedrecords}
+  {$modeswitch prefixedattributes} // Custom attributes feature，fpc3.2.2+
+{$ENDIF}
+
 interface
 
 uses
@@ -135,6 +141,25 @@ type
     ///  指示支持索引器属性的声明的生成器。
     ///</summary>
     DeclareIndexerProperties = 33554432;
+  end;
+
+
+  //-------------namespace: System.CodeDom.Compiler----------------
+  ///<summary>
+  ///  定义用于指示特殊功能的一种语言标识符。
+  ///</summary>
+  [DNTypeName('System.CodeDom.Compiler.LanguageOptions')]
+  DNLanguageOptions = type Integer;
+  DNLanguageOptionsHelper = record helper for DNLanguageOptions
+  public const
+    ///<summary>
+    ///  语言都有默认特性。
+    ///</summary>
+    None = 0;
+    ///<summary>
+    ///  语言是不区分大小写。
+    ///</summary>
+    CaseInsensitive = 1;
   end;
 
 
@@ -476,6 +501,38 @@ type
 
   //-------------namespace: System----------------
   ///<summary>
+  ///  定义主机名称类型<see cref="M:System.Uri.CheckHostName(System.String)" />
+  ///  方法。
+  ///</summary>
+  [DNTypeName('System.UriHostNameType')]
+  DNUriHostNameType = type Integer;
+  DNUriHostNameTypeHelper = record helper for DNUriHostNameType
+  public const
+    ///<summary>
+    ///  未提供主机名的类型。
+    ///</summary>
+    Unknown = 0;
+    ///<summary>
+    ///  主机已设置，但无法确定类型。
+    ///</summary>
+    Basic = 1;
+    ///<summary>
+    ///  主机名是域名系统 (DNS) 样式主机名。
+    ///</summary>
+    Dns = 2;
+    ///<summary>
+    ///  主机名是 Internet 协议 (IP) 版本 4 的主机地址。
+    ///</summary>
+    IPv4 = 3;
+    ///<summary>
+    ///  主机名是 Internet 协议 (IP) 版本 6 主机地址。
+    ///</summary>
+    IPv6 = 4;
+  end;
+
+
+  //-------------namespace: System----------------
+  ///<summary>
   ///  定义类型的<see cref="T:System.Uri" />
   ///  s 针对<see cref="M:System.Uri.IsWellFormedUriString(System.String,System.UriKind)" />
   ///  和几个<see cref="Overload:System.Uri.#ctor" />
@@ -535,6 +592,7 @@ type
 { declares }
 
   DNCodeAttributeDeclaration = interface; // type: System.CodeDom.CodeAttributeDeclaration, namespace: System.CodeDom
+  DNCodeNamespaceImportCollection = interface; // type: System.CodeDom.CodeNamespaceImportCollection, namespace: System.CodeDom
   DNCodeCompileUnit = interface; // type: System.CodeDom.CodeCompileUnit, namespace: System.CodeDom
   DNCodeExpression = interface; // type: System.CodeDom.CodeExpression, namespace: System.CodeDom
   DNCodeNamespace = interface; // type: System.CodeDom.CodeNamespace, namespace: System.CodeDom
@@ -544,27 +602,48 @@ type
   DNCodeTypeReference = interface; // type: System.CodeDom.CodeTypeReference, namespace: System.CodeDom
   DNCodeGeneratorOptions = interface; // type: System.CodeDom.Compiler.CodeGeneratorOptions, namespace: System.CodeDom.Compiler
   DNCompilerError = interface; // type: System.CodeDom.Compiler.CompilerError, namespace: System.CodeDom.Compiler
+  DNCompilerInfo = interface; // type: System.CodeDom.Compiler.CompilerInfo, namespace: System.CodeDom.Compiler
   DNCompilerParameters = interface; // type: System.CodeDom.Compiler.CompilerParameters, namespace: System.CodeDom.Compiler
+  DNCompilerResults = interface; // type: System.CodeDom.Compiler.CompilerResults, namespace: System.CodeDom.Compiler
+  DNICodeCompiler = interface; // type: System.CodeDom.Compiler.ICodeCompiler, namespace: System.CodeDom.Compiler
+  DNICodeGenerator = interface; // type: System.CodeDom.Compiler.ICodeGenerator, namespace: System.CodeDom.Compiler
+  DNICodeParser = interface; // type: System.CodeDom.Compiler.ICodeParser, namespace: System.CodeDom.Compiler
   DNTempFileCollection = interface; // type: System.CodeDom.Compiler.TempFileCollection, namespace: System.CodeDom.Compiler
   DNCodeAttributeDeclarationCollection = interface; // type: System.CodeDom.CodeAttributeDeclarationCollection, namespace: System.CodeDom
+  DNCodeCommentStatementCollection = interface; // type: System.CodeDom.CodeCommentStatementCollection, namespace: System.CodeDom
+  DNCodeDirectiveCollection = interface; // type: System.CodeDom.CodeDirectiveCollection, namespace: System.CodeDom
+  DNCodeNamespaceCollection = interface; // type: System.CodeDom.CodeNamespaceCollection, namespace: System.CodeDom
+  DNCodeTypeDeclarationCollection = interface; // type: System.CodeDom.CodeTypeDeclarationCollection, namespace: System.CodeDom
   DNCompilerErrorCollection = interface; // type: System.CodeDom.Compiler.CompilerErrorCollection, namespace: System.CodeDom.Compiler
+  DNConfigurationLocationCollection = interface; // type: System.Configuration.ConfigurationLocationCollection, namespace: System.Configuration
+  DNKeysCollection = interface; // type: System.Collections.Specialized.NameObjectCollectionBase+KeysCollection, namespace: System.Collections.Specialized
   DNConfigurationSectionCollection = interface; // type: System.Configuration.ConfigurationSectionCollection, namespace: System.Configuration
   DNConfigurationSectionGroupCollection = interface; // type: System.Configuration.ConfigurationSectionGroupCollection, namespace: System.Configuration
+  DNPropertyInformationCollection = interface; // type: System.Configuration.PropertyInformationCollection, namespace: System.Configuration
   DNStringCollection = interface; // type: System.Collections.Specialized.StringCollection, namespace: System.Collections.Specialized
+  DNStringEnumerator = interface; // type: System.Collections.Specialized.StringEnumerator, namespace: System.Collections.Specialized
+  DNTypeConverter = interface; // type: System.ComponentModel.TypeConverter, namespace: System.ComponentModel
   DNConfiguration = interface; // type: System.Configuration.Configuration, namespace: System.Configuration
   DNConfigurationElement = interface; // type: System.Configuration.ConfigurationElement, namespace: System.Configuration
   DNConfigurationElementCollection = interface; // type: System.Configuration.ConfigurationElementCollection, namespace: System.Configuration
   DNConfigurationSection = interface; // type: System.Configuration.ConfigurationSection, namespace: System.Configuration
+  DNAppSettingsSection = interface; // type: System.Configuration.AppSettingsSection, namespace: System.Configuration
+  DNConnectionStringsSection = interface; // type: System.Configuration.ConnectionStringsSection, namespace: System.Configuration
   DNConfigurationLockCollection = interface; // type: System.Configuration.ConfigurationLockCollection, namespace: System.Configuration
   DNConfigurationSectionGroup = interface; // type: System.Configuration.ConfigurationSectionGroup, namespace: System.Configuration
   DNConfigurationValidatorBase = interface; // type: System.Configuration.ConfigurationValidatorBase, namespace: System.Configuration
+  DNContextInformation = interface; // type: System.Configuration.ContextInformation, namespace: System.Configuration
   DNElementInformation = interface; // type: System.Configuration.ElementInformation, namespace: System.Configuration
+  DNConfigurationBuilder = interface; // type: System.Configuration.ConfigurationBuilder, namespace: System.Configuration
+  DNProtectedConfigurationProvider = interface; // type: System.Configuration.ProtectedConfigurationProvider, namespace: System.Configuration
   DNSectionInformation = interface; // type: System.Configuration.SectionInformation, namespace: System.Configuration
+  DNIContainer = interface; // type: System.ComponentModel.IContainer, namespace: System.ComponentModel
   DNISite = interface; // type: System.ComponentModel.ISite, namespace: System.ComponentModel
   DNCodeDomProvider = interface; // type: System.CodeDom.Compiler.CodeDomProvider, namespace: System.CodeDom.Compiler
   DNRequestCachePolicy = interface; // type: System.Net.Cache.RequestCachePolicy, namespace: System.Net.Cache
   DNICredentials = interface; // type: System.Net.ICredentials, namespace: System.Net
   DNIWebProxy = interface; // type: System.Net.IWebProxy, namespace: System.Net
+  DNNetworkCredential = interface; // type: System.Net.NetworkCredential, namespace: System.Net
   DNFrameworkName = interface; // type: System.Runtime.Versioning.FrameworkName, namespace: System.Runtime.Versioning
   DNUri = interface; // type: System.Uri, namespace: System
 
@@ -642,6 +721,61 @@ type
   TDNCodeAttributeDeclaration = class(TDNGenericImport<DNCodeAttributeDeclarationClass, DNCodeAttributeDeclaration>) end;
 
   //-------------namespace: System.CodeDom----------------
+  DNCodeNamespaceImportCollectionClass = interface(DDN.mscorlib.DNObjectClass)
+  ['{012A8777-FF9A-5B5F-8413-661E038DADC9}']
+  { constructors } 
+
+    ///<summary>
+    ///  初始化 <see cref="T:System.CodeDom.CodeNamespaceImportCollection" />
+    ///  类的新实例。
+    ///</summary>
+    {class} function init: DNCodeNamespaceImportCollection;
+
+  end;
+
+  ///<summary>
+  ///  表示 <see cref="T:System.CodeDom.CodeNamespaceImport" />
+  ///  对象集合。
+  ///</summary>
+  [DNTypeName('System.CodeDom.CodeNamespaceImportCollection')]
+  DNCodeNamespaceImportCollection = interface(DDN.mscorlib.DNObject)
+  ['{7A168834-5605-30DB-8274-6B21E621A955}']
+  { getters & setters } 
+
+    function get_Count: Int32;
+
+  { methods } 
+
+    ///<summary>
+    ///  清除集合中的成员。
+    ///</summary>
+    procedure Clear;
+    ///<summary>
+    ///  获取枚举集合成员的枚举数。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  ，该值指示集合成员。
+    ///</returns>
+    function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取集合中的命名空间的数量。
+    ///</summary>
+    ///<returns>
+    ///  集合中的命名空间的数量。
+    ///</returns>
+    property Count: Int32 read get_Count;
+  end;
+
+  TDNCodeNamespaceImportCollection = class(TDNGenericImport<DNCodeNamespaceImportCollectionClass, DNCodeNamespaceImportCollection>) end;
+
+  //-------------namespace: System.CodeDom----------------
   DNCodeCompileUnitClass = interface(DNObjectClass)
   ['{B97554D4-9B0B-5145-A41D-A3E6D5223053}']
   { constructors } 
@@ -662,8 +796,11 @@ type
   ['{25A5D609-4D61-3C52-A3E1-49EF93066FD1}']
   { getters & setters } 
 
+    function get_Namespaces: DNCodeNamespaceCollection;
     function get_ReferencedAssemblies: DNStringCollection;
     function get_AssemblyCustomAttributes: DNCodeAttributeDeclarationCollection;
+    function get_StartDirectives: DNCodeDirectiveCollection;
+    function get_EndDirectives: DNCodeDirectiveCollection;
     function get_UserData: DDN.mscorlib.DNIDictionary;
 
   { methods } 
@@ -675,6 +812,14 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取命名空间的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.CodeNamespaceCollection" />
+    ///  ，该值指示编译单元使用的命名空间。
+    ///</returns>
+    property Namespaces: DNCodeNamespaceCollection read get_Namespaces;
     ///<summary>
     ///  获取引用的程序集。
     ///</summary>
@@ -691,6 +836,24 @@ type
     ///  指示生成的程序集的自定义特性。
     ///</returns>
     property AssemblyCustomAttributes: DNCodeAttributeDeclarationCollection read get_AssemblyCustomAttributes;
+    ///<summary>
+    ///  获取 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  对象，其中包含启动指令。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  对象，其中包含启动指令。
+    ///</returns>
+    property StartDirectives: DNCodeDirectiveCollection read get_StartDirectives;
+    ///<summary>
+    ///  获取 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  包含结束指令的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  包含结束指令的对象。
+    ///</returns>
+    property EndDirectives: DNCodeDirectiveCollection read get_EndDirectives;
     ///<summary>
     ///  获取当前对象的可由用户定义的数据。
     ///</summary>
@@ -775,8 +938,11 @@ type
   ['{DD1C0C7A-BC95-339A-8321-9DBF4803CAF4}']
   { getters & setters } 
 
+    function get_Types: DNCodeTypeDeclarationCollection;
+    function get_Imports: DNCodeNamespaceImportCollection;
     function get_Name: string;
     procedure set_Name(value: string);
+    function get_Comments: DNCodeCommentStatementCollection;
     function get_UserData: DDN.mscorlib.DNIDictionary;
 
   { methods } 
@@ -789,12 +955,36 @@ type
   { propertys } 
 
     ///<summary>
+    ///  获取该命名空间包含的类型的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.CodeTypeDeclarationCollection" />
+    ///  ，该值指示包含命名空间中的类型。
+    ///</returns>
+    property Types: DNCodeTypeDeclarationCollection read get_Types;
+    ///<summary>
+    ///  获取命名空间的集合使用的命名空间导入指令。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.CodeNamespaceImportCollection" />
+    ///  ，该值指示使用由命名空间的命名空间导入指令。
+    ///</returns>
+    property Imports: DNCodeNamespaceImportCollection read get_Imports;
+    ///<summary>
     ///  获取或设置命名空间的名称。
     ///</summary>
     ///<returns>
     ///  命名空间的名称。
     ///</returns>
     property Name: string read get_Name write set_Name;
+    ///<summary>
+    ///  获取为命名空间的注释。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.CodeCommentStatementCollection" />
+    ///  ，指示命名空间的注释。
+    ///</returns>
+    property Comments: DNCodeCommentStatementCollection read get_Comments;
     ///<summary>
     ///  获取当前对象的可由用户定义的数据。
     ///</summary>
@@ -828,6 +1018,8 @@ type
   ['{10A98D9F-994D-3762-89B4-2116A95063EE}']
   { getters & setters } 
 
+    function get_StartDirectives: DNCodeDirectiveCollection;
+    function get_EndDirectives: DNCodeDirectiveCollection;
     function get_UserData: DDN.mscorlib.DNIDictionary;
 
   { methods } 
@@ -839,6 +1031,24 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  包含开始指令的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  对象，其中包含启动指令。
+    ///</returns>
+    property StartDirectives: DNCodeDirectiveCollection read get_StartDirectives;
+    ///<summary>
+    ///  获取 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  包含结束指令的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  包含结束指令的对象。
+    ///</returns>
+    property EndDirectives: DNCodeDirectiveCollection read get_EndDirectives;
     ///<summary>
     ///  获取当前对象的可由用户定义的数据。
     ///</summary>
@@ -876,6 +1086,9 @@ type
     procedure set_Name(value: string);
     function get_CustomAttributes: DNCodeAttributeDeclarationCollection;
     procedure set_CustomAttributes(value: DNCodeAttributeDeclarationCollection);
+    function get_Comments: DNCodeCommentStatementCollection;
+    function get_StartDirectives: DNCodeDirectiveCollection;
+    function get_EndDirectives: DNCodeDirectiveCollection;
     function get_UserData: DDN.mscorlib.DNIDictionary;
 
   { methods } 
@@ -902,6 +1115,30 @@ type
     ///  ，该值指示该成员的自定义特性。
     ///</returns>
     property CustomAttributes: DNCodeAttributeDeclarationCollection read get_CustomAttributes write set_CustomAttributes;
+    ///<summary>
+    ///  获取类型成员批注的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.CodeCommentStatementCollection" />
+    ///  ，指示该成员的注释。
+    ///</returns>
+    property Comments: DNCodeCommentStatementCollection read get_Comments;
+    ///<summary>
+    ///  获取开始指令成员的指针。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  对象，其中包含启动指令。
+    ///</returns>
+    property StartDirectives: DNCodeDirectiveCollection read get_StartDirectives;
+    ///<summary>
+    ///  获取结束指令成员的指针。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  包含结束指令的对象。
+    ///</returns>
+    property EndDirectives: DNCodeDirectiveCollection read get_EndDirectives;
     ///<summary>
     ///  获取当前对象的可由用户定义的数据。
     ///</summary>
@@ -958,6 +1195,9 @@ type
     procedure set_Name(value: string);
     function get_CustomAttributes: DNCodeAttributeDeclarationCollection;
     procedure set_CustomAttributes(value: DNCodeAttributeDeclarationCollection);
+    function get_Comments: DNCodeCommentStatementCollection;
+    function get_StartDirectives: DNCodeDirectiveCollection;
+    function get_EndDirectives: DNCodeDirectiveCollection;
     function get_UserData: DDN.mscorlib.DNIDictionary;
 
   { methods } 
@@ -1034,6 +1274,30 @@ type
     ///  ，该值指示该成员的自定义特性。
     ///</returns>
     property CustomAttributes: DNCodeAttributeDeclarationCollection read get_CustomAttributes write set_CustomAttributes;
+    ///<summary>
+    ///  获取类型成员批注的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.CodeCommentStatementCollection" />
+    ///  ，指示该成员的注释。
+    ///</returns>
+    property Comments: DNCodeCommentStatementCollection read get_Comments;
+    ///<summary>
+    ///  获取开始指令成员的指针。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  对象，其中包含启动指令。
+    ///</returns>
+    property StartDirectives: DNCodeDirectiveCollection read get_StartDirectives;
+    ///<summary>
+    ///  获取结束指令成员的指针。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  包含结束指令的对象。
+    ///</returns>
+    property EndDirectives: DNCodeDirectiveCollection read get_EndDirectives;
     property UserData: DDN.mscorlib.DNIDictionary read get_UserData;
   end;
 
@@ -1380,6 +1644,114 @@ type
   TDNCompilerError = class(TDNGenericImport<DNCompilerErrorClass, DNCompilerError>) end;
 
   //-------------namespace: System.CodeDom.Compiler----------------
+  DNCompilerInfoClass = interface(DDN.mscorlib.DNObjectClass)
+  ['{75051793-5501-52FD-ADB5-ED9A3BC8965A}']
+  end;
+
+  ///<summary>
+  ///  表示一个语言提供程序的配置设置。
+  ///  此类不能被继承。
+  ///</summary>
+  [DNTypeName('System.CodeDom.Compiler.CompilerInfo')]
+  DNCompilerInfo = interface(DDN.mscorlib.DNObject)
+  ['{CBB8F837-C710-3207-A59E-7501E4890887}']
+  { getters & setters } 
+
+    function get_CodeDomProviderType: DDN.mscorlib.DNType;
+    function get_IsCodeDomProviderTypeValid: Boolean;
+
+  { methods } 
+
+    function CreateProvider(providerOptions: DDN.mscorlib.DNIDictionary<string, string>): DNCodeDomProvider; overload;
+    ///<summary>
+    ///  获取语言提供程序支持的语言名称。
+    ///</summary>
+    ///<returns>
+    ///  语言提供程序支持的语言名称的数组。
+    ///</returns>
+    function GetLanguages: TArray<string>;
+    ///<summary>
+    ///  返回的文件名称扩展支持的语言提供程序。
+    ///</summary>
+    ///<returns>
+    ///  支持的语言提供程序的文件扩展名的数组。
+    ///</returns>
+    function GetExtensions: TArray<string>;
+    ///<summary>
+    ///  获取语言提供程序实现的配置的编译器设置。
+    ///</summary>
+    ///<returns>
+    ///  一个只读的 <see cref="T:System.CodeDom.Compiler.CompilerParameters" />
+    ///  实例，它包含编译器选项和为语言提供程序配置设置。
+    ///</returns>
+    function CreateDefaultCompilerParameters: DNCompilerParameters;
+    ///<summary>
+    ///  返回当前实例的哈希代码。
+    ///</summary>
+    ///<returns>
+    ///  当前的 32 位有符号的整数哈希代码 <see cref="T:System.CodeDom.Compiler.CompilerInfo" />
+    ///  实例，适合在哈希算法和数据结构，如哈希表中使用。
+    ///</returns>
+    function GetHashCode: Int32;
+    ///<summary>
+    ///  确定指定的对象是否表示相同语言提供程序和编译器的设置与当前 <see cref="T:System.CodeDom.Compiler.CompilerInfo" />
+    ///  。
+    ///</summary>
+    ///  <param name="o">
+    ///  将与当前 <see cref="T:System.CodeDom.Compiler.CompilerInfo" />
+    ///  进行比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="o" />
+    ///  是 <see cref="T:System.CodeDom.Compiler.CompilerInfo" />
+    ///  对象，其值是与此实例相同; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    function Equals(o: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  返回 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />
+    ///  当前语言提供程序设置的实例。
+    ///</summary>
+    ///<returns>
+    ///  关联语言提供程序配置的 CodeDOM 提供程序。
+    ///</returns>
+    function CreateProvider: DNCodeDomProvider; overload;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取已配置的类型 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />
+    ///  实现。
+    ///</summary>
+    ///<returns>
+    ///  一个只读的 <see cref="T:System.Type" />
+    ///  表示已配置的语言提供程序类型的实例。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationException">
+    ///  在此计算机上未配置语言提供程序。
+    ///</exception><exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  找不到类型，因为它是 <see langword="null" />
+    ///  或空字符串。
+    ///  - 或 -
+    ///  由于找不到该类型的名称 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />
+    ///  找不到配置文件中。
+    ///</exception>
+    property CodeDomProviderType: DDN.mscorlib.DNType read get_CodeDomProviderType;
+    ///<summary>
+    ///  返回一个值，该值指示是否在计算机上配置语言提供程序实现。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果计算机上配置语言提供程序实现类型否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    property IsCodeDomProviderTypeValid: Boolean read get_IsCodeDomProviderTypeValid;
+  end;
+
+  TDNCompilerInfo = class(TDNGenericImport<DNCompilerInfoClass, DNCompilerInfo>) end;
+
+  //-------------namespace: System.CodeDom.Compiler----------------
   DNCompilerParametersClass = interface(DDN.mscorlib.DNObjectClass)
   ['{98AAC05D-9F4A-52E0-9F3C-86251DA7DA26}']
   { constructors } 
@@ -1595,6 +1967,398 @@ type
   end;
 
   TDNCompilerParameters = class(TDNGenericImport<DNCompilerParametersClass, DNCompilerParameters>) end;
+
+  //-------------namespace: System.CodeDom.Compiler----------------
+  DNCompilerResultsClass = interface(DDN.mscorlib.DNObjectClass)
+  ['{37437627-1F61-520F-A758-23B3183573AA}']
+  { constructors } 
+
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.CodeDom.Compiler.CompilerResults" />
+    ///  类，该类使用指定的临时文件。
+    ///</summary>
+    ///  <param name="tempFiles">
+    ///  一个 <see cref="T:System.CodeDom.Compiler.TempFileCollection" />
+    ///  用来管理和存储对在编译期间生成的中间文件的引用。
+    ///</param>
+    {class} function init(tempFiles: DNTempFileCollection): DNCompilerResults;
+
+  end;
+
+  ///<summary>
+  ///  表示从编译器返回的编译结果。
+  ///</summary>
+  [DNTypeName('System.CodeDom.Compiler.CompilerResults')]
+  DNCompilerResults = interface(DDN.mscorlib.DNObject)
+  ['{6A56D79B-F9D7-341C-9FB9-38FA7DBE1719}']
+  { getters & setters } 
+
+    function get_TempFiles: DNTempFileCollection;
+    procedure set_TempFiles(value: DNTempFileCollection);
+    function get_Evidence: DDN.mscorlib.DNEvidence;
+    procedure set_Evidence(value: DDN.mscorlib.DNEvidence);
+    function get_CompiledAssembly: DDN.mscorlib.DNAssembly;
+    procedure set_CompiledAssembly(value: DDN.mscorlib.DNAssembly);
+    function get_Errors: DNCompilerErrorCollection;
+    function get_Output: DNStringCollection;
+    function get_PathToAssembly: string;
+    procedure set_PathToAssembly(value: string);
+    function get_NativeCompilerReturnValue: Int32;
+    procedure set_NativeCompilerReturnValue(value: Int32);
+
+  { methods } 
+
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取或设置要使用的临时文件集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.Compiler.TempFileCollection" />
+    ///  用来管理和存储对在编译期间生成的中间文件的引用。
+    ///</returns>
+    property TempFiles: DNTempFileCollection read get_TempFiles write set_TempFiles;
+    ///<summary>
+    ///  指示表示已编译的程序集的安全策略权限的证据对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Policy.Evidence" />
+    ///  对象，表示已编译的程序集的安全策略权限。
+    ///</returns>
+    property Evidence: DDN.mscorlib.DNEvidence read get_Evidence write set_Evidence;
+    ///<summary>
+    ///  获取或设置编译的程序集。
+    ///</summary>
+    ///<returns><see cref="T:System.Reflection.Assembly" />
+    ///  ，该值指示编译的程序集。
+    ///</returns>
+    property CompiledAssembly: DDN.mscorlib.DNAssembly read get_CompiledAssembly write set_CompiledAssembly;
+    ///<summary>
+    ///  获取编译器错误和警告的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" />
+    ///  ，该值指示的错误和警告导致编译时，如果有的话。
+    ///</returns>
+    property Errors: DNCompilerErrorCollection read get_Errors;
+    ///<summary>
+    ///  获取编译器输出消息。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Specialized.StringCollection" />
+    ///  ，其中包含输出消息。
+    ///</returns>
+    property Output: DNStringCollection read get_Output;
+    ///<summary>
+    ///  获取或设置已编译的程序集的路径。
+    ///</summary>
+    ///<returns>
+    ///  该程序集的路径或 <see langword="null" />
+    ///  如果在内存中生成程序集。
+    ///</returns>
+    property PathToAssembly: string read get_PathToAssembly write set_PathToAssembly;
+    ///<summary>
+    ///  获取或设置编译器的返回值。
+    ///</summary>
+    ///<returns>
+    ///  编译器的返回值。
+    ///</returns>
+    property NativeCompilerReturnValue: Int32 read get_NativeCompilerReturnValue write set_NativeCompilerReturnValue;
+  end;
+
+  TDNCompilerResults = class(TDNGenericImport<DNCompilerResultsClass, DNCompilerResults>) end;
+
+  //-------------namespace: System.CodeDom.Compiler----------------
+  ///<summary>
+  ///  定义一个接口来调用编译源代码或使用特定的编译器的 CodeDOM 树。
+  ///</summary>
+  [DNTypeName('System.CodeDom.Compiler.ICodeCompiler')]
+  DNICodeCompiler = interface(DNObject)
+  ['{436B1E43-8A38-359B-9E1A-2A700DBDB6BC}']
+  { methods } 
+
+    ///<summary>
+    ///  从编译程序集 <see cref="N:System.CodeDom" />
+    ///  包含在指定树 <see cref="T:System.CodeDom.CodeCompileUnit" />
+    ///  , ，使用指定的编译器设置。
+    ///</summary>
+    ///  <param name="options">
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerParameters" />
+    ///  对象，它指示的编译设置。
+    ///</param>
+    ///  <param name="compilationUnit">
+    ///  一个 <see cref="T:System.CodeDom.CodeCompileUnit" />
+    ///  ，该值指示要编译的代码。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerResults" />
+    ///  指示编译结果的对象。
+    ///</returns>
+    function CompileAssemblyFromDom(options: DNCompilerParameters; compilationUnit: DNCodeCompileUnit): DNCompilerResults;
+    ///<summary>
+    ///  将使用指定的编译器设置包含在指定的文件中的源代码中的程序集编译成。
+    ///</summary>
+    ///  <param name="options">
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerParameters" />
+    ///  对象，它指示的编译设置。
+    ///</param>
+    ///  <param name="fileName">
+    ///  包含要编译的源代码文件的文件名。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerResults" />
+    ///  指示编译结果的对象。
+    ///</returns>
+    function CompileAssemblyFromFile(options: DNCompilerParameters; fileName: string): DNCompilerResults;
+    ///<summary>
+    ///  将编译成程序集从指定的字符串包含源代码，并使用指定的编译器设置。
+    ///</summary>
+    ///  <param name="options">
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerParameters" />
+    ///  对象，它指示的编译设置。
+    ///</param>
+    ///  <param name="source">
+    ///  若要编译的源代码。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerResults" />
+    ///  指示编译结果的对象。
+    ///</returns>
+    function CompileAssemblyFromSource(options: DNCompilerParameters; source: string): DNCompilerResults;
+    ///<summary>
+    ///  编译程序集基于 <see cref="N:System.CodeDom" />
+    ///  树中指定的数组包含 <see cref="T:System.CodeDom.CodeCompileUnit" />
+    ///  对象时，使用指定的编译器设置。
+    ///</summary>
+    ///  <param name="options">
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerParameters" />
+    ///  对象，它指示的编译设置。
+    ///</param>
+    ///  <param name="compilationUnits">
+    ///  类型的数组 <see cref="T:System.CodeDom.CodeCompileUnit" />
+    ///  ，该值指示要编译的代码。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerResults" />
+    ///  指示编译结果的对象。
+    ///</returns>
+    function CompileAssemblyFromDomBatch(options: DNCompilerParameters; compilationUnits: TArray<DNCodeCompileUnit>): DNCompilerResults;
+    ///<summary>
+    ///  将使用指定的编译器设置包含在指定的文件中的源代码中的程序集编译成。
+    ///</summary>
+    ///  <param name="options">
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerParameters" />
+    ///  对象，它指示的编译设置。
+    ///</param>
+    ///  <param name="fileNames">
+    ///  要编译的文件的文件名。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerResults" />
+    ///  指示编译结果的对象。
+    ///</returns>
+    function CompileAssemblyFromFileBatch(options: DNCompilerParameters; fileNames: TArray<string>): DNCompilerResults;
+    ///<summary>
+    ///  将指定的字符串包含源代码，并使用指定的编译器设置数组中的程序集编译成。
+    ///</summary>
+    ///  <param name="options">
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerParameters" />
+    ///  对象，它指示的编译设置。
+    ///</param>
+    ///  <param name="sources">
+    ///  要编译的源字符串。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerResults" />
+    ///  指示编译结果的对象。
+    ///</returns>
+    function CompileAssemblyFromSourceBatch(options: DNCompilerParameters; sources: TArray<string>): DNCompilerResults;
+
+  end;
+
+  //-------------namespace: System.CodeDom.Compiler----------------
+  ///<summary>
+  ///  定义用于生成代码的接口。
+  ///</summary>
+  [DNTypeName('System.CodeDom.Compiler.ICodeGenerator')]
+  DNICodeGenerator = interface(DNObject)
+  ['{AA6F6449-A84E-377B-A86C-FD956602CB06}']
+  { methods } 
+
+    ///<summary>
+    ///  获取一个值，该值指示指定的值是否为当前语言有效的标识符。
+    ///</summary>
+    ///  <param name="value">
+    ///  要测试是有效的标识符的值。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="value" />
+    ///  参数是有效的标识符; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    function IsValidIdentifier(value: string): Boolean;
+    ///<summary>
+    ///  如果指定的值不是有效的标识符，将引发异常。
+    ///</summary>
+    ///  <param name="value">
+    ///  要验证的标识符。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  标识符不是有效的。
+    ///</exception>
+    procedure ValidateIdentifier(value: string);
+    ///<summary>
+    ///  创建指定的值的转义的标识符。
+    ///</summary>
+    ///  <param name="value">
+    ///  要创建的转义的标识符的字符串。
+    ///</param>
+    ///<returns>
+    ///  转义的标识符的值。
+    ///</returns>
+    function CreateEscapedIdentifier(value: string): string;
+    ///<summary>
+    ///  创建指定的值的有效标识符。
+    ///</summary>
+    ///  <param name="value">
+    ///  要生成的有效标识符的字符串。
+    ///</param>
+    ///<returns>
+    ///  指定值的有效标识符。
+    ///</returns>
+    function CreateValidIdentifier(value: string): string;
+    ///<summary>
+    ///  获取指示指定的类型 <see cref="T:System.CodeDom.CodeTypeReference" />
+    ///  。
+    ///</summary>
+    ///  <param name="type">
+    ///  一个 <see cref="T:System.CodeDom.CodeTypeReference" />
+    ///  ，该值指示要返回的类型。
+    ///</param>
+    ///<returns>
+    ///  文本表示形式的指定类型的语言，此代码生成器用于在其中生成代码。
+    ///  例如，在 Visual Basic 中，传入 System.Int32 类型将返回"Integer"。
+    ///</returns>
+    function GetTypeOutput(&type: DNCodeTypeReference): string;
+    ///<summary>
+    ///  获取一个值，该值指示是否生成器支持表示由指定的语言功能 <see cref="T:System.CodeDom.Compiler.GeneratorSupport" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="supports">
+    ///  若要测试的生成器功能。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果指定的功能都受支持;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    function Supports(supports: DNGeneratorSupport): Boolean;
+    ///<summary>
+    ///  为指定的代码文档对象模型 (CodeDOM) 表达式生成代码，并输出到指定的文本编写器。
+    ///</summary>
+    ///  <param name="e">
+    ///  一个 <see cref="T:System.CodeDom.CodeExpression" />
+    ///  ，指示表达式为其生成代码。
+    ///</param>
+    ///  <param name="w"><see cref="T:System.IO.TextWriter" />
+    ///  向其中输出代码。
+    ///</param>
+    ///  <param name="o">
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />
+    ///  ，该值指示要用于生成代码的选项。
+    ///</param>
+    procedure GenerateCodeFromExpression(e: DNCodeExpression; w: DDN.mscorlib.DNTextWriter; o: DNCodeGeneratorOptions);
+    ///<summary>
+    ///  为指定的代码文档对象模型 (CodeDOM) 语句生成代码，并输出到指定的文本编写器使用指定的选项。
+    ///</summary>
+    ///  <param name="e">
+    ///  一个 <see cref="T:System.CodeDom.CodeStatement" />
+    ///  包含要转换的 CodeDOM 元素。
+    ///</param>
+    ///  <param name="w"><see cref="T:System.IO.TextWriter" />
+    ///  向其中输出代码。
+    ///</param>
+    ///  <param name="o">
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />
+    ///  ，该值指示要用于生成代码的选项。
+    ///</param>
+    procedure GenerateCodeFromStatement(e: DNCodeStatement; w: DDN.mscorlib.DNTextWriter; o: DNCodeGeneratorOptions);
+    ///<summary>
+    ///  为指定的代码文档对象模型 (CodeDOM) 命名空间生成代码，并输出到指定的文本编写器使用指定的选项。
+    ///</summary>
+    ///  <param name="e">
+    ///  一个 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  ，该值指示要生成的代码的命名空间。
+    ///</param>
+    ///  <param name="w"><see cref="T:System.IO.TextWriter" />
+    ///  向其中输出代码。
+    ///</param>
+    ///  <param name="o">
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />
+    ///  ，该值指示要用于生成代码的选项。
+    ///</param>
+    procedure GenerateCodeFromNamespace(e: DNCodeNamespace; w: DDN.mscorlib.DNTextWriter; o: DNCodeGeneratorOptions);
+    ///<summary>
+    ///  为指定的代码文档对象模型 (CodeDOM) 编译单元中生成代码并将其输出到指定的文本编写器使用指定的选项。
+    ///</summary>
+    ///  <param name="e">
+    ///  要为其生成代码的 <see cref="T:System.CodeDom.CodeCompileUnit" />
+    ///  。
+    ///</param>
+    ///  <param name="w"><see cref="T:System.IO.TextWriter" />
+    ///  向其中输出代码。
+    ///</param>
+    ///  <param name="o">
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />
+    ///  ，该值指示要用于生成代码的选项。
+    ///</param>
+    procedure GenerateCodeFromCompileUnit(e: DNCodeCompileUnit; w: DDN.mscorlib.DNTextWriter; o: DNCodeGeneratorOptions);
+    ///<summary>
+    ///  为指定的代码文档对象模型 (CodeDOM) 类型声明生成代码，并输出到指定的文本编写器使用指定的选项。
+    ///</summary>
+    ///  <param name="e">
+    ///  一个 <see cref="T:System.CodeDom.CodeTypeDeclaration" />
+    ///  ，该值指示为其生成代码的类型。
+    ///</param>
+    ///  <param name="w"><see cref="T:System.IO.TextWriter" />
+    ///  向其中输出代码。
+    ///</param>
+    ///  <param name="o">
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />
+    ///  ，该值指示要用于生成代码的选项。
+    ///</param>
+    procedure GenerateCodeFromType(e: DNCodeTypeDeclaration; w: DDN.mscorlib.DNTextWriter; o: DNCodeGeneratorOptions);
+
+  end;
+
+  //-------------namespace: System.CodeDom.Compiler----------------
+  ///<summary>
+  ///  定义用于分析代码转换为一个接口 <see cref="T:System.CodeDom.CodeCompileUnit" />
+  ///  。
+  ///</summary>
+  [DNTypeName('System.CodeDom.Compiler.ICodeParser')]
+  DNICodeParser = interface(DNObject)
+  ['{E4091F1C-1C69-39D7-BDB7-C84B60AB3A07}']
+  { methods } 
+
+    ///<summary>
+    ///  派生类中实现时，将编译到指定的文本流 <see cref="T:System.CodeDom.CodeCompileUnit" />
+    ///  。
+    ///</summary>
+    ///  <param name="codeStream">
+    ///  一个 <see cref="T:System.IO.TextReader" />
+    ///  ，可用于读取要编译的代码。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.CodeCompileUnit" />
+    ///  ，包含表示形式的已分析的代码。
+    ///</returns>
+    function Parse(codeStream: DDN.mscorlib.DNTextReader): DNCodeCompileUnit;
+
+  end;
 
   //-------------namespace: System.CodeDom.Compiler----------------
   DNTempFileCollectionClass = interface(DDN.mscorlib.DNObjectClass)
@@ -1942,6 +2706,505 @@ type
 
   TDNCodeAttributeDeclarationCollection = class(TDNGenericImport<DNCodeAttributeDeclarationCollectionClass, DNCodeAttributeDeclarationCollection>) end;
 
+  //-------------namespace: System.CodeDom----------------
+  DNCodeCommentStatementCollectionClass = interface(DDN.mscorlib.DNCollectionBaseClass)
+  ['{C1EFBDC7-6F16-561C-ADE9-47CAC9A4D2C2}']
+  { constructors } 
+
+    ///<summary>
+    ///  初始化 <see cref="T:System.CodeDom.CodeCommentStatementCollection" />
+    ///  类的新实例。
+    ///</summary>
+    {class} function init: DNCodeCommentStatementCollection; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.CodeDom.CodeCommentStatementCollection" />
+    ///  包含指定的源集合元素的类。
+    ///</summary>
+    ///  <param name="value">
+    ///  一个 <see cref="T:System.CodeDom.CodeCommentStatementCollection" />
+    ///  用来初始化集合。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
+    {class} function init(value: DNCodeCommentStatementCollection): DNCodeCommentStatementCollection; overload;
+
+  end;
+
+  ///<summary>
+  ///  表示 <see cref="T:System.CodeDom.CodeCommentStatement" />
+  ///  对象集合。
+  ///</summary>
+  [DNTypeName('System.CodeDom.CodeCommentStatementCollection')]
+  DNCodeCommentStatementCollection = interface(DDN.mscorlib.DNCollectionBase)
+  ['{C12A8292-F24A-3BA8-94E6-EB3206D225E2}']
+  { getters & setters } 
+
+    function get_Capacity: Int32;
+    procedure set_Capacity(value: Int32);
+    function get_Count: Int32;
+
+  { methods } 
+
+    ///<summary>
+    ///  将另一个的内容复制 <see cref="T:System.CodeDom.CodeCommentStatementCollection" />
+    ///  对象传递给集合的末尾。
+    ///</summary>
+    ///  <param name="value">
+    ///  一个 <see cref="T:System.CodeDom.CodeCommentStatementCollection" />
+    ///  ，其中包含要添加到集合的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
+    procedure AddRange(value: DNCodeCommentStatementCollection);
+    procedure RemoveAt(index: Int32);
+    function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    property Capacity: Int32 read get_Capacity write set_Capacity;
+    property Count: Int32 read get_Count;
+  end;
+
+  TDNCodeCommentStatementCollection = class(TDNGenericImport<DNCodeCommentStatementCollectionClass, DNCodeCommentStatementCollection>) end;
+
+  //-------------namespace: System.CodeDom----------------
+  DNCodeDirectiveCollectionClass = interface(DDN.mscorlib.DNCollectionBaseClass)
+  ['{3AE85A91-85DE-55CE-82B9-53A708347559}']
+  { constructors } 
+
+    ///<summary>
+    ///  初始化 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  类的新实例。
+    ///</summary>
+    {class} function init: DNCodeDirectiveCollection; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  类，具有指定的代码指令集合中的元素。
+    ///</summary>
+    ///  <param name="value">
+    ///  一个 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  用来初始化集合的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
+    {class} function init(value: DNCodeDirectiveCollection): DNCodeDirectiveCollection; overload;
+
+  end;
+
+  ///<summary>
+  ///  表示 <see cref="T:System.CodeDom.CodeDirective" />
+  ///  对象集合。
+  ///</summary>
+  [DNTypeName('System.CodeDom.CodeDirectiveCollection')]
+  DNCodeDirectiveCollection = interface(DDN.mscorlib.DNCollectionBase)
+  ['{ED78C3FA-AB56-353C-98BB-9280D3404C81}']
+  { getters & setters } 
+
+    function get_Capacity: Int32;
+    procedure set_Capacity(value: Int32);
+    function get_Count: Int32;
+
+  { methods } 
+
+    ///<summary>
+    ///  将指定的内容添加 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  对象传递给集合的末尾。
+    ///</summary>
+    ///  <param name="value">
+    ///  一个 <see cref="T:System.CodeDom.CodeDirectiveCollection" />
+    ///  对象，其中包含 <see cref="T:System.CodeDom.CodeDirective" />
+    ///  要添加到集合的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
+    procedure AddRange(value: DNCodeDirectiveCollection);
+    procedure RemoveAt(index: Int32);
+    function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    property Capacity: Int32 read get_Capacity write set_Capacity;
+    property Count: Int32 read get_Count;
+  end;
+
+  TDNCodeDirectiveCollection = class(TDNGenericImport<DNCodeDirectiveCollectionClass, DNCodeDirectiveCollection>) end;
+
+  //-------------namespace: System.CodeDom----------------
+  DNCodeNamespaceCollectionClass = interface(DDN.mscorlib.DNCollectionBaseClass)
+  ['{D311E3C1-9640-5B8A-AA57-723AC0DEE45D}']
+  { constructors } 
+
+    ///<summary>
+    ///  初始化 <see cref="T:System.CodeDom.CodeNamespaceCollection" />
+    ///  类的新实例。
+    ///</summary>
+    {class} function init: DNCodeNamespaceCollection; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.CodeDom.CodeNamespaceCollection" />
+    ///  类，其中包含指定的源集合中的元素。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.CodeDom.CodeNamespaceCollection" />
+    ///  用来初始化集合。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
+    {class} function init(value: DNCodeNamespaceCollection): DNCodeNamespaceCollection; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.CodeDom.CodeNamespaceCollection" />
+    ///  类，其中包含指定的数组 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="value">
+    ///  一个数组 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  用来初始化集合的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  数组中的一个或多个对象都 <see langword="null" />
+    ///  。
+    ///</exception>
+    {class} function init(value: TArray<DNCodeNamespace>): DNCodeNamespaceCollection; overload;
+
+  end;
+
+  ///<summary>
+  ///  表示 <see cref="T:System.CodeDom.CodeNamespace" />
+  ///  对象集合。
+  ///</summary>
+  [DNTypeName('System.CodeDom.CodeNamespaceCollection')]
+  DNCodeNamespaceCollection = interface(DDN.mscorlib.DNCollectionBase)
+  ['{D4985194-80E5-36FE-8B95-8CD2E35E5FF5}']
+  { getters & setters } 
+
+    function get_Item(index: Int32): DNCodeNamespace;
+    procedure set_Item(index: Int32; value: DNCodeNamespace);
+    function get_Capacity: Int32;
+    procedure set_Capacity(value: Int32);
+    function get_Count: Int32;
+
+  { methods } 
+
+    ///<summary>
+    ///  将指定的 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  对象添加到集合。
+    ///</summary>
+    ///  <param name="value">
+    ///  要添加的 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  在该位置插入新元素的索引。
+    ///</returns>
+    function Add(value: DNCodeNamespace): Int32;
+    ///<summary>
+    ///  将指定的元素复制 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  数组转换为集合的末尾。
+    ///</summary>
+    ///  <param name="value">
+    ///  类型的数组 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  ，其中包含要添加到集合的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
+    procedure AddRange(value: TArray<DNCodeNamespace>); overload;
+    ///<summary>
+    ///  将指定的内容添加 <see cref="T:System.CodeDom.CodeNamespaceCollection" />
+    ///  对象传递给集合的末尾。
+    ///</summary>
+    ///  <param name="value">
+    ///  一个 <see cref="T:System.CodeDom.CodeNamespaceCollection" />
+    ///  ，其中包含要添加到集合的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
+    procedure AddRange(value: DNCodeNamespaceCollection); overload;
+    ///<summary>
+    ///  获取一个值，该值指示集合是否包含指定 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.CodeDom.CodeNamespace" />
+    ///  要在集合中搜索。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  包含在集合; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    function &Contains(value: DNCodeNamespace): Boolean;
+    ///<summary>
+    ///  将集合对象复制到一维 <see cref="T:System.Array" />
+    ///  情况下，指定索引处开始。
+    ///</summary>
+    ///  <param name="array">
+    ///  一维 <see cref="T:System.Array" />
+    ///  从集合复制的值的目标。
+    ///</param>
+    ///  <param name="index">
+    ///  插入的开始处的数组的索引。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  目标数组是多维的。
+    ///  - 或 -
+    ///  中的元素数 <see cref="T:System.CodeDom.CodeNamespaceCollection" />
+    ///  大于指定的目标数组的索引之间的可用空间 <paramref name="index" />
+    ///  参数和目标数组的末尾。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="array" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />
+    ///  参数小于目标数组的最小索引。
+    ///</exception>
+    procedure CopyTo(&array: TArray<DNCodeNamespace>; index: Int32);
+    ///<summary>
+    ///  获取指定的索引 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  对象在 <see cref="T:System.CodeDom.CodeNamespaceCollection" />
+    ///  , ，如果它在集合中存在。
+    ///</summary>
+    ///  <param name="value">
+    ///  要查找的 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  指定的索引 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  , ，如果它是，在集合中找到; 否则为-1。
+    ///</returns>
+    function IndexOf(value: DNCodeNamespace): Int32;
+    ///<summary>
+    ///  将指定 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  对象插入集合中的指定索引处。
+    ///</summary>
+    ///  <param name="index">
+    ///  应插入新项的位置的从零开始索引。
+    ///</param>
+    ///  <param name="value">
+    ///  要插入的 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  。
+    ///</param>
+    procedure Insert(index: Int32; value: DNCodeNamespace);
+    ///<summary>
+    ///  从集合中移除指定的 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="value">
+    ///  要从该集合中移除的 <see cref="T:System.CodeDom.CodeNamespace" />
+    ///  。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  集合中找不到指定的对象。
+    ///</exception>
+    procedure Remove(value: DNCodeNamespace);
+    procedure RemoveAt(index: Int32);
+    function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    property Item[index: Int32]: DNCodeNamespace read get_Item write set_Item; default;
+    property Capacity: Int32 read get_Capacity write set_Capacity;
+    property Count: Int32 read get_Count;
+  end;
+
+  TDNCodeNamespaceCollection = class(TDNGenericImport<DNCodeNamespaceCollectionClass, DNCodeNamespaceCollection>) end;
+
+  //-------------namespace: System.CodeDom----------------
+  DNCodeTypeDeclarationCollectionClass = interface(DDN.mscorlib.DNCollectionBaseClass)
+  ['{51287AF6-A040-5047-80F6-F555BAE09B77}']
+  { constructors } 
+
+    ///<summary>
+    ///  初始化 <see cref="T:System.CodeDom.CodeTypeDeclarationCollection" />
+    ///  类的新实例。
+    ///</summary>
+    {class} function init: DNCodeTypeDeclarationCollection; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.CodeDom.CodeTypeDeclarationCollection" />
+    ///  类，其中包含指定的源集合中的元素。
+    ///</summary>
+    ///  <param name="value">
+    ///  一个 <see cref="T:System.CodeDom.CodeTypeDeclarationCollection" />
+    ///  用来初始化集合的对象。
+    ///</param>
+    {class} function init(value: DNCodeTypeDeclarationCollection): DNCodeTypeDeclarationCollection; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.CodeDom.CodeTypeDeclarationCollection" />
+    ///  类，其中包含指定的数组 <see cref="T:System.CodeDom.CodeTypeDeclaration" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="value">
+    ///  一个数组 <see cref="T:System.CodeDom.CodeTypeDeclaration" />
+    ///  用来初始化集合的对象。
+    ///</param>
+    {class} function init(value: TArray<DNCodeTypeDeclaration>): DNCodeTypeDeclarationCollection; overload;
+
+  end;
+
+  ///<summary>
+  ///  表示 <see cref="T:System.CodeDom.CodeTypeDeclaration" />
+  ///  对象集合。
+  ///</summary>
+  [DNTypeName('System.CodeDom.CodeTypeDeclarationCollection')]
+  DNCodeTypeDeclarationCollection = interface(DDN.mscorlib.DNCollectionBase)
+  ['{A0BD9913-B07D-32C3-8DF1-AA998B3FB10E}']
+  { getters & setters } 
+
+    function get_Item(index: Int32): DNCodeTypeDeclaration;
+    procedure set_Item(index: Int32; value: DNCodeTypeDeclaration);
+    function get_Capacity: Int32;
+    procedure set_Capacity(value: Int32);
+    function get_Count: Int32;
+
+  { methods } 
+
+    ///<summary>
+    ///  将指定的 <see cref="T:System.CodeDom.CodeTypeDeclaration" />
+    ///  对象添加到集合。
+    ///</summary>
+    ///  <param name="value">
+    ///  要添加的 <see cref="T:System.CodeDom.CodeTypeDeclaration" />
+    ///  对象。
+    ///</param>
+    ///<returns>
+    ///  在该位置插入新元素的索引。
+    ///</returns>
+    function Add(value: DNCodeTypeDeclaration): Int32;
+    ///<summary>
+    ///  将指定数组的元素复制到该集合的末尾。
+    ///</summary>
+    ///  <param name="value">
+    ///  类型的数组 <see cref="T:System.CodeDom.CodeTypeDeclaration" />
+    ///  ，其中包含要添加到集合的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
+    procedure AddRange(value: TArray<DNCodeTypeDeclaration>); overload;
+    ///<summary>
+    ///  将另一个的内容添加 <see cref="T:System.CodeDom.CodeTypeDeclarationCollection" />
+    ///  对象传递给集合的末尾。
+    ///</summary>
+    ///  <param name="value">
+    ///  一个 <see cref="T:System.CodeDom.CodeTypeDeclarationCollection" />
+    ///  对象，其中包含要添加到集合的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
+    procedure AddRange(value: DNCodeTypeDeclarationCollection); overload;
+    ///<summary>
+    ///  获取一个值，该值指示集合是否包含指定 <see cref="T:System.CodeDom.CodeTypeDeclaration" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.CodeDom.CodeTypeDeclaration" />
+    ///  要在集合中搜索对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果集合包含指定的对象;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    function &Contains(value: DNCodeTypeDeclaration): Boolean;
+    ///<summary>
+    ///  中的元素复制 <see cref="T:System.CodeDom.CodeTypeDeclarationCollection" />
+    ///  到一维对象 <see cref="T:System.Array" />
+    ///  实例，指定索引处开始。
+    ///</summary>
+    ///  <param name="array">
+    ///  一维 <see cref="T:System.Array" />
+    ///  从集合复制的值的目标。
+    ///</param>
+    ///  <param name="index">
+    ///  插入的开始处的数组的索引。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  目标数组是多维的。
+    ///  - 或 -
+    ///  中的元素数 <see cref="T:System.CodeDom.CodeTypeDeclarationCollection" />
+    ///  大于指定的目标数组的索引之间的可用空间 <paramref name="index" />
+    ///  参数和目标数组的末尾。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="array" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />
+    ///  参数小于目标数组的最小索引。
+    ///</exception>
+    procedure CopyTo(&array: TArray<DNCodeTypeDeclaration>; index: Int32);
+    ///<summary>
+    ///  获取指定的索引 <see cref="T:System.CodeDom.CodeTypeDeclaration" />
+    ///  对象在 <see cref="T:System.CodeDom.CodeTypeDeclarationCollection" />
+    ///  , ，如果它在集合中存在。
+    ///</summary>
+    ///  <param name="value">
+    ///  要在集合中查找的 <see cref="T:System.CodeDom.CodeTypeDeclaration" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  如果找到，集合中的指定对象的索引否则为-1。
+    ///</returns>
+    function IndexOf(value: DNCodeTypeDeclaration): Int32;
+    ///<summary>
+    ///  将指定 <see cref="T:System.CodeDom.CodeTypeDeclaration" />
+    ///  对象插入集合中的指定索引处。
+    ///</summary>
+    ///  <param name="index">
+    ///  应插入指定的对象的位置的从零开始索引。
+    ///</param>
+    ///  <param name="value"><see cref="T:System.CodeDom.CodeTypeDeclaration" />
+    ///  要插入对象。
+    ///</param>
+    procedure Insert(index: Int32; value: DNCodeTypeDeclaration);
+    ///<summary>
+    ///  从集合中移除指定的 <see cref="T:System.CodeDom.CodeTypeDeclaration" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="value">
+    ///  要从该集合中移除的 <see cref="T:System.CodeDom.CodeTypeDeclaration" />
+    ///  。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  集合中找不到指定的对象。
+    ///</exception>
+    procedure Remove(value: DNCodeTypeDeclaration);
+    procedure RemoveAt(index: Int32);
+    function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    property Item[index: Int32]: DNCodeTypeDeclaration read get_Item write set_Item; default;
+    property Capacity: Int32 read get_Capacity write set_Capacity;
+    property Count: Int32 read get_Count;
+  end;
+
+  TDNCodeTypeDeclarationCollection = class(TDNGenericImport<DNCodeTypeDeclarationCollectionClass, DNCodeTypeDeclarationCollection>) end;
+
   //-------------namespace: System.CodeDom.Compiler----------------
   DNCompilerErrorCollectionClass = interface(DDN.mscorlib.DNCollectionBaseClass)
   ['{5C187F4F-CBF8-50C0-97DB-589EE88F1669}']
@@ -2153,6 +3416,101 @@ type
   TDNCompilerErrorCollection = class(TDNGenericImport<DNCompilerErrorCollectionClass, DNCompilerErrorCollection>) end;
 
   //-------------namespace: System.Configuration----------------
+  DNConfigurationLocationCollectionClass = interface(DDN.mscorlib.DNReadOnlyCollectionBaseClass)
+  ['{02D66BE0-53B8-5F61-97E0-50F521AFCE27}']
+  end;
+
+  ///<summary>
+  ///  包含 <see cref="T:System.Configuration.ConfigurationLocationCollection" />
+  ///  对象的集合。
+  ///</summary>
+  [DNTypeName('System.Configuration.ConfigurationLocationCollection')]
+  DNConfigurationLocationCollection = interface(DDN.mscorlib.DNReadOnlyCollectionBase)
+  ['{858C9C17-6D2C-3327-B1A3-D06DF578E96A}']
+  { getters & setters } 
+
+    function get_Count: Int32;
+
+  { methods } 
+
+    function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    property Count: Int32 read get_Count;
+  end;
+
+  TDNConfigurationLocationCollection = class(TDNGenericImport<DNConfigurationLocationCollectionClass, DNConfigurationLocationCollection>) end;
+
+  //-------------namespace: System.Collections.Specialized----------------
+  DNKeysCollectionClass = interface(DDN.mscorlib.DNObjectClass)
+  ['{8056D97B-E35F-57D6-A66E-94C97EE8836D}']
+  end;
+
+  ///<summary>
+  ///  表示集合中 <see cref="T:System.String" />
+  ///  密钥的集合。
+  ///</summary>
+  [DNTypeName('System.Collections.Specialized.NameObjectCollectionBase+KeysCollection')]
+  DNKeysCollection = interface(DDN.mscorlib.DNObject)
+  ['{4F00D501-6A21-3AF8-8BE7-5B41DF6456A1}']
+  { getters & setters } 
+
+    function get_Item(index: Int32): string;
+    function get_Count: Int32;
+
+  { methods } 
+
+    ///<summary>
+    ///  获取集合的指定索引处的键。
+    ///</summary>
+    ///  <param name="index">
+    ///  要从集合中获取的从零开始的键索引。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  包含集合的指定索引处的键。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />
+    ///  超出了集合的有效索引范围。
+    ///</exception>
+    function Get(index: Int32): string;
+    ///<summary>
+    ///  返回循环访问 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  的枚举数。
+    ///</summary>
+    ///<returns>
+    ///  用于 <see cref="T:System.Collections.IEnumerator" />
+    ///  的 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  。
+    ///</returns>
+    function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    property Item[index: Int32]: string read get_Item; default;
+    ///<summary>
+    ///  获取中的键数 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  中的键数 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  。
+    ///</returns>
+    property Count: Int32 read get_Count;
+  end;
+
+  TDNKeysCollection = class(TDNGenericImport<DNKeysCollectionClass, DNKeysCollection>) end;
+
+  //-------------namespace: System.Configuration----------------
   DNConfigurationSectionCollectionClass = interface(DNObjectClass)
   ['{A06CC875-686F-5A40-96CF-7F0DBC196F65}']
   end;
@@ -2168,6 +3526,7 @@ type
     function get_Item(name: string): DNConfigurationSection; overload;
     function get_Item(index: Int32): DNConfigurationSection; overload;
     function get_Count: Int32;
+    function get_Keys: DNKeysCollection;
 
   { methods } 
 
@@ -2309,6 +3668,16 @@ type
     ///  一个整数，表示集合中的节的数目。
     ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取所有键 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象中包含此 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  对象，其中包含此集合中的所有部分的键。
+    ///</returns>
+    property Keys: DNKeysCollection read get_Keys;
   end;
 
   TDNConfigurationSectionCollection = class(TDNGenericImport<DNConfigurationSectionCollectionClass, DNConfigurationSectionCollection>) end;
@@ -2330,6 +3699,7 @@ type
     function get_Item(name: string): DNConfigurationSectionGroup; overload;
     function get_Item(index: Int32): DNConfigurationSectionGroup; overload;
     function get_Count: Int32;
+    function get_Keys: DNKeysCollection;
 
   { methods } 
 
@@ -2466,9 +3836,81 @@ type
     ///  一个整数，表示集合中的节组的数目。
     ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取所有键 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象中包含此 <see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  对象，其中包含此集合中的所有节组的名称。
+    ///</returns>
+    property Keys: DNKeysCollection read get_Keys;
   end;
 
   TDNConfigurationSectionGroupCollection = class(TDNGenericImport<DNConfigurationSectionGroupCollectionClass, DNConfigurationSectionGroupCollection>) end;
+
+  //-------------namespace: System.Configuration----------------
+  DNPropertyInformationCollectionClass = interface(DNObjectClass)
+  ['{D4484712-AE47-5810-9027-E568B0572B00}']
+  end;
+
+  ///<summary>
+  ///  包含 <see cref="T:System.Configuration.PropertyInformation" />
+  ///  对象的集合。
+  ///  此类不能被继承。
+  ///</summary>
+  [DNTypeName('System.Configuration.PropertyInformationCollection')]
+  DNPropertyInformationCollection = interface(DNObject)
+  ['{F88B5872-E250-3285-9FCE-024B9DE86610}']
+  { getters & setters } 
+
+    function get_Count: Int32;
+    function get_Keys: DNKeysCollection;
+
+  { methods } 
+
+    ///<summary>
+    ///  填充 <see cref="T:System.Runtime.Serialization.SerializationInfo" />
+    ///  对象序列化所需的数据 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  实例。
+    ///</summary>
+    ///  <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" />
+    ///  对象，该对象包含序列化 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  实例所需的信息。
+    ///</param>
+    ///  <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" />
+    ///  对象，该对象包含与 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  实例关联的序列化流的源和目标。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="info" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
+    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
+    ///<summary>
+    ///  获取 <see cref="T:System.Collections.IEnumerator" />
+    ///  对象，用于循环访问此 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  对象，用于循环访问此 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  。
+    ///</returns>
+    function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    property Count: Int32 read get_Count;
+    property Keys: DNKeysCollection read get_Keys;
+  end;
+
+  TDNPropertyInformationCollection = class(TDNGenericImport<DNPropertyInformationCollectionClass, DNPropertyInformationCollection>) end;
 
   //-------------namespace: System.Collections.Specialized----------------
   DNStringCollectionClass = interface(DDN.mscorlib.DNObjectClass)
@@ -2580,6 +4022,17 @@ type
     ///</exception>
     procedure CopyTo(&array: TArray<string>; index: Int32);
     ///<summary>
+    ///  返回 <see cref="T:System.Collections.Specialized.StringEnumerator" />
+    ///  ，它循环访问 <see cref="T:System.Collections.Specialized.StringCollection" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  用于 <see cref="T:System.Collections.Specialized.StringEnumerator" />
+    ///  的 <see cref="T:System.Collections.Specialized.StringCollection" />
+    ///  。
+    ///</returns>
+    function GetEnumerator: DNStringEnumerator;
+    ///<summary>
     ///  搜索指定的字符串，并返回内的第一个匹配项的从零开始索引 <see cref="T:System.Collections.Specialized.StringCollection" />
     ///  。
     ///</summary>
@@ -2689,6 +4142,292 @@ type
 
   TDNStringCollection = class(TDNGenericImport<DNStringCollectionClass, DNStringCollection>) end;
 
+  //-------------namespace: System.Collections.Specialized----------------
+  DNStringEnumeratorClass = interface(DDN.mscorlib.DNObjectClass)
+  ['{79BC84CF-8651-5043-9070-69C2FDB3F737}']
+  end;
+
+  ///<summary>
+  ///  支持对简单迭代 <see cref="T:System.Collections.Specialized.StringCollection" />
+  ///  。
+  ///</summary>
+  [DNTypeName('System.Collections.Specialized.StringEnumerator')]
+  DNStringEnumerator = interface(DDN.mscorlib.DNObject)
+  ['{60E3B2B8-FF7D-3B3C-A540-E5A0DB767EBA}']
+  { getters & setters } 
+
+    function get_Current: string;
+
+  { methods } 
+
+    ///<summary>
+    ///  将枚举数推进到集合的下一个元素。
+    ///</summary>
+    ///<returns>
+    ///  如果枚举数已成功地推进到下一个元素，则为 <see langword="true" />
+    ///  ；如果枚举数传递到集合的末尾，则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  创建枚举器后，已修改该集合。
+    ///</exception>
+    function MoveNext: Boolean;
+    ///<summary>
+    ///  将枚举数设置为其初始位置，该位置位于集合中第一个元素之前。
+    ///</summary>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  创建枚举器后，已修改该集合。
+    ///</exception>
+    procedure Reset;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取集合中的当前元素。
+    ///</summary>
+    ///<returns>
+    ///  集合中的当前元素。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  枚举器位于集合中第一个元素之前或最后一个元素之后。
+    ///</exception>
+    property Current: string read get_Current;
+  end;
+
+  TDNStringEnumerator = class(TDNGenericImport<DNStringEnumeratorClass, DNStringEnumerator>) end;
+
+  //-------------namespace: System.ComponentModel----------------
+  DNTypeConverterClass = interface(DDN.mscorlib.DNObjectClass)
+  ['{8D2BD4DC-2859-5F29-A55C-88C9804C1E73}']
+  { constructors } 
+
+    ///<summary>
+    ///  初始化 <see cref="T:System.ComponentModel.TypeConverter" />
+    ///  类的新实例。
+    ///</summary>
+    {class} function init: DNTypeConverter;
+
+  end;
+
+  ///<summary>
+  ///  提供了一种统一的方法将类型的值转换为其他类型，以及用于访问标准值和子属性。
+  ///</summary>
+  [DNTypeName('System.ComponentModel.TypeConverter')]
+  DNTypeConverter = interface(DDN.mscorlib.DNObject)
+  ['{75992C48-BF7A-3B44-AC68-A946CFFDB2BF}']
+  { methods } 
+
+    ///<summary>
+    ///  返回此转换器是否可以将给定类型的对象转换为此转换器的类型。
+    ///</summary>
+    ///  <param name="sourceType">
+    ///  一个 <see cref="T:System.Type" />
+    ///  ，它表示您想要将从转换的类型。
+    ///</param>
+    ///<returns>
+    ///  如果该转换器能够执行转换，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean;
+    ///<summary>
+    ///  返回此转换器是否可以将对象转换为指定的类型。
+    ///</summary>
+    ///  <param name="destinationType">
+    ///  一个 <see cref="T:System.Type" />
+    ///  ，表示你希望转换为的类型。
+    ///</param>
+    ///<returns>
+    ///  如果该转换器能够执行转换，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean;
+    ///<summary>
+    ///  将给定的值转换为此转换器的类型。
+    ///</summary>
+    ///  <param name="value">
+    ///  要转换的 <see cref="T:System.Object" />
+    ///  。
+    ///</param>
+    ///<returns><see cref="T:System.Object" />
+    ///  ，表示转换后的值。
+    ///</returns>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  不能执行转换。
+    ///</exception>
+    function ConvertFrom(value: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  将给定的字符串转换为此转换器，使用固定区域性的类型。
+    ///</summary>
+    ///  <param name="text">
+    ///  要转换的 <see cref="T:System.String" />
+    ///  。
+    ///</param>
+    ///<returns><see cref="T:System.Object" />
+    ///  ，表示转换后的文本。
+    ///</returns>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  不能执行转换。
+    ///</exception>
+    function ConvertFromInvariantString(text: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  将指定的文本转换为一个对象。
+    ///</summary>
+    ///  <param name="text">
+    ///  要转换的对象文本表示。
+    ///</param>
+    ///<returns><see cref="T:System.Object" />
+    ///  ，表示转换后的文本。
+    ///</returns>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  无法将字符串转换为适当的对象。
+    ///</exception>
+    function ConvertFromString(text: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  将给定的值对象转换为指定的类型使用的参数。
+    ///</summary>
+    ///  <param name="value">
+    ///  要转换的 <see cref="T:System.Object" />
+    ///  。
+    ///</param>
+    ///  <param name="destinationType"><see cref="T:System.Type" />
+    ///  转换 <paramref name="value" />
+    ///  参数。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Object" />
+    ///  ，它表示转换后的值。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="destinationType" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.NotSupportedException">
+    ///  不能执行转换。
+    ///</exception>
+    function ConvertTo(value: DDN.mscorlib.DNObject; destinationType: DDN.mscorlib.DNType): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  将指定的值转换为区域性不变的字符串表示形式。
+    ///</summary>
+    ///  <param name="value">
+    ///  要转换的 <see cref="T:System.Object" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，表示转换后的值。
+    ///</returns>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  不能执行转换。
+    ///</exception>
+    function ConvertToInvariantString(value: DDN.mscorlib.DNObject): string;
+    ///<summary>
+    ///  将指定的值转换为字符串表示形式。
+    ///</summary>
+    ///  <param name="value">
+    ///  要转换的 <see cref="T:System.Object" />
+    ///  。
+    ///</param>
+    ///<returns><see cref="T:System.Object" />
+    ///  ，表示转换后的值。
+    ///</returns>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  不能执行转换。
+    ///</exception>
+    function ConvertToString(value: DDN.mscorlib.DNObject): string;
+    ///<summary>
+    ///  重新创建 <see cref="T:System.Object" />
+    ///  对象给定的一组属性值。
+    ///</summary>
+    ///  <param name="propertyValues"><see cref="T:System.Collections.IDictionary" />
+    ///  表示新属性值的字典。
+    ///</param>
+    ///<returns>
+    ///  如果表示给定 <see cref="T:System.Collections.IDictionary" />
+    ///  ，则为 <see cref="T:System.Object" />
+    ///  ，或如果无法创建对象，则为 <see langword="null" />
+    ///  。
+    ///  此方法始终返回 <see langword="null" />
+    ///  。
+    ///</returns>
+    function CreateInstance(propertyValues: DDN.mscorlib.DNIDictionary): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  返回更改此对象上的某个值是否要求对调用 <see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" />
+    ///  方法来创建一个新值。
+    ///</summary>
+    ///<returns>
+    ///  如果更改此对象上的某属性需要调用 <see langword="true" />
+    ///  以创建新值，则为 <see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    function GetCreateInstanceSupported: Boolean;
+    ///<summary>
+    ///  返回此对象是否支持属性。
+    ///</summary>
+    ///<returns>
+    ///  如果应调用 <see langword="true" />
+    ///  来查找此对象的属性，则为 <see cref="M:System.ComponentModel.TypeConverter.GetProperties(System.Object)" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    function GetPropertiesSupported: Boolean;
+    ///<summary>
+    ///  从适用于此类型转换器的数据类型的默认上下文中返回的标准值的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />
+    ///  包含一组标准的有效的值或 <see langword="null" />
+    ///  如果数据类型不支持标准值集。
+    ///</returns>
+    function GetStandardValues: DDN.mscorlib.DNICollection;
+    ///<summary>
+    ///  返回从 <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" />
+    ///  返回的标准值的集合是否为独占列表。
+    ///</summary>
+    ///<returns>
+    ///  如果从 <see langword="true" />
+    ///  返回的 <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />
+    ///  是可能值的穷举列表，则为 <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" />
+    ///  ；如果还可能有其他值，则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    function GetStandardValuesExclusive: Boolean;
+    ///<summary>
+    ///  返回此对象是否支持可以从列表中选取的标准值集。
+    ///</summary>
+    ///<returns>
+    ///  如果应调用 <see langword="true" />
+    ///  来查找对象支持的一组公共值，则为 <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    function GetStandardValuesSupported: Boolean;
+    ///<summary>
+    ///  返回给定的值的对象是否对此类型有效。
+    ///</summary>
+    ///  <param name="value">
+    ///  要测试其有效性的对象。
+    ///</param>
+    ///<returns>
+    ///  如果指定的值对此对象有效，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    function IsValid(value: DDN.mscorlib.DNObject): Boolean;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  end;
+
+  TDNTypeConverter = class(TDNGenericImport<DNTypeConverterClass, DNTypeConverter>) end;
+
   //-------------namespace: System.Configuration----------------
   DNConfigurationClass = interface(DDN.mscorlib.DNObjectClass)
   ['{072F76EE-89FD-550C-9CCD-337EEB048770}']
@@ -2703,8 +4442,12 @@ type
   ['{147BA60B-D0AD-3CCD-B6E0-0459B8E77A7F}']
   { getters & setters } 
 
+    function get_AppSettings: DNAppSettingsSection;
+    function get_ConnectionStrings: DNConnectionStringsSection;
     function get_FilePath: string;
     function get_HasFile: Boolean;
+    function get_Locations: DNConfigurationLocationCollection;
+    function get_EvaluationContext: DNContextInformation;
     function get_RootSectionGroup: DNConfigurationSectionGroup;
     function get_Sections: DNConfigurationSectionCollection;
     function get_SectionGroups: DNConfigurationSectionGroupCollection;
@@ -2838,6 +4581,29 @@ type
   { propertys } 
 
     ///<summary>
+    ///  获取 <see cref="T:System.Configuration.AppSettingsSection" />
+    ///  应用于此对象配置节 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.AppSettingsSection" />
+    ///  对象，表示 <see langword="appSettings" />
+    ///  应用到此配置节 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
+    property AppSettings: DNAppSettingsSection read get_AppSettings;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ConnectionStringsSection" />
+    ///  应用到此配置节对象 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ConnectionStringsSection" />
+    ///  对象，表示配置节 <see langword="connectionStrings" />
+    ///  应用到此配置节 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
+    property ConnectionStrings: DNConnectionStringsSection read get_ConnectionStrings;
+    ///<summary>
     ///  获取由此配置文件的物理路径 <see cref="T:System.Configuration.Configuration" />
     ///  对象。
     ///</summary>
@@ -2855,6 +4621,26 @@ type
     ///  。
     ///</returns>
     property HasFile: Boolean read get_HasFile;
+    ///<summary>
+    ///  获取定义在此位置 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ConfigurationLocationCollection" />
+    ///  包含在此定义的位置 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
+    property Locations: DNConfigurationLocationCollection read get_Locations;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.Configuration" />
+    ///  对象的 <see cref="T:System.Configuration.ContextInformation" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ContextInformation" />
+    ///  对象 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
+    property EvaluationContext: DNContextInformation read get_EvaluationContext;
     ///<summary>
     ///  获取根 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
     ///  此 <see cref="T:System.Configuration.Configuration" />
@@ -3378,6 +5164,145 @@ type
   TDNConfigurationSection = class(TDNGenericImport<DNConfigurationSectionClass, DNConfigurationSection>) end;
 
   //-------------namespace: System.Configuration----------------
+  DNAppSettingsSectionClass = interface(DNConfigurationSectionClass)
+  ['{C1CFBA23-EC59-5177-9A48-75995F96EE28}']
+  { constructors } 
+
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.AppSettingsSection" />
+    ///  类的新实例。
+    ///</summary>
+    {class} function init: DNAppSettingsSection;
+
+  end;
+
+  ///<summary>
+  ///  提供有关配置系统支持 <see langword="appSettings" />
+  ///  配置节。
+  ///  此类不能被继承。
+  ///</summary>
+  [DNTypeName('System.Configuration.AppSettingsSection')]
+  DNAppSettingsSection = interface(DNConfigurationSection)
+  ['{C67D99B0-1A20-32AA-9C43-22087FDDE286}']
+  { getters & setters } 
+
+    function get_File: string;
+    procedure set_File(value: string);
+    function get_SectionInformation: DNSectionInformation;
+    function get_LockAttributes: DNConfigurationLockCollection;
+    function get_LockAllAttributesExcept: DNConfigurationLockCollection;
+    function get_LockElements: DNConfigurationLockCollection;
+    function get_LockAllElementsExcept: DNConfigurationLockCollection;
+    function get_LockItem: Boolean;
+    procedure set_LockItem(value: Boolean);
+    function get_ElementInformation: DNElementInformation;
+    function get_CurrentConfiguration: DNConfiguration;
+
+  { methods } 
+
+    function IsReadOnly: Boolean;
+    function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取或设置提供其他设置或重写中指定的设置的配置文件 <see langword="appSettings" />
+    ///  元素。
+    ///</summary>
+    ///<returns>
+    ///  提供其他设置或重写中指定的设置的配置文件 <see langword="appSettings" />
+    ///  元素。
+    ///</returns>
+    property &File: string read get_File write set_File;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.SectionInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SectionInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
+    property SectionInformation: DNSectionInformation read get_SectionInformation;
+    property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
+    property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    property LockElements: DNConfigurationLockCollection read get_LockElements;
+    property LockAllElementsExcept: DNConfigurationLockCollection read get_LockAllElementsExcept;
+    property LockItem: Boolean read get_LockItem write set_LockItem;
+    property ElementInformation: DNElementInformation read get_ElementInformation;
+    property CurrentConfiguration: DNConfiguration read get_CurrentConfiguration;
+  end;
+
+  TDNAppSettingsSection = class(TDNGenericImport<DNAppSettingsSectionClass, DNAppSettingsSection>) end;
+
+  //-------------namespace: System.Configuration----------------
+  DNConnectionStringsSectionClass = interface(DNConfigurationSectionClass)
+  ['{A2C5DCAB-F515-522C-9AAA-A5170603BF25}']
+  { constructors } 
+
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConnectionStringsSection" />
+    ///  类的新实例。
+    ///</summary>
+    {class} function init: DNConnectionStringsSection;
+
+  end;
+
+  ///<summary>
+  ///  提供以编程方式访问连接字符串配置文件部分。
+  ///</summary>
+  [DNTypeName('System.Configuration.ConnectionStringsSection')]
+  DNConnectionStringsSection = interface(DNConfigurationSection)
+  ['{CD0C6620-E0F0-3293-8450-2EB8B6E7F0B3}']
+  { getters & setters } 
+
+    function get_SectionInformation: DNSectionInformation;
+    function get_LockAttributes: DNConfigurationLockCollection;
+    function get_LockAllAttributesExcept: DNConfigurationLockCollection;
+    function get_LockElements: DNConfigurationLockCollection;
+    function get_LockAllElementsExcept: DNConfigurationLockCollection;
+    function get_LockItem: Boolean;
+    procedure set_LockItem(value: Boolean);
+    function get_ElementInformation: DNElementInformation;
+    function get_CurrentConfiguration: DNConfiguration;
+
+  { methods } 
+
+    function IsReadOnly: Boolean;
+    function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.SectionInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SectionInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
+    property SectionInformation: DNSectionInformation read get_SectionInformation;
+    property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
+    property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    property LockElements: DNConfigurationLockCollection read get_LockElements;
+    property LockAllElementsExcept: DNConfigurationLockCollection read get_LockAllElementsExcept;
+    property LockItem: Boolean read get_LockItem write set_LockItem;
+    property ElementInformation: DNElementInformation read get_ElementInformation;
+    property CurrentConfiguration: DNConfiguration read get_CurrentConfiguration;
+  end;
+
+  TDNConnectionStringsSection = class(TDNGenericImport<DNConnectionStringsSectionClass, DNConnectionStringsSection>) end;
+
+  //-------------namespace: System.Configuration----------------
   DNConfigurationLockCollectionClass = interface(DDN.mscorlib.DNObjectClass)
   ['{93E9F554-D478-5288-9DE9-EE15D67B1418}']
   end;
@@ -3741,6 +5666,62 @@ type
   TDNConfigurationValidatorBase = class(TDNGenericImport<DNConfigurationValidatorBaseClass, DNConfigurationValidatorBase>) end;
 
   //-------------namespace: System.Configuration----------------
+  DNContextInformationClass = interface(DDN.mscorlib.DNObjectClass)
+  ['{E31BACA7-1537-5A9D-B671-695BEB4FD0B4}']
+  end;
+
+  ///<summary>
+  ///  封装与相关联的上下文信息 <see cref="T:System.Configuration.ConfigurationElement" />
+  ///  对象。
+  ///  此类不能被继承。
+  ///</summary>
+  [DNTypeName('System.Configuration.ContextInformation')]
+  DNContextInformation = interface(DDN.mscorlib.DNObject)
+  ['{0F5DA8AB-826A-3A3F-B325-C5B11EA1EF86}']
+  { getters & setters } 
+
+    function get_HostingContext: DDN.mscorlib.DNObject;
+    function get_IsMachineLevel: Boolean;
+
+  { methods } 
+
+    ///<summary>
+    ///  提供了一个包含基于指定的节名称的配置节信息的对象。
+    ///</summary>
+    ///  <param name="sectionName">
+    ///  配置部分的名称。
+    ///</param>
+    ///<returns>
+    ///  包含配置中指定的节的对象。
+    ///</returns>
+    function GetSection(sectionName: string): DDN.mscorlib.DNObject;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取要计算的配置属性的环境的上下文。
+    ///</summary>
+    ///<returns>
+    ///  一个对象，指定要计算的配置属性的环境。
+    ///</returns>
+    property HostingContext: DDN.mscorlib.DNObject read get_HostingContext;
+    ///<summary>
+    ///  获取一个值，指定在计算机配置级别是否正在计算配置属性。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果在计算机配置级别; 正在计算配置属性否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    property IsMachineLevel: Boolean read get_IsMachineLevel;
+  end;
+
+  TDNContextInformation = class(TDNGenericImport<DNContextInformationClass, DNContextInformation>) end;
+
+  //-------------namespace: System.Configuration----------------
   DNElementInformationClass = interface(DDN.mscorlib.DNObjectClass)
   ['{3E8F35FF-D7E0-597B-B3DE-B81956D05639}']
   end;
@@ -3754,6 +5735,7 @@ type
   ['{EE60054D-6B18-3C2E-9F18-A59E71FAB3A1}']
   { getters & setters } 
 
+    function get_Properties: DNPropertyInformationCollection;
     function get_IsPresent: Boolean;
     function get_IsLocked: Boolean;
     function get_IsCollection: Boolean;
@@ -3772,6 +5754,17 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  中关联属性的集合 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  中关联属性的集合 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</returns>
+    property Properties: DNPropertyInformationCollection read get_Properties;
     ///<summary>
     ///  获取一个值，该值指示是否关联 <see cref="T:System.Configuration.ConfigurationElement" />
     ///  对象是在配置文件中。
@@ -3852,6 +5845,106 @@ type
   TDNElementInformation = class(TDNGenericImport<DNElementInformationClass, DNElementInformation>) end;
 
   //-------------namespace: System.Configuration----------------
+  DNConfigurationBuilderClass = interface(DNObjectClass)
+  ['{5906E833-2FEF-5A38-A175-E84485C67BAD}']
+  end;
+
+  ///<summary>
+  ///  表示将由自定义配置生成器实现扩展的基类。
+  ///</summary>
+  [DNTypeName('System.Configuration.ConfigurationBuilder')]
+  DNConfigurationBuilder = interface(DNObject)
+  ['{9C22882E-1C30-3E0F-8C7B-0E0548662990}']
+  { getters & setters } 
+
+    function get_Name: string;
+    function get_Description: string;
+
+  { methods } 
+
+    ///<summary>
+    ///  接受配置系统中的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象，并返回一个修改后的或新的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象供将来使用。
+    ///</summary>
+    ///  <param name="configSection">
+    ///  要处理的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  已处理的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
+    function ProcessConfigurationSection(configSection: DNConfigurationSection): DNConfigurationSection;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取用于在配置过程中引用该提供程序的友好名称。
+    ///</summary>
+    ///<returns>
+    ///  用于在配置过程中引用该提供程序的友好名称。
+    ///</returns>
+    property Name: string read get_Name;
+    ///<summary>
+    ///  获取一个简短的友好说明适合显示在管理工具或其他用户界面 (Ui)。
+    ///</summary>
+    ///<returns>
+    ///  简短的易懂描述适用于在管理工具或其他用户界面中显示。
+    ///</returns>
+    property Description: string read get_Description;
+  end;
+
+  TDNConfigurationBuilder = class(TDNGenericImport<DNConfigurationBuilderClass, DNConfigurationBuilder>) end;
+
+  //-------------namespace: System.Configuration----------------
+  DNProtectedConfigurationProviderClass = interface(DNObjectClass)
+  ['{9B2F60FD-F53D-5A1D-82A0-8541C40C35CC}']
+  end;
+
+  ///<summary>
+  ///  是用于加密和解密受保护的配置数据创建提供程序的基类。
+  ///</summary>
+  [DNTypeName('System.Configuration.ProtectedConfigurationProvider')]
+  DNProtectedConfigurationProvider = interface(DNObject)
+  ['{0DFE9FBE-E232-3F9E-A512-E86559E3C350}']
+  { getters & setters } 
+
+    function get_Name: string;
+    function get_Description: string;
+
+  { methods } 
+
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取用于在配置过程中引用该提供程序的友好名称。
+    ///</summary>
+    ///<returns>
+    ///  用于在配置过程中引用该提供程序的友好名称。
+    ///</returns>
+    property Name: string read get_Name;
+    ///<summary>
+    ///  获取一个简短的友好说明适合显示在管理工具或其他用户界面 (Ui)。
+    ///</summary>
+    ///<returns>
+    ///  简短的易懂描述适用于在管理工具或其他用户界面中显示。
+    ///</returns>
+    property Description: string read get_Description;
+  end;
+
+  TDNProtectedConfigurationProvider = class(TDNGenericImport<DNProtectedConfigurationProviderClass, DNProtectedConfigurationProvider>) end;
+
+  //-------------namespace: System.Configuration----------------
   DNSectionInformationClass = interface(DDN.mscorlib.DNObjectClass)
   ['{AFB4D567-349A-5475-8957-A262AF7EB809}']
   end;
@@ -3888,6 +5981,8 @@ type
     function get_IsDeclarationRequired: Boolean;
     function get_IsLocked: Boolean;
     function get_IsProtected: Boolean;
+    function get_ConfigurationBuilder: DNConfigurationBuilder;
+    function get_ProtectionProvider: DNProtectedConfigurationProvider;
     function get_RestartOnExternalChanges: Boolean;
     procedure set_RestartOnExternalChanges(value: Boolean);
     function get_RequirePermission: Boolean;
@@ -4130,6 +6225,23 @@ type
     ///</returns>
     property IsProtected: Boolean read get_IsProtected;
     ///<summary>
+    ///  获取此配置节的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  此配置节的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  对象。
+    ///</returns>
+    property ConfigurationBuilder: DNConfigurationBuilder read get_ConfigurationBuilder;
+    ///<summary>
+    ///  获取对受保护的配置提供程序关联的配置节。
+    ///</summary>
+    ///<returns>
+    ///  为此保护的配置提供程序 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</returns>
+    property ProtectionProvider: DNProtectedConfigurationProvider read get_ProtectionProvider;
+    ///<summary>
     ///  获取或设置一个值，指定是否包含更改对外部配置文件需要重新启动应用程序。
     ///</summary>
     ///<returns><see langword="true" />
@@ -4189,6 +6301,16 @@ type
 
   //-------------namespace: System.ComponentModel----------------
   ///<summary>
+  ///  提供容器的功能。
+  ///  容器是在逻辑上包含零个或多个组件的对象。
+  ///</summary>
+  [DNTypeName('System.ComponentModel.IContainer')]
+  DNIContainer = interface(DDN.mscorlib.DNIDisposable)
+  ['{61D9C50C-4AAD-3539-AF82-4F36C19D77C8}']
+  end;
+
+  //-------------namespace: System.ComponentModel----------------
+  ///<summary>
   ///  提供站点所需的功能。
   ///</summary>
   [DNTypeName('System.ComponentModel.ISite')]
@@ -4196,12 +6318,23 @@ type
   ['{C4E1006A-9D98-3E96-A07E-921725135C28}']
   { getters & setters } 
 
+    function get_Container: DNIContainer;
     function get_DesignMode: Boolean;
     function get_Name: string;
     procedure set_Name(value: string);
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.ComponentModel.IContainer" />
+    ///  与关联 <see cref="T:System.ComponentModel.ISite" />
+    ///  时由类实现。
+    ///</summary>
+    ///<returns><see cref="T:System.ComponentModel.IContainer" />
+    ///  与关联实例 <see cref="T:System.ComponentModel.ISite" />
+    ///  。
+    ///</returns>
+    property Container: DNIContainer read get_Container;
     ///<summary>
     ///  确定组件是否在设计模式下时由类实现。
     ///</summary>
@@ -4248,6 +6381,18 @@ type
     ///</exception>
     {class} function IsDefinedExtension(extension: string): Boolean;
     ///<summary>
+    ///  返回此计算机的提供程序和编译器配置设置的语言。
+    ///</summary>
+    ///<returns>
+    ///  类型的数组 <see cref="T:System.CodeDom.Compiler.CompilerInfo" />
+    ///  表示所有配置的设置 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />
+    ///  实现。
+    ///</returns>
+    ///<exception cref="T:System.Security.SecurityException">
+    ///  调用方没有所要求的权限。
+    ///</exception>
+    {class} function GetAllCompilerInfo: TArray<DNCompilerInfo>;
+    ///<summary>
     ///  返回具有指定的文件扩展名关联的语言名称，如在配置 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />
     ///  编译器配置节。
     ///</summary>
@@ -4267,6 +6412,26 @@ type
     ///  调用方没有所要求的权限。
     ///</exception>
     {class} function GetLanguageFromExtension(extension: string): string;
+    ///<summary>
+    ///  返回指定的语言的提供程序和编译器配置设置的语言。
+    ///</summary>
+    ///  <param name="language">
+    ///  语言名称。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerInfo" />
+    ///  对象的已配置的设置进行填充 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />
+    ///  实现。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationException"><paramref name="language" />
+    ///  不在此计算机上具有配置的提供程序。
+    ///</exception><exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="language" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.SecurityException">
+    ///  调用方没有所要求的权限。
+    ///</exception>
+    {class} function GetCompilerInfo(language: string): DNCompilerInfo;
     ///<summary>
     ///  获取 <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />
     ///  指定语言的实例。
@@ -4319,11 +6484,120 @@ type
   { getters & setters } 
 
     function get_FileExtension: string;
+    function get_LanguageOptions: DNLanguageOptions;
     function get_Site: DNISite;
     procedure set_Site(value: DNISite);
+    function get_Container: DNIContainer;
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时创建新的代码生成器使用指定 <see cref="T:System.IO.TextWriter" />
+    ///  输出。
+    ///</summary>
+    ///  <param name="output">
+    ///  一个 <see cref="T:System.IO.TextWriter" />
+    ///  使用到输出。
+    ///</param>
+    ///<returns><see cref="T:System.CodeDom.Compiler.ICodeGenerator" />
+    ///  可以用于生成 <see cref="N:System.CodeDom" />
+    ///  基于源代码表示形式。
+    ///</returns>
+    function CreateGenerator(output: DDN.mscorlib.DNTextWriter): DNICodeGenerator; overload;
+    ///<summary>
+    ///  当在派生类中重写时创建新的代码生成器使用为输出指定的文件名。
+    ///</summary>
+    ///  <param name="fileName">
+    ///  要输出到的文件名称。
+    ///</param>
+    ///<returns><see cref="T:System.CodeDom.Compiler.ICodeGenerator" />
+    ///  可以用于生成 <see cref="N:System.CodeDom" />
+    ///  基于源代码表示形式。
+    ///</returns>
+    function CreateGenerator(fileName: string): DNICodeGenerator; overload;
+    ///<summary>
+    ///  当在派生类中重写，创建一个新的代码分析器。
+    ///</summary>
+    ///<returns><see cref="T:System.CodeDom.Compiler.ICodeParser" />
+    ///  可以用于分析源代码。
+    ///  基实现始终返回 <see langword="null" />
+    ///  。
+    ///</returns>
+    function CreateParser: DNICodeParser;
+    ///<summary>
+    ///  获取 <see cref="T:System.ComponentModel.TypeConverter" />
+    ///  为指定的数据类型。
+    ///</summary>
+    ///  <param name="type">
+    ///  要为其检索类型转换器的对象类型。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.ComponentModel.TypeConverter" />
+    ///  对于指定的类型，或 <see langword="null" />
+    ///  如果 <see cref="T:System.ComponentModel.TypeConverter" />
+    ///  找不到指定的类型。
+    ///</returns>
+    function GetConverter(&type: DDN.mscorlib.DNType): DNTypeConverter;
+    ///<summary>
+    ///  编译程序集基于 <see cref="N:System.CodeDom" />
+    ///  树中指定的数组包含 <see cref="T:System.CodeDom.CodeCompileUnit" />
+    ///  对象时，使用指定的编译器设置。
+    ///</summary>
+    ///  <param name="options">
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerParameters" />
+    ///  对象，它指示用于编译的设置。
+    ///</param>
+    ///  <param name="compilationUnits">
+    ///  类型的数组 <see cref="T:System.CodeDom.CodeCompileUnit" />
+    ///  ，该值指示要编译的代码。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerResults" />
+    ///  指示编译结果的对象。
+    ///</returns>
+    ///<exception cref="T:System.NotImplementedException">
+    ///  此方法都不和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />
+    ///  在派生类中重写方法。
+    ///</exception>
+    function CompileAssemblyFromDom(options: DNCompilerParameters; compilationUnits: TArray<DNCodeCompileUnit>): DNCompilerResults;
+    ///<summary>
+    ///  将使用指定的编译器设置将指定文件中包含的源代码中的程序集编译成。
+    ///</summary>
+    ///  <param name="options">
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerParameters" />
+    ///  对象，它指示用于编译的设置。
+    ///</param>
+    ///  <param name="fileNames">
+    ///  要编译的文件的名称的数组。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerResults" />
+    ///  指示编译结果的对象。
+    ///</returns>
+    ///<exception cref="T:System.NotImplementedException">
+    ///  此方法都不和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />
+    ///  在派生类中重写方法。
+    ///</exception>
+    function CompileAssemblyFromFile(options: DNCompilerParameters; fileNames: TArray<string>): DNCompilerResults;
+    ///<summary>
+    ///  将指定的字符串包含源代码，并使用指定的编译器设置数组中的程序集编译成。
+    ///</summary>
+    ///  <param name="options">
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerParameters" />
+    ///  对象，它指示此编译的编译器设置。
+    ///</param>
+    ///  <param name="sources">
+    ///  若要编译的源代码字符串的数组。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.CodeDom.Compiler.CompilerResults" />
+    ///  指示编译结果的对象。
+    ///</returns>
+    ///<exception cref="T:System.NotImplementedException">
+    ///  此方法都不和 <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />
+    ///  在派生类中重写方法。
+    ///</exception>
+    function CompileAssemblyFromSource(options: DNCompilerParameters; sources: TArray<string>): DNCompilerResults;
     ///<summary>
     ///  返回一个值，该值指示指定的值是否为当前语言有效的标识符。
     ///</summary>
@@ -4534,6 +6808,22 @@ type
     ///</exception>
     function Parse(codeStream: DDN.mscorlib.DNTextReader): DNCodeCompileUnit;
     ///<summary>
+    ///  当在派生类中重写时创建新的代码生成器。
+    ///</summary>
+    ///<returns><see cref="T:System.CodeDom.Compiler.ICodeGenerator" />
+    ///  可以用于生成 <see cref="N:System.CodeDom" />
+    ///  基于源代码表示形式。
+    ///</returns>
+    function CreateGenerator: DNICodeGenerator; overload;
+    ///<summary>
+    ///  当在派生类中重写，创建新的代码编译器。
+    ///</summary>
+    ///<returns><see cref="T:System.CodeDom.Compiler.ICodeCompiler" />
+    ///  可用于编译 <see cref="N:System.CodeDom" />
+    ///  基于源代码表示形式。
+    ///</returns>
+    function CreateCompiler: DNICodeCompiler;
+    ///<summary>
     ///  释放由 <see cref="T:System.ComponentModel.Component" />
     ///  使用的所有资源。
     ///</summary>
@@ -4571,6 +6861,14 @@ type
     ///</returns>
     property FileExtension: string read get_FileExtension;
     ///<summary>
+    ///  获取语言功能标识符。
+    ///</summary>
+    ///<returns>
+    ///  指示语言的特殊功能的 <see cref="T:System.CodeDom.Compiler.LanguageOptions" />
+    ///  。
+    ///</returns>
+    property LanguageOptions: DNLanguageOptions read get_LanguageOptions;
+    ///<summary>
     ///  获取或设置 <see cref="T:System.ComponentModel.ISite" />
     ///  的 <see cref="T:System.ComponentModel.Component" />
     ///  。
@@ -4587,6 +6885,19 @@ type
     ///  。
     ///</returns>
     property Site: DNISite read get_Site write set_Site;
+    ///<summary>
+    ///  获取 <see cref="T:System.ComponentModel.IContainer" />
+    ///  ，其中包含 <see cref="T:System.ComponentModel.Component" />
+    ///  。
+    ///</summary>
+    ///<returns><see cref="T:System.ComponentModel.IContainer" />
+    ///  ，其中包含 <see cref="T:System.ComponentModel.Component" />
+    ///  , (如果有） 或 <see langword="null" />
+    ///  如果 <see cref="T:System.ComponentModel.Component" />
+    ///  不封装在 <see cref="T:System.ComponentModel.IContainer" />
+    ///  。
+    ///</returns>
+    property Container: DNIContainer read get_Container;
   end;
 
   TDNCodeDomProvider = class(TDNGenericImport<DNCodeDomProviderClass, DNCodeDomProvider>) end;
@@ -4668,6 +6979,25 @@ type
   [DNTypeName('System.Net.ICredentials')]
   DNICredentials = interface(DNObject)
   ['{AA928FDF-0CBF-3845-8ECB-08339B2DC61D}']
+  { methods } 
+
+    ///<summary>
+    ///  返回 <see cref="T:System.Net.NetworkCredential" />
+    ///  与指定的 URI、 和身份验证类型相关联的对象。
+    ///</summary>
+    ///  <param name="uri"><see cref="T:System.Uri" />
+    ///  客户端提供了有关身份验证。
+    ///</param>
+    ///  <param name="authType">
+    ///  身份验证，如中所定义的类型 <see cref="P:System.Net.IAuthenticationModule.AuthenticationType" />
+    ///  属性。
+    ///</param>
+    ///<returns><see cref="T:System.Net.NetworkCredential" />
+    ///  与指定的 URI 和身份验证类型相关联; 如果没有凭据，则有 <see langword="null" />
+    ///  。
+    ///</returns>
+    function GetCredential(uri: DNUri; authType: string): DNNetworkCredential;
+
   end;
 
   //-------------namespace: System.Net----------------
@@ -4721,6 +7051,179 @@ type
     ///</returns>
     property Credentials: DNICredentials read get_Credentials write set_Credentials;
   end;
+
+  //-------------namespace: System.Net----------------
+  DNNetworkCredentialClass = interface(DDN.mscorlib.DNObjectClass)
+  ['{D309109D-58F6-59FE-8F05-EE7DD87BBE6A}']
+  { constructors } 
+
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.NetworkCredential" />
+    ///  类的新实例。
+    ///</summary>
+    {class} function init: DNNetworkCredential; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Net.NetworkCredential" />
+    ///  类，具有指定的用户名和密码。
+    ///</summary>
+    ///  <param name="userName">
+    ///  与凭据关联的用户名。
+    ///</param>
+    ///  <param name="password">
+    ///  与凭据关联的用户名密码。
+    ///</param>
+    {class} function init(userName: string; password: string): DNNetworkCredential; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Net.NetworkCredential" />
+    ///  类，具有指定的用户名和密码。
+    ///</summary>
+    ///  <param name="userName">
+    ///  与凭据关联的用户名。
+    ///</param>
+    ///  <param name="password">
+    ///  与凭据关联的用户名密码。
+    ///</param>
+    ///<exception cref="T:System.NotSupportedException"><see cref="T:System.Security.SecureString" />
+    ///  此平台上不支持类。
+    ///</exception>
+    {class} function init(userName: string; password: DDN.mscorlib.DNSecureString): DNNetworkCredential; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Net.NetworkCredential" />
+    ///  类，具有指定的用户名、 密码和域。
+    ///</summary>
+    ///  <param name="userName">
+    ///  与凭据关联的用户名。
+    ///</param>
+    ///  <param name="password">
+    ///  与凭据关联的用户名密码。
+    ///</param>
+    ///  <param name="domain">
+    ///  这些凭据与关联的域。
+    ///</param>
+    {class} function init(userName: string; password: string; domain: string): DNNetworkCredential; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Net.NetworkCredential" />
+    ///  类，具有指定的用户名、 密码和域。
+    ///</summary>
+    ///  <param name="userName">
+    ///  与凭据关联的用户名。
+    ///</param>
+    ///  <param name="password">
+    ///  与凭据关联的用户名密码。
+    ///</param>
+    ///  <param name="domain">
+    ///  这些凭据与关联的域。
+    ///</param>
+    ///<exception cref="T:System.NotSupportedException"><see cref="T:System.Security.SecureString" />
+    ///  此平台上不支持类。
+    ///</exception>
+    {class} function init(userName: string; password: DDN.mscorlib.DNSecureString; domain: string): DNNetworkCredential; overload;
+
+  end;
+
+  ///<summary>
+  ///  为基于密码的身份验证方案（如基本、摘要式、NTLM 和 Kerberos 身份验证）提供凭据。
+  ///</summary>
+  [DNTypeName('System.Net.NetworkCredential')]
+  DNNetworkCredential = interface(DDN.mscorlib.DNObject)
+  ['{860A775E-72AE-3B0A-B4B3-3B299B650D80}']
+  { getters & setters } 
+
+    function get_UserName: string;
+    procedure set_UserName(value: string);
+    function get_Password: string;
+    procedure set_Password(value: string);
+    function get_SecurePassword: DDN.mscorlib.DNSecureString;
+    procedure set_SecurePassword(value: DDN.mscorlib.DNSecureString);
+    function get_Domain: string;
+    procedure set_Domain(value: string);
+
+  { methods } 
+
+    ///<summary>
+    ///  返回的实例 <see cref="T:System.Net.NetworkCredential" />
+    ///  指定的统一资源标识符 (URI) 和身份验证类型的类。
+    ///</summary>
+    ///  <param name="uri">
+    ///  客户端提供的身份验证的 URI。
+    ///</param>
+    ///  <param name="authType">
+    ///  身份验证请求，如中所定义的类型 <see cref="P:System.Net.IAuthenticationModule.AuthenticationType" />
+    ///  属性。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.NetworkCredential" />
+    ///  对象。
+    ///</returns>
+    function GetCredential(uri: DNUri; authType: string): DNNetworkCredential; overload;
+    ///<summary>
+    ///  返回的实例 <see cref="T:System.Net.NetworkCredential" />
+    ///  类指定的主机、 端口和身份验证类型。
+    ///</summary>
+    ///  <param name="host">
+    ///  对客户端进行身份验证的主机。
+    ///</param>
+    ///  <param name="port">
+    ///  上的端口 <paramref name="host" />
+    ///  客户端与之通信。
+    ///</param>
+    ///  <param name="authenticationType">
+    ///  身份验证请求，如中所定义的类型 <see cref="P:System.Net.IAuthenticationModule.AuthenticationType" />
+    ///  属性。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.NetworkCredential" />
+    ///  为指定的主机、 端口和身份验证协议或 <see langword="null" />
+    ///  是否有任何凭据可用于指定的主机、 端口和身份验证协议。
+    ///</returns>
+    function GetCredential(host: string; port: Int32; authenticationType: string): DNNetworkCredential; overload;
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取或设置与凭据关联的用户名。
+    ///</summary>
+    ///<returns>
+    ///  与凭据关联的用户名。
+    ///</returns>
+    property UserName: string read get_UserName write set_UserName;
+    ///<summary>
+    ///  获取或设置与凭据关联的用户名的密码。
+    ///</summary>
+    ///<returns>
+    ///  与凭据关联的密码。
+    ///  如果此 <see cref="T:System.Net.NetworkCredential" />
+    ///  与已初始化实例 <paramref name="password" />
+    ///  参数设置为 <see langword="null" />
+    ///  , ，则 <see cref="P:System.Net.NetworkCredential.Password" />
+    ///  属性将返回一个空字符串。
+    ///</returns>
+    property Password: string read get_Password write set_Password;
+    ///<summary>
+    ///  获取或设置该密码作为 <see cref="T:System.Security.SecureString" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  与凭据关联的用户名密码。
+    ///</returns>
+    ///<exception cref="T:System.NotSupportedException"><see cref="T:System.Security.SecureString" />
+    ///  此平台上不支持类。
+    ///</exception>
+    property SecurePassword: DDN.mscorlib.DNSecureString read get_SecurePassword write set_SecurePassword;
+    ///<summary>
+    ///  获取或设置验证凭据的域或计算机名称。
+    ///</summary>
+    ///<returns>
+    ///  与凭据关联的域的名称。
+    ///</returns>
+    property Domain: string read get_Domain write set_Domain;
+  end;
+
+  TDNNetworkCredential = class(TDNGenericImport<DNNetworkCredentialClass, DNNetworkCredential>) end;
 
   //-------------namespace: System.Runtime.Versioning----------------
   DNFrameworkNameClass = interface(DDN.mscorlib.DNObjectClass)
@@ -5568,6 +8071,21 @@ type
     ///</exception>
     {class} function EscapeDataString(stringToEscape: string): string;
     ///<summary>
+    ///  确定指定的主机名是否为有效的 DNS 名称。
+    ///</summary>
+    ///  <param name="name">
+    ///  要验证的主机名。
+    ///  可以是 IPv4 或 IPv6 地址或 Internet 主机名。
+    ///</param>
+    ///<returns>
+    ///  指示主机名类型的 <see cref="T:System.UriHostNameType" />
+    ///  。
+    ///  如果无法确定主机名的类型，或者主机名为 <see langword="null" />
+    ///  或零长度字符串，则此方法返回 <see cref="F:System.UriHostNameType.Unknown" />
+    ///  。
+    ///</returns>
+    {class} function CheckHostName(name: string): DNUriHostNameType;
+    ///<summary>
     ///  将指定的字符转换为它的等效十六进制字符。
     ///</summary>
     ///  <param name="character">
@@ -5611,6 +8129,7 @@ type
     function get_AbsoluteUri: string;
     function get_LocalPath: string;
     function get_Authority: string;
+    function get_HostNameType: DNUriHostNameType;
     function get_IsDefaultPort: Boolean;
     function get_IsFile: Boolean;
     function get_IsLoopback: Boolean;
@@ -5833,6 +8352,16 @@ type
     ///  此实例代表一个相对的 URI，而此属性仅对绝对 Uri 无效。
     ///</exception>
     property Authority: string read get_Authority;
+    ///<summary>
+    ///  获取 URI 中指定的主机名的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.UriHostNameType" />
+    ///  枚举的一个成员。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  此实例代表一个相对的 URI，而此属性仅对绝对 Uri 无效。
+    ///</exception>
+    property HostNameType: DNUriHostNameType read get_HostNameType;
     ///<summary>
     ///  获取一个值，该值指示 URI 的端口值是否为此方案的默认值。
     ///</summary>

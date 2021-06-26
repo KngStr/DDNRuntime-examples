@@ -43,8 +43,7 @@ interface
 uses
   System.SysUtils,
   DDN.Runtime,
-  DDN.mscorlib,
-  DDN.PowDLL;
+  DDN.mscorlib;
   
 implementation
 

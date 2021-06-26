@@ -10,6 +10,12 @@
 
 unit DDN.System.Xml;
 
+{$IFDEF FPC}
+  {$mode delphi}//{$H+}
+  {$modeswitch advancedrecords}
+  {$modeswitch prefixedattributes} // Custom attributes feature，fpc3.2.2+
+{$ENDIF}
+
 interface
 
 uses

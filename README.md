@@ -24,7 +24,7 @@
 ## Requires
 
 * [.NET Framework v4.0](https://www.microsoft.com/en-us/download/details.aspx?id=17851). 
-* [Visual C++ Redistributable for Visual Studio 2015(msvcp140.dll, vcruntime140.dll)](https://www.microsoft.com/en-us/download/details.aspx?id=48145).
+* [Visual C++ Redistributable for Visual Studio 2015(v140).
 * The minimum requirement is `Rad Studio XE3`.
 
 ## Not supported

@@ -79,7 +79,7 @@ var
   LP: DNParameterInfo;
   I: Integer;
 begin
-  LType := TDNType.GetType<DNMemoryStream>();
+  LType := TDNMemoryStream.typeid;
  // LType := TDNType.DNClass.GetType('System.IO.MemoryStream');
   Writeln('LType ptr=', NativeUint(LType));
   if LType <> nil then

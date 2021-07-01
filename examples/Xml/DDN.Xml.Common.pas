@@ -2077,7 +2077,7 @@ type
   ///  定义一个接口来调用编译源代码或使用特定的编译器的 CodeDOM 树。
   ///</summary>
   [DNTypeName('System.CodeDom.Compiler.ICodeCompiler')]
-  DNICodeCompiler = interface(DNObject)
+  DNICodeCompiler = interface(DDN.mscorlib.DNObject)
   ['{436B1E43-8A38-359B-9E1A-2A700DBDB6BC}']
   { methods } 
 
@@ -2185,7 +2185,7 @@ type
   ///  定义用于生成代码的接口。
   ///</summary>
   [DNTypeName('System.CodeDom.Compiler.ICodeGenerator')]
-  DNICodeGenerator = interface(DNObject)
+  DNICodeGenerator = interface(DDN.mscorlib.DNObject)
   ['{AA6F6449-A84E-377B-A86C-FD956602CB06}']
   { methods } 
 
@@ -2340,7 +2340,7 @@ type
   ///  。
   ///</summary>
   [DNTypeName('System.CodeDom.Compiler.ICodeParser')]
-  DNICodeParser = interface(DNObject)
+  DNICodeParser = interface(DDN.mscorlib.DNObject)
   ['{E4091F1C-1C69-39D7-BDB7-C84B60AB3A07}']
   { methods } 
 
@@ -6977,7 +6977,7 @@ type
   ///  提供用于检索 Web 客户端身份验证的凭据的基本身份验证接口。
   ///</summary>
   [DNTypeName('System.Net.ICredentials')]
-  DNICredentials = interface(DNObject)
+  DNICredentials = interface(DDN.mscorlib.DNObject)
   ['{AA928FDF-0CBF-3845-8ECB-08339B2DC61D}']
   { methods } 
 
@@ -7006,7 +7006,7 @@ type
   ///  类。
   ///</summary>
   [DNTypeName('System.Net.IWebProxy')]
-  DNIWebProxy = interface(DNObject)
+  DNIWebProxy = interface(DDN.mscorlib.DNObject)
   ['{26EE9E09-527D-3AB2-B8F2-6C0425580210}']
   { getters & setters } 
 

@@ -3884,7 +3884,7 @@ type
   ///  提供用于检索 Web 客户端身份验证的凭据的基本身份验证接口。
   ///</summary>
   [DNTypeName('System.Net.ICredentials')]
-  DNICredentials = interface(DNObject)
+  DNICredentials = interface(DDN.mscorlib.DNObject)
   ['{AA928FDF-0CBF-3845-8ECB-08339B2DC61D}']
   end;
 
@@ -5040,7 +5040,7 @@ type
   ///  提供对一组前缀和命名空间映射的只读访问。
   ///</summary>
   [DNTypeName('System.Xml.IXmlNamespaceResolver')]
-  DNIXmlNamespaceResolver = interface(DNObject)
+  DNIXmlNamespaceResolver = interface(DDN.mscorlib.DNObject)
   ['{963A8E22-D935-3065-ACF5-220A8350C64F}']
   { methods } 
 
@@ -5086,7 +5086,7 @@ type
   ///  定义已验证的 XML 节点的架构验证信息集。
   ///</summary>
   [DNTypeName('System.Xml.Schema.IXmlSchemaInfo')]
-  DNIXmlSchemaInfo = interface(DNObject)
+  DNIXmlSchemaInfo = interface(DDN.mscorlib.DNObject)
   ['{B877D1C0-5915-310A-8B75-8937F127300C}']
   { getters & setters } 
 

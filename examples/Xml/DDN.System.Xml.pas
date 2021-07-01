@@ -7310,7 +7310,7 @@ type
   ///  表示一个应用程序资源流冲突解决程序。
   ///</summary>
   [DNTypeName('System.Xml.IApplicationResourceStreamResolver')]
-  DNIApplicationResourceStreamResolver = interface(DNObject)
+  DNIApplicationResourceStreamResolver = interface(DDN.mscorlib.DNObject)
   ['{3E390847-46B4-3E7B-ABE8-6BABB33B8E1B}']
   { methods } 
 
@@ -7333,7 +7333,7 @@ type
   ///  距当前上下文或位置。
   ///</summary>
   [DNTypeName('System.Xml.IHasXmlNode')]
-  DNIHasXmlNode = interface(DNObject)
+  DNIHasXmlNode = interface(DDN.mscorlib.DNObject)
   ['{54637763-C9DB-3D10-BEA0-E110003DDE65}']
   { methods } 
 
@@ -7353,7 +7353,7 @@ type
   ///  提供一个使类可以返回行和位置信息的接口。
   ///</summary>
   [DNTypeName('System.Xml.IXmlLineInfo')]
-  DNIXmlLineInfo = interface(DNObject)
+  DNIXmlLineInfo = interface(DDN.mscorlib.DNObject)
   ['{42FC7998-4F03-37C8-BEAA-3C23528E47CB}']
   { getters & setters } 
 
@@ -7401,7 +7401,7 @@ type
   ///  提供对一组前缀和命名空间映射的只读访问。
   ///</summary>
   [DNTypeName('System.Xml.IXmlNamespaceResolver')]
-  DNIXmlNamespaceResolver = interface(DNObject)
+  DNIXmlNamespaceResolver = interface(DDN.mscorlib.DNObject)
   ['{963A8E22-D935-3065-ACF5-220A8350C64F}']
   { methods } 
 
@@ -7447,7 +7447,7 @@ type
   ///  定义已验证的 XML 节点的架构验证信息集。
   ///</summary>
   [DNTypeName('System.Xml.Schema.IXmlSchemaInfo')]
-  DNIXmlSchemaInfo = interface(DNObject)
+  DNIXmlSchemaInfo = interface(DDN.mscorlib.DNObject)
   ['{B877D1C0-5915-310A-8B75-8937F127300C}']
   { getters & setters } 
 
@@ -16871,7 +16871,7 @@ type
   ///  为 XML 序列化和反序列化提供自定义格式。
   ///</summary>
   [DNTypeName('System.Xml.Serialization.IXmlSerializable')]
-  DNIXmlSerializable = interface(DNObject)
+  DNIXmlSerializable = interface(DDN.mscorlib.DNObject)
   ['{45471A9D-DC65-3A9F-8C82-7539D6BE5419}']
   { methods } 
 
@@ -16915,7 +16915,7 @@ type
   ///  供.NET Framework 基础结构使用的属性。
   ///</summary>
   [DNTypeName('System.Xml.Serialization.IXmlTextParser')]
-  DNIXmlTextParser = interface(DNObject)
+  DNIXmlTextParser = interface(DDN.mscorlib.DNObject)
   ['{769A70FF-3974-369E-A95B-4FA2F28FDE95}']
   { getters & setters } 
 
@@ -45741,7 +45741,7 @@ type
   ///  类。
   ///</summary>
   [DNTypeName('System.Xml.XPath.IXPathNavigable')]
-  DNIXPathNavigable = interface(DNObject)
+  DNIXPathNavigable = interface(DDN.mscorlib.DNObject)
   ['{075B8C9F-B06E-3269-BEB1-8CCBF38D96FA}']
   { methods } 
 
@@ -48500,7 +48500,7 @@ type
   ///  提供在运行时执行期间在可扩展样式表语言转换 (XSLT) 样式表中定义的给定函数的接口。
   ///</summary>
   [DNTypeName('System.Xml.Xsl.IXsltContextFunction')]
-  DNIXsltContextFunction = interface(DNObject)
+  DNIXsltContextFunction = interface(DDN.mscorlib.DNObject)
   ['{BC0FA391-C9DD-30BC-83AD-5CADCD9C03D3}']
   { getters & setters } 
 
@@ -48571,7 +48571,7 @@ type
   ///  提供在运行时执行期间定义样式表中的给定变量的接口。
   ///</summary>
   [DNTypeName('System.Xml.Xsl.IXsltContextVariable')]
-  DNIXsltContextVariable = interface(DNObject)
+  DNIXsltContextVariable = interface(DDN.mscorlib.DNObject)
   ['{B6D7D55A-2E94-3C3B-911E-6AF424E51A0C}']
   { getters & setters } 
 

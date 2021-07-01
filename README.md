@@ -23,8 +23,8 @@
  
 ## Requires
 
-* [.NET Framework v4.0](https://www.microsoft.com/en-us/download/details.aspx?id=17851). 
-* [Visual C++ Redistributable for Visual Studio 2015(v140).
+* [.NET Framework v4.0](https://www.microsoft.com/en-us/download/details.aspx?id=17851) . 
+* [Visual C++ Redistributable for Visual Studio 2015(v140)](https://www.microsoft.com/en-us/download/details.aspx?id=48145).
 * The minimum requirement is `Rad Studio XE3`.
 
 ## Not supported
@@ -79,7 +79,7 @@ var
   LP: DNParameterInfo;
   I: Integer;
 begin
-  LType := TDNType.GetType<DNMemoryStream>();
+  LType := TDNMemoryStream.typeid;
  // LType := TDNType.DNClass.GetType('System.IO.MemoryStream');
   Writeln('LType ptr=', NativeUint(LType));
   if LType <> nil then

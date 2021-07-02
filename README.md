@@ -20,6 +20,7 @@
 * Support interface types (including generic interface).
 * Support dynamic array (one-dimensional array).
 * Support Delegate type.
+* Support Event.
  
 ## Requires
 
@@ -107,4 +108,76 @@ end;
 end.
   
 
+```
+
+* Delegate 
+```pascal
+type
+  TDelegateClass = class
+  public
+    // A method can be an instance method or a class method.
+    class function CheckValidationResult(sender: DNObject; certificate: DNX509Certificate; chain: DNX509Chain;  errors: DNSslPolicyErrors): Boolean;
+  end;
+  
+class function TDelegateClass.CheckValidationResult(
+  sender: DNObject;
+  certificate: DNX509Certificate;
+  chain: DNX509Chain;
+  errors: DNSslPolicyErrors): Boolean;
+begin
+  Writeln('call TDelegateTest.CheckValidationResult: ');
+  Writeln('sender: ', sender.ToString);
+  Writeln('certificate: ',  certificate.ToString);
+  Writeln('chain: ', chain.ToString);
+  Writeln('errors: ', errors);
+  Result := True;
+end; 
+  
+TDNServicePointManager.DNClass.ServerCertificateValidationCallback := TDelegateClass.CheckValidationResult;
+```
+
+* Event 
+```pascal
+type
+  // test
+  TEventClass = class
+  public
+    // A method can be an instance method or a class method.
+   class procedure OnButtonClick(sender: DNObject; e: DNEventArgs);
+  end;
+  
+class procedure TEventClass.OnButtonClick(sender: DNObject; e: DNEventArgs);
+begin
+  TDNMessageBox.DNClass.Show('Button.Click: ' + sender.ToString);
+//  TDNButton.Wrap(Sender).remove_Click(TDelegateTest.OnButtonClick);
+end;
+  
+function CreateMainForm(): DNForm;
+var
+  LButton: DNButton;
+  LR: DDN.Forms.Common.DNRectangle;
+  //LEdit: DNTextBox;
+begin
+  LR := TDNScreen.DNClass.PrimaryScreen.Bounds;
+
+  Result := TDNForm.Create;
+  Result.Text := 'Delphi .NET Runtime';
+
+  LButton := TDNButton.Create;
+  LButton.Text := 'Hello';
+  LButton.add_Click(TEventClass.OnButtonClick);
+  LButton.Location := TDNPoint.DNClass.init(100, 100);
+  Result.Controls.Add(LButton);
+
+  //Result.StartPosition := DNFormStartPosition.Manual;
+  Result.StartPosition := DNFormStartPosition.CenterScreen;
+  //Result.Location :=  TDNPoint.DNClass.init((LR.Width - Result.Width) div 2, (LR.Height - Result.Height) div 2);
+end;
+
+ 
+begin
+  TDNApplication.DNClass.EnableVisualStyles();
+  TDNApplication.DNClass.SetCompatibleTextRenderingDefault(False);
+  TDNApplication.DNClass.Run(CreateMainForm());
+end.
 ```

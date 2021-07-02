@@ -21,7 +21,6 @@ const
 type
   TDelegateClass = class
   public
-    [DNDelegate(DNRemoteCertificateValidationCallback)]
     class function CheckValidationResult(sender: DNObject; certificate: DNX509Certificate; chain: DNX509Chain;  errors: DNSslPolicyErrors): Boolean;
   end;
 
@@ -32,10 +31,10 @@ class function TDelegateClass.CheckValidationResult(
   errors: DNSslPolicyErrors): Boolean;
 begin
   Writeln('call TDelegateTest.CheckValidationResult: ');
-  Writeln('call sender: ', sender.ToString);
-  Writeln('call certificate: ',  certificate.ToString);
-  Writeln('call chain: ', chain.ToString);
-  Writeln('call errors: ', errors);
+  Writeln('sender: ', sender.ToString);
+  Writeln('certificate: ',  certificate.ToString);
+  Writeln('chain: ', chain.ToString);
+  Writeln('errors: ', errors);
   Result := True;
 end;
 
@@ -96,8 +95,7 @@ end;
 
 procedure TestProc;
 begin
-  TDNServicePointManager.DNClass.ServerCertificateValidationCallback :=
-     TDNDelegate.CreateDelegate<DNRemoteCertificateValidationCallback>(TDelegateClass);//, 'CheckValidationResult');
+  TDNServicePointManager.DNClass.ServerCertificateValidationCallback := TDelegateClass.CheckValidationResult;
   TDNServicePointManager.DNClass.SecurityProtocol := DNSecurityProtocolType.Tls12;
   Http_HEAD;
   Http_GET;

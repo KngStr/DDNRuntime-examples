@@ -589,6 +589,7 @@ type
 
 type
 
+
 { declares }
 
   DNCodeAttributeDeclaration = interface; // type: System.CodeDom.CodeAttributeDeclaration, namespace: System.CodeDom
@@ -616,7 +617,7 @@ type
   DNCodeTypeDeclarationCollection = interface; // type: System.CodeDom.CodeTypeDeclarationCollection, namespace: System.CodeDom
   DNCompilerErrorCollection = interface; // type: System.CodeDom.Compiler.CompilerErrorCollection, namespace: System.CodeDom.Compiler
   DNConfigurationLocationCollection = interface; // type: System.Configuration.ConfigurationLocationCollection, namespace: System.Configuration
-  DNKeysCollection = interface; // type: System.Collections.Specialized.NameObjectCollectionBase+KeysCollection, namespace: System.Collections.Specialized
+  DNNameObjectCollectionBase_KeysCollection = interface; // type: System.Collections.Specialized.NameObjectCollectionBase+KeysCollection, namespace: System.Collections.Specialized
   DNConfigurationSectionCollection = interface; // type: System.Configuration.ConfigurationSectionCollection, namespace: System.Configuration
   DNConfigurationSectionGroupCollection = interface; // type: System.Configuration.ConfigurationSectionGroupCollection, namespace: System.Configuration
   DNPropertyInformationCollection = interface; // type: System.Configuration.PropertyInformationCollection, namespace: System.Configuration
@@ -945,6 +946,15 @@ type
     function get_Comments: DNCodeCommentStatementCollection;
     function get_UserData: DDN.mscorlib.DNIDictionary;
 
+  { events } 
+
+    procedure add_PopulateComments(value: DDN.mscorlib.DNEventHandler);
+    procedure remove_PopulateComments(value: DDN.mscorlib.DNEventHandler);
+    procedure add_PopulateImports(value: DDN.mscorlib.DNEventHandler);
+    procedure remove_PopulateImports(value: DDN.mscorlib.DNEventHandler);
+    procedure add_PopulateTypes(value: DDN.mscorlib.DNEventHandler);
+    procedure remove_PopulateTypes(value: DDN.mscorlib.DNEventHandler);
+
   { methods } 
 
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -1199,6 +1209,13 @@ type
     function get_StartDirectives: DNCodeDirectiveCollection;
     function get_EndDirectives: DNCodeDirectiveCollection;
     function get_UserData: DDN.mscorlib.DNIDictionary;
+
+  { events } 
+
+    procedure add_PopulateBaseTypes(value: DDN.mscorlib.DNEventHandler);
+    procedure remove_PopulateBaseTypes(value: DDN.mscorlib.DNEventHandler);
+    procedure add_PopulateMembers(value: DDN.mscorlib.DNEventHandler);
+    procedure remove_PopulateMembers(value: DDN.mscorlib.DNEventHandler);
 
   { methods } 
 
@@ -3447,7 +3464,7 @@ type
   TDNConfigurationLocationCollection = class(TDNGenericImport<DNConfigurationLocationCollectionClass, DNConfigurationLocationCollection>) end;
 
   //-------------namespace: System.Collections.Specialized----------------
-  DNKeysCollectionClass = interface(DDN.mscorlib.DNObjectClass)
+  DNNameObjectCollectionBase_KeysCollectionClass = interface(DDN.mscorlib.DNObjectClass)
   ['{8056D97B-E35F-57D6-A66E-94C97EE8836D}']
   end;
 
@@ -3456,7 +3473,7 @@ type
   ///  密钥的集合。
   ///</summary>
   [DNTypeName('System.Collections.Specialized.NameObjectCollectionBase+KeysCollection')]
-  DNKeysCollection = interface(DDN.mscorlib.DNObject)
+  DNNameObjectCollectionBase_KeysCollection = interface(DDN.mscorlib.DNObject)
   ['{4F00D501-6A21-3AF8-8BE7-5B41DF6456A1}']
   { getters & setters } 
 
@@ -3508,7 +3525,7 @@ type
     property Count: Int32 read get_Count;
   end;
 
-  TDNKeysCollection = class(TDNGenericImport<DNKeysCollectionClass, DNKeysCollection>) end;
+  TDNNameObjectCollectionBase_KeysCollection = class(TDNGenericImport<DNNameObjectCollectionBase_KeysCollectionClass, DNNameObjectCollectionBase_KeysCollection>) end;
 
   //-------------namespace: System.Configuration----------------
   DNConfigurationSectionCollectionClass = interface(DNObjectClass)
@@ -3526,7 +3543,7 @@ type
     function get_Item(name: string): DNConfigurationSection; overload;
     function get_Item(index: Int32): DNConfigurationSection; overload;
     function get_Count: Int32;
-    function get_Keys: DNKeysCollection;
+    function get_Keys: DNNameObjectCollectionBase_KeysCollection;
 
   { methods } 
 
@@ -3677,7 +3694,7 @@ type
     ///  一个 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
     ///  对象，其中包含此集合中的所有部分的键。
     ///</returns>
-    property Keys: DNKeysCollection read get_Keys;
+    property Keys: DNNameObjectCollectionBase_KeysCollection read get_Keys;
   end;
 
   TDNConfigurationSectionCollection = class(TDNGenericImport<DNConfigurationSectionCollectionClass, DNConfigurationSectionCollection>) end;
@@ -3699,7 +3716,7 @@ type
     function get_Item(name: string): DNConfigurationSectionGroup; overload;
     function get_Item(index: Int32): DNConfigurationSectionGroup; overload;
     function get_Count: Int32;
-    function get_Keys: DNKeysCollection;
+    function get_Keys: DNNameObjectCollectionBase_KeysCollection;
 
   { methods } 
 
@@ -3845,7 +3862,7 @@ type
     ///  一个 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
     ///  对象，其中包含此集合中的所有节组的名称。
     ///</returns>
-    property Keys: DNKeysCollection read get_Keys;
+    property Keys: DNNameObjectCollectionBase_KeysCollection read get_Keys;
   end;
 
   TDNConfigurationSectionGroupCollection = class(TDNGenericImport<DNConfigurationSectionGroupCollectionClass, DNConfigurationSectionGroupCollection>) end;
@@ -3866,7 +3883,7 @@ type
   { getters & setters } 
 
     function get_Count: Int32;
-    function get_Keys: DNKeysCollection;
+    function get_Keys: DNNameObjectCollectionBase_KeysCollection;
 
   { methods } 
 
@@ -3907,7 +3924,7 @@ type
   { propertys } 
 
     property Count: Int32 read get_Count;
-    property Keys: DNKeysCollection read get_Keys;
+    property Keys: DNNameObjectCollectionBase_KeysCollection read get_Keys;
   end;
 
   TDNPropertyInformationCollection = class(TDNGenericImport<DNPropertyInformationCollectionClass, DNPropertyInformationCollection>) end;
@@ -6488,6 +6505,11 @@ type
     function get_Site: DNISite;
     procedure set_Site(value: DNISite);
     function get_Container: DNIContainer;
+
+  { events } 
+
+    procedure add_Disposed(value: DDN.mscorlib.DNEventHandler);
+    procedure remove_Disposed(value: DDN.mscorlib.DNEventHandler);
 
   { methods } 
 

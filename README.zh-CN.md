@@ -20,6 +20,7 @@
 * 支持接口类型（含泛型接口）。
 * 支持动态数组（一维数组）。
 * 支持委托类型。
+* 支持委事件。
  
 ## 要求
 
@@ -106,4 +107,76 @@ end;
 end.
   
 
+```
+
+* 委托 
+```pascal
+type
+  TDelegateClass = class
+  public
+    // 一个方法，可以是实例方法或者class方法。
+    class function CheckValidationResult(sender: DNObject; certificate: DNX509Certificate; chain: DNX509Chain;  errors: DNSslPolicyErrors): Boolean;
+  end;
+  
+class function TDelegateClass.CheckValidationResult(
+  sender: DNObject;
+  certificate: DNX509Certificate;
+  chain: DNX509Chain;
+  errors: DNSslPolicyErrors): Boolean;
+begin
+  Writeln('call TDelegateTest.CheckValidationResult: ');
+  Writeln('sender: ', sender.ToString);
+  Writeln('certificate: ',  certificate.ToString);
+  Writeln('chain: ', chain.ToString);
+  Writeln('errors: ', errors);
+  Result := True;
+end; 
+  
+TDNServicePointManager.DNClass.ServerCertificateValidationCallback := TDelegateClass.CheckValidationResult;
+```
+
+* 事件 
+```pascal
+type
+  // test
+  TEventClass = class
+  public
+    // 一个方法，可以是实例方法或者class方法。
+   class procedure OnButtonClick(sender: DNObject; e: DNEventArgs);
+  end;
+  
+class procedure TEventClass.OnButtonClick(sender: DNObject; e: DNEventArgs);
+begin
+  TDNMessageBox.DNClass.Show('Button.Click: ' + sender.ToString);
+//  TDNButton.Wrap(Sender).remove_Click(TDelegateTest.OnButtonClick);
+end;
+  
+function CreateMainForm(): DNForm;
+var
+  LButton: DNButton;
+  LR: DDN.Forms.Common.DNRectangle;
+  //LEdit: DNTextBox;
+begin
+  LR := TDNScreen.DNClass.PrimaryScreen.Bounds;
+
+  Result := TDNForm.Create;
+  Result.Text := 'Delphi .NET Runtime';
+
+  LButton := TDNButton.Create;
+  LButton.Text := 'Hello';
+  LButton.add_Click(TEventClass.OnButtonClick);
+  LButton.Location := TDNPoint.DNClass.init(100, 100);
+  Result.Controls.Add(LButton);
+
+  //Result.StartPosition := DNFormStartPosition.Manual;
+  Result.StartPosition := DNFormStartPosition.CenterScreen;
+  //Result.Location :=  TDNPoint.DNClass.init((LR.Width - Result.Width) div 2, (LR.Height - Result.Height) div 2);
+end;
+
+ 
+begin
+  TDNApplication.DNClass.EnableVisualStyles();
+  TDNApplication.DNClass.SetCompatibleTextRenderingDefault(False);
+  TDNApplication.DNClass.Run(CreateMainForm());
+end.
 ```

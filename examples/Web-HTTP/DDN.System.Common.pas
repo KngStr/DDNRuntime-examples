@@ -612,10 +612,11 @@ type
 
 type
 
+
 { declares }
 
   DNConfigurationLocationCollection = interface; // type: System.Configuration.ConfigurationLocationCollection, namespace: System.Configuration
-  DNKeysCollection = interface; // type: System.Collections.Specialized.NameObjectCollectionBase+KeysCollection, namespace: System.Collections.Specialized
+  DNNameObjectCollectionBase_KeysCollection = interface; // type: System.Collections.Specialized.NameObjectCollectionBase+KeysCollection, namespace: System.Collections.Specialized
   DNNameValueCollection = interface; // type: System.Collections.Specialized.NameValueCollection, namespace: System.Collections.Specialized
   DNConfigurationSectionCollection = interface; // type: System.Configuration.ConfigurationSectionCollection, namespace: System.Configuration
   DNConfigurationSectionGroupCollection = interface; // type: System.Configuration.ConfigurationSectionGroupCollection, namespace: System.Configuration
@@ -636,9 +637,8 @@ type
   DNProtectedConfigurationProvider = interface; // type: System.Configuration.ProtectedConfigurationProvider, namespace: System.Configuration
   DNProviderCollection = interface; // type: System.Configuration.Provider.ProviderCollection, namespace: System.Configuration.Provider
   DNSectionInformation = interface; // type: System.Configuration.SectionInformation, namespace: System.Configuration
-  DNValidationEventHandler = interface; // type: System.Xml.Schema.ValidationEventHandler, namespace: System.Xml.Schema
-  DNXmlNodeChangedEventHandler = interface; // type: System.Xml.XmlNodeChangedEventHandler, namespace: System.Xml
   DNValidationEventArgs = interface; // type: System.Xml.Schema.ValidationEventArgs, namespace: System.Xml.Schema
+  DNXmlNodeChangedEventArgs = interface; // type: System.Xml.XmlNodeChangedEventArgs, namespace: System.Xml
   DNICredentials = interface; // type: System.Net.ICredentials, namespace: System.Net
   DNFrameworkName = interface; // type: System.Runtime.Versioning.FrameworkName, namespace: System.Runtime.Versioning
   DNUri = interface; // type: System.Uri, namespace: System
@@ -683,6 +683,46 @@ type
   DNXPathNavigator = interface; // type: System.Xml.XPath.XPathNavigator, namespace: System.Xml.XPath
   DNXPathNodeIterator = interface; // type: System.Xml.XPath.XPathNodeIterator, namespace: System.Xml.XPath
 
+{ delegates }
+
+  ///<summary>
+  ///  表示将处理 XML 架构验证事件的回调方法和 <see cref="T:System.Xml.Schema.ValidationEventArgs" />
+  ///  。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///  注意    然后再使用它在代码中确定发件人的类型。
+  ///  您不能假定发件人为特定类型的实例。
+  ///  发件人也不保证不会是 null。
+  ///  总是使用失败处理逻辑要求您强制转换。
+  ///</param>
+  ///  <param name="e">
+  ///  事件数据。
+  ///</param>
+  [DNTypeName('System.Xml.Schema.ValidationEventHandler')]
+  DNValidationEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNValidationEventArgs) of object;
+
+  ///<summary>
+  ///  表示用于处理的方法 <see cref="E:System.Xml.XmlDocument.NodeChanged" />
+  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeChanging" />
+  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeInserted" />
+  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeInserting" />
+  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeRemoved" />
+  ///  和 <see cref="E:System.Xml.XmlDocument.NodeRemoving" />
+  ///  事件。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e">
+  ///  包含事件数据的 <see cref="T:System.Xml.XmlNodeChangedEventArgs" />
+  ///  。
+  ///</param>
+  [DNTypeName('System.Xml.XmlNodeChangedEventHandler')]
+  DNXmlNodeChangedEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNXmlNodeChangedEventArgs) of object;
+
+
+
 
 { objects }
 
@@ -718,7 +758,7 @@ type
   TDNConfigurationLocationCollection = class(TDNGenericImport<DNConfigurationLocationCollectionClass, DNConfigurationLocationCollection>) end;
 
   //-------------namespace: System.Collections.Specialized----------------
-  DNKeysCollectionClass = interface(DDN.mscorlib.DNObjectClass)
+  DNNameObjectCollectionBase_KeysCollectionClass = interface(DDN.mscorlib.DNObjectClass)
   ['{8056D97B-E35F-57D6-A66E-94C97EE8836D}']
   end;
 
@@ -727,7 +767,7 @@ type
   ///  密钥的集合。
   ///</summary>
   [DNTypeName('System.Collections.Specialized.NameObjectCollectionBase+KeysCollection')]
-  DNKeysCollection = interface(DDN.mscorlib.DNObject)
+  DNNameObjectCollectionBase_KeysCollection = interface(DDN.mscorlib.DNObject)
   ['{4F00D501-6A21-3AF8-8BE7-5B41DF6456A1}']
   { getters & setters } 
 
@@ -779,7 +819,7 @@ type
     property Count: Int32 read get_Count;
   end;
 
-  TDNKeysCollection = class(TDNGenericImport<DNKeysCollectionClass, DNKeysCollection>) end;
+  TDNNameObjectCollectionBase_KeysCollection = class(TDNGenericImport<DNNameObjectCollectionBase_KeysCollectionClass, DNNameObjectCollectionBase_KeysCollection>) end;
 
   //-------------namespace: System.Collections.Specialized----------------
   DNNameValueCollectionClass = interface(DNObjectClass)
@@ -909,7 +949,7 @@ type
     function get_Item(index: Int32): string; overload;
     function get_AllKeys: TArray<string>;
     function get_Count: Int32;
-    function get_Keys: DNKeysCollection;
+    function get_Keys: DNNameObjectCollectionBase_KeysCollection;
 
   { methods } 
 
@@ -1199,7 +1239,7 @@ type
     ///  实例，该实例包含 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase" />
     ///  实例中的所有键。
     ///</returns>
-    property Keys: DNKeysCollection read get_Keys;
+    property Keys: DNNameObjectCollectionBase_KeysCollection read get_Keys;
   end;
 
   TDNNameValueCollection = class(TDNGenericImport<DNNameValueCollectionClass, DNNameValueCollection>) end;
@@ -1220,7 +1260,7 @@ type
     function get_Item(name: string): DNConfigurationSection; overload;
     function get_Item(index: Int32): DNConfigurationSection; overload;
     function get_Count: Int32;
-    function get_Keys: DNKeysCollection;
+    function get_Keys: DNNameObjectCollectionBase_KeysCollection;
 
   { methods } 
 
@@ -1371,7 +1411,7 @@ type
     ///  一个 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
     ///  对象，其中包含此集合中的所有部分的键。
     ///</returns>
-    property Keys: DNKeysCollection read get_Keys;
+    property Keys: DNNameObjectCollectionBase_KeysCollection read get_Keys;
   end;
 
   TDNConfigurationSectionCollection = class(TDNGenericImport<DNConfigurationSectionCollectionClass, DNConfigurationSectionCollection>) end;
@@ -1393,7 +1433,7 @@ type
     function get_Item(name: string): DNConfigurationSectionGroup; overload;
     function get_Item(index: Int32): DNConfigurationSectionGroup; overload;
     function get_Count: Int32;
-    function get_Keys: DNKeysCollection;
+    function get_Keys: DNNameObjectCollectionBase_KeysCollection;
 
   { methods } 
 
@@ -1539,7 +1579,7 @@ type
     ///  一个 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
     ///  对象，其中包含此集合中的所有节组的名称。
     ///</returns>
-    property Keys: DNKeysCollection read get_Keys;
+    property Keys: DNNameObjectCollectionBase_KeysCollection read get_Keys;
   end;
 
   TDNConfigurationSectionGroupCollection = class(TDNGenericImport<DNConfigurationSectionGroupCollectionClass, DNConfigurationSectionGroupCollection>) end;
@@ -1560,7 +1600,7 @@ type
   { getters & setters } 
 
     function get_Count: Int32;
-    function get_Keys: DNKeysCollection;
+    function get_Keys: DNNameObjectCollectionBase_KeysCollection;
 
   { methods } 
 
@@ -1601,7 +1641,7 @@ type
   { propertys } 
 
     property Count: Int32 read get_Count;
-    property Keys: DNKeysCollection read get_Keys;
+    property Keys: DNNameObjectCollectionBase_KeysCollection read get_Keys;
   end;
 
   TDNPropertyInformationCollection = class(TDNGenericImport<DNPropertyInformationCollectionClass, DNPropertyInformationCollection>) end;
@@ -3738,112 +3778,6 @@ type
   TDNSectionInformation = class(TDNGenericImport<DNSectionInformationClass, DNSectionInformation>) end;
 
   //-------------namespace: System.Xml.Schema----------------
-  DNValidationEventHandlerClass = interface(DDN.mscorlib.DNMulticastDelegateClass)
-  ['{2053E376-DD8F-585D-B2AF-FB9936E84F2D}']
-  { constructors } 
-
-    {class} function init(&object: DDN.mscorlib.DNObject; method: IntPtr): DNValidationEventHandler;
-
-  end;
-
-  ///<summary>
-  ///  表示将处理 XML 架构验证事件的回调方法和 <see cref="T:System.Xml.Schema.ValidationEventArgs" />
-  ///  。
-  ///</summary>
-  ///  <param name="sender">
-  ///  事件源。
-  ///  注意    然后再使用它在代码中确定发件人的类型。
-  ///  您不能假定发件人为特定类型的实例。
-  ///  发件人也不保证不会是 null。
-  ///  总是使用失败处理逻辑要求您强制转换。
-  ///</param>
-  ///  <param name="e">
-  ///  事件数据。
-  ///</param>
-  [DNTypeName('System.Xml.Schema.ValidationEventHandler')]
-  DNValidationEventHandler = interface(DDN.mscorlib.DNMulticastDelegate)
-  ['{67E07B4E-4BB9-3C72-83B1-87CCB8D98D6D}']
-  { getters & setters } 
-
-    function get_Method: DDN.mscorlib.DNMethodInfo;
-    function get_Target: DDN.mscorlib.DNObject;
-
-  { methods } 
-
-    procedure Invoke(sender: DDN.mscorlib.DNObject; e: DNValidationEventArgs);
-    function BeginInvoke(sender: DDN.mscorlib.DNObject; e: DNValidationEventArgs; callback: DDN.mscorlib.DNAsyncCallback; &object: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    procedure EndInvoke(result: DDN.mscorlib.DNIAsyncResult);
-    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
-    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
-    function GetInvocationList: TArray<DDN.mscorlib.DNDelegate>;
-    function GetHashCode: Int32;
-    function DynamicInvoke(args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
-    function Clone: DDN.mscorlib.DNObject;
-    function GetType: DDN.mscorlib.DNType;
-    function ToString: string;
-
-  { propertys } 
-
-    property Method: DDN.mscorlib.DNMethodInfo read get_Method;
-    property Target: DDN.mscorlib.DNObject read get_Target;
-  end;
-
-  TDNValidationEventHandler = class(TDNGenericImport<DNValidationEventHandlerClass, DNValidationEventHandler>) end;
-
-  //-------------namespace: System.Xml----------------
-  DNXmlNodeChangedEventHandlerClass = interface(DDN.mscorlib.DNMulticastDelegateClass)
-  ['{C181E91E-D919-5133-BE21-4619D09B954C}']
-  { constructors } 
-
-    {class} function init(&object: DDN.mscorlib.DNObject; method: IntPtr): DNXmlNodeChangedEventHandler;
-
-  end;
-
-  ///<summary>
-  ///  表示用于处理的方法 <see cref="E:System.Xml.XmlDocument.NodeChanged" />
-  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeChanging" />
-  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeInserted" />
-  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeInserting" />
-  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeRemoved" />
-  ///  和 <see cref="E:System.Xml.XmlDocument.NodeRemoving" />
-  ///  事件。
-  ///</summary>
-  ///  <param name="sender">
-  ///  事件源。
-  ///</param>
-  ///  <param name="e">
-  ///  包含事件数据的 <see cref="T:System.Xml.XmlNodeChangedEventArgs" />
-  ///  。
-  ///</param>
-  [DNTypeName('System.Xml.XmlNodeChangedEventHandler')]
-  DNXmlNodeChangedEventHandler = interface(DDN.mscorlib.DNMulticastDelegate)
-  ['{55D79924-5587-3679-9F86-9ACA33210157}']
-  { getters & setters } 
-
-    function get_Method: DDN.mscorlib.DNMethodInfo;
-    function get_Target: DDN.mscorlib.DNObject;
-
-  { methods } 
-
-    procedure EndInvoke(result: DDN.mscorlib.DNIAsyncResult);
-    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
-    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
-    function GetInvocationList: TArray<DDN.mscorlib.DNDelegate>;
-    function GetHashCode: Int32;
-    function DynamicInvoke(args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
-    function Clone: DDN.mscorlib.DNObject;
-    function GetType: DDN.mscorlib.DNType;
-    function ToString: string;
-
-  { propertys } 
-
-    property Method: DDN.mscorlib.DNMethodInfo read get_Method;
-    property Target: DDN.mscorlib.DNObject read get_Target;
-  end;
-
-  TDNXmlNodeChangedEventHandler = class(TDNGenericImport<DNXmlNodeChangedEventHandlerClass, DNXmlNodeChangedEventHandler>) end;
-
-  //-------------namespace: System.Xml.Schema----------------
   DNValidationEventArgsClass = interface(DDN.mscorlib.DNEventArgsClass)
   ['{FD89FE6F-3039-5078-BA46-B00CE55AACA1}']
   end;
@@ -3878,6 +3812,109 @@ type
   end;
 
   TDNValidationEventArgs = class(TDNGenericImport<DNValidationEventArgsClass, DNValidationEventArgs>) end;
+
+  //-------------namespace: System.Xml----------------
+  DNXmlNodeChangedEventArgsClass = interface(DDN.mscorlib.DNEventArgsClass)
+  ['{A5830A41-9A45-5E8D-BC73-144AE5DF513F}']
+  end;
+
+  ///<summary>
+  ///  将提供数据供 <see cref="E:System.Xml.XmlDocument.NodeChanged" />
+  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeChanging" />
+  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeInserted" />
+  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeInserting" />
+  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeRemoved" />
+  ///  和 <see cref="E:System.Xml.XmlDocument.NodeRemoving" />
+  ///  事件。
+  ///</summary>
+  [DNTypeName('System.Xml.XmlNodeChangedEventArgs')]
+  DNXmlNodeChangedEventArgs = interface(DDN.mscorlib.DNEventArgs)
+  ['{6F33740C-B2E1-3A44-A063-8F78C5C6CD1B}']
+  { getters & setters } 
+
+    function get_Node: DNXmlNode;
+    function get_OldParent: DNXmlNode;
+    function get_NewParent: DNXmlNode;
+    function get_OldValue: string;
+    function get_NewValue: string;
+
+  { methods } 
+
+    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    function GetHashCode: Int32;
+    function GetType: DDN.mscorlib.DNType;
+    function ToString: string;
+
+  { propertys } 
+
+    ///<summary>
+    ///  获取 <see cref="T:System.Xml.XmlNode" />
+    ///  要添加、 移除或更改。
+    ///</summary>
+    ///<returns><see langword="XmlNode" />
+    ///  正被添加、 删除或已更改; 此属性绝不会返回 <see langword="null" />
+    ///  。
+    ///</returns>
+    property Node: DNXmlNode read get_Node;
+    ///<summary>
+    ///  获取的值 <see cref="P:System.Xml.XmlNode.ParentNode" />
+    ///  操作开始前。
+    ///</summary>
+    ///<returns>
+    ///  值 <see langword="ParentNode" />
+    ///  操作开始前。
+    ///  此属性返回 <see langword="null" />
+    ///  如果节点没有父级。
+    ///  对于属性节点此属性返回 <see cref="P:System.Xml.XmlAttribute.OwnerElement" />
+    ///  。
+    ///</returns>
+    property OldParent: DNXmlNode read get_OldParent;
+    ///<summary>
+    ///  获取的值 <see cref="P:System.Xml.XmlNode.ParentNode" />
+    ///  操作完成后。
+    ///</summary>
+    ///<returns>
+    ///  值 <see langword="ParentNode" />
+    ///  操作完成后。
+    ///  此属性返回 <see langword="null" />
+    ///  如果已移除的节点。
+    ///  对于属性节点此属性返回 <see cref="P:System.Xml.XmlAttribute.OwnerElement" />
+    ///  。
+    ///</returns>
+    property NewParent: DNXmlNode read get_NewParent;
+    ///<summary>
+    ///  获取节点的原始值。
+    ///</summary>
+    ///<returns>
+    ///  节点的原始值。
+    ///  此属性返回 <see langword="null" />
+    ///  节点是否既不属性，也不是文本节点，或插入节点。
+    ///  如果调用 <see cref="E:System.Xml.XmlDocument.NodeChanging" />
+    ///  事件， <see langword="OldValue" />
+    ///  返回成功更改是否将被替换的节点的当前值。
+    ///  如果调用 <see cref="E:System.Xml.XmlDocument.NodeChanged" />
+    ///  事件， <see langword="OldValue" />
+    ///  返回之前更改节点的值。
+    ///</returns>
+    property OldValue: string read get_OldValue;
+    ///<summary>
+    ///  获取节点的新值。
+    ///</summary>
+    ///<returns>
+    ///  节点的新值。
+    ///  此属性返回 <see langword="null" />
+    ///  节点是否既不属性，也不是文本节点，或已移除的节点。
+    ///  如果调用 <see cref="E:System.Xml.XmlDocument.NodeChanging" />
+    ///  事件， <see langword="NewValue" />
+    ///  返回节点的值，如果更改成功。
+    ///  如果调用 <see cref="E:System.Xml.XmlDocument.NodeChanged" />
+    ///  事件， <see langword="NewValue" />
+    ///  返回节点的当前值。
+    ///</returns>
+    property NewValue: string read get_NewValue;
+  end;
+
+  TDNXmlNodeChangedEventArgs = class(TDNGenericImport<DNXmlNodeChangedEventArgsClass, DNXmlNodeChangedEventArgs>) end;
 
   //-------------namespace: System.Net----------------
   ///<summary>
@@ -6199,6 +6236,11 @@ type
     function get_GlobalElements: DNXmlSchemaObjectTable;
     function get_GlobalAttributes: DNXmlSchemaObjectTable;
     function get_GlobalTypes: DNXmlSchemaObjectTable;
+
+  { events } 
+
+    procedure add_ValidationEventHandler(value: DNValidationEventHandler);
+    procedure remove_ValidationEventHandler(value: DNValidationEventHandler);
 
   { methods } 
 
@@ -8766,6 +8808,21 @@ type
     function get_Item(name: string): DNXmlElement; overload;
     function get_Item(localname: string; ns: string): DNXmlElement; overload;
     function get_PreviousText: DNXmlNode;
+
+  { events } 
+
+    procedure add_NodeInserting(value: DNXmlNodeChangedEventHandler);
+    procedure remove_NodeInserting(value: DNXmlNodeChangedEventHandler);
+    procedure add_NodeInserted(value: DNXmlNodeChangedEventHandler);
+    procedure remove_NodeInserted(value: DNXmlNodeChangedEventHandler);
+    procedure add_NodeRemoving(value: DNXmlNodeChangedEventHandler);
+    procedure remove_NodeRemoving(value: DNXmlNodeChangedEventHandler);
+    procedure add_NodeRemoved(value: DNXmlNodeChangedEventHandler);
+    procedure remove_NodeRemoved(value: DNXmlNodeChangedEventHandler);
+    procedure add_NodeChanging(value: DNXmlNodeChangedEventHandler);
+    procedure remove_NodeChanging(value: DNXmlNodeChangedEventHandler);
+    procedure add_NodeChanged(value: DNXmlNodeChangedEventHandler);
+    procedure remove_NodeChanged(value: DNXmlNodeChangedEventHandler);
 
   { methods } 
 
@@ -18842,6 +18899,11 @@ type
     procedure set_CloseInput(value: Boolean);
     function get_Schemas: DNXmlSchemaSet;
     procedure set_Schemas(value: DNXmlSchemaSet);
+
+  { events } 
+
+    procedure add_ValidationEventHandler(value: DNValidationEventHandler);
+    procedure remove_ValidationEventHandler(value: DNValidationEventHandler);
 
   { methods } 
 

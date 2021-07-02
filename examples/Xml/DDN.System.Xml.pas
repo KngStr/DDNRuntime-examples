@@ -1526,6 +1526,7 @@ type
 
 type
 
+
 { declares }
 
   DNSoapAttributeAttribute = interface; // type: System.Xml.Serialization.SoapAttributeAttribute, namespace: System.Xml.Serialization
@@ -1566,18 +1567,6 @@ type
   DNSchemaImporterExtensionElement = interface; // type: System.Xml.Serialization.Configuration.SchemaImporterExtensionElement, namespace: System.Xml.Serialization.Configuration
   DNSerializationSectionGroup = interface; // type: System.Xml.Serialization.Configuration.SerializationSectionGroup, namespace: System.Xml.Serialization.Configuration
   DNRootedPathValidator = interface; // type: System.Xml.Serialization.Configuration.RootedPathValidator, namespace: System.Xml.Serialization.Configuration
-  DNValidationEventHandler = interface; // type: System.Xml.Schema.ValidationEventHandler, namespace: System.Xml.Schema
-  DNXmlValueGetter = interface; // type: System.Xml.Schema.XmlValueGetter, namespace: System.Xml.Schema
-  DNUnreferencedObjectEventHandler = interface; // type: System.Xml.Serialization.UnreferencedObjectEventHandler, namespace: System.Xml.Serialization
-  DNXmlAttributeEventHandler = interface; // type: System.Xml.Serialization.XmlAttributeEventHandler, namespace: System.Xml.Serialization
-  DNXmlElementEventHandler = interface; // type: System.Xml.Serialization.XmlElementEventHandler, namespace: System.Xml.Serialization
-  DNXmlNodeEventHandler = interface; // type: System.Xml.Serialization.XmlNodeEventHandler, namespace: System.Xml.Serialization
-  DNXmlSerializationCollectionFixupCallback = interface; // type: System.Xml.Serialization.XmlSerializationCollectionFixupCallback, namespace: System.Xml.Serialization
-  DNXmlSerializationFixupCallback = interface; // type: System.Xml.Serialization.XmlSerializationFixupCallback, namespace: System.Xml.Serialization
-  DNXmlSerializationReadCallback = interface; // type: System.Xml.Serialization.XmlSerializationReadCallback, namespace: System.Xml.Serialization
-  DNXmlSerializationWriteCallback = interface; // type: System.Xml.Serialization.XmlSerializationWriteCallback, namespace: System.Xml.Serialization
-  DNXmlNodeChangedEventHandler = interface; // type: System.Xml.XmlNodeChangedEventHandler, namespace: System.Xml
-  DNXsltMessageEncounteredEventHandler = interface; // type: System.Xml.Xsl.XsltMessageEncounteredEventHandler, namespace: System.Xml.Xsl
   DNValidationEventArgs = interface; // type: System.Xml.Schema.ValidationEventArgs, namespace: System.Xml.Schema
   DNUnreferencedObjectEventArgs = interface; // type: System.Xml.Serialization.UnreferencedObjectEventArgs, namespace: System.Xml.Serialization
   DNXmlAttributeEventArgs = interface; // type: System.Xml.Serialization.XmlAttributeEventArgs, namespace: System.Xml.Serialization
@@ -1755,6 +1744,174 @@ type
   DNXsltArgumentList = interface; // type: System.Xml.Xsl.XsltArgumentList, namespace: System.Xml.Xsl
   DNXslTransform = interface; // type: System.Xml.Xsl.XslTransform, namespace: System.Xml.Xsl
   DNXsltSettings = interface; // type: System.Xml.Xsl.XsltSettings, namespace: System.Xml.Xsl
+
+{ delegates }
+
+  ///<summary>
+  ///  表示将处理 XML 架构验证事件的回调方法和 <see cref="T:System.Xml.Schema.ValidationEventArgs" />
+  ///  。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///  注意    然后再使用它在代码中确定发件人的类型。
+  ///  您不能假定发件人为特定类型的实例。
+  ///  发件人也不保证不会是 null。
+  ///  总是使用失败处理逻辑要求您强制转换。
+  ///</param>
+  ///  <param name="e">
+  ///  事件数据。
+  ///</param>
+  [DNTypeName('System.Xml.Schema.ValidationEventHandler')]
+  DNValidationEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNValidationEventArgs) of object;
+
+  ///<summary>
+  ///  一个 <see langword="delegate" />
+  ///  使用 <see cref="T:System.Xml.Schema.XmlSchemaValidator" />
+  ///  类作为公共语言运行时 (CLR) 类型兼容的属性、 文本或空白的 XML 架构定义语言 (XSD) 类型传递属性、 文本和空白值。
+  ///</summary>
+  ///<returns>
+  ///  包含属性、 文本或空白值的对象。
+  ///  对象是属性、 文本或空白值的 XSD 类型相对应的 CLR 类型。
+  ///</returns>
+  [DNTypeName('System.Xml.Schema.XmlValueGetter')]
+  DNXmlValueGetter = function: DDN.mscorlib.DNObject of object;
+
+  ///<summary>
+  ///  表示用于处理的方法 <see cref="E:System.Xml.Serialization.XmlSerializer.UnreferencedObject" />
+  ///  事件 <see cref="T:System.Xml.Serialization.XmlSerializer" />
+  ///  。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e">
+  ///  包含事件数据的 <see cref="T:System.Xml.Serialization.UnreferencedObjectEventArgs" />
+  ///  。
+  ///</param>
+  [DNTypeName('System.Xml.Serialization.UnreferencedObjectEventHandler')]
+  DNUnreferencedObjectEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNUnreferencedObjectEventArgs) of object;
+
+  ///<summary>
+  ///  表示用于处理的方法 <see cref="E:System.Xml.Serialization.XmlSerializer.UnknownAttribute" />
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e">
+  ///  包含事件数据的 <see cref="T:System.Xml.Serialization.XmlAttributeEventArgs" />
+  ///  。
+  ///</param>
+  [DNTypeName('System.Xml.Serialization.XmlAttributeEventHandler')]
+  DNXmlAttributeEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNXmlAttributeEventArgs) of object;
+
+  ///<summary>
+  ///  表示用于处理的方法 <see cref="E:System.Xml.Serialization.XmlSerializer.UnknownElement" />
+  ///  事件 <see cref="T:System.Xml.Serialization.XmlSerializer" />
+  ///  。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e">
+  ///  一个 <see cref="T:System.Xml.Serialization.XmlElementEventArgs" />
+  ///  包含事件数据。
+  ///</param>
+  [DNTypeName('System.Xml.Serialization.XmlElementEventHandler')]
+  DNXmlElementEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNXmlElementEventArgs) of object;
+
+  ///<summary>
+  ///  表示用于处理的方法 <see cref="E:System.Xml.Serialization.XmlSerializer.UnknownNode" />
+  ///  事件 <see cref="T:System.Xml.Serialization.XmlSerializer" />
+  ///  。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e">
+  ///  包含事件数据的 <see cref="T:System.Xml.Serialization.XmlNodeEventArgs" />
+  ///  。
+  ///</param>
+  [DNTypeName('System.Xml.Serialization.XmlNodeEventHandler')]
+  DNXmlNodeEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNXmlNodeEventArgs) of object;
+
+  ///<summary>
+  ///  使用委托 <see cref="T:System.Xml.Serialization.XmlSerializer" />
+  ///  类反序列化的 SOAP 编码的 XML 数据类型映射到集合或枚举。
+  ///</summary>
+  ///  <param name="collection">
+  ///  集合项数组复制到其中的集合。
+  ///</param>
+  ///  <param name="collectionItems">
+  ///  要被复制到的项的数组 <paramref name="object collection" />
+  ///  。
+  ///</param>
+  [DNTypeName('System.Xml.Serialization.XmlSerializationCollectionFixupCallback')]
+  DNXmlSerializationCollectionFixupCallback = procedure(collection: DDN.mscorlib.DNObject; collectionItems: DDN.mscorlib.DNObject) of object;
+
+  ///<summary>
+  ///  使用委托 <see cref="T:System.Xml.Serialization.XmlSerializer" />
+  ///  的 SOAP 编码的 XML 数据反序列化的类。
+  ///</summary>
+  ///  <param name="fixup">
+  ///  一个实例 <see cref="T:System.Xml.Serialization.XmlSerializationReader.Fixup" />
+  ///  包含要修复的对象的类和填写的项的字符串标识符的数组。
+  ///</param>
+  [DNTypeName('System.Xml.Serialization.XmlSerializationFixupCallback')]
+  DNXmlSerializationFixupCallback = procedure(fixup: DDN.mscorlib.DNObject) of object;
+
+  ///<summary>
+  ///  使用委托 <see cref="T:System.Xml.Serialization.XmlSerializer" />
+  ///  SOAP 编码的非根 XML 数据的类型反序列化的类。
+  ///</summary>
+  ///<returns>
+  ///  由回叫返回的对象。
+  ///</returns>
+  [DNTypeName('System.Xml.Serialization.XmlSerializationReadCallback')]
+  DNXmlSerializationReadCallback = function: DDN.mscorlib.DNObject of object;
+
+  ///<summary>
+  ///  委托，它由 <see cref="T:System.Xml.Serialization.XmlSerializer" />
+  ///  从 SOAP 编码的非根 XML 数据类型的序列化的类。
+  ///</summary>
+  ///  <param name="o">
+  ///  正在序列化的对象。
+  ///</param>
+  [DNTypeName('System.Xml.Serialization.XmlSerializationWriteCallback')]
+  DNXmlSerializationWriteCallback = procedure(o: DDN.mscorlib.DNObject) of object;
+
+  ///<summary>
+  ///  表示用于处理的方法 <see cref="E:System.Xml.XmlDocument.NodeChanged" />
+  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeChanging" />
+  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeInserted" />
+  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeInserting" />
+  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeRemoved" />
+  ///  和 <see cref="E:System.Xml.XmlDocument.NodeRemoving" />
+  ///  事件。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e">
+  ///  包含事件数据的 <see cref="T:System.Xml.XmlNodeChangedEventArgs" />
+  ///  。
+  ///</param>
+  [DNTypeName('System.Xml.XmlNodeChangedEventHandler')]
+  DNXmlNodeChangedEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNXmlNodeChangedEventArgs) of object;
+
+  ///<summary>
+  ///  表示用来处理 <see cref="E:System.Xml.Xsl.XsltArgumentList.XsltMessageEncountered" />
+  ///  事件的方法。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e"><see cref="T:System.Xml.Xsl.XsltMessageEncounteredEventArgs" />
+  ///  包含事件数据。
+  ///</param>
+  [DNTypeName('System.Xml.Xsl.XsltMessageEncounteredEventHandler')]
+  DNXsltMessageEncounteredEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNXsltMessageEncounteredEventArgs) of object;
+
+
 
 
 { objects }
@@ -5153,602 +5310,6 @@ type
   TDNRootedPathValidator = class(TDNGenericImport<DNRootedPathValidatorClass, DNRootedPathValidator>) end;
 
   //-------------namespace: System.Xml.Schema----------------
-  DNValidationEventHandlerClass = interface(DDN.mscorlib.DNMulticastDelegateClass)
-  ['{2053E376-DD8F-585D-B2AF-FB9936E84F2D}']
-  { constructors } 
-
-    {class} function init(&object: DDN.mscorlib.DNObject; method: IntPtr): DNValidationEventHandler;
-
-  end;
-
-  ///<summary>
-  ///  表示将处理 XML 架构验证事件的回调方法和 <see cref="T:System.Xml.Schema.ValidationEventArgs" />
-  ///  。
-  ///</summary>
-  ///  <param name="sender">
-  ///  事件源。
-  ///  注意    然后再使用它在代码中确定发件人的类型。
-  ///  您不能假定发件人为特定类型的实例。
-  ///  发件人也不保证不会是 null。
-  ///  总是使用失败处理逻辑要求您强制转换。
-  ///</param>
-  ///  <param name="e">
-  ///  事件数据。
-  ///</param>
-  [DNTypeName('System.Xml.Schema.ValidationEventHandler')]
-  DNValidationEventHandler = interface(DDN.mscorlib.DNMulticastDelegate)
-  ['{67E07B4E-4BB9-3C72-83B1-87CCB8D98D6D}']
-  { getters & setters } 
-
-    function get_Method: DDN.mscorlib.DNMethodInfo;
-    function get_Target: DDN.mscorlib.DNObject;
-
-  { methods } 
-
-    procedure Invoke(sender: DDN.mscorlib.DNObject; e: DNValidationEventArgs);
-    function BeginInvoke(sender: DDN.mscorlib.DNObject; e: DNValidationEventArgs; callback: DDN.mscorlib.DNAsyncCallback; &object: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    procedure EndInvoke(result: DDN.mscorlib.DNIAsyncResult);
-    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
-    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
-    function GetInvocationList: TArray<DDN.mscorlib.DNDelegate>;
-    function GetHashCode: Int32;
-    function DynamicInvoke(args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
-    function Clone: DDN.mscorlib.DNObject;
-    function GetType: DDN.mscorlib.DNType;
-    function ToString: string;
-
-  { propertys } 
-
-    property Method: DDN.mscorlib.DNMethodInfo read get_Method;
-    property Target: DDN.mscorlib.DNObject read get_Target;
-  end;
-
-  TDNValidationEventHandler = class(TDNGenericImport<DNValidationEventHandlerClass, DNValidationEventHandler>) end;
-
-  //-------------namespace: System.Xml.Schema----------------
-  DNXmlValueGetterClass = interface(DDN.mscorlib.DNMulticastDelegateClass)
-  ['{B90286BB-7E11-5C3F-B7D5-7A175114CE96}']
-  { constructors } 
-
-    {class} function init(&object: DDN.mscorlib.DNObject; method: IntPtr): DNXmlValueGetter;
-
-  end;
-
-  ///<summary>
-  ///  一个 <see langword="delegate" />
-  ///  使用 <see cref="T:System.Xml.Schema.XmlSchemaValidator" />
-  ///  类作为公共语言运行时 (CLR) 类型兼容的属性、 文本或空白的 XML 架构定义语言 (XSD) 类型传递属性、 文本和空白值。
-  ///</summary>
-  ///<returns>
-  ///  包含属性、 文本或空白值的对象。
-  ///  对象是属性、 文本或空白值的 XSD 类型相对应的 CLR 类型。
-  ///</returns>
-  [DNTypeName('System.Xml.Schema.XmlValueGetter')]
-  DNXmlValueGetter = interface(DDN.mscorlib.DNMulticastDelegate)
-  ['{1693758B-F4FE-3A5F-960C-2FB11DD2D939}']
-  { getters & setters } 
-
-    function get_Method: DDN.mscorlib.DNMethodInfo;
-    function get_Target: DDN.mscorlib.DNObject;
-
-  { methods } 
-
-    function Invoke: DDN.mscorlib.DNObject;
-    function BeginInvoke(callback: DDN.mscorlib.DNAsyncCallback; &object: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    function EndInvoke(result: DDN.mscorlib.DNIAsyncResult): DDN.mscorlib.DNObject;
-    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
-    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
-    function GetInvocationList: TArray<DDN.mscorlib.DNDelegate>;
-    function GetHashCode: Int32;
-    function DynamicInvoke(args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
-    function Clone: DDN.mscorlib.DNObject;
-    function GetType: DDN.mscorlib.DNType;
-    function ToString: string;
-
-  { propertys } 
-
-    property Method: DDN.mscorlib.DNMethodInfo read get_Method;
-    property Target: DDN.mscorlib.DNObject read get_Target;
-  end;
-
-  TDNXmlValueGetter = class(TDNGenericImport<DNXmlValueGetterClass, DNXmlValueGetter>) end;
-
-  //-------------namespace: System.Xml.Serialization----------------
-  DNUnreferencedObjectEventHandlerClass = interface(DDN.mscorlib.DNMulticastDelegateClass)
-  ['{6E512A11-3EE3-5239-90F9-2C85EFFF3348}']
-  { constructors } 
-
-    {class} function init(&object: DDN.mscorlib.DNObject; method: IntPtr): DNUnreferencedObjectEventHandler;
-
-  end;
-
-  ///<summary>
-  ///  表示用于处理的方法 <see cref="E:System.Xml.Serialization.XmlSerializer.UnreferencedObject" />
-  ///  事件 <see cref="T:System.Xml.Serialization.XmlSerializer" />
-  ///  。
-  ///</summary>
-  ///  <param name="sender">
-  ///  事件源。
-  ///</param>
-  ///  <param name="e">
-  ///  包含事件数据的 <see cref="T:System.Xml.Serialization.UnreferencedObjectEventArgs" />
-  ///  。
-  ///</param>
-  [DNTypeName('System.Xml.Serialization.UnreferencedObjectEventHandler')]
-  DNUnreferencedObjectEventHandler = interface(DDN.mscorlib.DNMulticastDelegate)
-  ['{1EE6B99F-1472-3065-A54D-8936C950F749}']
-  { getters & setters } 
-
-    function get_Method: DDN.mscorlib.DNMethodInfo;
-    function get_Target: DDN.mscorlib.DNObject;
-
-  { methods } 
-
-    procedure Invoke(sender: DDN.mscorlib.DNObject; e: DNUnreferencedObjectEventArgs);
-    function BeginInvoke(sender: DDN.mscorlib.DNObject; e: DNUnreferencedObjectEventArgs; callback: DDN.mscorlib.DNAsyncCallback; &object: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    procedure EndInvoke(result: DDN.mscorlib.DNIAsyncResult);
-    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
-    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
-    function GetInvocationList: TArray<DDN.mscorlib.DNDelegate>;
-    function GetHashCode: Int32;
-    function DynamicInvoke(args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
-    function Clone: DDN.mscorlib.DNObject;
-    function GetType: DDN.mscorlib.DNType;
-    function ToString: string;
-
-  { propertys } 
-
-    property Method: DDN.mscorlib.DNMethodInfo read get_Method;
-    property Target: DDN.mscorlib.DNObject read get_Target;
-  end;
-
-  TDNUnreferencedObjectEventHandler = class(TDNGenericImport<DNUnreferencedObjectEventHandlerClass, DNUnreferencedObjectEventHandler>) end;
-
-  //-------------namespace: System.Xml.Serialization----------------
-  DNXmlAttributeEventHandlerClass = interface(DDN.mscorlib.DNMulticastDelegateClass)
-  ['{AC837373-2806-5630-A7D2-043B1752C19E}']
-  { constructors } 
-
-    {class} function init(&object: DDN.mscorlib.DNObject; method: IntPtr): DNXmlAttributeEventHandler;
-
-  end;
-
-  ///<summary>
-  ///  表示用于处理的方法 <see cref="E:System.Xml.Serialization.XmlSerializer.UnknownAttribute" />
-  ///</summary>
-  ///  <param name="sender">
-  ///  事件源。
-  ///</param>
-  ///  <param name="e">
-  ///  包含事件数据的 <see cref="T:System.Xml.Serialization.XmlAttributeEventArgs" />
-  ///  。
-  ///</param>
-  [DNTypeName('System.Xml.Serialization.XmlAttributeEventHandler')]
-  DNXmlAttributeEventHandler = interface(DDN.mscorlib.DNMulticastDelegate)
-  ['{CD8C24A4-1BB0-37D1-B4CB-84314A53EC33}']
-  { getters & setters } 
-
-    function get_Method: DDN.mscorlib.DNMethodInfo;
-    function get_Target: DDN.mscorlib.DNObject;
-
-  { methods } 
-
-    procedure Invoke(sender: DDN.mscorlib.DNObject; e: DNXmlAttributeEventArgs);
-    function BeginInvoke(sender: DDN.mscorlib.DNObject; e: DNXmlAttributeEventArgs; callback: DDN.mscorlib.DNAsyncCallback; &object: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    procedure EndInvoke(result: DDN.mscorlib.DNIAsyncResult);
-    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
-    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
-    function GetInvocationList: TArray<DDN.mscorlib.DNDelegate>;
-    function GetHashCode: Int32;
-    function DynamicInvoke(args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
-    function Clone: DDN.mscorlib.DNObject;
-    function GetType: DDN.mscorlib.DNType;
-    function ToString: string;
-
-  { propertys } 
-
-    property Method: DDN.mscorlib.DNMethodInfo read get_Method;
-    property Target: DDN.mscorlib.DNObject read get_Target;
-  end;
-
-  TDNXmlAttributeEventHandler = class(TDNGenericImport<DNXmlAttributeEventHandlerClass, DNXmlAttributeEventHandler>) end;
-
-  //-------------namespace: System.Xml.Serialization----------------
-  DNXmlElementEventHandlerClass = interface(DDN.mscorlib.DNMulticastDelegateClass)
-  ['{A2BA6AD7-ED6F-5172-B36D-F662C43DF954}']
-  { constructors } 
-
-    {class} function init(&object: DDN.mscorlib.DNObject; method: IntPtr): DNXmlElementEventHandler;
-
-  end;
-
-  ///<summary>
-  ///  表示用于处理的方法 <see cref="E:System.Xml.Serialization.XmlSerializer.UnknownElement" />
-  ///  事件 <see cref="T:System.Xml.Serialization.XmlSerializer" />
-  ///  。
-  ///</summary>
-  ///  <param name="sender">
-  ///  事件源。
-  ///</param>
-  ///  <param name="e">
-  ///  一个 <see cref="T:System.Xml.Serialization.XmlElementEventArgs" />
-  ///  包含事件数据。
-  ///</param>
-  [DNTypeName('System.Xml.Serialization.XmlElementEventHandler')]
-  DNXmlElementEventHandler = interface(DDN.mscorlib.DNMulticastDelegate)
-  ['{9715A0CA-5C17-3653-A4AB-AB921F1AE888}']
-  { getters & setters } 
-
-    function get_Method: DDN.mscorlib.DNMethodInfo;
-    function get_Target: DDN.mscorlib.DNObject;
-
-  { methods } 
-
-    procedure Invoke(sender: DDN.mscorlib.DNObject; e: DNXmlElementEventArgs);
-    function BeginInvoke(sender: DDN.mscorlib.DNObject; e: DNXmlElementEventArgs; callback: DDN.mscorlib.DNAsyncCallback; &object: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    procedure EndInvoke(result: DDN.mscorlib.DNIAsyncResult);
-    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
-    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
-    function GetInvocationList: TArray<DDN.mscorlib.DNDelegate>;
-    function GetHashCode: Int32;
-    function DynamicInvoke(args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
-    function Clone: DDN.mscorlib.DNObject;
-    function GetType: DDN.mscorlib.DNType;
-    function ToString: string;
-
-  { propertys } 
-
-    property Method: DDN.mscorlib.DNMethodInfo read get_Method;
-    property Target: DDN.mscorlib.DNObject read get_Target;
-  end;
-
-  TDNXmlElementEventHandler = class(TDNGenericImport<DNXmlElementEventHandlerClass, DNXmlElementEventHandler>) end;
-
-  //-------------namespace: System.Xml.Serialization----------------
-  DNXmlNodeEventHandlerClass = interface(DDN.mscorlib.DNMulticastDelegateClass)
-  ['{98C4917F-5E3A-512A-B7EF-AA644D85FC62}']
-  { constructors } 
-
-    {class} function init(&object: DDN.mscorlib.DNObject; method: IntPtr): DNXmlNodeEventHandler;
-
-  end;
-
-  ///<summary>
-  ///  表示用于处理的方法 <see cref="E:System.Xml.Serialization.XmlSerializer.UnknownNode" />
-  ///  事件 <see cref="T:System.Xml.Serialization.XmlSerializer" />
-  ///  。
-  ///</summary>
-  ///  <param name="sender">
-  ///  事件源。
-  ///</param>
-  ///  <param name="e">
-  ///  包含事件数据的 <see cref="T:System.Xml.Serialization.XmlNodeEventArgs" />
-  ///  。
-  ///</param>
-  [DNTypeName('System.Xml.Serialization.XmlNodeEventHandler')]
-  DNXmlNodeEventHandler = interface(DDN.mscorlib.DNMulticastDelegate)
-  ['{250430A5-B962-323D-B23C-E66991BD6E7B}']
-  { getters & setters } 
-
-    function get_Method: DDN.mscorlib.DNMethodInfo;
-    function get_Target: DDN.mscorlib.DNObject;
-
-  { methods } 
-
-    procedure Invoke(sender: DDN.mscorlib.DNObject; e: DNXmlNodeEventArgs);
-    function BeginInvoke(sender: DDN.mscorlib.DNObject; e: DNXmlNodeEventArgs; callback: DDN.mscorlib.DNAsyncCallback; &object: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    procedure EndInvoke(result: DDN.mscorlib.DNIAsyncResult);
-    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
-    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
-    function GetInvocationList: TArray<DDN.mscorlib.DNDelegate>;
-    function GetHashCode: Int32;
-    function DynamicInvoke(args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
-    function Clone: DDN.mscorlib.DNObject;
-    function GetType: DDN.mscorlib.DNType;
-    function ToString: string;
-
-  { propertys } 
-
-    property Method: DDN.mscorlib.DNMethodInfo read get_Method;
-    property Target: DDN.mscorlib.DNObject read get_Target;
-  end;
-
-  TDNXmlNodeEventHandler = class(TDNGenericImport<DNXmlNodeEventHandlerClass, DNXmlNodeEventHandler>) end;
-
-  //-------------namespace: System.Xml.Serialization----------------
-  DNXmlSerializationCollectionFixupCallbackClass = interface(DDN.mscorlib.DNMulticastDelegateClass)
-  ['{47C005F4-93A4-5F62-9BA2-78FEA9C67473}']
-  { constructors } 
-
-    {class} function init(&object: DDN.mscorlib.DNObject; method: IntPtr): DNXmlSerializationCollectionFixupCallback;
-
-  end;
-
-  ///<summary>
-  ///  使用委托 <see cref="T:System.Xml.Serialization.XmlSerializer" />
-  ///  类反序列化的 SOAP 编码的 XML 数据类型映射到集合或枚举。
-  ///</summary>
-  ///  <param name="collection">
-  ///  集合项数组复制到其中的集合。
-  ///</param>
-  ///  <param name="collectionItems">
-  ///  要被复制到的项的数组 <paramref name="object collection" />
-  ///  。
-  ///</param>
-  [DNTypeName('System.Xml.Serialization.XmlSerializationCollectionFixupCallback')]
-  DNXmlSerializationCollectionFixupCallback = interface(DDN.mscorlib.DNMulticastDelegate)
-  ['{6BC2A9E5-AEC2-345E-B810-69C1DF463CF0}']
-  { getters & setters } 
-
-    function get_Method: DDN.mscorlib.DNMethodInfo;
-    function get_Target: DDN.mscorlib.DNObject;
-
-  { methods } 
-
-    procedure Invoke(collection: DDN.mscorlib.DNObject; collectionItems: DDN.mscorlib.DNObject);
-    function BeginInvoke(collection: DDN.mscorlib.DNObject; collectionItems: DDN.mscorlib.DNObject; callback: DDN.mscorlib.DNAsyncCallback; &object: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    procedure EndInvoke(result: DDN.mscorlib.DNIAsyncResult);
-    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
-    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
-    function GetInvocationList: TArray<DDN.mscorlib.DNDelegate>;
-    function GetHashCode: Int32;
-    function DynamicInvoke(args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
-    function Clone: DDN.mscorlib.DNObject;
-    function GetType: DDN.mscorlib.DNType;
-    function ToString: string;
-
-  { propertys } 
-
-    property Method: DDN.mscorlib.DNMethodInfo read get_Method;
-    property Target: DDN.mscorlib.DNObject read get_Target;
-  end;
-
-  TDNXmlSerializationCollectionFixupCallback = class(TDNGenericImport<DNXmlSerializationCollectionFixupCallbackClass, DNXmlSerializationCollectionFixupCallback>) end;
-
-  //-------------namespace: System.Xml.Serialization----------------
-  DNXmlSerializationFixupCallbackClass = interface(DDN.mscorlib.DNMulticastDelegateClass)
-  ['{248ADCA1-7C85-502D-806A-756C6103A753}']
-  { constructors } 
-
-    {class} function init(&object: DDN.mscorlib.DNObject; method: IntPtr): DNXmlSerializationFixupCallback;
-
-  end;
-
-  ///<summary>
-  ///  使用委托 <see cref="T:System.Xml.Serialization.XmlSerializer" />
-  ///  的 SOAP 编码的 XML 数据反序列化的类。
-  ///</summary>
-  ///  <param name="fixup">
-  ///  一个实例 <see cref="T:System.Xml.Serialization.XmlSerializationReader.Fixup" />
-  ///  包含要修复的对象的类和填写的项的字符串标识符的数组。
-  ///</param>
-  [DNTypeName('System.Xml.Serialization.XmlSerializationFixupCallback')]
-  DNXmlSerializationFixupCallback = interface(DDN.mscorlib.DNMulticastDelegate)
-  ['{3A8B4564-84D2-30D4-B015-6246792C7C27}']
-  { getters & setters } 
-
-    function get_Method: DDN.mscorlib.DNMethodInfo;
-    function get_Target: DDN.mscorlib.DNObject;
-
-  { methods } 
-
-    procedure Invoke(fixup: DDN.mscorlib.DNObject);
-    function BeginInvoke(fixup: DDN.mscorlib.DNObject; callback: DDN.mscorlib.DNAsyncCallback; &object: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    procedure EndInvoke(result: DDN.mscorlib.DNIAsyncResult);
-    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
-    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
-    function GetInvocationList: TArray<DDN.mscorlib.DNDelegate>;
-    function GetHashCode: Int32;
-    function DynamicInvoke(args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
-    function Clone: DDN.mscorlib.DNObject;
-    function GetType: DDN.mscorlib.DNType;
-    function ToString: string;
-
-  { propertys } 
-
-    property Method: DDN.mscorlib.DNMethodInfo read get_Method;
-    property Target: DDN.mscorlib.DNObject read get_Target;
-  end;
-
-  TDNXmlSerializationFixupCallback = class(TDNGenericImport<DNXmlSerializationFixupCallbackClass, DNXmlSerializationFixupCallback>) end;
-
-  //-------------namespace: System.Xml.Serialization----------------
-  DNXmlSerializationReadCallbackClass = interface(DDN.mscorlib.DNMulticastDelegateClass)
-  ['{82FBA4C2-5B17-5699-A5D9-163142C89BCC}']
-  { constructors } 
-
-    {class} function init(&object: DDN.mscorlib.DNObject; method: IntPtr): DNXmlSerializationReadCallback;
-
-  end;
-
-  ///<summary>
-  ///  使用委托 <see cref="T:System.Xml.Serialization.XmlSerializer" />
-  ///  SOAP 编码的非根 XML 数据的类型反序列化的类。
-  ///</summary>
-  ///<returns>
-  ///  由回叫返回的对象。
-  ///</returns>
-  [DNTypeName('System.Xml.Serialization.XmlSerializationReadCallback')]
-  DNXmlSerializationReadCallback = interface(DDN.mscorlib.DNMulticastDelegate)
-  ['{9F5378FC-83F4-3227-8BB9-483487968F3E}']
-  { getters & setters } 
-
-    function get_Method: DDN.mscorlib.DNMethodInfo;
-    function get_Target: DDN.mscorlib.DNObject;
-
-  { methods } 
-
-    function Invoke: DDN.mscorlib.DNObject;
-    function BeginInvoke(callback: DDN.mscorlib.DNAsyncCallback; &object: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    function EndInvoke(result: DDN.mscorlib.DNIAsyncResult): DDN.mscorlib.DNObject;
-    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
-    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
-    function GetInvocationList: TArray<DDN.mscorlib.DNDelegate>;
-    function GetHashCode: Int32;
-    function DynamicInvoke(args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
-    function Clone: DDN.mscorlib.DNObject;
-    function GetType: DDN.mscorlib.DNType;
-    function ToString: string;
-
-  { propertys } 
-
-    property Method: DDN.mscorlib.DNMethodInfo read get_Method;
-    property Target: DDN.mscorlib.DNObject read get_Target;
-  end;
-
-  TDNXmlSerializationReadCallback = class(TDNGenericImport<DNXmlSerializationReadCallbackClass, DNXmlSerializationReadCallback>) end;
-
-  //-------------namespace: System.Xml.Serialization----------------
-  DNXmlSerializationWriteCallbackClass = interface(DDN.mscorlib.DNMulticastDelegateClass)
-  ['{B1BF8597-E4D3-53BE-971A-5647E18055BE}']
-  { constructors } 
-
-    {class} function init(&object: DDN.mscorlib.DNObject; method: IntPtr): DNXmlSerializationWriteCallback;
-
-  end;
-
-  ///<summary>
-  ///  委托，它由 <see cref="T:System.Xml.Serialization.XmlSerializer" />
-  ///  从 SOAP 编码的非根 XML 数据类型的序列化的类。
-  ///</summary>
-  ///  <param name="o">
-  ///  正在序列化的对象。
-  ///</param>
-  [DNTypeName('System.Xml.Serialization.XmlSerializationWriteCallback')]
-  DNXmlSerializationWriteCallback = interface(DDN.mscorlib.DNMulticastDelegate)
-  ['{2114AB12-A747-3999-9127-C5093723586C}']
-  { getters & setters } 
-
-    function get_Method: DDN.mscorlib.DNMethodInfo;
-    function get_Target: DDN.mscorlib.DNObject;
-
-  { methods } 
-
-    procedure Invoke(o: DDN.mscorlib.DNObject);
-    function BeginInvoke(o: DDN.mscorlib.DNObject; callback: DDN.mscorlib.DNAsyncCallback; &object: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    procedure EndInvoke(result: DDN.mscorlib.DNIAsyncResult);
-    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
-    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
-    function GetInvocationList: TArray<DDN.mscorlib.DNDelegate>;
-    function GetHashCode: Int32;
-    function DynamicInvoke(args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
-    function Clone: DDN.mscorlib.DNObject;
-    function GetType: DDN.mscorlib.DNType;
-    function ToString: string;
-
-  { propertys } 
-
-    property Method: DDN.mscorlib.DNMethodInfo read get_Method;
-    property Target: DDN.mscorlib.DNObject read get_Target;
-  end;
-
-  TDNXmlSerializationWriteCallback = class(TDNGenericImport<DNXmlSerializationWriteCallbackClass, DNXmlSerializationWriteCallback>) end;
-
-  //-------------namespace: System.Xml----------------
-  DNXmlNodeChangedEventHandlerClass = interface(DDN.mscorlib.DNMulticastDelegateClass)
-  ['{C181E91E-D919-5133-BE21-4619D09B954C}']
-  { constructors } 
-
-    {class} function init(&object: DDN.mscorlib.DNObject; method: IntPtr): DNXmlNodeChangedEventHandler;
-
-  end;
-
-  ///<summary>
-  ///  表示用于处理的方法 <see cref="E:System.Xml.XmlDocument.NodeChanged" />
-  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeChanging" />
-  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeInserted" />
-  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeInserting" />
-  ///  , ，<see cref="E:System.Xml.XmlDocument.NodeRemoved" />
-  ///  和 <see cref="E:System.Xml.XmlDocument.NodeRemoving" />
-  ///  事件。
-  ///</summary>
-  ///  <param name="sender">
-  ///  事件源。
-  ///</param>
-  ///  <param name="e">
-  ///  包含事件数据的 <see cref="T:System.Xml.XmlNodeChangedEventArgs" />
-  ///  。
-  ///</param>
-  [DNTypeName('System.Xml.XmlNodeChangedEventHandler')]
-  DNXmlNodeChangedEventHandler = interface(DDN.mscorlib.DNMulticastDelegate)
-  ['{55D79924-5587-3679-9F86-9ACA33210157}']
-  { getters & setters } 
-
-    function get_Method: DDN.mscorlib.DNMethodInfo;
-    function get_Target: DDN.mscorlib.DNObject;
-
-  { methods } 
-
-    procedure Invoke(sender: DDN.mscorlib.DNObject; e: DNXmlNodeChangedEventArgs);
-    function BeginInvoke(sender: DDN.mscorlib.DNObject; e: DNXmlNodeChangedEventArgs; callback: DDN.mscorlib.DNAsyncCallback; &object: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    procedure EndInvoke(result: DDN.mscorlib.DNIAsyncResult);
-    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
-    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
-    function GetInvocationList: TArray<DDN.mscorlib.DNDelegate>;
-    function GetHashCode: Int32;
-    function DynamicInvoke(args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
-    function Clone: DDN.mscorlib.DNObject;
-    function GetType: DDN.mscorlib.DNType;
-    function ToString: string;
-
-  { propertys } 
-
-    property Method: DDN.mscorlib.DNMethodInfo read get_Method;
-    property Target: DDN.mscorlib.DNObject read get_Target;
-  end;
-
-  TDNXmlNodeChangedEventHandler = class(TDNGenericImport<DNXmlNodeChangedEventHandlerClass, DNXmlNodeChangedEventHandler>) end;
-
-  //-------------namespace: System.Xml.Xsl----------------
-  DNXsltMessageEncounteredEventHandlerClass = interface(DDN.mscorlib.DNMulticastDelegateClass)
-  ['{F3E56631-5AF2-5008-854A-33BA92878C86}']
-  { constructors } 
-
-    {class} function init(&object: DDN.mscorlib.DNObject; method: IntPtr): DNXsltMessageEncounteredEventHandler;
-
-  end;
-
-  ///<summary>
-  ///  表示用来处理 <see cref="E:System.Xml.Xsl.XsltArgumentList.XsltMessageEncountered" />
-  ///  事件的方法。
-  ///</summary>
-  ///  <param name="sender">
-  ///  事件源。
-  ///</param>
-  ///  <param name="e"><see cref="T:System.Xml.Xsl.XsltMessageEncounteredEventArgs" />
-  ///  包含事件数据。
-  ///</param>
-  [DNTypeName('System.Xml.Xsl.XsltMessageEncounteredEventHandler')]
-  DNXsltMessageEncounteredEventHandler = interface(DDN.mscorlib.DNMulticastDelegate)
-  ['{BDFC3131-6AC7-3277-9D16-1359540DD78A}']
-  { getters & setters } 
-
-    function get_Method: DDN.mscorlib.DNMethodInfo;
-    function get_Target: DDN.mscorlib.DNObject;
-
-  { methods } 
-
-    procedure Invoke(sender: DDN.mscorlib.DNObject; e: DNXsltMessageEncounteredEventArgs);
-    function BeginInvoke(sender: DDN.mscorlib.DNObject; e: DNXsltMessageEncounteredEventArgs; callback: DDN.mscorlib.DNAsyncCallback; &object: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    procedure EndInvoke(result: DDN.mscorlib.DNIAsyncResult);
-    procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
-    function Equals(obj: DDN.mscorlib.DNObject): Boolean;
-    function GetInvocationList: TArray<DDN.mscorlib.DNDelegate>;
-    function GetHashCode: Int32;
-    function DynamicInvoke(args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
-    function Clone: DDN.mscorlib.DNObject;
-    function GetType: DDN.mscorlib.DNType;
-    function ToString: string;
-
-  { propertys } 
-
-    property Method: DDN.mscorlib.DNMethodInfo read get_Method;
-    property Target: DDN.mscorlib.DNObject read get_Target;
-  end;
-
-  TDNXsltMessageEncounteredEventHandler = class(TDNGenericImport<DNXsltMessageEncounteredEventHandlerClass, DNXsltMessageEncounteredEventHandler>) end;
-
-  //-------------namespace: System.Xml.Schema----------------
   DNValidationEventArgsClass = interface(DDN.mscorlib.DNEventArgsClass)
   ['{FD89FE6F-3039-5078-BA46-B00CE55AACA1}']
   end;
@@ -7557,6 +7118,11 @@ type
     function get_Count: Int32;
     function get_NameTable: DNXmlNameTable;
     function get_Item(ns: string): DNXmlSchema;
+
+  { events } 
+
+    procedure add_ValidationEventHandler(value: DNValidationEventHandler);
+    procedure remove_ValidationEventHandler(value: DNValidationEventHandler);
 
   { methods } 
 
@@ -15223,6 +14789,11 @@ type
     function get_GlobalAttributes: DNXmlSchemaObjectTable;
     function get_GlobalTypes: DNXmlSchemaObjectTable;
 
+  { events } 
+
+    procedure add_ValidationEventHandler(value: DNValidationEventHandler);
+    procedure remove_ValidationEventHandler(value: DNValidationEventHandler);
+
   { methods } 
 
     ///<summary>
@@ -15613,6 +15184,11 @@ type
     procedure set_SourceUri(value: DDN.Xml.Common.DNUri);
     function get_ValidationEventSender: DDN.mscorlib.DNObject;
     procedure set_ValidationEventSender(value: DDN.mscorlib.DNObject);
+
+  { events } 
+
+    procedure add_ValidationEventHandler(value: DNValidationEventHandler);
+    procedure remove_ValidationEventHandler(value: DNValidationEventHandler);
 
   { methods } 
 
@@ -19453,6 +19029,17 @@ type
   [DNTypeName('System.Xml.Serialization.XmlSerializer')]
   DNXmlSerializer = interface(DDN.mscorlib.DNObject)
   ['{EBD11B66-2F03-34DA-85F9-E3E1E9B67175}']
+  { events } 
+
+    procedure add_UnknownNode(value: DNXmlNodeEventHandler);
+    procedure remove_UnknownNode(value: DNXmlNodeEventHandler);
+    procedure add_UnknownAttribute(value: DNXmlAttributeEventHandler);
+    procedure remove_UnknownAttribute(value: DNXmlAttributeEventHandler);
+    procedure add_UnknownElement(value: DNXmlElementEventHandler);
+    procedure remove_UnknownElement(value: DNXmlElementEventHandler);
+    procedure add_UnreferencedObject(value: DNUnreferencedObjectEventHandler);
+    procedure remove_UnreferencedObject(value: DNUnreferencedObjectEventHandler);
+
   { methods } 
 
     ///<summary>
@@ -23760,6 +23347,21 @@ type
     function get_Item(name: string): DNXmlElement; overload;
     function get_Item(localname: string; ns: string): DNXmlElement; overload;
     function get_PreviousText: DNXmlNode;
+
+  { events } 
+
+    procedure add_NodeInserting(value: DNXmlNodeChangedEventHandler);
+    procedure remove_NodeInserting(value: DNXmlNodeChangedEventHandler);
+    procedure add_NodeInserted(value: DNXmlNodeChangedEventHandler);
+    procedure remove_NodeInserted(value: DNXmlNodeChangedEventHandler);
+    procedure add_NodeRemoving(value: DNXmlNodeChangedEventHandler);
+    procedure remove_NodeRemoving(value: DNXmlNodeChangedEventHandler);
+    procedure add_NodeRemoved(value: DNXmlNodeChangedEventHandler);
+    procedure remove_NodeRemoved(value: DNXmlNodeChangedEventHandler);
+    procedure add_NodeChanging(value: DNXmlNodeChangedEventHandler);
+    procedure remove_NodeChanging(value: DNXmlNodeChangedEventHandler);
+    procedure add_NodeChanged(value: DNXmlNodeChangedEventHandler);
+    procedure remove_NodeChanged(value: DNXmlNodeChangedEventHandler);
 
   { methods } 
 
@@ -38267,6 +37869,11 @@ type
     function get_CanReadValueChunk: Boolean;
     function get_HasAttributes: Boolean;
 
+  { events } 
+
+    procedure add_ValidationEventHandler(value: DNValidationEventHandler);
+    procedure remove_ValidationEventHandler(value: DNValidationEventHandler);
+
   { methods } 
 
     ///<summary>
@@ -40370,6 +39977,11 @@ type
     procedure set_ValidationFlags(value: DNXmlSchemaValidationFlags);
     function get_Schemas: DNXmlSchemaSet;
     procedure set_Schemas(value: DNXmlSchemaSet);
+
+  { events } 
+
+    procedure add_ValidationEventHandler(value: DNValidationEventHandler);
+    procedure remove_ValidationEventHandler(value: DNValidationEventHandler);
 
   { methods } 
 
@@ -49428,6 +49040,11 @@ type
   [DNTypeName('System.Xml.Xsl.XsltArgumentList')]
   DNXsltArgumentList = interface(DDN.mscorlib.DNObject)
   ['{F8EECF4E-8DCE-3B76-9CB2-AE1C08538E80}']
+  { events } 
+
+    procedure add_XsltMessageEncountered(value: DNXsltMessageEncounteredEventHandler);
+    procedure remove_XsltMessageEncountered(value: DNXsltMessageEncounteredEventHandler);
+
   { methods } 
 
     ///<summary>

@@ -8,8 +8,8 @@ uses
   DDN.Runtime;
 
 initialization
-  // your email and regcode
-  RegistrationUserEmail := '';
+  // your userName and regcode
+  RegistrationUser := '';
   RegistrationCode := '';
 
 finalization

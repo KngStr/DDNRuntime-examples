@@ -38,10 +38,10 @@
 * Contact: [KngStr](https://github.com/KngStr)
 * Price List:
 
-| Subscription type  |  Price(US dollar)   |
-| :----------------: | :-----------------: |
-|  Personal Edition  | $???? / 1 developer |
-| Enterprise Edition | $???? / ? developer |
+| Subscription type  |  Price(US dollar)   |             explain              |
+| :----------------: | :-----------------: | :------------------------------: |
+|  Personal Edition  | $???? / 1 developer | Only DCU and DLL, no source code |
+| Enterprise Edition | $???? / ? developer | Only DCU and DLL, no source code |
 
 ## Usage:
 

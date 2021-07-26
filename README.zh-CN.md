@@ -5,32 +5,43 @@
 # DDNRuntime
 
  DDNRuntime(Delphi .NET Runtime)  
- 
-----  
+
+----
  **温馨提示：当前正在内测试中。**    
 ----  
- 
+
  **这不是一个开源和免费的项目。这里只存放一些示例。**  
- 
+
 ## 特性
 
 * 不需要COM的支持。
 * 使用非常的简单，只需要在Delphi中申明.NET的类型和方法即可。
-* 专门的翻译工具，输入一个.NET的程序集dll，即可输出一个或者多个Delphi导入单元。
+* 专门的翻译工具，输入一个或者多个.NET的程序集DLL，即可输出一个或者两个Delphi导入单元。
 * 支持接口类型（含泛型接口）。
 * 支持动态数组（一维数组）。
 * 支持委托类型。
 * 支持委事件。
- 
+
 ## 要求
 
 * [.NET Framework v4.0](https://www.microsoft.com/zh-cn/download/details.aspx?id=17851)。
 * [VC++ 2015运行库(v140)](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145)。
 * 最低要求`Rad Studio XE3`。
+* `DDNRuntimex86.dll`或`DDNRuntimex64.dll`。
 
 ## 暂不支持
 
 * 泛型类型（不含泛型接口）。
+
+## 购买
+
+* 联系人：[KngStr](https://github.com/KngStr)
+* 价格表：
+
+| 订阅类型 |    价格(人民币)    |
+| :------: | :----------------: |
+|  个人版  | ￥???? / 1个开发者 |
+|  企业版  | ￥???? / ？开发者  |
 
 
 ## 使用方法：

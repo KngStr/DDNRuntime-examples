@@ -5,33 +5,43 @@
 # DDNRuntime
 
  DDNRuntime(Delphi .NET Runtime)  
- 
- ----  
+
+----
  **Reminder: alpha test.**    
  ----  
- 
+
  **This is not an open source and free project. Only examples are stored here.**  
- 
+
 ## Features
 
 * No need for COM support.
 * It is very simple to use, just declare the type and method of .NET in Delphi.
-* Dedicated translation tool, input a .NET assembly dll, output one or more Delphi import units.
+* Dedicated translation tool, input one or more .NET assembly DLL, output one or two Delphi import units.
 * Support interface types (including generic interface).
 * Support dynamic array (one-dimensional array).
 * Support Delegate type.
 * Support Event.
- 
+
 ## Requires
 
 * [.NET Framework v4.0](https://www.microsoft.com/en-us/download/details.aspx?id=17851) . 
 * [Visual C++ Redistributable for Visual Studio 2015(v140)](https://www.microsoft.com/en-us/download/details.aspx?id=48145).
 * The minimum requirement is `Rad Studio XE3`.
+* `DDNRuntimex86.dll` or `DDNRuntimex64.dll`。
 
 ## Not supported
 
 * Generic type (excluding generic interface).
 
+## Buy
+
+* Contact: [KngStr](https://github.com/KngStr)
+* Price List:
+
+| Subscription type  |  Price(US dollar)   |
+| :----------------: | :-----------------: |
+|  Personal Edition  | $???? / 1 developer |
+| Enterprise Edition | $???? / ? developer |
 
 ## Usage:
 

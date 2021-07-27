@@ -1,0 +1,10 @@
+{
+   "OutputDir":".\\zh-Hans",
+   "Lang": "zh-Hans",
+   "CommonNamespace":"WebDriver",
+   "MsLib": false,
+   "CommonDepth":1,
+   "Assemblys":[
+     "J:\\MyGitRepo\\DDNRuntime\\Debug\\WebDriver.dll"
+   ]
+}

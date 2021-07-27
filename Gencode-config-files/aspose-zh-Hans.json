@@ -1,0 +1,17 @@
+{
+   "OutputDir":".\\zh-Hans",
+   "Lang": "zh-Hans",
+   "CommonNamespace":"Aspose",
+   "MsLib": false,
+   "CommonDepth": 0,
+   "CommonTypes":[
+     "System.Drawing.Imaging.Encoder",
+	 "System.Drawing.Imaging.EncoderParameter"
+   ],
+   "Assemblys":[
+     "J:\\MyGitRepo\\DDNRuntime\\Debug\\Aspose.PDF.dll",
+     "J:\\MyGitRepo\\DDNRuntime\\Debug\\Aspose.Words.dll",
+     "J:\\MyGitRepo\\DDNRuntime\\Debug\\Aspose.Cells.dll",
+     "J:\\MyGitRepo\\DDNRuntime\\Debug\\Aspose.Slides.dll"
+   ]
+}

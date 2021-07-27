@@ -1,0 +1,13 @@
+{
+   "OutputDir":".\\zh-Hans",
+   "Lang": "zh-Hans",
+   "CommonNamespace":"Forms",
+   "MsLib": true,
+   "CommonDepth": 0,
+   "CommonTypes":[
+     "System.ComponentModel.TypeConverter.StandardValuesCollection"
+   ],
+   "Assemblys":[
+     "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Windows.Forms.dll"
+   ]
+}

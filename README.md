@@ -26,7 +26,7 @@
 
 * [.NET Framework v4.0](https://www.microsoft.com/en-us/download/details.aspx?id=17851) . 
 * [Visual C++ Redistributable for Visual Studio 2015(v140)](https://www.microsoft.com/en-us/download/details.aspx?id=48145).
-* The minimum requirement is `Rad Studio XE3`.
+* The minimum requirement is `Rad Studio XE3`(High version is recommended).
 * `DDNRuntimex86.dll` or `DDNRuntimex64.dll`.
 
 ## Not supported
@@ -90,8 +90,10 @@ Download [DDNRuntime trial file](trial), unzip the file, copy the Duc file of th
     /// <summary>
     /// .NET type information
     /// </summary>
-	class property typeid: DNType read GetTypeId;
+    class property typeid: DNType read GetTypeId;
 ```
+
+**Note: All imported .NET types start with `DN`, such as `DNType`, and non-interface type importers start with `TDN`+.NET type, such as: `TDNType`. If the enumeration value name in .NET has the same name as the Delphi keyword, add `_` at the end of the name. **
 
 ## Usage:
 

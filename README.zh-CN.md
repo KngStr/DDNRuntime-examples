@@ -26,7 +26,7 @@
 
 * [.NET Framework v4.0](https://www.microsoft.com/zh-cn/download/details.aspx?id=17851)。
 * [VC++ 2015运行库(v140)](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145)。
-* 最低要求`Rad Studio XE3`。
+* 最低要求`Rad Studio XE3`（推荐使用高版本）。
 * `DDNRuntimex86.dll`或`DDNRuntimex64.dll`。
 
 ## 暂不支持
@@ -91,8 +91,10 @@
     /// <summary>
     /// .NET类型信息
     /// </summary>
-	class property typeid: DNType read GetTypeId;
+    class property typeid: DNType read GetTypeId;
 ```
+
+**注：所有导入的.NET类型以`DN`开头，如`DNType`，非接口类型导入器以`TDN`+.NET类型，如：`TDNType`。如遇.NET中枚举值名与Delphi关键字重名则在名称结尾加上`_`表示。**
 
 ## 使用方法：
 

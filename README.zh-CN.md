@@ -7,7 +7,7 @@
  DDNRuntime(Delphi .NET Runtime)  
 
 ----
- **温馨提示：当前正在内测试中。**    
+ **温馨提示：准备正式发布中...**    
 ----  
 
  **这不是一个开源和免费的项目。这里只存放一些示例。**  
@@ -35,7 +35,7 @@
 
 ## 试用  
 
-下载[DDNRuntime试用文件]()，解压文件，复制你所使用的Delphi版本Duc文件到`DDNRuntime\Win32`或者`DDNRuntime\Win64`，复制`DDNRuntimex86.dll`到`examples\bin-Win32`或者复制`DDNRuntimex64.dll`到`examples\bin-Win64`。
+下载[DDNRuntime试用文件](trial)，解压文件，复制你所使用的Delphi版本Duc文件到`DDNRuntime\Win32`或者`DDNRuntime\Win64`，复制`DDNRuntimex86.dll`到`examples\bin-Win32`或者复制`DDNRuntimex64.dll`到`examples\bin-Win64`。
 
 ## 购买
 
@@ -51,7 +51,7 @@
 
 ## 导出的公共函数或者类属性和方法
 
-* DDN.Runtime
+* DDN.Runtime (无源代码)
 ```pascal
   /// <summary>
   ///   加载程序集
@@ -59,6 +59,11 @@
   /// <param name="AFileName">一个绝对的程序集文件名（全路径）</param>
   /// <param name="AIsSystem">当为True时，AFileName不需要传入绝对路径，默认值为False</param>
   function LoadAssemblyModule(const AFileName: string; AIsSystem: Boolean = False): Boolean;
+  
+  /// <summary>
+  ///   设置是否显示.NET异常的详细信息
+  /// </summary>
+  procedure SetShowDetailedExceptionMessage(AValue: Boolean);
 ```
 
 * DDN.mscorlib.TDNGenericImport

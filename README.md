@@ -7,7 +7,7 @@
  DDNRuntime(Delphi .NET Runtime)  
 
 ----
- **Reminder: alpha test.**    
+ **Reminder: Preparing to be officially released. . .**    
  ----  
 
  **This is not an open source and free project. Only examples are stored here.**  
@@ -33,9 +33,9 @@
 
 * Generic type (excluding generic interface).
 
-## trial
+## Trial
 
-Download [DDNRuntime trial file](), unzip the file, copy the Duc file of the Delphi version you are using to `DDNRuntime\Win32` or `DDNRuntime\Win64`, copy `DDNRuntimex86.dll` to `examples\bin-Win32` or copy `DDNRuntimex64.dll` to `examples\bin-Win64`.
+Download [DDNRuntime trial file](trial), unzip the file, copy the Duc file of the Delphi version you are using to `DDNRuntime\Win32` or `DDNRuntime\Win64`, copy `DDNRuntimex86.dll` to `examples\bin-Win32` or copy `DDNRuntimex64.dll` to `examples\bin-Win64`.
 
 ## Buy
 
@@ -51,7 +51,7 @@ Download [DDNRuntime trial file](), unzip the file, copy the Duc file of the Del
 
 ## Exported public functions or class attributes and methods
 
-* DDN.Runtime
+* DDN.Runtime (No source code)
 ```pascal
   /// <summary>
   ///   Load assembly
@@ -59,6 +59,11 @@ Download [DDNRuntime trial file](), unzip the file, copy the Duc file of the Del
   /// <param name="AFileName">An absolute assembly file name (full path)</param>
   /// <param name="AIsSystem">When True, AFileName does not need to pass in an absolute path, the default value is False</param>
   function LoadAssemblyModule(const AFileName: string; AIsSystem: Boolean = False): Boolean;
+  
+  /// <summary>
+  ///   Set whether to display the detailed information of .NET exceptions
+  /// </summary>
+  procedure SetShowDetailedExceptionMessage(AValue: Boolean);
 ```
 * DDN.mscorlib.TDNGenericImport
 ```pascal

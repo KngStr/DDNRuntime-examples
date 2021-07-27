@@ -39,7 +39,6 @@ end;
 procedure Test_GetPdfPages;
 var
   LDoc: DNDocument;
-  LPage: DNPage;
   LPages: DNPageCollection;
   I: Integer;
 begin
@@ -111,13 +110,15 @@ end;
 
 procedure TestPdf;
 begin
+  Writeln('Aspose.PDF.dll: ', LoadAssemblyModule(ExtractFilePath(ParamStr(0)) + 'Aspose.PDF.dll'));
+//  TDNLicense.DNClass.init.SetLicense('');
   Test_GetPdfInfo;
   Test_GetPdfPages;
   Test_PdfToFormat;
 end;
 
 initialization
-   Writeln('Aspose.PDF.dll: ', LoadAssemblyModule(ExtractFilePath(ParamStr(0)) + 'Aspose.PDF.dll'));
+
 
 finalization
 

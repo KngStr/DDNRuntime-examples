@@ -33,16 +33,61 @@
 
 * 泛型类型（不含泛型接口）。
 
+## 试用  
+
+下载[DDNRuntime试用文件]()，解压文件，复制你所使用的Delphi版本Duc文件到`DDNRuntime\Win32`或者`DDNRuntime\Win64`，复制`DDNRuntimex86.dll`到`examples\bin-Win32`或者复制`DDNRuntimex64.dll`到`examples\bin-Win64`。
+
 ## 购买
 
-* 联系人：[KngStr](https://github.com/KngStr)
+* 联系人：[KngStr](mailto:kngstr@qq.com)
 * 价格表：
 
-| 订阅类型 |    价格(人民币)    |        说明        |
-| :------: | :----------------: | :----------------: |
-|  个人版  | ￥???? / 1个开发者 | 仅DCU和DLL，无源码 |
-|  企业版  | ￥???? / ？开发者  | 仅DCU和DLL，无源码 |
+| 订阅类型 | 价格/一年(人民币)  | 续订价格/1年(人民币) |        说明        |
+| :------: | :----------------: | :------------------: | :----------------: |
+|  个人版  | ￥???? / 1个开发者 |        ￥????        | 仅DCU和DLL，无源码 |
+|  企业版  | ￥???? / 10开发者  |        ￥????        | 仅DCU和DLL，无源码 |
 
+**注：？？？？？？？**
+
+## 导出的公共函数或者类属性和方法
+
+* DDN.Runtime
+```pascal
+  /// <summary>
+  ///   加载程序集
+  /// </summary>
+  /// <param name="AFileName">一个绝对的程序集文件名（全路径）</param>
+  /// <param name="AIsSystem">当为True时，AFileName不需要传入绝对路径，默认值为False</param>
+  function LoadAssemblyModule(const AFileName: string; AIsSystem: Boolean = False): Boolean;
+```
+
+* DDN.mscorlib.TDNGenericImport
+```pascal
+    /// <summary>
+    /// 从DotNet原生对象中返回实例对象
+    /// </summary>
+    class function Wrap(ADNObjectID: DNNObject): T; overload; static;
+    /// <summary>
+    /// 从一个接口实例中返回对象
+    /// </summary>
+    class function Wrap(const AInstance: IDNInstance): T; overload; static;
+    /// <summary>
+    /// 调用DotNet中构造方法或者静态方法。
+    /// </summary>
+    class property DNClass: C read GetDNClass;
+    /// <summary>
+    /// 创建DotNet实例对象，调用默认构造函数
+    /// </summary>
+    class function Create: T; static;
+    /// <summary>
+    /// clsID意为DotNet中实例原生指针
+    /// </summary>
+    class function GetClsID: DNNObject; static;
+    /// <summary>
+    /// .NET类型信息
+    /// </summary>
+	class property typeid: DNType read GetTypeId;
+```
 
 ## 使用方法：
 

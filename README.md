@@ -27,21 +27,66 @@
 * [.NET Framework v4.0](https://www.microsoft.com/en-us/download/details.aspx?id=17851) . 
 * [Visual C++ Redistributable for Visual Studio 2015(v140)](https://www.microsoft.com/en-us/download/details.aspx?id=48145).
 * The minimum requirement is `Rad Studio XE3`.
-* `DDNRuntimex86.dll` or `DDNRuntimex64.dll`。
+* `DDNRuntimex86.dll` or `DDNRuntimex64.dll`.
 
 ## Not supported
 
 * Generic type (excluding generic interface).
 
+## trial
+
+Download [DDNRuntime trial file](), unzip the file, copy the Duc file of the Delphi version you are using to `DDNRuntime\Win32` or `DDNRuntime\Win64`, copy `DDNRuntimex86.dll` to `examples\bin-Win32` or copy `DDNRuntimex64.dll` to `examples\bin-Win64`.
+
 ## Buy
 
-* Contact: [KngStr](https://github.com/KngStr)
+* Contact: [KngStr](mailto:kngstr@qq.com)
 * Price List:
 
-| Subscription type  |  Price(US dollar)   |             explain              |
-| :----------------: | :-----------------: | :------------------------------: |
-|  Personal Edition  | $???? / 1 developer | Only DCU and DLL, no source code |
-| Enterprise Edition | $???? / ? developer | Only DCU and DLL, no source code |
+| Subscription type  | Price / 1 Year(US dollar) | Renewal price/1 year |             explain              |
+| :----------------: | :-----------------------: | :------------------: | :------------------------------: |
+|  Personal Edition  |    $???? / 1 developer    |        $????         | Only DCU and DLL, no source code |
+| Enterprise Edition |   $???? / 10 developers   |        $????         | Only DCU and DLL, no source code |
+
+**Note: ??????? **
+
+## Exported public functions or class attributes and methods
+
+* DDN.Runtime
+```pascal
+  /// <summary>
+  ///   Load assembly
+  /// </summary>
+  /// <param name="AFileName">An absolute assembly file name (full path)</param>
+  /// <param name="AIsSystem">When True, AFileName does not need to pass in an absolute path, the default value is False</param>
+  function LoadAssemblyModule(const AFileName: string; AIsSystem: Boolean = False): Boolean;
+```
+* DDN.mscorlib.TDNGenericImport
+```pascal
+    /// <summary>
+    /// Return instance objects from DotNet native objects
+    /// </summary>
+    class function Wrap(ADNObjectID: DNNObject): T; overload; static;
+    /// <summary>
+    /// Return an object from an interface instance
+    /// </summary>
+    class function Wrap(const AInstance: IDNInstance): T; overload; static;
+    /// <summary>
+    /// Call the constructor or static method in DotNet.
+    /// </summary>
+    class property DNClass: C read GetDNClass;
+    /// <summary>
+    /// Create a DotNet instance object, call the default constructor
+    /// </summary>
+    class function Create: T; static;
+    /// <summary>
+    /// clsID means the native pointer of the instance in DotNet
+    /// </summary>
+    class function GetClsID: DNNObject; static;
+    /// <summary>
+    /// .NET type information
+    /// </summary>
+	class property typeid: DNType read GetTypeId;
+```
 
 ## Usage:
 

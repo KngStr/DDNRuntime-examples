@@ -30,6 +30,9 @@
         <Projects Include="WinForm\ProWinForm.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="AsposeSDK\ProAspose.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -119,14 +122,23 @@
     <Target Name="ProWinForm:Make">
         <MSBuild Projects="WinForm\ProWinForm.dproj" Targets="Make"/>
     </Target>
+    <Target Name="ProAspose">
+        <MSBuild Projects="AsposeSDK\ProAspose.dproj"/>
+    </Target>
+    <Target Name="ProAspose:Clean">
+        <MSBuild Projects="AsposeSDK\ProAspose.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProAspose:Make">
+        <MSBuild Projects="AsposeSDK\ProAspose.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="ProReflection;ProStream;ProDES;ProPowDLL;ProXml;ProAES;ProHash;ProWeb_HTTP;ProWinForm"/>
+        <CallTarget Targets="ProReflection;ProStream;ProDES;ProPowDLL;ProXml;ProAES;ProHash;ProWeb_HTTP;ProWinForm;ProAspose"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="ProReflection:Clean;ProStream:Clean;ProDES:Clean;ProPowDLL:Clean;ProXml:Clean;ProAES:Clean;ProHash:Clean;ProWeb_HTTP:Clean;ProWinForm:Clean"/>
+        <CallTarget Targets="ProReflection:Clean;ProStream:Clean;ProDES:Clean;ProPowDLL:Clean;ProXml:Clean;ProAES:Clean;ProHash:Clean;ProWeb_HTTP:Clean;ProWinForm:Clean;ProAspose:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="ProReflection:Make;ProStream:Make;ProDES:Make;ProPowDLL:Make;ProXml:Make;ProAES:Make;ProHash:Make;ProWeb_HTTP:Make;ProWinForm:Make"/>
+        <CallTarget Targets="ProReflection:Make;ProStream:Make;ProDES:Make;ProPowDLL:Make;ProXml:Make;ProAES:Make;ProHash:Make;ProWeb_HTTP:Make;ProWinForm:Make;ProAspose:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

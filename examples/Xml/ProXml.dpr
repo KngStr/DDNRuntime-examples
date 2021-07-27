@@ -25,7 +25,7 @@ begin
   LSettings := TDNXmlReaderSettings.Create;
   LSettings.IgnoreComments := True;
 
-  LReader := TDNXmlReader.DNClass.Create(ExtractFilePath(ParamStr(0)) + 'System.Xml.XmlSerializer.xml', LSettings);
+  LReader := TDNXmlReader.DNClass.Create(ExtractFilePath(ParamStr(0)) + '..\TestFiles\System.Xml.XmlSerializer.xml', LSettings);
   LDoc.Load(LReader);
 
   LNode := LDoc.SelectSingleNode('/doc/assembly/name');

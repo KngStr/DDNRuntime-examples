@@ -24,7 +24,7 @@ begin
   Writeln('PowDLL.dll: ', LongWord( LoadAssemblyModule(ExtractFilePath(ParamStr(0)) + 'PowDLL.dll')));
   LDoc := TDNPowderFileTypes.Create;
   LObj := nil;
-  Writeln('Result:', LDoc.LoadDataFromFile('1.raw', LObj, DNPowderFileTypes_ShowErrors.ShowErr));
+  Writeln('Result:', LDoc.LoadDataFromFile('..\TestFiles\1.raw', LObj, DNPowderFileTypes_ShowErrors.ShowErr));
   if LObj <> nil then
     Writeln('LObj <> nil')
   else

@@ -68,30 +68,30 @@
 
 * DDN.mscorlib.TDNGenericImport
 ```pascal
-    /// <summary>
-    /// 从DotNet原生对象中返回实例对象
-    /// </summary>
-    class function Wrap(ADNObjectID: DNNObject): T; overload; static;
-    /// <summary>
-    /// 从一个接口实例中返回对象
-    /// </summary>
-    class function Wrap(const AInstance: IDNInstance): T; overload; static;
-    /// <summary>
-    /// 调用DotNet中构造方法或者静态方法。
-    /// </summary>
-    class property DNClass: C read GetDNClass;
-    /// <summary>
-    /// 创建DotNet实例对象，调用默认构造函数
-    /// </summary>
-    class function Create: T; static;
-    /// <summary>
-    /// clsID意为DotNet中实例原生指针
-    /// </summary>
-    class function GetClsID: DNNObject; static;
-    /// <summary>
-    /// .NET类型信息
-    /// </summary>
-    class property typeid: DNType read GetTypeId;
+  /// <summary>
+  /// 从DotNet原生对象中返回实例对象
+  /// </summary>
+  class function Wrap(ADNObjectID: DNNObject): T; overload; static;
+  /// <summary>
+  /// 从一个接口实例中返回对象
+  /// </summary>
+  class function Wrap(const AInstance: IDNInstance): T; overload; static;
+  /// <summary>
+  /// 调用DotNet中构造方法或者静态方法。
+  /// </summary>
+  class property DNClass: C read GetDNClass;
+  /// <summary>
+  /// 创建DotNet实例对象，调用默认构造函数
+  /// </summary>
+  class function Create: T; static;
+  /// <summary>
+  /// clsID意为DotNet中实例原生指针
+  /// </summary>
+  class function GetClsID: DNNObject; static;
+  /// <summary>
+  /// .NET类型信息
+  /// </summary>
+  class property typeid: DNType read GetTypeId;
 ```
 
 **注：所有导入的.NET类型以`DN`开头，如`DNType`，非接口类型导入器以`TDN`+.NET类型，如：`TDNType`。如遇.NET中枚举值名与Delphi关键字重名则在名称结尾加上`_`表示。**

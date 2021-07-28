@@ -67,30 +67,30 @@ Download [DDNRuntime trial file](trial), unzip the file, copy the Duc file of th
 ```
 * DDN.mscorlib.TDNGenericImport
 ```pascal
-    /// <summary>
-    /// Return instance objects from DotNet native objects
-    /// </summary>
-    class function Wrap(ADNObjectID: DNNObject): T; overload; static;
-    /// <summary>
-    /// Return an object from an interface instance
-    /// </summary>
-    class function Wrap(const AInstance: IDNInstance): T; overload; static;
-    /// <summary>
-    /// Call the constructor or static method in DotNet.
-    /// </summary>
-    class property DNClass: C read GetDNClass;
-    /// <summary>
-    /// Create a DotNet instance object, call the default constructor
-    /// </summary>
-    class function Create: T; static;
-    /// <summary>
-    /// clsID means the native pointer of the instance in DotNet
-    /// </summary>
-    class function GetClsID: DNNObject; static;
-    /// <summary>
-    /// .NET type information
-    /// </summary>
-    class property typeid: DNType read GetTypeId;
+  /// <summary>
+  /// Return instance objects from DotNet native objects
+  /// </summary>
+  class function Wrap(ADNObjectID: DNNObject): T; overload; static;
+  /// <summary>
+  /// Return an object from an interface instance
+  /// </summary>
+  class function Wrap(const AInstance: IDNInstance): T; overload; static;
+  /// <summary>
+  /// Call the constructor or static method in DotNet.
+  /// </summary>
+  class property DNClass: C read GetDNClass;
+  /// <summary>
+  /// Create a DotNet instance object, call the default constructor
+  /// </summary>
+  class function Create: T; static;
+  /// <summary>
+  /// clsID means the native pointer of the instance in DotNet
+  /// </summary>
+  class function GetClsID: DNNObject; static;
+  /// <summary>
+  /// .NET type information
+  /// </summary>
+  class property typeid: DNType read GetTypeId;
 ```
 
 **Note: All imported .NET types start with `DN`, such as `DNType`, and non-interface type importers start with `TDN`+.NET type, such as: `TDNType`. If the enumeration value name in .NET has the same name as the Delphi keyword, add `_` at the end of the name. **

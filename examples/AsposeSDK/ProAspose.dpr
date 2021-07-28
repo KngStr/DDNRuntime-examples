@@ -26,7 +26,6 @@ end;
 begin
   ReportMemoryLeaksOnShutdown := True;
   try
-//    SetExceptionMask([exInvalidOp..exPrecision]);
     TestProc;
     { TODO -oUser -cConsole Main : Insert code here }
   except

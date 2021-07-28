@@ -17,44 +17,6 @@ begin
   Result := '..\TestFiles\lua_license.pdf';
 end;
 
-procedure Test_GetPdfInfo;
-var
-  LDoc: DNDocument;
-  LInfo: DNDocumentInfo;
-begin
-  Writeln('---------------------- Test_GetPdfInfo ----------------------');
-  LDoc := TDNDocument.DNClass.init(GetTestFile);
-  LInfo := LDoc.Info;
-  Writeln('title:', LInfo.Title);
-  Writeln('creator:', LInfo.Creator);
-  Writeln('Author:', LInfo.Author);
-  Writeln('Subject:', LInfo.Subject);
-  Writeln('Keywords:', LInfo.Keywords);
-  Writeln('Producer:', LInfo.Producer);
-  Writeln('Trapped:', LInfo.Trapped);
-  LDoc.FreeMemory;
-  LDoc.Dispose;
-end;
-
-procedure Test_GetPdfPages;
-var
-  LDoc: DNDocument;
-  LPages: DNPageCollection;
-  I: Integer;
-begin
-  Writeln('---------------------- Test_GetPdfPages ----------------------');
-  LDoc := TDNDocument.DNClass.init(GetTestFile);
-  LPages := LDoc.Pages;
-  Writeln('PageCount: ', LPages.Count);
-  // Ranges: 1..n
-  for I := 1 to LPages.Count do
-     Writeln('page=', i);
-  LDoc.FreeMemory;
-  LDoc.Dispose;
-end;
-
-
-
 type
   TEvent = class
   public
@@ -85,13 +47,28 @@ begin
 
 end;
 
-procedure Test_PdfToFormat;
+procedure TestPdf;
 var
   LDoc: DNDocument;
+  LInfo: DNDocumentInfo;
   LDocSaveOpts: DNDocSaveOptions;
 begin
-  Writeln('---------------------- Test_PdfToFormat ----------------------');
+  Writeln('Aspose.PDF.dll: ', LoadAssemblyModule(ExtractFilePath(ParamStr(0)) + 'Aspose.PDF.dll'));
+  //  TDNLicense.Create.SetLicense('');
+
   LDoc := TDNDocument.DNClass.init(GetTestFile);
+
+  LInfo := LDoc.Info;
+  Writeln('title:', LInfo.Title);
+  Writeln('creator:', LInfo.Creator);
+  Writeln('Author:', LInfo.Author);
+  Writeln('Subject:', LInfo.Subject);
+  Writeln('Keywords:', LInfo.Keywords);
+  Writeln('Producer:', LInfo.Producer);
+  Writeln('Trapped:', LInfo.Trapped);
+
+  Writeln('Count:', LDoc.Pages.Count);
+
   //LDoc.Save('test.docx');
 //  LDoc.Save('test.docx', DNSaveFormat.DocX);
 
@@ -105,16 +82,8 @@ begin
   LDoc.FreeMemory;
   LDoc.Dispose;
   Writeln('done.');
-end;
 
 
-procedure TestPdf;
-begin
-  Writeln('Aspose.PDF.dll: ', LoadAssemblyModule(ExtractFilePath(ParamStr(0)) + 'Aspose.PDF.dll'));
-//  TDNLicense.DNClass.init.SetLicense('');
-  Test_GetPdfInfo;
-  Test_GetPdfPages;
-  Test_PdfToFormat;
 end;
 
 initialization

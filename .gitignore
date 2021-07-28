@@ -39,7 +39,7 @@
 *.dres
 *.rsm
 *.tds
-*.dcu
+# *.dcu
 *.lib
 *.a
 *.o
@@ -69,6 +69,8 @@ __recovery/
 modules/
 Win32
 Win64
+Debug
+Release
 bin-Win32
 bin-Win64
 DDN.Runtime.pas

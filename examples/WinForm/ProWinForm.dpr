@@ -1,7 +1,5 @@
 program ProWinForm;
 
-{$APPTYPE GUI}
-
 {$R *.res}
 
 uses

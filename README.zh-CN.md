@@ -53,6 +53,48 @@
 
 * DDN.Runtime (无源代码)
 ```pascal
+
+  IID_IDN_Name = '{B130231B-447A-48F5-B476-43FB07E99457}';
+  IID_IDN: TGUID = '{B130231B-447A-48F5-B476-43FB07E99457}';
+
+  IID_IDNClass_Name = '{E0CE1E32-5502-4F10-B263-6490F332E340}';
+  IID_IDNClass: TGUID = '{E0CE1E32-5502-4F10-B263-6490F332E340}';
+
+  IID_IDNInstance_Name = '{152F4F46-D220-423A-8135-FE6DF52A7932}';
+  IID_IDNInstance: TGUID = '{152F4F46-D220-423A-8135-FE6DF52A7932}';
+
+  IID_ILocalObject_Name = '{C4A9BE07-6DF9-448A-856F-9323768D36FE}';
+  IID_ILocalObject: TGUID = '{C4A9BE07-6DF9-448A-856F-9323768D36FE}';
+
+  IID_DNObject_Name = '{81C5FE01-027C-3E1C-98D5-DA9C9862AA21}';
+  IID_DNObjectClass_Name = '{52839F0D-B981-46B3-8A5C-5C7B1449E1EB}';
+  DNObject_FullName = 'System.Object';
+
+  /// <summary>
+  ///   DotNet中原生指针，实际定义为一个class，用于防止被GC。
+  /// </summary>
+  DNNObject = type Pointer;
+
+  IDN = interface
+    [IID_IDN_Name]
+  end;
+
+  IDNClass = interface(IDN)
+    [IID_IDNClass_Name]
+  end;
+
+  IDNInstance = interface(IDN)
+    [IID_IDNInstance_Name]
+  end;
+
+  /// <summary>
+  ///   用于获取保存的DotNet实例
+  /// </summary>
+  ILocalObject = interface(IDN)
+    [IID_ILocalObject_Name]
+    function GetObjectID: DNNObject;
+  end;
+
   /// <summary>
   ///   加载程序集
   /// </summary>

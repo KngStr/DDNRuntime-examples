@@ -1,0 +1,46 @@
+﻿<Window  
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="#FFF0F0F0" AllowsTransparency="False"  >
+    <Grid RenderTransformOrigin="0.507,0.507" Margin="0,0,2,7" Background="#00995555">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="-0.234"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Button Content="Random Progress" HorizontalAlignment="Left" Height="67.836" Margin="601.268,322.164,0,0" VerticalAlignment="Top" Width="183.732" RenderTransformOrigin="0.308,0.405" Name="btn123">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-28.981"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <ProgressBar HorizontalAlignment="Left" Height="10" Margin="370,195,0,0" Style="{DynamicResource SimpleProgressBar}" VerticalAlignment="Top" Width="100" Name="ProgressBar1"/>
+        <ComboBoxItem Content="ComboBoxItem" HorizontalAlignment="Left" Margin="90,50,0,0" Style="{DynamicResource SimpleComboBoxItem}" VerticalAlignment="Top"/>
+        <GroupBox Header="GroupBox" HorizontalAlignment="Left" Height="155" Margin="35,135,0,0" VerticalAlignment="Top" Width="220">
+            <ToggleButton Content="MessageBox" HorizontalAlignment="Left" Margin="0,0,0,0" Width="180" VerticalAlignment="Top" Name="ToggleButton1" />
+        </GroupBox>
+        <ListView HorizontalAlignment="Left" Height="135" Margin="485,30,0,0" VerticalAlignment="Top" Width="280">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+            <ListViewItem Content="ListViewItem" Margin="0" HorizontalAlignment="Left" Background="#FF743A3A"/>
+        </ListView>
+        <PasswordBox HorizontalAlignment="Left" Margin="175,295,0,0" Width="180" VerticalAlignment="Top"/>
+        <MenuItem Header="MenuItem" HorizontalAlignment="Left" Height="100" Margin="285,50,0,0" VerticalAlignment="Top" Width="100">
+            <MenuItem Header="MenuItem" HorizontalAlignment="Left" Height="100" Width="144.37"/>
+        </MenuItem>
+    </Grid>
+</Window>

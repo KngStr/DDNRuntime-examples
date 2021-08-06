@@ -33,6 +33,10 @@
 
 * 泛型类型（不含泛型接口）。
 
+## 正在实现中的特性
+
+* Generic type.
+
 ## 试用  
 
 获取[DDNRuntime试用文件](trial)，复制你所使用的Delphi版本Duc文件到`DDNRuntime\Win32`或者`DDNRuntime\Win64`，复制`DDNRuntimex86.dll`到`examples\bin-Win32`或者复制`DDNRuntimex64.dll`到`examples\bin-Win64`。

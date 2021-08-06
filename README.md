@@ -33,6 +33,10 @@
 
 * Generic type (excluding generic interface).
 
+## Implementing features
+
+* Generic type.
+
 ## Trial
 
 Get [DDNRuntime trial file](trial), copy the Duc file of the Delphi version you are using to `DDNRuntime\Win32` or `DDNRuntime\Win64`, copy `DDNRuntimex86.dll` to `examples\bin-Win32` or copy `DDNRuntimex64.dll` to `examples\bin-Win64`.

@@ -4,6 +4,7 @@ program ProWinForm;
 
 uses
   System.SysUtils,
+  Winapi.ActiveX,
   DDN.Runtime,
   DDN.mscorlib,
   DDN.Forms.Common,
@@ -12,60 +13,88 @@ uses
 
 
 type
-  // test
-  TEventClass = class
+
+  TMainForm = class(TInterfacedObject, ILocalObject)
+  private
+    FForm: DNForm;
+    FBtn: DNButton;
+    procedure OnButtonClick(sender: DNObject; e: DNEventArgs);
   public
-     class procedure OnButtonClick(sender: DNObject; e: DNEventArgs);
+    constructor Create();
+    destructor Destroy; override;
+    function GetObjectID: DNNObject;
   end;
 
 
+{ TMainForm }
 
-procedure TestProc;
-  function CreateMainForm(): DNForm;
-  var
-    LButton: DNButton;
-    LR: DDN.Forms.Common.DNRectangle;
-    //LEdit: DNTextBox;
-  begin
-    LR := TDNScreen.DNClass.PrimaryScreen.Bounds;
-
-    Result := TDNForm.Create;
-    Result.Text := 'Delphi .NET Runtime';
-
-    LButton := TDNButton.Create;
-    LButton.Text := 'Hello';
-    LButton.add_Click(TEventClass.OnButtonClick);
-    LButton.Location := TDNPoint.DNClass.init(100, 100);
-    Result.Controls.Add(LButton);
-
-    //Result.StartPosition := DNFormStartPosition.Manual;
-    Result.StartPosition := DNFormStartPosition.CenterScreen;
-    //Result.Location :=  TDNPoint.DNClass.init((LR.Width - Result.Width) div 2, (LR.Height - Result.Height) div 2);
-  end;
-
+constructor TMainForm.Create;
+var
+  LR: DDN.Forms.Common.DNRectangle;
 begin
+  inherited Create;
+//  LR := TDNScreen.DNClass.PrimaryScreen.Bounds;
 
-  TDNApplication.DNClass.EnableVisualStyles();
-  TDNApplication.DNClass.SetCompatibleTextRenderingDefault(False);
-  TDNApplication.DNClass.Run(CreateMainForm());
+  FForm := TDNForm.Create;
+  FForm.Text := 'Delphi .NET Runtime';
+
+
+  FBtn := TDNButton.Create;
+  FBtn.Text := 'Hello';
+  FBtn.add_Click(OnButtonClick);
+  FBtn.Location := TDNPoint.DNClass.init(100, 100);
+  FForm.Controls.Add(FBtn);
+
+  //FForm.StartPosition := DNFormStartPosition.Manual;
+  FForm.StartPosition := DNFormStartPosition.CenterScreen;
+  //FForm.Location :=  TDNPoint.DNClass.init((LR.Width - Result.Width) div 2, (LR.Height - Result.Height) div 2);
 end;
 
-{ TEventClass }
+destructor TMainForm.Destroy;
+begin
+  FForm := nil;
+  inherited;
+end;
 
-class procedure TEventClass.OnButtonClick(sender: DNObject; e: DNEventArgs);
+function TMainForm.GetObjectID: DNNObject;
+begin
+  Result := nil;
+  if FForm = nil then
+    Exit;
+  Result := (FForm as ILocalObject).GetObjectID;
+end;
+
+procedure TMainForm.OnButtonClick(sender: DNObject; e: DNEventArgs);
 begin
   TDNMessageBox.DNClass.Show('Button.Click: ' + sender.ToString);
-//  TDNButton.Wrap(Sender).remove_Click(TDelegateTest.OnButtonClick);
+//  TDNButton.Wrap(Sender).remove_Click(OnButtonClick);
+end;
+
+
+procedure MainProc;
+var
+  LMainForm: ILocalObject;
+begin
+  TDNApplication.DNClass.EnableVisualStyles();
+  TDNApplication.DNClass.SetCompatibleTextRenderingDefault(False);
+
+  LMainForm := TMainForm.Create;
+  TDNApplication.DNClass.Run(DNForm(LMainForm));
 end;
 
 begin
   ReportMemoryLeaksOnShutdown := True;
   try
-    TestProc;
-    { TODO -oUser -cConsole Main : Insert code here }
+     //[STAThread] 根据MS要求，必须要在主线程中初始COM。
+     CoInitializeEx(nil, COINIT_APARTMENTTHREADED);
+     try
+       MainProc;
+     finally
+       CoUninitialize;
+     end;
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);
   end;
- // Readln;
+//  Readln;
 end.

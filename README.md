@@ -7,7 +7,7 @@
  DDNRuntime(Delphi .NET Runtime)  
 
 ----
- **Latest version: v0.1.20**    
+ **Latest version: v0.1.21**    
  ----  
 
  **This is not an open source and free project. Only examples are stored here.**  

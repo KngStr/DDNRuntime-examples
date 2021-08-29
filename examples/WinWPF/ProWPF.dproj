@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{9D30A2B2-15BA-4AF8-BE6C-87203704C7AF}</ProjectGuid>
+        <ProjectGuid>{EDD0874E-B3BD-412C-8612-F0EF23820A23}</ProjectGuid>
         <ProjectVersion>18.8</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <MainSource>ProWPF.dpr</MainSource>

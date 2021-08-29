@@ -7,7 +7,7 @@ uses
   Winapi.ActiveX,
   DDN.Runtime,
   DDN.mscorlib,
-  DDN.Forms.Common,
+  DDN.System.Drawing,
   DDN.System.Windows.Forms,
   uReg in '..\uReg.pas';
 
@@ -30,7 +30,7 @@ type
 
 constructor TMainForm.Create;
 var
-  LR: DDN.Forms.Common.DNRectangle;
+  LR: DNRectangle;
 begin
   inherited Create;
 //  LR := TDNScreen.DNClass.PrimaryScreen.Bounds;

@@ -1,8 +1,18 @@
 {
-   "OutputDir":".\\zh-Hans",
-   "Lang": "zh-Hans",
-   "CommonNamespace":"",
-   "Assemblys":[
-     "J:\\MyGitRepo\\DDNRuntime\\Debug\\PowDLL.dll"
-   ]
+	"OutputDir": "J:\\MyGitRepo\\DDNRuntime\\TestGenCode",
+	"Lang": "zh-Hans",
+	"GenerateCommnet": true,
+	"Items": [
+		{
+			"Assembly": "J:\\MyGitRepo\\DDNRuntime\\Debug\\PowDLL.dll",
+			"IsMsLib": false,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		}	
+	]
 }

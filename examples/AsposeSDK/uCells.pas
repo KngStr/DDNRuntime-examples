@@ -6,7 +6,6 @@ uses
   System.SysUtils,
   DDN.mscorlib,
   DDN.Runtime,
-  DDN.Aspose.Common,
   DDN.Aspose.Cells;
 
   procedure TestCells;

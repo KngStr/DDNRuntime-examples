@@ -13,8 +13,6 @@ uses
 //  DDN.System.Windows.Input.Manipulations,
 //  DDN.UIAutomationTypes,
   DDN.WindowsBase,
-  DDN.System.Windows.Common,
-
   uReg in '..\uReg.pas';
 
 
@@ -105,6 +103,7 @@ end;
 begin
   ReportMemoryLeaksOnShutdown := True;
   try
+     SetShowDetailedExceptionMessage(True);
      //[STAThread] 根据MS要求，WPF必须要在主线程中初始COM。
      CoInitializeEx(nil, COINIT_APARTMENTTHREADED);
      try

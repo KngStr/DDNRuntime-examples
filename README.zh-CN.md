@@ -263,7 +263,7 @@ end;
 function CreateMainForm(): DNForm;
 var
   LButton: DNButton;
-  LR: DDN.Forms.Common.DNRectangle;
+  LR: DNRectangle;
   //LEdit: DNTextBox;
 begin
   LR := TDNScreen.DNClass.PrimaryScreen.Bounds;

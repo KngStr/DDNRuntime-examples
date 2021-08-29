@@ -4,6 +4,9 @@
 
 ### What's new
 
+* v0.1.21  
+   * 1. Add basic type conversion function, see `DDN.Helpers` unit for details.
+
 * v0.1.20  
    * 1. Add support for generic types (nested generics are not currently supported).
    * 2. Fix that there is no forced data cleaning when creating entrusted data.

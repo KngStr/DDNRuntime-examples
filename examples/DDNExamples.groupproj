@@ -42,6 +42,9 @@
         <Projects Include="Generics\ProGenerics.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="DataTable\ProDataTable.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -167,14 +170,23 @@
     <Target Name="ProGenerics:Make">
         <MSBuild Projects="Generics\ProGenerics.dproj" Targets="Make"/>
     </Target>
+    <Target Name="ProDataTable">
+        <MSBuild Projects="DataTable\ProDataTable.dproj"/>
+    </Target>
+    <Target Name="ProDataTable:Clean">
+        <MSBuild Projects="DataTable\ProDataTable.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProDataTable:Make">
+        <MSBuild Projects="DataTable\ProDataTable.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="ProReflection;ProStream;ProDES;ProPowDLL;ProXml;ProAES;ProHash;ProWeb_HTTP;ProWinForm;ProAspose;ProWebDriver;ProWPF;ProGenerics"/>
+        <CallTarget Targets="ProReflection;ProStream;ProDES;ProPowDLL;ProXml;ProAES;ProHash;ProWeb_HTTP;ProWinForm;ProAspose;ProWebDriver;ProWPF;ProGenerics;ProDataTable"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="ProReflection:Clean;ProStream:Clean;ProDES:Clean;ProPowDLL:Clean;ProXml:Clean;ProAES:Clean;ProHash:Clean;ProWeb_HTTP:Clean;ProWinForm:Clean;ProAspose:Clean;ProWebDriver:Clean;ProWPF:Clean;ProGenerics:Clean"/>
+        <CallTarget Targets="ProReflection:Clean;ProStream:Clean;ProDES:Clean;ProPowDLL:Clean;ProXml:Clean;ProAES:Clean;ProHash:Clean;ProWeb_HTTP:Clean;ProWinForm:Clean;ProAspose:Clean;ProWebDriver:Clean;ProWPF:Clean;ProGenerics:Clean;ProDataTable:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="ProReflection:Make;ProStream:Make;ProDES:Make;ProPowDLL:Make;ProXml:Make;ProAES:Make;ProHash:Make;ProWeb_HTTP:Make;ProWinForm:Make;ProAspose:Make;ProWebDriver:Make;ProWPF:Make;ProGenerics:Make"/>
+        <CallTarget Targets="ProReflection:Make;ProStream:Make;ProDES:Make;ProPowDLL:Make;ProXml:Make;ProAES:Make;ProHash:Make;ProWeb_HTTP:Make;ProWinForm:Make;ProAspose:Make;ProWebDriver:Make;ProWPF:Make;ProGenerics:Make;ProDataTable:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

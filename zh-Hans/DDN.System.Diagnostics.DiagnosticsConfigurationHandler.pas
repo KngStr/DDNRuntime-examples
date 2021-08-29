@@ -40,15 +40,48 @@ type
   ['{5C5F6F38-5C2B-501A-864B-790DBE104E0C}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Diagnostics.DiagnosticsConfigurationHandler" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNDiagnosticsConfigurationHandler;
 
   end;
 
+  ///<summary>
+  ///  处理配置文件的诊断部分。
+  ///</summary>
   [DNTypeName('System.Diagnostics.DiagnosticsConfigurationHandler')]
   DNDiagnosticsConfigurationHandler = interface(DNIConfigurationSectionHandler)
   ['{9C38D18B-1694-3588-B621-F1055E8819F1}']
   { methods } 
 
+    ///<summary>
+    ///  分析的配置设置 &lt;system.diagnostics&gt; 元素 部分中的配置文件。
+    ///</summary>
+    ///  <param name="parent">
+    ///  对象继承自父路径
+    ///</param>
+    ///  <param name="configContext">
+    ///  保留。
+    ///  在 ASP.NET 中用于传递正在评估的配置的虚拟路径。
+    ///</param>
+    ///  <param name="section">
+    ///  位于要处理的节的根 XML 节点。
+    ///</param>
+    ///<returns>
+    ///  中的窗体的新的配置对象 <see cref="T:System.Collections.Hashtable" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  找不到交换机。
+    ///  - 或 -
+    ///  断言找不到。
+    ///  - 或 -
+    ///  找不到跟踪。
+    ///  - 或 -
+    ///  找不到性能计数器。
+    ///</exception>
     function Create(parent: DDN.mscorlib.DNObject; configContext: DDN.mscorlib.DNObject; section: DDN.System.Xml.DNXmlNode): DDN.mscorlib.DNObject;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;

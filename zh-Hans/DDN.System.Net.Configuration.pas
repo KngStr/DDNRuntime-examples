@@ -30,57 +30,145 @@ type
 { enums }
 
   //-------------namespace: System.Net.Configuration----------------
+  ///<summary>
+  ///  指定是否自动检测代理。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.ProxyElement+AutoDetectValues')]
   DNProxyElement_AutoDetectValues = type Integer;
   DNProxyElement_AutoDetectValuesHelper = record helper for DNProxyElement_AutoDetectValues
   public const
+    ///<summary>
+    ///  不会自动检测代理服务器。
+    ///</summary>
     False = 0;
+    ///<summary>
+    ///  自动检测代理。
+    ///</summary>
     True = 1;
+    ///<summary>
+    ///  指定此字符集。
+    ///</summary>
     Unspecified = -1;
   end;
 
 
   //-------------namespace: System.Net.Configuration----------------
+  ///<summary>
+  ///  指定是否对本地资源不使用代理。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.ProxyElement+BypassOnLocalValues')]
   DNProxyElement_BypassOnLocalValues = type Integer;
   DNProxyElement_BypassOnLocalValuesHelper = record helper for DNProxyElement_BypassOnLocalValues
   public const
+    ///<summary>
+    ///  对于本地资源的所有请求应都经过代理
+    ///</summary>
     False = 0;
+    ///<summary>
+    ///  直接访问本地资源。
+    ///</summary>
     True = 1;
+    ///<summary>
+    ///  指定此字符集。
+    ///</summary>
     Unspecified = -1;
   end;
 
 
   //-------------namespace: System.Net.Configuration----------------
+  ///<summary>
+  ///  指定是否使用本地系统代理设置来确定是否对本地资源不使用代理。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.ProxyElement+UseSystemDefaultValues')]
   DNProxyElement_UseSystemDefaultValues = type Integer;
   DNProxyElement_UseSystemDefaultValuesHelper = record helper for DNProxyElement_UseSystemDefaultValues
   public const
+    ///<summary>
+    ///  不使用系统默认代理设置值
+    ///</summary>
     False = 0;
+    ///<summary>
+    ///  使用系统默认代理设置值。
+    ///</summary>
     True = 1;
+    ///<summary>
+    ///  系统默认代理设置不指定。
+    ///</summary>
     Unspecified = -1;
   end;
 
 
   //-------------namespace: System.Net.Configuration----------------
+  ///<summary>
+  ///  控制如何将 Unicode 字符解释通过 <see cref="Overload:System.Net.WebUtility.HtmlDecode" />
+  ///  方法。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.UnicodeDecodingConformance')]
   DNUnicodeDecodingConformance = type Integer;
   DNUnicodeDecodingConformanceHelper = record helper for DNUnicodeDecodingConformance
   public const
+    ///<summary>
+    ///  使用自动行为。
+    ///  解码的行为是由当前应用程序的目标框架确定的。
+    ///  有关 .NET Framework 4.5 和更高版本，Unicode 编码解码严格。
+    ///</summary>
     Auto = 0;
+    ///<summary>
+    ///  使用严格的行为。
+    ///  指定传入编码的数据将被解码之前检查的有效性。
+    ///  例如，输入的字符串的"&amp; #144308;"将解码为 U + 233B4，但使用输入的字符串"&amp;#xD84C; &amp;#xDFB4;"将无法正确解码。
+    ///  已解码字符串中的数据未检查的有效性。
+    ///  例如，"\ud800"的输入的字符串将导致"\ud800"的输出字符串，因为已解码代理期间会跳过解码，即使它是不成对。
+    ///</summary>
     Strict_ = 1;
+    ///<summary>
+    ///  使用兼容的行为。
+    ///  指定传入的数据被解码之前不检查的有效性。
+    ///  例如，输入的字符串的"&amp;amp; #xD84C;"将解码为 U + D84C，这是一个不成对的代理项。
+    ///  此外，解码器不能理解代码数据点处于 SMP 它们被表示为 HTML 编码的代理项，因此除非 inputstring"&amp; #144308;"将导致输出字符串"&amp; #144308;"。
+    ///</summary>
     Compat = 2;
+    ///<summary>
+    ///  使用松散的行为。
+    ///  类似于 <see cref="F:System.Net.Configuration.UnicodeDecodingConformance.Compat" />
+    ///  在于，不会有效性检查，但解码器还能理解的代码数据点。
+    ///  输入的字符串"&amp; #144308;"会将解码为字符 U + 233B4 正确。
+    ///  此开关旨在提供最大互操作性，如果解码器不知道哪种格式提供程序使用来生成编码的字符串。
+    ///</summary>
     Loose = 3;
   end;
 
 
   //-------------namespace: System.Net.Configuration----------------
+  ///<summary>
+  ///  控制如何将 Unicode 字符输出的 <see cref="Overload:System.Net.WebUtility.HtmlEncode" />
+  ///  方法。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.UnicodeEncodingConformance')]
   DNUnicodeEncodingConformance = type Integer;
   DNUnicodeEncodingConformanceHelper = record helper for DNUnicodeEncodingConformance
   public const
+    ///<summary>
+    ///  使用自动行为。
+    ///  Unicode 编码行为由当前应用程序的目标框架。
+    ///  有关 .NET Framework 4.5 和更高版本，Unicode 编码行为严格。        </summary>
     Auto = 0;
+    ///<summary>
+    ///  使用严格的行为。
+    ///  指定单个 utf-16 代理项码位将合并为一个单独的码位的 <see cref="Overload:System.Net.WebUtility.HtmlEncode" />
+    ///  调用方法。
+    ///  例如，给定的输入的字符串"\uD84C\uDFB4"（或"\U000233B4"），输出的 <see cref="Overload:System.Net.WebUtility.HtmlEncode" />
+    ///  方法为"&amp; #144308;"。
+    ///  如果输入是一个格式不正确的 utf-16 字符串 （它包含不成对的代理项，例如），坏码位将被替换为 U + FFFD （Unicode 替换字符） 之前进行 HTML 编码。
+    ///</summary>
     Strict_ = 1;
+    ///<summary>
+    ///  使用兼容的行为。
+    ///  指定单个 utf-16 代理项码位的输出作为-当之一 <see cref="Overload:System.Net.WebUtility.HtmlEncode" />
+    ///  调用方法。
+    ///  例如，给定字符串"\uD84C\uDFB4"（或"\U000233B4"） 的输出 <see cref="Overload:System.Net.WebUtility.HtmlEncode" />
+    ///  是"\uD84C\uDFB4"（未编码输入）。
+    ///</summary>
     Compat = 2;
   end;
 
@@ -134,10 +222,18 @@ type
   ['{3E5B622A-A1F2-547C-85DC-63A8F0894430}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.AuthenticationModuleElementCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNAuthenticationModuleElementCollection;
 
   end;
 
+  ///<summary>
+  ///  表示身份验证模块配置元素的容器。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.AuthenticationModuleElementCollection')]
   DNAuthenticationModuleElementCollection = interface(DNObject)
   ['{30BE1B0F-EDAA-3ABF-81AC-71743BC642DD}']
@@ -164,11 +260,50 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将一个元素添加到集合中。
+    ///</summary>
+    ///  <param name="element">
+    ///  要添加到集合中的 <see cref="T:System.Net.Configuration.AuthenticationModuleElement" />
+    ///  。
+    ///</param>
     procedure Add(element: DNAuthenticationModuleElement);
+    ///<summary>
+    ///  移除集合中的所有元素。
+    ///</summary>
     procedure Clear;
+    ///<summary>
+    ///  返回指定的配置元素的索引。
+    ///</summary>
+    ///  <param name="element"><see cref="T:System.Net.Configuration.AuthenticationModuleElement" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  从零开始的索引 <paramref name="element" />
+    ///  。
+    ///</returns>
     function IndexOf(element: DNAuthenticationModuleElement): Int32;
+    ///<summary>
+    ///  移除集合中的指定配置元素。
+    ///</summary>
+    ///  <param name="element">
+    ///  要移除的 <see cref="T:System.Net.Configuration.AuthenticationModuleElement" />
+    ///  。
+    ///</param>
     procedure Remove(element: DNAuthenticationModuleElement); overload;
+    ///<summary>
+    ///  移除具有指定键的元素。
+    ///</summary>
+    ///  <param name="name">
+    ///  要移除的元素的键。
+    ///</param>
     procedure Remove(name: string); overload;
+    ///<summary>
+    ///  移除指定索引处的元素。
+    ///</summary>
+    ///  <param name="index">
+    ///  要移除的元素的从零开始的索引。
+    ///</param>
     procedure RemoveAt(index: Int32);
     function IsReadOnly: Boolean;
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
@@ -203,10 +338,18 @@ type
   ['{08E16BAF-8716-5CAC-B42D-4893D6BA3C58}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.BypassElementCollection" />
+    ///  类的空实例。
+    ///</summary>
     {class} function init: DNBypassElementCollection;
 
   end;
 
+  ///<summary>
+  ///  表示不使用代理服务器的资源的地址的容器。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.BypassElementCollection')]
   DNBypassElementCollection = interface(DNObject)
   ['{44D5F88E-76B3-3B0F-9977-7DB90B662F35}']
@@ -233,11 +376,50 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将一个元素添加到集合中。
+    ///</summary>
+    ///  <param name="element">
+    ///  要添加到集合中的 <see cref="T:System.Net.Configuration.BypassElement" />
+    ///  。
+    ///</param>
     procedure Add(element: DNBypassElement);
+    ///<summary>
+    ///  移除集合中的所有元素。
+    ///</summary>
     procedure Clear;
+    ///<summary>
+    ///  返回指定的配置元素的索引。
+    ///</summary>
+    ///  <param name="element"><see cref="T:System.Net.Configuration.BypassElement" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  从零开始的索引 <paramref name="element" />
+    ///  。
+    ///</returns>
     function IndexOf(element: DNBypassElement): Int32;
+    ///<summary>
+    ///  移除集合中的指定配置元素。
+    ///</summary>
+    ///  <param name="element">
+    ///  要移除的 <see cref="T:System.Net.Configuration.BypassElement" />
+    ///  。
+    ///</param>
     procedure Remove(element: DNBypassElement); overload;
+    ///<summary>
+    ///  移除具有指定键的元素。
+    ///</summary>
+    ///  <param name="name">
+    ///  要移除的元素的键。
+    ///</param>
     procedure Remove(name: string); overload;
+    ///<summary>
+    ///  移除指定索引处的元素。
+    ///</summary>
+    ///  <param name="index">
+    ///  要移除的元素的从零开始的索引。
+    ///</param>
     procedure RemoveAt(index: Int32);
     function IsReadOnly: Boolean;
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
@@ -272,10 +454,18 @@ type
   ['{0A55556C-7FDD-568E-AF71-C98DAA052891}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.ConnectionManagementElementCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNConnectionManagementElementCollection;
 
   end;
 
+  ///<summary>
+  ///  表示连接管理配置元素的容器。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.ConnectionManagementElementCollection')]
   DNConnectionManagementElementCollection = interface(DNObject)
   ['{DAE5D242-84A2-3E36-9F79-4A9775B071A8}']
@@ -302,11 +492,50 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将一个元素添加到集合中。
+    ///</summary>
+    ///  <param name="element">
+    ///  要添加到集合中的 <see cref="T:System.Net.Configuration.ConnectionManagementElement" />
+    ///  。
+    ///</param>
     procedure Add(element: DNConnectionManagementElement);
+    ///<summary>
+    ///  移除集合中的所有元素。
+    ///</summary>
     procedure Clear;
+    ///<summary>
+    ///  返回指定的配置元素的索引。
+    ///</summary>
+    ///  <param name="element"><see cref="T:System.Net.Configuration.ConnectionManagementElement" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  从零开始的索引 <paramref name="element" />
+    ///  。
+    ///</returns>
     function IndexOf(element: DNConnectionManagementElement): Int32;
+    ///<summary>
+    ///  移除集合中的指定配置元素。
+    ///</summary>
+    ///  <param name="element">
+    ///  要移除的 <see cref="T:System.Net.Configuration.ConnectionManagementElement" />
+    ///  。
+    ///</param>
     procedure Remove(element: DNConnectionManagementElement); overload;
+    ///<summary>
+    ///  移除具有指定键的元素。
+    ///</summary>
+    ///  <param name="name">
+    ///  要移除的元素的键。
+    ///</param>
     procedure Remove(name: string); overload;
+    ///<summary>
+    ///  移除指定索引处的元素。
+    ///</summary>
+    ///  <param name="index">
+    ///  要移除的元素的从零开始的索引。
+    ///</param>
     procedure RemoveAt(index: Int32);
     function IsReadOnly: Boolean;
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
@@ -341,10 +570,18 @@ type
   ['{FD7506E6-106C-56B2-A299-BB99C57424FD}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.WebRequestModuleElementCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNWebRequestModuleElementCollection;
 
   end;
 
+  ///<summary>
+  ///  表示用于 Web 请求模块配置元素的容器。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.WebRequestModuleElementCollection')]
   DNWebRequestModuleElementCollection = interface(DNObject)
   ['{146D1F14-5F97-3C11-9929-725BC4CCA898}']
@@ -371,11 +608,50 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将一个元素添加到集合中。
+    ///</summary>
+    ///  <param name="element">
+    ///  要添加到集合中的 <see cref="T:System.Net.Configuration.WebRequestModuleElement" />
+    ///  。
+    ///</param>
     procedure Add(element: DNWebRequestModuleElement);
+    ///<summary>
+    ///  移除集合中的所有元素。
+    ///</summary>
     procedure Clear;
+    ///<summary>
+    ///  返回指定的配置元素的索引。
+    ///</summary>
+    ///  <param name="element"><see cref="T:System.Net.Configuration.WebRequestModuleElement" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  从零开始的索引 <paramref name="element" />
+    ///  。
+    ///</returns>
     function IndexOf(element: DNWebRequestModuleElement): Int32;
+    ///<summary>
+    ///  移除集合中的指定配置元素。
+    ///</summary>
+    ///  <param name="element">
+    ///  要移除的 <see cref="T:System.Net.Configuration.WebRequestModuleElement" />
+    ///  。
+    ///</param>
     procedure Remove(element: DNWebRequestModuleElement); overload;
+    ///<summary>
+    ///  移除具有指定键的元素。
+    ///</summary>
+    ///  <param name="name">
+    ///  要移除的元素的键。
+    ///</param>
     procedure Remove(name: string); overload;
+    ///<summary>
+    ///  移除指定索引处的元素。
+    ///</summary>
+    ///  <param name="index">
+    ///  要移除的元素的从零开始的索引。
+    ///</param>
     procedure RemoveAt(index: Int32);
     function IsReadOnly: Boolean;
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
@@ -410,10 +686,18 @@ type
   ['{31876F49-1085-5B14-90CF-A2E55C153359}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.AuthenticationModulesSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNAuthenticationModulesSection;
 
   end;
 
+  ///<summary>
+  ///  表示身份验证模块的配置节。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.AuthenticationModulesSection')]
   DNAuthenticationModulesSection = interface(DNObject)
   ['{DF18CD21-DB70-3E3E-B069-EDE6A56F4B72}']
@@ -440,6 +724,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取该节中的身份验证模块的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.AuthenticationModuleElementCollection" />
+    ///  ，其中包含已注册的身份验证模块。
+    ///</returns>
     property AuthenticationModules: DNAuthenticationModuleElementCollection read get_AuthenticationModules;
     property SectionInformation: DDN.System.Configuration.DNSectionInformation read get_SectionInformation;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
@@ -458,10 +749,18 @@ type
   ['{3EBEBEB1-2938-5102-BB77-DA5E9FB90057}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.ConnectionManagementSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNConnectionManagementSection;
 
   end;
 
+  ///<summary>
+  ///  表示连接管理的配置节。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.ConnectionManagementSection')]
   DNConnectionManagementSection = interface(DNObject)
   ['{D536B35C-EEB7-3304-9622-82A8394804E5}']
@@ -488,6 +787,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取该节中管理对象的连接的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.ConnectionManagementElementCollection" />
+    ///  包含本地计算机的连接管理信息。
+    ///</returns>
     property ConnectionManagement: DNConnectionManagementElementCollection read get_ConnectionManagement;
     property SectionInformation: DDN.System.Configuration.DNSectionInformation read get_SectionInformation;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
@@ -506,10 +812,18 @@ type
   ['{0E38D258-5ADE-5D04-8F8A-A0CD1250FA6E}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.DefaultProxySection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNDefaultProxySection;
 
   end;
 
+  ///<summary>
+  ///  表示 Web 代理服务器使用情况的配置节。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.DefaultProxySection')]
   DNDefaultProxySection = interface(DNObject)
   ['{086ED210-223A-3564-A9B9-6663C4280C8D}']
@@ -542,10 +856,45 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取不使用 Web 代理服务器获取的资源的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.BypassElementCollection" />
+    ///  ，其中包含的资源不使用 Web 代理服务器的地址。
+    ///</returns>
     property BypassList: DNBypassElementCollection read get_BypassList;
+    ///<summary>
+    ///  获取自定义的 Web 代理实现的类型信息。
+    ///</summary>
+    ///<returns><see cref="T:System.Net.Configuration.ModuleElement" />
+    ///  。
+    ///  有关自定义的 Web 代理实现的类型信息。
+    ///</returns>
     property Module: DNModuleElement read get_Module;
+    ///<summary>
+    ///  获取用于标识要使用的 Web 代理服务器的 URI。
+    ///</summary>
+    ///<returns><see cref="T:System.Net.Configuration.ProxyElement" />
+    ///  。
+    ///  用于标识 Web 代理服务器的 URI。
+    ///</returns>
     property Proxy: DNProxyElement read get_Proxy;
+    ///<summary>
+    ///  获取或设置是否使用 Web 代理。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果将使用 Web 代理;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property Enabled: Boolean read get_Enabled write set_Enabled;
+    ///<summary>
+    ///  获取或设置默认凭据是否可用于访问 Web 代理服务器。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果使用，则默认凭据否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property UseDefaultCredentials: Boolean read get_UseDefaultCredentials write set_UseDefaultCredentials;
     property SectionInformation: DDN.System.Configuration.DNSectionInformation read get_SectionInformation;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
@@ -564,10 +913,18 @@ type
   ['{D3C87A38-082F-587F-B2C4-BEF8D28251D4}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.RequestCachingSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNRequestCachingSection;
 
   end;
 
+  ///<summary>
+  ///  表示缓存行为的配置节。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.RequestCachingSection')]
   DNRequestCachingSection = interface(DNObject)
   ['{A8466872-24FD-3A18-A365-E06327DB91F5}']
@@ -603,11 +960,53 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取默认值缓存在本地计算机的行为。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.HttpCachePolicyElement" />
+    ///  ，定义默认缓存策略。
+    ///</returns>
     property DefaultHttpCachePolicy: DNHttpCachePolicyElement read get_DefaultHttpCachePolicy;
+    ///<summary>
+    ///  获取默认 FTP 缓存为本地计算机的行为。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.FtpCachePolicyElement" />
+    ///  ，定义默认缓存策略。
+    ///</returns>
     property DefaultFtpCachePolicy: DNFtpCachePolicyElement read get_DefaultFtpCachePolicy;
+    ///<summary>
+    ///  获取或设置默认缓存策略级别。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Cache.RequestCacheLevel" />
+    ///  枚举值。
+    ///</returns>
     property DefaultPolicyLevel: DNRequestCacheLevel read get_DefaultPolicyLevel write set_DefaultPolicyLevel;
+    ///<summary>
+    ///  获取或设置一个布尔值，启用缓存在本地计算机上。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果在本地计算机，则禁用缓存否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property DisableAllCaching: Boolean read get_DisableAllCaching write set_DisableAllCaching;
+    ///<summary>
+    ///  获取或设置一个布尔值，该值指示本地计算机缓存为私有。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果缓存提供用户隔离;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsPrivateCache: Boolean read get_IsPrivateCache write set_IsPrivateCache;
+    ///<summary>
+    ///  获取或设置一个值，该值用作缓存有过期信息的资源的最长期限。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  ，它提供缓存的资源的默认最大期限。
+    ///</returns>
     property UnspecifiedMaximumAge: DDN.mscorlib.DNTimeSpan read get_UnspecifiedMaximumAge write set_UnspecifiedMaximumAge;
     property SectionInformation: DDN.System.Configuration.DNSectionInformation read get_SectionInformation;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
@@ -626,10 +1025,18 @@ type
   ['{BF735F2C-DAFF-5D63-B1B0-2FA322B7F18F}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.ConnectionManagementSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSettingsSection;
 
   end;
 
+  ///<summary>
+  ///  表示套接字、 IPv6、 响应标头和服务点的配置节。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.SettingsSection')]
   DNSettingsSection = interface(DNObject)
   ['{0C7B9893-B74A-344E-AE79-B3A7C4FE8828}']
@@ -664,13 +1071,81 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取控件使用的设置的配置元素 <see cref="T:System.Net.HttpWebRequest" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.HttpWebRequestElement" />
+    ///  对象。
+    ///  控制最大响应标头长度，以及使用其他设置的配置元素 <see cref="T:System.Net.HttpWebRequest" />
+    ///  对象。
+    ///</returns>
     property HttpWebRequest: DNHttpWebRequestElement read get_HttpWebRequest;
+    ///<summary>
+    ///  获取使 Internet 协议版本 6 (IPv6) 的配置元素。
+    ///</summary>
+    ///<returns><see cref="T:System.Net.Configuration.Ipv6Element" />
+    ///  。
+    ///  控制使用的 IPv6 设置的配置元素。
+    ///</returns>
     property Ipv6: DNIpv6Element read get_Ipv6;
+    ///<summary>
+    ///  获取控制与远程主机计算机的连接设置的配置元素。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.ServicePointManagerElement" />
+    ///  对象。
+    ///  它控制设置的配置元素用于连接到远程主机的计算机的网络性能计数器。
+    ///</returns>
     property ServicePointManager: DNServicePointManagerElement read get_ServicePointManager;
+    ///<summary>
+    ///  获取控制套接字设置的配置元素。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.SocketElement" />
+    ///  对象。
+    ///  该配置元素可控制套接字设置。
+    ///</returns>
     property Socket: DNSocketElement read get_Socket;
+    ///<summary>
+    ///  获取控件的执行超时值和下载超时的 Web 代理脚本的配置元素。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.WebProxyScriptElement" />
+    ///  对象。
+    ///  控制执行超时值和使用 Web 代理脚本下载超时设置的配置元素。
+    ///</returns>
     property WebProxyScript: DNWebProxyScriptElement read get_WebProxyScript;
+    ///<summary>
+    ///  获取控制是否启用网络性能计数器的配置元素。
+    ///</summary>
+    ///<returns><see cref="T:System.Net.Configuration.PerformanceCountersElement" />
+    ///  。
+    ///  控制设置的配置元素用于网络性能计数器。
+    ///</returns>
     property PerformanceCounters: DNPerformanceCountersElement read get_PerformanceCounters;
+    ///<summary>
+    ///  获取控件使用的设置的配置元素 <see cref="T:System.Net.HttpListener" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.HttpListenerElement" />
+    ///  对象。
+    ///  控制使用的设置的配置元素 <see cref="T:System.Net.HttpListener" />
+    ///  对象。
+    ///</returns>
     property HttpListener: DNHttpListenerElement read get_HttpListener;
+    ///<summary>
+    ///  获取控件使用的设置的配置元素 <see cref="T:System.Net.WebUtility" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.Net.Configuration.WebUtilityElement" />
+    ///  。
+    ///  控制使用的设置的配置元素 <see cref="T:System.Net.WebUtility" />
+    ///  对象。
+    ///</returns>
     property WebUtility: DNWebUtilityElement read get_WebUtility;
     property WindowsAuthentication: DNWindowsAuthenticationElement read get_WindowsAuthentication;
     property SectionInformation: DDN.System.Configuration.DNSectionInformation read get_SectionInformation;
@@ -690,10 +1165,18 @@ type
   ['{A07B97D0-32B6-548A-9355-81AEF631478E}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.SmtpSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSmtpSection;
 
   end;
 
+  ///<summary>
+  ///  表示的 SMTP 节 <see langword="System.Net" />
+  ///  配置文件。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.SmtpSection')]
   DNSmtpSection = interface(DNObject)
   ['{2B03FD71-9C48-3F6D-B05B-F3B7E4430B34}']
@@ -727,10 +1210,49 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置简单邮件传输协议 (SMTP) 传递方法。
+    ///  默认的传递方法是 <see cref="F:System.Net.Mail.SmtpDeliveryMethod.Network" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  表示 SMTP 传递方法的字符串。
+    ///</returns>
     property DeliveryMethod: DNSmtpDeliveryMethod read get_DeliveryMethod write set_DeliveryMethod;
+    ///<summary>
+    ///  获取或设置要用于发送传出电子邮件使用简单邮件传输协议 (SMTP) 的交付格式。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.Net.Mail.SmtpDeliveryFormat" />
+    ///  。
+    ///  传递格式用于发送传出电子邮件使用 SMTP。
+    ///</returns>
     property DeliveryFormat: DNSmtpDeliveryFormat read get_DeliveryFormat write set_DeliveryFormat;
+    ///<summary>
+    ///  获取或设置默认值，该值指示电子邮件的发件人。
+    ///</summary>
+    ///<returns>
+    ///  一个表示默认值，该值指示一封电子邮件的发件人的字符串。
+    ///</returns>
     property From: string read get_From write set_From;
+    ///<summary>
+    ///  获取控件使用的简单邮件传输协议 (SMTP) 的网络设置的配置元素。
+    ///  文件。<see cref="T:System.Net.Configuration.SmtpNetworkElement" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.SmtpNetworkElement" />
+    ///  对象。
+    ///  控制使用 SMTP 的网络设置的配置元素。
+    ///</returns>
     property Network: DNSmtpNetworkElement read get_Network;
+    ///<summary>
+    ///  获取 SMPT 客户端将使用的拾取目录。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.SmtpSpecifiedPickupDirectoryElement" />
+    ///  对象，它指定拾取目录文件夹。
+    ///</returns>
     property SpecifiedPickupDirectory: DNSmtpSpecifiedPickupDirectoryElement read get_SpecifiedPickupDirectory;
     property SectionInformation: DDN.System.Configuration.DNSectionInformation read get_SectionInformation;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
@@ -749,10 +1271,18 @@ type
   ['{AEBD7F61-8629-5BA5-A583-51CAD27AE3F4}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.WebRequestModulesSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNWebRequestModulesSection;
 
   end;
 
+  ///<summary>
+  ///  表示 Web 请求模块的配置节。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.WebRequestModulesSection')]
   DNWebRequestModulesSection = interface(DNObject)
   ['{9B213E9F-B6AE-38F8-8561-D80710F0B261}']
@@ -779,6 +1309,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取该节中的 Web 请求模块的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.WebRequestModuleElementCollection" />
+    ///  包含已注册的 Web 请求模块。
+    ///</returns>
     property WebRequestModules: DNWebRequestModuleElementCollection read get_WebRequestModules;
     property SectionInformation: DDN.System.Configuration.DNSectionInformation read get_SectionInformation;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
@@ -797,11 +1334,26 @@ type
   ['{179B8082-1827-582F-9393-33741A42FB13}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.AuthenticationModuleElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNAuthenticationModuleElement; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Net.Configuration.AuthenticationModuleElement" />
+    ///  类，具有指定的类型信息。
+    ///</summary>
+    ///  <param name="typeName">
+    ///  一个字符串，标识的类型和包含它的程序集。
+    ///</param>
     {class} function init(typeName: string): DNAuthenticationModuleElement; overload;
 
   end;
 
+  ///<summary>
+  ///  表示一个身份验证模块的类型信息。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.AuthenticationModuleElement')]
   DNAuthenticationModuleElement = interface(DNObject)
   ['{D04C9593-F364-3E07-8EB7-87E292CE8A55}']
@@ -828,6 +1380,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置当前实例的类型和程序集信息。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，标识实现身份验证模块的类型或 <see langword="null" />
+    ///  如果不指定任何值。
+    ///</returns>
     property &Type: string read get_Type write set_Type;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -845,11 +1404,26 @@ type
   ['{3185DE0F-8F56-542E-AF62-57C5BC29A840}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.BypassElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNBypassElement; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Net.Configuration.BypassElement" />
+    ///  类，具有指定的类型信息。
+    ///</summary>
+    ///  <param name="address">
+    ///  一个字符串，标识资源的地址。
+    ///</param>
     {class} function init(address: string): DNBypassElement; overload;
 
   end;
 
+  ///<summary>
+  ///  表示不使用代理服务器检索的资源的地址信息。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.BypassElement')]
   DNBypassElement = interface(DNObject)
   ['{2296AA7C-1E61-38EA-B2C5-06FF1C226965}']
@@ -876,6 +1450,12 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置的资源不使用代理服务器的地址。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，标识的资源。
+    ///</returns>
     property Address: string read get_Address write set_Address;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -893,11 +1473,30 @@ type
   ['{D2564865-7819-5E6A-A18F-CB0F5F749BC8}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.ConnectionManagementElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNConnectionManagementElement; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Net.Configuration.ConnectionManagementElement" />
+    ///  带有指定的地址和连接限制信息的类。
+    ///</summary>
+    ///  <param name="address">
+    ///  一个字符串，标识的远程计算机的地址。
+    ///</param>
+    ///  <param name="maxConnection">
+    ///  标识允许连接到的最大数目的整数 <paramref name="address" />
+    ///  从本地计算机。
+    ///</param>
     {class} function init(address: string; maxConnection: Int32): DNConnectionManagementElement; overload;
 
   end;
 
+  ///<summary>
+  ///  表示连接到远程计算机的最大数量。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.ConnectionManagementElement')]
   DNConnectionManagementElement = interface(DNObject)
   ['{5589BB66-821D-37DB-B91F-9334C4C10B50}']
@@ -926,7 +1525,19 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置远程计算机的地址。
+    ///</summary>
+    ///<returns>
+    ///  包含正则表达式描述的 IP 地址或 DNS 名称的字符串。
+    ///</returns>
     property Address: string read get_Address write set_Address;
+    ///<summary>
+    ///  获取或设置最大可为远程计算机的连接数。
+    ///</summary>
+    ///<returns>
+    ///  一个整数，指定最大连接数。
+    ///</returns>
     property MaxConnection: Int32 read get_MaxConnection write set_MaxConnection;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -944,10 +1555,18 @@ type
   ['{7878EFB8-45F9-58FA-AC02-FB4F00CA483A}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.FtpCachePolicyElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNFtpCachePolicyElement;
 
   end;
 
+  ///<summary>
+  ///  表示网络资源的默认 FTP 缓存策略。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.FtpCachePolicyElement')]
   DNFtpCachePolicyElement = interface(DNObject)
   ['{9FA957E7-E3F1-3462-8A47-036698C5FD68}']
@@ -974,6 +1593,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 FTP 缓存在本地计算机的行为。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Cache.RequestCacheLevel" />
+    ///  值，该值指定缓存行为。
+    ///</returns>
     property PolicyLevel: DNRequestCacheLevel read get_PolicyLevel write set_PolicyLevel;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -991,10 +1617,18 @@ type
   ['{70CB3E7D-0455-53F7-8D4C-E286F0B202C6}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.HttpCachePolicyElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNHttpCachePolicyElement;
 
   end;
 
+  ///<summary>
+  ///  表示网络资源的默认 HTTP 缓存策略。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.HttpCachePolicyElement')]
   DNHttpCachePolicyElement = interface(DNObject)
   ['{9DAD3938-EB30-3044-9E10-04BE6F9DE894}']
@@ -1027,9 +1661,37 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置从缓存返回资源所允许的最大生存期。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  值，该值指定的最长期限缓存配置文件中指定的资源。
+    ///</returns>
     property MaximumAge: DDN.mscorlib.DNTimeSpan read get_MaximumAge write set_MaximumAge;
+    ///<summary>
+    ///  获取或设置从缓存返回资源所允许的最大过期值。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  设置为配置文件中指定的最大过期值的值。
+    ///</returns>
     property MaximumStale: DDN.mscorlib.DNTimeSpan read get_MaximumStale write set_MaximumStale;
+    ///<summary>
+    ///  获取或设置从缓存返回资源所允许的最小新鲜值。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  值，该值指定配置文件中指定的最小新鲜。
+    ///</returns>
     property MinimumFresh: DDN.mscorlib.DNTimeSpan read get_MinimumFresh write set_MinimumFresh;
+    ///<summary>
+    ///  获取或设置 HTTP 缓存在本地计算机的行为。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Cache.HttpRequestCacheLevel" />
+    ///  值，该值指定缓存行为。
+    ///</returns>
     property PolicyLevel: DNHttpRequestCacheLevel read get_PolicyLevel write set_PolicyLevel;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -1047,10 +1709,18 @@ type
   ['{C2EB79F8-704D-512E-AADC-1F815DF21390}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.HttpListenerElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNHttpListenerElement;
 
   end;
 
+  ///<summary>
+  ///  表示配置文件中的 HttpListener 元素。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.HttpListenerElement')]
   DNHttpListenerElement = interface(DNObject)
   ['{EDFF484B-6E6E-3625-964B-912A4AD7EFE7}']
@@ -1077,7 +1747,25 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个值，该值指示如果 <see cref="T:System.Net.HttpListener" />
+    ///  使用原始的未转义的 URI，而不是经过转换的 URI。
+    ///</summary>
+    ///<returns>
+    ///  一个布尔值，该值指示如果 <see cref="T:System.Net.HttpListener" />
+    ///  使用原始的未转义的 URI，而不是经过转换的 URI。
+    ///</returns>
     property UnescapeRequestUrl: Boolean read get_UnescapeRequestUrl;
+    ///<summary>
+    ///  获取用于超时元素的默认值 <see cref="T:System.Net.HttpListener" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.Net.Configuration.HttpListenerTimeoutsElement" />
+    ///  。
+    ///  用于的超时元素 <see cref="T:System.Net.HttpListener" />
+    ///  对象。
+    ///</returns>
     property Timeouts: DNHttpListenerTimeoutsElement read get_Timeouts;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -1095,10 +1783,19 @@ type
   ['{79AB40F8-94B6-5700-89E8-FC84ABD1066B}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.HttpListenerTimeoutsElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNHttpListenerTimeoutsElement;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Net.HttpListener" />
+  ///  配置文件中的超时元素。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.HttpListenerTimeoutsElement')]
   DNHttpListenerTimeoutsElement = interface(DNObject)
   ['{564B8B86-7104-3DA2-BB0A-4096123195D1}']
@@ -1129,11 +1826,65 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取有关请求实体正文到达允许的时间，以秒为单位。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.TimeSpan" />
+    ///  。
+    ///  以秒为单位，允许请求实体主体，若要到达的时间。
+    ///</returns>
     property EntityBody: DDN.mscorlib.DNTimeSpan read get_EntityBody;
+    ///<summary>
+    ///  获取的时间，以秒为单位，允许 <see cref="T:System.Net.HttpListener" />
+    ///  电量保持活动状态的连接上的实体正文。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.TimeSpan" />
+    ///  。
+    ///  允许的时间，以秒为单位， <see cref="T:System.Net.HttpListener" />
+    ///  电量保持活动状态的连接上的实体正文。
+    ///</returns>
     property DrainEntityBody: DDN.mscorlib.DNTimeSpan read get_DrainEntityBody;
+    ///<summary>
+    ///  获取允许请求在之前的请求队列中保留的时间，以秒为单位， <see cref="T:System.Net.HttpListener" />
+    ///  提取它。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.TimeSpan" />
+    ///  。
+    ///  请求在之前的请求队列中保留的时间，以秒为单位，允许 <see cref="T:System.Net.HttpListener" />
+    ///  提取它。
+    ///</returns>
     property RequestQueue: DDN.mscorlib.DNTimeSpan read get_RequestQueue;
+    ///<summary>
+    ///  获取的时间，以秒为单位，允许的空闲连接。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.TimeSpan" />
+    ///  。
+    ///  以秒为单位，允许的空闲连接时间。
+    ///</returns>
     property IdleConnection: DDN.mscorlib.DNTimeSpan read get_IdleConnection;
+    ///<summary>
+    ///  获取的时间，以秒为单位，允许 <see cref="T:System.Net.HttpListener" />
+    ///  来分析请求标头。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.TimeSpan" />
+    ///  。
+    ///  允许的时间，以秒为单位， <see cref="T:System.Net.HttpListener" />
+    ///  来分析请求标头。
+    ///</returns>
     property HeaderWait: DDN.mscorlib.DNTimeSpan read get_HeaderWait;
+    ///<summary>
+    ///  获取响应中字节每秒的最小发送速率。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.Int64" />
+    ///  。
+    ///  最小发送速率，单位为字节数 / 秒，响应。
+    ///</returns>
     property MinSendBytesPerSecond: Int64 read get_MinSendBytesPerSecond;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -1151,10 +1902,18 @@ type
   ['{0A4F9C3B-4CAE-56A8-8EF6-C113D3D18666}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.HttpWebRequestElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNHttpWebRequestElement;
 
   end;
 
+  ///<summary>
+  ///  表示响应标头的最大长度。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.HttpWebRequestElement')]
   DNHttpWebRequestElement = interface(DNObject)
   ['{B76D34F2-2C99-350F-AABF-8B0E1D1496CA}']
@@ -1187,9 +1946,40 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置响应未经授权的错误代码的上载的最大长度。
+    ///</summary>
+    ///<returns>
+    ///  包含响应未经授权的错误代码的上载最大长度 （以 1024 字节为单位的倍数） 的 32 位有符号的整数。
+    ///  值为-1 指示没有大小限制将施加上载。
+    ///  设置 <see cref="P:System.Net.Configuration.HttpWebRequestElement.MaximumUnauthorizedUploadLength" />
+    ///  属性设置为任何其他值就只会发送请求正文，如果小于指定的字节数。
+    ///  因此如果值为 1 将指示仅发送了请求正文，如果小于 1024 字节。
+    ///  此属性的默认值为-1。
+    ///</returns>
     property MaximumUnauthorizedUploadLength: Int32 read get_MaximumUnauthorizedUploadLength write set_MaximumUnauthorizedUploadLength;
+    ///<summary>
+    ///  获取或设置错误响应的最大允许的长度。
+    ///</summary>
+    ///<returns>
+    ///  32 位有符号整数，它包含错误响应的最大长度以千字节为单位 （1024 字节为单位）。
+    ///  默认值为 64。
+    ///</returns>
     property MaximumErrorResponseLength: Int32 read get_MaximumErrorResponseLength write set_MaximumErrorResponseLength;
+    ///<summary>
+    ///  获取或设置响应标头允许的最大长度。
+    ///</summary>
+    ///<returns>
+    ///  32 位有符号整数，它包含响应标头的最大长度以千字节为单位 （1024 字节）。
+    ///  默认值为 64。
+    ///</returns>
     property MaximumResponseHeadersLength: Int32 read get_MaximumResponseHeadersLength write set_MaximumResponseHeadersLength;
+    ///<summary>
+    ///  将此属性设置将忽略在 HTTP 分析过程中发生的验证错误。
+    ///</summary>
+    ///<returns>
+    ///  一个布尔值，该值指示是否已设置此属性。
+    ///</returns>
     property UseUnsafeHeaderParsing: Boolean read get_UseUnsafeHeaderParsing write set_UseUnsafeHeaderParsing;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -1207,10 +1997,18 @@ type
   ['{2FBCDBF5-247A-5C52-911B-76ABF86CFB95}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.Ipv6Element" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNIpv6Element;
 
   end;
 
+  ///<summary>
+  ///  确定是否在本地计算机上启用 Internet 协议版本 6。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.Ipv6Element')]
   DNIpv6Element = interface(DNObject)
   ['{55E84D89-EAFF-3582-BFFC-44655AF15BA9}']
@@ -1237,6 +2035,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置一个布尔值，该值指示是否在本地计算机上启用 Internet 协议版本 6。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果启用了 IPv6;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property Enabled: Boolean read get_Enabled write set_Enabled;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -1254,10 +2059,19 @@ type
   ['{F6881870-A63E-5018-A2F3-921228DE149A}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.ModuleElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNModuleElement;
 
   end;
 
+  ///<summary>
+  ///  表示一个自定义的类型信息 <see cref="T:System.Net.IWebProxy" />
+  ///  模块。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.ModuleElement')]
   DNModuleElement = interface(DNObject)
   ['{CE566ABE-EC05-39DC-A4DB-F0437BBF7B97}']
@@ -1284,6 +2098,14 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置当前实例的类型和程序集信息。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，标识的类型实现 <see cref="T:System.Net.IWebProxy" />
+    ///  接口或 <see langword="null" />
+    ///  如果不指定任何值。
+    ///</returns>
     property &Type: string read get_Type write set_Type;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -1301,10 +2123,19 @@ type
   ['{D4EF93C9-5CE3-53A4-874E-77DE759240CC}']
   { constructors } 
 
+    ///<summary>
+    ///  实例化 <see cref="T:System.Net.Configuration.PerformanceCountersElement" />
+    ///  对象。
+    ///</summary>
     {class} function init: DNPerformanceCountersElement;
 
   end;
 
+  ///<summary>
+  ///  表示 <see langword="System.Net" />
+  ///  配置文件中的性能计数器元素，该元素确定是否启用网络性能计数器。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.PerformanceCountersElement')]
   DNPerformanceCountersElement = interface(DNObject)
   ['{6F07726D-E3BB-3941-B17E-F2B18764DD48}']
@@ -1331,6 +2162,14 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置是否启用性能计数器。
+    ///</summary>
+    ///<returns>
+    ///  如果启用性能计数器，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property Enabled: Boolean read get_Enabled write set_Enabled;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -1348,10 +2187,18 @@ type
   ['{B703D76A-F1FF-5BB2-A74C-765C4D608738}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.ProxyElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNProxyElement;
 
   end;
 
+  ///<summary>
+  ///  标识 Web 代理服务器的配置设置。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.ProxyElement')]
   DNProxyElement = interface(DNObject)
   ['{60CD2A81-F59A-3913-9ABE-9F2C9552AB7E}']
@@ -1386,10 +2233,52 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Net.Configuration.ProxyElement.AutoDetectValues" />
+    ///  值，该值控制是否自动检测 Web 代理。
+    ///</summary>
+    ///<returns><see cref="F:System.Net.Configuration.ProxyElement.AutoDetectValues.True" />
+    ///  如果 <see cref="T:System.Net.WebProxy" />
+    ///  自动检测到; <see cref="F:System.Net.Configuration.ProxyElement.AutoDetectValues.False" />
+    ///  如果 <see cref="T:System.Net.WebProxy" />
+    ///  未自动检测; 或 <see cref="F:System.Net.Configuration.ProxyElement.AutoDetectValues.Unspecified" />
+    ///  。
+    ///</returns>
     property AutoDetect: DNProxyElement_AutoDetectValues read get_AutoDetect write set_AutoDetect;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Uri" />
+    ///  值，该值指定自动代理检测脚本的位置。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Uri" />
+    ///  指定自动代理检测脚本的位置。
+    ///</returns>
     property ScriptLocation: DNUri read get_ScriptLocation write set_ScriptLocation;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否通过使用 Web 代理服务器来检索本地资源。
+    ///</summary>
+    ///<returns><see cref="T:System.Net.Configuration.ProxyElement.BypassOnLocalValues" />
+    ///  。
+    ///  Avalue，该值指示是否通过使用 Web 代理服务器来检索本地资源。
+    ///</returns>
     property BypassOnLocal: DNProxyElement_BypassOnLocalValues read get_BypassOnLocal write set_BypassOnLocal;
+    ///<summary>
+    ///  获取或设置用于标识要使用的 Web 代理服务器的 URI。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  包含一个 URI。
+    ///</returns>
     property ProxyAddress: DNUri read get_ProxyAddress write set_ProxyAddress;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Boolean" />
+    ///  值，该值控制是否将使用的 Internet Explorer Web 代理服务器设置。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 Internet 资源管理器 LAN 设置用于检测和配置默认 <see cref="T:System.Net.WebProxy" />
+    ///  用于请求; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property UseSystemDefault: DNProxyElement_UseSystemDefaultValues read get_UseSystemDefault write set_UseSystemDefault;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -1407,10 +2296,18 @@ type
   ['{AB217019-D966-513E-9104-95621A941A0E}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.ServicePointManagerElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNServicePointManagerElement;
 
   end;
 
+  ///<summary>
+  ///  表示用来创建连接到远程计算机的默认设置。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.ServicePointManagerElement')]
   DNServicePointManagerElement = interface(DNObject)
   ['{911E4C94-0A48-3E3D-A142-0D41BCAEA9AF}']
@@ -1449,12 +2346,70 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置一个布尔值，控制检查主机名信息在 X509 证书。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  若要指定主机名称检查;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property CheckCertificateName: Boolean read get_CheckCertificateName write set_CheckCertificateName;
+    ///<summary>
+    ///  获取或设置一个布尔值，该值指示是否根据证书颁发机构的吊销列表检查证书。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果检查证书吊销列表;否则为 <see langword="false" />
+    ///  。默认值是 <see langword="false" />
+    ///  。
+    ///</returns>
     property CheckCertificateRevocationList: Boolean read get_CheckCertificateRevocationList write set_CheckCertificateRevocationList;
+    ///<summary>
+    ///  获取或设置刷新地址信息的时间量。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  ，它指定当使用 DNS 解析地址。
+    ///</returns>
     property DnsRefreshTimeout: Int32 read get_DnsRefreshTimeout write set_DnsRefreshTimeout;
+    ///<summary>
+    ///  获取或设置一个布尔值，用于控制连接到同一服务器上使用不同的 IP 地址。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  若要启用 DNS 轮循机制行为;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property EnableDnsRoundRobin: Boolean read get_EnableDnsRoundRobin write set_EnableDnsRoundRobin;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Net.Security.EncryptionPolicy" />
+    ///  使用。
+    ///</summary>
+    ///<returns>
+    ///  要用于加密策略 <see cref="T:System.Net.ServicePointManager" />
+    ///  实例。
+    ///</returns>
     property EncryptionPolicy: DNEncryptionPolicy read get_EncryptionPolicy write set_EncryptionPolicy;
+    ///<summary>
+    ///  获取或设置一个布尔值，确定是否 100-使用 100-continue 行为。
+    ///</summary>
+    ///<returns>
+    ///  如果 <see langword="POST" />
+    ///  请求需要 100-Continue 响应，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="true" />
+    ///  。
+    ///</returns>
     property Expect100Continue: Boolean read get_Expect100Continue write set_Expect100Continue;
+    ///<summary>
+    ///  获取或设置一个布尔值，确定是否使用 Nagle 算法。
+    ///</summary>
+    ///<returns>
+    ///  如果使用 Nagle 算法，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="true" />
+    ///  。
+    ///</returns>
     property UseNagleAlgorithm: Boolean read get_UseNagleAlgorithm write set_UseNagleAlgorithm;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -1472,10 +2427,18 @@ type
   ['{0807B926-2135-57BB-A642-8B7364942BFC}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.SmtpNetworkElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSmtpNetworkElement;
 
   end;
 
+  ///<summary>
+  ///  表示在 SMTP 配置文件中的网络元素。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.SmtpNetworkElement')]
   DNSmtpNetworkElement = interface(DNObject)
   ['{59BC81E4-67F2-34DC-BC83-B1A3D657C1A7}']
@@ -1516,13 +2479,68 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  确定使用默认用户凭据来访问 SMTP 服务器。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  指示该默认用户凭据将用于访问 SMTP 服务器;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property DefaultCredentials: Boolean read get_DefaultCredentials write set_DefaultCredentials;
+    ///<summary>
+    ///  获取或设置 SMTP 服务器的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个表示要连接到 SMTP 服务器的名称的字符串。
+    ///</returns>
     property Host: string read get_Host write set_Host;
+    ///<summary>
+    ///  获取或设置服务提供程序名称 (SPN) 时要使用的身份验证扩展的保护用于连接到 SMTP 邮件服务器。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，表示要用于身份验证时使用扩展的保护连接到 SMTP 邮件服务器的 SPN。
+    ///</returns>
     property TargetName: string read get_TargetName write set_TargetName;
+    ///<summary>
+    ///  获取或设置初始 SMTP 协议请求中用于连接到 SMTP 邮件服务器的客户端域名。
+    ///</summary>
+    ///<returns>
+    ///  一个表示初始 SMTP 协议请求中用于连接到 SMTP 邮件服务器的客户端域名的字符串。
+    ///</returns>
     property ClientDomain: string read get_ClientDomain write set_ClientDomain;
+    ///<summary>
+    ///  获取或设置要用于连接到 SMTP 邮件服务器的用户密码。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，表示要用于连接到 SMTP 邮件服务器的密码。
+    ///</returns>
     property Password: string read get_Password write set_Password;
+    ///<summary>
+    ///  获取或设置 SMTP 客户端用于连接到 SMTP 邮件服务器的端口。
+    ///  默认值为 25。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，表示要连接到 SMTP 邮件服务器的端口。
+    ///</returns>
     property Port: Int32 read get_Port write set_Port;
+    ///<summary>
+    ///  获取或设置要连接到 SMTP 邮件服务器的用户名。
+    ///</summary>
+    ///<returns>
+    ///  表示要连接到 SMTP 邮件服务器的用户名的字符串。
+    ///</returns>
     property UserName: string read get_UserName write set_UserName;
+    ///<summary>
+    ///  获取或设置是否使用 SSL 来访问 SMTP 邮件服务器。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  指示将使用 SSL 来访问 SMTP 邮件服务器;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property EnableSsl: Boolean read get_EnableSsl write set_EnableSsl;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -1540,10 +2558,17 @@ type
   ['{B55E1ECF-529F-54F9-87D2-F68EC5789CFC}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.SmtpSpecifiedPickupDirectoryElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSmtpSpecifiedPickupDirectoryElement;
 
   end;
 
+  ///<summary>
+  ///  表示 SMTP 拾取目录配置元素。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.SmtpSpecifiedPickupDirectoryElement')]
   DNSmtpSpecifiedPickupDirectoryElement = interface(DNObject)
   ['{C667E362-A200-362F-8FD6-E313B9693277}']
@@ -1570,6 +2595,12 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置应用程序在其中保存邮件以供 SMTP 服务器处理的文件夹。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，指定为电子邮件的拾取目录。
+    ///</returns>
     property PickupDirectoryLocation: string read get_PickupDirectoryLocation write set_PickupDirectoryLocation;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -1587,10 +2618,19 @@ type
   ['{7FD51C9A-2691-5602-92F8-EB41959DC853}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.SocketElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSocketElement;
 
   end;
 
+  ///<summary>
+  ///  表示用于配置信息 <see cref="T:System.Net.Sockets.Socket" />
+  ///  对象。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.SocketElement')]
   DNSocketElement = interface(DNObject)
   ['{ABBF8192-167B-3ADD-B48D-5367283B76FE}']
@@ -1621,8 +2661,30 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置一个布尔值，指定在接受连接时是否使用完成端口。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  若要使用自动补全端口;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property AlwaysUseCompletionPortsForAccept: Boolean read get_AlwaysUseCompletionPortsForAccept write set_AlwaysUseCompletionPortsForAccept;
+    ///<summary>
+    ///  获取或设置一个布尔值，指定在建立连接时是否使用完成端口。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  若要使用自动补全端口;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property AlwaysUseCompletionPortsForConnect: Boolean read get_AlwaysUseCompletionPortsForConnect write set_AlwaysUseCompletionPortsForConnect;
+    ///<summary>
+    ///  获取或设置一个值，指定的默认 <see cref="T:System.Net.Sockets.IPProtectionLevel" />
+    ///  用于套接字。
+    ///</summary>
+    ///<returns>
+    ///  值 <see cref="T:System.Net.Sockets.IPProtectionLevel" />
+    ///  的当前实例。
+    ///</returns>
     property IPProtectionLevel: DNIPProtectionLevel read get_IPProtectionLevel write set_IPProtectionLevel;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -1640,10 +2702,18 @@ type
   ['{BF22DBF0-B21C-51B1-890E-B007D10B9859}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.WebProxyScriptElement" />
+    ///  类的实例。
+    ///</summary>
     {class} function init: DNWebProxyScriptElement;
 
   end;
 
+  ///<summary>
+  ///  表示用于配置 Web 代理脚本的信息。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.WebProxyScriptElement')]
   DNWebProxyScriptElement = interface(DNObject)
   ['{4B0C914B-BA8B-34EE-9F99-C7AD97E4D65C}']
@@ -1673,6 +2743,14 @@ type
   { propertys } 
 
     property AutoConfigUrlRetryInterval: Int32 read get_AutoConfigUrlRetryInterval write set_AutoConfigUrlRetryInterval;
+    ///<summary>
+    ///  获取或设置 Web 代理使用格式小时︰ 分钟︰ 秒的脚本下载超时。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  对象，其中包含的超时值。
+    ///  默认的下载超时为一分钟。
+    ///</returns>
     property DownloadTimeout: DDN.mscorlib.DNTimeSpan read get_DownloadTimeout write set_DownloadTimeout;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -1690,12 +2768,44 @@ type
   ['{BDB1519E-A21B-5BE9-83CD-6CEC2FFBFBDB}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.WebRequestModuleElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNWebRequestModuleElement; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Net.Configuration.WebRequestModuleElement" />
+    ///  类使用指定的 URI 前缀和类型信息。
+    ///</summary>
+    ///  <param name="prefix">
+    ///  包含的 URI 前缀的字符串。
+    ///</param>
+    ///  <param name="type">
+    ///  用于处理创建的类使用的资源的请求包含的类型和程序集信息的字符串 <paramref name="prefix" />
+    ///  URI 前缀。
+    ///  有关详细信息，请参阅“备注”部分。
+    ///</param>
     {class} function init(prefix: string; &type: string): DNWebRequestModuleElement; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Net.Configuration.WebRequestModuleElement" />
+    ///  类使用指定的 URI 前缀和类型标识符。
+    ///</summary>
+    ///  <param name="prefix">
+    ///  包含的 URI 前缀的字符串。
+    ///</param>
+    ///  <param name="type">
+    ///  一个 <see cref="T:System.Type" />
+    ///  ，它标识处理对资源的创建请求的类使用 <paramref name="prefix" />
+    ///  URI 前缀。
+    ///</param>
     {class} function init(prefix: string; &type: DDN.mscorlib.DNType): DNWebRequestModuleElement; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 URI 前缀和关联的类用于处理创建 Web 请求的前缀。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.WebRequestModuleElement')]
   DNWebRequestModuleElement = interface(DNObject)
   ['{4640AA20-9DD7-3EE1-A78A-8E1EBED6AFFF}']
@@ -1724,7 +2834,20 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置当前的 Web 请求模块的 URI 前缀。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，包含的 URI 前缀。
+    ///</returns>
     property Prefix: string read get_Prefix write set_Prefix;
+    ///<summary>
+    ///  获取或设置创建 Web 请求的类。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Type" />
+    ///  标识 Web 请求模块的实例。
+    ///</returns>
     property &Type: DDN.mscorlib.DNType read get_Type write set_Type;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -1742,10 +2865,17 @@ type
   ['{B17EA15C-E192-5701-AB47-8DF36D0F6409}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.WebUtilityElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNWebUtilityElement;
 
   end;
 
+  ///<summary>
+  ///  表示配置文件中的 WebUtility 元素。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.WebUtilityElement')]
   DNWebUtilityElement = interface(DNObject)
   ['{304AEA87-1B21-3EC5-A477-7CDF6639CA49}']
@@ -1774,7 +2904,25 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取默认 Unicode 解码一致性行为用于 <see cref="T:System.Net.WebUtility" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.Net.Configuration.UnicodeDecodingConformance" />
+    ///  。
+    ///  默认的 Unicode 解码行为。
+    ///</returns>
     property UnicodeDecodingConformance: DNUnicodeDecodingConformance read get_UnicodeDecodingConformance write set_UnicodeDecodingConformance;
+    ///<summary>
+    ///  获取默认 Unicode 编码一致性行为用于 <see cref="T:System.Net.WebUtility" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.Net.Configuration.UnicodeEncodingConformance" />
+    ///  。
+    ///  默认的 Unicode 编码行为。
+    ///</returns>
     property UnicodeEncodingConformance: DNUnicodeEncodingConformance read get_UnicodeEncodingConformance write set_UnicodeEncodingConformance;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -1839,10 +2987,18 @@ type
   ['{287FD533-204E-5E25-A4B6-5DE60C3E1D98}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.MailSettingsSectionGroup" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNMailSettingsSectionGroup;
 
   end;
 
+  ///<summary>
+  ///  初始化 <see cref="T:System.Net.Configuration.MailSettingsSectionGroup" />
+  ///  类的新实例。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.MailSettingsSectionGroup')]
   DNMailSettingsSectionGroup = interface(DNObject)
   ['{1B183768-EEB4-3060-8BFE-E0FFDBFD8FE9}']
@@ -1869,6 +3025,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取本地计算机的 SMTP 设置。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.SmtpSection" />
+    ///  对象，其中包含本地计算机的配置信息。
+    ///</returns>
     property Smtp: DNSmtpSection read get_Smtp;
     property IsDeclared: Boolean read get_IsDeclared;
     property IsDeclarationRequired: Boolean read get_IsDeclarationRequired;
@@ -1886,14 +3049,36 @@ type
   ['{FBB9DBF5-CA3A-5041-A444-3941EADFFD2E}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Net.Configuration.NetSectionGroup" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNNetSectionGroup;
 
   { static methods } 
 
+    ///<summary>
+    ///  从指定的配置文件中获取 <see langword="System.Net" />
+    ///  配置节组。
+    ///</summary>
+    ///  <param name="config">
+    ///  一个表示配置文件的 <see cref="T:System.Configuration.Configuration" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.NetSectionGroup" />
+    ///  表示 <see langword="System.Net" />
+    ///  中的设置 <paramref name="config" />
+    ///  。
+    ///</returns>
     {class} function GetSectionGroup(config: DDN.System.Configuration.DNConfiguration): DNNetSectionGroup;
 
   end;
 
+  ///<summary>
+  ///  获取网络的命名空间的节组信息。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Net.Configuration.NetSectionGroup')]
   DNNetSectionGroup = interface(DNObject)
   ['{494C85DF-5186-3ADB-986B-0C722FF3C77E}']
@@ -1926,12 +3111,62 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取包含为本地计算机注册的身份验证模块的配置节。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.AuthenticationModulesSection" />
+    ///  对象。
+    ///</returns>
     property AuthenticationModules: DNAuthenticationModulesSection read get_AuthenticationModules;
+    ///<summary>
+    ///  获取包含在本地计算机的连接管理设置的配置节。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.ConnectionManagementSection" />
+    ///  对象。
+    ///</returns>
     property ConnectionManagement: DNConnectionManagementSection read get_ConnectionManagement;
+    ///<summary>
+    ///  获取包含在本地计算机的默认 Web 代理服务器设置的配置节。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.DefaultProxySection" />
+    ///  对象。
+    ///</returns>
     property DefaultProxy: DNDefaultProxySection read get_DefaultProxy;
+    ///<summary>
+    ///  获取包含 SMTP 客户端在本地计算机上的电子邮件设置的配置节。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.MailSettingsSectionGroup" />
+    ///  对象。
+    ///</returns>
     property MailSettings: DNMailSettingsSectionGroup read get_MailSettings;
+    ///<summary>
+    ///  获取包含在本地计算机的缓存配置设置的配置节。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.RequestCachingSection" />
+    ///  对象。
+    ///</returns>
     property RequestCaching: DNRequestCachingSection read get_RequestCaching;
+    ///<summary>
+    ///  获取包含在本地计算机的网络设置的配置节。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.SettingsSection" />
+    ///  对象。
+    ///</returns>
     property Settings: DNSettingsSection read get_Settings;
+    ///<summary>
+    ///  获取包含注册为与使用的模块的配置节 <see cref="T:System.Net.WebRequest" />
+    ///  类。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Net.Configuration.WebRequestModulesSection" />
+    ///  对象。
+    ///</returns>
     property WebRequestModules: DNWebRequestModulesSection read get_WebRequestModules;
     property IsDeclared: Boolean read get_IsDeclared;
     property IsDeclarationRequired: Boolean read get_IsDeclarationRequired;

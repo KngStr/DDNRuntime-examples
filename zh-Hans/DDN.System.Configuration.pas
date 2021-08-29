@@ -31,127 +31,298 @@ type
 { enums }
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  指定可以设置或重写中包含的属性的配置文件层次结构中的位置 <see cref="T:System.Configuration.ConfigurationSection" />
+  ///  对象。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationAllowDefinition')]
   DNConfigurationAllowDefinition = type Integer;
   DNConfigurationAllowDefinitionHelper = record helper for DNConfigurationAllowDefinition
   public const
+    ///<summary><see cref="T:System.Configuration.ConfigurationSection" />
+    ///  可以只能在 Machine.config 文件中定义。
+    ///</summary>
     MachineOnly = 0;
+    ///<summary><see cref="T:System.Configuration.ConfigurationSection" />
+    ///  可以在 Machine.config 文件或出现在与 Machine.config，位于同一目录中但不是在应用程序 Web.config 文件中的计算机级别 Web.config 文件中定义。
+    ///</summary>
     MachineToWebRoot = 100;
+    ///<summary><see cref="T:System.Configuration.ConfigurationSection" />
+    ///  可以定义在 Machine.config 文件与 Machine.config，位于同一目录中找到计算机级别 Web.config 文件或在虚拟目录的根目录，但不是在的虚拟根目录的子目录中找到的顶级应用程序 Web.config 文件。
+    ///</summary>
     MachineToApplication = 200;
+    ///<summary><see cref="T:System.Configuration.ConfigurationSection" />
+    ///  可以在任何位置定义。
+    ///</summary>
     Everywhere = 300;
   end;
 
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  指定可以设置或重写中包含的属性的配置文件层次结构中的位置 <see cref="T:System.Configuration.ConfigurationSection" />
+  ///  对象。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationAllowExeDefinition')]
   DNConfigurationAllowExeDefinition = type Integer;
   DNConfigurationAllowExeDefinitionHelper = record helper for DNConfigurationAllowExeDefinition
   public const
+    ///<summary><see cref="T:System.Configuration.ConfigurationSection" />
+    ///  可以只能在 Machine.config 文件中定义。
+    ///</summary>
     MachineOnly = 0;
+    ///<summary><see cref="T:System.Configuration.ConfigurationSection" />
+    ///  可以在 Machine.config 文件中或在客户端应用程序目录的 Exe.config 文件中定义。
+    ///  这是默认值。
+    ///</summary>
     MachineToApplication = 100;
+    ///<summary><see cref="T:System.Configuration.ConfigurationSection" />
+    ///  可以在 Machine.config 文件中，在客户端应用程序目录中的 Exe.config 文件中或在漫游的用户目录中的 User.config 文件中定义。
+    ///</summary>
     MachineToRoamingUser = 200;
+    ///<summary><see cref="T:System.Configuration.ConfigurationSection" />
+    ///  可以在 Machine.config 文件中，在客户端应用程序目录中，漫游用户目录中，在 User.config 文件中或本地用户目录中的 User.config 文件中的 Exe.config 文件中定义。
+    ///</summary>
     MachineToLocalUser = 300;
   end;
 
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  指定的类型 <see cref="T:System.Configuration.ConfigurationElementCollectionType" />
+  ///  对象。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationElementCollectionType')]
   DNConfigurationElementCollectionType = type Integer;
   DNConfigurationElementCollectionTypeHelper = record helper for DNConfigurationElementCollectionType
   public const
+    ///<summary>
+    ///  此类型的集合包含将应用于其中指定了它们的级别和所有子级别的元素。
+    ///  某一子级别不能修改这种类型的父元素指定的属性。
+    ///</summary>
     BasicMap = 0;
+    ///<summary>
+    ///  默认类型 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///  此类型的集合包含可以合并配置文件的层次结构中的元素。
+    ///  在这种层次结构中，任何特定级别 <see langword="add" />
+    ///  , ，<see langword="remove" />
+    ///  , ，和 <see langword="clear" />
+    ///  指令用于修改任何继承的属性，以及指定新的。
+    ///</summary>
     AddRemoveClearMap = 1;
+    ///<summary>
+    ///  与相同 <see cref="F:System.Configuration.ConfigurationElementCollectionType.BasicMap" />
+    ///  , 以外，此类型将导致 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  对象，其内容进行排序，以便最后列出继承的元素。
+    ///</summary>
     BasicMapAlternate = 2;
+    ///<summary>
+    ///  与相同 <see cref="F:System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMap" />
+    ///  , 以外，此类型将导致 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  对象，其内容进行排序，以便最后列出继承的元素。
+    ///</summary>
     AddRemoveClearMapAlternate = 3;
   end;
 
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  指定要应用于属性的选项。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationPropertyOptions')]
   DNConfigurationPropertyOptions = type Integer;
   DNConfigurationPropertyOptionsHelper = record helper for DNConfigurationPropertyOptions
   public const
+    ///<summary>
+    ///  指示没有选项适用于属性。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  指示该属性是一个默认集合。
+    ///</summary>
     IsDefaultCollection = 1;
+    ///<summary>
+    ///  指示该属性是必需的。
+    ///</summary>
     IsRequired = 2;
+    ///<summary>
+    ///  指示该属性是集合键。
+    ///</summary>
     IsKey = 4;
+    ///<summary>
+    ///  指示配置属性的类型名称为早期版本的.NET framework 序列化时是否需要对其进行转换。
+    ///</summary>
     IsTypeStringTransformationRequired = 8;
+    ///<summary>
+    ///  指示配置属性的程序集名称为早期版本的.NET framework 序列化时是否需要对其进行转换。
+    ///</summary>
     IsAssemblyStringTransformationRequired = 16;
+    ///<summary>
+    ///  指示是否应序列化时确定的配置属性是否应序列化为 XML 查询配置属性的父配置节。
+    ///</summary>
     IsVersionCheckRequired = 32;
   end;
 
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  确定哪些属性写出到配置文件。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationSaveMode')]
   DNConfigurationSaveMode = type Integer;
   DNConfigurationSaveModeHelper = record helper for DNConfigurationSaveMode
   public const
+    ///<summary>
+    ///  仅将修改的属性，以写入配置文件中，即使该值是继承的值相同。
+    ///</summary>
     Modified = 0;
+    ///<summary>
+    ///  将导致不同于继承的值写入到配置文件的属性。
+    ///</summary>
     Minimal = 1;
+    ///<summary>
+    ///  将导致所有属性都写入到配置文件。
+    ///  这是主要用于创建配置文件的信息或将配置值从一台计算机移动到另一个非常有用。
+    ///</summary>
     Full = 2;
   end;
 
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  使用指定的配置文件是由配置对象。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationUserLevel')]
   DNConfigurationUserLevel = type Integer;
   DNConfigurationUserLevelHelper = record helper for DNConfigurationUserLevel
   public const
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.Configuration" />
+    ///  指示应用于所有用户。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  获取漫游 <see cref="T:System.Configuration.Configuration" />
+    ///  指示应用于当前用户。
+    ///</summary>
     PerUserRoaming = 10;
+    ///<summary>
+    ///  获取本地 <see cref="T:System.Configuration.Configuration" />
+    ///  指示应用于当前用户。
+    ///</summary>
     PerUserRoamingAndLocal = 20;
   end;
 
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  指定配置元素的配置元素的覆盖行为子目录中。
+  ///</summary>
   [DNTypeName('System.Configuration.OverrideMode')]
   DNOverrideMode = type Integer;
   DNOverrideModeHelper = record helper for DNOverrideMode
   public const
+    ///<summary>
+    ///  如果显式允许由当前的配置元素或组的父元素的子目录中的配置设置将重写元素或组的配置设置。
+    ///  使用指定的权限重写 <see langword="OverrideMode" />
+    ///  属性。
+    ///</summary>
     Inherit = 0;
+    ///<summary>
+    ///  子目录中的配置设置可以重写元素或组的配置设置。
+    ///</summary>
     Allow = 1;
+    ///<summary>
+    ///  子目录中的配置设置不能重写元素或组的配置设置。
+    ///</summary>
     Deny = 2;
   end;
 
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  指定生成配置属性值的位置配置层次结构中的级别。
+  ///</summary>
   [DNTypeName('System.Configuration.PropertyValueOrigin')]
   DNPropertyValueOrigin = type Integer;
   DNPropertyValueOriginHelper = record helper for DNPropertyValueOrigin
   public const
+    ///<summary>
+    ///  配置属性值来源于 <see cref="P:System.Configuration.ConfigurationProperty.DefaultValue" />
+    ///  属性。
+    ///</summary>
     Default_ = 0;
+    ///<summary>
+    ///  配置属性值继承自父级别在配置中。
+    ///</summary>
     Inherited_ = 1;
+    ///<summary>
+    ///  配置属性值是在层次结构的当前级别定义的。
+    ///</summary>
     SetHere = 2;
   end;
 
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  提供了值，以指示哪些服务应将提供对应用程序设置。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsManageability')]
   DNSettingsManageability = type Integer;
   DNSettingsManageabilityHelper = record helper for DNSettingsManageability
   public const
+    ///<summary>
+    ///  使应用程序设置存储在漫游用户配置文件中。
+    ///  有关漫游用户配置文件的详细信息，请参阅 Isolated Storage and Roaming。
+    ///</summary>
     Roaming = 0;
   end;
 
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  确定用于存储应用程序设置的序列化方案。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsSerializeAs')]
   DNSettingsSerializeAs = type Integer;
   DNSettingsSerializeAsHelper = record helper for DNSettingsSerializeAs
   public const
+    ///<summary>
+    ///  设置属性序列化为纯文本。
+    ///</summary>
     String_ = 0;
+    ///<summary>
+    ///  设置属性序列化为 XML 使用 XML 序列化。
+    ///</summary>
     Xml = 1;
+    ///<summary>
+    ///  设置属性是使用二进制对象序列化序列化。
+    ///</summary>
     Binary = 2;
+    ///<summary>
+    ///  设置提供程序具有该属性或其类型的隐式知识并选取适当的序列化机制。
+    ///  通常用于自定义序列化。
+    ///</summary>
     ProviderSpecific = 3;
   end;
 
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  指定应用程序设置属性的特殊设置类别。
+  ///</summary>
   [DNTypeName('System.Configuration.SpecialSetting')]
   DNSpecialSetting = type Integer;
   DNSpecialSettingHelper = record helper for DNSpecialSetting
   public const
+    ///<summary>
+    ///  配置属性表示一个连接字符串，通常用于数据存储区或网络资源。
+    ///</summary>
     ConnectionString = 0;
+    ///<summary>
+    ///  配置属性表示统一资源定位器 (URL) 到 Web 服务。
+    ///</summary>
     WebServiceUrl = 1;
   end;
 
@@ -317,21 +488,77 @@ type
 
 { delegates }
 
+  ///<summary>
+  ///  定义由.NET Framework 基础结构以支持配置事件的类。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件的源对象。
+  ///</param>
+  ///  <param name="e">
+  ///  配置事件参数。
+  ///</param>
   [DNTypeName('System.Configuration.Internal.InternalConfigEventHandler')]
   DNInternalConfigEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNInternalConfigEventArgs) of object;
 
+  ///<summary>
+  ///  表示主机监视的流发生改变时要调用的方法。
+  ///</summary>
+  ///  <param name="streamName">
+  ///  名称 <see cref="T:System.IO.Stream" />
+  ///  对象执行 I/O 任务对配置文件。
+  ///</param>
   [DNTypeName('System.Configuration.Internal.StreamChangeCallback')]
   DNStreamChangeCallback = procedure(streamName: string) of object;
 
+  ///<summary>
+  ///  表示用来处理 <see cref="E:System.Configuration.ApplicationSettingsBase.SettingChanging" />
+  ///  事件的方法。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源，通常应用程序设置包装器类派生自 <see cref="T:System.Configuration.ApplicationSettingsBase" />
+  ///  类。
+  ///</param>
+  ///  <param name="e">
+  ///  一个 <see cref="T:System.Configuration.SettingChangingEventArgs" />
+  ///  包含事件数据。
+  ///</param>
   [DNTypeName('System.Configuration.SettingChangingEventHandler')]
   DNSettingChangingEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNSettingChangingEventArgs) of object;
 
+  ///<summary>
+  ///  表示用来处理 <see cref="E:System.Configuration.ApplicationSettingsBase.SettingsLoaded" />
+  ///  事件的方法。
+  ///</summary>
+  ///  <param name="sender">
+  ///  该事件，通常为设置类的源。
+  ///</param>
+  ///  <param name="e">
+  ///  包含事件数据的 <see cref="T:System.Configuration.SettingsLoadedEventArgs" />
+  ///  对象。
+  ///</param>
   [DNTypeName('System.Configuration.SettingsLoadedEventHandler')]
   DNSettingsLoadedEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNSettingsLoadedEventArgs) of object;
 
+  ///<summary>
+  ///  表示用来处理 <see cref="E:System.Configuration.ApplicationSettingsBase.SettingsSaving" />
+  ///  事件的方法。
+  ///</summary>
+  ///  <param name="sender">
+  ///  该事件，通常是数据容器或数据绑定集合的源。
+  ///</param>
+  ///  <param name="e">
+  ///  包含事件数据的 <see cref="T:System.ComponentModel.CancelEventArgs" />
+  ///  。
+  ///</param>
   [DNTypeName('System.Configuration.SettingsSavingEventHandler')]
   DNSettingsSavingEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNCancelEventArgs) of object;
 
+  ///<summary>
+  ///  表示对象的验证之后调用的方法。
+  ///</summary>
+  ///  <param name="value">
+  ///  回调方法。
+  ///</param>
   [DNTypeName('System.Configuration.ValidatorCallback')]
   DNValidatorCallback = procedure(value: DDN.mscorlib.DNObject) of object;
 
@@ -341,39 +568,112 @@ type
 { objects }
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  定义基于客户端应用程序设置提供程序扩展的功能。
+  ///</summary>
   [DNTypeName('System.Configuration.IApplicationSettingsProvider')]
   DNIApplicationSettingsProvider = interface(DDN.mscorlib.DNObject)
   ['{D0796559-142D-3A3B-B0C4-A061BD3EC5D4}']
   { methods } 
 
+    ///<summary>
+    ///  返回同一个应用程序的以前版本的指定的设置属性的值。
+    ///</summary>
+    ///  <param name="context">
+    ///  一个 <see cref="T:System.Configuration.SettingsContext" />
+    ///  描述当前应用程序使用情况。
+    ///</param>
+    ///  <param name="property"><see cref="T:System.Configuration.SettingsProperty" />
+    ///  其值是要返回。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  上次设置该应用程序; 早期版本中包含指定的属性设置的值或 <see langword="null" />
+    ///  如果找不到该设置。
+    ///</returns>
     function GetPreviousVersion(context: DNSettingsContext; &property: DNSettingsProperty): DNSettingsPropertyValue;
+    ///<summary>
+    ///  重置为其默认值指定的应用程序与关联的应用程序设置。
+    ///</summary>
+    ///  <param name="context">
+    ///  一个 <see cref="T:System.Configuration.SettingsContext" />
+    ///  描述当前应用程序使用情况。
+    ///</param>
     procedure Reset(context: DNSettingsContext);
+    ///<summary>
+    ///  指示提供程序已升级应用程序。
+    ///  这可以通过为该提供程序升级根据其存储的设置。
+    ///</summary>
+    ///  <param name="context">
+    ///  一个 <see cref="T:System.Configuration.SettingsContext" />
+    ///  描述当前应用程序使用情况。
+    ///</param>
+    ///  <param name="properties">
+    ///  一个 <see cref="T:System.Configuration.SettingsPropertyCollection" />
+    ///  包含其值是要检索的设置属性组。
+    ///</param>
     procedure Upgrade(context: DNSettingsContext; properties: DNSettingsPropertyCollection);
 
   end;
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  处理对特定的配置节的访问。
+  ///</summary>
   [DNTypeName('System.Configuration.IConfigurationSectionHandler')]
   DNIConfigurationSectionHandler = interface(DDN.mscorlib.DNObject)
   ['{452EE5E6-9B6C-3CD3-B6DE-4ED66B1035A0}']
   { methods } 
 
+    ///<summary>
+    ///  创建一个配置节处理程序。
+    ///</summary>
+    ///  <param name="parent">
+    ///  父对象。
+    ///</param>
+    ///  <param name="configContext">
+    ///  配置上下文对象。
+    ///</param>
+    ///  <param name="section">
+    ///  部分的 XML 节点。
+    ///</param>
+    ///<returns>
+    ///  创建的节处理程序对象。
+    ///</returns>
     function Create(parent: DDN.mscorlib.DNObject; configContext: DDN.mscorlib.DNObject; section: DDN.System.Xml.DNXmlNode): DDN.mscorlib.DNObject;
 
   end;
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  提供标准配置的方法。
+  ///</summary>
   [DNTypeName('System.Configuration.IConfigurationSystem')]
   DNIConfigurationSystem = interface(DDN.mscorlib.DNObject)
   ['{8802959A-0841-33C7-8303-F32297958941}']
   { methods } 
 
+    ///<summary>
+    ///  获取指定的配置。
+    ///</summary>
+    ///  <param name="configKey">
+    ///  配置键。
+    ///</param>
+    ///<returns>
+    ///  表示配置的对象。
+    ///</returns>
     function GetConfig(configKey: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  用于初始化。
+    ///</summary>
     procedure Init;
 
   end;
 
   //-------------namespace: System.Configuration.Internal----------------
+  ///<summary>
+  ///  定义由.NET Framework 以支持创建错误配置记录的接口。
+  ///</summary>
   [DNTypeName('System.Configuration.Internal.IConfigErrorInfo')]
   DNIConfigErrorInfo = interface(DDN.mscorlib.DNObject)
   ['{DF32F1F3-7722-38FA-BCBE-0F6B8F2ACC1D}']
@@ -384,11 +684,26 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个字符串，指定相关的配置详细信息的文件名称。
+    ///</summary>
+    ///<returns>
+    ///  指定文件名的字符串。
+    ///</returns>
     property Filename: string read get_Filename;
+    ///<summary>
+    ///  获取一个整数，指定相关的配置详细信息的行号。
+    ///</summary>
+    ///<returns>
+    ///  指定行号的整数。
+    ///</returns>
     property LineNumber: Int32 read get_LineNumber;
   end;
 
   //-------------namespace: System.Configuration.Internal----------------
+  ///<summary>
+  ///  定义由.NET Framework 以支持的配置属性的初始化的接口。
+  ///</summary>
   [DNTypeName('System.Configuration.Internal.IConfigSystem')]
   DNIConfigSystem = interface(DDN.mscorlib.DNObject)
   ['{FC4E90B4-074D-3426-93AE-11377307197F}']
@@ -399,25 +714,56 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  初始化配置对象。
+    ///</summary>
+    ///  <param name="typeConfigHost">
+    ///  配置主机的类型。
+    ///</param>
+    ///  <param name="hostInitParams">
+    ///  配置主机参数的数组。
+    ///</param>
     procedure Init(typeConfigHost: DDN.mscorlib.DNType; hostInitParams: TArray<DDN.mscorlib.DNObject>);
 
   { propertys } 
 
+    ///<summary>
+    ///  获取配置主机。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.Internal.IInternalConfigHost" />
+    ///  .NET Framework 用来初始化应用程序配置属性的对象。
+    ///</returns>
     property Host: DNIInternalConfigHost read get_Host;
+    ///<summary>
+    ///  获取配置层次结构的根。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.Internal.IInternalConfigRoot" />
+    ///  对象。
+    ///</returns>
     property Root: DNIInternalConfigRoot read get_Root;
   end;
 
   //-------------namespace: System.Configuration.Internal----------------
+  ///<summary>
+  ///  定义由.NET Framework 以支持的配置管理的接口。
+  ///</summary>
   [DNTypeName('System.Configuration.Internal.IConfigurationManagerHelper')]
   DNIConfigurationManagerHelper = interface(DDN.mscorlib.DNObject)
   ['{444E4D88-69F2-3904-8281-9C066F164331}']
   { methods } 
 
+    ///<summary>
+    ///  确保已加载的网络配置。
+    ///</summary>
     procedure EnsureNetConfigLoaded;
 
   end;
 
   //-------------namespace: System.Configuration.Internal----------------
+  ///<summary>
+  ///  定义一个接口，.NET Framework 用于初始化配置属性。
+  ///</summary>
   [DNTypeName('System.Configuration.Internal.IConfigurationManagerInternal')]
   DNIConfigurationManagerInternal = interface(DDN.mscorlib.DNObject)
   ['{695A3E6D-B9CA-3A1D-82E3-3E25634533F5}']
@@ -437,46 +783,203 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个值，指定是否支持用户配置设置。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果配置系统支持的用户配置设置;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property SupportsUserConfig: Boolean read get_SupportsUserConfig;
+    ///<summary>
+    ///  获取一个值，表示配置系统的状态。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果正在初始化; 正在配置系统否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property SetConfigurationSystemInProgress: Boolean read get_SetConfigurationSystemInProgress;
+    ///<summary>
+    ///  获取 Machine.config 文件的配置路径。
+    ///</summary>
+    ///<returns>
+    ///  表示在 Machine.config 文件的路径的字符串值。
+    ///</returns>
     property MachineConfigPath: string read get_MachineConfigPath;
+    ///<summary>
+    ///  获取与应用程序路径相关的配置文件名称。
+    ///</summary>
+    ///<returns>
+    ///  表示配置文件名称的字符串值。
+    ///</returns>
     property ApplicationConfigUri: string read get_ApplicationConfigUri;
+    ///<summary>
+    ///  获取根据输入程序集的应用程序的产品名称。
+    ///</summary>
+    ///<returns>
+    ///  表示应用程序的产品名称的字符串值。
+    ///</returns>
     property ExeProductName: string read get_ExeProductName;
+    ///<summary>
+    ///  获取根据输入程序集的应用程序的产品版本。
+    ///</summary>
+    ///<returns>
+    ///  表示产品版本的应用程序的字符串值。
+    ///</returns>
     property ExeProductVersion: string read get_ExeProductVersion;
+    ///<summary>
+    ///  获取根据输入程序集的应用程序的漫游配置目录。
+    ///</summary>
+    ///<returns>
+    ///  表示应用程序的漫游配置目录的字符串值。
+    ///</returns>
     property ExeRoamingConfigDirectory: string read get_ExeRoamingConfigDirectory;
+    ///<summary>
+    ///  获取应用程序的入口程序集所基于的漫游用户的配置路径。
+    ///</summary>
+    ///<returns>
+    ///  表示漫游用户配置路径的字符串值。
+    ///</returns>
     property ExeRoamingConfigPath: string read get_ExeRoamingConfigPath;
+    ///<summary>
+    ///  获取根据输入程序集的应用程序的本地配置目录。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，表示本地配置目录。
+    ///</returns>
     property ExeLocalConfigDirectory: string read get_ExeLocalConfigDirectory;
+    ///<summary>
+    ///  获取根据输入程序集的应用程序的本地配置路径。
+    ///</summary>
+    ///<returns>
+    ///  表示应用程序的本地配置路径的字符串值。
+    ///</returns>
     property ExeLocalConfigPath: string read get_ExeLocalConfigPath;
+    ///<summary>
+    ///  获取用来存储用户配置设置的文件的名称。
+    ///</summary>
+    ///<returns>
+    ///  指定用来存储用户配置文件的名称的字符串。
+    ///</returns>
     property UserConfigFilename: string read get_UserConfigFilename;
   end;
 
   //-------------namespace: System.Configuration.Internal----------------
+  ///<summary>
+  ///  定义接口，允许自定义配置的内部.NET Framework 基础结构。
+  ///</summary>
   [DNTypeName('System.Configuration.Internal.IInternalConfigClientHost')]
   DNIInternalConfigClientHost = interface(DDN.mscorlib.DNObject)
   ['{357AE414-F353-3A3B-88C1-ED97C006A68E}']
   { methods } 
 
+    ///<summary>
+    ///  返回一个值，该值指示是否将配置文件路径为当前已知的应用程序配置文件路径相同。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示应用程序配置文件的路径。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  表示配置路径的字符串是否与应用程序配置文件，则路径相同 <see langword="false" />
+    ///  如果表示配置路径的字符串不是应用程序配置文件的路径相同。
+    ///</returns>
     function IsExeConfig(configPath: string): Boolean;
+    ///<summary>
+    ///  返回一个值，该值指示是否将配置文件路径为当前已知的漫游用户配置文件路径相同。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示应用程序配置文件的路径。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  表示配置路径的字符串是否与已知的漫游用户配置文件; 的路径相同否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsRoamingUserConfig(configPath: string): Boolean;
+    ///<summary>
+    ///  返回一个值，该值指示配置文件路径是否与当前已知的本地用户的配置文件路径相同。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示应用程序配置文件的路径。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  表示配置路径的字符串是否为已知的本地用户配置文件; 的路径相同否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsLocalUserConfig(configPath: string): Boolean;
+    ///<summary>
+    ///  返回到应用程序配置文件的路径。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，表示应用程序配置文件的路径。
+    ///</returns>
     function GetExeConfigPath: string;
+    ///<summary>
+    ///  返回表示已知的漫游用户配置文件的路径的字符串。
+    ///</summary>
+    ///<returns>
+    ///  一个表示已知的漫游用户配置文件的路径的字符串。
+    ///</returns>
     function GetRoamingUserConfigPath: string;
+    ///<summary>
+    ///  返回到已知的本地用户配置文件表示该路径的字符串。
+    ///</summary>
+    ///<returns>
+    ///  一个表示已知的本地用户配置文件的路径的字符串。
+    ///</returns>
     function GetLocalUserConfigPath: string;
 
   end;
 
   //-------------namespace: System.Configuration.Internal----------------
+  ///<summary>
+  ///  定义内部设计时 API 用来创建的接口 <see cref="T:System.Configuration.Configuration" />
+  ///  对象。
+  ///</summary>
   [DNTypeName('System.Configuration.Internal.IInternalConfigConfigurationFactory')]
   DNIInternalConfigConfigurationFactory = interface(DDN.mscorlib.DNObject)
   ['{4408EF34-D211-3150-A799-B1F9C1BC07AF}']
   { methods } 
 
+    ///<summary>
+    ///  创建并初始化 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="typeConfigHost"><see cref="T:System.Type" />
+    ///  的 <see cref="T:System.Configuration.Configuration" />
+    ///  要创建对象。
+    ///</param>
+    ///  <param name="hostInitConfigurationParams">
+    ///  参数数组的 <see cref="T:System.Object" />
+    ///  ，其中包含要应用的参数对创建 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
     function Create(typeConfigHost: DDN.mscorlib.DNType; hostInitConfigurationParams: TArray<DDN.mscorlib.DNObject>): DNConfiguration;
+    ///<summary>
+    ///  规范化位置子路径的配置文件的路径。
+    ///</summary>
+    ///  <param name="subPath">
+    ///  一个字符串，表示配置文件的路径。
+    ///</param>
+    ///  <param name="errorInfo">
+    ///  一个实例 <see cref="T:System.Configuration.Internal.IConfigErrorInfo" />
+    ///  或 <see langword="null" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  一个正常化的子路径的字符串。
+    ///</returns>
     function NormalizeLocationSubPath(subPath: string; errorInfo: DNIConfigErrorInfo): string;
 
   end;
 
   //-------------namespace: System.Configuration.Internal----------------
+  ///<summary>
+  ///  定义内部.NET 结构用于初始化应用程序配置属性的接口。
+  ///</summary>
   [DNTypeName('System.Configuration.Internal.IInternalConfigHost')]
   DNIInternalConfigHost = interface(DDN.mscorlib.DNObject)
   ['{CC5C14DC-3BDA-3D45-BBA0-B6F98A70ED84}']
@@ -490,53 +993,501 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  初始化配置主机。
+    ///</summary>
+    ///  <param name="configRoot">
+    ///  配置根对象。
+    ///</param>
+    ///  <param name="hostInitParams">
+    ///  包含用于初始化配置主机的值的参数对象。
+    ///</param>
     procedure Init(configRoot: DNIInternalConfigRoot; hostInitParams: TArray<DDN.mscorlib.DNObject>);
     procedure InitForConfiguration(out locationSubPath: string; out configPath: string; out locationConfigPath: string; configRoot: DNIInternalConfigRoot; hostInitConfigurationParams: TArray<DDN.mscorlib.DNObject>);
+    ///<summary>
+    ///  返回一个值，该值指示是否所必需的子配置路径的子记录。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个表示应用程序配置文件的路径字符串。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果子记录，则所必需的子配置路径;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsConfigRecordRequired(configPath: string): Boolean;
+    ///<summary>
+    ///  返回一个值，该值指示是否初始化配置对象被认为是延迟。
+    ///</summary>
+    ///  <param name="configRecord"><see cref="T:System.Configuration.Internal.IInternalConfigRecord" />
+    ///  对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果配置对象的初始化被认为是延迟，则为否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsInitDelayed(configRecord: DNIInternalConfigRecord): Boolean;
+    ///<summary>
+    ///  指示新的配置记录需要完成初始化。
+    ///</summary>
+    ///  <param name="configRecord">
+    ///  一个 <see cref="T:System.Configuration.Internal.IInternalConfigRecord" />
+    ///  对象。
+    ///</param>
     procedure RequireCompleteInit(configRecord: DNIInternalConfigRecord);
+    ///<summary>
+    ///  返回一个值，该值指示是否将配置路径为对配置节点的内容应视为根。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个表示应用程序配置文件的路径字符串。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  在配置路径为其内容应视为根; 的配置节点否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsSecondaryRoot(configPath: string): Boolean;
+    ///<summary>
+    ///  返回一个表示与关联的配置文件名称的字符串 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个表示应用程序配置文件的路径字符串。
+    ///</param>
+    ///<returns>
+    ///  一个表示配置文件名称的字符串与 <see cref="T:System.IO.Stream" />
+    ///  对配置文件的 I/O 任务。
+    ///</returns>
     function GetStreamName(configPath: string): string;
+    ///<summary>
+    ///  返回一个表示与关联的配置文件名称的字符串 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的远程配置文件上。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  一个表示配置文件名称的字符串与 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</param>
+    ///  <param name="configSource">
+    ///  一个表示远程配置文件路径的字符串。
+    ///</param>
+    ///<returns>
+    ///  一个表示配置文件名称的字符串与 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</returns>
     function GetStreamNameForConfigSource(streamName: string; configSource: string): string;
+    ///<summary>
+    ///  返回的版本 <see cref="T:System.IO.Stream" />
+    ///  与配置文件关联的对象。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  一个表示名称的字符串 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</param>
+    ///<returns>
+    ///  版本 <see cref="T:System.IO.Stream" />
+    ///  与配置文件关联的对象。
+    ///</returns>
     function GetStreamVersion(streamName: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  此时将打开 <see cref="T:System.IO.Stream" />
+    ///  读取配置文件。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  一个表示名称的字符串 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.IO.Stream" />
+    ///  对象。
+    ///</returns>
     function OpenStreamForRead(streamName: string): DDN.mscorlib.DNStream; overload;
+    ///<summary>
+    ///  此时将打开 <see cref="T:System.IO.Stream" />
+    ///  对象来读取配置文件。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  一个表示名称的字符串 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</param>
+    ///  <param name="assertPermissions"><see langword="true" />
+    ///  若要断言权限，则否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  返回 <see cref="T:System.IO.Stream" />
+    ///  指定对象 <paramref name="streamName" />
+    ///  。
+    ///</returns>
     function OpenStreamForRead(streamName: string; assertPermissions: Boolean): DDN.mscorlib.DNStream; overload;
     function OpenStreamForWrite(streamName: string; templateStreamName: string; out writeContext: DDN.mscorlib.DNObject): DDN.mscorlib.DNStream; overload;
     function OpenStreamForWrite(streamName: string; templateStreamName: string; out writeContext: DDN.mscorlib.DNObject; assertPermissions: Boolean): DDN.mscorlib.DNStream; overload;
+    ///<summary>
+    ///  指示已完成所有写入配置文件。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  一个表示名称的字符串 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</param>
+    ///  <param name="success"><see langword="true" />
+    ///  如果配置文件写入已成功地完成。否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///  <param name="writeContext">
+    ///  写上下文 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</param>
     procedure WriteCompleted(streamName: string; success: Boolean; writeContext: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  指示所有写入配置文件已完成，并指定是否应断言权限。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  一个表示名称的字符串 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</param>
+    ///  <param name="success"><see langword="true" />
+    ///  指示将写入已成功地完成。否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///  <param name="writeContext">
+    ///  写上下文 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</param>
+    ///  <param name="assertPermissions"><see langword="true" />
+    ///  若要断言权限，则否则为 <see langword="false" />
+    ///  。
+    ///</param>
     procedure WriteCompleted(streamName: string; success: Boolean; writeContext: DDN.mscorlib.DNObject; assertPermissions: Boolean); overload;
+    ///<summary>
+    ///  删除 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务应用程序配置文件。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  一个表示名称的字符串 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</param>
     procedure DeleteStream(streamName: string);
+    ///<summary>
+    ///  返回一个值，该值指示是否使用文件路径 <see cref="T:System.IO.Stream" />
+    ///  对象来读取配置文件是有效的路径。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  一个表示名称的字符串 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果该路径由 <see cref="T:System.IO.Stream" />
+    ///  对象来读取配置文件是有效的路径; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsFile(streamName: string): Boolean;
+    ///<summary>
+    ///  指示 <see cref="T:System.Configuration.Internal.IInternalConfigHost" />
+    ///  对象来监视关联 <see cref="T:System.IO.Stream" />
+    ///  对象所做更改配置文件中。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  一个表示名称的字符串 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</param>
+    ///  <param name="callback">
+    ///  一个 <see cref="T:System.Configuration.Internal.StreamChangeCallback" />
+    ///  对象，以接收返回的数据表示配置文件中的更改。
+    ///</param>
+    ///<returns><see cref="T:System.Object" />
+    ///  包含更改的配置设置。
+    ///</returns>
     function StartMonitoringStreamForChanges(streamName: string; callback: DNStreamChangeCallback): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  指示  <see cref="T:System.Configuration.Internal.IInternalConfigHost" />
+    ///  对象若要停止监视关联 <see cref="T:System.IO.Stream" />
+    ///  对象所做更改配置文件中。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  一个表示名称的字符串 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</param>
+    ///  <param name="callback">
+    ///  一个 <see cref="T:System.Configuration.Internal.StreamChangeCallback" />
+    ///  对象。
+    ///</param>
     procedure StopMonitoringStreamForChanges(streamName: string; callback: DNStreamChangeCallback);
+    ///<summary>
+    ///  返回一个值，该值指示配置文件是否在配置层次结构中较高级别比应用程序配置位于。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个表示应用程序配置文件的路径字符串。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  配置文件所处的配置层次结构中级别比应用程序配置中; 高否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsAboveApplication(configPath: string): Boolean;
+    ///<summary>
+    ///  返回到应用程序配置文件基于位置的子路径的完整路径。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个表示应用程序配置文件的路径字符串。
+    ///</param>
+    ///  <param name="locationSubPath">
+    ///  配置文件的子路径位置。
+    ///</param>
+    ///<returns>
+    ///  表示应用程序配置文件的完整路径的字符串。
+    ///</returns>
     function GetConfigPathFromLocationSubPath(configPath: string; locationSubPath: string): string;
+    ///<summary>
+    ///  返回一个值，该值指示配置对象是否支持位置标记。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个表示应用程序配置文件的路径字符串。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果配置对象支持位置标记，则否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsLocationApplicable(configPath: string): Boolean;
+    ///<summary>
+    ///  确定具有不同 <see cref="T:System.Type" />
+    ///  定义，允许的应用程序配置对象。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个表示应用程序配置文件的路径字符串。
+    ///</param>
+    ///  <param name="allowDefinition">
+    ///  一个 <see cref="T:System.Configuration.ConfigurationAllowDefinition" />
+    ///  对象。
+    ///</param>
+    ///  <param name="allowExeDefinition">
+    ///  一个 <see cref="T:System.Configuration.ConfigurationAllowExeDefinition" />
+    ///  对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果不同 <see cref="T:System.Type" />
+    ///  定义是允许应用程序配置对象; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsDefinitionAllowed(configPath: string; allowDefinition: DNConfigurationAllowDefinition; allowExeDefinition: DNConfigurationAllowExeDefinition): Boolean;
+    ///<summary>
+    ///  验证配置定义可以用于配置记录。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个表示应用程序配置文件的路径字符串。
+    ///</param>
+    ///  <param name="allowDefinition">
+    ///  一个 <see cref="P:System.Configuration.SectionInformation.AllowDefinition" />
+    ///  对象。
+    ///</param>
+    ///  <param name="allowExeDefinition">
+    ///  一个 <see cref="T:System.Configuration.ConfigurationAllowExeDefinition" />
+    ///  对象
+    ///</param>
+    ///  <param name="errorInfo">
+    ///  一个 <see cref="T:System.Configuration.Internal.IConfigErrorInfo" />
+    ///  对象。
+    ///</param>
     procedure VerifyDefinitionAllowed(configPath: string; allowDefinition: DNConfigurationAllowDefinition; allowExeDefinition: DNConfigurationAllowExeDefinition; errorInfo: DNIConfigErrorInfo);
+    ///<summary>
+    ///  返回一个值，该值指示是否为受信任的配置路径。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个表示应用程序配置文件的路径字符串。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果配置路径是受信任;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsTrustedConfigPath(configPath: string): Boolean;
+    ///<summary>
+    ///  返回一个值，该值指示一个配置节，是否需要完全信任的代码访问安全级别，并且不允许 <see cref="T:System.Security.AllowPartiallyTrustedCallersAttribute" />
+    ///  特性禁用隐式链接要求。
+    ///</summary>
+    ///  <param name="configRecord"><see cref="T:System.Configuration.Internal.IInternalConfigRecord" />
+    ///  对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果配置部分需要完全信任的代码访问安全级别，并且不允许 <see cref="T:System.Security.AllowPartiallyTrustedCallersAttribute" />
+    ///  特性禁用隐式链接要求; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsFullTrustSectionWithoutAptcaAllowed(configRecord: DNIInternalConfigRecord): Boolean;
     procedure GetRestrictedPermissions(configRecord: DNIInternalConfigRecord; out permissionSet: DDN.mscorlib.DNPermissionSet; out isHostReady: Boolean);
+    ///<summary>
+    ///  指示宿主模拟并返回 <see cref="T:System.IDisposable" />
+    ///  内部.NET 结构所需的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.IDisposable" />
+    ///  值。
+    ///</returns>
     function Impersonate: DDN.mscorlib.DNIDisposable;
+    ///<summary>
+    ///  返回一个值，该值指示是否可以读取整个配置文件由指定 <see cref="T:System.IO.Stream" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个表示应用程序配置文件的路径字符串。
+    ///</param>
+    ///  <param name="streamName">
+    ///  一个表示名称的字符串 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果整个配置文件可以通过阅读 <see cref="T:System.IO.Stream" />
+    ///  指定对象 <paramref name="streamName" />
+    ///  ; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function PrefetchAll(configPath: string; streamName: string): Boolean;
+    ///<summary>
+    ///  指示 <see cref="T:System.Configuration.Internal.IInternalConfigHost" />
+    ///  对象来读取其关联的配置文件的指定的节。
+    ///</summary>
+    ///  <param name="sectionGroupName">
+    ///  表示配置文件节组的标识名称的字符串。
+    ///</param>
+    ///  <param name="sectionName">
+    ///  表示一个配置文件节的标识名称的字符串。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果通过指定配置文件节 <paramref name="sectionGroupName" />
+    ///  和 <paramref name="sectionName" />
+    ///  可以通过阅读 <see cref="T:System.IO.Stream" />
+    ///  对象; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function PrefetchSection(sectionGroupName: string; sectionName: string): Boolean;
+    ///<summary>
+    ///  创建并返回在应用程序配置的不推荐使用的上下文对象。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个表示应用程序配置文件路径的字符串。
+    ///</param>
+    ///<returns>
+    ///  在应用程序配置一个不推荐使用的上下文对象。
+    ///</returns>
     function CreateDeprecatedConfigContext(configPath: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  创建并返回的上下文对象 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  的应用程序配置。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个表示应用程序配置文件的路径字符串。
+    ///</param>
+    ///  <param name="locationSubPath">
+    ///  表示配置元素的子路径位置的字符串。
+    ///</param>
+    ///<returns>
+    ///  上下文对象 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  的应用程序配置的对象。
+    ///</returns>
     function CreateConfigurationContext(configPath: string; locationSubPath: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  解密加密的配置节，并将其作为一个字符串返回。
+    ///</summary>
+    ///  <param name="encryptedXml">
+    ///  表示一个配置节的加密的 XML 字符串。
+    ///</param>
+    ///  <param name="protectionProvider"><see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+    ///  对象。
+    ///</param>
+    ///  <param name="protectedConfigSection"><see cref="T:System.Configuration.ProtectedConfigurationSection" />
+    ///  对象。
+    ///</param>
+    ///<returns>
+    ///  一个字符串形式的已解密的配置节。
+    ///</returns>
     function DecryptSection(encryptedXml: string; protectionProvider: DNProtectedConfigurationProvider; protectedConfigSection: DNProtectedConfigurationSection): string;
+    ///<summary>
+    ///  加密配置节，并将其作为一个字符串返回。
+    ///</summary>
+    ///  <param name="clearTextXml">
+    ///  表示一个配置节进行加密的 XML 字符串。
+    ///</param>
+    ///  <param name="protectionProvider"><see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+    ///  对象。
+    ///</param>
+    ///  <param name="protectedConfigSection"><see cref="T:System.Configuration.ProtectedConfigurationSection" />
+    ///  对象。
+    ///</param>
+    ///<returns>
+    ///  加密的配置节，以字符串形式表示。
+    ///</returns>
     function EncryptSection(clearTextXml: string; protectionProvider: DNProtectedConfigurationProvider; protectedConfigSection: DNProtectedConfigurationSection): string;
+    ///<summary>
+    ///  返回 <see cref="T:System.Type" />
+    ///  对象，表示配置对象类型。
+    ///</summary>
+    ///  <param name="typeName">
+    ///  类型名称
+    ///</param>
+    ///  <param name="throwOnError"><see langword="true" />
+    ///  若要引发异常，如果错误发生;否则为 <see langword="false" />
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Type" />
+    ///  对象，表示配置对象类型。
+    ///</returns>
     function GetConfigType(typeName: string; throwOnError: Boolean): DDN.mscorlib.DNType;
+    ///<summary>
+    ///  返回一个表示从一个类型名称的字符串 <see cref="T:System.Type" />
+    ///  对象，表示配置的类型。
+    ///</summary>
+    ///  <param name="t">
+    ///  一个 <see cref="T:System.Type" />
+    ///  对象。
+    ///</param>
+    ///<returns>
+    ///  一个表示来自的类型名称的字符串 <see cref="T:System.Type" />
+    ///  对象，表示配置的类型。
+    ///</returns>
     function GetConfigTypeName(t: DDN.mscorlib.DNType): string;
 
   { propertys } 
 
+    ///<summary>
+    ///  返回一个值，该值指示主机配置是否支持更改通知。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果配置支持更改通知;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property SupportsChangeNotifications: Boolean read get_SupportsChangeNotifications;
+    ///<summary>
+    ///  返回一个值，该值指示主机配置是否支持配置刷新。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果配置支持配置刷新;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property SupportsRefresh: Boolean read get_SupportsRefresh;
+    ///<summary>
+    ///  返回一个值，该值指示主机配置是否支持路径标记。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果配置支持路径标记，则否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property SupportsPath: Boolean read get_SupportsPath;
+    ///<summary>
+    ///  返回一个值，该值指示主机配置是否支持位置标记。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果配置支持位置标记，则否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property SupportsLocation: Boolean read get_SupportsLocation;
+    ///<summary>
+    ///  返回一个值，该值指示是否配置为远程。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果配置为远程;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsRemote: Boolean read get_IsRemote;
   end;
 
   //-------------namespace: System.Configuration.Internal----------------
+  ///<summary>
+  ///  定义接口，供内部.NET 结构以支持新的配置记录的创建。
+  ///</summary>
   [DNTypeName('System.Configuration.Internal.IInternalConfigRecord')]
   DNIInternalConfigRecord = interface(DDN.mscorlib.DNObject)
   ['{9297DDC1-DF44-3656-A02D-E9F73E8BAC05}']
@@ -548,20 +1499,76 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  如果在初始化期间出错时引发异常的权限授予配置对象。
+    ///</summary>
     procedure ThrowIfInitErrors;
+    ///<summary>
+    ///  返回 <see cref="T:System.Object" />
+    ///  实例，它表示一个配置文件的某一部分。
+    ///</summary>
+    ///  <param name="configKey">
+    ///  一个字符串，表示一个配置节的键。
+    ///</param>
+    ///<returns><see cref="T:System.Object" />
+    ///  实例，它表示一个配置文件的某一部分。
+    ///</returns>
     function GetSection(configKey: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  返回一个对象，该对象表示的从上一次已知正确 (配置 LKG) 配置的配置节。
+    ///</summary>
+    ///  <param name="configKey">
+    ///  一个字符串，表示一个配置节的键。
+    ///</param>
+    ///<returns><see cref="T:System.Object" />
+    ///  实例，它表示由指定上一次已知正确配置的部分 <paramref name="configKey" />
+    ///  。
+    ///</returns>
     function GetLkgSection(configKey: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  会导致重新初始化订阅的配置对象的指定的部分。
+    ///</summary>
+    ///  <param name="configKey">
+    ///  一个字符串，表示要刷新的配置节的键。
+    ///</param>
     procedure RefreshSection(configKey: string);
+    ///<summary>
+    ///  移除配置记录。
+    ///</summary>
     procedure Remove;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个表示配置文件路径的字符串。
+    ///</summary>
+    ///<returns>
+    ///  表示配置文件路径的字符串。
+    ///</returns>
     property ConfigPath: string read get_ConfigPath;
+    ///<summary>
+    ///  返回的名称 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</summary>
+    ///<returns>
+    ///  一个表示名称的字符串 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</returns>
     property StreamName: string read get_StreamName;
+    ///<summary>
+    ///  返回一个值，该值指示是否将配置对象的初始化期间出现错误。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果将配置对象; 初始化期间出错否则为<see langword="false" />
+    ///  。
+    ///</returns>
     property HasInitErrors: Boolean read get_HasInitErrors;
   end;
 
   //-------------namespace: System.Configuration.Internal----------------
+  ///<summary>
+  ///  定义由内部.NET 结构以支持配置根对象的接口。
+  ///</summary>
   [DNTypeName('System.Configuration.Internal.IInternalConfigRoot')]
   DNIInternalConfigRoot = interface(DDN.mscorlib.DNObject)
   ['{BB6069FD-73DD-3EE5-98EC-BF034A011878}']
@@ -578,30 +1585,118 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  初始化配置对象。
+    ///</summary>
+    ///  <param name="host">
+    ///  一个 <see cref="T:System.Configuration.Internal.IInternalConfigHost" />
+    ///  对象。
+    ///</param>
+    ///  <param name="isDesignTime"><see langword="true" />
+    ///  如果设计时; <see langword="false" />
+    ///  如果运行时间。
+    ///</param>
     procedure Init(host: DNIInternalConfigHost; isDesignTime: Boolean);
+    ///<summary>
+    ///  返回 <see cref="T:System.Object" />
+    ///  表示配置文件的节中的数据。
+    ///</summary>
+    ///  <param name="section">
+    ///  表示配置文件的节的字符串。
+    ///</param>
+    ///  <param name="configPath">
+    ///  一个字符串，表示配置文件的路径。
+    ///</param>
+    ///<returns><see cref="T:System.Object" />
+    ///  表示配置文件的节中的数据。
+    ///</returns>
     function GetSection(section: string; configPath: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  返回一个值，表示具有配置数据的最近配置上级的文件路径。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  配置文件的路径。
+    ///</param>
+    ///<returns>
+    ///  返回表示已配置数据的最近配置上级的文件路径的字符串。
+    ///</returns>
     function GetUniqueConfigPath(configPath: string): string;
+    ///<summary>
+    ///  返回 <see cref="T:System.Configuration.Internal.IInternalConfigRecord" />
+    ///  对象，表示给定的唯一配置记录的配置路径。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  配置文件的路径。
+    ///</param>
+    ///<returns><see cref="T:System.Configuration.Internal.IInternalConfigRecord" />
+    ///  表示给定的配置路径的唯一配置记录的对象。
+    ///</returns>
     function GetUniqueConfigRecord(configPath: string): DNIInternalConfigRecord;
+    ///<summary>
+    ///  返回 <see cref="T:System.Configuration.Internal.IInternalConfigRecord" />
+    ///  对象，表示指定的配置路径的配置。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示配置文件的路径。
+    ///</param>
+    ///<returns><see cref="T:System.Configuration.Internal.IInternalConfigRecord" />
+    ///  对象，表示由指定的配置 <paramref name="configPath" />
+    ///  。
+    ///</returns>
     function GetConfigRecord(configPath: string): DNIInternalConfigRecord;
+    ///<summary>
+    ///  找到并删除配置记录及其所有子级的给定的配置路径。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  配置文件的路径。
+    ///</param>
     procedure RemoveConfig(configPath: string);
 
   { propertys } 
 
+    ///<summary>
+    ///  返回一个值，该值指示是否设计时配置的配置。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果配置是一种设计时配置; <see langword="false" />
+    ///  如果配置不是设计时配置。
+    ///</returns>
     property IsDesignTime: Boolean read get_IsDesignTime;
   end;
 
   //-------------namespace: System.Configuration.Internal----------------
+  ///<summary>
+  ///  定义一个接口，由配置系统，用于设置 <see cref="T:System.Configuration.ConfigurationSettings" />
+  ///  类。
+  ///</summary>
   [DNTypeName('System.Configuration.Internal.IInternalConfigSettingsFactory')]
   DNIInternalConfigSettingsFactory = interface(DDN.mscorlib.DNObject)
   ['{EFBD58A9-725C-371E-97D2-D99AF448896E}']
   { methods } 
 
+    ///<summary>
+    ///  向配置系统，为 ASP.NET 提供层次结构配置设置和特定的扩展。
+    ///</summary>
+    ///  <param name="internalConfigSystem"><see cref="T:System.Configuration.Internal.IInternalConfigSystem" />
+    ///  使用对象 <see cref="T:System.Configuration.ConfigurationSettings" />
+    ///  类。
+    ///</param>
+    ///  <param name="initComplete"><see langword="true" />
+    ///  如果配置系统的初始化过程已完成;否则为 <see langword="false" />
+    ///  。
+    ///</param>
     procedure SetConfigurationSystem(internalConfigSystem: DNIInternalConfigSystem; initComplete: Boolean);
+    ///<summary>
+    ///  指示初始化系统已完成的配置。
+    ///</summary>
     procedure CompleteInit;
 
   end;
 
   //-------------namespace: System.Configuration.Internal----------------
+  ///<summary>
+  ///  定义一个接口，.NET Framework 用于初始化应用程序配置属性。
+  ///</summary>
   [DNTypeName('System.Configuration.Internal.IInternalConfigSystem')]
   DNIInternalConfigSystem = interface(DDN.mscorlib.DNObject)
   ['{049ADD6E-3BB8-3110-AEB4-CE80D993781C}']
@@ -611,26 +1706,91 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回基于指定的键的配置对象。
+    ///</summary>
+    ///  <param name="configKey">
+    ///  配置密钥值。
+    ///</param>
+    ///<returns>
+    ///  配置对象。
+    ///</returns>
     function GetSection(configKey: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  刷新配置系统基于指定的节名称。
+    ///</summary>
+    ///  <param name="sectionName">
+    ///  配置部分的名称。
+    ///</param>
     procedure RefreshConfig(sectionName: string);
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个值，该值指示是否支持用户配置。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果用户配置受支持;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property SupportsUserConfig: Boolean read get_SupportsUserConfig;
   end;
 
   //-------------namespace: System.Configuration.Internal----------------
+  ///<summary>
+  ///  定义配置主机（要支持 <see cref="T:System.Configuration.ConfigurationBuilder" />
+  ///  对象的应用程序）的 <see cref="T:System.Configuration.Internal.IInternalConfigHost" />
+  ///  的补充接口。
+  ///</summary>
   [DNTypeName('System.Configuration.Internal.IInternalConfigurationBuilderHost')]
   DNIInternalConfigurationBuilderHost = interface(DDN.mscorlib.DNObject)
   ['{D8DBBA02-6973-3F51-9A4D-802DDFBAC0B5}']
   { methods } 
 
+    ///<summary>
+    ///  使用提供的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  处理配置节的标记。
+    ///</summary>
+    ///  <param name="rawXml">
+    ///  要处理的 <see cref="T:System.Xml.XmlNode" />
+    ///  。
+    ///</param>
+    ///  <param name="builder">
+    ///  要用于处理 <paramref name="rawXml" />
+    ///  的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  已处理的 <see cref="T:System.Xml.XmlNode" />
+    ///  。
+    ///</returns>
     function ProcessRawXml(rawXml: DDN.System.Xml.DNXmlNode; builder: DNConfigurationBuilder): DDN.System.Xml.DNXmlNode;
+    ///<summary>
+    ///  使用提供的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  处理 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="configSection">
+    ///  要处理的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</param>
+    ///  <param name="builder">
+    ///  要用于处理 <paramref name="configSection" />
+    ///  的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  已处理的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
     function ProcessConfigurationSection(configSection: DNConfigurationSection; builder: DNConfigurationBuilder): DNConfigurationSection;
 
   end;
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  定义控件或类的存储和检索应用程序设置的标准功能。
+  ///</summary>
   [DNTypeName('System.Configuration.IPersistComponentSettings')]
   DNIPersistComponentSettings = interface(DDN.mscorlib.DNObject)
   ['{D51106E0-0FE4-3DFB-B097-BE9DF4714DF4}']
@@ -643,22 +1803,59 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  读取到其对应的属性的控件的应用程序设置并更新控件的状态。
+    ///</summary>
     procedure LoadComponentSettings;
+    ///<summary>
+    ///  控件的应用程序设置属性时仍然出现。
+    ///</summary>
     procedure SaveComponentSettings;
+    ///<summary>
+    ///  将控件的应用程序设置属性重置为其默认值。
+    ///</summary>
     procedure ResetComponentSettings;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置一个值，该值指示控件是否应自动保持其应用程序设置属性。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果控件应自动保持其状态，则否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property SaveSettings: Boolean read get_SaveSettings write set_SaveSettings;
+    ///<summary>
+    ///  获取或设置控件的当前实例的应用程序设置键的值。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  包含该控件的当前实例的设置键。
+    ///</returns>
     property SettingsKey: string read get_SettingsKey write set_SettingsKey;
   end;
 
   //-------------namespace: System.Configuration----------------
+  ///<summary>
+  ///  用于定义备用应用程序设置提供程序提供的接口。
+  ///</summary>
   [DNTypeName('System.Configuration.ISettingsProviderService')]
   DNISettingsProviderService = interface(DDN.mscorlib.DNObject)
   ['{B5F96131-A89B-3E6F-9A55-3BFAEC48177A}']
   { methods } 
 
+    ///<summary>
+    ///  返回与指定的设置属性兼容的设置提供程序。
+    ///</summary>
+    ///  <param name="property"><see cref="T:System.Configuration.SettingsProperty" />
+    ///  需要序列化。
+    ///</param>
+    ///<returns>
+    ///  如果找到， <see cref="T:System.Configuration.SettingsProvider" />
+    ///  程序可以继续保持指定的设置属性; 否则为 <see langword="null" />
+    ///  。
+    ///</returns>
     function GetSettingsProvider(&property: DNSettingsProperty): DNSettingsProvider;
 
   end;
@@ -668,10 +1865,25 @@ type
   ['{73AEB2C6-DE0A-56EC-9E61-46B36FC6A71B}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationCollectionAttribute" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="itemType">
+    ///  若要创建的属性集合的类型。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="itemType" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} function init(itemType: DDN.mscorlib.DNType): DNConfigurationCollectionAttribute;
 
   end;
 
+  ///<summary>
+  ///  以声明方式指示.NET Framework 来创建配置元素集合的实例。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationCollectionAttribute')]
   DNConfigurationCollectionAttribute = interface(DDN.mscorlib.DNAttribute)
   ['{E12BD047-4636-3047-A218-16A832F3813A}']
@@ -699,10 +1911,44 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取集合元素的类型。
+    ///</summary>
+    ///<returns>
+    ///  集合元素的类型。
+    ///</returns>
     property ItemType: DDN.mscorlib.DNType read get_ItemType;
+    ///<summary>
+    ///  获取或设置的名称 <see langword="&lt;add&gt;" />
+    ///  配置元素。
+    ///</summary>
+    ///<returns>
+    ///  使用标准名称替换的名称"添加"的配置项。
+    ///</returns>
     property AddItemName: string read get_AddItemName write set_AddItemName;
+    ///<summary>
+    ///  获取或设置的名称 <see langword="&lt;remove&gt;" />
+    ///  配置元素。
+    ///</summary>
+    ///<returns>
+    ///  替换标准名称的名称"取消"的配置元素。
+    ///</returns>
     property RemoveItemName: string read get_RemoveItemName write set_RemoveItemName;
+    ///<summary>
+    ///  获取或设置的名称 <see langword="&lt;clear&gt;" />
+    ///  配置元素。
+    ///</summary>
+    ///<returns>
+    ///  替换标准名称的名称"清除"的配置项。
+    ///</returns>
     property ClearItemsName: string read get_ClearItemsName write set_ClearItemsName;
+    ///<summary>
+    ///  获取或设置的一种 <see cref="T:System.Configuration.ConfigurationCollectionAttribute" />
+    ///  属性。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationCollectionAttribute" />
+    ///  的类型。
+    ///</returns>
     property CollectionType: DNConfigurationElementCollectionType read get_CollectionType write set_CollectionType;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -714,10 +1960,22 @@ type
   ['{7854F78F-634C-515D-A4FA-1B5AE2F240C0}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationPropertyAttribute" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="name">
+    ///  名称 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  定义对象。
+    ///</param>
     {class} function init(name: string): DNConfigurationPropertyAttribute;
 
   end;
 
+  ///<summary>
+  ///  以声明方式指示.NET Framework 来实例化的配置属性。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationPropertyAttribute')]
   DNConfigurationPropertyAttribute = interface(DDN.mscorlib.DNAttribute)
   ['{8BF4D88F-DCFA-3CAA-AD4F-B1ED861E299A}']
@@ -747,11 +2005,58 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取修饰的配置元素属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  经过修饰的配置元素属性的名称。
+    ///</returns>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取或设置经过修饰的属性的默认值。
+    ///</summary>
+    ///<returns>
+    ///  表示经过修饰的配置元素属性的默认值的对象。
+    ///</returns>
     property DefaultValue: DDN.mscorlib.DNObject read get_DefaultValue write set_DefaultValue;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Configuration.ConfigurationPropertyOptions" />
+    ///  经过修饰的配置元素属性。
+    ///</summary>
+    ///<returns>
+    ///  其中一个 <see cref="T:System.Configuration.ConfigurationPropertyOptions" />
+    ///  与属性关联的枚举值。
+    ///</returns>
     property Options: DNConfigurationPropertyOptions read get_Options write set_Options;
+    ///<summary>
+    ///  获取或设置一个值，指示这是否经过修饰的配置属性的默认属性集合。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该属性表示的元素，则默认集合否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsDefaultCollection: Boolean read get_IsDefaultCollection write set_IsDefaultCollection;
+    ///<summary>
+    ///  获取或设置一个值，该值经过修饰的元素属性是否必需的。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该属性是必需的;否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsRequired: Boolean read get_IsRequired write set_IsRequired;
+    ///<summary>
+    ///  获取或设置一个值，指示这是否经过修饰的元素属性的键属性。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果属性是集合; 的一个元素的键属性否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsKey: Boolean read get_IsKey write set_IsKey;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -763,10 +2068,29 @@ type
   ['{28ABF783-5BAD-591C-BDC1-A0FE5968B05E}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.ConfigurationValidatorAttribute" />
+    ///  类使用指定的验证程序类型。
+    ///</summary>
+    ///  <param name="validator">
+    ///  验证程序类型创建的实例时要使用 <see cref="T:System.Configuration.ConfigurationValidatorAttribute" />
+    ///  。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="validator" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException"><paramref name="validator" />
+    ///  不源自 <see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  。
+    ///</exception>
     {class} function init(validator: DDN.mscorlib.DNType): DNConfigurationValidatorAttribute;
 
   end;
 
+  ///<summary>
+  ///  作为类的基类 <see cref="N:System.Configuration" />
+  ///  验证程序属性类型。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationValidatorAttribute')]
   DNConfigurationValidatorAttribute = interface(DDN.mscorlib.DNAttribute)
   ['{449EFE87-9CC4-3BEC-9B07-1F3A961C1DBC}']
@@ -787,7 +2111,20 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取验证程序属性实例。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  。
+    ///</returns>
     property ValidatorInstance: DNConfigurationValidatorBase read get_ValidatorInstance;
+    ///<summary>
+    ///  获取验证程序属性的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Type" />
+    ///  当前的验证程序属性实例。
+    ///</returns>
     property ValidatorType: DDN.mscorlib.DNType read get_ValidatorType;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -799,10 +2136,19 @@ type
   ['{E4179775-AE79-5322-A780-8064CD432C65}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.CallbackValidatorAttribute" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNCallbackValidatorAttribute;
 
   end;
 
+  ///<summary>
+  ///  指定 <see cref="T:System.Configuration.CallbackValidator" />
+  ///  要用于代码验证对象。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.CallbackValidatorAttribute')]
   DNCallbackValidatorAttribute = interface(DNConfigurationValidatorAttribute)
   ['{2FA1F62A-8720-3850-97D5-CEA51E9D98CF}']
@@ -827,9 +2173,40 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取验证程序实例。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  实例。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Configuration.CallbackValidatorAttribute.Type" />
+    ///  属性的值为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException"><see cref="P:System.Configuration.CallbackValidatorAttribute.CallbackMethodName" />
+    ///  属性未设置为具有一个对象参数的公共静态 void 方法。
+    ///</exception>
     property ValidatorInstance: DNConfigurationValidatorBase read get_ValidatorInstance;
+    ///<summary>
+    ///  获取或设置验证程序类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Type" />
+    ///  当前的验证程序属性实例。
+    ///</returns>
     property &Type: DDN.mscorlib.DNType read get_Type write set_Type;
+    ///<summary>
+    ///  获取或设置回调方法的名称。
+    ///</summary>
+    ///<returns>
+    ///  要调用的方法的名称。
+    ///</returns>
     property CallbackMethodName: string read get_CallbackMethodName write set_CallbackMethodName;
+    ///<summary>
+    ///  获取验证程序属性的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Type" />
+    ///  当前的验证程序属性实例。
+    ///</returns>
     property ValidatorType: DDN.mscorlib.DNType read get_ValidatorType;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -841,10 +2218,18 @@ type
   ['{6D733D41-EDA8-5EC8-95D0-B7D746952963}']
   { constructors } 
 
+    ///<summary>
+    ///  创建 <see cref="T:System.Configuration.IntegerValidatorAttribute" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNIntegerValidatorAttribute;
 
   end;
 
+  ///<summary>
+  ///  以声明方式指示.NET Framework 执行整数验证的配置属性。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.IntegerValidatorAttribute')]
   DNIntegerValidatorAttribute = interface(DNConfigurationValidatorAttribute)
   ['{373517A6-0E37-36DC-93C0-B6FC15B2C687}']
@@ -871,10 +2256,54 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取实例 <see cref="T:System.Configuration.IntegerValidator" />
+    ///  类。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  验证程序实例。
+    ///</returns>
     property ValidatorInstance: DNConfigurationValidatorBase read get_ValidatorInstance;
+    ///<summary>
+    ///  获取或设置属性允许的最小值。
+    ///</summary>
+    ///<returns>
+    ///  一个整数，指示允许的最小值。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  所选的值是否大于 <see cref="P:System.Configuration.IntegerValidatorAttribute.MaxValue" />
+    ///  。
+    ///</exception>
     property MinValue: Int32 read get_MinValue write set_MinValue;
+    ///<summary>
+    ///  获取或设置属性允许的最大值。
+    ///</summary>
+    ///<returns>
+    ///  一个整数，指示允许的最大值。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  所选的值是小于 <see cref="P:System.Configuration.IntegerValidatorAttribute.MinValue" />
+    ///  。
+    ///</exception>
     property MaxValue: Int32 read get_MaxValue write set_MaxValue;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否要包含或排除定义的范围内的整数 <see cref="P:System.Configuration.IntegerValidatorAttribute.MinValue" />
+    ///  和 <see cref="P:System.Configuration.IntegerValidatorAttribute.MaxValue" />
+    ///  属性值。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果必须排除值;否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     property ExcludeRange: Boolean read get_ExcludeRange write set_ExcludeRange;
+    ///<summary>
+    ///  获取验证程序属性的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Type" />
+    ///  当前的验证程序属性实例。
+    ///</returns>
     property ValidatorType: DDN.mscorlib.DNType read get_ValidatorType;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -886,10 +2315,18 @@ type
   ['{224F440B-641F-573F-ABD5-DFC0BFC9CEAF}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.LongValidatorAttribute" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNLongValidatorAttribute;
 
   end;
 
+  ///<summary>
+  ///  以声明方式指示.NET Framework 执行长整数验证的配置属性。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.LongValidatorAttribute')]
   DNLongValidatorAttribute = interface(DNConfigurationValidatorAttribute)
   ['{CCB0D833-1217-3423-AE4A-DB35B6429E5B}']
@@ -916,10 +2353,54 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取实例 <see cref="T:System.Configuration.LongValidator" />
+    ///  类。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  验证程序实例。
+    ///</returns>
     property ValidatorInstance: DNConfigurationValidatorBase read get_ValidatorInstance;
+    ///<summary>
+    ///  获取或设置属性允许的最小值。
+    ///</summary>
+    ///<returns>
+    ///  一个整数，指示允许的最小值。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  所选的值是否大于 <see cref="P:System.Configuration.LongValidatorAttribute.MaxValue" />
+    ///  。
+    ///</exception>
     property MinValue: Int64 read get_MinValue write set_MinValue;
+    ///<summary>
+    ///  获取或设置属性允许的最大值。
+    ///</summary>
+    ///<returns>
+    ///  一个长整型，该值指示允许的最大值。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  所选的值是小于 <see cref="P:System.Configuration.LongValidatorAttribute.MinValue" />
+    ///  。
+    ///</exception>
     property MaxValue: Int64 read get_MaxValue write set_MaxValue;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否要包含或排除定义的范围内的整数 <see cref="P:System.Configuration.LongValidatorAttribute.MinValue" />
+    ///  和 <see cref="P:System.Configuration.LongValidatorAttribute.MaxValue" />
+    ///  属性值。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果必须排除值;否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     property ExcludeRange: Boolean read get_ExcludeRange write set_ExcludeRange;
+    ///<summary>
+    ///  获取验证程序属性的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Type" />
+    ///  当前的验证程序属性实例。
+    ///</returns>
     property ValidatorType: DDN.mscorlib.DNType read get_ValidatorType;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -931,10 +2412,18 @@ type
   ['{FCC911CC-EF6B-5897-A3C8-57458C4E355F}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.PositiveTimeSpanValidatorAttribute" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNPositiveTimeSpanValidatorAttribute;
 
   end;
 
+  ///<summary>
+  ///  以声明方式指示.NET Framework 上的配置属性中执行时验证。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.PositiveTimeSpanValidatorAttribute')]
   DNPositiveTimeSpanValidatorAttribute = interface(DNConfigurationValidatorAttribute)
   ['{B5F5BEE4-E244-31D0-9F8C-6BC99031DABE}']
@@ -955,7 +2444,20 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取实例 <see cref="T:System.Configuration.PositiveTimeSpanValidator" />
+    ///  类。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  验证程序实例。
+    ///</returns>
     property ValidatorInstance: DNConfigurationValidatorBase read get_ValidatorInstance;
+    ///<summary>
+    ///  获取验证程序属性的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Type" />
+    ///  当前的验证程序属性实例。
+    ///</returns>
     property ValidatorType: DDN.mscorlib.DNType read get_ValidatorType;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -967,10 +2469,21 @@ type
   ['{E7696629-9071-51C4-B334-520072DCC456}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.RegexStringValidatorAttribute" />
+    ///  对象的新实例。
+    ///</summary>
+    ///  <param name="regex">
+    ///  要使用的正则表达式验证的字符串。
+    ///</param>
     {class} function init(regex: string): DNRegexStringValidatorAttribute;
 
   end;
 
+  ///<summary>
+  ///  以声明方式指示.NET Framework 来执行字符串验证在使用正则表达式的配置属性。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.RegexStringValidatorAttribute')]
   DNRegexStringValidatorAttribute = interface(DNConfigurationValidatorAttribute)
   ['{DD98AD9B-E7D5-3A85-8424-3B3999A136BA}']
@@ -992,8 +2505,27 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取实例 <see cref="T:System.Configuration.RegexStringValidator" />
+    ///  类。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  验证程序实例。
+    ///</returns>
     property ValidatorInstance: DNConfigurationValidatorBase read get_ValidatorInstance;
+    ///<summary>
+    ///  获取用来执行正则表达式验证的字符串。
+    ///</summary>
+    ///<returns>
+    ///  包含用来筛选分配给经过修饰的配置元素属性的字符串的正则表达式的字符串。
+    ///</returns>
     property Regex: string read get_Regex;
+    ///<summary>
+    ///  获取验证程序属性的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Type" />
+    ///  当前的验证程序属性实例。
+    ///</returns>
     property ValidatorType: DDN.mscorlib.DNType read get_ValidatorType;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -1005,10 +2537,18 @@ type
   ['{424C5DC4-5545-56F3-923E-AC22905EDDAB}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.StringValidatorAttribute" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNStringValidatorAttribute;
 
   end;
 
+  ///<summary>
+  ///  以声明方式指示.NET Framework 来执行字符串验证上的配置属性。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.StringValidatorAttribute')]
   DNStringValidatorAttribute = interface(DNConfigurationValidatorAttribute)
   ['{CD1673B6-5319-3401-904C-80DC3A0F426A}']
@@ -1035,10 +2575,51 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取实例 <see cref="T:System.Configuration.StringValidator" />
+    ///  类。
+    ///</summary>
+    ///<returns>
+    ///  当前 <see cref="T:System.Configuration.StringValidator" />
+    ///  中的设置 <see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  验证程序实例。
+    ///</returns>
     property ValidatorInstance: DNConfigurationValidatorBase read get_ValidatorInstance;
+    ///<summary>
+    ///  获取或设置要分配给属性的字符串的最小允许的值。
+    ///</summary>
+    ///<returns>
+    ///  一个整数，指示允许的最小长度为要分配给属性的字符串。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  所选的值是否大于 <see cref="P:System.Configuration.StringValidatorAttribute.MaxLength" />
+    ///  。
+    ///</exception>
     property MinLength: Int32 read get_MinLength write set_MinLength;
+    ///<summary>
+    ///  获取或设置有关要分配给属性的字符串允许的最大长度。
+    ///</summary>
+    ///<returns>
+    ///  一个整数，指示要赋给该属性的字符串的最大允许的长度。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  所选的值是小于 <see cref="P:System.Configuration.StringValidatorAttribute.MinLength" />
+    ///  。
+    ///</exception>
     property MaxLength: Int32 read get_MaxLength write set_MaxLength;
+    ///<summary>
+    ///  获取或设置该属性的无效字符。
+    ///</summary>
+    ///<returns>
+    ///  包含不允许的属性的字符集的字符串。
+    ///</returns>
     property InvalidCharacters: string read get_InvalidCharacters write set_InvalidCharacters;
+    ///<summary>
+    ///  获取验证程序属性的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Type" />
+    ///  当前的验证程序属性实例。
+    ///</returns>
     property ValidatorType: DDN.mscorlib.DNType read get_ValidatorType;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -1050,10 +2631,21 @@ type
   ['{377981B8-808B-50B9-A127-C8626F2DD102}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SubclassTypeValidatorAttribute" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="baseClass">
+    ///  基类类型。
+    ///</param>
     {class} function init(baseClass: DDN.mscorlib.DNType): DNSubclassTypeValidatorAttribute;
 
   end;
 
+  ///<summary>
+  ///  以声明方式指示.NET Framework 的配置属性执行验证。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.SubclassTypeValidatorAttribute')]
   DNSubclassTypeValidatorAttribute = interface(DNConfigurationValidatorAttribute)
   ['{9A06F141-568D-33E8-85C2-995F88155C27}']
@@ -1075,8 +2667,27 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取验证程序属性实例。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  实例。
+    ///</returns>
     property ValidatorInstance: DNConfigurationValidatorBase read get_ValidatorInstance;
+    ///<summary>
+    ///  获取正在验证的对象的基类型。
+    ///</summary>
+    ///<returns>
+    ///  正在验证的对象的基类型。
+    ///</returns>
     property BaseClass: DDN.mscorlib.DNType read get_BaseClass;
+    ///<summary>
+    ///  获取验证程序属性的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Type" />
+    ///  当前的验证程序属性实例。
+    ///</returns>
     property ValidatorType: DDN.mscorlib.DNType read get_ValidatorType;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -1088,6 +2699,10 @@ type
   ['{9CF61ED8-1BBF-583B-AF77-A11224C333DE}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.TimeSpanValidatorAttribute" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNTimeSpanValidatorAttribute;
 
   { static fields getter & setter } 
@@ -1097,11 +2712,21 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  获取允许的绝对最小值。
+    ///</summary>
     {class} property TimeSpanMinValue: string read __fakeFieldGet_TimeSpanMinValue;
+    ///<summary>
+    ///  获取允许的绝对最大值。
+    ///</summary>
     {class} property TimeSpanMaxValue: string read __fakeFieldGet_TimeSpanMaxValue;
 
   end;
 
+  ///<summary>
+  ///  以声明方式指示.NET Framework 上的配置属性中执行时验证。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.TimeSpanValidatorAttribute')]
   DNTimeSpanValidatorAttribute = interface(DNConfigurationValidatorAttribute)
   ['{4742AE00-632C-3534-AC8B-AB5B0A86131E}']
@@ -1130,19 +2755,89 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取实例 <see cref="T:System.Configuration.TimeSpanValidator" />
+    ///  类。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  验证程序实例。
+    ///</returns>
     property ValidatorInstance: DNConfigurationValidatorBase read get_ValidatorInstance;
+    ///<summary>
+    ///  获取绝对最小 <see cref="T:System.TimeSpan" />
+    ///  值。
+    ///</summary>
+    ///<returns>
+    ///  允许的最小 <see cref="T:System.TimeSpan" />
+    ///  值。
+    ///</returns>
     property MinValue: DDN.mscorlib.DNTimeSpan read get_MinValue;
+    ///<summary>
+    ///  获取绝对最大 <see cref="T:System.TimeSpan" />
+    ///  值。
+    ///</summary>
+    ///<returns>
+    ///  允许的最大 <see cref="T:System.TimeSpan" />
+    ///  值。
+    ///</returns>
     property MaxValue: DDN.mscorlib.DNTimeSpan read get_MaxValue;
+    ///<summary>
+    ///  获取或设置相对小 <see cref="T:System.TimeSpan" />
+    ///  值。
+    ///</summary>
+    ///<returns>
+    ///  允许的最小 <see cref="T:System.TimeSpan" />
+    ///  值。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  所选的值表示多个 <see cref="P:System.Configuration.TimeSpanValidatorAttribute.MaxValue" />
+    ///  。
+    ///</exception>
     property MinValueString: string read get_MinValueString write set_MinValueString;
+    ///<summary>
+    ///  获取或设置相对最大 <see cref="T:System.TimeSpan" />
+    ///  值。
+    ///</summary>
+    ///<returns>
+    ///  允许的最大 <see cref="T:System.TimeSpan" />
+    ///  值。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  所选的值表示小于 <see cref="P:System.Configuration.TimeSpanValidatorAttribute.MinValue" />
+    ///  。
+    ///</exception>
     property MaxValueString: string read get_MaxValueString write set_MaxValueString;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否要包含或排除范围内的整数，定义 <see cref="P:System.Configuration.TimeSpanValidatorAttribute.MinValueString" />
+    ///  和 <see cref="P:System.Configuration.TimeSpanValidatorAttribute.MaxValueString" />
+    ///  。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果必须排除值;否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     property ExcludeRange: Boolean read get_ExcludeRange write set_ExcludeRange;
+    ///<summary>
+    ///  获取验证程序属性的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Type" />
+    ///  当前的验证程序属性实例。
+    ///</returns>
     property ValidatorType: DDN.mscorlib.DNType read get_ValidatorType;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
 
   TDNTimeSpanValidatorAttribute = class(TDNGenericImport<DNTimeSpanValidatorAttributeClass, DNTimeSpanValidatorAttribute>)
   public const
+    ///<summary>
+    ///  获取允许的绝对最小值。
+    ///</summary>
    TimeSpanMinValue = '-10675199.02:48:05.4775808';
+    ///<summary>
+    ///  获取允许的绝对最大值。
+    ///</summary>
    TimeSpanMaxValue = '10675199.02:48:05.4775807';
   end;
 
@@ -1151,10 +2846,21 @@ type
   ['{C0A79122-C29C-5DCB-8C0C-E64158223818}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.DefaultSettingValueAttribute" />
+    ///  类的实例。
+    ///</summary>
+    ///  <param name="value">
+    ///  一个 <see cref="T:System.String" />
+    ///  表示该属性的默认值。
+    ///</param>
     {class} function init(value: string): DNDefaultSettingValueAttribute;
 
   end;
 
+  ///<summary>
+  ///  指定应用程序设置属性的默认值。
+  ///</summary>
   [DNTypeName('System.Configuration.DefaultSettingValueAttribute')]
   DNDefaultSettingValueAttribute = interface(DDN.mscorlib.DNAttribute)
   ['{D9772EF1-F025-3124-BC39-1EEE92E699DB}']
@@ -1174,6 +2880,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取应用程序设置属性的默认值。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  表示该属性的默认值。
+    ///</returns>
     property Value: string read get_Value;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -1185,10 +2898,18 @@ type
   ['{F05694A9-40C9-564A-9395-032C16E8C236}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.NoSettingsVersionUpgradeAttribute" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNNoSettingsVersionUpgradeAttribute;
 
   end;
 
+  ///<summary>
+  ///  指定设置提供程序应禁用在检测到应用程序升级时调用的任何逻辑。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.NoSettingsVersionUpgradeAttribute')]
   DNNoSettingsVersionUpgradeAttribute = interface(DDN.mscorlib.DNAttribute)
   ['{428965C3-1E31-3F1C-853A-A16537CA37F4}']
@@ -1217,10 +2938,17 @@ type
   ['{73009DD0-1F7A-53E9-A630-24A146015736}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingAttribute" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSettingAttribute;
 
   end;
 
+  ///<summary>
+  ///  表示用于设置属性相关联的设置信息的自定义设置属性。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingAttribute')]
   DNSettingAttribute = interface(DDN.mscorlib.DNAttribute)
   ['{91429316-A677-3FCC-B79A-33E345359EF3}']
@@ -1249,10 +2977,18 @@ type
   ['{CAD6B9D9-96D1-5512-893C-A2EF15602303}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ApplicationScopedSettingAttribute" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNApplicationScopedSettingAttribute;
 
   end;
 
+  ///<summary>
+  ///  指定应用程序设置属性的所有用户的应用程序的常见值。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.ApplicationScopedSettingAttribute')]
   DNApplicationScopedSettingAttribute = interface(DNSettingAttribute)
   ['{59775A70-BEE8-3E14-A9DA-219A288FE886}']
@@ -1281,10 +3017,18 @@ type
   ['{C4A5CA5C-06B7-5686-936C-9D9CFDED635F}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.UserScopedSettingAttribute" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNUserScopedSettingAttribute;
 
   end;
 
+  ///<summary>
+  ///  指定将应用程序设置组或属性包含应用程序的每个用户的非重复值。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.UserScopedSettingAttribute')]
   DNUserScopedSettingAttribute = interface(DNSettingAttribute)
   ['{4CAD4652-D77C-39AE-8CE9-910CDBFDBB1A}']
@@ -1313,10 +3057,21 @@ type
   ['{A121748C-A823-5C99-A204-06AFCF892BF4}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsDescriptionAttribute" />
+    ///  类的实例。
+    ///</summary>
+    ///  <param name="description"><see cref="T:System.String" />
+    ///  用作描述性文本。
+    ///</param>
     {class} function init(description: string): DNSettingsDescriptionAttribute;
 
   end;
 
+  ///<summary>
+  ///  提供描述单独的配置属性的字符串。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsDescriptionAttribute')]
   DNSettingsDescriptionAttribute = interface(DDN.mscorlib.DNAttribute)
   ['{C0D7A7E9-44E5-32CD-B060-60ADD2F1D435}']
@@ -1336,6 +3091,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取关联的配置属性的说明性文本。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  包含关联的配置属性的说明性文本。
+    ///</returns>
     property Description: string read get_Description;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -1347,10 +3109,22 @@ type
   ['{B61AEB18-5DC4-5B0C-9E28-82003946426A}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsGroupDescriptionAttribute" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="description">
+    ///  一个 <see cref="T:System.String" />
+    ///  包含应用程序设置组的描述性文本。
+    ///</param>
     {class} function init(description: string): DNSettingsGroupDescriptionAttribute;
 
   end;
 
+  ///<summary>
+  ///  提供了一个字符串，描述应用程序设置属性组。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsGroupDescriptionAttribute')]
   DNSettingsGroupDescriptionAttribute = interface(DDN.mscorlib.DNAttribute)
   ['{F884144D-37F5-3B16-BACB-300D65345871}']
@@ -1370,6 +3144,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  应用程序设置属性组的描述性文本。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  包含应用程序设置组的描述性文本。
+    ///</returns>
     property Description: string read get_Description;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -1381,10 +3162,22 @@ type
   ['{6704BFB1-7CD5-5453-A148-E7F63CD91DEC}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsGroupNameAttribute" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="groupName">
+    ///  一个 <see cref="T:System.String" />
+    ///  包含应用程序设置属性组的名称。
+    ///</param>
     {class} function init(groupName: string): DNSettingsGroupNameAttribute;
 
   end;
 
+  ///<summary>
+  ///  指定应用程序设置属性组的名称。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsGroupNameAttribute')]
   DNSettingsGroupNameAttribute = interface(DDN.mscorlib.DNAttribute)
   ['{58E28509-AF19-35CE-836D-438F70783561}']
@@ -1404,6 +3197,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取应用程序设置属性组的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  包含应用程序设置属性组的名称。
+    ///</returns>
     property GroupName: string read get_GroupName;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -1415,10 +3215,22 @@ type
   ['{927AE123-ADF0-5C8F-9364-1A7C0A5199B6}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsManageabilityAttribute" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="manageability">
+    ///  一个 <see cref="T:System.Configuration.SettingsManageability" />
+    ///  枚举所请求服务的值。
+    ///</param>
     {class} function init(manageability: DNSettingsManageability): DNSettingsManageabilityAttribute;
 
   end;
 
+  ///<summary>
+  ///  指定特殊服务以查找应用程序设置属性。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsManageabilityAttribute')]
   DNSettingsManageabilityAttribute = interface(DDN.mscorlib.DNAttribute)
   ['{BDD79B68-13F3-3607-9BCE-201C0F015E58}']
@@ -1438,6 +3250,14 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取所请求的特殊服务集。
+    ///</summary>
+    ///<returns>
+    ///  一个值，通过使用逻辑得到 <see langword="OR" />
+    ///  运算符，将合并所有 <see cref="T:System.Configuration.SettingsManageability" />
+    ///  与请求的服务相对应的枚举值。
+    ///</returns>
     property Manageability: DNSettingsManageability read get_Manageability;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -1449,11 +3269,31 @@ type
   ['{3C04D5A3-F96E-55F7-894B-E5D422AC372D}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsProviderAttribute" />
+    ///  类的实例。
+    ///</summary>
+    ///  <param name="providerTypeName">
+    ///  一个 <see cref="T:System.String" />
+    ///  包含设置提供程序的名称。
+    ///</param>
     {class} function init(providerTypeName: string): DNSettingsProviderAttribute; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsProviderAttribute" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="providerType">
+    ///  包含设置提供程序类型的 <see cref="T:System.Type" />
+    ///  。
+    ///</param>
     {class} function init(providerType: DDN.mscorlib.DNType): DNSettingsProviderAttribute; overload;
 
   end;
 
+  ///<summary>
+  ///  指定用于为当前应用程序设置类或属性提供存储的设置提供程序。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsProviderAttribute')]
   DNSettingsProviderAttribute = interface(DDN.mscorlib.DNAttribute)
   ['{4F6D6F90-D263-3FFE-B9AD-22FFEEA95891}']
@@ -1473,6 +3313,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取设置提供程序的类型名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  包含设置提供程序的名称。
+    ///</returns>
     property ProviderTypeName: string read get_ProviderTypeName;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -1484,10 +3331,22 @@ type
   ['{49CEE322-4191-5F4F-9ACB-AD4F8FA83268}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsSerializeAsAttribute" />
+    ///  类的实例。
+    ///</summary>
+    ///  <param name="serializeAs">
+    ///  一个 <see cref="T:System.Configuration.SettingsSerializeAs" />
+    ///  枚举值，该值指定序列化方案。
+    ///</param>
     {class} function init(serializeAs: DNSettingsSerializeAs): DNSettingsSerializeAsAttribute;
 
   end;
 
+  ///<summary>
+  ///  指定的设置提供程序应使用的序列化机制。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsSerializeAsAttribute')]
   DNSettingsSerializeAsAttribute = interface(DDN.mscorlib.DNAttribute)
   ['{BFA3991F-AD3E-38C0-A790-9C33ADDE5BB7}']
@@ -1507,6 +3366,14 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.SettingsSerializeAs" />
+    ///  枚举值，该值指定序列化方案。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsSerializeAs" />
+    ///  枚举值，该值指定序列化方案。
+    ///</returns>
     property SerializeAs: DNSettingsSerializeAs read get_SerializeAs;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -1518,10 +3385,22 @@ type
   ['{F2ECD35C-F889-5743-B832-F827B9FAA267}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SpecialSettingAttribute" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="specialSetting">
+    ///  一个 <see cref="T:System.Configuration.SpecialSetting" />
+    ///  定义应用程序设置属性的类别的枚举值。
+    ///</param>
     {class} function init(specialSetting: DNSpecialSetting): DNSpecialSettingAttribute;
 
   end;
 
+  ///<summary>
+  ///  指示应用程序设置属性具有特殊意义。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.SpecialSettingAttribute')]
   DNSpecialSettingAttribute = interface(DDN.mscorlib.DNAttribute)
   ['{F61D96AF-3FA4-3ED8-9C2E-E9071EE02C63}']
@@ -1541,6 +3420,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取描述应用程序设置属性的特殊设置类别的值。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SpecialSetting" />
+    ///  定义应用程序设置属性的类别的枚举值。
+    ///</returns>
     property SpecialSetting: DNSpecialSetting read get_SpecialSetting;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
   end;
@@ -1552,10 +3438,23 @@ type
   ['{0B0ACE44-650F-50F7-BCFD-51562091DAB1}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationPermissionAttribute" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="action">
+    ///  一个枚举成员所表示的安全操作 <see cref="T:System.Security.Permissions.SecurityAction" />
+    ///  。
+    ///  确定该属性的权限状态。
+    ///</param>
     {class} function init(action: DDN.mscorlib.DNSecurityAction): DNConfigurationPermissionAttribute;
 
   end;
 
+  ///<summary>
+  ///  创建 <see cref="T:System.Configuration.ConfigurationPermission" />
+  ///  授予或拒绝访问的配置文件节标记的目标权限的对象。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationPermissionAttribute')]
   DNConfigurationPermissionAttribute = interface(DDN.mscorlib.DNCodeAccessSecurityAttribute)
   ['{A85BB06D-9C09-3731-97DE-3A005724583D}']
@@ -1569,6 +3468,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  创建并返回一个对象，实现 <see cref="T:System.Security.IPermission" />
+    ///  接口。
+    ///</summary>
+    ///<returns>
+    ///  返回一个实现 <see cref="T:System.Security.IPermission" />
+    ///  的对象。
+    ///</returns>
     function CreatePermission: DDN.mscorlib.DNIPermission;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1591,11 +3498,26 @@ type
   ['{A946F78A-0F9E-5BD2-AA54-73703B7E2173}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsAttributeDictionary" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSettingsAttributeDictionary; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsAttributeDictionary" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="attributes">
+    ///  与配置设置相关的键/值对的集合。
+    ///</param>
     {class} function init(attributes: DNSettingsAttributeDictionary): DNSettingsAttributeDictionary; overload;
 
   end;
 
+  ///<summary>
+  ///  表示用来描述配置对象的键/值对的集合以及一个 <see cref="T:System.Configuration.SettingsProperty" />
+  ///  对象。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsAttributeDictionary')]
   DNSettingsAttributeDictionary = interface(DDN.mscorlib.DNHashtable)
   ['{0868BF6E-1412-3E69-958D-A4AA7A8B06C9}']
@@ -1648,10 +3570,17 @@ type
   ['{DBC1B362-BD0A-5D4D-97DA-B837AB9930FF}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsContext" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSettingsContext;
 
   end;
 
+  ///<summary>
+  ///  提供在持久保存设置时，可以使用该提供程序的上下文信息。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsContext')]
   DNSettingsContext = interface(DDN.mscorlib.DNHashtable)
   ['{86565E30-2B13-35DE-88E7-8D67A488FA6F}']
@@ -1704,6 +3633,10 @@ type
   ['{02D66BE0-53B8-5F61-97E0-50F521AFCE27}']
   end;
 
+  ///<summary>
+  ///  包含 <see cref="T:System.Configuration.ConfigurationLocationCollection" />
+  ///  对象的集合。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationLocationCollection')]
   DNConfigurationLocationCollection = interface(DDN.mscorlib.DNReadOnlyCollectionBase)
   ['{858C9C17-6D2C-3327-B1A3-D06DF578E96A}']
@@ -1733,6 +3666,9 @@ type
   ['{A06CC875-686F-5A40-96CF-7F0DBC196F65}']
   end;
 
+  ///<summary>
+  ///  表示配置文件中相关章节的集合。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationSectionCollection')]
   DNConfigurationSectionCollection = interface(DNObject)
   ['{AAF38C07-72FC-3DC8-8BD1-14A7CAB678ED}']
@@ -1745,15 +3681,125 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  在序列化过程使用由系统。
+    ///</summary>
+    ///  <param name="info">
+    ///  适用 <see cref="T:System.Runtime.Serialization.SerializationInfo" />
+    ///  对象。
+    ///</param>
+    ///  <param name="context">
+    ///  适用 <see cref="T:System.Runtime.Serialization.StreamingContext" />
+    ///  对象。
+    ///</param>
     procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
+    ///<summary>
+    ///  添加 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象传递给 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="name">
+    ///  要添加部分的名称。
+    ///</param>
+    ///  <param name="section">
+    ///  要添加的部分。
+    ///</param>
     procedure Add(name: string; section: DNConfigurationSection);
+    ///<summary>
+    ///  清除此 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象。
+    ///</summary>
     procedure Clear;
+    ///<summary>
+    ///  这会将复制 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  到一个数组对象。
+    ///</summary>
+    ///  <param name="array">
+    ///  要复制的数组 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象传递给。
+    ///</param>
+    ///  <param name="index">
+    ///  在此处开始将复制的索引位置。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="array" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException">
+    ///  长度 <paramref name="array" />
+    ///  的值少于 <see cref="P:System.Configuration.ConfigurationSectionCollection.Count" />
+    ///  加上 <paramref name="index" />
+    ///  。
+    ///</exception>
     procedure CopyTo(&array: TArray<DNConfigurationSection>; index: Int32);
+    ///<summary>
+    ///  获取指定 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  包含在此对象 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="index">
+    ///  索引 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  要返回对象。
+    ///</param>
+    ///<returns><see cref="T:System.Configuration.ConfigurationSection" />
+    ///  中指定索引处的对象。
+    ///</returns>
     function Get(index: Int32): DNConfigurationSection; overload;
+    ///<summary>
+    ///  获取指定 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  包含在此对象 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="name">
+    ///  名称 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  要返回对象。
+    ///</param>
+    ///<returns><see cref="T:System.Configuration.ConfigurationSection" />
+    ///  具有指定名称的对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="name" />
+    ///  为 null 或空字符串 ("")。
+    ///</exception>
     function Get(name: string): DNConfigurationSection; overload;
+    ///<summary>
+    ///  获取指定的键 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  包含在此对象 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="index">
+    ///  索引 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  它的键是要返回的对象。
+    ///</param>
+    ///<returns>
+    ///  键 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  中指定索引处的对象。
+    ///</returns>
     function GetKey(index: Int32): string;
+    ///<summary>
+    ///  移除指定 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  从此对象 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="name">
+    ///  要删除的段的名称。
+    ///</param>
     procedure Remove(name: string);
+    ///<summary>
+    ///  移除指定 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  从此对象 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="index">
+    ///  要删除的部分的索引。
+    ///</param>
     procedure RemoveAt(index: Int32);
+    ///<summary>
+    ///  获取一个枚举器可循环访问此 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  可用于循环访问此 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -1765,7 +3811,23 @@ type
 
     property Item[name: string]: DNConfigurationSection read get_Item; default;
     property Item[index: Int32]: DNConfigurationSection read get_Item; default;
+    ///<summary>
+    ///  在此获取节的数目 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个整数，表示集合中的节的数目。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取所有键 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象中包含此 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  对象，其中包含此集合中的所有部分的键。
+    ///</returns>
     property Keys: DNNameObjectCollectionBase_KeysCollection read get_Keys;
   end;
 
@@ -1776,6 +3838,10 @@ type
   ['{BA6A542B-5D0E-5A2B-8A28-47FB90389A84}']
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+  ///  对象集合。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationSectionGroupCollection')]
   DNConfigurationSectionGroupCollection = interface(DNObject)
   ['{938631B8-20E6-3C88-8F9C-5CF92BF7B063}']
@@ -1788,15 +3854,121 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  在序列化过程使用由系统。
+    ///</summary>
+    ///  <param name="info">
+    ///  适用 <see cref="T:System.Runtime.Serialization.SerializationInfo" />
+    ///  对象。
+    ///</param>
+    ///  <param name="context">
+    ///  适用 <see cref="T:System.Runtime.Serialization.StreamingContext" />
+    ///  对象。
+    ///</param>
     procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
+    ///<summary>
+    ///  添加 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象传递给此 <see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="name">
+    ///  名称 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  要添加对象。
+    ///</param>
+    ///  <param name="sectionGroup"><see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  要添加对象。
+    ///</param>
     procedure Add(name: string; sectionGroup: DNConfigurationSectionGroup);
+    ///<summary>
+    ///  清除集合。
+    ///</summary>
     procedure Clear;
+    ///<summary>
+    ///  这会将复制 <see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />
+    ///  到一个数组对象。
+    ///</summary>
+    ///  <param name="array">
+    ///  要向其中复制对象的数组。
+    ///</param>
+    ///  <param name="index">
+    ///  在此处开始将复制的索引位置。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="array" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException">
+    ///  长度 <paramref name="array" />
+    ///  的值少于 <see cref="P:System.Configuration.ConfigurationSectionGroupCollection.Count" />
+    ///  加上 <paramref name="index" />
+    ///  。
+    ///</exception>
     procedure CopyTo(&array: TArray<DNConfigurationSectionGroup>; index: Int32);
+    ///<summary>
+    ///  获取指定 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  集合中包含的对象。
+    ///</summary>
+    ///  <param name="index">
+    ///  索引 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  要返回对象。
+    ///</param>
+    ///<returns><see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  中指定索引处的对象。
+    ///</returns>
     function Get(index: Int32): DNConfigurationSectionGroup; overload;
+    ///<summary>
+    ///  获取指定 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  来自集合对象。
+    ///</summary>
+    ///  <param name="name">
+    ///  名称 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  要返回对象。
+    ///</param>
+    ///<returns><see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  具有指定名称的对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="name" />
+    ///  为 null 或空字符串 ("")。
+    ///</exception>
     function Get(name: string): DNConfigurationSectionGroup; overload;
+    ///<summary>
+    ///  获取指定的键 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  包含在此对象 <see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="index">
+    ///  它的键是要返回的节组的索引。
+    ///</param>
+    ///<returns>
+    ///  键 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  中指定索引处的对象。
+    ///</returns>
     function GetKey(index: Int32): string;
+    ///<summary>
+    ///  删除 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象名称指定从此 <see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="name">
+    ///  要删除的节组的名称。
+    ///</param>
     procedure Remove(name: string);
+    ///<summary>
+    ///  删除 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  其索引指定从此对象 <see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="index">
+    ///  要删除的节组的索引。
+    ///</param>
     procedure RemoveAt(index: Int32);
+    ///<summary>
+    ///  获取可循环访问的枚举器 <see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  可用于循环访问 <see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />
+    ///  对象。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -1808,7 +3980,22 @@ type
 
     property Item[name: string]: DNConfigurationSectionGroup read get_Item; default;
     property Item[index: Int32]: DNConfigurationSectionGroup read get_Item; default;
+    ///<summary>
+    ///  获取集合中的节组的数目。
+    ///</summary>
+    ///<returns>
+    ///  一个整数，表示集合中的节组的数目。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取所有键 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象中包含此 <see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />
+    ///  对象，其中包含此集合中的所有节组的名称。
+    ///</returns>
     property Keys: DNNameObjectCollectionBase_KeysCollection read get_Keys;
   end;
 
@@ -1819,6 +4006,11 @@ type
   ['{D4484712-AE47-5810-9027-E568B0572B00}']
   end;
 
+  ///<summary>
+  ///  包含 <see cref="T:System.Configuration.PropertyInformation" />
+  ///  对象的集合。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.PropertyInformationCollection')]
   DNPropertyInformationCollection = interface(DNObject)
   ['{F88B5872-E250-3285-9FCE-024B9DE86610}']
@@ -1830,8 +4022,58 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  填充 <see cref="T:System.Runtime.Serialization.SerializationInfo" />
+    ///  对象序列化所需的数据 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  实例。
+    ///</summary>
+    ///  <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" />
+    ///  对象，该对象包含序列化 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  实例所需的信息。
+    ///</param>
+    ///  <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" />
+    ///  对象，该对象包含与 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  实例关联的序列化流的源和目标。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="info" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
+    ///<summary>
+    ///  将复制整个 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  集合到一维兼容 <see cref="T:System.Array" />
+    ///  , ，从目标数组的指定索引处开始。
+    ///</summary>
+    ///  <param name="array">
+    ///  一维 <see cref="T:System.Array" />
+    ///  从复制的元素的目标 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  集合。
+    ///<see cref="T:System.Array" />
+    ///  必须具有从零开始的索引。
+    ///</param>
+    ///  <param name="index"><paramref name="array" />
+    ///  中从零开始的索引，从此处开始复制。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="array" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Array.Length" />
+    ///  属性 <paramref name="array" />
+    ///  是小于 <see cref="P:System.Collections.Specialized.NameObjectCollectionBase.Count" />
+    ///  + <paramref name="index" />
+    ///  。
+    ///</exception>
     procedure CopyTo(&array: TArray<DNPropertyInformation>; index: Int32);
+    ///<summary>
+    ///  获取 <see cref="T:System.Collections.IEnumerator" />
+    ///  对象，用于循环访问此 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  对象，用于循环访问此 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -1853,10 +4095,18 @@ type
   ['{B822561D-D70C-5697-845B-A88553C836CD}']
   { constructors } 
 
+    ///<summary>
+    ///  创建 <see cref="T:System.Configuration.CommaDelimitedStringCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNCommaDelimitedStringCollection;
 
   end;
 
+  ///<summary>
+  ///  表示用逗号分隔的字符串元素的集合。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.CommaDelimitedStringCollection')]
   DNCommaDelimitedStringCollection = interface(DNObject)
   ['{D4AD1B84-767A-3563-A0B5-DBA3F18C545C}']
@@ -1872,13 +4122,58 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  创建集合的副本。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.CommaDelimitedStringCollection" />
+    ///  的副本。
+    ///</returns>
     function Clone: DNCommaDelimitedStringCollection;
+    ///<summary>
+    ///  返回的字符串表示形式的对象。
+    ///</summary>
+    ///<returns>
+    ///  对象的字符串表示形式。
+    ///</returns>
     function ToString: string;
+    ///<summary>
+    ///  将集合对象设置为只读的。
+    ///</summary>
     procedure SetReadOnly;
+    ///<summary>
+    ///  将字符串添加到以逗号分隔的集合。
+    ///</summary>
+    ///  <param name="value">
+    ///  字符串值。
+    ///</param>
     procedure Add(value: string);
+    ///<summary>
+    ///  字符串数组中的所有字符串都添加到集合。
+    ///</summary>
+    ///  <param name="range">
+    ///  要添加到集合的字符串数组。
+    ///</param>
     procedure AddRange(range: TArray<string>);
+    ///<summary>
+    ///  清除集合。
+    ///</summary>
     procedure Clear;
+    ///<summary>
+    ///  将字符串元素添加到集合中的指定索引处。
+    ///</summary>
+    ///  <param name="index">
+    ///  将从该处添加新元素的集合中的索引。
+    ///</param>
+    ///  <param name="value">
+    ///  要添加到集合的新元素的值。
+    ///</param>
     procedure Insert(index: Int32; value: string);
+    ///<summary>
+    ///  从集合中删除字符串元素。
+    ///</summary>
+    ///  <param name="value">
+    ///  要删除的字符串。
+    ///</param>
     procedure Remove(value: string);
     function &Contains(value: string): Boolean;
     procedure CopyTo(&array: TArray<string>; index: Int32);
@@ -1891,7 +4186,23 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个值，指定是否已修改该集合。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.CommaDelimitedStringCollection" />
+    ///  已修改; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsModified: Boolean read get_IsModified;
+    ///<summary>
+    ///  获取一个值，该值指示集合对象只读的。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果在指定的字符串元素 <see cref="T:System.Configuration.CommaDelimitedStringCollection" />
+    ///  是只读的; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsReadOnly: Boolean read get_IsReadOnly;
     property Item[index: Int32]: string read get_Item write set_Item; default;
     property Count: Int32 read get_Count;
@@ -1906,12 +4217,41 @@ type
   ['{5BDC67B7-2655-5EBE-9977-2BA16A8E01AD}']
   end;
 
+  ///<summary>
+  ///  配置转换器类型的基类。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationConverterBase')]
   DNConfigurationConverterBase = interface(DNObject)
   ['{3D21E06A-9247-3320-BD46-4DF4D57BB829}']
   { methods } 
 
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type">
+    ///  要转换为的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertTo(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type"><see cref="T:System.Type" />
+    ///  将从转换。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertFrom(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean; overload;
@@ -1960,18 +4300,94 @@ type
   ['{F7EE40B4-B67B-560A-B712-F9C41CC2F098}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.CommaDelimitedStringCollectionConverter" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNCommaDelimitedStringCollectionConverter;
 
   end;
 
+  ///<summary>
+  ///  将逗号分隔的字符串的值转换间来回 <see cref="T:System.Configuration.CommaDelimitedStringCollection" />
+  ///  对象。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.CommaDelimitedStringCollectionConverter')]
   DNCommaDelimitedStringCollectionConverter = interface(DNConfigurationConverterBase)
   ['{DD5D79D9-1E7F-3907-BCD5-CCB7B6F131AE}']
   { methods } 
 
+    ///<summary>
+    ///  将 <see cref="T:System.Configuration.CommaDelimitedStringCollection" />
+    ///  对象转换为 <see cref="T:System.String" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用。
+    ///</param>
+    ///  <param name="value">
+    ///  要转换的值。
+    ///</param>
+    ///  <param name="type">
+    ///  转换类型。
+    ///</param>
+    ///<returns><see cref="T:System.String" />
+    ///  表示转换后 <paramref name="value" />
+    ///  参数，它是 <see cref="T:System.Configuration.CommaDelimitedStringCollection" />
+    ///  。
+    ///</returns>
     function ConvertTo(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; &type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  将 <see cref="T:System.String" />
+    ///  对象转换为 <see cref="T:System.Configuration.CommaDelimitedStringCollection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用。
+    ///</param>
+    ///  <param name="data">
+    ///  以逗号分隔 <see cref="T:System.String" />
+    ///  将转换。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.CommaDelimitedStringCollection" />
+    ///  包含转换后的值。
+    ///</returns>
     function ConvertFrom(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; data: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type">
+    ///  要转换为的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertTo(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type"><see cref="T:System.Type" />
+    ///  将从转换。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertFrom(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean; overload;
@@ -2018,18 +4434,106 @@ type
   ['{6D1C01F4-6861-52FB-881A-9DDBEAFD29D1}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.GenericEnumConverter" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="typeEnum">
+    ///  要转换的枚举类型。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="typeEnum" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} function init(typeEnum: DDN.mscorlib.DNType): DNGenericEnumConverter;
 
   end;
 
+  ///<summary>
+  ///  一个字符串和枚举类型之间进行转换。
+  ///</summary>
   [DNTypeName('System.Configuration.GenericEnumConverter')]
   DNGenericEnumConverter = interface(DNConfigurationConverterBase)
   ['{4B17B5E4-1AE4-376F-8C38-4A07B17AC9DA}']
   { methods } 
 
+    ///<summary>
+    ///  将转换 <see cref="T:System.String" />
+    ///  到 <see cref="T:System.Enum" />
+    ///  类型。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="data"><see cref="T:System.String" />
+    ///  要转换的对象。
+    ///</param>
+    ///<returns><see cref="T:System.Enum" />
+    ///  表示类型 <paramref name="data" />
+    ///  参数。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="data" />
+    ///  为 null 或空字符串 ("")。
+    ///  - 或 -
+    ///  <paramref name="data" />
+    ///  数字字符开头。
+    ///  - 或 -
+    ///  <paramref name="data" />
+    ///  包含空白。
+    ///</exception>
     function ConvertFrom(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; data: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  将转换 <see cref="T:System.Enum" />
+    ///  类型到 <see cref="T:System.String" />
+    ///  值。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="value">
+    ///  要转换的值。
+    ///</param>
+    ///  <param name="type">
+    ///  要转换为的类型。
+    ///</param>
+    ///<returns><see cref="T:System.String" />
+    ///  表示 <paramref name="value" />
+    ///  参数。
+    ///</returns>
     function ConvertTo(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; &type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type">
+    ///  要转换为的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertTo(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type"><see cref="T:System.Type" />
+    ///  将从转换。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertFrom(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean; overload;
@@ -2076,18 +4580,96 @@ type
   ['{43B598C9-6E5C-5BC0-98C5-74714E8D5DA9}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.InfiniteIntConverter" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNInfiniteIntConverter;
 
   end;
 
+  ///<summary>
+  ///  一个字符串的标准无限或整数值之间进行转换。
+  ///</summary>
   [DNTypeName('System.Configuration.InfiniteIntConverter')]
   DNInfiniteIntConverter = interface(DNConfigurationConverterBase)
   ['{763738A7-0482-3EC3-ADFE-A5EC90644A8E}']
   { methods } 
 
+    ///<summary>
+    ///  将转换 <see cref="T:System.String" />
+    ///  到 <see cref="T:System.Int32" />
+    ///  。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="data"><see cref="T:System.String" />
+    ///  要转换的对象。
+    ///</param>
+    ///<returns><see cref="F:System.Int32.MaxValue" />
+    ///  , ，如果 <paramref name="data" />
+    ///  参数是 <see cref="T:System.String" />
+    ///  "无限"; 否则为 <see cref="T:System.Int32" />
+    ///  表示 <paramref name="data" />
+    ///  参数的整数值。
+    ///</returns>
     function ConvertFrom(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; data: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  将转换 <see cref="T:System.Int32" />
+    ///  。 若要 <see cref="T:System.String" />
+    ///  。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="value">
+    ///  要转换的值。
+    ///</param>
+    ///  <param name="type">
+    ///  要转换为的类型。
+    ///</param>
+    ///<returns><see cref="T:System.String" />
+    ///  "无限"if <paramref name="value" />
+    ///  是 <see cref="F:System.Int32.MaxValue" />
+    ///  ; 否则为 <see cref="T:System.String" />
+    ///  表示 <paramref name="value" />
+    ///  参数。
+    ///</returns>
     function ConvertTo(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; &type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type">
+    ///  要转换为的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertTo(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type"><see cref="T:System.Type" />
+    ///  将从转换。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertFrom(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean; overload;
@@ -2134,18 +4716,97 @@ type
   ['{9343E3D5-E87F-59BB-BAB3-BD4CF94A11B3}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.InfiniteTimeSpanConverter" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNInfiniteTimeSpanConverter;
 
   end;
 
+  ///<summary>
+  ///  一个字符串和标准无限之间进行转换 <see cref="T:System.TimeSpan" />
+  ///  值。
+  ///</summary>
   [DNTypeName('System.Configuration.InfiniteTimeSpanConverter')]
   DNInfiniteTimeSpanConverter = interface(DNConfigurationConverterBase)
   ['{E5FA0D6B-DCF3-3459-A337-99F1EEDBF38A}']
   { methods } 
 
+    ///<summary>
+    ///  将 <see cref="T:System.String" />
+    ///  转换为 <see cref="T:System.TimeSpan" />
+    ///  。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="data"><see cref="T:System.String" />
+    ///  要转换的对象。
+    ///</param>
+    ///<returns><see cref="F:System.TimeSpan.MaxValue" />
+    ///  , ，如果 <paramref name="data" />
+    ///  参数是 <see cref="T:System.String" />
+    ///  无限; 否则为 <see cref="T:System.TimeSpan" />
+    ///  表示 <paramref name="data" />
+    ///  以分钟为单位的参数。
+    ///</returns>
     function ConvertFrom(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; data: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  将 <see cref="T:System.TimeSpan" />
+    ///  转换为 <see cref="T:System.String" />
+    ///  。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  对象转换期间使用。
+    ///</param>
+    ///  <param name="value">
+    ///  要转换的值。
+    ///</param>
+    ///  <param name="type">
+    ///  转换类型。
+    ///</param>
+    ///<returns><see cref="T:System.String" />
+    ///  "无限"if <paramref name="value" />
+    ///  参数是 <see cref="F:System.TimeSpan.MaxValue" />
+    ///  ; 否则为 <see cref="T:System.String" />
+    ///  表示 <paramref name="value" />
+    ///  以分钟为单位的参数。
+    ///</returns>
     function ConvertTo(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; &type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type">
+    ///  要转换为的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertTo(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type"><see cref="T:System.Type" />
+    ///  将从转换。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertFrom(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean; overload;
@@ -2192,18 +4853,90 @@ type
   ['{382420B1-FF24-5018-BBE3-212CA1EBC93F}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.TimeSpanMinutesConverter" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNTimeSpanMinutesConverter;
 
   end;
 
+  ///<summary>
+  ///  将转换以分钟为单位表示的时间跨度。
+  ///</summary>
   [DNTypeName('System.Configuration.TimeSpanMinutesConverter')]
   DNTimeSpanMinutesConverter = interface(DNConfigurationConverterBase)
   ['{1130FF77-5555-3F76-A2A6-E0D7550BADD9}']
   { methods } 
 
+    ///<summary>
+    ///  将 <see cref="T:System.TimeSpan" />
+    ///  转换为 <see cref="T:System.String" />
+    ///  。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="value">
+    ///  要转换的值。
+    ///</param>
+    ///  <param name="type">
+    ///  要转换为的类型。
+    ///</param>
+    ///<returns><see cref="T:System.String" />
+    ///  表示 <paramref name="value" />
+    ///  以分钟为单位的参数。
+    ///</returns>
     function ConvertTo(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; &type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  将 <see cref="T:System.String" />
+    ///  转换为 <see cref="T:System.TimeSpan" />
+    ///  。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="data"><see cref="T:System.String" />
+    ///  要转换的对象。
+    ///</param>
+    ///<returns><see cref="T:System.TimeSpan" />
+    ///  表示 <paramref name="data" />
+    ///  以分钟为单位的参数。
+    ///</returns>
     function ConvertFrom(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; data: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type">
+    ///  要转换为的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertTo(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type"><see cref="T:System.Type" />
+    ///  将从转换。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertFrom(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean; overload;
@@ -2250,16 +4983,69 @@ type
   ['{AC3A2F4E-DDF6-5642-A8E9-8A288E327F58}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.TimeSpanMinutesOrInfiniteConverter" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNTimeSpanMinutesOrInfiniteConverter;
 
   end;
 
+  ///<summary>
+  ///  将转换 <see cref="T:System.TimeSpan" />
+  ///  以分钟为单位表示或表示为标准的无限时间跨度。
+  ///</summary>
   [DNTypeName('System.Configuration.TimeSpanMinutesOrInfiniteConverter')]
   DNTimeSpanMinutesOrInfiniteConverter = interface(DNTimeSpanMinutesConverter)
   ['{3D9A8F7C-D353-3DD5-A096-BA1B81C41FEE}']
   { methods } 
 
+    ///<summary>
+    ///  将 <see cref="T:System.String" />
+    ///  转换为 <see cref="T:System.TimeSpan" />
+    ///  。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="data"><see cref="T:System.String" />
+    ///  要转换的对象。
+    ///</param>
+    ///<returns><see cref="F:System.TimeSpan.MaxValue" />
+    ///  , ，如果 <paramref name="data" />
+    ///  参数是 <see cref="T:System.String" />
+    ///  "无限"; 否则为 <see cref="T:System.TimeSpan" />
+    ///  表示 <paramref name="data" />
+    ///  以分钟为单位的参数。
+    ///</returns>
     function ConvertFrom(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; data: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  将 <see cref="T:System.TimeSpan" />
+    ///  转换为 <see cref="T:System.String" />
+    ///  。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="value">
+    ///  要转换的值。
+    ///</param>
+    ///  <param name="type">
+    ///  转换类型。
+    ///</param>
+    ///<returns><see cref="T:System.String" />
+    ///  "无限"if <paramref name="value" />
+    ///  参数是 <see cref="F:System.TimeSpan.MaxValue" />
+    ///  ; 否则为 <see cref="T:System.String" />
+    ///  表示 <paramref name="value" />
+    ///  以分钟为单位的参数。
+    ///</returns>
     function ConvertTo(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; &type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
     function CanConvertTo(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertFrom(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
@@ -2308,18 +5094,93 @@ type
   ['{843D6767-A74B-5919-99E1-81649121429E}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.TimeSpanSecondsConverter" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNTimeSpanSecondsConverter;
 
   end;
 
+  ///<summary>
+  ///  转换以秒为单位的时间跨度。
+  ///</summary>
   [DNTypeName('System.Configuration.TimeSpanSecondsConverter')]
   DNTimeSpanSecondsConverter = interface(DNConfigurationConverterBase)
   ['{7E8D2F57-1487-3396-98CC-1B18CE502821}']
   { methods } 
 
+    ///<summary>
+    ///  将 <see cref="T:System.TimeSpan" />
+    ///  转换为 <see cref="T:System.String" />
+    ///  。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="value">
+    ///  要转换的值。
+    ///</param>
+    ///  <param name="type">
+    ///  要转换为的类型。
+    ///</param>
+    ///<returns><see cref="T:System.String" />
+    ///  表示 <paramref name="value" />
+    ///  以分钟为单位的参数。
+    ///</returns>
     function ConvertTo(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; &type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  将 <see cref="T:System.String" />
+    ///  转换为 <see cref="T:System.TimeSpan" />
+    ///  。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="data"><see cref="T:System.String" />
+    ///  要转换的对象。
+    ///</param>
+    ///<returns><see cref="T:System.TimeSpan" />
+    ///  表示 <paramref name="data" />
+    ///  参数以秒为单位。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="data" />
+    ///  无法分析为一个整数值。
+    ///</exception>
     function ConvertFrom(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; data: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type">
+    ///  要转换为的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertTo(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type"><see cref="T:System.Type" />
+    ///  将从转换。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertFrom(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean; overload;
@@ -2366,16 +5227,70 @@ type
   ['{A6998E67-E7C7-5DAB-85F5-33D03ECDC129}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.TimeSpanSecondsOrInfiniteConverter" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNTimeSpanSecondsOrInfiniteConverter;
 
   end;
 
+  ///<summary>
+  ///  将转换 <see cref="T:System.TimeSpan" />
+  ///  以秒为单位表示或表示为标准的无限时间跨度。
+  ///</summary>
   [DNTypeName('System.Configuration.TimeSpanSecondsOrInfiniteConverter')]
   DNTimeSpanSecondsOrInfiniteConverter = interface(DNTimeSpanSecondsConverter)
   ['{D3414CFD-DE05-37E3-A545-00F2A7084DBC}']
   { methods } 
 
+    ///<summary>
+    ///  将转换 <see cref="T:System.TimeSpan" />
+    ///  到。
+    ///<see cref="T:System.String" />
+    ///  。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="value">
+    ///  要转换的值。
+    ///</param>
+    ///  <param name="type">
+    ///  转换类型。
+    ///</param>
+    ///<returns><see cref="T:System.String" />
+    ///  "无限"if <paramref name="value" />
+    ///  参数是 <see cref="F:System.TimeSpan.MaxValue" />
+    ///  ; 否则为 <see cref="T:System.String" />
+    ///  表示 <paramref name="value" />
+    ///  参数以秒为单位。
+    ///</returns>
     function ConvertTo(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; &type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  将 <see cref="T:System.String" />
+    ///  转换为 <see cref="T:System.TimeSpan" />
+    ///  。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="data"><see cref="T:System.String" />
+    ///  要转换的对象。
+    ///</param>
+    ///<returns><see cref="F:System.TimeSpan.MaxValue" />
+    ///  , ，如果 <paramref name="data" />
+    ///  参数是 <see cref="T:System.String" />
+    ///  "无限"; 否则为 <see cref="T:System.TimeSpan" />
+    ///  表示 <paramref name="data" />
+    ///  参数以秒为单位。
+    ///</returns>
     function ConvertFrom(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; data: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
     function CanConvertTo(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertFrom(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
@@ -2424,18 +5339,94 @@ type
   ['{C1765974-DDDE-58A6-88AB-7794B708589A}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.TypeNameConverter" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNTypeNameConverter;
 
   end;
 
+  ///<summary>
+  ///  类型和字符串值之间进行转换。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.TypeNameConverter')]
   DNTypeNameConverter = interface(DNConfigurationConverterBase)
   ['{35C93F2B-7B46-366F-B778-A2703A600725}']
   { methods } 
 
+    ///<summary>
+    ///  将 <see cref="T:System.Type" />
+    ///  对象转换为 <see cref="T:System.String" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="value">
+    ///  要转换的值。
+    ///</param>
+    ///  <param name="type">
+    ///  要转换为的类型。
+    ///</param>
+    ///<returns><see cref="T:System.String" />
+    ///  表示 <paramref name="value" />
+    ///  参数。
+    ///</returns>
     function ConvertTo(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; &type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  将 <see cref="T:System.String" />
+    ///  对象转换为 <see cref="T:System.Type" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="data"><see cref="T:System.String" />
+    ///  要转换的对象。
+    ///</param>
+    ///<returns><see cref="T:System.Type" />
+    ///  表示 <paramref name="data" />
+    ///  参数。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><see cref="T:System.Type" />
+    ///  值不能为已解决。
+    ///</exception>
     function ConvertFrom(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; data: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type">
+    ///  要转换为的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertTo(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type"><see cref="T:System.Type" />
+    ///  将从转换。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertFrom(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean; overload;
@@ -2482,18 +5473,86 @@ type
   ['{72CC7FE7-607E-5668-A08C-6C5155D463C0}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.WhiteSpaceTrimStringConverter" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNWhiteSpaceTrimStringConverter;
 
   end;
 
+  ///<summary>
+  ///  将字符串转换为它的规范化格式。
+  ///</summary>
   [DNTypeName('System.Configuration.WhiteSpaceTrimStringConverter')]
   DNWhiteSpaceTrimStringConverter = interface(DNConfigurationConverterBase)
   ['{63D99F63-7BA1-312F-9D69-E9EEF5AB2773}']
   { methods } 
 
+    ///<summary>
+    ///  将转换 <see cref="T:System.String" />
+    ///  为规范化格式。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="value">
+    ///  要转换的值。
+    ///</param>
+    ///  <param name="type">
+    ///  要转换为的类型。
+    ///</param>
+    ///<returns>
+    ///  表示转换后的值的对象。
+    ///</returns>
     function ConvertTo(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; &type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  将转换 <see cref="T:System.String" />
+    ///  为规范化格式。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="ci"><see cref="T:System.Globalization.CultureInfo" />
+    ///  转换期间使用的对象。
+    ///</param>
+    ///  <param name="data"><see cref="T:System.String" />
+    ///  要转换的对象。
+    ///</param>
+    ///<returns>
+    ///  表示转换后的值的对象。
+    ///</returns>
     function ConvertFrom(ctx: DNITypeDescriptorContext; ci: DDN.mscorlib.DNCultureInfo; data: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type">
+    ///  要转换为的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertTo(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
+    ///<summary>
+    ///  确定是否允许转换。
+    ///</summary>
+    ///  <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    ///  用于类型转换的对象。
+    ///</param>
+    ///  <param name="type"><see cref="T:System.Type" />
+    ///  将从转换。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果允许此转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertFrom(ctx: DNITypeDescriptorContext; &type: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean; overload;
@@ -2540,15 +5599,51 @@ type
   ['{686161BD-3957-5B29-AD1B-7FF6C52D2730}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.AppSettingsReader" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNAppSettingsReader;
 
   end;
 
+  ///<summary>
+  ///  提供用于从配置读取特定类型的值的方法。
+  ///</summary>
   [DNTypeName('System.Configuration.AppSettingsReader')]
   DNAppSettingsReader = interface(DDN.mscorlib.DNObject)
   ['{630F7A39-C131-3A15-868A-EE3FF6C225FA}']
   { methods } 
 
+    ///<summary>
+    ///  从指定的键获取值 <see cref="P:System.Configuration.ConfigurationSettings.AppSettings" />
+    ///  属性并返回包含从配置的值的指定类型的对象。
+    ///</summary>
+    ///  <param name="key">
+    ///  要为其获取值键。
+    ///</param>
+    ///  <param name="type">
+    ///  要返回的对象的类型。
+    ///</param>
+    ///<returns>
+    ///  指定键的值。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="key" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="type" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.InvalidOperationException"><paramref name="key" />
+    ///  中不存在 <see langword="&lt;appSettings&gt;" />
+    ///  配置节。
+    ///  - 或 -
+    ///  中的值 <see langword="&lt;appSettings&gt;" />
+    ///  配置节，用于 <paramref name="key" />
+    ///  的类型不是 <paramref name="type" />
+    ///  。
+    ///</exception>
     function GetValue(key: string; &type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2564,6 +5659,10 @@ type
   ['{072F76EE-89FD-550C-9CCD-337EEB048770}']
   end;
 
+  ///<summary>
+  ///  表示适用于特定计算机、 应用程序中或资源的配置文件。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.Configuration')]
   DNConfiguration = interface(DDN.mscorlib.DNObject)
   ['{147BA60B-D0AD-3CCD-B6E0-0459B8E77A7F}']
@@ -2589,13 +5688,120 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回指定的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="sectionName">
+    ///  指向要返回的部分的路径。
+    ///</param>
+    ///<returns>
+    ///  指定 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</returns>
     function GetSection(sectionName: string): DNConfigurationSection;
+    ///<summary>
+    ///  获取指定 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="sectionGroupName">
+    ///  路径名称 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  返回。
+    ///</param>
+    ///<returns><see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  指定。
+    ///</returns>
     function GetSectionGroup(sectionGroupName: string): DNConfigurationSectionGroup;
+    ///<summary>
+    ///  包含在此的配置设置写入 <see cref="T:System.Configuration.Configuration" />
+    ///  对象传递给当前的 XML 配置文件。
+    ///</summary>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  无法为写入配置文件。
+    ///  - 或 -
+    ///  配置文件已更改。
+    ///</exception>
     procedure Save; overload;
+    ///<summary>
+    ///  包含在此的配置设置写入 <see cref="T:System.Configuration.Configuration" />
+    ///  对象传递给当前的 XML 配置文件。
+    ///</summary>
+    ///  <param name="saveMode">
+    ///  一个 <see cref="T:System.Configuration.ConfigurationSaveMode" />
+    ///  值，该值确定要保存哪些属性值。
+    ///</param>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  无法为写入配置文件。
+    ///  - 或 -
+    ///  配置文件已更改。
+    ///</exception>
     procedure Save(saveMode: DNConfigurationSaveMode); overload;
+    ///<summary>
+    ///  包含在此的配置设置写入 <see cref="T:System.Configuration.Configuration" />
+    ///  对象传递给当前的 XML 配置文件。
+    ///</summary>
+    ///  <param name="saveMode">
+    ///  一个 <see cref="T:System.Configuration.ConfigurationSaveMode" />
+    ///  值，该值确定要保存哪些属性值。
+    ///</param>
+    ///  <param name="forceSaveAll"><see langword="true" />
+    ///  若要保存即使未修改的配置;否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  无法为写入配置文件。
+    ///  - 或 -
+    ///  配置文件已更改。
+    ///</exception>
     procedure Save(saveMode: DNConfigurationSaveMode; forceSaveAll: Boolean); overload;
+    ///<summary>
+    ///  包含在此的配置设置写入 <see cref="T:System.Configuration.Configuration" />
+    ///  对象传递给指定的 XML 配置文件。
+    ///</summary>
+    ///  <param name="filename">
+    ///  要保存到该配置文件的路径和文件名称。
+    ///</param>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  无法为写入配置文件。
+    ///  - 或 -
+    ///  配置文件已更改。
+    ///</exception>
     procedure SaveAs(filename: string); overload;
+    ///<summary>
+    ///  包含在此的配置设置写入 <see cref="T:System.Configuration.Configuration" />
+    ///  对象传递给指定的 XML 配置文件。
+    ///</summary>
+    ///  <param name="filename">
+    ///  要保存到该配置文件的路径和文件名称。
+    ///</param>
+    ///  <param name="saveMode">
+    ///  一个 <see cref="T:System.Configuration.ConfigurationSaveMode" />
+    ///  值，该值确定要保存哪些属性值。
+    ///</param>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  无法为写入配置文件。
+    ///  - 或 -
+    ///  配置文件已更改。
+    ///</exception>
     procedure SaveAs(filename: string; saveMode: DNConfigurationSaveMode); overload;
+    ///<summary>
+    ///  包含在此的配置设置写入 <see cref="T:System.Configuration.Configuration" />
+    ///  对象传递给指定的 XML 配置文件。
+    ///</summary>
+    ///  <param name="filename">
+    ///  要保存到该配置文件的路径和文件名称。
+    ///</param>
+    ///  <param name="saveMode">
+    ///  一个 <see cref="T:System.Configuration.ConfigurationSaveMode" />
+    ///  值，该值确定要保存哪些属性值。
+    ///</param>
+    ///  <param name="forceSaveAll"><see langword="true" />
+    ///  若要保存即使未修改的配置;否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="filename" />
+    ///  为 null 或空字符串 ("")。
+    ///</exception>
     procedure SaveAs(filename: string; saveMode: DNConfigurationSaveMode; forceSaveAll: Boolean); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2604,18 +5810,129 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.AppSettingsSection" />
+    ///  应用于此对象配置节 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.AppSettingsSection" />
+    ///  对象，表示 <see langword="appSettings" />
+    ///  应用到此配置节 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
     property AppSettings: DNAppSettingsSection read get_AppSettings;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ConnectionStringsSection" />
+    ///  应用到此配置节对象 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ConnectionStringsSection" />
+    ///  对象，表示配置节 <see langword="connectionStrings" />
+    ///  应用到此配置节 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
     property ConnectionStrings: DNConnectionStringsSection read get_ConnectionStrings;
+    ///<summary>
+    ///  获取由此配置文件的物理路径 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  这表示的配置文件的物理路径 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
     property FilePath: string read get_FilePath;
+    ///<summary>
+    ///  获取一个值，该值指示由此所表示的资源是否存在文件 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果没有配置文件;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property HasFile: Boolean read get_HasFile;
+    ///<summary>
+    ///  获取定义在此位置 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ConfigurationLocationCollection" />
+    ///  包含在此定义的位置 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
     property Locations: DNConfigurationLocationCollection read get_Locations;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.Configuration" />
+    ///  对象的 <see cref="T:System.Configuration.ContextInformation" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ContextInformation" />
+    ///  对象 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
     property EvaluationContext: DNContextInformation read get_EvaluationContext;
+    ///<summary>
+    ///  获取根 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  此 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  此根节组 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
     property RootSectionGroup: DNConfigurationSectionGroup read get_RootSectionGroup;
+    ///<summary>
+    ///  获取此定义的节的集合 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  此定义的节的集合 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
     property Sections: DNConfigurationSectionCollection read get_Sections;
+    ///<summary>
+    ///  获取定义此配置节组的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />
+    ///  表示为此节组的集合的集合 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
     property SectionGroups: DNConfigurationSectionGroupCollection read get_SectionGroups;
+    ///<summary>
+    ///  获取或设置一个值，指示配置文件是否有 XML 命名空间。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果配置文件的 XML 命名空间;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property NamespaceDeclared: Boolean read get_NamespaceDeclared write set_NamespaceDeclared;
+    ///<summary>
+    ///  指定一个函数委托，用于将转换配置文件中的类型字符串。
+    ///</summary>
+    ///<returns>
+    ///  一个委托，用于转换类型字符串。
+    ///  默认值为 <see langword="null" />
+    ///  。
+    ///</returns>
     property TypeStringTransformer: DDN.mscorlib.DNFunc<string, string> read get_TypeStringTransformer write set_TypeStringTransformer;
+    ///<summary>
+    ///  指定一个函数委托，用于将转换配置文件中的程序集字符串。
+    ///</summary>
+    ///<returns>
+    ///  一个委托，用于转换类型字符串。
+    ///  默认值为 <see langword="null" />
+    ///  。
+    ///</returns>
     property AssemblyStringTransformer: DDN.mscorlib.DNFunc<string, string> read get_AssemblyStringTransformer write set_AssemblyStringTransformer;
+    ///<summary>
+    ///  指定.NET Framework 的目标的版本时版本早于当前作为目标。
+    ///</summary>
+    ///<returns>
+    ///  .NET Framework 的目标版本的名称。
+    ///  默认值是 <see langword="null" />
+    ///  , ，指示当前的版本作为目标。
+    ///</returns>
     property TargetFramework: DNFrameworkName read get_TargetFramework write set_TargetFramework;
   end;
 
@@ -2626,6 +5943,9 @@ type
   ['{F985297E-05F3-52D2-9F5E-60845F06A6E7}']
   end;
 
+  ///<summary>
+  ///  表示一个配置文件中的配置元素。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationElement')]
   DNConfigurationElement = interface(DDN.mscorlib.DNObject)
   ['{15707344-0F22-3BFE-95FE-8AA44E29CB8E}']
@@ -2642,20 +5962,106 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取一个值，该值指示是否 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsReadOnly: Boolean;
+    ///<summary>
+    ///  比较当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例与指定的对象。
+    ///</summary>
+    ///  <param name="compareTo">
+    ///  要与进行比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  要与进行比较的对象是否等于当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取表示当前的唯一值 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  唯一的值，表示当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</returns>
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取被锁定的特性的集合
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
+    ///<summary>
+    ///  获取被锁定的特性的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockElements: DNConfigurationLockCollection read get_LockElements;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockAllElementsExcept: DNConfigurationLockCollection read get_LockAllElementsExcept;
+    ///<summary>
+    ///  获取或设置一个值，该值指示元素是否已锁定。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该元素被锁定;否则为<see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  元素被锁定在更高版本的配置级别。
+    ///</exception>
     property LockItem: Boolean read get_LockItem write set_LockItem;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ElementInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ElementInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  。
+    ///</returns>
     property ElementInformation: DNElementInformation read get_ElementInformation;
+    ///<summary>
+    ///  获取对顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例，它表示在配置层次结构的当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</summary>
+    ///<returns>
+    ///  顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</returns>
     property CurrentConfiguration: DNConfiguration read get_CurrentConfiguration;
   end;
 
@@ -2666,10 +6072,18 @@ type
   ['{D3B865EC-3F9F-51F7-BF87-CE49C5345C24}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationBuilderSettings" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNConfigurationBuilderSettings;
 
   end;
 
+  ///<summary>
+  ///  表示一组配置元素，这些元素用于配置 <see langword="&lt;configBuilders&gt;" />
+  ///  配置节的提供程序。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationBuilderSettings')]
   DNConfigurationBuilderSettings = interface(DNConfigurationElement)
   ['{A626A81D-62ED-36E6-9EC1-D42EF8C33653}']
@@ -2687,21 +6101,114 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取一个值，该值指示是否 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsReadOnly: Boolean;
+    ///<summary>
+    ///  比较当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例与指定的对象。
+    ///</summary>
+    ///  <param name="compareTo">
+    ///  要与进行比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  要与进行比较的对象是否等于当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取表示当前的唯一值 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  唯一的值，表示当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</returns>
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ConfigurationBuilderSettings" />
+    ///  对象的集合，这些对象表示配置生成器的属性。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  对象。
+    ///</returns>
     property Builders: DNProviderSettingsCollection read get_Builders;
+    ///<summary>
+    ///  获取被锁定的特性的集合
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
+    ///<summary>
+    ///  获取被锁定的特性的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockElements: DNConfigurationLockCollection read get_LockElements;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockAllElementsExcept: DNConfigurationLockCollection read get_LockAllElementsExcept;
+    ///<summary>
+    ///  获取或设置一个值，该值指示元素是否已锁定。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该元素被锁定;否则为<see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  元素被锁定在更高版本的配置级别。
+    ///</exception>
     property LockItem: Boolean read get_LockItem write set_LockItem;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ElementInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ElementInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  。
+    ///</returns>
     property ElementInformation: DNElementInformation read get_ElementInformation;
+    ///<summary>
+    ///  获取对顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例，它表示在配置层次结构的当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</summary>
+    ///<returns>
+    ///  顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</returns>
     property CurrentConfiguration: DNConfiguration read get_CurrentConfiguration;
   end;
 
@@ -2712,6 +6219,9 @@ type
   ['{A3E24DD2-A599-53A9-A840-841F66CEA0DA}']
   end;
 
+  ///<summary>
+  ///  表示一个配置元素，该元素包含子元素的集合。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationElementCollection')]
   DNConfigurationElementCollection = interface(DNConfigurationElement)
   ['{01814924-3A8D-3C8C-967F-B974D61F464C}']
@@ -2734,27 +6244,174 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  指示是否 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  对象为只读模式。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  对象只读; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsReadOnly: Boolean;
+    ///<summary>
+    ///  比较 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  到指定的对象。
+    ///</summary>
+    ///  <param name="compareTo">
+    ///  要比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  要与进行比较的对象是否等于当前 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  实例; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取唯一值，该值表示 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  唯一值，该值表示 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  当前实例。
+    ///</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  中的内容复制 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  到一个数组。
+    ///</summary>
+    ///  <param name="array">
+    ///  要的内容复制到数组 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</param>
+    ///  <param name="index">
+    ///  从此处开始复制的索引位置。
+    ///</param>
     procedure CopyTo(&array: TArray<DNConfigurationElement>; index: Int32);
+    ///<summary>
+    ///  获取 <see cref="T:System.Collections.IEnumerator" />
+    ///  用于循环访问 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  用于循环访问 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取集合中的元素数。
+    ///</summary>
+    ///<returns>
+    ///  集合中的元素数。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取或设置一个值，指定是否清除集合。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果已清除的集合;否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  配置是只读的。
+    ///</exception>
     property EmitClear: Boolean read get_EmitClear write set_EmitClear;
+    ///<summary>
+    ///  获取一个值，它指示对集合的访问是否同步。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果访问 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  同步; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary>
+    ///  获取用于对访问进行同步的对象 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  用于同步 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  访问的对象。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationElementCollectionType" />
+    ///  此集合。
+    ///</returns>
     property CollectionType: DNConfigurationElementCollectionType read get_CollectionType;
+    ///<summary>
+    ///  获取被锁定的特性的集合
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
+    ///<summary>
+    ///  获取被锁定的特性的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockElements: DNConfigurationLockCollection read get_LockElements;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockAllElementsExcept: DNConfigurationLockCollection read get_LockAllElementsExcept;
+    ///<summary>
+    ///  获取或设置一个值，该值指示元素是否已锁定。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该元素被锁定;否则为<see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  元素被锁定在更高版本的配置级别。
+    ///</exception>
     property LockItem: Boolean read get_LockItem write set_LockItem;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ElementInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ElementInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  。
+    ///</returns>
     property ElementInformation: DNElementInformation read get_ElementInformation;
+    ///<summary>
+    ///  获取对顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例，它表示在配置层次结构的当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</summary>
+    ///<returns>
+    ///  顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</returns>
     property CurrentConfiguration: DNConfiguration read get_CurrentConfiguration;
   end;
 
@@ -2765,10 +6422,18 @@ type
   ['{BC800550-8613-5F0C-A5B3-1F4388C87362}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConnectionStringSettingsCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNConnectionStringSettingsCollection;
 
   end;
 
+  ///<summary>
+  ///  包含 <see cref="T:System.Configuration.ConnectionStringSettings" />
+  ///  对象的集合。
+  ///</summary>
   [DNTypeName('System.Configuration.ConnectionStringSettingsCollection')]
   DNConnectionStringSettingsCollection = interface(DNConfigurationElementCollection)
   ['{F326A330-01D8-3379-A48C-413612EE06F4}']
@@ -2794,16 +6459,115 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回所传递的集合索引 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="settings">
+    ///  一个 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  集合中的对象。
+    ///</param>
+    ///<returns>
+    ///  指定的集合索引 <see cref="T:System.Configuration.ConnectionStringSettingsCollection" />
+    ///  对象。
+    ///</returns>
     function IndexOf(settings: DNConnectionStringSettings): Int32;
+    ///<summary>
+    ///  将 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  对象添加到集合中。
+    ///</summary>
+    ///  <param name="settings">
+    ///  一个 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  要添加到集合对象。
+    ///</param>
     procedure Add(settings: DNConnectionStringSettings);
+    ///<summary>
+    ///  从集合中移除指定的 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="settings">
+    ///  一个 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  集合中的对象。
+    ///</param>
     procedure Remove(settings: DNConnectionStringSettings); overload;
+    ///<summary>
+    ///  删除 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  集合中的指定索引处的对象。
+    ///</summary>
+    ///  <param name="index">
+    ///  索引 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  集合中的对象。
+    ///</param>
     procedure RemoveAt(index: Int32);
+    ///<summary>
+    ///  从集合中移除指定的 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="name">
+    ///  名称 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  集合中的对象。
+    ///</param>
     procedure Remove(name: string); overload;
+    ///<summary>
+    ///  删除所有 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  来自集合的对象。
+    ///</summary>
     procedure Clear;
+    ///<summary>
+    ///  指示是否 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  对象为只读模式。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  对象只读; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsReadOnly: Boolean;
+    ///<summary>
+    ///  比较 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  到指定的对象。
+    ///</summary>
+    ///  <param name="compareTo">
+    ///  要比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  要与进行比较的对象是否等于当前 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  实例; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取唯一值，该值表示 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  唯一值，该值表示 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  当前实例。
+    ///</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  中的内容复制 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  到一个数组。
+    ///</summary>
+    ///  <param name="array">
+    ///  要的内容复制到数组 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</param>
+    ///  <param name="index">
+    ///  从此处开始复制的索引位置。
+    ///</param>
     procedure CopyTo(&array: TArray<DNConfigurationElement>; index: Int32);
+    ///<summary>
+    ///  获取 <see cref="T:System.Collections.IEnumerator" />
+    ///  用于循环访问 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  用于循环访问 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
@@ -2812,10 +6576,51 @@ type
 
     property Item[index: Int32]: DNConnectionStringSettings read get_Item write set_Item; default;
     property Item[name: string]: DNConnectionStringSettings read get_Item; default;
+    ///<summary>
+    ///  获取集合中的元素数。
+    ///</summary>
+    ///<returns>
+    ///  集合中的元素数。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取或设置一个值，指定是否清除集合。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果已清除的集合;否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  配置是只读的。
+    ///</exception>
     property EmitClear: Boolean read get_EmitClear write set_EmitClear;
+    ///<summary>
+    ///  获取一个值，它指示对集合的访问是否同步。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果访问 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  同步; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary>
+    ///  获取用于对访问进行同步的对象 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  用于同步 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  访问的对象。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationElementCollectionType" />
+    ///  此集合。
+    ///</returns>
     property CollectionType: DNConfigurationElementCollectionType read get_CollectionType;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -2833,10 +6638,18 @@ type
   ['{DF066AD7-8BC6-50CB-BDF3-EAAC96E7FAB7}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.KeyValueConfigurationCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNKeyValueConfigurationCollection;
 
   end;
 
+  ///<summary>
+  ///  包含 <see cref="T:System.Configuration.KeyValueConfigurationElement" />
+  ///  对象的集合。
+  ///</summary>
   [DNTypeName('System.Configuration.KeyValueConfigurationCollection')]
   DNKeyValueConfigurationCollection = interface(DNConfigurationElementCollection)
   ['{E4C84545-67FA-3446-9624-4135207EC045}']
@@ -2861,14 +6674,94 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  添加 <see cref="T:System.Configuration.KeyValueConfigurationElement" />
+    ///  对象添加到收藏基于所提供的参数。
+    ///</summary>
+    ///  <param name="key">
+    ///  指定键的字符串。
+    ///</param>
+    ///  <param name="value">
+    ///  一个指定值的字符串。
+    ///</param>
     procedure Add(key: string; value: string); overload;
+    ///<summary>
+    ///  删除 <see cref="T:System.Configuration.KeyValueConfigurationElement" />
+    ///  来自集合对象。
+    ///</summary>
+    ///  <param name="key">
+    ///  一个字符串，指定 <paramref name="key" />
+    ///  。
+    ///</param>
     procedure Remove(key: string);
+    ///<summary>
+    ///  清除 <see cref="T:System.Configuration.KeyValueConfigurationCollection" />
+    ///  集合。
+    ///</summary>
     procedure Clear;
+    ///<summary>
+    ///  添加 <see cref="T:System.Configuration.KeyValueConfigurationElement" />
+    ///  对象添加到收藏基于所提供的参数。
+    ///</summary>
+    ///  <param name="keyValue"><see cref="T:System.Configuration.KeyValueConfigurationElement" />
+    ///  。
+    ///</param>
     procedure Add(keyValue: DNKeyValueConfigurationElement); overload;
+    ///<summary>
+    ///  指示是否 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  对象为只读模式。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  对象只读; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsReadOnly: Boolean;
+    ///<summary>
+    ///  比较 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  到指定的对象。
+    ///</summary>
+    ///  <param name="compareTo">
+    ///  要比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  要与进行比较的对象是否等于当前 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  实例; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取唯一值，该值表示 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  唯一值，该值表示 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  当前实例。
+    ///</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  中的内容复制 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  到一个数组。
+    ///</summary>
+    ///  <param name="array">
+    ///  要的内容复制到数组 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</param>
+    ///  <param name="index">
+    ///  从此处开始复制的索引位置。
+    ///</param>
     procedure CopyTo(&array: TArray<DNConfigurationElement>; index: Int32);
+    ///<summary>
+    ///  获取 <see cref="T:System.Collections.IEnumerator" />
+    ///  用于循环访问 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  用于循环访问 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
@@ -2876,11 +6769,59 @@ type
   { propertys } 
 
     property Item[key: string]: DNKeyValueConfigurationElement read get_Item; default;
+    ///<summary>
+    ///  获取包含中的所有项的键 <see cref="T:System.Configuration.KeyValueConfigurationCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns>
+    ///  字符串数组。
+    ///</returns>
     property AllKeys: TArray<string> read get_AllKeys;
+    ///<summary>
+    ///  获取集合中的元素数。
+    ///</summary>
+    ///<returns>
+    ///  集合中的元素数。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取或设置一个值，指定是否清除集合。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果已清除的集合;否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  配置是只读的。
+    ///</exception>
     property EmitClear: Boolean read get_EmitClear write set_EmitClear;
+    ///<summary>
+    ///  获取一个值，它指示对集合的访问是否同步。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果访问 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  同步; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary>
+    ///  获取用于对访问进行同步的对象 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  用于同步 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  访问的对象。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationElementCollectionType" />
+    ///  此集合。
+    ///</returns>
     property CollectionType: DNConfigurationElementCollectionType read get_CollectionType;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -2898,10 +6839,19 @@ type
   ['{72AE4489-17DB-5EEE-957F-D06EDAE8E1B5}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.NameValueConfigurationCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNNameValueConfigurationCollection;
 
   end;
 
+  ///<summary>
+  ///  包含 <see cref="T:System.Configuration.NameValueConfigurationElement" />
+  ///  对象的集合。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.NameValueConfigurationCollection')]
   DNNameValueConfigurationCollection = interface(DNConfigurationElementCollection)
   ['{DA22AD6D-2670-3CFD-8173-12CEA4DA6380}']
@@ -2927,14 +6877,92 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将 <see cref="T:System.Configuration.NameValueConfigurationElement" />
+    ///  对象添加到集合中。
+    ///</summary>
+    ///  <param name="nameValue">
+    ///  一个  <see cref="T:System.Configuration.NameValueConfigurationElement" />
+    ///  对象。
+    ///</param>
     procedure Add(nameValue: DNNameValueConfigurationElement);
+    ///<summary>
+    ///  删除 <see cref="T:System.Configuration.NameValueConfigurationElement" />
+    ///  根据所提供的参数集合中的对象。
+    ///</summary>
+    ///  <param name="nameValue">
+    ///  一个 <see cref="T:System.Configuration.NameValueConfigurationElement" />
+    ///  对象。
+    ///</param>
     procedure Remove(nameValue: DNNameValueConfigurationElement); overload;
+    ///<summary>
+    ///  删除 <see cref="T:System.Configuration.NameValueConfigurationElement" />
+    ///  根据所提供的参数集合中的对象。
+    ///</summary>
+    ///  <param name="name"><see cref="T:System.Configuration.NameValueConfigurationElement" />
+    ///  对象的名称。
+    ///</param>
     procedure Remove(name: string); overload;
+    ///<summary>
+    ///  清除 <see cref="T:System.Configuration.NameValueConfigurationCollection" />
+    ///  。
+    ///</summary>
     procedure Clear;
+    ///<summary>
+    ///  指示是否 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  对象为只读模式。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  对象只读; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsReadOnly: Boolean;
+    ///<summary>
+    ///  比较 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  到指定的对象。
+    ///</summary>
+    ///  <param name="compareTo">
+    ///  要比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  要与进行比较的对象是否等于当前 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  实例; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取唯一值，该值表示 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  唯一值，该值表示 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  当前实例。
+    ///</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  中的内容复制 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  到一个数组。
+    ///</summary>
+    ///  <param name="array">
+    ///  要的内容复制到数组 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</param>
+    ///  <param name="index">
+    ///  从此处开始复制的索引位置。
+    ///</param>
     procedure CopyTo(&array: TArray<DNConfigurationElement>; index: Int32);
+    ///<summary>
+    ///  获取 <see cref="T:System.Collections.IEnumerator" />
+    ///  用于循环访问 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  用于循环访问 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
@@ -2942,11 +6970,59 @@ type
   { propertys } 
 
     property Item[name: string]: DNNameValueConfigurationElement read get_Item write set_Item; default;
+    ///<summary>
+    ///  获取包含中的所有项的键 <see cref="T:System.Configuration.NameValueConfigurationCollection" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  字符串数组。
+    ///</returns>
     property AllKeys: TArray<string> read get_AllKeys;
+    ///<summary>
+    ///  获取集合中的元素数。
+    ///</summary>
+    ///<returns>
+    ///  集合中的元素数。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取或设置一个值，指定是否清除集合。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果已清除的集合;否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  配置是只读的。
+    ///</exception>
     property EmitClear: Boolean read get_EmitClear write set_EmitClear;
+    ///<summary>
+    ///  获取一个值，它指示对集合的访问是否同步。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果访问 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  同步; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary>
+    ///  获取用于对访问进行同步的对象 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  用于同步 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  访问的对象。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationElementCollectionType" />
+    ///  此集合。
+    ///</returns>
     property CollectionType: DNConfigurationElementCollectionType read get_CollectionType;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -2964,10 +7040,18 @@ type
   ['{54034AE9-AB8D-5CBE-8452-5B048B8E2423}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ProviderSettingsCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNProviderSettingsCollection;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Configuration.ProviderSettings" />
+  ///  对象集合。
+  ///</summary>
   [DNTypeName('System.Configuration.ProviderSettingsCollection')]
   DNProviderSettingsCollection = interface(DNConfigurationElementCollection)
   ['{EC694AA8-9FB9-32E8-BC92-51748761FE0A}']
@@ -2993,13 +7077,82 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将 <see cref="T:System.Configuration.ProviderSettings" />
+    ///  对象添加到集合中。
+    ///</summary>
+    ///  <param name="provider">
+    ///  要添加的 <see cref="T:System.Configuration.ProviderSettings" />
+    ///  对象。
+    ///</param>
     procedure Add(provider: DNProviderSettings);
+    ///<summary>
+    ///  从集合中移除一个元素。
+    ///</summary>
+    ///  <param name="name">
+    ///  名称 <see cref="T:System.Configuration.ProviderSettings" />
+    ///  要移除对象。
+    ///</param>
     procedure Remove(name: string);
+    ///<summary>
+    ///  清除集合。
+    ///</summary>
     procedure Clear;
+    ///<summary>
+    ///  指示是否 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  对象为只读模式。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  对象只读; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsReadOnly: Boolean;
+    ///<summary>
+    ///  比较 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  到指定的对象。
+    ///</summary>
+    ///  <param name="compareTo">
+    ///  要比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  要与进行比较的对象是否等于当前 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  实例; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取唯一值，该值表示 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  唯一值，该值表示 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  当前实例。
+    ///</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  中的内容复制 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  到一个数组。
+    ///</summary>
+    ///  <param name="array">
+    ///  要的内容复制到数组 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</param>
+    ///  <param name="index">
+    ///  从此处开始复制的索引位置。
+    ///</param>
     procedure CopyTo(&array: TArray<DNConfigurationElement>; index: Int32);
+    ///<summary>
+    ///  获取 <see cref="T:System.Collections.IEnumerator" />
+    ///  用于循环访问 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  用于循环访问 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
@@ -3008,10 +7161,51 @@ type
 
     property Item[key: string]: DNProviderSettings read get_Item; default;
     property Item[index: Int32]: DNProviderSettings read get_Item write set_Item; default;
+    ///<summary>
+    ///  获取集合中的元素数。
+    ///</summary>
+    ///<returns>
+    ///  集合中的元素数。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取或设置一个值，指定是否清除集合。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果已清除的集合;否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  配置是只读的。
+    ///</exception>
     property EmitClear: Boolean read get_EmitClear write set_EmitClear;
+    ///<summary>
+    ///  获取一个值，它指示对集合的访问是否同步。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果访问 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  同步; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary>
+    ///  获取用于对访问进行同步的对象 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  用于同步 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  访问的对象。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationElementCollectionType" />
+    ///  此集合。
+    ///</returns>
     property CollectionType: DNConfigurationElementCollectionType read get_CollectionType;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -3029,10 +7223,18 @@ type
   ['{CAA520D4-62C4-50AA-8FE4-9774E58ED8BB}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SchemeSettingElementCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSchemeSettingElementCollection;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Configuration.SchemeSettingElement" />
+  ///  对象集合。
+  ///</summary>
   [DNTypeName('System.Configuration.SchemeSettingElementCollection')]
   DNSchemeSettingElementCollection = interface(DNConfigurationElementCollection)
   ['{93F72529-68CF-3592-B48C-345F03274674}']
@@ -3057,6 +7259,17 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  指定的索引 <see cref="T:System.Configuration.SchemeSettingElement" />
+    ///  。
+    ///</summary>
+    ///  <param name="element"><see cref="T:System.Configuration.SchemeSettingElement" />
+    ///  的指定的索引位置。
+    ///</param>
+    ///<returns>
+    ///  指定的索引 <see cref="T:System.Configuration.SchemeSettingElement" />
+    ///  ; 否则为-1。
+    ///</returns>
     function IndexOf(element: DNSchemeSettingElement): Int32;
     function IsReadOnly: Boolean;
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
@@ -3068,6 +7281,14 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取默认集合类型的 <see cref="T:System.Configuration.SchemeSettingElementCollection" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  默认集合类型 <see cref="T:System.Configuration.SchemeSettingElementCollection" />
+    ///  。
+    ///</returns>
     property CollectionType: DNConfigurationElementCollectionType read get_CollectionType;
     property Item[index: Int32]: DNSchemeSettingElement read get_Item; default;
     property Item[name: string]: DNSchemeSettingElement read get_Item; default;
@@ -3091,10 +7312,19 @@ type
   ['{EFF21913-D760-58B1-A075-49F1C2C7FC4A}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingElementCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSettingElementCollection;
 
   end;
 
+  ///<summary>
+  ///  包含 <see cref="T:System.Configuration.SettingElement" />
+  ///  对象的集合。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingElementCollection')]
   DNSettingElementCollection = interface(DNConfigurationElementCollection)
   ['{26BC8EC4-C701-3100-8094-F3446DFDED47}']
@@ -3117,9 +7347,41 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  从集合中获取 <see cref="T:System.Configuration.SettingElement" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="elementKey">
+    ///  字符串值，该值表示 <see cref="T:System.Configuration.SettingElement" />
+    ///  集合中的对象。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingElement" />
+    ///  对象。
+    ///</returns>
     function Get(elementKey: string): DNSettingElement;
+    ///<summary>
+    ///  将 <see cref="T:System.Configuration.SettingElement" />
+    ///  对象添加到集合中。
+    ///</summary>
+    ///  <param name="element">
+    ///  要添加到集合的 <see cref="T:System.Configuration.SettingElement" />
+    ///  对象。
+    ///</param>
     procedure Add(element: DNSettingElement);
+    ///<summary>
+    ///  删除 <see cref="T:System.Configuration.SettingElement" />
+    ///  来自集合对象。
+    ///</summary>
+    ///  <param name="element">
+    ///  一个 <see cref="T:System.Configuration.SettingElement" />
+    ///  对象。
+    ///</param>
     procedure Remove(element: DNSettingElement);
+    ///<summary>
+    ///  从集合中删除所有 <see cref="T:System.Configuration.SettingElement" />
+    ///  对象。
+    ///</summary>
     procedure Clear;
     function IsReadOnly: Boolean;
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
@@ -3131,6 +7393,12 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取配置集合的类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationElementCollectionType" />
+    ///  集合对象。
+    ///</returns>
     property CollectionType: DNConfigurationElementCollectionType read get_CollectionType;
     property Count: Int32 read get_Count;
     property EmitClear: Boolean read get_EmitClear write set_EmitClear;
@@ -3152,6 +7420,9 @@ type
   ['{D8B99D8F-5652-525D-A9C4-AC48087F1730}']
   end;
 
+  ///<summary>
+  ///  表示一个配置文件中的一个部分。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationSection')]
   DNConfigurationSection = interface(DNConfigurationElement)
   ['{BF734F72-E579-3EE5-BD86-D9AC7216F6A2}']
@@ -3169,21 +7440,117 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取一个值，该值指示是否 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsReadOnly: Boolean;
+    ///<summary>
+    ///  比较当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例与指定的对象。
+    ///</summary>
+    ///  <param name="compareTo">
+    ///  要与进行比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  要与进行比较的对象是否等于当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取表示当前的唯一值 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  唯一的值，表示当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</returns>
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.SectionInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SectionInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
     property SectionInformation: DNSectionInformation read get_SectionInformation;
+    ///<summary>
+    ///  获取被锁定的特性的集合
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
+    ///<summary>
+    ///  获取被锁定的特性的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockElements: DNConfigurationLockCollection read get_LockElements;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockAllElementsExcept: DNConfigurationLockCollection read get_LockAllElementsExcept;
+    ///<summary>
+    ///  获取或设置一个值，该值指示元素是否已锁定。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该元素被锁定;否则为<see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  元素被锁定在更高版本的配置级别。
+    ///</exception>
     property LockItem: Boolean read get_LockItem write set_LockItem;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ElementInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ElementInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  。
+    ///</returns>
     property ElementInformation: DNElementInformation read get_ElementInformation;
+    ///<summary>
+    ///  获取对顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例，它表示在配置层次结构的当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</summary>
+    ///<returns>
+    ///  顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</returns>
     property CurrentConfiguration: DNConfiguration read get_CurrentConfiguration;
   end;
 
@@ -3194,10 +7561,19 @@ type
   ['{C1CFBA23-EC59-5177-9A48-75995F96EE28}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.AppSettingsSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNAppSettingsSection;
 
   end;
 
+  ///<summary>
+  ///  提供有关配置系统支持 <see langword="appSettings" />
+  ///  配置节。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.AppSettingsSection')]
   DNAppSettingsSection = interface(DNConfigurationSection)
   ['{C67D99B0-1A20-32AA-9C43-22087FDDE286}']
@@ -3226,8 +7602,32 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取包含应用程序设置的键/值对的集合。
+    ///</summary>
+    ///<returns>
+    ///  包含配置文件中的应用程序设置的键/值对的集合。
+    ///</returns>
     property Settings: DNKeyValueConfigurationCollection read get_Settings;
+    ///<summary>
+    ///  获取或设置提供其他设置或重写中指定的设置的配置文件 <see langword="appSettings" />
+    ///  元素。
+    ///</summary>
+    ///<returns>
+    ///  提供其他设置或重写中指定的设置的配置文件 <see langword="appSettings" />
+    ///  元素。
+    ///</returns>
     property &File: string read get_File write set_File;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.SectionInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SectionInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
     property SectionInformation: DNSectionInformation read get_SectionInformation;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -3245,10 +7645,17 @@ type
   ['{B90E88D3-2EBE-54B8-84E6-437BB8BA3597}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ClientSettingsSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNClientSettingsSection;
 
   end;
 
+  ///<summary>
+  ///  表示一组用户范围的应用程序配置文件中的设置。
+  ///</summary>
   [DNTypeName('System.Configuration.ClientSettingsSection')]
   DNClientSettingsSection = interface(DNConfigurationSection)
   ['{C52AF707-F2B0-36A7-8384-8B87E2209516}']
@@ -3275,6 +7682,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取部分中的客户端设置的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingElementCollection" />
+    ///  包含所有客户端设置在配置部分中找到。
+    ///</returns>
     property Settings: DNSettingElementCollection read get_Settings;
     property SectionInformation: DNSectionInformation read get_SectionInformation;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
@@ -3293,10 +7707,19 @@ type
   ['{AB6E7DE3-FF87-5063-8FF5-00414B42DB2C}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationBuildersSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNConfigurationBuildersSection;
 
   end;
 
+  ///<summary>
+  ///  提供对 <see langword="&lt;configBuilders&gt;" />
+  ///  部分的编程访问。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationBuildersSection')]
   DNConfigurationBuildersSection = interface(DNConfigurationSection)
   ['{7187838A-934C-36E9-A32F-E4A5D7FD8625}']
@@ -3315,6 +7738,44 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回使用提供的配置生成器名称的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="builderName">
+    ///  配置生成器名称或逗号分隔的名称列表。
+    ///  如果 <paramref name="builderName" />
+    ///  是逗号分隔的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  名称列表，将返回引用并应用所有命名配置生成器的特殊聚合 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  对象。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  对象，包含提供的配置 <paramref name="builderName" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Exception">
+    ///  找不到 <paramref name="builderName" />
+    ///  中的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  对象。
+    ///</exception><exception cref="T:System.Exception">
+    ///  指定类型不会扩展 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  类。
+    ///</exception><exception cref="T:System.Exception">
+    ///  在部分信任的安全策略下，配置提供程序类型无法实例化（目标程序集上没有 <see cref="T:System.Security.AllowPartiallyTrustedCallersAttribute" />
+    ///  ）。
+    ///</exception><exception cref="T:System.IO.FileNotFoundException">
+    ///  默认情况下，ConfigurationBuilders.IgnoreLoadFailure 处于禁用状态。
+    ///  对于从配置文件中读取的分区之一，如果找不到部署了 bin 的配置生成器或无法实例化该生成器，将捕获并报告 <see cref="T:System.IO.FileNotFoundException" />
+    ///  。
+    ///  如果要忽略加载失败，请启用 ConfigurationBuilders.IgnoreLoadFailure。
+    ///</exception><exception cref="T:System.TypeLoadException">
+    ///  默认情况下，ConfigurationBuilders.IgnoreLoadFailure 处于禁用状态。
+    ///  对于从配置文件中读取的分区之一，如果在加载配置生成器时发生 <see cref="T:System.TypeLoadException" />
+    ///  ，将捕获并报告 <see cref="T:System.TypeLoadException" />
+    ///  。
+    ///  如果要忽略加载失败，请启用 ConfigurationBuilders.IgnoreLoadFailure。
+    ///</exception>
     function GetBuilderFromName(builderName: string): DNConfigurationBuilder;
     function IsReadOnly: Boolean;
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
@@ -3324,7 +7785,26 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取所有参与配置文件中所有 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  对象的 <see cref="T:System.Configuration.ConfigurationBuilderCollection" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  所有参与配置文件中的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  对象。
+    ///</returns>
     property Builders: DNProviderSettingsCollection read get_Builders;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.SectionInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SectionInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
     property SectionInformation: DNSectionInformation read get_SectionInformation;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -3342,10 +7822,17 @@ type
   ['{A2C5DCAB-F515-522C-9AAA-A5170603BF25}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConnectionStringsSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNConnectionStringsSection;
 
   end;
 
+  ///<summary>
+  ///  提供以编程方式访问连接字符串配置文件部分。
+  ///</summary>
   [DNTypeName('System.Configuration.ConnectionStringsSection')]
   DNConnectionStringsSection = interface(DNConfigurationSection)
   ['{CD0C6620-E0F0-3293-8450-2EB8B6E7F0B3}']
@@ -3372,7 +7859,27 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ConnectionStringSettingsCollection" />
+    ///  集合 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ConnectionStringSettingsCollection" />
+    ///  集合 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  对象。
+    ///</returns>
     property ConnectionStrings: DNConnectionStringSettingsCollection read get_ConnectionStrings;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.SectionInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SectionInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
     property SectionInformation: DNSectionInformation read get_SectionInformation;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -3390,10 +7897,17 @@ type
   ['{2CFF7245-E0F5-515B-BA52-E11788849699}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.DefaultSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNDefaultSection;
 
   end;
 
+  ///<summary>
+  ///  表示一个基本的配置节处理程序，以公开为读取和写入访问的配置节的 XML。
+  ///</summary>
   [DNTypeName('System.Configuration.DefaultSection')]
   DNDefaultSection = interface(DNConfigurationSection)
   ['{F6793947-3BF8-3DB6-8EC7-EB35B6845734}']
@@ -3419,6 +7933,16 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.SectionInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SectionInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
     property SectionInformation: DNSectionInformation read get_SectionInformation;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -3436,10 +7960,18 @@ type
   ['{0CD1D25C-F2DD-5B1D-8401-83390BD31745}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.IgnoreSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNIgnoreSection;
 
   end;
 
+  ///<summary>
+  ///  提供了由未处理的配置节的包装类型定义 <see cref="N:System.Configuration" />
+  ///  类型。
+  ///</summary>
   [DNTypeName('System.Configuration.IgnoreSection')]
   DNIgnoreSection = interface(DNConfigurationSection)
   ['{0A9D41F9-9A4A-30FB-B240-8AF00FBB1B09}']
@@ -3465,6 +7997,16 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.SectionInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SectionInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
     property SectionInformation: DNSectionInformation read get_SectionInformation;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -3482,10 +8024,19 @@ type
   ['{974F92F5-53BD-5739-94A1-62C0B2235030}']
   { constructors } 
 
+    ///<summary>
+    ///  使用默认设置初始化 <see cref="T:System.Configuration.ProtectedConfigurationSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNProtectedConfigurationSection;
 
   end;
 
+  ///<summary>
+  ///  提供以编程方式访问 <see langword="configProtectedData" />
+  ///  配置节。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.ProtectedConfigurationSection')]
   DNProtectedConfigurationSection = interface(DNConfigurationSection)
   ['{A6A19651-F5E0-38B3-87AD-9C4510A06A68}']
@@ -3514,8 +8065,38 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ProviderSettingsCollection" />
+    ///  所有的集合 <see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+    ///  所有参与的配置文件中的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ProviderSettingsCollection" />
+    ///  所有的集合 <see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+    ///  所有参与的配置文件中的对象。
+    ///</returns>
     property Providers: DNProviderSettingsCollection read get_Providers;
+    ///<summary>
+    ///  获取或设置的默认名称 <see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+    ///  对象在 <see cref="P:System.Configuration.ProtectedConfigurationSection.Providers" />
+    ///  集合属性。
+    ///</summary>
+    ///<returns>
+    ///  默认值的名称 <see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+    ///  对象在 <see cref="P:System.Configuration.ProtectedConfigurationSection.Providers" />
+    ///  集合属性。
+    ///</returns>
     property DefaultProvider: string read get_DefaultProvider write set_DefaultProvider;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.SectionInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SectionInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
     property SectionInformation: DNSectionInformation read get_SectionInformation;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -3533,10 +8114,17 @@ type
   ['{74F37FA5-DD95-5C21-AE75-C5A000841281}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.UriSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNUriSection;
 
   end;
 
+  ///<summary>
+  ///  表示配置文件中的 Uri 部分。
+  ///</summary>
   [DNTypeName('System.Configuration.UriSection')]
   DNUriSection = interface(DNConfigurationSection)
   ['{368E8CE8-1BE9-3629-A0A0-BB1F2118CA87}']
@@ -3565,8 +8153,35 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.IdnElement" />
+    ///  对象，其中包含的配置设置的国际域名 (IDN) 中的处理 <see cref="T:System.Uri" />
+    ///  类。
+    ///</summary>
+    ///<returns>
+    ///  配置设置的国际域名 (IDN) 中的处理 <see cref="T:System.Uri" />
+    ///  类。
+    ///</returns>
     property Idn: DNIdnElement read get_Idn;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.IriParsingElement" />
+    ///  对象，其中包含用于国际资源标识符 (IRI) 分析中的配置设置 <see cref="T:System.Uri" />
+    ///  类。
+    ///</summary>
+    ///<returns>
+    ///  国际化资源标识符 (IRI) 分析中的配置设置 <see cref="T:System.Uri" />
+    ///  类。
+    ///</returns>
     property IriParsing: DNIriParsingElement read get_IriParsing;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.SchemeSettingElementCollection" />
+    ///  对象，其中包含用于分析中的方案的配置设置 <see cref="T:System.Uri" />
+    ///  类。
+    ///</summary>
+    ///<returns>
+    ///  分析中的方案的配置设置 <see cref="T:System.Uri" />
+    ///  类
+    ///</returns>
     property SchemeSettings: DNSchemeSettingElementCollection read get_SchemeSettings;
     property SectionInformation: DNSectionInformation read get_SectionInformation;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
@@ -3585,12 +8200,42 @@ type
   ['{DCA76164-7633-53A7-AF28-12A8246530E5}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNConnectionStringSettings; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="name">
+    ///  连接字符串的名称。
+    ///</param>
+    ///  <param name="connectionString">
+    ///  连接字符串。
+    ///</param>
     {class} function init(name: string; connectionString: string): DNConnectionStringSettings; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  对象的新实例。
+    ///</summary>
+    ///  <param name="name">
+    ///  连接字符串的名称。
+    ///</param>
+    ///  <param name="connectionString">
+    ///  连接字符串。
+    ///</param>
+    ///  <param name="providerName">
+    ///  要使用带有连接字符串的提供程序的名称。
+    ///</param>
     {class} function init(name: string; connectionString: string; providerName: string): DNConnectionStringSettings; overload;
 
   end;
 
+  ///<summary>
+  ///  表示在连接字符串配置文件节中的单个命名连接字符串。
+  ///</summary>
   [DNTypeName('System.Configuration.ConnectionStringSettings')]
   DNConnectionStringSettings = interface(DNConfigurationElement)
   ['{29C60AC4-7276-3512-BDEE-B3C6525E006D}']
@@ -3613,23 +8258,137 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回的字符串表示形式的对象。
+    ///</summary>
+    ///<returns>
+    ///  对象的字符串表示形式。
+    ///</returns>
     function ToString: string;
+    ///<summary>
+    ///  获取一个值，该值指示是否 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsReadOnly: Boolean;
+    ///<summary>
+    ///  比较当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例与指定的对象。
+    ///</summary>
+    ///  <param name="compareTo">
+    ///  要与进行比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  要与进行比较的对象是否等于当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取表示当前的唯一值 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  唯一的值，表示当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</returns>
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Configuration.ConnectionStringSettings" />
+    ///  名称。
+    ///</summary>
+    ///<returns>
+    ///  分配给的字符串值 <see cref="P:System.Configuration.ConnectionStringSettings.Name" />
+    ///  属性。
+    ///</returns>
     property Name: string read get_Name write set_Name;
+    ///<summary>
+    ///  获取或设置连接字符串。
+    ///</summary>
+    ///<returns>
+    ///  分配给的字符串值 <see cref="P:System.Configuration.ConnectionStringSettings.ConnectionString" />
+    ///  属性。
+    ///</returns>
     property ConnectionString: string read get_ConnectionString write set_ConnectionString;
+    ///<summary>
+    ///  获取或设置提供程序名称属性。
+    ///</summary>
+    ///<returns>
+    ///  获取或设置 <see cref="P:System.Configuration.ConnectionStringSettings.ProviderName" />
+    ///  属性。
+    ///</returns>
     property ProviderName: string read get_ProviderName write set_ProviderName;
+    ///<summary>
+    ///  获取被锁定的特性的集合
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
+    ///<summary>
+    ///  获取被锁定的特性的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockElements: DNConfigurationLockCollection read get_LockElements;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockAllElementsExcept: DNConfigurationLockCollection read get_LockAllElementsExcept;
+    ///<summary>
+    ///  获取或设置一个值，该值指示元素是否已锁定。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该元素被锁定;否则为<see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  元素被锁定在更高版本的配置级别。
+    ///</exception>
     property LockItem: Boolean read get_LockItem write set_LockItem;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ElementInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ElementInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  。
+    ///</returns>
     property ElementInformation: DNElementInformation read get_ElementInformation;
+    ///<summary>
+    ///  获取对顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例，它表示在配置层次结构的当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</summary>
+    ///<returns>
+    ///  顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</returns>
     property CurrentConfiguration: DNConfiguration read get_CurrentConfiguration;
   end;
 
@@ -3640,10 +8399,18 @@ type
   ['{E3DFCCBA-EBC6-5CD2-B8C5-82A98D696FA2}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.IdnElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNIdnElement;
 
   end;
 
+  ///<summary>
+  ///  提供的配置设置的国际域名 (IDN) 中的处理 <see cref="T:System.Uri" />
+  ///  类。
+  ///</summary>
   [DNTypeName('System.Configuration.IdnElement')]
   DNIdnElement = interface(DNConfigurationElement)
   ['{743CA10E-C5B7-3B30-B083-F7ECD6112979}']
@@ -3670,6 +8437,14 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置的值 <see cref="T:System.Configuration.IdnElement" />
+    ///  配置设置。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.UriIdnScope" />
+    ///  ，其中包含 IDN 处理的当前配置设置。
+    ///</returns>
     property Enabled: DNUriIdnScope read get_Enabled write set_Enabled;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -3687,10 +8462,18 @@ type
   ['{E98F8CBA-1C52-5D95-8489-B43453FCCE4C}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.IriParsingElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNIriParsingElement;
 
   end;
 
+  ///<summary>
+  ///  提供的配置设置的国际资源标识符 (IRI) 中的处理 <see cref="T:System.Uri" />
+  ///  类。
+  ///</summary>
   [DNTypeName('System.Configuration.IriParsingElement')]
   DNIriParsingElement = interface(DNConfigurationElement)
   ['{90F982E9-D259-36FD-A5A6-0AF21413AB14}']
@@ -3717,6 +8500,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置的值 <see cref="T:System.Configuration.IriParsingElement" />
+    ///  配置设置。
+    ///</summary>
+    ///<returns>
+    ///  一个布尔值，指示是否启用国际资源标识符 (IRI) 处理。
+    ///</returns>
     property Enabled: Boolean read get_Enabled write set_Enabled;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -3734,10 +8524,24 @@ type
   ['{BD2719FC-48BD-545D-9884-28B7B3E94730}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.KeyValueConfigurationElement" />
+    ///  类根据所提供的参数。
+    ///</summary>
+    ///  <param name="key">
+    ///  键 <see cref="T:System.Configuration.KeyValueConfigurationElement" />
+    ///  。
+    ///</param>
+    ///  <param name="value"><see cref="T:System.Configuration.KeyValueConfigurationElement" />
+    ///  的值。
+    ///</param>
     {class} function init(key: string; value: string): DNKeyValueConfigurationElement;
 
   end;
 
+  ///<summary>
+  ///  表示一个配置元素，包含键/值对。
+  ///</summary>
   [DNTypeName('System.Configuration.KeyValueConfigurationElement')]
   DNKeyValueConfigurationElement = interface(DNConfigurationElement)
   ['{22F37F42-E15B-355E-8D24-3F766136D315}']
@@ -3757,22 +8561,123 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取一个值，该值指示是否 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsReadOnly: Boolean;
+    ///<summary>
+    ///  比较当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例与指定的对象。
+    ///</summary>
+    ///  <param name="compareTo">
+    ///  要与进行比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  要与进行比较的对象是否等于当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取表示当前的唯一值 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  唯一的值，表示当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</returns>
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取的键 <see cref="T:System.Configuration.KeyValueConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  键 <see cref="T:System.Configuration.KeyValueConfigurationElement" />
+    ///  。
+    ///</returns>
     property Key: string read get_Key;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Configuration.KeyValueConfigurationElement" />
+    ///  对象的值。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.KeyValueConfigurationElement" />
+    ///  的值。
+    ///</returns>
     property Value: string read get_Value write set_Value;
+    ///<summary>
+    ///  获取被锁定的特性的集合
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
+    ///<summary>
+    ///  获取被锁定的特性的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockElements: DNConfigurationLockCollection read get_LockElements;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockAllElementsExcept: DNConfigurationLockCollection read get_LockAllElementsExcept;
+    ///<summary>
+    ///  获取或设置一个值，该值指示元素是否已锁定。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该元素被锁定;否则为<see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  元素被锁定在更高版本的配置级别。
+    ///</exception>
     property LockItem: Boolean read get_LockItem write set_LockItem;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ElementInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ElementInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  。
+    ///</returns>
     property ElementInformation: DNElementInformation read get_ElementInformation;
+    ///<summary>
+    ///  获取对顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例，它表示在配置层次结构的当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</summary>
+    ///<returns>
+    ///  顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</returns>
     property CurrentConfiguration: DNConfiguration read get_CurrentConfiguration;
   end;
 
@@ -3783,10 +8688,27 @@ type
   ['{9BEB7C0F-D662-5760-AE89-E9DA64BDD10A}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.NameValueConfigurationElement" />
+    ///  类基于提供的参数。
+    ///</summary>
+    ///  <param name="name"><see cref="T:System.Configuration.NameValueConfigurationElement" />
+    ///  对象的名称。
+    ///</param>
+    ///  <param name="value">
+    ///  值 <see cref="T:System.Configuration.NameValueConfigurationElement" />
+    ///  对象。
+    ///</param>
     {class} function init(name: string; value: string): DNNameValueConfigurationElement;
 
   end;
 
+  ///<summary>
+  ///  一个配置元素，包含 <see cref="T:System.String" />
+  ///  名称和 <see cref="T:System.String" />
+  ///  值。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.NameValueConfigurationElement')]
   DNNameValueConfigurationElement = interface(DNConfigurationElement)
   ['{40F43A65-6A86-3739-98F2-81D6A733906F}']
@@ -3806,22 +8728,123 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取一个值，该值指示是否 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsReadOnly: Boolean;
+    ///<summary>
+    ///  比较当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例与指定的对象。
+    ///</summary>
+    ///  <param name="compareTo">
+    ///  要与进行比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  要与进行比较的对象是否等于当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取表示当前的唯一值 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  唯一的值，表示当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</returns>
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取名称 <see cref="T:System.Configuration.NameValueConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.NameValueConfigurationElement" />
+    ///  对象的名称。
+    ///</returns>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Configuration.NameValueConfigurationElement" />
+    ///  对象的值。
+    ///</summary>
+    ///<returns>
+    ///  值 <see cref="T:System.Configuration.NameValueConfigurationElement" />
+    ///  对象。
+    ///</returns>
     property Value: string read get_Value write set_Value;
+    ///<summary>
+    ///  获取被锁定的特性的集合
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
+    ///<summary>
+    ///  获取被锁定的特性的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockElements: DNConfigurationLockCollection read get_LockElements;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockAllElementsExcept: DNConfigurationLockCollection read get_LockAllElementsExcept;
+    ///<summary>
+    ///  获取或设置一个值，该值指示元素是否已锁定。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该元素被锁定;否则为<see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  元素被锁定在更高版本的配置级别。
+    ///</exception>
     property LockItem: Boolean read get_LockItem write set_LockItem;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ElementInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ElementInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  。
+    ///</returns>
     property ElementInformation: DNElementInformation read get_ElementInformation;
+    ///<summary>
+    ///  获取对顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例，它表示在配置层次结构的当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</summary>
+    ///<returns>
+    ///  顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</returns>
     property CurrentConfiguration: DNConfiguration read get_CurrentConfiguration;
   end;
 
@@ -3832,10 +8855,18 @@ type
   ['{16BE2132-A428-5E1C-BD8F-62242FD9A2CF}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ProtectedProviderSettings" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNProtectedProviderSettings;
 
   end;
 
+  ///<summary>
+  ///  表示配置提供程序的配置元素的一组 <see langword="&lt;configProtectedData&gt;" />
+  ///  配置节。
+  ///</summary>
   [DNTypeName('System.Configuration.ProtectedProviderSettings')]
   DNProtectedProviderSettings = interface(DNConfigurationElement)
   ['{9E6FAD60-CA00-3A2A-89E2-67FC21CFF1B4}']
@@ -3853,21 +8884,115 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取一个值，该值指示是否 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsReadOnly: Boolean;
+    ///<summary>
+    ///  比较当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例与指定的对象。
+    ///</summary>
+    ///  <param name="compareTo">
+    ///  要与进行比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  要与进行比较的对象是否等于当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取表示当前的唯一值 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  唯一的值，表示当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</returns>
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一套 <see cref="T:System.Configuration.ProviderSettings" />
+    ///  表示受保护的配置数据的提供程序的属性的对象。
+    ///</summary>
+    ///<returns>
+    ///  一套 <see cref="T:System.Configuration.ProviderSettings" />
+    ///  表示受保护的配置数据的提供程序的属性的对象。
+    ///</returns>
     property Providers: DNProviderSettingsCollection read get_Providers;
+    ///<summary>
+    ///  获取被锁定的特性的集合
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
+    ///<summary>
+    ///  获取被锁定的特性的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockElements: DNConfigurationLockCollection read get_LockElements;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockAllElementsExcept: DNConfigurationLockCollection read get_LockAllElementsExcept;
+    ///<summary>
+    ///  获取或设置一个值，该值指示元素是否已锁定。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该元素被锁定;否则为<see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  元素被锁定在更高版本的配置级别。
+    ///</exception>
     property LockItem: Boolean read get_LockItem write set_LockItem;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ElementInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ElementInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  。
+    ///</returns>
     property ElementInformation: DNElementInformation read get_ElementInformation;
+    ///<summary>
+    ///  获取对顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例，它表示在配置层次结构的当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</summary>
+    ///<returns>
+    ///  顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</returns>
     property CurrentConfiguration: DNConfiguration read get_CurrentConfiguration;
   end;
 
@@ -3878,11 +9003,28 @@ type
   ['{038000E3-C084-537D-91F6-A5576280FCD3}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ProviderSettings" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNProviderSettings; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ProviderSettings" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="name">
+    ///  要配置的设置的提供程序的名称。
+    ///</param>
+    ///  <param name="type">
+    ///  要配置的设置的提供程序类型。
+    ///</param>
     {class} function init(name: string; &type: string): DNProviderSettings; overload;
 
   end;
 
+  ///<summary>
+  ///  表示与提供程序关联的配置元素。
+  ///</summary>
   [DNTypeName('System.Configuration.ProviderSettings')]
   DNProviderSettings = interface(DNConfigurationElement)
   ['{73763DAF-1B00-338C-A6C8-F31AC78D2D69}']
@@ -3904,23 +9046,129 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取一个值，该值指示是否 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是只读的; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsReadOnly: Boolean;
+    ///<summary>
+    ///  比较当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例与指定的对象。
+    ///</summary>
+    ///  <param name="compareTo">
+    ///  要与进行比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  要与进行比较的对象是否等于当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取表示当前的唯一值 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  唯一的值，表示当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例。
+    ///</returns>
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置配置由此类的提供程序的名称。
+    ///</summary>
+    ///<returns>
+    ///  提供程序的名称。
+    ///</returns>
     property Name: string read get_Name write set_Name;
+    ///<summary>
+    ///  获取或设置配置由此类的提供程序的类型。
+    ///</summary>
+    ///<returns>
+    ///  此配置提供程序类型的完全限定命名空间和类名称 <see cref="T:System.Configuration.ProviderSettings" />
+    ///  实例。
+    ///</returns>
     property &Type: string read get_Type write set_Type;
+    ///<summary>
+    ///  获取提供程序的用户定义的参数的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Specialized.NameValueCollection" />
+    ///  的提供程序的参数。
+    ///</returns>
     property Parameters: DNNameValueCollection read get_Parameters;
+    ///<summary>
+    ///  获取被锁定的特性的集合
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
+    ///<summary>
+    ///  获取被锁定的特性的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的特性 （属性） 的元素。
+    ///</returns>
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockElements: DNConfigurationLockCollection read get_LockElements;
+    ///<summary>
+    ///  获取已锁定的元素的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  被锁定的元素。
+    ///</returns>
     property LockAllElementsExcept: DNConfigurationLockCollection read get_LockAllElementsExcept;
+    ///<summary>
+    ///  获取或设置一个值，该值指示元素是否已锁定。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该元素被锁定;否则为<see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  元素被锁定在更高版本的配置级别。
+    ///</exception>
     property LockItem: Boolean read get_LockItem write set_LockItem;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ElementInformation" />
+    ///  对象，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ElementInformation" />
+    ///  ，其中包含的非自定义的信息和功能 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  。
+    ///</returns>
     property ElementInformation: DNElementInformation read get_ElementInformation;
+    ///<summary>
+    ///  获取对顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例，它表示在配置层次结构的当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</summary>
+    ///<returns>
+    ///  顶级 <see cref="T:System.Configuration.Configuration" />
+    ///  实例当前 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  实例所属。
+    ///</returns>
     property CurrentConfiguration: DNConfiguration read get_CurrentConfiguration;
   end;
 
@@ -3931,10 +9179,18 @@ type
   ['{F559964D-485F-5B03-A2AE-AFE884412833}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SchemeSettingElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSchemeSettingElement;
 
   end;
 
+  ///<summary>
+  ///  表示一个元素在 <see cref="T:System.Configuration.SchemeSettingElementCollection" />
+  ///  类。
+  ///</summary>
   [DNTypeName('System.Configuration.SchemeSettingElement')]
   DNSchemeSettingElement = interface(DNConfigurationElement)
   ['{91E70434-27DD-3317-B31C-66DF28B5A25D}']
@@ -3961,7 +9217,21 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取的值从名项 <see cref="T:System.Configuration.SchemeSettingElement" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  使用此架构设置的协议。
+    ///</returns>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取从 GenericUriParserOptions 条目的值 <see cref="T:System.Configuration.SchemeSettingElement" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  GenericUriParserOptions 条目的值。
+    ///</returns>
     property GenericUriParserOptions: DNGenericUriParserOptions read get_GenericUriParserOptions;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -3979,11 +9249,31 @@ type
   ['{C907473F-7E5B-5820-969F-FCCFCDD888B3}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSettingElement; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.SettingElement" />
+    ///  类基于提供的参数。
+    ///</summary>
+    ///  <param name="name"><see cref="T:System.Configuration.SettingElement" />
+    ///  对象的名称。
+    ///</param>
+    ///  <param name="serializeAs">
+    ///  一个 <see cref="T:System.Configuration.SettingsSerializeAs" />
+    ///  对象。
+    ///  此对象是作为序列化方案用于存储配置设置的枚举。
+    ///</param>
     {class} function init(name: string; serializeAs: DNSettingsSerializeAs): DNSettingElement; overload;
 
   end;
 
+  ///<summary>
+  ///  表示用来更新配置中的元素的简化的配置元素。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingElement')]
   DNSettingElement = interface(DNConfigurationElement)
   ['{638447ED-B653-3B9D-9EAE-5DE46AB192E6}']
@@ -4006,7 +9296,27 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  比较当前 <see cref="T:System.Configuration.SettingElement" />
+    ///  实例与指定的对象。
+    ///</summary>
+    ///  <param name="settings">
+    ///  要与进行比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.SettingElement" />
+    ///  实例是否等于指定的对象; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(settings: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取唯一值，该值表示 <see cref="T:System.Configuration.SettingElement" />
+    ///  当前实例。
+    ///</summary>
+    ///<returns>
+    ///  唯一值，该值表示 <see cref="T:System.Configuration.SettingElement" />
+    ///  当前实例。
+    ///</returns>
     function GetHashCode: Int32;
     function IsReadOnly: Boolean;
     function GetType: DDN.mscorlib.DNType;
@@ -4014,8 +9324,33 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Configuration.SettingElement" />
+    ///  对象的名称。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.SettingElement" />
+    ///  对象的名称。
+    ///</returns>
     property Name: string read get_Name write set_Name;
+    ///<summary>
+    ///  获取或设置用来持久化保存的值的序列化机制 <see cref="T:System.Configuration.SettingElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsSerializeAs" />
+    ///  对象。
+    ///</returns>
     property SerializeAs: DNSettingsSerializeAs read get_SerializeAs write set_SerializeAs;
+    ///<summary>
+    ///  获取或设置的值 <see cref="T:System.Configuration.SettingElement" />
+    ///  对象使用 <see cref="T:System.Configuration.SettingValueElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingValueElement" />
+    ///  包含值的对象 <see cref="T:System.Configuration.SettingElement" />
+    ///  对象。
+    ///</returns>
     property Value: DNSettingValueElement read get_Value write set_Value;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -4033,10 +9368,18 @@ type
   ['{C2B8B64E-18BD-5352-8481-8065EF56ACAF}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingValueElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSettingValueElement;
 
   end;
 
+  ///<summary>
+  ///  包含表示该设置的序列化的值的 XML。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingValueElement')]
   DNSettingValueElement = interface(DNConfigurationElement)
   ['{E2C20012-EFC3-3337-9E67-29509DF4D6CF}']
@@ -4055,7 +9398,27 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  比较当前 <see cref="T:System.Configuration.SettingValueElement" />
+    ///  实例与指定的对象。
+    ///</summary>
+    ///  <param name="settingValue">
+    ///  要比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.SettingValueElement" />
+    ///  实例是否等于指定的对象; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(settingValue: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取唯一值，该值表示 <see cref="T:System.Configuration.SettingValueElement" />
+    ///  当前实例。
+    ///</summary>
+    ///<returns>
+    ///  唯一值，该值表示 <see cref="T:System.Configuration.SettingValueElement" />
+    ///  当前实例。
+    ///</returns>
     function GetHashCode: Int32;
     function IsReadOnly: Boolean;
     function GetType: DDN.mscorlib.DNType;
@@ -4063,6 +9426,15 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置的值 <see cref="T:System.Configuration.SettingValueElement" />
+    ///  对象使用 <see cref="T:System.Xml.XmlNode" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlNode" />
+    ///  包含值的对象 <see cref="T:System.Configuration.SettingElement" />
+    ///  。
+    ///</returns>
     property ValueXml: DDN.System.Xml.DNXmlNode read get_ValueXml write set_ValueXml;
     property LockAttributes: DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -4080,10 +9452,26 @@ type
   ['{01D7B788-7689-5773-BF4E-558A53ADF006}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.ConfigurationElementProperty" />
+    ///  基于提供的参数的类。
+    ///</summary>
+    ///  <param name="validator">
+    ///  一个 <see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="validator" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} function init(validator: DNConfigurationValidatorBase): DNConfigurationElementProperty;
 
   end;
 
+  ///<summary>
+  ///  指定一个配置元素的属性。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationElementProperty')]
   DNConfigurationElementProperty = interface(DDN.mscorlib.DNObject)
   ['{FCF77043-4CB3-3E5E-A233-42635BC8C180}']
@@ -4100,6 +9488,15 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  用来验证对象 <see cref="T:System.Configuration.ConfigurationElementProperty" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  对象。
+    ///</returns>
     property Validator: DNConfigurationValidatorBase read get_Validator;
   end;
 
@@ -4110,11 +9507,25 @@ type
   ['{47427EE1-AEAB-5A83-B682-9C913C51C527}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationFileMap" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNConfigurationFileMap; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.ConfigurationFileMap" />
+    ///  类根据所提供的参数。
+    ///</summary>
+    ///  <param name="machineConfigFilename">
+    ///  计算机配置文件的名称。
+    ///</param>
     {class} function init(machineConfigFilename: string): DNConfigurationFileMap; overload;
 
   end;
 
+  ///<summary>
+  ///  定义计算机配置文件的配置文件映射。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationFileMap')]
   DNConfigurationFileMap = interface(DDN.mscorlib.DNICloneable)
   ['{62D68A2D-C489-3E1C-8D39-834A33185601}']
@@ -4125,6 +9536,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  会创建一份现有 <see cref="T:System.Configuration.ConfigurationFileMap" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ConfigurationFileMap" />
+    ///  对象。
+    ///</returns>
     function Clone: DDN.mscorlib.DNObject;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4133,6 +9552,12 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置的计算机配置文件名称的名称。
+    ///</summary>
+    ///<returns>
+    ///  计算机配置文件名称。
+    ///</returns>
     property MachineConfigFilename: string read get_MachineConfigFilename write set_MachineConfigFilename;
   end;
 
@@ -4143,11 +9568,26 @@ type
   ['{FFF16626-3AF9-5C8F-BCD5-928D1255EF67}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ExeConfigurationFileMap" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNExeConfigurationFileMap; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.ExeConfigurationFileMap" />
+    ///  类通过使用指定的计算机配置文件名称。
+    ///</summary>
+    ///  <param name="machineConfigFileName">
+    ///  计算机配置文件，其中包含的完整物理路径的名称 (例如， c:\Windows\Microsoft.NET\Framework\v2.0.50727\CONFIG\machine.config)。
+    ///</param>
     {class} function init(machineConfigFileName: string): DNExeConfigurationFileMap; overload;
 
   end;
 
+  ///<summary>
+  ///  定义.exe 应用程序的配置文件映射。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.ExeConfigurationFileMap')]
   DNExeConfigurationFileMap = interface(DNConfigurationFileMap)
   ['{91C9DC4A-FEF5-3A4C-9B71-A787AB4166AF}']
@@ -4164,6 +9604,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  会创建一份现有 <see cref="T:System.Configuration.ExeConfigurationFileMap" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ExeConfigurationFileMap" />
+    ///  对象。
+    ///</returns>
     function Clone: DDN.mscorlib.DNObject;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4172,9 +9620,33 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置配置文件的名称。
+    ///</summary>
+    ///<returns>
+    ///  配置文件名称。
+    ///</returns>
     property ExeConfigFilename: string read get_ExeConfigFilename write set_ExeConfigFilename;
+    ///<summary>
+    ///  获取或设置漫游用户配置文件的名称。
+    ///</summary>
+    ///<returns>
+    ///  配置文件名称。
+    ///</returns>
     property RoamingUserConfigFilename: string read get_RoamingUserConfigFilename write set_RoamingUserConfigFilename;
+    ///<summary>
+    ///  获取或设置为本地用户配置文件的名称。
+    ///</summary>
+    ///<returns>
+    ///  配置文件名称。
+    ///</returns>
     property LocalUserConfigFilename: string read get_LocalUserConfigFilename write set_LocalUserConfigFilename;
+    ///<summary>
+    ///  获取或设置的计算机配置文件名称的名称。
+    ///</summary>
+    ///<returns>
+    ///  计算机配置文件名称。
+    ///</returns>
     property MachineConfigFilename: string read get_MachineConfigFilename write set_MachineConfigFilename;
   end;
 
@@ -4185,6 +9657,10 @@ type
   ['{7AF5EC40-3B23-5759-BE73-182A8BFE6DD4}']
   end;
 
+  ///<summary>
+  ///  表示 <see langword="location" />
+  ///  配置文件中的元素。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationLocation')]
   DNConfigurationLocation = interface(DDN.mscorlib.DNObject)
   ['{D3F04A7E-FE47-370E-B073-185EF789EAA6}']
@@ -4194,6 +9670,12 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  创建配置对象的实例。
+    ///</summary>
+    ///<returns>
+    ///  配置对象。
+    ///</returns>
     function OpenConfiguration: DNConfiguration;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4202,6 +9684,14 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取对其配置设置表示此资源的相对路径 <see cref="T:System.Configuration.ConfigurationLocation" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  其配置设置表示此资源的相对路径 <see cref="T:System.Configuration.ConfigurationLocation" />
+    ///  。
+    ///</returns>
     property Path: string read get_Path;
   end;
 
@@ -4212,6 +9702,10 @@ type
   ['{93E9F554-D478-5288-9DE9-EE15D67B1418}']
   end;
 
+  ///<summary>
+  ///  包含锁定的配置对象的集合。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationLockCollection')]
   DNConfigurationLockCollection = interface(DDN.mscorlib.DNIEnumerable)
   ['{F3E926E9-A2BF-3F5E-B2BF-8191A53E3DB0}']
@@ -4226,13 +9720,95 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Collections.IEnumerator" />
+    ///  对象，用于循环访问此 <see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.IEnumerator" />
+    ///  对象。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    ///<summary>
+    ///  清除集合中的所有配置对象。
+    ///</summary>
     procedure Clear;
+    ///<summary>
+    ///  验证是否已锁定特定的配置对象。
+    ///</summary>
+    ///  <param name="name">
+    ///  要验证的配置对象的名称。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  包含指定的配置对象; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function &Contains(name: string): Boolean;
+    ///<summary>
+    ///  将复制整个 <see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  集合到一维兼容 <see cref="T:System.Array" />
+    ///  , ，从目标数组的指定索引处开始。
+    ///</summary>
+    ///  <param name="array">
+    ///  一维 <see cref="T:System.Array" />
+    ///  ，它是从复制的元素的目标 <see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  。
+    ///<see cref="T:System.Array" />
+    ///  必须具有从零开始的索引。
+    ///</param>
+    ///  <param name="index"><paramref name="array" />
+    ///  中从零开始的索引，从此处开始复制。
+    ///</param>
     procedure CopyTo(&array: TArray<string>; index: Int32);
+    ///<summary>
+    ///  通过将其添加到集合中锁定该配置对象。
+    ///</summary>
+    ///  <param name="name">
+    ///  配置对象的名称。
+    ///</param>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  发生时 <paramref name="name" />
+    ///  与现有的配置对象在集合中不匹配。
+    ///</exception>
     procedure Add(name: string);
+    ///<summary>
+    ///  从集合中移除的配置对象。
+    ///</summary>
+    ///  <param name="name">
+    ///  配置对象的名称。
+    ///</param>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  发生时 <paramref name="name" />
+    ///  与现有的配置对象在集合中不匹配。
+    ///</exception>
     procedure Remove(name: string);
+    ///<summary>
+    ///  验证特定的配置对象是只读的。
+    ///</summary>
+    ///  <param name="name">
+    ///  要验证的配置对象的名称。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果指定的配置对象中 <see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  集合是只读的; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  指定的配置对象不在集合中。
+    ///</exception>
     function IsReadOnly(name: string): Boolean;
+    ///<summary>
+    ///  锁定一的组基于提供的列表的配置对象。
+    ///</summary>
+    ///  <param name="attributeList">
+    ///  以逗号分隔的字符串。
+    ///</param>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  中的某个项时发生 <paramref name="attributeList" />
+    ///  参数不是有效的可锁定配置属性。
+    ///</exception>
     procedure SetFromList(attributeList: string);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4241,11 +9817,55 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取集合中包含的锁定的配置对象的数目。
+    ///</summary>
+    ///<returns>
+    ///  集合中包含的锁定的配置对象数。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取一个值，指示集合是否已同步。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  集合是同步; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary>
+    ///  获取一个对象，该对象用于同步访问此 <see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns>
+    ///  用于同步对此的访问的对象 <see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  集合。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
+    ///<summary>
+    ///  获取一个值，指定是否已修改该集合。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  集合已修改; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsModified: Boolean read get_IsModified;
+    ///<summary>
+    ///  获取集合中包含的配置对象的列表。
+    ///</summary>
+    ///<returns>
+    ///  以逗号分隔的字符串，其中列出了在集合中的锁定配置对象。
+    ///</returns>
     property AttributeList: string read get_AttributeList;
+    ///<summary>
+    ///  获取一个值，指定锁定的对象的集合是否具有父元素。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationLockCollection" />
+    ///  集合具有父元素; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property HasParentElements: Boolean read get_HasParentElements;
   end;
 
@@ -4261,21 +9881,167 @@ type
 
   { static methods } 
 
+    ///<summary>
+    ///  检索当前应用程序默认配置的指定配置节。
+    ///</summary>
+    ///  <param name="sectionName">
+    ///  配置节的路径和名称。
+    ///</param>
+    ///<returns>
+    ///  指定的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象，如果该节不存在，则为 <see langword="null" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  无法加载配置文件。
+    ///</exception>
     {class} function GetSection(sectionName: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  刷新命名节，这样在下次检索它时将从磁盘重新读取它。
+    ///</summary>
+    ///  <param name="sectionName">
+    ///  要刷新的节的配置节名称或配置路径和节名称。
+    ///</param>
     {class} procedure RefreshSection(sectionName: string);
+    ///<summary>
+    ///  将当前计算机的配置文件作为 <see cref="T:System.Configuration.Configuration" />
+    ///  对象打开。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  无法加载配置文件。
+    ///</exception>
     {class} function OpenMachineConfiguration: DNConfiguration;
+    ///<summary>
+    ///  将计算机配置文件作为 <see cref="T:System.Configuration.Configuration" />
+    ///  对象打开，该对象使用指定的文件映射。
+    ///</summary>
+    ///  <param name="fileMap">
+    ///  一个 <see cref="T:System.Configuration.ExeConfigurationFileMap" />
+    ///  对象，该对象引用代替应用程序的默认配置文件使用的配置文件。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  无法加载配置文件。
+    ///</exception>
     {class} function OpenMappedMachineConfiguration(fileMap: DNConfigurationFileMap): DNConfiguration;
+    ///<summary>
+    ///  将当前应用程序的配置文件作为 <see cref="T:System.Configuration.Configuration" />
+    ///  对象打开。
+    ///</summary>
+    ///  <param name="userLevel">
+    ///  要打开其配置的 <see cref="T:System.Configuration.ConfigurationUserLevel" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  无法加载配置文件。
+    ///</exception>
     {class} function OpenExeConfiguration(userLevel: DNConfigurationUserLevel): DNConfiguration; overload;
+    ///<summary>
+    ///  将指定的客户端配置文件作为 <see cref="T:System.Configuration.Configuration" />
+    ///  对象打开。
+    ///</summary>
+    ///  <param name="exePath">
+    ///  可执行 (exe) 文件的路径。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.Configuration" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  无法加载配置文件。
+    ///</exception>
     {class} function OpenExeConfiguration(exePath: string): DNConfiguration; overload;
+    ///<summary>
+    ///  将指定客户端配置文件作为 <see cref="T:System.Configuration.Configuration" />
+    ///  对象打开，该对象使用指定的文件映射和用户级别。
+    ///</summary>
+    ///  <param name="fileMap">
+    ///  一个 <see cref="T:System.Configuration.ExeConfigurationFileMap" />
+    ///  对象，该对象引用代替应用程序的默认配置文件使用的配置文件。
+    ///</param>
+    ///  <param name="userLevel">
+    ///  要打开配置的 <see cref="T:System.Configuration.ConfigurationUserLevel" />
+    ///  对象。
+    ///</param>
+    ///<returns>
+    ///  配置对象。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  无法加载配置文件。
+    ///</exception>
     {class} function OpenMappedExeConfiguration(fileMap: DNExeConfigurationFileMap; userLevel: DNConfigurationUserLevel): DNConfiguration; overload;
+    ///<summary>
+    ///  将指定客户端配置文件作为 <see cref="T:System.Configuration.Configuration" />
+    ///  对象打开，该对象使用指定的文件映射、用户级别和预加载选项。
+    ///</summary>
+    ///  <param name="fileMap">
+    ///  一个 <see cref="T:System.Configuration.ExeConfigurationFileMap" />
+    ///  对象，该对象引用要使用的配置文件，而非默认应用程序配置文件。
+    ///</param>
+    ///  <param name="userLevel">
+    ///  要打开配置的 <see cref="T:System.Configuration.ConfigurationUserLevel" />
+    ///  对象。
+    ///</param>
+    ///  <param name="preLoad">
+    ///  如果预加载所有节组和节，则为 <see langword="true" />
+    ///  ，否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  配置对象。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  无法加载配置文件。
+    ///</exception>
     {class} function OpenMappedExeConfiguration(fileMap: DNExeConfigurationFileMap; userLevel: DNConfigurationUserLevel; preLoad: Boolean): DNConfiguration; overload;
 
   { static propertys } 
 
+    ///<summary>
+    ///  获取当前应用程序默认配置的 <see cref="T:System.Configuration.AppSettingsSection" />
+    ///  数据。
+    ///</summary>
+    ///<returns>
+    ///  返回一个 <see cref="T:System.Collections.Specialized.NameValueCollection" />
+    ///  对象，该对象包含当前应用程序默认配置的 <see cref="T:System.Configuration.AppSettingsSection" />
+    ///  对象的内容。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  无法检索具有应用程序设置数据的 <see cref="T:System.Collections.Specialized.NameValueCollection" />
+    ///  对象。
+    ///</exception>
     {class} property AppSettings: DNNameValueCollection read get_AppSettings;
+    ///<summary>
+    ///  获取当前应用程序默认配置的 <see cref="T:System.Configuration.ConnectionStringsSection" />
+    ///  数据。
+    ///</summary>
+    ///<returns>
+    ///  返回一个 <see cref="T:System.Configuration.ConnectionStringSettingsCollection" />
+    ///  对象，该对象包含当前应用程序默认配置的 <see cref="T:System.Configuration.ConnectionStringsSection" />
+    ///  对象的内容。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  检索不到 <see cref="T:System.Configuration.ConnectionStringSettingsCollection" />
+    ///  对象。
+    ///</exception>
     {class} property ConnectionStrings: DNConnectionStringSettingsCollection read get_ConnectionStrings;
   end;
 
+  ///<summary>
+  ///  提供对客户端应用程序配置文件的访问。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationManager')]
   DNConfigurationManager = interface(DDN.mscorlib.DNObject)
   ['{5CCAE36B-9254-3DA0-897D-26990740943E}']
@@ -4295,14 +10061,104 @@ type
   ['{44D5B5E6-D2DB-5B71-B29A-D6AC0A2A5E00}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="name">
+    ///  配置实体的名称。
+    ///</param>
+    ///  <param name="type">
+    ///  配置实体的类型。
+    ///</param>
     {class} function init(name: string; &type: DDN.mscorlib.DNType): DNConfigurationProperty; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="name">
+    ///  配置实体的名称。
+    ///</param>
+    ///  <param name="type">
+    ///  配置实体的类型。
+    ///</param>
+    ///  <param name="defaultValue">
+    ///  配置实体的默认值。
+    ///</param>
     {class} function init(name: string; &type: DDN.mscorlib.DNType; defaultValue: DDN.mscorlib.DNObject): DNConfigurationProperty; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="name">
+    ///  配置实体的名称。
+    ///</param>
+    ///  <param name="type">
+    ///  配置实体的类型。
+    ///</param>
+    ///  <param name="defaultValue">
+    ///  配置实体的默认值。
+    ///</param>
+    ///  <param name="options"><see cref="T:System.Configuration.ConfigurationPropertyOptions" />
+    ///  枚举值之一。
+    ///</param>
     {class} function init(name: string; &type: DDN.mscorlib.DNType; defaultValue: DDN.mscorlib.DNObject; options: DNConfigurationPropertyOptions): DNConfigurationProperty; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="name">
+    ///  配置实体的名称。
+    ///</param>
+    ///  <param name="type">
+    ///  配置实体的类型。
+    ///</param>
+    ///  <param name="defaultValue">
+    ///  配置实体的默认值。
+    ///</param>
+    ///  <param name="typeConverter">
+    ///  要应用的转换器的类型。
+    ///</param>
+    ///  <param name="validator">
+    ///  要使用的验证程序。
+    ///</param>
+    ///  <param name="options"><see cref="T:System.Configuration.ConfigurationPropertyOptions" />
+    ///  枚举值之一。
+    ///</param>
     {class} function init(name: string; &type: DDN.mscorlib.DNType; defaultValue: DDN.mscorlib.DNObject; typeConverter: DNTypeConverter; validator: DNConfigurationValidatorBase; options: DNConfigurationPropertyOptions): DNConfigurationProperty; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="name">
+    ///  配置实体的名称。
+    ///</param>
+    ///  <param name="type">
+    ///  配置实体的类型。
+    ///</param>
+    ///  <param name="defaultValue">
+    ///  配置实体的默认值。
+    ///</param>
+    ///  <param name="typeConverter">
+    ///  要应用的转换器的类型。
+    ///</param>
+    ///  <param name="validator">
+    ///  要使用的验证程序。
+    ///</param>
+    ///  <param name="options"><see cref="T:System.Configuration.ConfigurationPropertyOptions" />
+    ///  枚举值之一。
+    ///</param>
+    ///  <param name="description">
+    ///  配置实体的说明。
+    ///</param>
     {class} function init(name: string; &type: DDN.mscorlib.DNType; defaultValue: DDN.mscorlib.DNObject; typeConverter: DNTypeConverter; validator: DNConfigurationValidatorBase; options: DNConfigurationPropertyOptions; description: string): DNConfigurationProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示属性或配置元素的子元素。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationProperty')]
   DNConfigurationProperty = interface(DDN.mscorlib.DNObject)
   ['{C24A86BF-C3A0-35BC-A2B4-2CDD6BC67126}']
@@ -4330,17 +10186,123 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取此 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  的名称。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  的名称。
+    ///</returns>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取与关联的说明 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see langword="string" />
+    ///  描述的属性的值。
+    ///</returns>
     property Description: string read get_Description;
+    ///<summary>
+    ///  获取此类型 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Type" />
+    ///  表示此类型 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  对象。
+    ///</returns>
     property &Type: DDN.mscorlib.DNType read get_Type;
+    ///<summary>
+    ///  获取此默认值 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  属性。
+    ///</summary>
+    ///<returns><see cref="T:System.Object" />
+    ///  可以强制转换为指定类型 <see cref="P:System.Configuration.ConfigurationProperty.Type" />
+    ///  属性。
+    ///</returns>
     property DefaultValue: DDN.mscorlib.DNObject read get_DefaultValue;
+    ///<summary>
+    ///  获取一个值，该值指示是否此 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  是必需的。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  是必选的; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsRequired: Boolean read get_IsRequired;
+    ///<summary>
+    ///  获取一个值，该值指示是否此 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  是包含的键 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果此 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  对象至关重要为包含的元素; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsKey: Boolean read get_IsKey;
+    ///<summary>
+    ///  获取一个值，该值指示属性是否是一个元素的默认集合。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该属性为元素，则默认集合否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsDefaultCollection: Boolean read get_IsDefaultCollection;
+    ///<summary>
+    ///  指示为早期版本的序列化时，配置属性的类型名称是否需要转换 .NET Framework。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该属性需要转换的类型名称;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsTypeStringTransformationRequired: Boolean read get_IsTypeStringTransformationRequired;
+    ///<summary>
+    ///  指示为早期版本的序列化时，程序集名称的配置属性是否需要转换 .NET Framework。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该属性需要转换程序集名称;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsAssemblyStringTransformationRequired: Boolean read get_IsAssemblyStringTransformationRequired;
+    ///<summary>
+    ///  指示是否在序列化时确定的配置属性是否应序列化为 XML 查询配置属性的父配置节。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果应查询父配置节。，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsVersionCheckRequired: Boolean read get_IsVersionCheckRequired;
+    ///<summary>
+    ///  获取 <see cref="T:System.ComponentModel.TypeConverter" />
+    ///  用来将其转换 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  到对配置文件进行写入的 XML 表示形式。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.ComponentModel.TypeConverter" />
+    ///  用来将其转换 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  到对配置文件进行写入的 XML 表示形式。
+    ///</returns>
+    ///<exception cref="T:System.Exception">
+    ///  这 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  无法转换。
+    ///</exception>
     property Converter: DNTypeConverter read get_Converter;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ConfigurationValidatorAttribute" />
+    ///  , ，它用于验证此 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  验证程序，用于验证此 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  。
+    ///</returns>
     property Validator: DNConfigurationValidatorBase read get_Validator;
   end;
 
@@ -4351,10 +10313,17 @@ type
   ['{09922DBA-F4AF-57AD-938A-B4A3258AA86F}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationPropertyCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNConfigurationPropertyCollection;
 
   end;
 
+  ///<summary>
+  ///  表示配置元素属性的集合。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationPropertyCollection')]
   DNConfigurationPropertyCollection = interface(DDN.mscorlib.DNICollection)
   ['{370CA48C-3258-3719-8CC0-050E2395B6CB}']
@@ -4367,11 +10336,60 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将此 ConfigurationPropertyCollection 复制到数组。
+    ///</summary>
+    ///  <param name="array">
+    ///  要向其复制的数组。
+    ///</param>
+    ///  <param name="index">
+    ///  若要开始复制处的索引。
+    ///</param>
     procedure CopyTo(&array: TArray<DNConfigurationProperty>; index: Int32);
+    ///<summary>
+    ///  获取 <see cref="T:System.Collections.IEnumerator" />
+    ///  对象应用于集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  对象是针对集合
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    ///<summary>
+    ///  指定是否在此集合中包含的配置属性。
+    ///</summary>
+    ///  <param name="name">
+    ///  标识符 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  验证。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果指定 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  包含在集合; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function &Contains(name: string): Boolean;
+    ///<summary>
+    ///  向集合中添加的配置属性。
+    ///</summary>
+    ///  <param name="property"><see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  添加。
+    ///</param>
     procedure Add(&property: DNConfigurationProperty);
+    ///<summary>
+    ///  从集合中移除的配置属性。
+    ///</summary>
+    ///  <param name="name">
+    ///  要移除的 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果指定 <see cref="T:System.Configuration.ConfigurationProperty" />
+    ///  删除; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Remove(name: string): Boolean;
+    ///<summary>
+    ///  从集合中移除所有配置属性对象。
+    ///</summary>
     procedure Clear;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4380,8 +10398,28 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取集合中的属性的数目。
+    ///</summary>
+    ///<returns>
+    ///  集合中属性的数目。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取一个值，该值指示对集合的访问是否为同步的（线程安全）。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果访问 <see cref="T:System.Configuration.ConfigurationPropertyCollection" />
+    ///  同步; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary>
+    ///  获取用于同步对集合的访问的对象。
+    ///</summary>
+    ///<returns>
+    ///  用于同步对集合的访问的对象。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
     property Item[name: string]: DNConfigurationProperty read get_Item; default;
   end;
@@ -4393,10 +10431,17 @@ type
   ['{0B422D1B-089D-5A68-BAF7-FCE518EE947A}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNConfigurationSectionGroup;
 
   end;
 
+  ///<summary>
+  ///  表示一组配置文件中的相关章节。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationSectionGroup')]
   DNConfigurationSectionGroup = interface(DDN.mscorlib.DNObject)
   ['{43493E08-E461-33E9-9454-68655A5CEBEC}']
@@ -4413,7 +10458,26 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  强制的声明 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象。
+    ///</summary>
     procedure ForceDeclaration; overload;
+    ///<summary>
+    ///  强制的声明 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="force"><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象必须是写入到该文件; 否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<exception cref="T:System.InvalidOperationException"><see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象是根节组。
+    ///  - 或 -
+    ///<see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象都有一个位置。
+    ///</exception>
     procedure ForceDeclaration(force: Boolean); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4422,12 +10486,88 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个值，该值指示是否此 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  声明对象。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果此 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  声明; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsDeclared: Boolean read get_IsDeclared;
+    ///<summary>
+    ///  获取一个值，该值指示是否此 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象声明是必需的。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果此 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  声明是必选的; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsDeclarationRequired: Boolean read get_IsDeclarationRequired;
+    ///<summary>
+    ///  获取与此相关的节组名称 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  此节组名称 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象。
+    ///</returns>
     property SectionGroupName: string read get_SectionGroupName;
+    ///<summary>
+    ///  获取此名称属性 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  Name 属性 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象。
+    ///</returns>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取或设置此类型 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  这种 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException"><see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象是根节组。
+    ///  - 或 -
+    ///<see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象都有一个位置。
+    ///</exception><exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  已在另一级别定义的节或组。
+    ///</exception>
     property &Type: string read get_Type write set_Type;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象，其中包含的所有 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象在此 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ConfigurationSectionCollection" />
+    ///  对象，其中包含所有 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象在此 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象。
+    ///</returns>
     property Sections: DNConfigurationSectionCollection read get_Sections;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />
+    ///  对象，其中包含所有 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象的子级的这 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />
+    ///  对象，其中包含所有 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象的子级的这 <see cref="T:System.Configuration.ConfigurationSectionGroup" />
+    ///  对象。
+    ///</returns>
     property SectionGroups: DNConfigurationSectionGroupCollection read get_SectionGroups;
   end;
 
@@ -4438,10 +10578,18 @@ type
   ['{1876C393-7906-59B7-A4F8-62E045F92436}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ApplicationSettingsGroup" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNApplicationSettingsGroup;
 
   end;
 
+  ///<summary>
+  ///  表示一的组相关的应用程序配置文件中的设置节。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.ApplicationSettingsGroup')]
   DNApplicationSettingsGroup = interface(DNConfigurationSectionGroup)
   ['{EE39549D-F4EC-3571-951F-4A91EADD37BA}']
@@ -4483,10 +10631,18 @@ type
   ['{35BE31F1-9E63-597B-B1B0-A3F4E077A510}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.UserSettingsGroup" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNUserSettingsGroup;
 
   end;
 
+  ///<summary>
+  ///  表示一的组相关的用户配置文件中的设置节。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.UserSettingsGroup')]
   DNUserSettingsGroup = interface(DNConfigurationSectionGroup)
   ['{4385C2C6-C79A-3D70-94B2-B23F81A4DCE1}']
@@ -4532,13 +10688,42 @@ type
 
   { static methods } 
 
+    ///<summary>
+    ///  返回 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象的传递的配置节的名称和路径。
+    ///</summary>
+    ///  <param name="sectionName">
+    ///  配置名称和路径，如"system.net/settings"。
+    ///</param>
+    ///<returns><see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象的传递的配置节的名称和路径。
+    ///<see cref="T:System.Configuration.ConfigurationSettings" />
+    ///  类提供了向后兼容性。
+    ///  应使用 <see cref="T:System.Configuration.ConfigurationManager" />
+    ///  类或 <see cref="T:System.Web.Configuration.WebConfigurationManager" />
+    ///  类。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationException">
+    ///  无法检索请求的节。
+    ///</exception>
     {class} function GetConfig(sectionName: string): DDN.mscorlib.DNObject;
 
   { static propertys } 
 
+    ///<summary>
+    ///  获取一个只读的 <see cref="T:System.Collections.Specialized.NameValueCollection" />
+    ///  的配置文件的应用程序设置部分。
+    ///</summary>
+    ///<returns>
+    ///  一个只读的 <see cref="T:System.Collections.Specialized.NameValueCollection" />
+    ///  的配置文件中应用程序设置部分。
+    ///</returns>
     {class} property AppSettings: DNNameValueCollection read get_AppSettings;
   end;
 
+  ///<summary>
+  ///  支持运行时 1.0 和 1.1 版中读取配置节和公用配置设置。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationSettings')]
   DNConfigurationSettings = interface(DDN.mscorlib.DNObject)
   ['{6573BFC0-CCA6-3033-B6FB-03F93E2C0EE3}']
@@ -4558,12 +10743,33 @@ type
   ['{0E873FC7-70A0-5571-99FE-E7B8FE011407}']
   end;
 
+  ///<summary>
+  ///  作为基类的类用于派生验证类，以便可以验证某个对象的值。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationValidatorBase')]
   DNConfigurationValidatorBase = interface(DDN.mscorlib.DNObject)
   ['{AAAF2860-120E-393D-8451-49B2A6FEE2FA}']
   { methods } 
 
+    ///<summary>
+    ///  确定是否可以根据类型验证对象。
+    ///</summary>
+    ///  <param name="type">
+    ///  对象类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="type" />
+    ///  参数值与预期匹配 <see langword="type" />
+    ///  ; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanValidate(&type: DDN.mscorlib.DNType): Boolean;
+    ///<summary>
+    ///  确定某个对象的值是否有效。
+    ///</summary>
+    ///  <param name="value">
+    ///  对象值。
+    ///</param>
     procedure Validate(value: DDN.mscorlib.DNObject);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4579,16 +10785,51 @@ type
   ['{5A423A17-46F8-52BD-8F6B-E67E8E334D8B}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.CallbackValidator" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="type">
+    ///  要验证的对象的类型。
+    ///</param>
+    ///  <param name="callback"><see cref="T:System.Configuration.ValidatorCallback" />
+    ///  用作委托。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="type " />
+    ///  是 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} function init(&type: DDN.mscorlib.DNType; callback: DNValidatorCallback): DNCallbackValidator;
 
   end;
 
+  ///<summary>
+  ///  提供了一个对象的动态验证。
+  ///</summary>
   [DNTypeName('System.Configuration.CallbackValidator')]
   DNCallbackValidator = interface(DNConfigurationValidatorBase)
   ['{CF17DCFA-FB7A-3FF7-8718-CF908127CE1F}']
   { methods } 
 
+    ///<summary>
+    ///  确定是否可以验证的对象类型。
+    ///</summary>
+    ///  <param name="type">
+    ///  对象的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <see langword="type" />
+    ///  参数创建的实例时使用作为第一个参数的类型匹配 <see cref="T:System.Configuration.CallbackValidator" />
+    ///  ; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanValidate(&type: DDN.mscorlib.DNType): Boolean;
+    ///<summary>
+    ///  确定某个对象的值是否有效。
+    ///</summary>
+    ///  <param name="value">
+    ///  对象的值。
+    ///</param>
     procedure Validate(value: DDN.mscorlib.DNObject);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4604,16 +10845,39 @@ type
   ['{858BA1C8-B574-5AA1-8288-21781CF35ED3}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.DefaultValidator" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNDefaultValidator;
 
   end;
 
+  ///<summary>
+  ///  对对象进行验证。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.DefaultValidator')]
   DNDefaultValidator = interface(DNConfigurationValidatorBase)
   ['{D28AB233-4684-3B70-A58E-7BE1E9FE03FC}']
   { methods } 
 
+    ///<summary>
+    ///  确定是否可以验证对象，基于类型。
+    ///</summary>
+    ///  <param name="type">
+    ///  对象类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  正在验证的所有类型。
+    ///</returns>
     function CanValidate(&type: DDN.mscorlib.DNType): Boolean;
+    ///<summary>
+    ///  确定某个对象的值是否有效。
+    ///</summary>
+    ///  <param name="value">
+    ///  对象值。
+    ///</param>
     procedure Validate(value: DDN.mscorlib.DNObject);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4629,18 +10893,89 @@ type
   ['{1F23DA3E-A5A6-5C62-9D7D-B145F3017E89}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.IntegerValidator" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="minValue"><see cref="T:System.Int32" />
+    ///  指定最小值的对象。
+    ///</param>
+    ///  <param name="maxValue"><see cref="T:System.Int32" />
+    ///  对象，它指定的最大值。
+    ///</param>
     {class} function init(minValue: Int32; maxValue: Int32): DNIntegerValidator; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.IntegerValidator" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="minValue"><see cref="T:System.Int32" />
+    ///  指定最小值的对象。
+    ///</param>
+    ///  <param name="maxValue"><see cref="T:System.Int32" />
+    ///  对象，它指定的最大值。
+    ///</param>
+    ///  <param name="rangeIsExclusive"><see langword="true" />
+    ///  若要指定验证范围是独占的。
+    ///  非独占方式值要验证必须在指定范围内;排他锁意味着它必须是低于最小值或高于最大值。
+    ///</param>
     {class} function init(minValue: Int32; maxValue: Int32; rangeIsExclusive: Boolean): DNIntegerValidator; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.IntegerValidator" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="minValue"><see cref="T:System.Int32" />
+    ///  对象，它指定的整数值的最小长度。
+    ///</param>
+    ///  <param name="maxValue"><see cref="T:System.Int32" />
+    ///  对象，它指定的整数值的最大长度。
+    ///</param>
+    ///  <param name="rangeIsExclusive">
+    ///  一个 <see cref="T:System.Boolean" />
+    ///  值，该值指定是否验证范围是独占的。
+    ///</param>
+    ///  <param name="resolution"><see cref="T:System.Int32" />
+    ///  对象，它指定一个值，必须匹配。
+    ///</param>
+    ///<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="resolution" />
+    ///  小于 <see langword="0" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="minValue" />
+    ///  大于 <paramref name="maxValue" />
+    ///  。
+    ///</exception>
     {class} function init(minValue: Int32; maxValue: Int32; rangeIsExclusive: Boolean; resolution: Int32): DNIntegerValidator; overload;
 
   end;
 
+  ///<summary>
+  ///  提供验证 <see cref="T:System.Int32" />
+  ///  值。
+  ///</summary>
   [DNTypeName('System.Configuration.IntegerValidator')]
   DNIntegerValidator = interface(DNConfigurationValidatorBase)
   ['{F09080C1-ACBC-366C-8667-D6148FD7252F}']
   { methods } 
 
+    ///<summary>
+    ///  确定是否可以验证的对象类型。
+    ///</summary>
+    ///  <param name="type">
+    ///  对象的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="type" />
+    ///  参数与匹配 <see cref="T:System.Int32" />
+    ///  值; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanValidate(&type: DDN.mscorlib.DNType): Boolean;
+    ///<summary>
+    ///  确定某个对象的值是否有效。
+    ///</summary>
+    ///  <param name="value">
+    ///  要验证的值。
+    ///</param>
     procedure Validate(value: DDN.mscorlib.DNObject);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4656,18 +10991,95 @@ type
   ['{3C79BB12-B268-5400-81D5-870844B63ED3}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.LongValidator" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="minValue"><see cref="T:System.Int64" />
+    ///  值，该值指定的最小长度 <see langword="long" />
+    ///  值。
+    ///</param>
+    ///  <param name="maxValue"><see cref="T:System.Int64" />
+    ///  值，该值指定的最大长度 <see langword="long" />
+    ///  值。
+    ///</param>
     {class} function init(minValue: Int64; maxValue: Int64): DNLongValidator; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.LongValidator" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="minValue"><see cref="T:System.Int64" />
+    ///  值，该值指定的最小长度 <see langword="long" />
+    ///  值。
+    ///</param>
+    ///  <param name="maxValue"><see cref="T:System.Int64" />
+    ///  值，该值指定的最大长度 <see langword="long" />
+    ///  值。
+    ///</param>
+    ///  <param name="rangeIsExclusive">
+    ///  一个 <see cref="T:System.Boolean" />
+    ///  值，该值指定是否验证范围是独占的。
+    ///</param>
     {class} function init(minValue: Int64; maxValue: Int64; rangeIsExclusive: Boolean): DNLongValidator; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.LongValidator" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="minValue"><see cref="T:System.Int64" />
+    ///  值，该值指定的最小长度 <see langword="long" />
+    ///  值。
+    ///</param>
+    ///  <param name="maxValue"><see cref="T:System.Int64" />
+    ///  值，该值指定的最大长度 <see langword="long" />
+    ///  值。
+    ///</param>
+    ///  <param name="rangeIsExclusive">
+    ///  一个 <see cref="T:System.Boolean" />
+    ///  值，该值指定是否验证范围是独占的。
+    ///</param>
+    ///  <param name="resolution"><see cref="T:System.Int64" />
+    ///  值，该值指定一个特定值，必须匹配。
+    ///</param>
+    ///<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="resolution" />
+    ///  等于或小于比 <see langword="0" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="maxValue" />
+    ///  小于 <paramref name="minValue" />
+    ///  。
+    ///</exception>
     {class} function init(minValue: Int64; maxValue: Int64; rangeIsExclusive: Boolean; resolution: Int64): DNLongValidator; overload;
 
   end;
 
+  ///<summary>
+  ///  提供验证 <see cref="T:System.Int64" />
+  ///  值。
+  ///</summary>
   [DNTypeName('System.Configuration.LongValidator')]
   DNLongValidator = interface(DNConfigurationValidatorBase)
   ['{E974C40C-A9BE-33CA-8F20-AE558489E4A4}']
   { methods } 
 
+    ///<summary>
+    ///  确定是否可以验证的对象类型。
+    ///</summary>
+    ///  <param name="type">
+    ///  对象的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="type" />
+    ///  参数与匹配 <see cref="T:System.Int64" />
+    ///  值; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanValidate(&type: DDN.mscorlib.DNType): Boolean;
+    ///<summary>
+    ///  确定某个对象的值是否有效。
+    ///</summary>
+    ///  <param name="value">
+    ///  对象的值。
+    ///</param>
     procedure Validate(value: DDN.mscorlib.DNObject);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4683,16 +11095,50 @@ type
   ['{3EE4CF93-7BA2-5AC7-A0BA-3303C556B566}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.PositiveTimeSpanValidator" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNPositiveTimeSpanValidator;
 
   end;
 
+  ///<summary>
+  ///  提供验证 <see cref="T:System.TimeSpan" />
+  ///  对象。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.PositiveTimeSpanValidator')]
   DNPositiveTimeSpanValidator = interface(DNConfigurationValidatorBase)
   ['{213A78B6-C655-3AF1-8B02-178917F4836C}']
   { methods } 
 
+    ///<summary>
+    ///  确定是否可以验证的对象类型。
+    ///</summary>
+    ///  <param name="type">
+    ///  对象类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="type" />
+    ///  参数与匹配 <see cref="T:System.TimeSpan" />
+    ///  对象; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanValidate(&type: DDN.mscorlib.DNType): Boolean;
+    ///<summary>
+    ///  确定某个对象的值是否有效。
+    ///</summary>
+    ///  <param name="value">
+    ///  对象的值。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException"><paramref name="value" />
+    ///  无法解析为一个值为正 <see cref="T:System.TimeSpan" />
+    ///  值。
+    ///</exception>
     procedure Validate(value: DDN.mscorlib.DNObject);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4708,16 +11154,50 @@ type
   ['{440BF81B-A83A-547B-AFBA-1C6CB79A059E}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.RegexStringValidator" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="regex">
+    ///  一个字符串，指定正则表达式。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="regex" />
+    ///  为 null 或空字符串 ("")。
+    ///</exception>
     {class} function init(regex: string): DNRegexStringValidator;
 
   end;
 
+  ///<summary>
+  ///  对根据提供的正则表达式的规则对字符串进行验证。
+  ///</summary>
   [DNTypeName('System.Configuration.RegexStringValidator')]
   DNRegexStringValidator = interface(DNConfigurationValidatorBase)
   ['{7770424E-DB8D-372D-BF11-A81EF60947B1}']
   { methods } 
 
+    ///<summary>
+    ///  确定是否可以验证的对象类型。
+    ///</summary>
+    ///  <param name="type">
+    ///  对象的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="type" />
+    ///  参数匹配的字符串; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanValidate(&type: DDN.mscorlib.DNType): Boolean;
+    ///<summary>
+    ///  确定对象的值是否有效。
+    ///</summary>
+    ///  <param name="value">
+    ///  对象的值。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="value" />
+    ///  不符合的参数<see cref="T:System.Text.RegularExpressions.Regex" />
+    ///  类。
+    ///</exception>
     procedure Validate(value: DDN.mscorlib.DNObject);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4733,18 +11213,76 @@ type
   ['{6A5C49A4-D04D-57BF-B0E7-556CBA377988}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.StringValidator" />
+    ///  基于提供的参数的类。
+    ///</summary>
+    ///  <param name="minLength">
+    ///  一个整数，指定的字符串值的最小长度。
+    ///</param>
     {class} function init(minLength: Int32): DNStringValidator; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.StringValidator" />
+    ///  基于提供的参数的类。
+    ///</summary>
+    ///  <param name="minLength">
+    ///  一个整数，指定的字符串值的最小长度。
+    ///</param>
+    ///  <param name="maxLength">
+    ///  一个整数，指定的字符串值的最大长度。
+    ///</param>
     {class} function init(minLength: Int32; maxLength: Int32): DNStringValidator; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.StringValidator" />
+    ///  基于提供的参数的类。
+    ///</summary>
+    ///  <param name="minLength">
+    ///  一个整数，指定的字符串值的最小长度。
+    ///</param>
+    ///  <param name="maxLength">
+    ///  一个整数，指定的字符串值的最大长度。
+    ///</param>
+    ///  <param name="invalidCharacters">
+    ///  表示无效的字符的字符串。
+    ///</param>
     {class} function init(minLength: Int32; maxLength: Int32; invalidCharacters: string): DNStringValidator; overload;
 
   end;
 
+  ///<summary>
+  ///  对字符串进行验证。
+  ///</summary>
   [DNTypeName('System.Configuration.StringValidator')]
   DNStringValidator = interface(DNConfigurationValidatorBase)
   ['{83C6E9D3-F524-3962-BF1B-79AB129B9331}']
   { methods } 
 
+    ///<summary>
+    ///  确定是否可以根据类型验证对象。
+    ///</summary>
+    ///  <param name="type">
+    ///  对象类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="type" />
+    ///  参数匹配的字符串; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanValidate(&type: DDN.mscorlib.DNType): Boolean;
+    ///<summary>
+    ///  确定某个对象的值是否有效。
+    ///</summary>
+    ///  <param name="value">
+    ///  对象值。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="value" />
+    ///  是小于 <paramref name="minValue" />
+    ///  或大于 <paramref name="maxValue" />
+    ///  构造函数中定义。
+    ///  - 或 -
+    ///  <paramref name="value" />
+    ///  包含无效字符。
+    ///</exception>
     procedure Validate(value: DDN.mscorlib.DNObject);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4760,16 +11298,52 @@ type
   ['{4E6E93F6-3F07-5AB3-977D-4005BFD2DC8D}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SubclassTypeValidator" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="baseClass">
+    ///  要验证的基本类。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="baseClass" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} function init(baseClass: DDN.mscorlib.DNType): DNSubclassTypeValidator;
 
   end;
 
+  ///<summary>
+  ///  验证对象具有指定类型的派生的类。
+  ///</summary>
   [DNTypeName('System.Configuration.SubclassTypeValidator')]
   DNSubclassTypeValidator = interface(DNConfigurationValidatorBase)
   ['{9387A731-E8F5-3F7C-84C1-84F79702B12D}']
   { methods } 
 
+    ///<summary>
+    ///  确定某个对象的值是否有效。
+    ///</summary>
+    ///  <param name="value">
+    ///  对象值。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="value" />
+    ///  不属于 <see cref="T:System.Type" />
+    ///  ，可从 <paramref name="baseClass" />
+    ///  构造函数中定义。
+    ///</exception>
     procedure Validate(value: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  确定是否可以根据类型验证对象。
+    ///</summary>
+    ///  <param name="type">
+    ///  对象类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="type" />
+    ///  参数与匹配的类型可以被验证; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanValidate(&type: DDN.mscorlib.DNType): Boolean;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4785,18 +11359,95 @@ type
   ['{83ABADF9-36B3-50DB-8B57-19AACC26A89E}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.TimeSpanValidator" />
+    ///  基于提供的参数的类。
+    ///</summary>
+    ///  <param name="minValue">
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  允许通过验证指定的最短时间的对象。
+    ///</param>
+    ///  <param name="maxValue">
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  允许通过验证指定的最长时间的对象。
+    ///</param>
     {class} function init(minValue: DDN.mscorlib.DNTimeSpan; maxValue: DDN.mscorlib.DNTimeSpan): DNTimeSpanValidator; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.TimeSpanValidator" />
+    ///  基于提供的参数的类。
+    ///</summary>
+    ///  <param name="minValue">
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  允许通过验证指定的最短时间的对象。
+    ///</param>
+    ///  <param name="maxValue">
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  允许通过验证指定的最长时间的对象。
+    ///</param>
+    ///  <param name="rangeIsExclusive">
+    ///  一个 <see cref="T:System.Boolean" />
+    ///  值，该值指定是否验证范围是独占的。
+    ///</param>
     {class} function init(minValue: DDN.mscorlib.DNTimeSpan; maxValue: DDN.mscorlib.DNTimeSpan; rangeIsExclusive: Boolean): DNTimeSpanValidator; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.TimeSpanValidator" />
+    ///  基于提供的参数的类。
+    ///</summary>
+    ///  <param name="minValue">
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  允许通过验证指定的最短时间的对象。
+    ///</param>
+    ///  <param name="maxValue">
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  允许通过验证指定的最长时间的对象。
+    ///</param>
+    ///  <param name="rangeIsExclusive">
+    ///  一个 <see cref="T:System.Boolean" />
+    ///  值，该值指定是否验证范围是独占的。
+    ///</param>
+    ///  <param name="resolutionInSeconds"><see cref="T:System.Int64" />
+    ///  值，该值指定的秒数。
+    ///</param>
+    ///<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="resolutionInSeconds" />
+    ///  小于 <see langword="0" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="minValue" />
+    ///  大于 <paramref name="maxValue" />
+    ///  。
+    ///</exception>
     {class} function init(minValue: DDN.mscorlib.DNTimeSpan; maxValue: DDN.mscorlib.DNTimeSpan; rangeIsExclusive: Boolean; resolutionInSeconds: Int64): DNTimeSpanValidator; overload;
 
   end;
 
+  ///<summary>
+  ///  提供验证 <see cref="T:System.TimeSpan" />
+  ///  对象。
+  ///</summary>
   [DNTypeName('System.Configuration.TimeSpanValidator')]
   DNTimeSpanValidator = interface(DNConfigurationValidatorBase)
   ['{E89936C3-E89F-3A20-8ACC-334D1B1001BC}']
   { methods } 
 
+    ///<summary>
+    ///  确定是否可以验证的对象类型。
+    ///</summary>
+    ///  <param name="type">
+    ///  对象的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="type" />
+    ///  参数与匹配 <see cref="T:System.TimeSpan" />
+    ///  值; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanValidate(&type: DDN.mscorlib.DNType): Boolean;
+    ///<summary>
+    ///  确定某个对象的值是否有效。
+    ///</summary>
+    ///  <param name="value">
+    ///  对象的值。
+    ///</param>
     procedure Validate(value: DDN.mscorlib.DNObject);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4812,6 +11463,11 @@ type
   ['{E31BACA7-1537-5A9D-B671-695BEB4FD0B4}']
   end;
 
+  ///<summary>
+  ///  封装与相关联的上下文信息 <see cref="T:System.Configuration.ConfigurationElement" />
+  ///  对象。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.ContextInformation')]
   DNContextInformation = interface(DDN.mscorlib.DNObject)
   ['{0F5DA8AB-826A-3A3F-B325-C5B11EA1EF86}']
@@ -4822,6 +11478,15 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  提供了一个包含基于指定的节名称的配置节信息的对象。
+    ///</summary>
+    ///  <param name="sectionName">
+    ///  配置部分的名称。
+    ///</param>
+    ///<returns>
+    ///  包含配置中指定的节的对象。
+    ///</returns>
     function GetSection(sectionName: string): DDN.mscorlib.DNObject;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4830,7 +11495,20 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取要计算的配置属性的环境的上下文。
+    ///</summary>
+    ///<returns>
+    ///  一个对象，指定要计算的配置属性的环境。
+    ///</returns>
     property HostingContext: DDN.mscorlib.DNObject read get_HostingContext;
+    ///<summary>
+    ///  获取一个值，指定在计算机配置级别是否正在计算配置属性。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果在计算机配置级别; 正在计算配置属性否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsMachineLevel: Boolean read get_IsMachineLevel;
   end;
 
@@ -4841,15 +11519,37 @@ type
   ['{5F65226A-0515-567D-A4DF-5678B57D933F}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.DictionarySectionHandler" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNDictionarySectionHandler;
 
   end;
 
+  ///<summary>
+  ///  提供键/值对从一个配置节的配置信息。
+  ///</summary>
   [DNTypeName('System.Configuration.DictionarySectionHandler')]
   DNDictionarySectionHandler = interface(DNIConfigurationSectionHandler)
   ['{6EA78E50-8B33-3189-AFD0-A55B2E41763E}']
   { methods } 
 
+    ///<summary>
+    ///  创建一个新的配置处理程序并将其添加到基于指定的参数的节处理程序集合。
+    ///</summary>
+    ///  <param name="parent">
+    ///  父对象。
+    ///</param>
+    ///  <param name="context">
+    ///  配置上下文对象。
+    ///</param>
+    ///  <param name="section">
+    ///  部分的 XML 节点。
+    ///</param>
+    ///<returns>
+    ///  配置对象。
+    ///</returns>
     function Create(parent: DDN.mscorlib.DNObject; context: DDN.mscorlib.DNObject; section: DDN.System.Xml.DNXmlNode): DDN.mscorlib.DNObject;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4865,6 +11565,10 @@ type
   ['{3E8F35FF-D7E0-597B-B3DE-B81956D05639}']
   end;
 
+  ///<summary>
+  ///  包含有关配置中的单个元素的元信息。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.ElementInformation')]
   DNElementInformation = interface(DDN.mscorlib.DNObject)
   ['{EE60054D-6B18-3C2E-9F18-A59E71FAB3A1}']
@@ -4889,14 +11593,91 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  中关联属性的集合 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.PropertyInformationCollection" />
+    ///  中关联属性的集合 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</returns>
     property Properties: DNPropertyInformationCollection read get_Properties;
+    ///<summary>
+    ///  获取一个值，该值指示是否关联 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是在配置文件中。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果关联 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是在配置文件中; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsPresent: Boolean read get_IsPresent;
+    ///<summary>
+    ///  获取一个值，该值指示是否关联 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象不能修改。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果关联 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象不能为已修改; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsLocked: Boolean read get_IsLocked;
+    ///<summary>
+    ///  获取一个值，该值指示是否关联 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果关联 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象是 <see cref="T:System.Configuration.ConfigurationElementCollection" />
+    ///  集合; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsCollection: Boolean read get_IsCollection;
+    ///<summary>
+    ///  获取的源文件位置关联 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  发起的对象。
+    ///</summary>
+    ///<returns>
+    ///  源文件关联 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  发起的对象。
+    ///</returns>
     property Source: string read get_Source;
+    ///<summary>
+    ///  在配置文件中获取的行号其中关联 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  定义对象。
+    ///</summary>
+    ///<returns>
+    ///  在配置中的行号文件的位置关联 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  定义对象。
+    ///</returns>
     property LineNumber: Int32 read get_LineNumber;
+    ///<summary>
+    ///  获取关联的类型 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  关联的类型 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</returns>
     property &Type: DDN.mscorlib.DNType read get_Type;
+    ///<summary>
+    ///  获取用于验证关联的对象 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  用来验证关联的对象 <see cref="T:System.Configuration.ConfigurationElement" />
+    ///  对象。
+    ///</returns>
     property Validator: DNConfigurationValidatorBase read get_Validator;
+    ///<summary>
+    ///  获取有关关联的元素和子元素的错误
+    ///</summary>
+    ///<returns>
+    ///  包含关联的元素和子元素的错误的集合
+    ///</returns>
     property Errors: DDN.mscorlib.DNICollection read get_Errors;
   end;
 
@@ -4907,6 +11688,10 @@ type
   ['{89D73A1E-C3DC-5545-A597-CDAF47A098DB}']
   end;
 
+  ///<summary>
+  ///  管理当前应用程序的路径上下文。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.ExeContext')]
   DNExeContext = interface(DDN.mscorlib.DNObject)
   ['{6BB5EC50-F96B-32D5-A117-C4CCBD923A7D}']
@@ -4924,7 +11709,20 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取表示当前应用程序的路径级别的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ConfigurationUserLevel" />
+    ///  对象，表示当前应用程序的路径级别。
+    ///</returns>
     property UserLevel: DNConfigurationUserLevel read get_UserLevel;
+    ///<summary>
+    ///  获取应用程序的当前路径。
+    ///</summary>
+    ///<returns>
+    ///  一个包含当前路径的字符串值。
+    ///</returns>
     property ExePath: string read get_ExePath;
   end;
 
@@ -4935,15 +11733,41 @@ type
   ['{24CC1378-B612-5E23-9FA9-280CE1D2797C}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.IgnoreSectionHandler" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNIgnoreSectionHandler;
 
   end;
 
+  ///<summary>
+  ///  提供了由未处理的配置节的旧的节处理程序定义 <see cref="N:System.Configuration" />
+  ///  类型。
+  ///</summary>
   [DNTypeName('System.Configuration.IgnoreSectionHandler')]
   DNIgnoreSectionHandler = interface(DNIConfigurationSectionHandler)
   ['{E29C1894-DADB-3C55-BD30-179FF060E11F}']
   { methods } 
 
+    ///<summary>
+    ///  创建一个新的配置处理程序并将指定的配置对象添加到节处理程序集合。
+    ///</summary>
+    ///  <param name="parent">
+    ///  中相应的父配置节的配置设置。
+    ///</param>
+    ///  <param name="configContext">
+    ///  为其配置节处理程序计算的配置值的虚拟路径。
+    ///  此参数通常是保留并且是 <see langword="null" />
+    ///  。
+    ///</param>
+    ///  <param name="section"><see cref="T:System.Xml.XmlNode" />
+    ///  ，包含要处理的配置信息。
+    ///  提供直接访问权限的配置节的 XML 内容。
+    ///</param>
+    ///<returns>
+    ///  创建的配置处理程序对象。
+    ///</returns>
     function Create(parent: DDN.mscorlib.DNObject; configContext: DDN.mscorlib.DNObject; section: DDN.System.Xml.DNXmlNode): DDN.mscorlib.DNObject;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4959,6 +11783,10 @@ type
   ['{427111D2-D193-5288-A26E-206BF57B0520}']
   end;
 
+  ///<summary>
+  ///  委托中的所有成员 <see cref="T:System.Configuration.Internal.IInternalConfigHost" />
+  ///  到另一个主机实例的接口。
+  ///</summary>
   [DNTypeName('System.Configuration.Internal.DelegatingConfigHost')]
   DNDelegatingConfigHost = interface(DNIInternalConfigHost)
   ['{5846C619-A59D-34A1-8C4F-288D056D1930}']
@@ -4972,43 +11800,489 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  初始化配置主机。
+    ///</summary>
+    ///  <param name="configRoot">
+    ///  一个 <see cref="T:System.Configuration.Internal.IInternalConfigRoot" />
+    ///  对象。
+    ///</param>
+    ///  <param name="hostInitParams">
+    ///  一个包含用于初始化配置主机的值的参数对象。
+    ///</param>
     procedure Init(configRoot: DNIInternalConfigRoot; hostInitParams: TArray<DDN.mscorlib.DNObject>);
     procedure InitForConfiguration(out locationSubPath: string; out configPath: string; out locationConfigPath: string; configRoot: DNIInternalConfigRoot; hostInitConfigurationParams: TArray<DDN.mscorlib.DNObject>);
+    ///<summary>
+    ///  返回一个值，该值指示是否需要对主机配置初始化配置记录。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示配置文件的路径。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果配置记录，则所必需的主机配置初始化;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsConfigRecordRequired(configPath: string): Boolean;
+    ///<summary>
+    ///  返回一个值，该值指示是否初始化配置对象被认为是延迟。
+    ///</summary>
+    ///  <param name="configRecord"><see cref="T:System.Configuration.Internal.IInternalConfigRecord" />
+    ///  对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果配置对象的初始化被认为是延迟，则为否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsInitDelayed(configRecord: DNIInternalConfigRecord): Boolean;
+    ///<summary>
+    ///  指示新的配置记录需要完成初始化。
+    ///</summary>
+    ///  <param name="configRecord">
+    ///  一个 <see cref="T:System.Configuration.Internal.IInternalConfigRecord" />
+    ///  对象。
+    ///</param>
     procedure RequireCompleteInit(configRecord: DNIInternalConfigRecord);
+    ///<summary>
+    ///  返回一个值，该值指示是否将配置路径为对配置节点的内容应视为根。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示配置文件的路径。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  在配置路径为其内容应视为根; 的配置节点否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsSecondaryRoot(configPath: string): Boolean;
+    ///<summary>
+    ///  返回的名称 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示配置文件的路径。
+    ///</param>
+    ///<returns>
+    ///  一个表示名称的字符串 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</returns>
     function GetStreamName(configPath: string): string;
+    ///<summary>
+    ///  返回的名称 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置源。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  名称 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</param>
+    ///  <param name="configSource">
+    ///  一个表示配置源字符串。
+    ///</param>
+    ///<returns>
+    ///  一个表示名称的字符串 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置源。
+    ///</returns>
     function GetStreamNameForConfigSource(streamName: string; configSource: string): string;
+    ///<summary>
+    ///  返回 <see cref="P:System.Diagnostics.FileVersionInfo.FileVersion" />
+    ///  对象，表示的版本 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  名称 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="P:System.Diagnostics.FileVersionInfo.FileVersion" />
+    ///  对象，表示的版本 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</returns>
     function GetStreamVersion(streamName: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  此时将打开 <see cref="T:System.IO.Stream" />
+    ///  对象来读取配置文件。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  名称 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</param>
+    ///<returns>
+    ///  返回 <see cref="T:System.IO.Stream" />
+    ///  指定对象 <paramref name="streamName" />
+    ///  。
+    ///</returns>
     function OpenStreamForRead(streamName: string): DDN.mscorlib.DNStream; overload;
+    ///<summary>
+    ///  此时将打开 <see cref="T:System.IO.Stream" />
+    ///  对象来读取配置文件。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  名称 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</param>
+    ///  <param name="assertPermissions"><see langword="true" />
+    ///  若要断言权限，则否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  返回 <see cref="T:System.IO.Stream" />
+    ///  指定对象 <paramref name="streamName" />
+    ///  。
+    ///</returns>
     function OpenStreamForRead(streamName: string; assertPermissions: Boolean): DDN.mscorlib.DNStream; overload;
     function OpenStreamForWrite(streamName: string; templateStreamName: string; out writeContext: DDN.mscorlib.DNObject): DDN.mscorlib.DNStream; overload;
     function OpenStreamForWrite(streamName: string; templateStreamName: string; out writeContext: DDN.mscorlib.DNObject; assertPermissions: Boolean): DDN.mscorlib.DNStream; overload;
+    ///<summary>
+    ///  指示已完成所有写入配置文件。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  名称 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</param>
+    ///  <param name="success"><see langword="true" />
+    ///  如果写入到配置文件成功地完成。否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///  <param name="writeContext">
+    ///  写上下文 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</param>
     procedure WriteCompleted(streamName: string; success: Boolean; writeContext: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  指示所有写入配置文件已完成，并指定是否应断言权限。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  名称 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</param>
+    ///  <param name="success"><see langword="true" />
+    ///  若要指示已成功; 完成写入否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///  <param name="writeContext">
+    ///  写上下文 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务对配置文件。
+    ///</param>
+    ///  <param name="assertPermissions"><see langword="true" />
+    ///  若要断言权限，则否则为 <see langword="false" />
+    ///  。
+    ///</param>
     procedure WriteCompleted(streamName: string; success: Boolean; writeContext: DDN.mscorlib.DNObject; assertPermissions: Boolean); overload;
+    ///<summary>
+    ///  删除 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  名称 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</param>
     procedure DeleteStream(streamName: string);
+    ///<summary>
+    ///  返回一个值，该值指示是否使用文件路径 <see cref="T:System.IO.Stream" />
+    ///  对象来读取配置文件是有效的路径。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  名称 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果该路径由 <see cref="T:System.IO.Stream" />
+    ///  对象来读取配置文件是有效的路径; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsFile(streamName: string): Boolean;
+    ///<summary>
+    ///  指示要监视一个相关联的主机 <see cref="T:System.IO.Stream" />
+    ///  对象所做更改配置文件中。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  名称 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</param>
+    ///  <param name="callback">
+    ///  一个 <see cref="T:System.Configuration.Internal.StreamChangeCallback" />
+    ///  对象，以接收返回的数据表示配置文件中的更改。
+    ///</param>
+    ///<returns><see cref="T:System.Object" />
+    ///  实例包含更改的配置设置。
+    ///</returns>
     function StartMonitoringStreamForChanges(streamName: string; callback: DNStreamChangeCallback): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  指示该主机对象，若要停止监视关联 <see cref="T:System.IO.Stream" />
+    ///  对象所做更改配置文件中。
+    ///</summary>
+    ///  <param name="streamName">
+    ///  名称 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</param>
+    ///  <param name="callback">
+    ///  一个 <see cref="T:System.Configuration.Internal.StreamChangeCallback" />
+    ///  对象。
+    ///</param>
     procedure StopMonitoringStreamForChanges(streamName: string; callback: DNStreamChangeCallback);
+    ///<summary>
+    ///  返回一个值，该值指示是否在配置层次结构中的应用程序配置之上的配置。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示配置文件的路径。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果配置大于配置层次结构; 中的应用程序配置否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsAboveApplication(configPath: string): Boolean;
+    ///<summary>
+    ///  限制或允许宿主配置中的定义。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示配置文件的路径。
+    ///</param>
+    ///  <param name="allowDefinition"><see cref="T:System.Configuration.ConfigurationAllowDefinition" />
+    ///  对象。
+    ///</param>
+    ///  <param name="allowExeDefinition"><see cref="T:System.Configuration.ConfigurationAllowExeDefinition" />
+    ///  对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果成功，则授予或限制在宿主配置中的定义否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsDefinitionAllowed(configPath: string; allowDefinition: DNConfigurationAllowDefinition; allowExeDefinition: DNConfigurationAllowExeDefinition): Boolean;
+    ///<summary>
+    ///  验证配置定义可以用于配置记录。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示配置文件的路径。
+    ///</param>
+    ///  <param name="allowDefinition">
+    ///  一个 <see cref="P:System.Configuration.SectionInformation.AllowDefinition" />
+    ///  对象。
+    ///</param>
+    ///  <param name="allowExeDefinition">
+    ///  一个 <see cref="T:System.Configuration.ConfigurationAllowExeDefinition" />
+    ///  对象
+    ///</param>
+    ///  <param name="errorInfo">
+    ///  一个 <see cref="T:System.Configuration.Internal.IConfigErrorInfo" />
+    ///  对象。
+    ///</param>
     procedure VerifyDefinitionAllowed(configPath: string; allowDefinition: DNConfigurationAllowDefinition; allowExeDefinition: DNConfigurationAllowExeDefinition; errorInfo: DNIConfigErrorInfo);
+    ///<summary>
+    ///  返回基于位置的子路径的配置路径。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示配置文件的路径。
+    ///</param>
+    ///  <param name="locationSubPath">
+    ///  表示一个位置的子路径的字符串。
+    ///</param>
+    ///<returns>
+    ///  表示配置路径的字符串。
+    ///</returns>
     function GetConfigPathFromLocationSubPath(configPath: string; locationSubPath: string): string;
+    ///<summary>
+    ///  返回一个值，该值指示配置对象是否支持位置标记。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示配置文件的路径。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果配置对象支持位置标记，则否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsLocationApplicable(configPath: string): Boolean;
+    ///<summary>
+    ///  返回一个值，该值指示是否为受信任的配置路径。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示配置文件的路径。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果配置路径是受信任;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsTrustedConfigPath(configPath: string): Boolean;
+    ///<summary>
+    ///  返回一个值，该值指示一个配置节，是否需要完全信任的代码访问安全级别，并且不允许 <see cref="T:System.Security.AllowPartiallyTrustedCallersAttribute" />
+    ///  特性禁用隐式链接要求。
+    ///</summary>
+    ///  <param name="configRecord"><see cref="T:System.Configuration.Internal.IInternalConfigRecord" />
+    ///  对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果配置部分需要完全信任的代码访问安全级别，并且不允许 <see cref="T:System.Security.AllowPartiallyTrustedCallersAttribute" />
+    ///  特性禁用隐式链接要求; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsFullTrustSectionWithoutAptcaAllowed(configRecord: DNIInternalConfigRecord): Boolean;
     procedure GetRestrictedPermissions(configRecord: DNIInternalConfigRecord; out permissionSet: DDN.mscorlib.DNPermissionSet; out isHostReady: Boolean);
+    ///<summary>
+    ///  指示宿主模拟并返回 <see cref="T:System.IDisposable" />
+    ///  对象所需的.NET Framework 的内部。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.IDisposable" />
+    ///  值。
+    ///</returns>
     function Impersonate: DDN.mscorlib.DNIDisposable;
+    ///<summary>
+    ///  返回一个值，该值指示是否可以读取整个配置文件由指定 <see cref="T:System.IO.Stream" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示配置文件的路径。
+    ///</param>
+    ///  <param name="streamName">
+    ///  名称 <see cref="T:System.IO.Stream" />
+    ///  对象执行 I/O 任务的配置文件上。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果整个配置文件可以通过阅读 <see cref="T:System.IO.Stream" />
+    ///  指定对象 <paramref name="streamName" />
+    ///  ; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function PrefetchAll(configPath: string; streamName: string): Boolean;
+    ///<summary>
+    ///  指示 <see cref="T:System.Configuration.Internal.IInternalConfigHost" />
+    ///  对象来读取其关联的配置文件的指定的节。
+    ///</summary>
+    ///  <param name="sectionGroupName">
+    ///  一个表示配置文件中节组的名称的字符串。
+    ///</param>
+    ///  <param name="sectionName">
+    ///  表示配置文件中节的名称的字符串。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果通过指定配置文件节 <paramref name="sectionGroupName" />
+    ///  和 <paramref name="sectionName" />
+    ///  参数可以通过读取 <see cref="T:System.IO.Stream" />
+    ///  对象; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function PrefetchSection(sectionGroupName: string; sectionName: string): Boolean;
+    ///<summary>
+    ///  创建不推荐使用的配置上下文。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示配置文件的路径。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Object" />
+    ///  表示不推荐使用的配置上下文。
+    ///</returns>
     function CreateDeprecatedConfigContext(configPath: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  创建新的配置上下文。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  一个字符串，表示配置文件的路径。
+    ///</param>
+    ///  <param name="locationSubPath">
+    ///  表示一个位置的子路径的字符串。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Object" />
+    ///  表示新的配置上下文。
+    ///</returns>
     function CreateConfigurationContext(configPath: string; locationSubPath: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  解密加密的配置节。
+    ///</summary>
+    ///  <param name="encryptedXml">
+    ///  已加密的配置文件节。
+    ///</param>
+    ///  <param name="protectionProvider">
+    ///  一个 <see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+    ///  对象。
+    ///</param>
+    ///  <param name="protectedConfigSection">
+    ///  一个 <see cref="T:System.Configuration.ProtectedConfigurationSection" />
+    ///  对象。
+    ///</param>
+    ///<returns>
+    ///  一个字符串，表示已解密的配置节。
+    ///</returns>
     function DecryptSection(encryptedXml: string; protectionProvider: DNProtectedConfigurationProvider; protectedConfigSection: DNProtectedConfigurationSection): string;
+    ///<summary>
+    ///  加密配置对象的某一部分。
+    ///</summary>
+    ///  <param name="clearTextXml">
+    ///  未加密的配置节。
+    ///</param>
+    ///  <param name="protectionProvider">
+    ///  一个 <see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+    ///  对象。
+    ///</param>
+    ///  <param name="protectedConfigSection">
+    ///  一个 <see cref="T:System.Configuration.ProtectedConfigurationSection" />
+    ///  对象。
+    ///</param>
+    ///<returns>
+    ///  一个表示已加密的节配置对象的字符串。
+    ///</returns>
     function EncryptSection(clearTextXml: string; protectionProvider: DNProtectedConfigurationProvider; protectedConfigSection: DNProtectedConfigurationSection): string;
+    ///<summary>
+    ///  返回 <see cref="T:System.Type" />
+    ///  表示类型的配置。
+    ///</summary>
+    ///  <param name="typeName">
+    ///  表示配置类型的字符串。
+    ///</param>
+    ///  <param name="throwOnError"><see langword="true" />
+    ///  如果应引发异常，如果遇到错误。 <see langword="false" />
+    ///  如果遇到错误，不应引发异常。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Type" />
+    ///  表示类型的配置。
+    ///</returns>
     function GetConfigType(typeName: string; throwOnError: Boolean): DDN.mscorlib.DNType;
+    ///<summary>
+    ///  返回一个表示配置对象的类型名称的字符串。
+    ///</summary>
+    ///  <param name="t">
+    ///  一个 <see cref="T:System.Type" />
+    ///  对象。
+    ///</param>
+    ///<returns>
+    ///  一个表示配置对象的类型名称的字符串。
+    ///</returns>
     function GetConfigTypeName(t: DDN.mscorlib.DNType): string;
+    ///<summary>
+    ///  使用提供的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  处理配置节的标记。
+    ///</summary>
+    ///  <param name="rawXml">
+    ///  要处理的 <see cref="T:System.Xml.XmlNode" />
+    ///  。
+    ///</param>
+    ///  <param name="builder">
+    ///  要用于处理 <paramref name="rawXml" />
+    ///  的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  已处理的 <see cref="T:System.Xml.XmlNode" />
+    ///  。
+    ///</returns>
     function ProcessRawXml(rawXml: DDN.System.Xml.DNXmlNode; builder: DNConfigurationBuilder): DDN.System.Xml.DNXmlNode;
+    ///<summary>
+    ///  使用提供的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  处理 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="configSection">
+    ///  要处理的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</param>
+    ///  <param name="builder">
+    ///  要用于处理 <paramref name="configSection" />
+    ///  的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  已处理的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
     function ProcessConfigurationSection(configSection: DNConfigurationSection; builder: DNConfigurationBuilder): DNConfigurationSection;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5017,10 +12291,45 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个值，该值指示主机配置是否支持更改通知。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果宿主支持更改通知;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property SupportsChangeNotifications: Boolean read get_SupportsChangeNotifications;
+    ///<summary>
+    ///  获取一个值，该值指示主机配置是否支持刷新。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果主机配置支持刷新;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property SupportsRefresh: Boolean read get_SupportsRefresh;
+    ///<summary>
+    ///  获取一个值，该值指示主机配置是否具有路径支持。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果主机配置具有路径支持;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property SupportsPath: Boolean read get_SupportsPath;
+    ///<summary>
+    ///  获取一个值，该值指示主机配置是否支持位置标记。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果宿主支持位置标记，则否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property SupportsLocation: Boolean read get_SupportsLocation;
+    ///<summary>
+    ///  获取一个值，该值指示是否配置为远程。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果配置为远程;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsRemote: Boolean read get_IsRemote;
   end;
 
@@ -5031,15 +12340,48 @@ type
   ['{ED613FB0-4313-55E2-A029-E10980B5CD3F}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.NameValueFileSectionHandler" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNNameValueFileSectionHandler;
 
   end;
 
+  ///<summary>
+  ///  提供对配置文件的访问。
+  ///  此类型支持.NET Framework 配置基础结构，不宜在代码中直接使用。
+  ///</summary>
   [DNTypeName('System.Configuration.NameValueFileSectionHandler')]
   DNNameValueFileSectionHandler = interface(DNIConfigurationSectionHandler)
   ['{02904935-4CC1-3D24-8E46-E03CE7BCCC53}']
   { methods } 
 
+    ///<summary>
+    ///  创建一个新的配置处理程序并将其添加到基于指定的参数的节处理程序集合。
+    ///</summary>
+    ///  <param name="parent">
+    ///  父对象。
+    ///</param>
+    ///  <param name="configContext">
+    ///  配置上下文对象。
+    ///</param>
+    ///  <param name="section">
+    ///  部分 XML 节点。
+    ///</param>
+    ///<returns>
+    ///  配置对象。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  中指定的文件 <see langword="file" />
+    ///  属性 <paramref name="section" />
+    ///  存在但无法加载。
+    ///  - 或 -
+    ///<see langword="name" />
+    ///  属性 <paramref name="section" />
+    ///  中指定的文件的根元素不匹配 <see langword="file" />
+    ///  属性。
+    ///</exception>
     function Create(parent: DDN.mscorlib.DNObject; configContext: DDN.mscorlib.DNObject; section: DDN.System.Xml.DNXmlNode): DDN.mscorlib.DNObject;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5055,15 +12397,37 @@ type
   ['{8E6BF030-B4A6-5934-9987-57120907D99A}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.NameValueSectionHandler" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNNameValueSectionHandler;
 
   end;
 
+  ///<summary>
+  ///  提供配置节中的名称/值对配置信息。
+  ///</summary>
   [DNTypeName('System.Configuration.NameValueSectionHandler')]
   DNNameValueSectionHandler = interface(DNIConfigurationSectionHandler)
   ['{8D09C5F9-8AB0-3F03-982C-6AFA464F9B9F}']
   { methods } 
 
+    ///<summary>
+    ///  创建一个新的配置处理程序并将其添加到基于指定的参数的节处理程序集合。
+    ///</summary>
+    ///  <param name="parent">
+    ///  父对象。
+    ///</param>
+    ///  <param name="context">
+    ///  配置上下文对象。
+    ///</param>
+    ///  <param name="section">
+    ///  部分的 XML 节点。
+    ///</param>
+    ///<returns>
+    ///  配置对象。
+    ///</returns>
     function Create(parent: DDN.mscorlib.DNObject; context: DDN.mscorlib.DNObject; section: DDN.System.Xml.DNXmlNode): DDN.mscorlib.DNObject;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5079,6 +12443,10 @@ type
   ['{50EB9565-81F0-5F59-A739-084FBF0C7544}']
   end;
 
+  ///<summary>
+  ///  包含配置中的个别属性的元数据信息。
+  ///  此类型不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.PropertyInformation')]
   DNPropertyInformation = interface(DDN.mscorlib.DNObject)
   ['{6E3A1B4F-A013-37D3-B65A-183C2D98E127}']
@@ -5109,19 +12477,120 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取与配置特性相对应的对象的名称。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.PropertyInformation" />
+    ///  对象的名称。
+    ///</returns>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取或设置一个对象，包含与相关的配置属性的值。
+    ///</summary>
+    ///<returns>
+    ///  一个对象，包含的值为 <see cref="T:System.Configuration.PropertyInformation" />
+    ///  对象。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  获取一个对象，包含与相关的配置属性的默认值。
+    ///</summary>
+    ///<returns>
+    ///  包含配置属性的默认值的对象。
+    ///</returns>
     property DefaultValue: DDN.mscorlib.DNObject read get_DefaultValue;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.PropertyValueOrigin" />
+    ///  对象相关的配置属性。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.PropertyValueOrigin" />
+    ///  对象。
+    ///</returns>
     property ValueOrigin: DNPropertyValueOrigin read get_ValueOrigin;
+    ///<summary>
+    ///  获取一个值，指定是否已修改的配置属性。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.PropertyInformation" />
+    ///  对象已被修改; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsModified: Boolean read get_IsModified;
+    ///<summary>
+    ///  获取一个值，指定的配置属性是否为键。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果配置属性是键;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsKey: Boolean read get_IsKey;
+    ///<summary>
+    ///  获取一个值，指定是否需要配置属性。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.PropertyInformation" />
+    ///  对象是必选的; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsRequired: Boolean read get_IsRequired;
+    ///<summary>
+    ///  获取一个值，指定是否已锁定的配置属性。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.PropertyInformation" />
+    ///  对象是锁定; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsLocked: Boolean read get_IsLocked;
+    ///<summary>
+    ///  获取与配置特性相对应的源文件。
+    ///</summary>
+    ///<returns>
+    ///  源文件 <see cref="T:System.Configuration.PropertyInformation" />
+    ///  对象。
+    ///</returns>
     property Source: string read get_Source;
+    ///<summary>
+    ///  获取与配置属性相关的配置文件中的行号。
+    ///</summary>
+    ///<returns>
+    ///  配置文件的行号。
+    ///</returns>
     property LineNumber: Int32 read get_LineNumber;
+    ///<summary>
+    ///  获取 <see cref="T:System.Type" />
+    ///  对应于配置属性的对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Type" />
+    ///  的 <see cref="T:System.Configuration.PropertyInformation" />
+    ///  对象。
+    ///</returns>
     property &Type: DDN.mscorlib.DNType read get_Type;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  对象相关的配置属性。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ConfigurationValidatorBase" />
+    ///  对象。
+    ///</returns>
     property Validator: DNConfigurationValidatorBase read get_Validator;
+    ///<summary>
+    ///  获取 <see cref="T:System.ComponentModel.TypeConverter" />
+    ///  对象相关的配置属性。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.ComponentModel.TypeConverter" />
+    ///  对象。
+    ///</returns>
     property Converter: DNTypeConverter read get_Converter;
+    ///<summary>
+    ///  获取与配置特性相对应的对象的说明。
+    ///</summary>
+    ///<returns>
+    ///  配置属性的说明。
+    ///</returns>
     property Description: string read get_Description;
   end;
 
@@ -5143,16 +12612,42 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  RSA 提供程序的名称。
+    ///</summary>
     {class} property RsaProviderName: string read __fakeFieldGet_RsaProviderName;
+    ///<summary>
+    ///  数据保护提供程序的名称。
+    ///</summary>
     {class} property DataProtectionProviderName: string read __fakeFieldGet_DataProtectionProviderName;
+    ///<summary>
+    ///  受保护的数据部分的名称。
+    ///</summary>
     {class} property ProtectedDataSectionName: string read __fakeFieldGet_ProtectedDataSectionName;
 
   { static propertys } 
 
+    ///<summary>
+    ///  获取已安装的受保护配置提供程序的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.ProtectedConfigurationProviderCollection" />
+    ///  集合安装 <see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+    ///  对象。
+    ///</returns>
     {class} property Providers: DNProtectedConfigurationProviderCollection read get_Providers;
+    ///<summary>
+    ///  获取默认的受保护配置提供程序的名称。
+    ///</summary>
+    ///<returns>
+    ///  默认的受保护配置提供程序的名称。
+    ///</returns>
     {class} property DefaultProvider: string read get_DefaultProvider;
   end;
 
+  ///<summary>
+  ///  为当前应用程序的配置文件中提供对受保护配置提供程序的访问。
+  ///</summary>
   [DNTypeName('System.Configuration.ProtectedConfiguration')]
   DNProtectedConfiguration = interface(DDN.mscorlib.DNObject)
   ['{F4D5987F-4289-32C3-8EDE-84CA0801595F}']
@@ -5167,8 +12662,17 @@ type
 
   TDNProtectedConfiguration = class(TDNGenericImport<DNProtectedConfigurationClass, DNProtectedConfiguration>)
   public const
+    ///<summary>
+    ///  RSA 提供程序的名称。
+    ///</summary>
    RsaProviderName = 'RsaProtectedConfigurationProvider';
+    ///<summary>
+    ///  数据保护提供程序的名称。
+    ///</summary>
    DataProtectionProviderName = 'DataProtectionConfigurationProvider';
+    ///<summary>
+    ///  受保护的数据部分的名称。
+    ///</summary>
    ProtectedDataSectionName = 'configProtectedData';
   end;
 
@@ -5177,6 +12681,9 @@ type
   ['{85051926-190E-566B-B522-BF3B11EDA19C}']
   end;
 
+  ///<summary>
+  ///  提供了可扩展的提供程序模型的基实现。
+  ///</summary>
   [DNTypeName('System.Configuration.Provider.ProviderBase')]
   DNProviderBase = interface(DDN.mscorlib.DNObject)
   ['{D0227721-E204-3476-BA2C-115540910409}']
@@ -5187,6 +12694,24 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  初始化配置生成器。
+    ///</summary>
+    ///  <param name="name">
+    ///  提供程序的友好名称。
+    ///</param>
+    ///  <param name="config">
+    ///  名称/值对的集合，表示在配置中为该提供程序指定的提供程序特定的属性。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  提供程序的名称是 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException">
+    ///  提供程序名称的长度为零。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  初始化提供程序后尝试在提供程序上调用 <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+    ///  。
+    ///</exception>
     procedure Initialize(name: string; config: DNNameValueCollection);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5195,7 +12720,19 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取用于在配置过程中引用该提供程序的友好名称。
+    ///</summary>
+    ///<returns>
+    ///  用于在配置过程中引用该提供程序的友好名称。
+    ///</returns>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取一个简短的友好说明适合显示在管理工具或其他用户界面 (Ui)。
+    ///</summary>
+    ///<returns>
+    ///  简短的易懂描述适用于在管理工具或其他用户界面中显示。
+    ///</returns>
     property Description: string read get_Description;
   end;
 
@@ -5206,6 +12743,9 @@ type
   ['{5906E833-2FEF-5A38-A175-E84485C67BAD}']
   end;
 
+  ///<summary>
+  ///  表示将由自定义配置生成器实现扩展的基类。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationBuilder')]
   DNConfigurationBuilder = interface(DNProviderBase)
   ['{9C22882E-1C30-3E0F-8C7B-0E0548662990}']
@@ -5216,8 +12756,52 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  接受表示配置文件中的原始配置节的 <see cref="T:System.Xml.XmlNode" />
+    ///  ，并返回修改后的或新的 <see cref="T:System.Xml.XmlNode" />
+    ///  供将来使用。
+    ///</summary>
+    ///  <param name="rawXml">
+    ///  要处理的 <see cref="T:System.Xml.XmlNode" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  已处理的 <see cref="T:System.Xml.XmlNode" />
+    ///  。
+    ///</returns>
     function ProcessRawXml(rawXml: DDN.System.Xml.DNXmlNode): DDN.System.Xml.DNXmlNode;
+    ///<summary>
+    ///  接受配置系统中的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象，并返回一个修改后的或新的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象供将来使用。
+    ///</summary>
+    ///  <param name="configSection">
+    ///  要处理的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  已处理的 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  。
+    ///</returns>
     function ProcessConfigurationSection(configSection: DNConfigurationSection): DNConfigurationSection;
+    ///<summary>
+    ///  初始化配置生成器。
+    ///</summary>
+    ///  <param name="name">
+    ///  提供程序的友好名称。
+    ///</param>
+    ///  <param name="config">
+    ///  名称/值对的集合，表示在配置中为该提供程序指定的提供程序特定的属性。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  提供程序的名称是 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException">
+    ///  提供程序名称的长度为零。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  初始化提供程序后尝试在提供程序上调用 <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+    ///  。
+    ///</exception>
     procedure Initialize(name: string; config: DNNameValueCollection);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5226,7 +12810,19 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取用于在配置过程中引用该提供程序的友好名称。
+    ///</summary>
+    ///<returns>
+    ///  用于在配置过程中引用该提供程序的友好名称。
+    ///</returns>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取一个简短的友好说明适合显示在管理工具或其他用户界面 (Ui)。
+    ///</summary>
+    ///<returns>
+    ///  简短的易懂描述适用于在管理工具或其他用户界面中显示。
+    ///</returns>
     property Description: string read get_Description;
   end;
 
@@ -5237,6 +12833,9 @@ type
   ['{9B2F60FD-F53D-5A1D-82A0-8541C40C35CC}']
   end;
 
+  ///<summary>
+  ///  是用于加密和解密受保护的配置数据创建提供程序的基类。
+  ///</summary>
   [DNTypeName('System.Configuration.ProtectedConfigurationProvider')]
   DNProtectedConfigurationProvider = interface(DNProviderBase)
   ['{0DFE9FBE-E232-3F9E-A512-E86559E3C350}']
@@ -5247,8 +12846,46 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  加密传递 <see cref="T:System.Xml.XmlNode" />
+    ///  从配置文件的对象。
+    ///</summary>
+    ///  <param name="node"><see cref="T:System.Xml.XmlNode" />
+    ///  对象进行加密。
+    ///</param>
+    ///<returns><see cref="T:System.Xml.XmlNode" />
+    ///  对象，其中包含加密的数据。
+    ///</returns>
     function Encrypt(node: DDN.System.Xml.DNXmlNode): DDN.System.Xml.DNXmlNode;
+    ///<summary>
+    ///  解密传递 <see cref="T:System.Xml.XmlNode" />
+    ///  从配置文件的对象。
+    ///</summary>
+    ///  <param name="encryptedNode"><see cref="T:System.Xml.XmlNode" />
+    ///  对象进行解密。
+    ///</param>
+    ///<returns><see cref="T:System.Xml.XmlNode" />
+    ///  对象，其中包含已解密的数据。
+    ///</returns>
     function Decrypt(encryptedNode: DDN.System.Xml.DNXmlNode): DDN.System.Xml.DNXmlNode;
+    ///<summary>
+    ///  初始化配置生成器。
+    ///</summary>
+    ///  <param name="name">
+    ///  提供程序的友好名称。
+    ///</param>
+    ///  <param name="config">
+    ///  名称/值对的集合，表示在配置中为该提供程序指定的提供程序特定的属性。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  提供程序的名称是 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException">
+    ///  提供程序名称的长度为零。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  初始化提供程序后尝试在提供程序上调用 <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+    ///  。
+    ///</exception>
     procedure Initialize(name: string; config: DNNameValueCollection);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5257,7 +12894,19 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取用于在配置过程中引用该提供程序的友好名称。
+    ///</summary>
+    ///<returns>
+    ///  用于在配置过程中引用该提供程序的友好名称。
+    ///</returns>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取一个简短的友好说明适合显示在管理工具或其他用户界面 (Ui)。
+    ///</summary>
+    ///<returns>
+    ///  简短的易懂描述适用于在管理工具或其他用户界面中显示。
+    ///</returns>
     property Description: string read get_Description;
   end;
 
@@ -5268,10 +12917,18 @@ type
   ['{4F09077B-BD06-5D46-8A91-B4BD3B36A077}']
   { constructors } 
 
+    ///<summary>
+    ///  使用默认设置初始化 <see cref="T:System.Configuration.DpapiProtectedConfigurationProvider" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNDpapiProtectedConfigurationProvider;
 
   end;
 
+  ///<summary>
+  ///  提供使用 Windows 数据保护 API (DPAPI) 来加密和解密配置数据的 <see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+  ///  对象。
+  ///</summary>
   [DNTypeName('System.Configuration.DpapiProtectedConfigurationProvider')]
   DNDpapiProtectedConfigurationProvider = interface(DNProtectedConfigurationProvider)
   ['{B7253C0F-3272-3533-A43B-4DD98C022130}']
@@ -5283,8 +12940,54 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  解密传递 <see cref="T:System.Xml.XmlNode" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="encryptedNode"><see cref="T:System.Xml.XmlNode" />
+    ///  对象进行解密。
+    ///</param>
+    ///<returns>
+    ///  已解密 <see cref="T:System.Xml.XmlNode" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="encryptedNode" />
+    ///  没有 <see cref="P:System.Xml.XmlNode.Name" />
+    ///  设置为"EncryptedData"和 <see cref="T:System.Xml.XmlNodeType" />
+    ///  设置为 <see cref="F:System.Xml.XmlNodeType.Element" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="encryptedNode" />
+    ///  不会不具有子节点命名"CipherData"具有名为"CipherValue"的子节点。
+    ///  - 或 -
+    ///  名为"CipherData"的子节点是空的节点。
+    ///</exception>
     function Decrypt(encryptedNode: DDN.System.Xml.DNXmlNode): DDN.System.Xml.DNXmlNode;
+    ///<summary>
+    ///  加密传递 <see cref="T:System.Xml.XmlNode" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="node"><see cref="T:System.Xml.XmlNode" />
+    ///  对象进行加密。
+    ///</param>
+    ///<returns>
+    ///  已加密的 <see cref="T:System.Xml.XmlNode" />
+    ///  对象。
+    ///</returns>
     function Encrypt(node: DDN.System.Xml.DNXmlNode): DDN.System.Xml.DNXmlNode;
+    ///<summary>
+    ///  使用默认设置初始化提供程序。
+    ///</summary>
+    ///  <param name="name">
+    ///  要为对象使用的提供程序名称。
+    ///</param>
+    ///  <param name="configurationValues">
+    ///  初始化对象时要使用的值的 <see cref="T:System.Collections.Specialized.NameValueCollection" />
+    ///  集合。
+    ///</param>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="configurationValues" />
+    ///  包含无法识别的配置设置。
+    ///</exception>
     procedure Initialize(name: string; configurationValues: DNNameValueCollection);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5293,6 +12996,15 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个值，该值指示是否 <see cref="T:System.Configuration.DpapiProtectedConfigurationProvider" />
+    ///  对象正在使用特定于计算机或用户帐户特定保护。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Configuration.DpapiProtectedConfigurationProvider" />
+    ///  正在使用计算机特定保护; <see langword="false" />
+    ///  如果正在使用用户帐户特定保护。
+    ///</returns>
     property UseMachineProtection: Boolean read get_UseMachineProtection;
     property Name: string read get_Name;
     property Description: string read get_Description;
@@ -5305,10 +13017,18 @@ type
   ['{76F87491-3723-52FF-B2D3-8B048C1496B6}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.RsaProtectedConfigurationProvider" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNRsaProtectedConfigurationProvider;
 
   end;
 
+  ///<summary>
+  ///  提供使用 RSA 加密对配置数据进行加密和解密的 <see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+  ///  实例。
+  ///</summary>
   [DNTypeName('System.Configuration.RsaProtectedConfigurationProvider')]
   DNRsaProtectedConfigurationProvider = interface(DNProtectedConfigurationProvider)
   ['{8AC59979-2102-36C0-9BC5-1CDA1A67CA50}']
@@ -5325,12 +13045,140 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将密钥添加到 RSA 密钥容器中。
+    ///</summary>
+    ///  <param name="keySize">
+    ///  要添加的密钥的大小。
+    ///</param>
+    ///  <param name="exportable">
+    ///  若指示密钥可以导出，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</param>
     procedure AddKey(keySize: Int32; exportable: Boolean);
+    ///<summary>
+    ///  从 RSA 密钥容器中移除密钥。
+    ///</summary>
     procedure DeleteKey;
+    ///<summary>
+    ///  将 RSA 密钥导入到密钥容器中。
+    ///</summary>
+    ///  <param name="xmlFileName">
+    ///  从中导入密钥的文件的名称和路径。
+    ///</param>
+    ///  <param name="exportable">
+    ///  若指示密钥可以导出，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="path" />
+    ///  是一个长度为零的字符串，仅包含空格，或包含一个或多个由 <see cref="F:System.IO.Path.InvalidPathChars" />
+    ///  定义的无效字符。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="path" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.IO.PathTooLongException">
+    ///  指定的路径和/或文件名超过了系统定义的最大长度。
+    ///  例如，在基于 Windows 的平台上，路径必须少于 248 个字符，且文件名必须少于 260 个字符。
+    ///</exception><exception cref="T:System.IO.DirectoryNotFoundException">
+    ///  指定的路径无效，例如位于未映射的驱动器上。
+    ///</exception><exception cref="T:System.IO.IOException">
+    ///  打开文件时出错。
+    ///</exception><exception cref="T:System.UnauthorizedAccessException"><paramref name="path" />
+    ///  指定是只写的文件。
+    ///  - 或 -
+    ///  当前平台不支持此操作。
+    ///  - 或 -
+    ///  <paramref name="path" />
+    ///  指定了一个目录。
+    ///  - 或 -
+    ///  调用方没有所要求的权限。
+    ///</exception><exception cref="T:System.IO.FileNotFoundException">
+    ///  未找到 <paramref name="path" />
+    ///  中指定的文件。
+    ///</exception><exception cref="T:System.NotSupportedException"><paramref name="path" />
+    ///  的格式无效。
+    ///</exception>
     procedure ImportKey(xmlFileName: string; exportable: Boolean);
+    ///<summary>
+    ///  从密钥容器中导出 RSA 密钥。
+    ///</summary>
+    ///  <param name="xmlFileName">
+    ///  要将密钥导出到的文件的名称和路径。
+    ///</param>
+    ///  <param name="includePrivateParameters">
+    ///  若指示将导出专用参数，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="path" />
+    ///  是一个长度为零的字符串，仅包含空格，或包含一个或多个由 <see cref="F:System.IO.Path.InvalidPathChars" />
+    ///  定义的无效字符。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="path" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.IO.PathTooLongException">
+    ///  指定的路径和/或文件名超过了系统定义的最大长度。
+    ///  例如，在基于 Windows 的平台上，路径必须少于 248 个字符，且文件名必须少于 260 个字符。
+    ///</exception><exception cref="T:System.IO.DirectoryNotFoundException">
+    ///  指定的路径无效，例如位于未映射的驱动器上。
+    ///</exception><exception cref="T:System.IO.IOException">
+    ///  打开文件时出错。
+    ///</exception><exception cref="T:System.UnauthorizedAccessException"><paramref name="path" />
+    ///  指定了一个只读文件。
+    ///  - 或 -
+    ///  当前平台不支持此操作。
+    ///  - 或 -
+    ///  <paramref name="path" />
+    ///  指定了一个目录。
+    ///  - 或 -
+    ///  调用方没有所要求的权限。
+    ///</exception><exception cref="T:System.IO.FileNotFoundException">
+    ///  未找到 <paramref name="path" />
+    ///  中指定的文件。
+    ///</exception><exception cref="T:System.NotSupportedException"><paramref name="path" />
+    ///  的格式无效。
+    ///</exception><exception cref="T:System.Security.SecurityException">
+    ///  调用方没有所要求的权限。
+    ///</exception>
     procedure ExportKey(xmlFileName: string; includePrivateParameters: Boolean);
+    ///<summary>
+    ///  解密传递给它的 XML 节点。
+    ///</summary>
+    ///  <param name="encryptedNode">
+    ///  要进行解密的 <see cref="T:System.Xml.XmlNode" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  解密后的 XML 节点。
+    ///</returns>
     function Decrypt(encryptedNode: DDN.System.Xml.DNXmlNode): DDN.System.Xml.DNXmlNode;
+    ///<summary>
+    ///  加密传递给它的 XML 节点。
+    ///</summary>
+    ///  <param name="node">
+    ///  要进行加密的 <see cref="T:System.Xml.XmlNode" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  已加密的 <see cref="T:System.Xml.XmlNode" />
+    ///  对象。
+    ///</returns>
     function Encrypt(node: DDN.System.Xml.DNXmlNode): DDN.System.Xml.DNXmlNode;
+    ///<summary>
+    ///  使用默认设置初始化提供程序。
+    ///</summary>
+    ///  <param name="name">
+    ///  要为对象使用的提供程序名称。
+    ///</param>
+    ///  <param name="configurationValues">
+    ///  初始化对象时要使用的值的 <see cref="T:System.Collections.Specialized.NameValueCollection" />
+    ///  集合。
+    ///</param>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="configurationValues" />
+    ///  包括一个或多个无法识别的值。
+    ///</exception>
     procedure Initialize(name: string; configurationValues: DNNameValueCollection);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5339,11 +13187,57 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取密钥容器的名称。
+    ///</summary>
+    ///<returns>
+    ///  密钥容器的名称。
+    ///</returns>
     property KeyContainerName: string read get_KeyContainerName;
+    ///<summary>
+    ///  获取 Windows 加密 API（加密 API）加密服务提供程序 (CSP) 的名称。
+    ///</summary>
+    ///<returns>
+    ///  CryptoAPI 加密服务提供程序的名称。
+    ///</returns>
     property CspProviderName: string read get_CspProviderName;
+    ///<summary>
+    ///  获取一个值，该值指示 <see cref="T:System.Configuration.RsaProtectedConfigurationProvider" />
+    ///  对象是否正在使用计算机密钥容器。
+    ///</summary>
+    ///<returns>
+    ///  如果 <see cref="T:System.Configuration.RsaProtectedConfigurationProvider" />
+    ///  对象正在使用计算机密钥容器，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property UseMachineContainer: Boolean read get_UseMachineContainer;
+    ///<summary>
+    ///  获取一个值，该值指示提供程序是否正在使用最优不对称加密填充 (OAEP) 密钥交换数据。
+    ///</summary>
+    ///<returns>
+    ///  如果 <see cref="T:System.Configuration.RsaProtectedConfigurationProvider" />
+    ///  对象正在使用最优不对称加密填充 (OAEP) 密钥交换数据，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property UseOAEP: Boolean read get_UseOAEP;
+    ///<summary>
+    ///  获取一个值，该值指示句柄是否已关闭。
+    ///</summary>
+    ///<returns>
+    ///  如果提供程序使用 FIPS，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property UseFIPS: Boolean read get_UseFIPS;
+    ///<summary>
+    ///  获取提供程序使用的公钥。
+    ///</summary>
+    ///<returns>
+    ///  包含提供程序所使用的公钥的 <see cref="T:System.Security.Cryptography.RSAParameters" />
+    ///  对象。
+    ///</returns>
     property RsaPublicKey: DDN.mscorlib.DNRSAParameters read get_RsaPublicKey;
     property Name: string read get_Name;
     property Description: string read get_Description;
@@ -5356,6 +13250,9 @@ type
   ['{6B5B58AE-F259-52A3-B782-536ACCA72D6E}']
   end;
 
+  ///<summary>
+  ///  作为类的基类派生应用程序设置体系结构中的自定义设置提供程序。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsProvider')]
   DNSettingsProvider = interface(DNProviderBase)
   ['{CEE0114E-3CE8-335E-8A06-0182EBE1454E}']
@@ -5368,7 +13265,33 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回指定的应用程序实例和设置属性组的属性值的设置的集合。
+    ///</summary>
+    ///  <param name="context">
+    ///  一个 <see cref="T:System.Configuration.SettingsContext" />
+    ///  描述当前的应用程序使用。
+    ///</param>
+    ///  <param name="collection">
+    ///  一个 <see cref="T:System.Configuration.SettingsPropertyCollection" />
+    ///  包含其值是要检索的设置属性组。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsPropertyValueCollection" />
+    ///  包含指定的设置属性组的值。
+    ///</returns>
     function GetPropertyValues(context: DNSettingsContext; collection: DNSettingsPropertyCollection): DNSettingsPropertyValueCollection;
+    ///<summary>
+    ///  设置指定组的属性设置的值。
+    ///</summary>
+    ///  <param name="context">
+    ///  一个 <see cref="T:System.Configuration.SettingsContext" />
+    ///  描述当前应用程序使用情况。
+    ///</param>
+    ///  <param name="collection">
+    ///  一个 <see cref="T:System.Configuration.SettingsPropertyValueCollection" />
+    ///  表示要设置的属性设置的组。
+    ///</param>
     procedure SetPropertyValues(context: DNSettingsContext; collection: DNSettingsPropertyValueCollection);
     procedure Initialize(name: string; config: DNNameValueCollection);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -5378,6 +13301,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置当前正在运行的应用程序的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，其中包含应用程序的缩写的名称，不包含它的完整路径或扩展，例如， SimpleAppSettings。
+    ///</returns>
     property ApplicationName: string read get_ApplicationName write set_ApplicationName;
     property Name: string read get_Name;
     property Description: string read get_Description;
@@ -5390,10 +13320,17 @@ type
   ['{C2C44D35-FD20-59D6-8591-1890965C9E3A}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.LocalFileSettingsProvider" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNLocalFileSettingsProvider;
 
   end;
 
+  ///<summary>
+  ///  提供了应用程序设置类的持久性。
+  ///</summary>
   [DNTypeName('System.Configuration.LocalFileSettingsProvider')]
   DNLocalFileSettingsProvider = interface(DNSettingsProvider)
   ['{CCD0C7BD-2AC9-3644-8754-E827D70BCB88}']
@@ -5406,11 +13343,95 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  初始化提供程序。
+    ///</summary>
+    ///  <param name="name">
+    ///  提供程序的友好名称。
+    ///</param>
+    ///  <param name="values">
+    ///  名称/值对的集合，表示在配置中为该提供程序指定的提供程序特定的属性。
+    ///</param>
     procedure Initialize(name: string; values: DNNameValueCollection);
+    ///<summary>
+    ///  返回为指定的应用程序实例和设置属性组设置属性值的集合。
+    ///</summary>
+    ///  <param name="context">
+    ///  一个 <see cref="T:System.Configuration.SettingsContext" />
+    ///  描述当前应用程序使用情况。
+    ///</param>
+    ///  <param name="properties">
+    ///  一个 <see cref="T:System.Configuration.SettingsPropertyCollection" />
+    ///  包含其值是要检索的设置属性组。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsPropertyValueCollection" />
+    ///  包含指定的设置属性组的值。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  遇到用户范围的设置，但当前配置仅支持应用程序范围的设置。
+    ///</exception>
     function GetPropertyValues(context: DNSettingsContext; properties: DNSettingsPropertyCollection): DNSettingsPropertyValueCollection;
+    ///<summary>
+    ///  设置指定组的属性设置的值。
+    ///</summary>
+    ///  <param name="context">
+    ///  一个 <see cref="T:System.Configuration.SettingsContext" />
+    ///  描述当前应用程序使用情况。
+    ///</param>
+    ///  <param name="values">
+    ///  一个 <see cref="T:System.Configuration.SettingsPropertyValueCollection" />
+    ///  表示要设置的属性设置的组。
+    ///</param>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  遇到用户范围的设置，但当前配置仅支持应用程序范围的设置。
+    ///  - 或 -
+    ///  没有将设置保存到配置文件的常规错误。
+    ///</exception>
     procedure SetPropertyValues(context: DNSettingsContext; values: DNSettingsPropertyValueCollection);
+    ///<summary>
+    ///  重置为其默认值指定的应用程序相关联的所有应用程序设置属性。
+    ///</summary>
+    ///  <param name="context">
+    ///  一个 <see cref="T:System.Configuration.SettingsContext" />
+    ///  描述当前应用程序使用情况。
+    ///</param>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  遇到用户范围的设置，但当前配置仅支持应用程序范围的设置。
+    ///</exception>
     procedure Reset(context: DNSettingsContext);
+    ///<summary>
+    ///  尝试从同一应用程序的早期版本迁移以前用户范围的设置。
+    ///</summary>
+    ///  <param name="context">
+    ///  一个 <see cref="T:System.Configuration.SettingsContext" />
+    ///  描述当前应用程序使用情况。
+    ///</param>
+    ///  <param name="properties">
+    ///  一个 <see cref="T:System.Configuration.SettingsPropertyCollection" />
+    ///  包含其值是要检索的设置属性组。
+    ///</param>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  遇到用户范围的设置，但当前配置仅支持应用程序范围的设置。
+    ///  - 或 -
+    ///  无法访问配置文件的以前版本。
+    ///</exception>
     procedure Upgrade(context: DNSettingsContext; properties: DNSettingsPropertyCollection);
+    ///<summary>
+    ///  返回同一个应用程序的以前版本的命名的设置属性的值。
+    ///</summary>
+    ///  <param name="context">
+    ///  一个 <see cref="T:System.Configuration.SettingsContext" />
+    ///  ，介绍了使用应用程序设置属性的位置。
+    ///</param>
+    ///  <param name="property"><see cref="T:System.Configuration.SettingsProperty" />
+    ///  其值是要返回。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  表示应用程序设置，如果找到; 否则为 <see langword="null" />
+    ///  。
+    ///</returns>
     function GetPreviousVersion(context: DNSettingsContext; &property: DNSettingsProperty): DNSettingsPropertyValue;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5419,6 +13440,12 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置当前正在运行的应用程序的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，包含应用程序的显示名称。
+    ///</returns>
     property ApplicationName: string read get_ApplicationName write set_ApplicationName;
     property Name: string read get_Name;
     property Description: string read get_Description;
@@ -5431,10 +13458,18 @@ type
   ['{8C06688A-4756-5591-B0A6-CFC7258B5DAD}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.Provider.ProviderCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNProviderCollection;
 
   end;
 
+  ///<summary>
+  ///  表示继承的提供程序对象的集合 <see cref="T:System.Configuration.Provider.ProviderBase" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Configuration.Provider.ProviderCollection')]
   DNProviderCollection = interface(DDN.mscorlib.DNIEnumerable)
   ['{51EEAC87-33DB-3D5E-B1FA-D6A04A9F844D}']
@@ -5447,11 +13482,66 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  向集合中添加一个提供程序。
+    ///</summary>
+    ///  <param name="provider">
+    ///  要添加的提供程序。
+    ///</param>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  该集合是只读的。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="provider" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException"><see cref="P:System.Configuration.Provider.ProviderBase.Name" />
+    ///  的 <paramref name="provider" />
+    ///  是 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  长度 <see cref="P:System.Configuration.Provider.ProviderBase.Name" />
+    ///  的 <paramref name="provider" />
+    ///  小于 1。
+    ///</exception>
     procedure Add(provider: DNProviderBase);
+    ///<summary>
+    ///  从集合中移除一个提供程序。
+    ///</summary>
+    ///  <param name="name">
+    ///  要删除的提供程序的名称。
+    ///</param>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  集合已设置只读的。
+    ///</exception>
     procedure Remove(name: string);
+    ///<summary>
+    ///  返回一个对象，实现 <see cref="T:System.Collections.IEnumerator" />
+    ///  接口，以循环访问集合。
+    ///</summary>
+    ///<returns>
+    ///  实现的对象 <see cref="T:System.Collections.IEnumerator" />
+    ///  来循环访问集合。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    ///<summary>
+    ///  设置的集合是只读的。
+    ///</summary>
     procedure SetReadOnly;
+    ///<summary>
+    ///  从集合中移除所有项。
+    ///</summary>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  集合设置为只读的。
+    ///</exception>
     procedure Clear;
+    ///<summary>
+    ///  将集合的内容复制到给定数组的指定索引处开始。
+    ///</summary>
+    ///  <param name="array">
+    ///  要复制到集合中的元素的数组。
+    ///</param>
+    ///  <param name="index">
+    ///  从其开始复制过程的集合项的索引。
+    ///</param>
     procedure CopyTo(&array: TArray<DNProviderBase>; index: Int32);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5461,8 +13551,27 @@ type
   { propertys } 
 
     property Item[name: string]: DNProviderBase read get_Item; default;
+    ///<summary>
+    ///  获取集合中的提供程序的数目。
+    ///</summary>
+    ///<returns>
+    ///  集合中的提供程序的数目。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取一个值，该值指示对集合的访问是否为同步的（线程安全）。
+    ///</summary>
+    ///<returns>
+    ///  在所有情况下均为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary>
+    ///  获取当前对象。
+    ///</summary>
+    ///<returns>
+    ///  当前对象。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
   end;
 
@@ -5473,10 +13582,18 @@ type
   ['{43A4B403-BEF5-5CE3-B13F-E2C1A85B8528}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationBuilderCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNConfigurationBuilderCollection;
 
   end;
 
+  ///<summary>
+  ///  按名称维护 <see cref="T:System.Configuration.ConfigurationBuilder" />
+  ///  对象的集合。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationBuilderCollection')]
   DNConfigurationBuilderCollection = interface(DNProviderCollection)
   ['{FBDB3380-5BB2-3E09-B651-0DDC5F081F32}']
@@ -5489,11 +13606,62 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  向 <see cref="T:System.Configuration.ConfigurationBuilderCollection" />
+    ///  对象添加一个 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="builder">
+    ///  要添加到集合的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="builder" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException"><paramref name="builder" />
+    ///  中的配置提供程序必须实现类 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  。
+    ///</exception>
     procedure Add(builder: DNProviderBase);
+    ///<summary>
+    ///  从集合中移除一个提供程序。
+    ///</summary>
+    ///  <param name="name">
+    ///  要删除的提供程序的名称。
+    ///</param>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  集合已设置只读的。
+    ///</exception>
     procedure Remove(name: string);
+    ///<summary>
+    ///  返回一个对象，实现 <see cref="T:System.Collections.IEnumerator" />
+    ///  接口，以循环访问集合。
+    ///</summary>
+    ///<returns>
+    ///  实现的对象 <see cref="T:System.Collections.IEnumerator" />
+    ///  来循环访问集合。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    ///<summary>
+    ///  设置的集合是只读的。
+    ///</summary>
     procedure SetReadOnly;
+    ///<summary>
+    ///  从集合中移除所有项。
+    ///</summary>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  集合设置为只读的。
+    ///</exception>
     procedure Clear;
+    ///<summary>
+    ///  将集合的内容复制到给定数组的指定索引处开始。
+    ///</summary>
+    ///  <param name="array">
+    ///  要复制到集合中的元素的数组。
+    ///</param>
+    ///  <param name="index">
+    ///  从其开始复制过程的集合项的索引。
+    ///</param>
     procedure CopyTo(&array: TArray<DNProviderBase>; index: Int32);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5503,8 +13671,27 @@ type
   { propertys } 
 
     property Item[name: string]: DNConfigurationBuilder read get_Item; default;
+    ///<summary>
+    ///  获取集合中的提供程序的数目。
+    ///</summary>
+    ///<returns>
+    ///  集合中的提供程序的数目。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取一个值，该值指示对集合的访问是否为同步的（线程安全）。
+    ///</summary>
+    ///<returns>
+    ///  在所有情况下均为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary>
+    ///  获取当前对象。
+    ///</summary>
+    ///<returns>
+    ///  当前对象。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
   end;
 
@@ -5515,10 +13702,18 @@ type
   ['{49B25BCF-B392-5C75-926E-3239F7EF5399}']
   { constructors } 
 
+    ///<summary>
+    ///  使用默认设置初始化 <see cref="T:System.Configuration.ProtectedConfigurationProviderCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNProtectedConfigurationProviderCollection;
 
   end;
 
+  ///<summary>
+  ///  提供了一套 <see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+  ///  对象。
+  ///</summary>
   [DNTypeName('System.Configuration.ProtectedConfigurationProviderCollection')]
   DNProtectedConfigurationProviderCollection = interface(DNProviderCollection)
   ['{617CBDDD-F936-30D6-A468-EC061962299D}']
@@ -5531,11 +13726,65 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将 <see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+    ///  对象添加到集合中。
+    ///</summary>
+    ///  <param name="provider">
+    ///  一个 <see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+    ///  要添加到集合对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="provider" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException"><paramref name="provider" />
+    ///  不是 <see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+    ///  对象。
+    ///</exception><exception cref="T:System.Configuration.ConfigurationException"><see cref="T:System.Configuration.ProtectedConfigurationProvider" />
+    ///  集合中的对象以添加已存在。
+    ///  - 或 -
+    ///  该集合是只读的。
+    ///</exception>
     procedure Add(provider: DNProviderBase);
+    ///<summary>
+    ///  从集合中移除一个提供程序。
+    ///</summary>
+    ///  <param name="name">
+    ///  要删除的提供程序的名称。
+    ///</param>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  集合已设置只读的。
+    ///</exception>
     procedure Remove(name: string);
+    ///<summary>
+    ///  返回一个对象，实现 <see cref="T:System.Collections.IEnumerator" />
+    ///  接口，以循环访问集合。
+    ///</summary>
+    ///<returns>
+    ///  实现的对象 <see cref="T:System.Collections.IEnumerator" />
+    ///  来循环访问集合。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    ///<summary>
+    ///  设置的集合是只读的。
+    ///</summary>
     procedure SetReadOnly;
+    ///<summary>
+    ///  从集合中移除所有项。
+    ///</summary>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  集合设置为只读的。
+    ///</exception>
     procedure Clear;
+    ///<summary>
+    ///  将集合的内容复制到给定数组的指定索引处开始。
+    ///</summary>
+    ///  <param name="array">
+    ///  要复制到集合中的元素的数组。
+    ///</param>
+    ///  <param name="index">
+    ///  从其开始复制过程的集合项的索引。
+    ///</param>
     procedure CopyTo(&array: TArray<DNProviderBase>; index: Int32);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5545,8 +13794,27 @@ type
   { propertys } 
 
     property Item[name: string]: DNProtectedConfigurationProvider read get_Item; default;
+    ///<summary>
+    ///  获取集合中的提供程序的数目。
+    ///</summary>
+    ///<returns>
+    ///  集合中的提供程序的数目。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取一个值，该值指示对集合的访问是否为同步的（线程安全）。
+    ///</summary>
+    ///<returns>
+    ///  在所有情况下均为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary>
+    ///  获取当前对象。
+    ///</summary>
+    ///<returns>
+    ///  当前对象。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
   end;
 
@@ -5557,10 +13825,17 @@ type
   ['{DE26E59B-E4C8-58E9-B3EA-F9F99E398BCB}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsProviderCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSettingsProviderCollection;
 
   end;
 
+  ///<summary>
+  ///  表示应用程序设置提供程序的集合。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsProviderCollection')]
   DNSettingsProviderCollection = interface(DNProviderCollection)
   ['{F6880CA4-8B82-3B4C-891F-5C619E6F274B}']
@@ -5573,6 +13848,28 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  向集合添加新的设置提供程序。
+    ///</summary>
+    ///  <param name="provider">
+    ///  一个 <see cref="T:System.Configuration.Provider.ProviderBase" />
+    ///  要添加到集合。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="provider" />
+    ///  参数的类型不是 <see cref="T:System.Configuration.SettingsProvider" />
+    ///  。
+    ///  - 或 -
+    ///<see cref="P:System.Configuration.Provider.ProviderBase.Name" />
+    ///  提供程序参数的属性为 null 或空字符串。
+    ///  - 或 -
+    ///  设置提供程序具有相同 <see cref="P:System.Configuration.Provider.ProviderBase.Name" />
+    ///  集合中已存在。
+    ///</exception><exception cref="T:System.NotSupportedException">
+    ///  该集合是只读的。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="provider" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure Add(provider: DNProviderBase);
     procedure Remove(name: string);
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
@@ -5599,6 +13896,10 @@ type
   ['{AFB4D567-349A-5475-8957-A262AF7EB809}']
   end;
 
+  ///<summary>
+  ///  包含有关在配置层次结构中的各个部分的元数据。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Configuration.SectionInformation')]
   DNSectionInformation = interface(DDN.mscorlib.DNObject)
   ['{D1A006C4-4992-37F1-BB5A-CC8D068551AD}']
@@ -5640,13 +13941,78 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  强制显示在配置文件关联的配置节。
+    ///</summary>
     procedure ForceDeclaration; overload;
+    ///<summary>
+    ///  强制关联的配置节，才会出现在配置文件中，或从配置文件中删除现有的内容。
+    ///</summary>
+    ///  <param name="force"><see langword="true" />
+    ///  如果用配置文件，则应编写的关联部分否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="force" />
+    ///  是 <see langword="true" />
+    ///  和关联的节不能导出到子配置文件中，或者未声明。
+    ///</exception>
     procedure ForceDeclaration(force: Boolean); overload;
+    ///<summary>
+    ///  从关联的配置节中删除受保护的配置加密。
+    ///</summary>
     procedure UnprotectSection;
+    ///<summary>
+    ///  获取包含与此对象关联的配置节的配置节。
+    ///</summary>
+    ///<returns>
+    ///  包含的配置节 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  这与该键相关联 <see cref="T:System.Configuration.SectionInformation" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  从父节调用的方法。
+    ///</exception>
     function GetParentSection: DNConfigurationSection;
+    ///<summary>
+    ///  返回一个 XML 节点对象，表示关联的配置节对象。
+    ///</summary>
+    ///<returns>
+    ///  用于此配置节的 XML 表示形式。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  此配置对象已被锁定，因此无法编辑。
+    ///</exception>
     function GetRawXml: string;
+    ///<summary>
+    ///  将该对象设置的 XML 表示形式中的配置文件关联的配置节。
+    ///</summary>
+    ///  <param name="rawXml">
+    ///  要使用的 XML。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="rawXml" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure SetRawXml(rawXml: string);
+    ///<summary>
+    ///  导致关联的配置节，以从其父节继承其所有值。
+    ///</summary>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  不能在编辑模式下调用此方法。
+    ///</exception>
     procedure RevertToParent;
+    ///<summary>
+    ///  标记用于保护的配置节。
+    ///</summary>
+    ///  <param name="protectionProvider">
+    ///  要使用的保护提供程序的名称。
+    ///</param>
+    ///<exception cref="T:System.InvalidOperationException"><see cref="P:System.Configuration.SectionInformation.AllowLocation" />
+    ///  属性设置为 <see langword="false" />
+    ///  。
+    ///  - 或 -
+    ///  目标部分已是受保护的数据部分。
+    ///</exception>
     procedure ProtectSection(protectionProvider: string);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5655,26 +14021,226 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取关联的配置节的名称。
+    ///</summary>
+    ///<returns>
+    ///  关联的名称 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</returns>
     property SectionName: string read get_SectionName;
+    ///<summary>
+    ///  获取关联的配置节的名称。
+    ///</summary>
+    ///<returns>
+    ///  配置部分完整名称。
+    ///</returns>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取或设置一个值，指示配置文件层次结构中可以定义关联的配置节的位置。
+    ///</summary>
+    ///<returns>
+    ///  一个值，指示其中在配置文件层次结构关联 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  可以声明对象。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  所选的值与一个值，已定义的冲突。
+    ///</exception>
     property AllowDefinition: DNConfigurationAllowDefinition read get_AllowDefinition write set_AllowDefinition;
+    ///<summary>
+    ///  获取或设置一个值，指示关联的配置节可以在配置文件层次结构中声明的位置。
+    ///</summary>
+    ///<returns>
+    ///  一个值，指示其中在配置文件层次结构关联 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象可声明为.exe 文件。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  所选的值与一个值，已定义的冲突。
+    ///</exception>
     property AllowExeDefinition: DNConfigurationAllowExeDefinition read get_AllowExeDefinition write set_AllowExeDefinition;
+    ///<summary>
+    ///  获取或设置一个值，指定默认值来重写行为由子配置文件的配置节。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.OverrideMode" />
+    ///  枚举值之一。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  重写行为是在父配置节中指定的。
+    ///</exception>
     property OverrideModeDefault: DNOverrideMode read get_OverrideModeDefault write set_OverrideModeDefault;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否允许使用配置部分 <see langword="location" />
+    ///  属性。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see langword="location" />
+    ///  特性是允许; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="true" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  所选的值与一个值，已定义的冲突。
+    ///</exception>
     property AllowLocation: Boolean read get_AllowLocation write set_AllowLocation;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否可以覆盖关联的配置节由低级别的配置文件。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果可以重写该节。否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     property AllowOverride: Boolean read get_AllowOverride write set_AllowOverride;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Configuration.OverrideMode" />
+    ///  枚举值，该值指定由子配置文件是否可以重写相关联的配置节。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.OverrideMode" />
+    ///  枚举值之一。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  尝试同时更改两者 <see cref="P:System.Configuration.SectionInformation.AllowOverride" />
+    ///  和 <see cref="P:System.Configuration.SectionInformation.OverrideMode" />
+    ///  属性，这出于兼容性原因不受支持。
+    ///</exception>
     property OverrideMode: DNOverrideMode read get_OverrideMode write set_OverrideMode;
+    ///<summary>
+    ///  获取一个配置节，又基于子配置文件是否可以锁定配置节的覆盖行为。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.OverrideMode" />
+    ///  枚举值之一。
+    ///</returns>
     property OverrideModeEffective: DNOverrideMode read get_OverrideModeEffective;
+    ///<summary>
+    ///  获取或设置在其中定义关联的配置节，该包含文件的名称，如果存在这样的文件。
+    ///</summary>
+    ///<returns>
+    ///  在其中包含文件的名称关联 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  定义的如果存在这样的文件; 否则为空字符串 ("")。
+    ///</returns>
     property ConfigSource: string read get_ConfigSource write set_ConfigSource;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否在关联的配置节中指定的设置继承由驻留在相关应用程序的子目录中的应用程序。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果在此指定的设置 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象是由子应用程序继承; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="true" />
+    ///  。
+    ///</returns>
     property InheritInChildApplications: Boolean read get_InheritInChildApplications write set_InheritInChildApplications;
+    ///<summary>
+    ///  获取一个值，该值指示是否在配置文件中声明关联的配置节。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果此 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  配置文件中声明; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="true" />
+    ///  。
+    ///</returns>
     property IsDeclared: Boolean read get_IsDeclared;
+    ///<summary>
+    ///  获取一个值，该值指示是否必须在配置文件中声明配置节。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果关联 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象必须是在配置文件中声明; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsDeclarationRequired: Boolean read get_IsDeclarationRequired;
+    ///<summary>
+    ///  获取一个值，该值指示是否锁定了关联的配置节。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该节被锁定;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsLocked: Boolean read get_IsLocked;
+    ///<summary>
+    ///  获取一个值，该值指示是否受到保护关联的配置节。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果此 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  受保护; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsProtected: Boolean read get_IsProtected;
+    ///<summary>
+    ///  获取此配置节的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  此配置节的 <see cref="T:System.Configuration.ConfigurationBuilder" />
+    ///  对象。
+    ///</returns>
     property ConfigurationBuilder: DNConfigurationBuilder read get_ConfigurationBuilder;
+    ///<summary>
+    ///  获取对受保护的配置提供程序关联的配置节。
+    ///</summary>
+    ///<returns>
+    ///  为此保护的配置提供程序 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象。
+    ///</returns>
     property ProtectionProvider: DNProtectedConfigurationProvider read get_ProtectionProvider;
+    ///<summary>
+    ///  获取或设置一个值，指定是否包含更改对外部配置文件需要重新启动应用程序。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果文件包含对外部配置更改，需要重新启动应用程序;否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="true" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  所选的值与一个值，已定义的冲突。
+    ///</exception>
     property RestartOnExternalChanges: Boolean read get_RestartOnExternalChanges write set_RestartOnExternalChanges;
+    ///<summary>
+    ///  获取一个值，该值指示是否在关联的配置节要求访问权限。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see langword="requirePermission" />
+    ///  属性设置为 <see langword="true" />
+    ///  ; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="true" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  所选的值与一个值，已定义的冲突。
+    ///</exception>
     property RequirePermission: Boolean read get_RequirePermission write set_RequirePermission;
+    ///<summary>
+    ///  获取或设置节的类名称。
+    ///</summary>
+    ///<returns>
+    ///  与此关联的类名称 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  部分。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException">
+    ///  所选的值是 <see langword="null" />
+    ///  或空字符串 ("")。
+    ///</exception><exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  所选的值与一个值，已定义的冲突。
+    ///</exception>
     property &Type: string read get_Type write set_Type;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否将保存关联的配置节，即使尚未修改。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果关联 <see cref="T:System.Configuration.ConfigurationSection" />
+    ///  将保存对象，即使尚未修改; 否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///  如果配置文件的保存 （即使有不做任何修改），ASP.NET 将重新启动该应用程序。
+    ///</returns>
     property ForceSave: Boolean read get_ForceSave write set_ForceSave;
   end;
 
@@ -5685,10 +14251,24 @@ type
   ['{0B7FCF44-BB7B-5D94-B0DB-B636B3AE479E}']
   { static methods } 
 
+    ///<summary>
+    ///  提供了 <see cref="T:System.Configuration.SettingsBase" />
+    ///  类，该类是同步 （线程安全）。
+    ///</summary>
+    ///  <param name="settingsBase">
+    ///  用于支持用户属性设置的类。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsBase" />
+    ///  同步的类。
+    ///</returns>
     {class} function Synchronized(settingsBase: DNSettingsBase): DNSettingsBase;
 
   end;
 
+  ///<summary>
+  ///  提供用来支持用户属性设置的基类。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsBase')]
   DNSettingsBase = interface(DDN.mscorlib.DNObject)
   ['{D92C4008-8968-3DE5-BEB1-B15A4168989E}']
@@ -5704,7 +14284,24 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  初始化使用的内部属性 <see cref="T:System.Configuration.SettingsBase" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="context">
+    ///  设置属性相关的设置上下文。
+    ///</param>
+    ///  <param name="properties">
+    ///  可从设置属性 <see cref="T:System.Configuration.SettingsBase" />
+    ///  实例。
+    ///</param>
+    ///  <param name="providers">
+    ///  加载和保存属性值时，应使用初始化提供程序。
+    ///</param>
     procedure Initialize(context: DNSettingsContext; properties: DNSettingsPropertyCollection; providers: DNSettingsProviderCollection);
+    ///<summary>
+    ///  存储设置属性的当前值。
+    ///</summary>
     procedure Save;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5714,10 +14311,49 @@ type
   { propertys } 
 
     property Item[propertyName: string]: DDN.mscorlib.DNObject read get_Item write set_Item; default;
+    ///<summary>
+    ///  获取设置属性的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsPropertyCollection" />
+    ///  集合，其中包含所有 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</returns>
     property Properties: DNSettingsPropertyCollection read get_Properties;
+    ///<summary>
+    ///  获取设置提供程序的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个包含 <see cref="T:System.Configuration.SettingsProviderCollection" />
+    ///  对象的 <see cref="T:System.Configuration.SettingsProvider" />
+    ///  。
+    ///</returns>
     property Providers: DNSettingsProviderCollection read get_Providers;
+    ///<summary>
+    ///  获取属性值设置的集合。
+    ///</summary>
+    ///<returns>
+    ///  一套 <see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  对象表示所管理的属性的实际数据值 <see cref="T:System.Configuration.SettingsBase" />
+    ///  实例。
+    ///</returns>
     property PropertyValues: DNSettingsPropertyValueCollection read get_PropertyValues;
+    ///<summary>
+    ///  获取关联的设置上下文。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsContext" />
+    ///  与设置实例相关联。
+    ///</returns>
     property Context: DNSettingsContext read get_Context;
+    ///<summary>
+    ///  获取一个值，该值指示是否同步对对象的访问 （线程安全）。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果访问 <see cref="T:System.Configuration.SettingsBase" />
+    ///  同步; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
   end;
 
@@ -5728,6 +14364,9 @@ type
   ['{2C8BEAE8-CD5A-5A3A-B75B-C4E32AC5FF28}']
   end;
 
+  ///<summary>
+  ///  作为类的基类派生具体包装类要在 Window 窗体应用程序中实现应用程序设置功能。
+  ///</summary>
   [DNTypeName('System.Configuration.ApplicationSettingsBase')]
   DNApplicationSettingsBase = interface(DNSettingsBase)
   ['{378E94FA-615F-3BE4-855C-A831F60D9D75}']
@@ -5756,11 +14395,59 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回同一个应用程序的以前版本的命名的设置属性的值。
+    ///</summary>
+    ///  <param name="propertyName">
+    ///  A<see cref="T:System.String" />
+    ///  包含其值是要返回的设置属性的名称。
+    ///</param>
+    ///<returns><see cref="T:System.Object" />
+    ///  包含的值的指定<see cref="T:System.Configuration.SettingsProperty" />
+    ///  找到; 否则为如果<see langword="null" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.SettingsPropertyNotFoundException">
+    ///  属性不存在。
+    ///  属性计数为零，或在数据存储区中找不到属性。
+    ///</exception>
     function GetPreviousVersion(propertyName: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  刷新应用程序设置属性的值从持久性存储区。
+    ///</summary>
     procedure Reload;
+    ///<summary>
+    ///  存储应用程序设置属性的当前值。
+    ///</summary>
     procedure Save;
+    ///<summary>
+    ///  将保持的应用程序设置值还原为其对应的默认属性。
+    ///</summary>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  无法分析配置文件。
+    ///</exception>
     procedure Reset;
+    ///<summary>
+    ///  更新以反映应用程序的较新安装的应用程序设置。
+    ///</summary>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  无法分析配置文件。
+    ///</exception>
     procedure Upgrade;
+    ///<summary>
+    ///  初始化使用的内部属性 <see cref="T:System.Configuration.SettingsBase" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="context">
+    ///  设置属性相关的设置上下文。
+    ///</param>
+    ///  <param name="properties">
+    ///  可从设置属性 <see cref="T:System.Configuration.SettingsBase" />
+    ///  实例。
+    ///</param>
+    ///  <param name="providers">
+    ///  加载和保存属性值时，应使用初始化提供程序。
+    ///</param>
     procedure Initialize(context: DNSettingsContext; properties: DNSettingsPropertyCollection; providers: DNSettingsProviderCollection);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5769,12 +14456,60 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取设置的组关联的应用程序设置上下文。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsContext" />
+    ///  设置的组关联。
+    ///</returns>
     property Context: DNSettingsContext read get_Context;
+    ///<summary>
+    ///  获取包装中设置属性的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsPropertyCollection" />
+    ///  包含所有 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  当前包装中使用的对象。
+    ///</returns>
+    ///<exception cref="T:System.Configuration.ConfigurationErrorsException">
+    ///  找不到关联的设置提供程序或其实例化失败。
+    ///</exception>
     property Properties: DNSettingsPropertyCollection read get_Properties;
+    ///<summary>
+    ///  获取属性值的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsPropertyValueCollection" />
+    ///  的属性值。
+    ///</returns>
     property PropertyValues: DNSettingsPropertyValueCollection read get_PropertyValues;
+    ///<summary>
+    ///  获取包装所使用的应用程序设置提供程序的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsProviderCollection" />
+    ///  包含所有 <see cref="T:System.Configuration.SettingsProvider" />
+    ///  所使用的当前设置包装的设置属性对象。
+    ///</returns>
     property Providers: DNSettingsProviderCollection read get_Providers;
+    ///<summary>
+    ///  获取或设置应用程序设置组的设置键。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  包含当前的设置组的设置键。
+    ///</returns>
     property SettingsKey: string read get_SettingsKey write set_SettingsKey;
     property Item[propertyName: string]: DDN.mscorlib.DNObject read get_Item write set_Item; default;
+    ///<summary>
+    ///  获取一个值，该值指示是否同步对对象的访问 （线程安全）。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果访问 <see cref="T:System.Configuration.SettingsBase" />
+    ///  同步; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
   end;
 
@@ -5785,12 +14520,71 @@ type
   ['{CB9562D0-0010-5877-BB64-3BBE2BF846AF}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  类的新实例。
+    ///  基于所提供的参数。
+    ///</summary>
+    ///  <param name="name">
+    ///  指定现有名称 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</param>
     {class} function init(name: string): DNSettingsProperty; overload;
+    ///<summary>
+    ///  创建的新实例 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  类根据所提供的参数。
+    ///</summary>
+    ///  <param name="name"><see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象的名称。
+    ///</param>
+    ///  <param name="propertyType">
+    ///  一种 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</param>
+    ///  <param name="provider">
+    ///  一个 <see cref="T:System.Configuration.SettingsProvider" />
+    ///  用于持久性对象。
+    ///</param>
+    ///  <param name="isReadOnly">
+    ///  一个 <see cref="T:System.Boolean" />
+    ///  值，该值指定是否 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象是只读的。
+    ///</param>
+    ///  <param name="defaultValue">
+    ///  默认值为 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</param>
+    ///  <param name="serializeAs">
+    ///  一个 <see cref="T:System.Configuration.SettingsSerializeAs" />
+    ///  对象。
+    ///  此对象是枚举，用于设置用于存储应用程序设置的序列化方案。
+    ///</param>
+    ///  <param name="attributes">
+    ///  一个 <see cref="T:System.Configuration.SettingsAttributeDictionary" />
+    ///  对象。
+    ///</param>
+    ///  <param name="throwOnErrorDeserializing">
+    ///  一个布尔值，指定是否在未成功反序列化属性时，将会引发错误。
+    ///</param>
+    ///  <param name="throwOnErrorSerializing">
+    ///  一个布尔值，指定是否在未成功序列化属性时，将会引发错误。
+    ///</param>
     {class} function init(name: string; propertyType: DDN.mscorlib.DNType; provider: DNSettingsProvider; isReadOnly: Boolean; defaultValue: DDN.mscorlib.DNObject; serializeAs: DNSettingsSerializeAs; attributes: DNSettingsAttributeDictionary; throwOnErrorDeserializing: Boolean; throwOnErrorSerializing: Boolean): DNSettingsProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  基于所提供的参数的类。
+    ///</summary>
+    ///  <param name="propertyToCopy">
+    ///  指定现有的副本 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</param>
     {class} function init(propertyToCopy: DNSettingsProperty): DNSettingsProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示有关单个配置属性的元数据的类在内部使用。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsProperty')]
   DNSettingsProperty = interface(DDN.mscorlib.DNObject)
   ['{4811A1E8-3A81-3395-AD64-02DBAA8C1D99}']
@@ -5823,14 +14617,86 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  的名称。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.SettingsProperty" />
+    ///  的名称。
+    ///</returns>
     property Name: string read get_Name write set_Name;
+    ///<summary>
+    ///  获取或设置一个值，指定是否 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象是只读的。
+    ///</summary>
+    ///<returns>
+    ///  如果 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  是只读的，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsReadOnly: Boolean read get_IsReadOnly write set_IsReadOnly;
+    ///<summary>
+    ///  获取或设置的默认值 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个对象，包含的默认值 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</returns>
     property DefaultValue: DDN.mscorlib.DNObject read get_DefaultValue write set_DefaultValue;
+    ///<summary>
+    ///  获取或设置为类型 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.SettingsProperty" />
+    ///  的类型。
+    ///</returns>
     property PropertyType: DDN.mscorlib.DNType read get_PropertyType write set_PropertyType;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Configuration.SettingsSerializeAs" />
+    ///  对象 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsSerializeAs" />
+    ///  对象。
+    ///</returns>
     property SerializeAs: DNSettingsSerializeAs read get_SerializeAs write set_SerializeAs;
+    ///<summary>
+    ///  获取或设置提供程序 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsProvider" />
+    ///  对象。
+    ///</returns>
     property Provider: DNSettingsProvider read get_Provider write set_Provider;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.SettingsAttributeDictionary" />
+    ///  对象包含的属性的 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Configuration.SettingsAttributeDictionary" />
+    ///  对象。
+    ///</returns>
     property Attributes: DNSettingsAttributeDictionary read get_Attributes;
+    ///<summary>
+    ///  获取或设置一个值，指定是否在未成功反序列化属性时，将会引发错误。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该属性未成功反序列化; 时，将引发错误否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property ThrowOnErrorDeserializing: Boolean read get_ThrowOnErrorDeserializing write set_ThrowOnErrorDeserializing;
+    ///<summary>
+    ///  获取或设置一个值，指定是否在未成功序列化属性时，将会引发错误。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该属性未成功进行序列化; 时，将引发错误否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property ThrowOnErrorSerializing: Boolean read get_ThrowOnErrorSerializing write set_ThrowOnErrorSerializing;
   end;
 
@@ -5841,10 +14707,18 @@ type
   ['{46A41E74-C959-5B80-ACA4-B54AEF9F1B87}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsPropertyCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSettingsPropertyCollection;
 
   end;
 
+  ///<summary>
+  ///  包含 <see cref="T:System.Configuration.SettingsProperty" />
+  ///  对象的集合。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsPropertyCollection')]
   DNSettingsPropertyCollection = interface(DDN.mscorlib.DNIEnumerable)
   ['{1367B8BE-C194-337F-8D70-91D4C6D43A9E}']
@@ -5857,12 +14731,66 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象添加到集合中。
+    ///</summary>
+    ///  <param name="property">
+    ///  一个 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  该集合是只读的。
+    ///</exception>
     procedure Add(&property: DNSettingsProperty);
+    ///<summary>
+    ///  删除 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  来自集合对象。
+    ///</summary>
+    ///  <param name="name"><see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象的名称。
+    ///</param>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  该集合是只读的。
+    ///</exception>
     procedure Remove(name: string);
+    ///<summary>
+    ///  获取 <see cref="T:System.Collections.IEnumerator" />
+    ///  对象应用于集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  对象应用于集合。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    ///<summary>
+    ///  创建现有集合的副本。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.SettingsPropertyCollection" />
+    ///  类。
+    ///</returns>
     function Clone: DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  设置的集合是只读的。
+    ///</summary>
     procedure SetReadOnly;
+    ///<summary>
+    ///  从集合中删除所有 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</summary>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  该集合是只读的。
+    ///</exception>
     procedure Clear;
+    ///<summary>
+    ///  这会将复制 <see cref="T:System.Configuration.SettingsPropertyCollection" />
+    ///  到一个数组对象。
+    ///</summary>
+    ///  <param name="array">
+    ///  要向其中复制对象的数组。
+    ///</param>
+    ///  <param name="index">
+    ///  开始复制的索引位置。
+    ///</param>
     procedure CopyTo(&array: DDN.mscorlib.DNArray; index: Int32);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5872,8 +14800,30 @@ type
   { propertys } 
 
     property Item[name: string]: DNSettingsProperty read get_Item; default;
+    ///<summary>
+    ///  获取一个值，指定的数 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  集合中的对象。
+    ///</summary>
+    ///<returns>
+    ///  数 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  集合中的对象。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取一个值，该值指示对集合的访问是否同步（线程安全）。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果访问 <see cref="T:System.Configuration.SettingsPropertyCollection" />
+    ///  同步; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary>
+    ///  获取用于同步对集合的访问的对象。
+    ///</summary>
+    ///<returns>
+    ///  用于同步对集合的访问的对象。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
   end;
 
@@ -5884,10 +14834,22 @@ type
   ['{3186202F-5705-5B74-967C-23EE4A736BD5}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  基于提供的参数的类。
+    ///</summary>
+    ///  <param name="property">
+    ///  指定 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</param>
     {class} function init(&property: DNSettingsProperty): DNSettingsPropertyValue;
 
   end;
 
+  ///<summary>
+  ///  包含一个设置属性，可以加载并存储的实例的值 <see cref="T:System.Configuration.SettingsBase" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsPropertyValue')]
   DNSettingsPropertyValue = interface(DDN.mscorlib.DNObject)
   ['{34FE0154-F1C2-3867-BFAA-04909BA37553}']
@@ -5914,12 +14876,115 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取从关联的属性名称 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象的名称。
+    ///</returns>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取或设置是否的值 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象已更改。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果值 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象已更改; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsDirty: Boolean read get_IsDirty write set_IsDirty;
+    ///<summary>
+    ///  获取 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象，它描述 <see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  对象。
+    ///</returns>
     property &Property: DNSettingsProperty read get_Property;
+    ///<summary>
+    ///  获取布尔值，该值指定是否的值 <see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  对象是根据定义的默认值 <see cref="P:System.Configuration.SettingsProperty.DefaultValue" />
+    ///  关联的属性值 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果值 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象是默认值; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property UsingDefaultValue: Boolean read get_UsingDefaultValue;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象的值。
+    ///</summary>
+    ///<returns>
+    ///  值 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///  当设置此值时， <see cref="P:System.Configuration.SettingsPropertyValue.IsDirty" />
+    ///  属性设置为 <see langword="true" />
+    ///  和 <see cref="P:System.Configuration.SettingsPropertyValue.UsingDefaultValue" />
+    ///  设置为 <see langword="false" />
+    ///  。
+    ///  当一个值从第一次访问时 <see cref="P:System.Configuration.SettingsPropertyValue.PropertyValue" />
+    ///  属性，并且如果该值最初是存储在 <see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  对象作为序列化表示形式使用 <see cref="P:System.Configuration.SettingsPropertyValue.SerializedValue" />
+    ///  属性， <see cref="P:System.Configuration.SettingsPropertyValue.PropertyValue" />
+    ///  属性将触发反序列化的基础值。
+    ///  产生了负面影响， <see cref="P:System.Configuration.SettingsPropertyValue.Deserialized" />
+    ///  属性将设置为 <see langword="true" />
+    ///  。
+    ///  如果在 ASP.NET 中，发生此事件链，如果在反序列化过程中出错，错误将记录使用 ASP.NET 的运行状况监视功能。
+    ///  默认情况下，这意味着，反序列化错误将显示在应用程序事件日志中在 ASP.NET 下运行时。
+    ///  如果此过程发生在 ASP.NET 外部，并在反序列化期间出错时，将取消错误，并反序列化期间的逻辑的其余部分时发生。
+    ///  要反序列化不序列化的值是否在反序列化尝试时，然后 <see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  对象而是尝试将返回默认值，如果其中一个已配置为在关联上定义 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  实例。
+    ///  在这种情况下，如果 <see cref="P:System.Configuration.SettingsProperty.DefaultValue" />
+    ///  属性被设置为 <see langword="null" />
+    ///  , ，或字符串"[null]"，则 <see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  对象将初始化 <see cref="P:System.Configuration.SettingsPropertyValue.PropertyValue" />
+    ///  属性设置为任何一个 <see langword="null" />
+    ///  对于引用类型，或相关联的值类型的默认值。
+    ///  另一方面，如果 <see cref="P:System.Configuration.SettingsProperty.DefaultValue" />
+    ///  属性保存一个有效的对象引用或字符串值 （而不是"[null]")，则 <see cref="P:System.Configuration.SettingsProperty.DefaultValue" />
+    ///  属性改为返回。
+    ///  如果没有任何序列化的值进行反序列化时尝试反序列化，且未指定任何默认值，然后将为字符串类型返回一个空字符串。
+    ///  对于所有其他类型的默认实例将返回通过调用 <see cref="M:System.Activator.CreateInstance(System.Type)" />
+    ///  — 对于引用类型，这意味着有人试图将可用于创建对象实例使用默认构造函数。
+    ///  如果此尝试失败，然后 <see langword="null" />
+    ///  返回。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException">
+    ///  尝试使用的默认值时 <see cref="P:System.Configuration.SettingsProperty.DefaultValue" />
+    ///  属性时，出现错误。
+    ///  尝试将转换 <see cref="P:System.Configuration.SettingsProperty.DefaultValue" />
+    ///  属性设置为有效的类型失败，或者所得到的值不符合定义的类型 <see cref="P:System.Configuration.SettingsProperty.PropertyType" />
+    ///  。
+    ///</exception>
     property PropertyValue: DDN.mscorlib.DNObject read get_PropertyValue write set_PropertyValue;
+    ///<summary>
+    ///  获取或设置序列化的值 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  序列化的值 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException">
+    ///  该属性的序列化选项表明要使用的字符串类型转换器，但不可用的类型转换器。
+    ///</exception>
     property SerializedValue: DDN.mscorlib.DNObject read get_SerializedValue write set_SerializedValue;
+    ///<summary>
+    ///  获取或设置是否的值 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象被反序列化。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果值 <see cref="T:System.Configuration.SettingsProperty" />
+    ///  对象已反序列化; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property Deserialized: Boolean read get_Deserialized write set_Deserialized;
   end;
 
@@ -5930,10 +14995,19 @@ type
   ['{1EDADF62-4313-5800-8309-3A535CFE8F53}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsPropertyValueCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSettingsPropertyValueCollection;
 
   end;
 
+  ///<summary>
+  ///  包含映射的设置属性值的集合 <see cref="T:System.Configuration.SettingsProperty" />
+  ///  对象添加到 <see cref="T:System.Configuration.SettingsPropertyValue" />
+  ///  对象。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsPropertyValueCollection')]
   DNSettingsPropertyValueCollection = interface(DDN.mscorlib.DNIEnumerable)
   ['{DD8B2924-3CBF-358A-84F0-3EF6F310FCC3}']
@@ -5946,12 +15020,63 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将 <see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  对象添加到集合中。
+    ///</summary>
+    ///  <param name="property">
+    ///  一个 <see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  尝试将某项添加到集合中，但集合被标记为只读的。
+    ///</exception>
     procedure Add(&property: DNSettingsPropertyValue);
+    ///<summary>
+    ///  删除 <see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  来自集合对象。
+    ///</summary>
+    ///  <param name="name"><see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  对象的名称。
+    ///</param>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  尝试从该集合中移除项，但集合被标记为只读的。
+    ///</exception>
     procedure Remove(name: string);
+    ///<summary>
+    ///  获取 <see cref="T:System.Collections.IEnumerator" />
+    ///  对象应用于集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  对象应用于集合。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    ///<summary>
+    ///  创建现有集合的副本。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.SettingsPropertyValueCollection" />
+    ///  类。
+    ///</returns>
     function Clone: DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  设置的集合是只读的。
+    ///</summary>
     procedure SetReadOnly;
+    ///<summary>
+    ///  从集合中删除所有 <see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  对象。
+    ///</summary>
     procedure Clear;
+    ///<summary>
+    ///  这会将复制 <see cref="T:System.Configuration.SettingsPropertyValueCollection" />
+    ///  集合到一个数组。
+    ///</summary>
+    ///  <param name="array">
+    ///  要将集合复制到的数组。
+    ///</param>
+    ///  <param name="index">
+    ///  开始复制的索引位置。
+    ///</param>
     procedure CopyTo(&array: DDN.mscorlib.DNArray; index: Int32);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5961,8 +15086,30 @@ type
   { propertys } 
 
     property Item[name: string]: DNSettingsPropertyValue read get_Item; default;
+    ///<summary>
+    ///  获取一个值，指定的数 <see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  集合中的对象。
+    ///</summary>
+    ///<returns>
+    ///  数 <see cref="T:System.Configuration.SettingsPropertyValue" />
+    ///  集合中的对象。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取一个值，该值指示对集合的访问是否同步（线程安全）。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果访问 <see cref="T:System.Configuration.SettingsPropertyValueCollection" />
+    ///  集合是同步; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary>
+    ///  获取用于同步对集合的访问的对象。
+    ///</summary>
+    ///<returns>
+    ///  用于同步对集合的访问的对象。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
   end;
 
@@ -5973,15 +15120,37 @@ type
   ['{8D2ECB28-4870-50D3-B488-4AEDAE93D19E}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SingleTagSectionHandler" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSingleTagSectionHandler;
 
   end;
 
+  ///<summary>
+  ///  处理由.config 文件中的单个 XML 标记表示的配置节。
+  ///</summary>
   [DNTypeName('System.Configuration.SingleTagSectionHandler')]
   DNSingleTagSectionHandler = interface(DNIConfigurationSectionHandler)
   ['{7E521809-586A-3CA3-9541-A68A02F2164E}']
   { methods } 
 
+    ///<summary>
+    ///  在内部用于创建此对象的新实例。
+    ///</summary>
+    ///  <param name="parent">
+    ///  此对象的父级。
+    ///</param>
+    ///  <param name="context">
+    ///  此对象的上下文。
+    ///</param>
+    ///  <param name="section"><see cref="T:System.Xml.XmlNode" />
+    ///  在配置中的对象。
+    ///</param>
+    ///<returns>
+    ///  创建的对象处理程序。
+    ///</returns>
     function Create(parent: DDN.mscorlib.DNObject; context: DDN.mscorlib.DNObject; section: DDN.System.Xml.DNXmlNode): DDN.mscorlib.DNObject;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5997,10 +15166,38 @@ type
   ['{B83EE19B-7868-59B1-9A36-4C452258ACFF}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingChangingEventArgs" />
+    ///  类的实例。
+    ///</summary>
+    ///  <param name="settingName">
+    ///  一个 <see cref="T:System.String" />
+    ///  包含应用程序设置的名称。
+    ///</param>
+    ///  <param name="settingClass">
+    ///  一个 <see cref="T:System.String" />
+    ///  包含设置的类别说明。
+    ///  通常将此参数设置为应用程序设置组的名称。
+    ///</param>
+    ///  <param name="settingKey">
+    ///  一个 <see cref="T:System.String" />
+    ///  包含应用程序设置键。
+    ///</param>
+    ///  <param name="newValue"><see cref="T:System.Object" />
+    ///  ，其中包含要分配给应用程序设置属性的新值。
+    ///</param>
+    ///  <param name="cancel"><see langword="true" />
+    ///  若要取消事件;否则为 <see langword="false" />
+    ///  。
+    ///</param>
     {class} function init(settingName: string; settingClass: string; settingKey: string; newValue: DDN.mscorlib.DNObject; cancel: Boolean): DNSettingChangingEventArgs;
 
   end;
 
+  ///<summary>
+  ///  为 <see cref="E:System.Configuration.ApplicationSettingsBase.SettingChanging" />
+  ///  事件提供数据。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingChangingEventArgs')]
   DNSettingChangingEventArgs = interface(DNObject)
   ['{82DC1D69-8E49-3994-A1B2-C6055648AE2D}']
@@ -6022,10 +15219,45 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取分配给应用程序设置属性的新值。
+    ///</summary>
+    ///<returns><see cref="T:System.Object" />
+    ///  ，其中包含要分配给应用程序设置属性的新值。
+    ///</returns>
     property NewValue: DDN.mscorlib.DNObject read get_NewValue;
+    ///<summary>
+    ///  获取应用程序设置属性的类别。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  包含设置的类别说明。
+    ///  通常情况下，此参数设置为应用程序设置组的名称。
+    ///</returns>
     property SettingClass: string read get_SettingClass;
+    ///<summary>
+    ///  获取与应用程序设置属性关联的应用程序设置的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  包含应用程序设置的名称。
+    ///</returns>
     property SettingName: string read get_SettingName;
+    ///<summary>
+    ///  获取与属性关联的应用程序设置键。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  包含应用程序设置键。
+    ///</returns>
     property SettingKey: string read get_SettingKey;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否应取消事件。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果应取消事件;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property Cancel: Boolean read get_Cancel write set_Cancel;
   end;
 
@@ -6036,10 +15268,20 @@ type
   ['{25548DD7-4EC0-5D03-AF04-6524ED59678D}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.Internal.InternalConfigEventArgs" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="configPath">
+    ///  配置路径。
+    ///</param>
     {class} function init(configPath: string): DNInternalConfigEventArgs;
 
   end;
 
+  ///<summary>
+  ///  定义一个类，用于指定用于配置事件的事件参数的.NET Framework 基础结构。
+  ///</summary>
   [DNTypeName('System.Configuration.Internal.InternalConfigEventArgs')]
   DNInternalConfigEventArgs = interface(DDN.mscorlib.DNEventArgs)
   ['{6BBEE6D5-F38A-38F1-A13E-8127AB71ED7F}']
@@ -6057,6 +15299,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置与相关的配置路径 <see cref="T:System.Configuration.Internal.InternalConfigEventArgs" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  指定配置路径的字符串值。
+    ///</returns>
     property ConfigPath: string read get_ConfigPath write set_ConfigPath;
   end;
 
@@ -6067,10 +15316,22 @@ type
   ['{A1491BCD-27DD-5E7D-A65B-F9B3B5D18B93}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsLoadedEventArgs" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="provider">
+    ///  一个 <see cref="T:System.Configuration.SettingsProvider" />
+    ///  对象从其加载设置。
+    ///</param>
     {class} function init(provider: DNSettingsProvider): DNSettingsLoadedEventArgs;
 
   end;
 
+  ///<summary>
+  ///  为 <see cref="E:System.Configuration.ApplicationSettingsBase.SettingsLoaded" />
+  ///  事件提供数据。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsLoadedEventArgs')]
   DNSettingsLoadedEventArgs = interface(DDN.mscorlib.DNEventArgs)
   ['{E07CF423-DBF3-3B93-916D-DCFB12045CF3}']
@@ -6087,6 +15348,12 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取用于存储配置设置的设置提供程序。
+    ///</summary>
+    ///<returns>
+    ///  设置提供程序。
+    ///</returns>
     property Provider: DNSettingsProvider read get_Provider;
   end;
 
@@ -6097,12 +15364,40 @@ type
   ['{7281BC28-FB0A-5102-B971-A477A7333E68}']
   { constructors } 
 
+    ///<summary>
+    ///  创建 <see cref="T:System.Configuration.Provider.ProviderException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNProviderException; overload;
+    ///<summary>
+    ///  创建 <see cref="T:System.Configuration.Provider.ProviderException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  描述原因的消息这 <see cref="T:System.Configuration.Provider.ProviderException" />
+    ///  引发。
+    ///</param>
     {class} function init(message: string): DNProviderException; overload;
+    ///<summary>
+    ///  创建 <see cref="T:System.Configuration.Provider.ProviderException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  描述原因的消息这 <see cref="T:System.Configuration.Provider.ProviderException" />
+    ///  引发。
+    ///</param>
+    ///  <param name="innerException">
+    ///  导致此异常 <see cref="T:System.Configuration.Provider.ProviderException" />
+    ///  引发。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNProviderException; overload;
 
   end;
 
+  ///<summary>
+  ///  配置提供程序错误发生时引发的异常。
+  ///  提供程序也使用这个异常类不映射到其他预先存在的异常类的提供程序内发生内部错误时引发异常。
+  ///</summary>
   [DNTypeName('System.Configuration.Provider.ProviderException')]
   DNProviderException = interface(DDN.mscorlib.DNException)
   ['{168731D1-B5B8-3440-A74F-1320A3D5D654}']
@@ -6147,12 +15442,37 @@ type
   ['{F86D651C-8743-5AA0-8E91-E153ADEEF625}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.SettingsPropertyIsReadOnlyException" />
+    ///  类根据提供的参数。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个包含一条异常消息字符串。
+    ///</param>
     {class} function init(message: string): DNSettingsPropertyIsReadOnlyException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.SettingsPropertyIsReadOnlyException" />
+    ///  类基于提供的参数。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个包含一条异常消息字符串。
+    ///</param>
+    ///  <param name="innerException">
+    ///  导致当前异常的异常。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNSettingsPropertyIsReadOnlyException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsPropertyIsReadOnlyException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSettingsPropertyIsReadOnlyException; overload;
 
   end;
 
+  ///<summary>
+  ///  提供一种异常的只读 <see cref="T:System.Configuration.SettingsProperty" />
+  ///  对象。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsPropertyIsReadOnlyException')]
   DNSettingsPropertyIsReadOnlyException = interface(DDN.mscorlib.DNException)
   ['{151D467D-E0AB-3DC7-8D7C-B44E6EEAFE68}']
@@ -6197,12 +15517,37 @@ type
   ['{013ED796-CABB-57AC-819D-7B761D323470}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.SettingsPropertyNotFoundException" />
+    ///  基于提供的参数的类。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个包含一条异常消息字符串。
+    ///</param>
     {class} function init(message: string): DNSettingsPropertyNotFoundException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.SettingsPropertyNotFoundException" />
+    ///  基于提供的参数的类。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个包含一条异常消息字符串。
+    ///</param>
+    ///  <param name="innerException">
+    ///  导致当前异常的异常。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNSettingsPropertyNotFoundException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsPropertyNotFoundException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSettingsPropertyNotFoundException; overload;
 
   end;
 
+  ///<summary>
+  ///  提供一种异常的 <see cref="T:System.Configuration.SettingsProperty" />
+  ///  找不到的对象。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsPropertyNotFoundException')]
   DNSettingsPropertyNotFoundException = interface(DDN.mscorlib.DNException)
   ['{8AE5EAD1-0A82-3EDD-845D-A11891FAEA86}']
@@ -6247,12 +15592,37 @@ type
   ['{C887036C-3CDC-571D-A7D2-BE2C373C3809}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.SettingsPropertyWrongTypeException" />
+    ///  类根据所提供的参数。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个包含一条异常消息字符串。
+    ///</param>
     {class} function init(message: string): DNSettingsPropertyWrongTypeException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Configuration.SettingsPropertyWrongTypeException" />
+    ///  类根据所提供的参数。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个包含一条异常消息字符串。
+    ///</param>
+    ///  <param name="innerException">
+    ///  导致当前异常的异常。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNSettingsPropertyWrongTypeException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.SettingsPropertyWrongTypeException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSettingsPropertyWrongTypeException; overload;
 
   end;
 
+  ///<summary>
+  ///  提供了无效的类型一起使用时将引发的异常 <see cref="T:System.Configuration.SettingsProperty" />
+  ///  对象。
+  ///</summary>
   [DNTypeName('System.Configuration.SettingsPropertyWrongTypeException')]
   DNSettingsPropertyWrongTypeException = interface(DDN.mscorlib.DNException)
   ['{A743160A-76C2-3343-97EC-1422564882FA}']
@@ -6297,21 +15667,135 @@ type
   ['{77DE5DED-7697-5932-954C-AD617A075DFE}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNConfigurationException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  描述原因的消息这 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  引发了异常。
+    ///</param>
     {class} function init(message: string): DNConfigurationException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  描述原因的消息这 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  引发了异常。
+    ///</param>
+    ///  <param name="inner">
+    ///  导致以下情况的内部异常 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  抛出，如果有的话。
+    ///</param>
     {class} function init(message: string; inner: DDN.mscorlib.DNException): DNConfigurationException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  描述原因的消息这 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  引发了异常。
+    ///</param>
+    ///  <param name="node"><see cref="T:System.Xml.XmlNode" />
+    ///  会引起这 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  引发。
+    ///</param>
     {class} function init(message: string; node: DDN.System.Xml.DNXmlNode): DNConfigurationException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  描述原因的消息这 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  引发了异常。
+    ///</param>
+    ///  <param name="inner">
+    ///  导致以下情况的内部异常 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  抛出，如果有的话。
+    ///</param>
+    ///  <param name="node"><see cref="T:System.Xml.XmlNode" />
+    ///  会引起这 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  引发。
+    ///</param>
     {class} function init(message: string; inner: DDN.mscorlib.DNException; node: DDN.System.Xml.DNXmlNode): DNConfigurationException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  描述原因的消息这 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  引发了异常。
+    ///</param>
+    ///  <param name="filename">
+    ///  导致以下情况的配置文件的路径 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  引发。
+    ///</param>
+    ///  <param name="line">
+    ///  此配置文件中的行号 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  引发。
+    ///</param>
     {class} function init(message: string; filename: string; line: Int32): DNConfigurationException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  描述原因的消息这 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  引发了异常。
+    ///</param>
+    ///  <param name="inner">
+    ///  导致以下情况的内部异常 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  抛出，如果有的话。
+    ///</param>
+    ///  <param name="filename">
+    ///  导致以下情况的配置文件的路径 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  引发。
+    ///</param>
+    ///  <param name="line">
+    ///  此配置文件中的行号 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  引发。
+    ///</param>
     {class} function init(message: string; inner: DDN.mscorlib.DNException; filename: string; line: Int32): DNConfigurationException; overload;
 
   { static methods } 
 
+    ///<summary>
+    ///  获取到配置文件的路径，从其内部 <see cref="T:System.Xml.XmlNode" />
+    ///  从中加载此配置异常引发时。
+    ///</summary>
+    ///  <param name="node"><see cref="T:System.Xml.XmlNode" />
+    ///  会引起这 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  将引发异常。
+    ///</param>
+    ///<returns>
+    ///  一个 <see langword="string" />
+    ///  表示节点的文件名。
+    ///</returns>
     {class} function GetXmlNodeFilename(node: DDN.System.Xml.DNXmlNode): string;
+    ///<summary>
+    ///  获取配置文件中的行号的内部 <see cref="T:System.Xml.XmlNode" />
+    ///  表示此配置异常引发时对象。
+    ///</summary>
+    ///  <param name="node"><see cref="T:System.Xml.XmlNode" />
+    ///  会引起这 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  将引发异常。
+    ///</param>
+    ///<returns><see langword="int" />
+    ///  表示节点的行号。
+    ///</returns>
     {class} function GetXmlNodeLineNumber(node: DDN.System.Xml.DNXmlNode): Int32;
 
   end;
 
+  ///<summary>
+  ///  发生配置系统错误时引发的异常。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationException')]
   DNConfigurationException = interface(DDN.mscorlib.DNSystemException)
   ['{E118764F-11B2-34DA-9998-CE8683EED583}']
@@ -6333,6 +15817,16 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  集 <see cref="T:System.Runtime.Serialization.SerializationInfo" />
+    ///  对象与此配置异常发生处的文件名和行号。
+    ///</summary>
+    ///  <param name="info">
+    ///  包含要序列化的信息的对象。
+    ///</param>
+    ///  <param name="context">
+    ///  关于来源和目标的上下文信息
+    ///</param>
     procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
     function GetBaseException: DDN.mscorlib.DNException;
     function ToString: string;
@@ -6342,9 +15836,37 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取引发此配置异常的原因的补充的的说明。
+    ///</summary>
+    ///<returns>
+    ///  扩展的原因的说明这 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  引发了异常。
+    ///</returns>
     property Message: string read get_Message;
+    ///<summary>
+    ///  获取引发此配置异常的原因的说明。
+    ///</summary>
+    ///<returns>
+    ///  原因说明这 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  引发了异常。
+    ///</returns>
     property BareMessage: string read get_BareMessage;
+    ///<summary>
+    ///  获取导致引发此配置异常的配置文件的路径。
+    ///</summary>
+    ///<returns>
+    ///  导致以下情况的配置文件的路径 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  将引发异常。
+    ///</returns>
     property Filename: string read get_Filename;
+    ///<summary>
+    ///  获取此配置异常遇到配置文件中的行号。
+    ///</summary>
+    ///<returns>
+    ///  此配置文件中的行号 <see cref="T:System.Configuration.ConfigurationException" />
+    ///  引发了异常。
+    ///</returns>
     property Line: Int32 read get_Line;
     property Data: DDN.mscorlib.DNIDictionary read get_Data;
     property InnerException: DDN.mscorlib.DNException read get_InnerException;
@@ -6362,25 +15884,192 @@ type
   ['{22F8CDE5-BF54-574B-9399-9E8C64B12D03}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一条消息，说明为什么这 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发了异常。
+    ///</param>
+    ///  <param name="inner">
+    ///  导致以下情况的内部异常 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  将引发异常。
+    ///</param>
+    ///  <param name="filename">
+    ///  导致以下情况的配置文件的路径 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  将引发异常。
+    ///</param>
+    ///  <param name="line">
+    ///  此配置文件中的行号 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发了异常。
+    ///</param>
     {class} function init(message: string; inner: DDN.mscorlib.DNException; filename: string; line: Int32): DNConfigurationErrorsException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNConfigurationErrorsException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一条消息，说明为什么这 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发了异常。
+    ///</param>
     {class} function init(message: string): DNConfigurationErrorsException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一条消息，说明为什么这 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发了异常。
+    ///</param>
+    ///  <param name="inner">
+    ///  导致此异常 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  将引发异常。
+    ///</param>
     {class} function init(message: string; inner: DDN.mscorlib.DNException): DNConfigurationErrorsException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一条消息，说明为什么这 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发了异常。
+    ///</param>
+    ///  <param name="filename">
+    ///  导致以下情况的配置文件的路径 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  将引发异常。
+    ///</param>
+    ///  <param name="line">
+    ///  此配置文件中的行号 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发了异常。
+    ///</param>
     {class} function init(message: string; filename: string; line: Int32): DNConfigurationErrorsException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一条消息，说明为什么这 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发了异常。
+    ///</param>
+    ///  <param name="node"><see cref="T:System.Xml.XmlNode" />
+    ///  对象，它导致以下情况 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  将引发异常。
+    ///</param>
     {class} function init(message: string; node: DDN.System.Xml.DNXmlNode): DNConfigurationErrorsException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一条消息，说明为什么这 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发了异常。
+    ///</param>
+    ///  <param name="inner">
+    ///  导致以下情况的内部异常 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  将引发异常。
+    ///</param>
+    ///  <param name="node"><see cref="T:System.Xml.XmlNode" />
+    ///  对象，它导致以下情况 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  将引发异常。
+    ///</param>
     {class} function init(message: string; inner: DDN.mscorlib.DNException; node: DDN.System.Xml.DNXmlNode): DNConfigurationErrorsException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一条消息，说明为什么这 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发了异常。
+    ///</param>
+    ///  <param name="reader"><see cref="T:System.Xml.XmlReader" />
+    ///  对象，它导致以下情况 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  将引发异常。
+    ///</param>
     {class} function init(message: string; reader: DDN.System.Xml.DNXmlReader): DNConfigurationErrorsException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一条消息，说明为什么这 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发了异常。
+    ///</param>
+    ///  <param name="inner">
+    ///  导致以下情况的内部异常 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  将引发异常。
+    ///</param>
+    ///  <param name="reader"><see cref="T:System.Xml.XmlReader" />
+    ///  对象，它导致以下情况 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  将引发异常。
+    ///</param>
     {class} function init(message: string; inner: DDN.mscorlib.DNException; reader: DDN.System.Xml.DNXmlReader): DNConfigurationErrorsException; overload;
 
   { static methods } 
 
+    ///<summary>
+    ///  获取配置文件中的行号的内部 <see cref="T:System.Xml.XmlNode" />
+    ///  表示此配置异常引发时对象。
+    ///</summary>
+    ///  <param name="node"><see cref="T:System.Xml.XmlNode" />
+    ///  对象，它导致以下情况 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  将引发异常。
+    ///</param>
+    ///<returns>
+    ///  所包含的配置文件中的行号 <see cref="T:System.Xml.XmlNode" />
+    ///  对象时引发此配置异常正在分析。
+    ///</returns>
     {class} function GetLineNumber(node: DDN.System.Xml.DNXmlNode): Int32; overload;
+    ///<summary>
+    ///  获取到配置文件的路径，从其内部 <see cref="T:System.Xml.XmlNode" />
+    ///  从中加载此配置异常引发时。
+    ///</summary>
+    ///  <param name="node"><see cref="T:System.Xml.XmlNode" />
+    ///  对象，它导致以下情况 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  将引发异常。
+    ///</param>
+    ///<returns>
+    ///  从其配置文件的路径的内部 <see cref="T:System.Xml.XmlNode" />
+    ///  从中加载此配置异常引发时。
+    ///</returns>
     {class} function GetFilename(node: DDN.System.Xml.DNXmlNode): string; overload;
+    ///<summary>
+    ///  获取配置文件中的行号的内部 <see cref="T:System.Xml.XmlReader" />
+    ///  此配置异常引发时处理对象。
+    ///</summary>
+    ///  <param name="reader"><see cref="T:System.Xml.XmlReader" />
+    ///  对象，它导致以下情况 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  将引发异常。
+    ///</param>
+    ///<returns>
+    ///  在配置中的行号文件 <see cref="T:System.Xml.XmlReader" />
+    ///  异常发生时正在访问的对象。
+    ///</returns>
     {class} function GetLineNumber(reader: DDN.System.Xml.DNXmlReader): Int32; overload;
+    ///<summary>
+    ///  获取配置文件的路径的内部 <see cref="T:System.Xml.XmlReader" />
+    ///  正在读取此配置异常引发时。
+    ///</summary>
+    ///  <param name="reader"><see cref="T:System.Xml.XmlReader" />
+    ///  对象，它导致以下情况 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  将引发异常。
+    ///</param>
+    ///<returns>
+    ///  文件内部的配置路径 <see cref="T:System.Xml.XmlReader" />
+    ///  异常发生时正在访问的对象。
+    ///</returns>
     {class} function GetFilename(reader: DDN.System.Xml.DNXmlReader): string; overload;
 
   end;
 
+  ///<summary>
+  ///  发生配置错误时引发的异常。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationErrorsException')]
   DNConfigurationErrorsException = interface(DNConfigurationException)
   ['{B6185FCB-5631-3FB5-853F-68090F7567FF}']
@@ -6403,6 +16092,16 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  集 <see cref="T:System.Runtime.Serialization.SerializationInfo" />
+    ///  对象与此配置异常发生处的文件名和行号。
+    ///</summary>
+    ///  <param name="info">
+    ///  包含要序列化的信息的对象。
+    ///</param>
+    ///  <param name="context">
+    ///  关于来源和目标的上下文信息
+    ///</param>
     procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
     function GetBaseException: DDN.mscorlib.DNException;
     function ToString: string;
@@ -6412,10 +16111,46 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取引发此配置异常的原因的补充的的说明。
+    ///</summary>
+    ///<returns>
+    ///  扩展的原因的说明这 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发了异常。
+    ///</returns>
     property Message: string read get_Message;
+    ///<summary>
+    ///  获取引发此配置异常的原因的说明。
+    ///</summary>
+    ///<returns>
+    ///  原因说明这 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发。
+    ///</returns>
     property BareMessage: string read get_BareMessage;
+    ///<summary>
+    ///  获取导致引发此配置异常的配置文件的路径。
+    ///</summary>
+    ///<returns>
+    ///  导致以下情况的配置文件的路径 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发。
+    ///</returns>
     property Filename: string read get_Filename;
+    ///<summary>
+    ///  获取此配置异常遇到配置文件中的行号。
+    ///</summary>
+    ///<returns>
+    ///  此配置文件中的行号 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发了异常。
+    ///</returns>
     property Line: Int32 read get_Line;
+    ///<summary>
+    ///  获取详细说明原因的错误的集合此 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发了异常。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.ICollection" />
+    ///  对象，其中包含确定的原因的错误这 <see cref="T:System.Configuration.ConfigurationErrorsException" />
+    ///  引发了异常。
+    ///</returns>
     property Errors: DDN.mscorlib.DNICollection read get_Errors;
     property Data: DDN.mscorlib.DNIDictionary read get_Data;
     property InnerException: DDN.mscorlib.DNException read get_InnerException;
@@ -6433,21 +16168,147 @@ type
   ['{527431FA-6E2F-5078-96E9-9D3E4D198E03}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="state">
+    ///  要授予的权限级别。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  值 <paramref name="state" />
+    ///  既不是 <see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />
+    ///  ，也不 <see cref="F:System.Security.Permissions.PermissionState.None" />
+    ///  。
+    ///</exception>
     {class} function init(state: DDN.mscorlib.DNPermissionState): DNConfigurationPermission;
 
   end;
 
+  ///<summary>
+  ///  提供允许方法或类以访问配置文件的权限结构。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigurationPermission')]
   DNConfigurationPermission = interface(DDN.mscorlib.DNCodeAccessPermission)
   ['{A2585EAF-D0AB-3818-8869-8C0AEF45E0C8}']
   { methods } 
 
+    ///<summary>
+    ///  指示是否的权限状态 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  对象是 <see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />
+    ///  值 <see cref="T:System.Security.Permissions.PermissionState" />
+    ///  枚举。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果的权限状态 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  是 <see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />
+    ///  值 <see cref="T:System.Security.Permissions.PermissionState" />
+    ///  ; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsUnrestricted: Boolean;
+    ///<summary>
+    ///  返回一个新 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  对象具有相同的权限级别。
+    ///</summary>
+    ///<returns>
+    ///  一个新 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  具有相同的权限级别。
+    ///</returns>
     function Copy: DDN.mscorlib.DNIPermission;
+    ///<summary>
+    ///  返回的逻辑联合 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  对象和对象实现 <see cref="T:System.Security.IPermission" />
+    ///  接口。
+    ///</summary>
+    ///  <param name="target">
+    ///  要执行该并集的对象。
+    ///</param>
+    ///<returns>
+    ///  逻辑联合 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  和实现的对象 <see cref="T:System.Security.IPermission" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="target" />
+    ///  并不类型化为 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  。
+    ///</exception>
     function Union(target: DDN.mscorlib.DNIPermission): DDN.mscorlib.DNIPermission;
+    ///<summary>
+    ///  返回逻辑交集 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  对象和实现一个给定的对象 <see cref="T:System.Security.IPermission" />
+    ///  接口。
+    ///</summary>
+    ///  <param name="target">
+    ///  包含执行带交集的权限的对象。
+    ///</param>
+    ///<returns>
+    ///  逻辑交集 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  实现的给定对象 <see cref="T:System.Security.IPermission" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="target" />
+    ///  并不类型化为 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  。
+    ///</exception>
     function Intersect(target: DDN.mscorlib.DNIPermission): DDN.mscorlib.DNIPermission;
+    ///<summary>
+    ///  比较 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  具有一个对象，实现对象 <see cref="T:System.Security.IPermission" />
+    ///  接口。
+    ///</summary>
+    ///  <param name="target">
+    ///  要比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果权限状态为否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="target" />
+    ///  并不类型化为 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  。
+    ///</exception>
     function IsSubsetOf(target: DDN.mscorlib.DNIPermission): Boolean;
+    ///<summary>
+    ///  从 XML 中读取的权限状态的值。
+    ///</summary>
+    ///  <param name="securityElement">
+    ///  从中读取的权限状态的配置元素。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="securityElement" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException"><see cref="P:System.Security.SecurityElement.Tag" />
+    ///  为给定 <paramref name="securityElement" />
+    ///  不等于"IPermission"。
+    ///</exception><exception cref="T:System.ArgumentException"><see langword="class" />
+    ///  属性给定 <paramref name="securityElement " />
+    ///  等于 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException"><see langword="class" />
+    ///  属性给定 <paramref name="securityElement" />
+    ///  不是类型名称 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException"><see langword="version" />
+    ///  属性给定 <paramref name="securityElement" />
+    ///  不等于 1。
+    ///</exception><exception cref="T:System.ArgumentException"><see langword="unrestricted" />
+    ///  属性给定 <paramref name="securityElement" />
+    ///  既不是 <see langword="true" />
+    ///  ，也不 <see langword="false" />
+    ///  。
+    ///</exception>
     procedure FromXml(securityElement: DDN.mscorlib.DNSecurityElement);
+    ///<summary>
+    ///  返回 <see cref="T:System.Security.SecurityElement" />
+    ///  具有属性值的对象取决于当前 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.SecurityElement" />
+    ///  其特性值取决于当前 <see cref="T:System.Configuration.ConfigurationPermission" />
+    ///  。
+    ///</returns>
     function ToXml: DDN.mscorlib.DNSecurityElement;
     procedure Demand;
     procedure Assert;
@@ -6472,6 +16333,10 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Configuration.ConfigXmlDocument" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNConfigXmlDocument;
 
   { static propertys } 
@@ -6480,6 +16345,10 @@ type
     {class} property InnerText: string write set_InnerText;
   end;
 
+  ///<summary>
+  ///  包装相应的 <see cref="T:System.Xml.XmlDocument" />
+  ///  类型并带有报告文件名和行号所需的信息。
+  ///</summary>
   [DNTypeName('System.Configuration.ConfigXmlDocument')]
   DNConfigXmlDocument = interface(DNObject)
   ['{49B7698A-4C82-3F86-8FBD-F2608646C91B}']
@@ -6541,14 +16410,104 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  创建的配置元素属性。
+    ///</summary>
+    ///  <param name="prefix">
+    ///  前缀定义。
+    ///</param>
+    ///  <param name="localName">
+    ///  本地使用的名称。
+    ///</param>
+    ///  <param name="namespaceUri">
+    ///  分配给命名空间中的 URL。
+    ///</param>
+    ///<returns><see cref="P:System.Xml.Serialization.XmlAttributes.XmlAttribute" />
+    ///  属性。
+    ///</returns>
     function CreateAttribute(prefix: string; localName: string; namespaceUri: string): DDN.System.Xml.DNXmlAttribute; overload;
+    ///<summary>
+    ///  创建一个配置元素。
+    ///</summary>
+    ///  <param name="prefix">
+    ///  前缀定义。
+    ///</param>
+    ///  <param name="localName">
+    ///  本地使用的名称。
+    ///</param>
+    ///  <param name="namespaceUri">
+    ///  Url 命名空间。
+    ///</param>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  值。
+    ///</returns>
     function CreateElement(prefix: string; localName: string; namespaceUri: string): DDN.System.Xml.DNXmlElement; overload;
+    ///<summary>
+    ///  创建文本节点。
+    ///</summary>
+    ///  <param name="text">
+    ///  要使用的文本。
+    ///</param>
+    ///<returns><see cref="T:System.Xml.XmlText" />
+    ///  值。
+    ///</returns>
     function CreateTextNode(text: string): DDN.System.Xml.DNXmlText;
+    ///<summary>
+    ///  加载配置文件。
+    ///</summary>
+    ///  <param name="filename">
+    ///  文件的名称。
+    ///</param>
     procedure Load(filename: string); overload;
+    ///<summary>
+    ///  加载一个配置元素。
+    ///</summary>
+    ///  <param name="filename">
+    ///  文件的名称。
+    ///</param>
+    ///  <param name="sourceReader">
+    ///  用于读取器的源。
+    ///</param>
     procedure LoadSingleElement(filename: string; sourceReader: DDN.System.Xml.DNXmlTextReader);
+    ///<summary>
+    ///  创建 XML CData 部分。
+    ///</summary>
+    ///  <param name="data">
+    ///  要使用的数据。
+    ///</param>
+    ///<returns><see cref="T:System.Xml.XmlCDataSection" />
+    ///  值。
+    ///</returns>
     function CreateCDataSection(data: string): DDN.System.Xml.DNXmlCDataSection;
+    ///<summary>
+    ///  创建一个 XML 注释。
+    ///</summary>
+    ///  <param name="data">
+    ///  注释数据。
+    ///</param>
+    ///<returns><see cref="T:System.Xml.XmlComment" />
+    ///  值。
+    ///</returns>
     function CreateComment(data: string): DDN.System.Xml.DNXmlComment;
+    ///<summary>
+    ///  创建空白。
+    ///</summary>
+    ///  <param name="data">
+    ///  要使用的数据。
+    ///</param>
+    ///<returns><see cref="T:System.Xml.XmlSignificantWhitespace" />
+    ///  值。
+    ///</returns>
     function CreateSignificantWhitespace(data: string): DDN.System.Xml.DNXmlSignificantWhitespace;
+    ///<summary>
+    ///  创建空白区域。
+    ///</summary>
+    ///  <param name="data">
+    ///  要使用的数据。
+    ///</param>
+    ///<returns><see cref="T:System.Xml.XmlWhitespace" />
+    ///  值。
+    ///</returns>
     function CreateWhitespace(data: string): DDN.System.Xml.DNXmlWhitespace;
     function CloneNode(deep: Boolean): DDN.System.Xml.DNXmlNode;
     function CreateAttribute(name: string): DDN.System.Xml.DNXmlAttribute; overload;
@@ -6605,7 +16564,19 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取当前节点的行号。
+    ///</summary>
+    ///<returns>
+    ///  当前节点的行号。
+    ///</returns>
     property LineNumber: Int32 read get_LineNumber;
+    ///<summary>
+    ///  获取配置文件名称。
+    ///</summary>
+    ///<returns>
+    ///  配置文件名称。
+    ///</returns>
     property Filename: string read get_Filename;
     property NodeType: DDN.System.Xml.DNXmlNodeType read get_NodeType;
     property ParentNode: DDN.System.Xml.DNXmlNode read get_ParentNode;

@@ -34,66 +34,159 @@ type
 { enums }
 
   //-------------namespace: System.Windows.Xps.Packaging----------------
+  ///<summary>
+  ///  提供用于指定包的主要部件进行流式处理的顺序值。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.PackageInterleavingOrder')]
   DNPackageInterleavingOrder = type Integer;
   DNPackageInterleavingOrderHelper = record helper for DNPackageInterleavingOrder
   public const
+    ///<summary>
+    ///  流式处理的顺序由打包系统指定。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  流式处理的顺序是︰ 资源、 页、 文档和文档的顺序。
+    ///</summary>
     ResourceFirst = 1;
+    ///<summary>
+    ///  流式处理的顺序是︰ 文档序列、 文档、 页面和资源。
+    ///</summary>
     ResourceLast = 2;
+    ///<summary>
+    ///  流式处理的顺序是: （而不是图像） 的资源、 页、 文档、 文档序列和图像。
+    ///</summary>
     ImagesLast = 3;
   end;
 
 
   //-------------namespace: System.Windows.Xps.Packaging----------------
+  ///<summary>
+  ///  标识包的序列化期间发生的事件的类型。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.PackagingAction')]
   DNPackagingAction = type Integer;
   DNPackagingActionHelper = record helper for DNPackagingAction
   public const
+    ///<summary>
+    ///  已不执行任何操作。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  正在添加文档序列。
+    ///</summary>
     AddingDocumentSequence = 1;
+    ///<summary>
+    ///  已添加，但不是一定已提交文档序列。
+    ///</summary>
     DocumentSequenceCompleted = 2;
+    ///<summary>
+    ///  正在添加文档。
+    ///</summary>
     AddingFixedDocument = 3;
+    ///<summary>
+    ///  已添加，但不是一定已提交文档。
+    ///</summary>
     FixedDocumentCompleted = 4;
+    ///<summary>
+    ///  正在添加一个页面。
+    ///</summary>
     AddingFixedPage = 5;
+    ///<summary>
+    ///  已对某页已添加，但不是一定已提交。
+    ///</summary>
     FixedPageCompleted = 6;
+    ///<summary>
+    ///  资源已添加，但不是一定已提交。
+    ///</summary>
     ResourceAdded = 7;
+    ///<summary>
+    ///  一种字体已添加，但不是一定已提交。
+    ///</summary>
     FontAdded = 8;
+    ///<summary>
+    ///  映像已添加，但不是一定已提交。
+    ///</summary>
     ImageAdded = 9;
+    ///<summary>
+    ///  文档已提交。
+    ///</summary>
     XpsDocumentCommitted = 10;
   end;
 
 
   //-------------namespace: System.Windows.Xps.Packaging----------------
+  ///<summary>
+  ///  指定的部分 XPS <see cref="T:System.IO.Packaging.Package" />
+  ///  排除范围中的数字签名。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions')]
   DNXpsDigSigPartAlteringRestrictions = type Integer;
   DNXpsDigSigPartAlteringRestrictionsHelper = record helper for DNXpsDigSigPartAlteringRestrictions
   public const
+    ///<summary>
+    ///  不排除任何部件。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  排除核心属性部件。
+    ///</summary>
     CoreMetadata = 1;
+    ///<summary>
+    ///  排除批注部件。
+    ///</summary>
     Annotations = 2;
+    ///<summary>
+    ///  排除签名源部件。
+    ///</summary>
     SignatureOrigin = 4;
   end;
 
 
   //-------------namespace: System.Windows.Xps.Packaging----------------
+  ///<summary>
+  ///  指定的图像，可以包含在图形格式 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.XpsImageType')]
   DNXpsImageType = type Integer;
   DNXpsImageTypeHelper = record helper for DNXpsImageType
   public const
+    ///<summary>
+    ///  PNG
+    ///</summary>
     PngImageType = 0;
+    ///<summary>
+    ///  JPEG
+    ///</summary>
     JpegImageType = 1;
+    ///<summary>
+    ///  TIFF
+    ///</summary>
     TiffImageType = 2;
+    ///<summary>
+    ///  WDP
+    ///</summary>
     WdpImageType = 3;
   end;
 
 
   //-------------namespace: System.Windows.Xps.Packaging----------------
+  ///<summary>
+  ///  指定是否可以页中的文档之间共享资源 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.XpsResourceSharing')]
   DNXpsResourceSharing = type Integer;
   DNXpsResourceSharingHelper = record helper for DNXpsResourceSharing
   public const
+    ///<summary>
+    ///  可以共享资源。
+    ///</summary>
     ShareResources = 0;
+    ///<summary>
+    ///  不能共享资源。
+    ///</summary>
     NoResourceSharing = 1;
   end;
 
@@ -129,6 +222,16 @@ type
 
 { delegates }
 
+  ///<summary>
+  ///  表示用于处理的方法 <see cref="E:System.Windows.Xps.Serialization.XpsPackagingPolicy.PackagingProgressEvent" />
+  ///  。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e">
+  ///  事件数据。
+  ///</param>
   [DNTypeName('System.Windows.Xps.Packaging.PackagingProgressEventHandler')]
   DNPackagingProgressEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNPackagingProgressEventArgs) of object;
 
@@ -138,16 +241,32 @@ type
 { objects }
 
   //-------------namespace: System.Windows.Xps.Packaging----------------
+  ///<summary>
+  ///  定义用于添加方法 <see langword="DocumentStructure" />
+  ///  属于 XML 纸张规范 (XPS) 到 XPS 包。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.IDocumentStructureProvider')]
   DNIDocumentStructureProvider = interface(DDN.mscorlib.DNObject)
   ['{203FA96F-CD89-32A0-9DD9-6256F030AFEB}']
   { methods } 
 
+    ///<summary>
+    ///  添加<see langword="DocumentStructure" />
+    ///  属于 XML 纸张规范 (XPS) 到 XPS 包。
+    ///</summary>
+    ///<returns><see cref="T:System.Windows.Xps.Packaging.XpsStructure" />
+    ///  表示 <see langword="DocumentStructure" />
+    ///  属于 XPS 包。
+    ///</returns>
     function AddDocumentStructure: DNXpsStructure;
 
   end;
 
   //-------------namespace: System.Windows.Xps.Packaging----------------
+  ///<summary>
+  ///  定义用于读取的部件的方法 <see cref="T:System.Windows.Documents.FixedDocument" />
+  ///  也将受限制类型写入文档的说明。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.IXpsFixedDocumentReader')]
   DNIXpsFixedDocumentReader = interface(DNIDocumentStructureProvider)
   ['{7F79497F-681A-3927-A194-5D182BAA497C}']
@@ -163,23 +282,115 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取用于读取器 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  具有指定 统一资源标识符 (URI)。
+    ///</summary>
+    ///  <param name="pageSource">
+    ///  URI 的页。
+    ///</param>
+    ///<returns><see cref="T:System.Windows.Xps.Packaging.IXpsFixedPageReader" />
+    ///  页。
+    ///</returns>
     function GetFixedPage(pageSource: DDN.System.DNUri): DNIXpsFixedPageReader;
+    ///<summary>
+    ///  添加指定 <see cref="T:System.Windows.Xps.Packaging.XpsSignatureDefinition" />
+    ///  到 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</summary>
+    ///  <param name="signatureDefinition">
+    ///  添加定义。
+    ///</param>
     procedure AddSignatureDefinition(signatureDefinition: DNXpsSignatureDefinition);
+    ///<summary>
+    ///  从 <see cref="T:System.Windows.Xps.Packaging.XpsSignatureDefinition" />
+    ///  中移除指定的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</summary>
+    ///  <param name="signatureDefinition">
+    ///  删除定义。
+    ///</param>
     procedure RemoveSignatureDefinition(signatureDefinition: DNXpsSignatureDefinition);
+    ///<summary>
+    ///  刷新包 <see cref="T:System.IO.Stream" />
+    ///  ，然后还将提交 <see cref="T:System.Windows.Xps.Packaging.XpsSignatureDefinition" />
+    ///  到包。
+    ///</summary>
     procedure CommitSignatureDefinition;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Printing.PrintTicket" />
+    ///  , ，如果存在一个与之关联 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，其中包含文档; 的默认打印选项或 <see langword="null" />
+    ///  如果没有打印票证存在的文档。
+    ///</returns>
     property PrintTicket: DNPrintTicket read get_PrintTicket;
+    ///<summary>
+    ///  获取 统一资源标识符 (URI) 的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Uri" />
+    ///  表示 URI 文档。
+    ///</returns>
     property Uri: DDN.System.DNUri read get_Uri;
+    ///<summary>
+    ///  获取一套 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  读取器、 一个读取者的每一页 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一组固定的页读线程，每个页面中的一个读取者 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</returns>
     property FixedPages: DDN.mscorlib.DNReadOnlyCollection<DNIXpsFixedPageReader> read get_FixedPages;
+    ///<summary>
+    ///  获取文档中的从零开始的位置 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  ，表示序列中的文档位置。
+    ///</returns>
     property DocumentNumber: Int32 read get_DocumentNumber;
+    ///<summary>
+    ///  获取与之关联的签名定义一个 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.Generic.ICollection`1" />
+    ///  的签名定义，通常是一个用于每个的人也可能会对文档进行签名。
+    ///</returns>
     property SignatureDefinitions: DDN.mscorlib.DNICollection<DNXpsSignatureDefinition> read get_SignatureDefinitions;
+    ///<summary>
+    ///  获取缩略图图像，如果存在缩略图，与之关联 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</summary>
+    ///<returns><see cref="T:System.Windows.Xps.Packaging.XpsThumbnail" />
+    ///  ，表示的图像。
+    ///</returns>
     property Thumbnail: DNXpsThumbnail read get_Thumbnail;
+    ///<summary>
+    ///  获取 <see langword="DocumentStructure" />
+    ///  部件，如果存在的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</summary>
+    ///<returns><see cref="T:System.Windows.Xps.Packaging.XpsStructure" />
+    ///  表示 <see langword="DocumentStructure" />
+    ///  元素，如果存在，并及其子元素。
+    ///</returns>
     property DocumentStructure: DNXpsStructure read get_DocumentStructure;
   end;
 
   //-------------namespace: System.Windows.Xps.Packaging----------------
+  ///<summary>
+  ///  定义方法和属性以进行写入 <see cref="T:System.Windows.Documents.FixedDocument" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.IXpsFixedDocumentWriter')]
   DNIXpsFixedDocumentWriter = interface(DNIDocumentStructureProvider)
   ['{8C18E1DE-C862-378E-9271-FA74A0C0EC62}']
@@ -191,28 +402,92 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  添加一个新 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  到 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  用于输出新的编写器 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  。
+    ///</returns>
     function AddFixedPage: DNIXpsFixedPageWriter;
+    ///<summary>
+    ///  添加 <see cref="T:System.Windows.Xps.Packaging.XpsThumbnail" />
+    ///  的图像 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</summary>
+    ///  <param name="imageType">
+    ///  若要添加的缩略图图像类型。
+    ///</param>
+    ///<returns>
+    ///  新 <see cref="T:System.Windows.Xps.Packaging.XpsThumbnail" />
+    ///  为 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</returns>
     function AddThumbnail(imageType: DNXpsImageType): DNXpsThumbnail;
+    ///<summary>
+    ///  刷新并关闭 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  编写器。
+    ///</summary>
     procedure Commit;
 
   { propertys } 
 
+    ///<summary>
+    ///  设置默认的打印选项 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</summary>
     property PrintTicket: DNPrintTicket write set_PrintTicket;
+    ///<summary>
+    ///  获取 URI 的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  URI 的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</returns>
     property Uri: DDN.System.DNUri read get_Uri;
+    ///<summary>
+    ///  获取从零开始的位置 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  中 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  从零开始的位置 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  中 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  。
+    ///</returns>
     property DocumentNumber: Int32 read get_DocumentNumber;
   end;
 
   //-------------namespace: System.Windows.Xps.Packaging----------------
+  ///<summary>
+  ///  定义用于添加方法 <see cref="T:System.Windows.Documents.DocumentStructures.StoryFragments" />
+  ///  到标记的一部分 XPS 包。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.IStoryFragmentProvider')]
   DNIStoryFragmentProvider = interface(DDN.mscorlib.DNObject)
   ['{D2A191FE-8A51-3E0A-A47D-6721A2A7B627}']
   { methods } 
 
+    ///<summary>
+    ///  添加 <see cref="T:System.Windows.Documents.DocumentStructures.StoryFragments" />
+    ///  元素 XPS 包。
+    ///</summary>
+    ///<returns><see cref="T:System.Windows.Xps.Packaging.XpsStructure" />
+    ///  表示 <see cref="T:System.Windows.Documents.DocumentStructures.StoryFragments" />
+    ///  中的元素 XPS 包。
+    ///</returns>
     function AddStoryFragment: DNXpsStructure;
 
   end;
 
   //-------------namespace: System.Windows.Xps.Packaging----------------
+  ///<summary>
+  ///  定义用于读取的部件的方法 <see cref="T:System.Windows.Documents.FixedPage" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.IXpsFixedPageReader')]
   DNIXpsFixedPageReader = interface(DNIStoryFragmentProvider)
   ['{73DF6B41-E629-3D6C-8ECD-6478C63E3350}']
@@ -231,27 +506,152 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取具有指定的资源 统一资源标识符 (URI)。
+    ///</summary>
+    ///  <param name="resourceUri">
+    ///  URI 的资源。
+    ///</param>
+    ///<returns>
+    ///  具有指定的 Uri 的资源。
+    ///</returns>
     function GetResource(resourceUri: DDN.System.DNUri): DNXpsResource;
+    ///<summary>
+    ///  获取具有指定的字体 统一资源标识符 (URI)。
+    ///</summary>
+    ///  <param name="uri">
+    ///  URI 的字体。
+    ///</param>
+    ///<returns>
+    ///  具有指定的 Uri 的字体。
+    ///</returns>
     function GetFont(uri: DDN.System.DNUri): DNXpsFont;
+    ///<summary>
+    ///  获取具有指定的资源的颜色上下文 统一资源标识符 (URI)。
+    ///</summary>
+    ///  <param name="uri">
+    ///  URI 的资源。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Windows.Xps.Packaging.XpsColorContext" />
+    ///  。
+    ///</returns>
     function GetColorContext(uri: DDN.System.DNUri): DNXpsColorContext;
+    ///<summary>
+    ///  获取具有指定的资源字典 统一资源标识符 (URI)。
+    ///</summary>
+    ///  <param name="uri">
+    ///  URI 的资源字典。
+    ///</param>
+    ///<returns>
+    ///  资源字典，其中具有指定的 Uri。
+    ///</returns>
     function GetResourceDictionary(uri: DDN.System.DNUri): DNXpsResourceDictionary;
+    ///<summary>
+    ///  获取具有指定的图像 统一资源标识符 (URI)。
+    ///</summary>
+    ///  <param name="uri">
+    ///  URI 的图像。
+    ///</param>
+    ///<returns>
+    ///  具有指定的 Uri 的图像。
+    ///</returns>
     function GetImage(uri: DDN.System.DNUri): DNXpsImage;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Printing.PrintTicket" />
+    ///  , ，如果存在票证，与之关联 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，其中包含页上; 的默认打印选项或 <see langword="null" />
+    ///  如果不是 <see cref="T:System.Printing.PrintTicket" />
+    ///  存在页。
+    ///</returns>
     property PrintTicket: DNPrintTicket read get_PrintTicket;
+    ///<summary>
+    ///  获取 统一资源标识符 (URI) 的 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Uri" />
+    ///  表示 URI 页。
+    ///</returns>
     property Uri: DDN.System.DNUri read get_Uri;
+    ///<summary>
+    ///  获取 <see cref="T:System.Xml.XmlReader" />
+    ///  页。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlReader" />
+    ///  页。
+    ///</returns>
     property XmlReader: DDN.System.Xml.DNXmlReader read get_XmlReader;
+    ///<summary>
+    ///  获取页号。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  表示页码。
+    ///</returns>
     property PageNumber: Int32 read get_PageNumber;
+    ///<summary>
+    ///  获取集合的页面使用的所有字体。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.Generic.ICollection`1" />
+    ///  包含每个 <see cref="T:System.Windows.Xps.Packaging.XpsFont" />
+    ///  位于页面上。
+    ///</returns>
     property Fonts: DDN.mscorlib.DNICollection<DNXpsFont> read get_Fonts;
+    ///<summary>
+    ///  获取页上的所有颜色上下文集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.Generic.ICollection`1" />
+    ///  包含每个 <see cref="T:System.Windows.Xps.Packaging.XpsColorContext" />
+    ///  位于页面上。
+    ///</returns>
     property ColorContexts: DDN.mscorlib.DNICollection<DNXpsColorContext> read get_ColorContexts;
+    ///<summary>
+    ///  获取页上的所有资源字典的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Windows.Xps.Packaging.XpsResourceDictionary" />
+    ///  对象的 <see cref="T:System.Collections.Generic.ICollection`1" />
+    ///  。
+    ///</returns>
     property ResourceDictionaries: DDN.mscorlib.DNICollection<DNXpsResourceDictionary> read get_ResourceDictionaries;
+    ///<summary>
+    ///  获取页上的所有映像的集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.Generic.ICollection`1" />
+    ///  包含每个 <see cref="T:System.Windows.Xps.Packaging.XpsImage" />
+    ///  位于页面上。
+    ///</returns>
     property Images: DDN.mscorlib.DNICollection<DNXpsImage> read get_Images;
+    ///<summary>
+    ///  获取缩略图图像，如果存在缩略图，与之关联 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  。
+    ///</summary>
+    ///<returns><see cref="T:System.Windows.Xps.Packaging.XpsThumbnail" />
+    ///  ，表示的图像。
+    ///</returns>
     property Thumbnail: DNXpsThumbnail read get_Thumbnail;
+    ///<summary>
+    ///  获取 <see cref="T:System.Windows.Documents.DocumentStructures.StoryFragments" />
+    ///  部分的标记的 XPS 包。
+    ///</summary>
+    ///<returns><see cref="T:System.Windows.Xps.Packaging.XpsStructure" />
+    ///  表示 <see cref="T:System.Windows.Documents.DocumentStructures.StoryFragments" />
+    ///  中的元素 XPS 包。
+    ///</returns>
     property StoryFragment: DNXpsStructure read get_StoryFragment;
   end;
 
   //-------------namespace: System.Windows.Xps.Packaging----------------
+  ///<summary>
+  ///  定义方法以进行写入 <see cref="T:System.Windows.Documents.FixedPage" />
+  ///  方面 XPS 文档。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.IXpsFixedPageWriter')]
   DNIXpsFixedPageWriter = interface(DNIStoryFragmentProvider)
   ['{EB5C89C5-4FD3-3B85-A1BF-75C51A6683A8}']
@@ -265,27 +665,195 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  添加一个新 <see cref="T:System.Windows.Xps.Packaging.XpsResource" />
+    ///  到当前页。
+    ///</summary>
+    ///  <param name="resourceType">
+    ///  若要添加的资源的类型。
+    ///</param>
+    ///  <param name="resourceUri">
+    ///  若要添加，该资源的绝对路径或 <see langword="null" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  新 XML 纸张规范 (XPS) 已添加的资源。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="resourceType" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ObjectDisposedException"><see cref="M:System.IDisposable.Dispose" />
+    ///  已调用。
+    ///</exception><exception cref="T:System.ArgumentException"><paramref name="resourceType" />
+    ///  是一个空字符串。
+    ///</exception>
     function AddResource(resourceType: DDN.mscorlib.DNType; resourceUri: DDN.System.DNUri): DNXpsResource;
+    ///<summary>
+    ///  添加一个新 <see cref="T:System.Windows.Xps.Packaging.XpsFont" />
+    ///  到当前页。
+    ///</summary>
+    ///<returns>
+    ///  已添加新的字体资源。
+    ///</returns>
+    ///<exception cref="T:System.ObjectDisposedException"><see cref="M:System.IDisposable.Dispose" />
+    ///  已调用。
+    ///</exception>
     function AddFont: DNXpsFont; overload;
+    ///<summary>
+    ///  将添加一个新的经过模糊处理 <see cref="T:System.Windows.Xps.Packaging.XpsFont" />
+    ///  到当前页。
+    ///</summary>
+    ///  <param name="obfuscate"><see langword="true" />
+    ///  字体; 进行模糊处理否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  已添加新的字体资源。
+    ///</returns>
+    ///<exception cref="T:System.ObjectDisposedException"><see cref="M:System.IDisposable.Dispose" />
+    ///  已调用。
+    ///</exception>
     function AddFont(obfuscate: Boolean): DNXpsFont; overload;
+    ///<summary>
+    ///  添加一个新的经过模糊处理或限制 <see cref="T:System.Windows.Xps.Packaging.XpsFont" />
+    ///  到当前页。
+    ///</summary>
+    ///  <param name="obfuscate"><see langword="true" />
+    ///  字体; 进行模糊处理否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///  <param name="addRestrictedRelationship"><see langword="true" />
+    ///  要防止修改使用该字体; 任何文本的否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  已添加新的字体资源。
+    ///</returns>
+    ///<exception cref="T:System.ObjectDisposedException"><see cref="M:System.IDisposable.Dispose" />
+    ///  已调用。
+    ///</exception>
     function AddFont(obfuscate: Boolean; addRestrictedRelationship: Boolean): DNXpsFont; overload;
+    ///<summary>
+    ///  添加一个新 <see cref="T:System.Windows.Xps.Packaging.XpsColorContext" />
+    ///  到当前页。
+    ///</summary>
+    ///<returns>
+    ///  已添加新颜色上下文资源。
+    ///</returns>
+    ///<exception cref="T:System.ObjectDisposedException"><see cref="M:System.IDisposable.Dispose" />
+    ///  已调用。
+    ///</exception>
     function AddColorContext: DNXpsColorContext;
+    ///<summary>
+    ///  添加 <see cref="T:System.Windows.Xps.Packaging.XpsResourceDictionary" />
+    ///  到页面。
+    ///</summary>
+    ///<returns><see cref="T:System.Windows.Xps.Packaging.XpsResourceDictionary" />
+    ///  已添加到页上。
+    ///</returns>
+    ///<exception cref="T:System.ObjectDisposedException"><see cref="M:System.IDisposable.Dispose" />
+    ///  已调用。
+    ///</exception>
     function AddResourceDictionary: DNXpsResourceDictionary;
+    ///<summary>
+    ///  添加一个新 <see cref="T:System.Windows.Xps.Packaging.XpsImage" />
+    ///  与指定 MIME 类型设置为当前页。
+    ///</summary>
+    ///  <param name="mimeType">
+    ///  MIME 要添加的图像的类型。
+    ///</param>
+    ///<returns>
+    ///  新添加到页面的图像资源
+    ///</returns>
+    ///<exception cref="T:System.ObjectDisposedException"><see cref="M:System.IDisposable.Dispose" />
+    ///  已调用。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="mimeType" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException"><paramref name="mimeType" />
+    ///  是一个空字符串。
+    ///</exception>
     function AddImage(mimeType: string): DNXpsImage; overload;
+    ///<summary>
+    ///  添加一个新 <see cref="T:System.Windows.Xps.Packaging.XpsImage" />
+    ///  与指定 <see cref="T:System.Windows.Xps.Packaging.XpsImageType" />
+    ///  到当前页。
+    ///</summary>
+    ///  <param name="imageType">
+    ///  要向页面添加图像的类型。
+    ///</param>
+    ///<returns>
+    ///  新添加到页面的图像资源
+    ///</returns>
+    ///<exception cref="T:System.ObjectDisposedException"><see cref="M:System.IDisposable.Dispose" />
+    ///  已调用。
+    ///</exception>
     function AddImage(imageType: DNXpsImageType): DNXpsImage; overload;
+    ///<summary>
+    ///  添加指定的缩略图图像 <see cref="T:System.Windows.Xps.Packaging.XpsImageType" />
+    ///  到当前页。
+    ///</summary>
+    ///  <param name="imageType">
+    ///  要添加到网页的缩略图图像类型。
+    ///</param>
+    ///<returns>
+    ///  已添加新的缩略图图像资源。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException"><see cref="M:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddThumbnail(System.Windows.Xps.Packaging.XpsImageType)" />
+    ///  已调用添加一个图像缩略图的此页。
+    ///</exception><exception cref="T:System.ObjectDisposedException"><see cref="M:System.IDisposable.Dispose" />
+    ///  已调用。
+    ///</exception>
     function AddThumbnail(imageType: DNXpsImageType): DNXpsThumbnail;
+    ///<summary>
+    ///  刷新并关闭固定页编写器。
+    ///</summary>
     procedure Commit;
 
   { propertys } 
 
+    ///<summary>
+    ///  设置页上的默认打印选项。
+    ///</summary>
     property PrintTicket: DNPrintTicket write set_PrintTicket;
+    ///<summary>
+    ///  获取 URI 固定页。
+    ///</summary>
+    ///<returns>
+    ///  URI 固定页。
+    ///</returns>
     property Uri: DDN.System.DNUri read get_Uri;
+    ///<summary>
+    ///  获取 <see cref="T:System.Xml.XmlWriter" />
+    ///  为写入 XML 到页面的标记。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlWriter" />
+    ///  为写入 XML 到页面的标记。
+    ///</returns>
     property XmlWriter: DDN.System.Xml.DNXmlWriter read get_XmlWriter;
+    ///<summary>
+    ///  获取此页的从零开始的页码。
+    ///</summary>
+    ///<returns>
+    ///  此页从零开始的页码。
+    ///</returns>
     property PageNumber: Int32 read get_PageNumber;
+    ///<summary>
+    ///  获取标识的字符串列表 <see cref="T:System.Windows.Documents.LinkTarget" />
+    ///  包含在当前页面的超链接点。
+    ///</summary>
+    ///<returns>
+    ///  标识的字符串列表 <see cref="T:System.Windows.Documents.LinkTarget" />
+    ///  该页中包含的超链接点。
+    ///</returns>
     property LinkTargetStream: DDN.mscorlib.DNIList<string> read get_LinkTargetStream;
   end;
 
   //-------------namespace: System.Windows.Xps.Packaging----------------
+  ///<summary>
+  ///  定义用于读取的部件的方法 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader')]
   DNIXpsFixedDocumentSequenceReader = interface(DDN.mscorlib.DNObject)
   ['{B50B7DD3-9AFA-3D8E-9D5A-9FC8F966A01E}']
@@ -298,17 +866,62 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取用于读取器 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  具有指定 统一资源标识符 (URI)。 </summary>
+    ///  <param name="documentSource">
+    ///  URI 固定的文档。
+    ///</param>
     function GetFixedDocument(documentSource: DDN.System.DNUri): DNIXpsFixedDocumentReader;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Printing.PrintTicket" />
+    ///  , ，如果存在一个与之关联 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它包含序列; 默认打印选项或 <see langword="null" />
+    ///  , ，如果没有打印票证存在的文档。
+    ///</returns>
     property PrintTicket: DNPrintTicket read get_PrintTicket;
+    ///<summary>
+    ///  获取 统一资源标识符 (URI) 的 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Uri" />
+    ///  表示 URI 序列。
+    ///</returns>
     property Uri: DDN.System.DNUri read get_Uri;
+    ///<summary>
+    ///  获取一套 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  为每个文档中读取器 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一套 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  读者，对应于每个文档中一个 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  。
+    ///</returns>
     property FixedDocuments: DDN.mscorlib.DNReadOnlyCollection<DNIXpsFixedDocumentReader> read get_FixedDocuments;
+    ///<summary>
+    ///  获取缩略图图像，如果存在，与之关联 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  。
+    ///</summary>
+    ///<returns><see cref="T:System.Windows.Xps.Packaging.XpsThumbnail" />
+    ///  ，表示的图像。
+    ///</returns>
     property Thumbnail: DNXpsThumbnail read get_Thumbnail;
   end;
 
   //-------------namespace: System.Windows.Xps.Packaging----------------
+  ///<summary>
+  ///  定义方法和属性以进行写入 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceWriter')]
   DNIXpsFixedDocumentSequenceWriter = interface(DDN.mscorlib.DNObject)
   ['{F7FC1CBE-CB1C-359C-A1C2-320A3C4CF193}']
@@ -319,13 +932,57 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  添加一个新 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  到 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  用于输出新的编写器 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</returns>
     function AddFixedDocument: DNIXpsFixedDocumentWriter;
+    ///<summary>
+    ///  添加 <see cref="T:System.Windows.Xps.Packaging.XpsThumbnail" />
+    ///  的图像 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  。
+    ///</summary>
+    ///  <param name="imageType">
+    ///  要写入的图像类型。
+    ///  有关示例，请参阅备注。
+    ///</param>
+    ///<returns>
+    ///  新 <see cref="T:System.Windows.Xps.Packaging.XpsThumbnail" />
+    ///  为 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  。
+    ///</returns>
     function AddThumbnail(imageType: DNXpsImageType): DNXpsThumbnail;
+    ///<summary>
+    ///  刷新并关闭 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  编写器。
+    ///</summary>
     procedure Commit;
 
   { propertys } 
 
+    ///<summary>
+    ///  集 <see cref="T:System.Printing.PrintTicket" />
+    ///  为 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  正在写入。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  表示序列的默认打印配置。
+    ///</returns>
     property PrintTicket: DNPrintTicket write set_PrintTicket;
+    ///<summary>
+    ///  获取 URI 的 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  正在写入。
+    ///</summary>
+    ///<returns>
+    ///  URI 的 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  正在写入。
+    ///</returns>
     property Uri: DDN.System.DNUri read get_Uri;
   end;
 
@@ -334,10 +991,25 @@ type
   ['{0A8EAD63-8814-5673-90CE-B820D43F5BAD}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Xps.Packaging.PackagingProgressEventArgs" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="action">
+    ///  打包过程当前正在执行的操作。
+    ///</param>
+    ///  <param name="numberCompleted">
+    ///  同时进行的次数的指定 <paramref name="action" />
+    ///  发生。
+    ///</param>
     {class} function init(action: DNPackagingAction; numberCompleted: Int32): DNPackagingProgressEventArgs;
 
   end;
 
+  ///<summary>
+  ///  为 <see cref="E:System.Windows.Xps.Serialization.XpsPackagingPolicy.PackagingProgressEvent" />
+  ///  事件提供数据。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.PackagingProgressEventArgs')]
   DNPackagingProgressEventArgs = interface(DDN.mscorlib.DNEventArgs)
   ['{233B9183-19E2-313B-A5FD-B74E5EA79939}']
@@ -355,7 +1027,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取同时次数中标识的操作 <see cref="P:System.Windows.Xps.Packaging.PackagingProgressEventArgs.Action" />
+    ///  发生。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  ，它表示的同时进行的次数，在中标识的操作 <see cref="P:System.Windows.Xps.Packaging.PackagingProgressEventArgs.Action" />
+    ///  发生。
+    ///</returns>
     property NumberCompleted: Int32 read get_NumberCompleted;
+    ///<summary>
+    ///  获取一个值，该值指示在打包过程中当前正在发生什么操作。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Windows.Xps.Packaging.PackagingAction" />
+    ///  ，它表示当前正在发生在打包过程的一部分。
+    ///</returns>
     property Action: DNPackagingAction read get_Action;
   end;
 
@@ -366,10 +1053,18 @@ type
   ['{CBED954D-DB52-5D7E-A1FE-F9CE2BA0E416}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Xps.Packaging.SpotLocation" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSpotLocation;
 
   end;
 
+  ///<summary>
+  ///  表示要显示的数字签名上的位置 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.SpotLocation')]
   DNSpotLocation = interface(DDN.mscorlib.DNObject)
   ['{B9426D34-FBA6-313A-A277-89D928073EEF}']
@@ -391,8 +1086,26 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 URI 页在其上显示的数字签名。
+    ///</summary>
+    ///<returns>
+    ///  URI 上要显示签名的页。
+    ///</returns>
     property PageUri: DDN.System.DNUri read get_PageUri write set_PageUri;
+    ///<summary>
+    ///  获取或设置数字签名的 X 页坐标。
+    ///</summary>
+    ///<returns>
+    ///  数字签名 X 页坐标。
+    ///</returns>
     property StartX: Double read get_StartX write set_StartX;
+    ///<summary>
+    ///  获取或设置数字签名的 Y 页坐标。
+    ///</summary>
+    ///<returns>
+    ///  数字签名 Y 页坐标。
+    ///</returns>
     property StartY: Double read get_StartY write set_StartY;
   end;
 
@@ -403,14 +1116,37 @@ type
   ['{7EA68D8B-DA78-576F-A927-7B71389C5580}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Xps.Packaging.XpsDigitalSignature" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="packageSignature">
+    ///  包的关联的数字签名。
+    ///</param>
+    ///  <param name="package">
+    ///  关联的包。
+    ///</param>
     {class} function init(packageSignature: DDN.WindowsBase.DNPackageDigitalSignature; &package: DNXpsDocument): DNXpsDigitalSignature;
 
   { static methods } 
 
+    ///<summary>
+    ///  验证指定的 X.509 证书。
+    ///</summary>
+    ///  <param name="certificate">
+    ///  真品证书。
+    ///</param>
+    ///<returns>
+    ///  枚举值的按位组合，这些枚举值指定验证尝试的结果。
+    ///</returns>
     {class} function VerifyCertificate(certificate: DDN.mscorlib.DNX509Certificate): DDN.System.DNX509ChainStatusFlags; overload;
 
   end;
 
+  ///<summary>
+  ///  表示的数字签名 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.XpsDigitalSignature')]
   DNXpsDigitalSignature = interface(DDN.mscorlib.DNObject)
   ['{FDAC0C74-79B6-3D77-ABCF-0E1023C2B7E6}']
@@ -428,8 +1164,32 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  根据 XPS <see cref="T:System.IO.Packaging.Package" />
+    ///  中嵌入的 X.509 证书验证文档的数字签名。
+    ///</summary>
+    ///<returns>
+    ///  指定验证尝试结果的 <see cref="T:System.IO.Packaging.VerifyResult" />
+    ///  枚举值之一。
+    ///</returns>
     function Verify: DDN.WindowsBase.DNVerifyResult; overload;
+    ///<summary>
+    ///  根据指定 X.509 证书验证文档数字签名。
+    ///</summary>
+    ///  <param name="certificate">
+    ///  签名者的真品证书。
+    ///</param>
+    ///<returns>
+    ///  指定验证尝试结果的 <see cref="T:System.IO.Packaging.VerifyResult" />
+    ///  枚举值之一。
+    ///</returns>
     function Verify(certificate: DDN.mscorlib.DNX509Certificate): DDN.WindowsBase.DNVerifyResult; overload;
+    ///<summary>
+    ///  验证包中嵌入的 X.509 证书。
+    ///</summary>
+    ///<returns>
+    ///  枚举值的按位组合，这些枚举值指定验证尝试的结果。
+    ///</returns>
     function VerifyCertificate: DDN.System.DNX509ChainStatusFlags; overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -438,14 +1198,79 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取已签名的文档序列文档序列读取器。
+    ///</summary>
+    ///<returns><see cref="T:System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader" />
+    ///  ; 或 <see langword="null" />
+    ///  如果不是所有有效 XPS 部件已签名的文档中。
+    ///</returns>
     property SignedDocumentSequence: DNIXpsFixedDocumentSequenceReader read get_SignedDocumentSequence;
+    ///<summary>
+    ///  获取一个值，该值指示是否其他人对包签名是否失效的数字签名。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果应用其他的数字签名; 如果使签名无效否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property SignatureOriginRestricted: Boolean read get_SignatureOriginRestricted;
+    ///<summary>
+    ///  获取一个值，该值指示是否更改文档的属性使数字签名无效。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果更改文档的属性将使失效的签名。否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property DocumentPropertiesRestricted: Boolean read get_DocumentPropertiesRestricted;
+    ///<summary>
+    ///  获取 GUID 的签名。
+    ///</summary>
+    ///<returns>
+    ///  全局唯一标识符 (GUID) 的签名。
+    ///</returns>
     property Id: DDN.mscorlib.DNNullable<DDN.mscorlib.DNGuid> read get_Id;
+    ///<summary>
+    ///  获取签名程序的 X.509 证书。
+    ///</summary>
+    ///<returns>
+    ///  签名程序的 X.509 证书；当文档包中未嵌入证书时，则为 <see langword="null" />
+    ///  。
+    ///</returns>
     property SignerCertificate: DDN.mscorlib.DNX509Certificate read get_SignerCertificate;
+    ///<summary>
+    ///  获取日期和时间创建签名。
+    ///</summary>
+    ///<returns>
+    ///  已签名的日期和时间时页文档或文档序列。
+    ///</returns>
     property SigningTime: DDN.mscorlib.DNDateTime read get_SigningTime;
+    ///<summary>
+    ///  获取签名的加密哈希值。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Byte" />
+    ///  数组，其中包含签名的加密哈希值。
+    ///</returns>
     property SignatureValue: TArray<Byte> read get_SignatureValue;
+    ///<summary>
+    ///  获取 URL 标识签名类型的字符串。
+    ///</summary>
+    ///<returns>
+    ///  一个 URL 标识签名类型的字符串。
+    ///  默认的签名类型是 <see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NTransformUrl" />
+    ///  。
+    ///</returns>
     property SignatureType: string read get_SignatureType;
+    ///<summary>
+    ///  获取一个值，该值指示签名者的 X.509 证书是否包含在文档 <see cref="T:System.IO.Packaging.Package" />
+    ///  中。
+    ///</summary>
+    ///<returns>
+    ///  如果签名者的 X.509 证书嵌入文档 <see cref="T:System.IO.Packaging.Package" />
+    ///  中，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsCertificateAvailable: Boolean read get_IsCertificateAvailable;
   end;
 
@@ -456,6 +1281,9 @@ type
   ['{271EB636-AC0B-5D60-AA6B-A93290DCBDEE}']
   end;
 
+  ///<summary>
+  ///  定义一个抽象类，是中可包含的所有部件类的父 XPS 包。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.XpsPartBase')]
   DNXpsPartBase = interface(DDN.mscorlib.DNObject)
   ['{A09C3D55-811B-3431-A499-3104C5975EEC}']
@@ -473,6 +1301,12 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 统一资源标识符 (URI) 的部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Uri" />
+    ///  的部分。
+    ///</returns>
     property Uri: DDN.System.DNUri read get_Uri write set_Uri;
   end;
 
@@ -483,18 +1317,100 @@ type
   ['{28014FA0-1901-5714-86DA-CB6C9CD482C2}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  有权访问指定的类 XML 纸张规范 (XPS) <see cref="T:System.IO.Packaging.Package" />
+    ///  和默认交错、 资源和压缩选项。
+    ///</summary>
+    ///  <param name="package">
+    ///  目标 XPS 程序包以进行 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  。
+    ///</param>
     {class} function init(&package: DDN.WindowsBase.DNPackage): DNXpsDocument; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  类，该类是包含在指定的 <see cref="T:System.IO.Packaging.Package" />
+    ///  与指定的默认交错、 资源和压缩选项。
+    ///</summary>
+    ///  <param name="package">
+    ///  目标包 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  。
+    ///</param>
+    ///  <param name="compressionOption">
+    ///  包压缩选项。
+    ///</param>
     {class} function init(&package: DDN.WindowsBase.DNPackage; compressionOption: DDN.WindowsBase.DNCompressionOption): DNXpsDocument; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  类，该类是包含在指定的 <see cref="T:System.IO.Packaging.Package" />
+    ///  使用指定的默认交错、 资源和压缩选项。
+    ///</summary>
+    ///  <param name="package">
+    ///  目标包 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  。
+    ///</param>
+    ///  <param name="compressionOption">
+    ///  包压缩选项。
+    ///</param>
+    ///  <param name="path">
+    ///  统一资源标识符 (URI) 字符串形式的文档。
+    ///</param>
     {class} function init(&package: DDN.WindowsBase.DNPackage; compressionOption: DDN.WindowsBase.DNCompressionOption; path: string): DNXpsDocument; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  类，该类是包含在指定的 <see cref="T:System.IO.Packaging.Package" />
+    ///  带有默认交错、 资源和压缩选项的文件。
+    ///</summary>
+    ///  <param name="path">
+    ///  目标的路径和文件名名称 <see cref="T:System.IO.Packaging.Package" />
+    ///  为 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  。
+    ///</param>
+    ///  <param name="packageAccess">
+    ///  若要打开的文件 I/O 模式 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  。
+    ///</param>
     {class} function init(path: string; packageAccess: DDN.mscorlib.DNFileAccess): DNXpsDocument; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  类，该类是包含在指定的 <see cref="T:System.IO.Packaging.Package" />
+    ///  带有默认交错、 资源和压缩选项的文件。
+    ///</summary>
+    ///  <param name="path">
+    ///  目标的路径和文件名名称 <see cref="T:System.IO.Packaging.Package" />
+    ///  为 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  。
+    ///</param>
+    ///  <param name="packageAccess">
+    ///  若要打开的文件 I/O 模式 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  。
+    ///</param>
+    ///  <param name="compressionOption">
+    ///  包压缩选项。
+    ///</param>
     {class} function init(path: string; packageAccess: DDN.mscorlib.DNFileAccess; compressionOption: DDN.WindowsBase.DNCompressionOption): DNXpsDocument; overload;
 
   { static methods } 
 
+    ///<summary>
+    ///  创建 <see cref="T:System.Windows.Xps.XpsDocumentWriter" />
+    ///  为写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  。
+    ///</summary>
+    ///  <param name="xpsDocument">
+    ///  XPS 文档编写。
+    ///</param>
+    ///<returns><see cref="T:System.Windows.Xps.XpsDocumentWriter" />
+    ///  要用于编写 XML 纸张规范 (XPS) 文档。
+    ///</returns>
     {class} function CreateXpsDocumentWriter(xpsDocument: DNXpsDocument): DDN.System.Windows.Xps.DNXpsDocumentWriter;
 
   end;
 
+  ///<summary>
+  ///  提供了 <see cref="T:System.IO.Packaging.Package" />
+  ///  保存的内容 XPS 文档。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.XpsDocument')]
   DNXpsDocument = interface(DNXpsPartBase)
   ['{9219AAF4-C8B9-33B2-8D20-23F062C34EE6}']
@@ -513,14 +1429,118 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  使用指定的 X.509 证书对包部件集合进行签名。
+    ///</summary>
+    ///  <param name="certificate">
+    ///  用于对每个部件进行签名的 X.509 证书；或为 <see langword="null" />
+    ///  以提示用户选择已安装的证书。
+    ///</param>
+    ///  <param name="embedCertificate">
+    ///  若要在包中存储证书，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///  <param name="restrictions">
+    ///  指示必须从签名中排除的依赖部件的标志。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Windows.Xps.Packaging.XpsDigitalSignature" />
+    ///  ，其中包含有关签名的信息。
+    ///</returns>
     function SignDigitally(certificate: DDN.mscorlib.DNX509Certificate; embedCertificate: Boolean; restrictions: DNXpsDigSigPartAlteringRestrictions): DNXpsDigitalSignature; overload;
-    function SignDigitally(certificate: DDN.mscorlib.DNX509Certificate; embedCertificate: Boolean; restrictions: DNXpsDigSigPartAlteringRestrictions; id: DDN.mscorlib.DNGuid): DNXpsDigitalSignature; overload;
-    function SignDigitally(certificate: DDN.mscorlib.DNX509Certificate; embedCertificate: Boolean; restrictions: DNXpsDigSigPartAlteringRestrictions; id: DDN.mscorlib.DNGuid; testIsSignable: Boolean): DNXpsDigitalSignature; overload;
-    procedure RemoveSignature(signature: DNXpsDigitalSignature);
-    function AddThumbnail(imageType: DNXpsImageType): DNXpsThumbnail;
+    ///<summary>
+    ///  添加根 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  到包，并返回一个编写器。
+    ///</summary>
+    ///<returns>
+    ///  XML 纸张规范 (XPS) 固定文档序列编写器这 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  。
+    ///</returns>
     function AddFixedDocumentSequence: DNIXpsFixedDocumentSequenceWriter;
-    function GetFixedDocumentSequence: DDN.PresentationFramework.DNFixedDocumentSequence;
+    ///<summary>
+    ///  关闭 XPS 文档 <see cref="T:System.IO.Packaging.Package" />
+    ///  。
+    ///</summary>
     procedure Close;
+    ///<summary>
+    ///  使用指定的 X.509 证书对包部件的集合进行签名。
+    ///</summary>
+    ///  <param name="certificate">
+    ///  用于对每个部件进行签名的 X.509 证书；或为 <see langword="null" />
+    ///  以提示用户选择已安装的证书。
+    ///</param>
+    ///  <param name="embedCertificate">
+    ///  若要在包中存储证书，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///  <param name="restrictions">
+    ///  指示从签名中排除的依赖部件的标志。
+    ///</param>
+    ///  <param name="id">
+    ///  要分配给签名的 ID。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Windows.Xps.Packaging.XpsDigitalSignature" />
+    ///  ，其中包含有关签名的信息。
+    ///</returns>
+    function SignDigitally(certificate: DDN.mscorlib.DNX509Certificate; embedCertificate: Boolean; restrictions: DNXpsDigSigPartAlteringRestrictions; id: DDN.mscorlib.DNGuid): DNXpsDigitalSignature; overload;
+    ///<summary>
+    ///  使用指定的 X.509 证书对包部件集合进行签名。
+    ///</summary>
+    ///  <param name="certificate">
+    ///  用于对每个部件进行签名的 X.509 证书；或为 <see langword="null" />
+    ///  以提示用户选择已安装的证书。
+    ///</param>
+    ///  <param name="embedCertificate">
+    ///  若要在包中存储证书，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///  <param name="restrictions">
+    ///  指示要从签名中排除的依赖部件的标志。
+    ///</param>
+    ///  <param name="id">
+    ///  要分配给签名的 ID。
+    ///</param>
+    ///  <param name="testIsSignable">
+    ///  若要在签名之前验证 <see cref="P:System.Windows.Xps.Packaging.XpsDocument.IsSignable" />
+    ///  是否为 <see langword="true" />
+    ///  ，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Windows.Xps.Packaging.XpsDigitalSignature" />
+    ///  ，其中包含有关签名的信息。
+    ///</returns>
+    function SignDigitally(certificate: DDN.mscorlib.DNX509Certificate; embedCertificate: Boolean; restrictions: DNXpsDigSigPartAlteringRestrictions; id: DDN.mscorlib.DNGuid; testIsSignable: Boolean): DNXpsDigitalSignature; overload;
+    ///<summary>
+    ///  从包中删除签名。
+    ///</summary>
+    ///  <param name="signature">
+    ///  删除签名。
+    ///</param>
+    procedure RemoveSignature(signature: DNXpsDigitalSignature);
+    ///<summary>
+    ///  向包中添加一个缩略图图像。
+    ///</summary>
+    ///  <param name="imageType">
+    ///  图像的格式。
+    ///</param>
+    ///<returns>
+    ///  新添加 <see cref="T:System.Windows.Xps.Packaging.XpsThumbnail" />
+    ///  。
+    ///</returns>
+    function AddThumbnail(imageType: DNXpsImageType): DNXpsThumbnail;
+    ///<summary>
+    ///  返回的包根目录的固定文档序列。
+    ///</summary>
+    ///<returns><see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  的包。
+    ///</returns>
+    function GetFixedDocumentSequence: DDN.PresentationFramework.DNFixedDocumentSequence;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -528,13 +1548,70 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个值，该值指示包是否处于可写。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果程序包是可写;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsWriter: Boolean read get_IsWriter;
+    ///<summary>
+    ///  获取一个值，该值指示包是否可读。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果程序包是可读;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsReader: Boolean read get_IsReader;
+    ///<summary>
+    ///  获取 <see cref="T:System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader" />
+    ///  用于阅读文档。
+    ///</summary>
+    ///<returns><see cref="T:System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader" />
+    ///  用于阅读文档。
+    ///</returns>
     property FixedDocumentSequenceReader: DNIXpsFixedDocumentSequenceReader read get_FixedDocumentSequenceReader;
+    ///<summary>
+    ///  获取一套 XML 纸张规范 (XPS) 与包关联的签名。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Windows.Xps.Packaging.XpsDigitalSignature" />
+    ///  这些对象表示与包关联的签名。
+    ///</returns>
     property Signatures: DDN.mscorlib.DNReadOnlyCollection<DNXpsDigitalSignature> read get_Signatures;
+    ///<summary>
+    ///  获取核心 <see cref="T:System.IO.Packaging.PackageProperties" />
+    ///  的 XPS 文档。
+    ///</summary>
+    ///<returns>
+    ///  核心属性 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///<see cref="T:System.IO.Packaging.Package" />
+    ///  。
+    ///</returns>
     property CoreDocumentProperties: DDN.WindowsBase.DNPackageProperties read get_CoreDocumentProperties;
+    ///<summary>
+    ///  获取或设置 XML 纸张规范 (XPS) 与文档相关联的缩略图。
+    ///</summary>
+    ///<returns><see cref="T:System.Windows.Xps.Packaging.XpsThumbnail" />
+    ///  ，表示与文档相关联的缩略图图像。
+    ///</returns>
     property Thumbnail: DNXpsThumbnail read get_Thumbnail write set_Thumbnail;
+    ///<summary>
+    ///  获取一个值，该值指示是否可以进行数字签名的包。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果可以对包进行签名;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSignable: Boolean read get_IsSignable;
+    ///<summary>
+    ///  获取或设置 统一资源标识符 (URI) 的部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Uri" />
+    ///  的部分。
+    ///</returns>
     property Uri: DDN.System.DNUri read get_Uri write set_Uri;
   end;
 
@@ -545,6 +1622,10 @@ type
   ['{07BC8B1C-2187-5196-BE0B-8A4F46155E3F}']
   end;
 
+  ///<summary>
+  ///  定义可添加到的资源的基类 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.XpsResource')]
   DNXpsResource = interface(DNXpsPartBase)
   ['{65F817DC-0365-3181-A0F9-EC8B61269E00}']
@@ -555,8 +1636,27 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回 URI 的资源的相对于指定的绝对 URI。
+    ///</summary>
+    ///  <param name="inUri">
+    ///  起始的绝对 URI。
+    ///</param>
+    ///<returns><see cref="T:System.Uri" />
+    ///  的资源的相对于指定的绝对 <paramref name="inUri" />
+    ///  。
+    ///</returns>
     function RelativeUri(inUri: DDN.System.DNUri): DDN.System.DNUri;
+    ///<summary>
+    ///  当在派生类中重写时返回用于读取或写入资源的 I/O 流。
+    ///</summary>
+    ///<returns><see cref="T:System.IO.Stream" />
+    ///  以进行读取或写入资源。
+    ///</returns>
     function GetStream: DDN.mscorlib.DNStream;
+    ///<summary>
+    ///  向文档包提交所有更改并刷新资源。
+    ///</summary>
     procedure Commit;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -565,6 +1665,12 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 统一资源标识符 (URI) 的部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Uri" />
+    ///  的部分。
+    ///</returns>
     property Uri: DDN.System.DNUri read get_Uri write set_Uri;
   end;
 
@@ -575,6 +1681,9 @@ type
   ['{41586173-F915-5A14-863B-A4A8D3737485}']
   end;
 
+  ///<summary>
+  ///  表示位图图像的颜色上下文。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.XpsColorContext')]
   DNXpsColorContext = interface(DNXpsResource)
   ['{E3FB4321-8845-341E-A481-8F558F468F1E}']
@@ -585,8 +1694,27 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回 URI 的资源的相对于指定的绝对 URI。
+    ///</summary>
+    ///  <param name="inUri">
+    ///  起始的绝对 URI。
+    ///</param>
+    ///<returns><see cref="T:System.Uri" />
+    ///  的资源的相对于指定的绝对 <paramref name="inUri" />
+    ///  。
+    ///</returns>
     function RelativeUri(inUri: DDN.System.DNUri): DDN.System.DNUri;
+    ///<summary>
+    ///  当在派生类中重写时返回用于读取或写入资源的 I/O 流。
+    ///</summary>
+    ///<returns><see cref="T:System.IO.Stream" />
+    ///  以进行读取或写入资源。
+    ///</returns>
     function GetStream: DDN.mscorlib.DNStream;
+    ///<summary>
+    ///  向文档包提交所有更改并刷新资源。
+    ///</summary>
     procedure Commit;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -605,10 +1733,24 @@ type
   ['{EE0DE445-06E4-5A07-9970-14F20DDB48AC}']
   { static methods } 
 
+    ///<summary>
+    ///  对字体数据进行模糊处理。
+    ///</summary>
+    ///  <param name="fontData">
+    ///  要进行模糊处理的字体数据。
+    ///</param>
+    ///  <param name="guid">
+    ///  全局唯一标识符 (GUID) 用于进行模糊处理 <paramref name="fontdata" />
+    ///  。
+    ///</param>
     {class} procedure ObfuscateFontData(fontData: TArray<Byte>; guid: DDN.mscorlib.DNGuid);
 
   end;
 
+  ///<summary>
+  ///  表示在字体 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.XpsFont')]
   DNXpsFont = interface(DNXpsResource)
   ['{B808A2F1-17CF-3886-92E6-06C07BB28B36}']
@@ -622,8 +1764,27 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回 URI 的资源的相对于指定的绝对 URI。
+    ///</summary>
+    ///  <param name="inUri">
+    ///  起始的绝对 URI。
+    ///</param>
+    ///<returns><see cref="T:System.Uri" />
+    ///  的资源的相对于指定的绝对 <paramref name="inUri" />
+    ///  。
+    ///</returns>
     function RelativeUri(inUri: DDN.System.DNUri): DDN.System.DNUri;
+    ///<summary>
+    ///  当在派生类中重写时返回用于读取或写入资源的 I/O 流。
+    ///</summary>
+    ///<returns><see cref="T:System.IO.Stream" />
+    ///  以进行读取或写入资源。
+    ///</returns>
     function GetStream: DDN.mscorlib.DNStream;
+    ///<summary>
+    ///  向文档包提交所有更改并刷新资源。
+    ///</summary>
     procedure Commit;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -632,7 +1793,21 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个值，该值指示是否对字体模糊处理。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果对字体模糊处理。否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsObfuscated: Boolean read get_IsObfuscated;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否可以修改使用此字体的文本。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果可以更改或编辑，则使用此字体的文本否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsRestricted: Boolean read get_IsRestricted write set_IsRestricted;
     property Uri: DDN.System.DNUri read get_Uri write set_Uri;
   end;
@@ -644,6 +1819,10 @@ type
   ['{5E64BB29-16CC-5875-81D2-46A49398309A}']
   end;
 
+  ///<summary>
+  ///  表示的图像 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.XpsImage')]
   DNXpsImage = interface(DNXpsResource)
   ['{6A1E8953-3031-30D9-AA72-9E37CE3DFCE9}']
@@ -654,8 +1833,27 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回 URI 的资源的相对于指定的绝对 URI。
+    ///</summary>
+    ///  <param name="inUri">
+    ///  起始的绝对 URI。
+    ///</param>
+    ///<returns><see cref="T:System.Uri" />
+    ///  的资源的相对于指定的绝对 <paramref name="inUri" />
+    ///  。
+    ///</returns>
     function RelativeUri(inUri: DDN.System.DNUri): DDN.System.DNUri;
+    ///<summary>
+    ///  当在派生类中重写时返回用于读取或写入资源的 I/O 流。
+    ///</summary>
+    ///<returns><see cref="T:System.IO.Stream" />
+    ///  以进行读取或写入资源。
+    ///</returns>
     function GetStream: DDN.mscorlib.DNStream;
+    ///<summary>
+    ///  向文档包提交所有更改并刷新资源。
+    ///</summary>
     procedure Commit;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -674,6 +1872,11 @@ type
   ['{9777BAFC-A0B7-5200-8250-63D64A76695D}']
   end;
 
+  ///<summary>
+  ///  表示的字典 <see cref="T:System.Windows.Xps.Packaging.XpsResource" />
+  ///  元素都是可用的页 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.XpsResourceDictionary')]
   DNXpsResourceDictionary = interface(DNXpsResource)
   ['{C0E9A3BA-E97B-32B1-8013-19547F723D45}']
@@ -684,8 +1887,27 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回 URI 的资源的相对于指定的绝对 URI。
+    ///</summary>
+    ///  <param name="inUri">
+    ///  起始的绝对 URI。
+    ///</param>
+    ///<returns><see cref="T:System.Uri" />
+    ///  的资源的相对于指定的绝对 <paramref name="inUri" />
+    ///  。
+    ///</returns>
     function RelativeUri(inUri: DDN.System.DNUri): DDN.System.DNUri;
+    ///<summary>
+    ///  当在派生类中重写时返回用于读取或写入资源的 I/O 流。
+    ///</summary>
+    ///<returns><see cref="T:System.IO.Stream" />
+    ///  以进行读取或写入资源。
+    ///</returns>
     function GetStream: DDN.mscorlib.DNStream;
+    ///<summary>
+    ///  向文档包提交所有更改并刷新资源。
+    ///</summary>
     procedure Commit;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -704,6 +1926,12 @@ type
   ['{9A89B904-6B9C-57A8-B18D-2BBC38132C11}']
   end;
 
+  ///<summary>
+  ///  表示 <see cref="N:System.Windows.Documents.DocumentStructures" />
+  ///  或 <see cref="T:System.Windows.Documents.DocumentStructures.StoryFragments" />
+  ///  元素 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.XpsStructure')]
   DNXpsStructure = interface(DNXpsResource)
   ['{98E1FE76-366E-38A8-B7EC-074C2F54EC45}']
@@ -714,8 +1942,27 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回 URI 的资源的相对于指定的绝对 URI。
+    ///</summary>
+    ///  <param name="inUri">
+    ///  起始的绝对 URI。
+    ///</param>
+    ///<returns><see cref="T:System.Uri" />
+    ///  的资源的相对于指定的绝对 <paramref name="inUri" />
+    ///  。
+    ///</returns>
     function RelativeUri(inUri: DDN.System.DNUri): DDN.System.DNUri;
+    ///<summary>
+    ///  当在派生类中重写时返回用于读取或写入资源的 I/O 流。
+    ///</summary>
+    ///<returns><see cref="T:System.IO.Stream" />
+    ///  以进行读取或写入资源。
+    ///</returns>
     function GetStream: DDN.mscorlib.DNStream;
+    ///<summary>
+    ///  向文档包提交所有更改并刷新资源。
+    ///</summary>
     procedure Commit;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -734,6 +1981,9 @@ type
   ['{43B0BE5C-873C-590B-A5A1-C230AA5BE77A}']
   end;
 
+  ///<summary>
+  ///  表示文档的顺序、 单个文档或单个页面的缩略图图像。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.XpsThumbnail')]
   DNXpsThumbnail = interface(DNXpsResource)
   ['{61BBC71B-A57A-39C8-BF74-EE0C3F991891}']
@@ -744,8 +1994,27 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回 URI 的资源的相对于指定的绝对 URI。
+    ///</summary>
+    ///  <param name="inUri">
+    ///  起始的绝对 URI。
+    ///</param>
+    ///<returns><see cref="T:System.Uri" />
+    ///  的资源的相对于指定的绝对 <paramref name="inUri" />
+    ///  。
+    ///</returns>
     function RelativeUri(inUri: DDN.System.DNUri): DDN.System.DNUri;
+    ///<summary>
+    ///  当在派生类中重写时返回用于读取或写入资源的 I/O 流。
+    ///</summary>
+    ///<returns><see cref="T:System.IO.Stream" />
+    ///  以进行读取或写入资源。
+    ///</returns>
     function GetStream: DDN.mscorlib.DNStream;
+    ///<summary>
+    ///  向文档包提交所有更改并刷新资源。
+    ///</summary>
     procedure Commit;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -764,10 +2033,18 @@ type
   ['{8DF911BB-34EB-5D1E-A608-A585190F92E7}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Xps.Packaging.XpsSignatureDefinition" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXpsSignatureDefinition;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+  ///  数字签名。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Packaging.XpsSignatureDefinition')]
   DNXpsSignatureDefinition = interface(DDN.mscorlib.DNObject)
   ['{C2A02D80-ED50-3A17-B4A3-CFECFE9864E3}']
@@ -799,13 +2076,85 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置请求进行签名 （或已签名） 包的人员的标识。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示签名者，例如，"Mary Jones，市场营销部门"
+    ///  默认值为 <see langword="null" />
+    ///  。
+    ///</returns>
     property RequestedSigner: string read get_RequestedSigner write set_RequestedSigner;
+    ///<summary>
+    ///  获取或设置指定要显示中可见的数字签名的位置 XML 纸张规范 (XPS) 文档。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Windows.Xps.Packaging.SpotLocation" />
+    ///  ，它表示在包中的签名的可见请求出现的位置。
+    ///  默认值为 <see langword="null" />
+    ///  。
+    ///</returns>
     property SpotLocation: DNSpotLocation read get_SpotLocation write set_SpotLocation;
+    ///<summary>
+    ///  获取或设置针对签名签名者的签名目的协议的字符串值。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  （表示目的协议）; 例如，"我已阅读并达成一致。"
+    ///  默认值为 <see langword="null" />
+    ///  。
+    ///</returns>
     property Intent: string read get_Intent write set_Intent;
+    ///<summary>
+    ///  获取或设置的日期和时间所依据请求签名者必须对指定文档的部分签名。
+    ///</summary>
+    ///<returns>
+    ///  A (<see cref="T:System.Nullable" />
+    ///  ) <see cref="T:System.DateTime" />
+    ///  ，它表示签名者必须对包签名时所依据的截止时间。
+    ///  默认值为 <see langword="null" />
+    ///  。
+    ///</returns>
     property SignBy: DDN.mscorlib.DNNullable<DDN.mscorlib.DNDateTime> read get_SignBy write set_SignBy;
+    ///<summary>
+    ///  获取或设置的法律管辖区对包进行签名。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示所需区域，例如，"犹他州为例，美国。"
+    ///  默认值为 <see langword="null" />
+    ///  。
+    ///</returns>
     property SigningLocale: string read get_SigningLocale write set_SigningLocale;
+    ///<summary>
+    ///  获取或设置此唯一标识符 <see cref="T:System.Windows.Xps.Packaging.XpsSignatureDefinition" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  A (<see cref="T:System.Nullable" />
+    ///  ) <see cref="T:System.Guid" />
+    ///  ，它表示 ID 签名定义。
+    ///  默认值为 <see langword="null" />
+    ///  。
+    ///</returns>
     property SpotId: DDN.mscorlib.DNNullable<DDN.mscorlib.DNGuid> read get_SpotId write set_SpotId;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Globalization.CultureInfo" />
+    ///  的签名。
+    ///</summary>
+    ///<returns>
+    ///  签名的区域性信息。
+    ///</returns>
     property Culture: DDN.mscorlib.DNCultureInfo read get_Culture write set_Culture;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否存在未写入的属性更改 <see cref="T:System.Windows.Xps.Packaging.XpsSignatureDefinition" />
+    ///  类，必须将写入到包的流。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果存在未提交的更改;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property HasBeenModified: Boolean read get_HasBeenModified write set_HasBeenModified;
   end;
 

@@ -42,10 +42,18 @@ type
   ['{1F792393-6978-5C0B-AC73-A8334D60184A}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNServiceNameElementCollection;
 
   end;
 
+  ///<summary><see cref="T:System.Security.Authentication.ExtendedProtection.ServiceNameCollection" />
+  ///  类是一个集合表示的配置元素的服务主体名称 <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection')]
   DNServiceNameElementCollection = interface(DNObject)
   ['{E3B5500D-B13D-3EA3-BC3A-D59DF95306CB}']
@@ -72,11 +80,71 @@ type
 
   { methods } 
 
+    ///<summary><see cref="M:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection.Add(System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement)" />
+    ///  方法将添加 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement" />
+    ///  实例与这 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection" />
+    ///  。
+    ///</summary>
+    ///  <param name="element"><see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement" />
+    ///  实例要添加到此 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection" />
+    ///  。
+    ///</param>
     procedure Add(element: DNServiceNameElement);
+    ///<summary><see cref="M:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection.Clear" />
+    ///  方法从这中移除所有配置元素对象 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection" />
+    ///  。
+    ///</summary>
     procedure Clear;
+    ///<summary><see cref="M:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection.IndexOf(System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement)" />
+    ///  方法检索在此指定的配置元素的索引 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection" />
+    ///  。
+    ///</summary>
+    ///  <param name="element"><see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement" />
+    ///  要检索的索引，在此实例 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  指定的索引 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement" />
+    ///  在此 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection" />
+    ///  。
+    ///</returns>
     function IndexOf(element: DNServiceNameElement): Int32;
+    ///<summary><see cref="M:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection.Remove(System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement)" />
+    ///  方法移除 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement" />
+    ///  从此实例 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection" />
+    ///  。
+    ///</summary>
+    ///  <param name="element"><see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement" />
+    ///  要删除与该实例 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection" />
+    ///  。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="element " />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure Remove(element: DNServiceNameElement); overload;
+    ///<summary><see cref="M:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection.Remove(System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement)" />
+    ///  方法移除 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement" />
+    ///  从此实例 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection" />
+    ///  基于 <see cref="T:System.String" />
+    ///  指定。
+    ///</summary>
+    ///  <param name="name">
+    ///  一个 <see cref="T:System.String" />
+    ///  表示 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement" />
+    ///  要删除与该实例 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection" />
+    ///</param>
     procedure Remove(name: string); overload;
+    ///<summary><see cref="M:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection.Remove(System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement)" />
+    ///  方法移除 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement" />
+    ///  从此实例 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection" />
+    ///  基于指定的索引。
+    ///</summary>
+    ///  <param name="index">
+    ///  索引 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement" />
+    ///  要删除与该实例 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection" />
+    ///  。
+    ///</param>
     procedure RemoveAt(index: Int32);
     function IsReadOnly: Boolean;
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
@@ -111,10 +179,18 @@ type
   ['{74FBFDC8-F236-5473-94D1-DD3A6290A3C8}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ExtendedProtectionPolicyElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNExtendedProtectionPolicyElement;
 
   end;
 
+  ///<summary><see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ExtendedProtectionPolicyElement" />
+  ///  类表示一个配置元素 <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Security.Authentication.ExtendedProtection.Configuration.ExtendedProtectionPolicyElement')]
   DNExtendedProtectionPolicyElement = interface(DNObject)
   ['{7F56D197-F36C-3657-922E-B6FF4FAFE485}']
@@ -136,6 +212,15 @@ type
 
   { methods } 
 
+    ///<summary><see cref="M:System.Security.Authentication.ExtendedProtection.Configuration.ExtendedProtectionPolicyElement.BuildPolicy" />
+    ///  方法会构建一个新 <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />
+    ///  实例基于上设置的属性 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ExtendedProtectionPolicyElement" />
+    ///  类。
+    ///</summary>
+    ///<returns>
+    ///  一个新 <see cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />
+    ///  实例，它表示创建的扩展的保护策略。
+    ///</returns>
     function BuildPolicy: DNExtendedProtectionPolicy;
     function IsReadOnly: Boolean;
     function Equals(compareTo: DDN.mscorlib.DNObject): Boolean;
@@ -145,8 +230,29 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置此配置策略元素的策略强制值。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.Security.Authentication.ExtendedProtection.PolicyEnforcement" />
+    ///  值，该值指示应何时强制实施扩展的保护策略。
+    ///</returns>
     property PolicyEnforcement: DNPolicyEnforcement read get_PolicyEnforcement write set_PolicyEnforcement;
+    ///<summary>
+    ///  获取或设置此配置策略元素的扩展的保护策略强制实施的保护类型。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Authentication.ExtendedProtection.ProtectionScenario" />
+    ///  值，该值指示此策略强制实施的保护类型。
+    ///</returns>
     property ProtectionScenario: DNProtectionScenario read get_ProtectionScenario write set_ProtectionScenario;
+    ///<summary>
+    ///  获取或设置自定义服务提供程序名称 (SPN) 列表用来与此配置策略元素的客户端的 spn 相匹配。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection" />
+    ///  包括用来与客户端的 spn 相匹配的自定义 SPN 列表。
+    ///</returns>
     property CustomServiceNames: DNServiceNameElementCollection read get_CustomServiceNames;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;
@@ -164,10 +270,18 @@ type
   ['{89901B3D-F807-508A-B51A-03CEC278E2CA}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNServiceNameElement;
 
   end;
 
+  ///<summary><see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement" />
+  ///  类表示一个配置元素中使用的服务名称 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement')]
   DNServiceNameElement = interface(DNObject)
   ['{BCF4DB05-7EF9-3E14-9B54-A3FBFB5503E5}']
@@ -194,6 +308,15 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置此服务提供程序名称 (SPN) <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement" />
+    ///  实例。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，包含此 SPN 的表示 <see cref="T:System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElement" />
+    ///  实例。
+    ///</returns>
     property Name: string read get_Name write set_Name;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
     property LockAllAttributesExcept: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAllAttributesExcept;

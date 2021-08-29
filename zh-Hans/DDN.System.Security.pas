@@ -30,92 +30,209 @@ type
 { enums }
 
   //-------------namespace: System.Security.Cryptography----------------
+  ///<summary>
+  ///  指定的数据保护，以通过应用范围 <see cref="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[],System.Security.Cryptography.DataProtectionScope)" />
+  ///  方法。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.DataProtectionScope')]
   DNDataProtectionScope = type Integer;
   DNDataProtectionScopeHelper = record helper for DNDataProtectionScope
   public const
+    ///<summary>
+    ///  受保护的数据将与当前用户关联。
+    ///  仅在当前用户上下文中运行的线程可以取消保护数据。
+    ///</summary>
     CurrentUser = 0;
+    ///<summary>
+    ///  受保护的数据都与计算机上下文相关联。
+    ///  在计算机上运行的任何进程可以取消保护数据。
+    ///  在不受信任的用户不允许访问服务器运行的特定于服务器的应用程序中通常使用此枚举值。
+    ///</summary>
     LocalMachine = 1;
   end;
 
 
   //-------------namespace: System.Security.Cryptography----------------
+  ///<summary>
+  ///  指定要应用的内存保护范围 <see cref="M:System.Security.Cryptography.ProtectedMemory.Protect(System.Byte[],System.Security.Cryptography.MemoryProtectionScope)" />
+  ///  方法。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.MemoryProtectionScope')]
   DNMemoryProtectionScope = type Integer;
   DNMemoryProtectionScopeHelper = record helper for DNMemoryProtectionScope
   public const
+    ///<summary>
+    ///  仅在与调用的代码相同的进程中运行的代码 <see cref="M:System.Security.Cryptography.ProtectedMemory.Protect(System.Byte[],System.Security.Cryptography.MemoryProtectionScope)" />
+    ///  方法可以取消保护的内存。
+    ///</summary>
     SameProcess = 0;
+    ///<summary>
+    ///  中的任何进程的所有代码可以取消都保护使用保护的内存 <see cref="M:System.Security.Cryptography.ProtectedMemory.Protect(System.Byte[],System.Security.Cryptography.MemoryProtectionScope)" />
+    ///  方法。
+    ///</summary>
     CrossProcess = 1;
+    ///<summary>
+    ///  仅在与调用的代码相同的用户上下文中运行的代码 <see cref="M:System.Security.Cryptography.ProtectedMemory.Protect(System.Byte[],System.Security.Cryptography.MemoryProtectionScope)" />
+    ///  方法可以取消保护的内存。
+    ///</summary>
     SameLogon = 2;
   end;
 
 
   //-------------namespace: System.Security.Cryptography.Pkcs----------------
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.KeyAgreeKeyChoice" />
+  ///  枚举定义的密钥协商协议中使用的密钥的类型。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.KeyAgreeKeyChoice')]
   DNKeyAgreeKeyChoice = type Integer;
   DNKeyAgreeKeyChoiceHelper = record helper for DNKeyAgreeKeyChoice
   public const
+    ///<summary>
+    ///  密钥协商密钥类型是未知的。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  密钥协商密钥是临时的现有的仅对的密钥协商协议的持续时间。
+    ///</summary>
     EphemeralKey = 1;
+    ///<summary>
+    ///  密钥协商密钥是时间的静态的长时间。
+    ///</summary>
     StaticKey = 2;
   end;
 
 
   //-------------namespace: System.Security.Cryptography.Pkcs----------------
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoType" />
+  ///  枚举定义的收件人信息的类型。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.RecipientInfoType')]
   DNRecipientInfoType = type Integer;
   DNRecipientInfoTypeHelper = record helper for DNRecipientInfoType
   public const
+    ///<summary>
+    ///  收件人信息类型是未知的。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  密钥传输收件人信息。
+    ///</summary>
     KeyTransport = 1;
+    ///<summary>
+    ///  密钥协议收件人信息。
+    ///</summary>
     KeyAgreement = 2;
   end;
 
 
   //-------------namespace: System.Security.Cryptography.Pkcs----------------
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierOrKeyType" />
+  ///  枚举定义一个使用者标识的方式。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.SubjectIdentifierOrKeyType')]
   DNSubjectIdentifierOrKeyType = type Integer;
   DNSubjectIdentifierOrKeyTypeHelper = record helper for DNSubjectIdentifierOrKeyType
   public const
+    ///<summary>
+    ///  类型是未知的。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  使用者标识由证书颁发者和序列号。
+    ///</summary>
     IssuerAndSerialNumber = 1;
+    ///<summary>
+    ///  使用者标识的使用者密钥的哈希值。
+    ///</summary>
     SubjectKeyIdentifier = 2;
+    ///<summary>
+    ///  使用者标识的公钥。
+    ///</summary>
     PublicKeyInfo = 3;
   end;
 
 
   //-------------namespace: System.Security.Cryptography.Pkcs----------------
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+  ///  枚举定义的主题标识符的类型。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.SubjectIdentifierType')]
   DNSubjectIdentifierType = type Integer;
   DNSubjectIdentifierTypeHelper = record helper for DNSubjectIdentifierType
   public const
+    ///<summary>
+    ///  使用者标识符的类型是未知的。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  使用者标识由证书颁发者和序列号。
+    ///</summary>
     IssuerAndSerialNumber = 1;
+    ///<summary>
+    ///  使用者标识的使用者的公钥的哈希值。
+    ///  使用哈希算法取决于使用者的证书中的签名算法套件。
+    ///</summary>
     SubjectKeyIdentifier = 2;
+    ///<summary>
+    ///  该主题被标识为参与使用哈希算法的完整性检查操作。
+    ///</summary>
     NoSignature = 3;
   end;
 
 
   //-------------namespace: System.Security.Cryptography.X509Certificates----------------
+  ///<summary>
+  ///  指定所选内容使用请求的类型 <see cref="Overload:System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection" />
+  ///  方法。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.X509Certificates.X509SelectionFlag')]
   DNX509SelectionFlag = type Integer;
   DNX509SelectionFlagHelper = record helper for DNX509SelectionFlag
   public const
+    ///<summary>
+    ///  单项选择。
+    ///  用户界面允许用户选择一个 X.509 证书。
+    ///</summary>
     SingleSelection = 0;
+    ///<summary>
+    ///  有多个选择。
+    ///  用户可以使用 SHIFT 或 CRTL 键来选择多个 X.509 证书。
+    ///</summary>
     MultiSelection = 1;
   end;
 
 
   //-------------namespace: System.Security.Permissions----------------
+  ///<summary>
+  ///  指定加密数据和内存的访问权限。
+  ///</summary>
   [DNTypeName('System.Security.Permissions.DataProtectionPermissionFlags')]
   DNDataProtectionPermissionFlags = type Integer;
   DNDataProtectionPermissionFlagsHelper = record helper for DNDataProtectionPermissionFlags
   public const
+    ///<summary>
+    ///  没有保护能力。
+    ///</summary>
     NoFlags = 0;
+    ///<summary>
+    ///  加密数据的能力。
+    ///</summary>
     ProtectData = 1;
+    ///<summary>
+    ///  解密数据的能力。
+    ///</summary>
     UnprotectData = 2;
+    ///<summary>
+    ///  加密内存的能力。
+    ///</summary>
     ProtectMemory = 4;
+    ///<summary>
+    ///  解密内存的能力。
+    ///</summary>
     UnprotectMemory = 8;
+    ///<summary>
+    ///  加密数据、加密内存、解密数据以及解密内存的能力。
+    ///</summary>
     AllFlags = 15;
   end;
 
@@ -208,11 +325,36 @@ type
 { objects }
 
   //-------------namespace: System.Security.Cryptography.Xml----------------
+  ///<summary>
+  ///  定义方法解密 XrML <see langword="&lt;encryptedGrant&gt;" />
+  ///  元素。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.IRelDecryptor')]
   DNIRelDecryptor = interface(DDN.mscorlib.DNObject)
   ['{D926D95B-A15C-3D27-B950-06C8AD0704E8}']
   { methods } 
 
+    ///<summary>
+    ///  解密 XrML <see langword="&lt;encryptedGrant&gt;" />
+    ///  中包含的元素 <see cref="T:System.IO.Stream" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="encryptionMethod"><see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" />
+    ///  封装 XML 加密所用的算法的对象。
+    ///</param>
+    ///  <param name="keyInfo">
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象，其中包含可用于解密非对称密钥。
+    ///</param>
+    ///  <param name="toDecrypt">
+    ///  流对象，包含 <see langword="&lt;encryptedGrant&gt;" />
+    ///  元素进行解密。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.IO.Stream" />
+    ///  对象，其中包含已解密 <see langword="&lt;encryptedGrant&gt;" />
+    ///  元素。
+    ///</returns>
     function Decrypt(encryptionMethod: DNEncryptionMethod; keyInfo: DNKeyInfo; toDecrypt: DDN.mscorlib.DNStream): DDN.mscorlib.DNStream;
 
   end;
@@ -222,10 +364,23 @@ type
   ['{94B548FD-48A9-5B1F-B320-3AA0FF93E607}']
   { constructors } 
 
+    ///<summary>
+    ///  使用指定的 <see cref="T:System.Security.Permissions.DataProtectionPermissionAttribute" />
+    ///  初始化 <see cref="T:System.Security.Permissions.SecurityAction" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="action"><see cref="T:System.Security.Permissions.SecurityAction" />
+    ///  值之一。
+    ///</param>
     {class} function init(action: DDN.mscorlib.DNSecurityAction): DNDataProtectionPermissionAttribute;
 
   end;
 
+  ///<summary>
+  ///  允许对要使用声明性安全应用到代码中的 <see cref="T:System.Security.Permissions.DataProtectionPermission" />
+  ///  执行安全操作。
+  ///  无法继承此类。
+  ///</summary>
   [DNTypeName('System.Security.Permissions.DataProtectionPermissionAttribute')]
   DNDataProtectionPermissionAttribute = interface(DDN.mscorlib.DNCodeAccessSecurityAttribute)
   ['{C3F8F9D4-6BD9-3E21-9DE3-5FFC1EEED4E7}']
@@ -249,6 +404,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  创建并返回一个新的 <see cref="T:System.Security.Permissions.DataProtectionPermission" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Permissions.DataProtectionPermission" />
+    ///  此特性对应。
+    ///</returns>
     function CreatePermission: DDN.mscorlib.DNIPermission;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -259,10 +422,50 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置数据保护权限。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Permissions.DataProtectionPermissionFlags" />
+    ///  值的按位组合。
+    ///  默认值为 <see cref="F:System.Security.Permissions.DataProtectionPermissionFlags.NoFlags" />
+    ///  。
+    ///</returns>
     property Flags: DNDataProtectionPermissionFlags read get_Flags write set_Flags;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否可以使用加密数据 <see cref="T:System.Security.Cryptography.ProtectedData" />
+    ///  类。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果可以加密数据;，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property ProtectData: Boolean read get_ProtectData write set_ProtectData;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否可以将数据未加密形式使用 <see cref="T:System.Security.Cryptography.ProtectedData" />
+    ///  类。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果数据可以是未加密;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property UnprotectData: Boolean read get_UnprotectData write set_UnprotectData;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否可以使用加密内存 <see cref="T:System.Security.Cryptography.ProtectedMemory" />
+    ///  类。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果可以对内存进行加密;，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property ProtectMemory: Boolean read get_ProtectMemory write set_ProtectMemory;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否可以为内存未加密形式使用 <see cref="T:System.Security.Cryptography.ProtectedMemory" />
+    ///  类。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果内存可以解密;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property UnprotectMemory: Boolean read get_UnprotectMemory write set_UnprotectMemory;
     property Action: DDN.mscorlib.DNSecurityAction read get_Action write set_Action;
     property Unrestricted: Boolean read get_Unrestricted write set_Unrestricted;
@@ -276,11 +479,37 @@ type
   ['{493E9BBE-FAE1-59A5-87BC-80902F22AAA6}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化具有指定权限状态的 <see cref="T:System.Security.Permissions.DataProtectionPermission" />
+    ///  类的一个新实例。
+    ///</summary>
+    ///  <param name="state"><see cref="T:System.Security.Permissions.PermissionState" />
+    ///  值之一。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="state" />
+    ///  不是有效的 <see cref="T:System.Security.Permissions.PermissionState" />
+    ///  值。
+    ///</exception>
     {class} function init(state: DDN.mscorlib.DNPermissionState): DNDataProtectionPermission; overload;
+    ///<summary>
+    ///  初始化具有指定权限标志的 <see cref="T:System.Security.Permissions.DataProtectionPermission" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="flag"><see cref="T:System.Security.Permissions.DataProtectionPermissionFlags" />
+    ///  值的按位组合。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="flags" />
+    ///  不是有效的 <see cref="T:System.Security.Permissions.DataProtectionPermissionFlags" />
+    ///  值组合。
+    ///</exception>
     {class} function init(flag: DNDataProtectionPermissionFlags): DNDataProtectionPermission; overload;
 
   end;
 
+  ///<summary>
+  ///  控制访问加密数据和内存的权限。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Security.Permissions.DataProtectionPermission')]
   DNDataProtectionPermission = interface(DDN.mscorlib.DNCodeAccessPermission)
   ['{C23B46EB-77BE-3C65-8C6A-D26E9C89293A}']
@@ -291,12 +520,94 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回一个值，该值指示当前权限是否不受限制。
+    ///</summary>
+    ///<returns>
+    ///  如果当前权限不受限制，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsUnrestricted: Boolean;
+    ///<summary>
+    ///  创建并返回当前权限的相同副本。
+    ///</summary>
+    ///<returns>
+    ///  当前权限的副本。
+    ///</returns>
     function Copy: DDN.mscorlib.DNIPermission;
+    ///<summary>
+    ///  创建一个权限，该权限是当前权限与指定权限的并集。
+    ///</summary>
+    ///  <param name="target">
+    ///  与当前权限合并的权限。
+    ///  它必须与当前权限属于同一类型。
+    ///</param>
+    ///<returns>
+    ///  表示同时兼具当前权限和指定权限的新权限。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="target" />
+    ///  不是 <see langword="null" />
+    ///  ，并且未指定同一类型的权限为当前权限。
+    ///</exception>
     function Union(target: DDN.mscorlib.DNIPermission): DDN.mscorlib.DNIPermission;
+    ///<summary>
+    ///  确定当前权限是否为指定权限的子集。
+    ///</summary>
+    ///  <param name="target">
+    ///  将要测试子集关系的权限。
+    ///  此权限必须与当前权限属于同一类型。
+    ///</param>
+    ///<returns>
+    ///  如果当前权限是指定权限的子集，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="target" />
+    ///  不是 <see langword="null" />
+    ///  ，并且未指定同一类型的权限为当前权限。
+    ///</exception>
     function IsSubsetOf(target: DDN.mscorlib.DNIPermission): Boolean;
+    ///<summary>
+    ///  创建并返回一个权限，该权限是当前权限与指定权限的交集。
+    ///</summary>
+    ///  <param name="target">
+    ///  要与当前权限相交的权限。
+    ///  它必须与当前权限属于同一类型。
+    ///</param>
+    ///<returns>
+    ///  表示当前权限和指定权限的交集的一个新权限。
+    ///  如果交集为空，则此新权限为 <see langword="null" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="target" />
+    ///  不是 <see langword="null" />
+    ///  ，并且未指定同一类型的权限为当前权限。
+    ///</exception>
     function Intersect(target: DDN.mscorlib.DNIPermission): DDN.mscorlib.DNIPermission;
+    ///<summary>
+    ///  创建权限及其当前状态的 XML 编码。
+    ///</summary>
+    ///<returns>
+    ///  权限及状态信息的 XML 编码。
+    ///</returns>
     function ToXml: DDN.mscorlib.DNSecurityElement;
+    ///<summary>
+    ///  从 XML 编码重新构造具有特定状态的权限。
+    ///</summary>
+    ///  <param name="securityElement">
+    ///  一个 <see cref="T:System.Security.SecurityElement" />
+    ///  ，其中包含用于重新构造权限的 XML 编码。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="securityElement" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException"><paramref name="securityElement" />
+    ///  不是有效的权限元素。
+    ///  - 或 -
+    ///  不支持 <paramref name="securityElement" />
+    ///  的版本号。
+    ///</exception>
     procedure FromXml(securityElement: DDN.mscorlib.DNSecurityElement);
     procedure Demand;
     procedure Assert;
@@ -309,6 +620,16 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置数据和内存保护标志。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Permissions.DataProtectionPermissionFlags" />
+    ///  值的按位组合。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException">
+    ///  指定的值不是有效的 <see cref="T:System.Security.Permissions.DataProtectionPermissionFlags" />
+    ///  值组合。
+    ///</exception>
     property Flags: DNDataProtectionPermissionFlags read get_Flags write set_Flags;
   end;
 
@@ -319,13 +640,65 @@ type
   ['{D82DC25D-F64E-5C81-A166-6DE18D742940}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNPkcs9AttributeObject; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  类使用的指定的字符串表示形式的对象标识符 (OID)，如属性类型和指定的 ASN.1 编码数据作为属性值。
+    ///</summary>
+    ///  <param name="oid">
+    ///  字符串表示形式表示的 PKCS #9 属性类型的 OID。
+    ///</param>
+    ///  <param name="encodedData">
+    ///  包含 PKCS #9 属性值的字节值数组。
+    ///</param>
     {class} function init(oid: string; encodedData: TArray<Byte>): DNPkcs9AttributeObject; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  类使用指定 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象属性类型和指定的 ASN.1 编码数据作为属性值。
+    ///</summary>
+    ///  <param name="oid">
+    ///  一个表示 PKCS #9 特性类型的对象。
+    ///</param>
+    ///  <param name="encodedData">
+    ///  表示 PKCS #9 属性值的字节数组值。
+    ///</param>
     {class} function init(oid: DDN.System.DNOid; encodedData: TArray<Byte>): DNPkcs9AttributeObject; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  类使用指定 <see cref="T:System.Security.Cryptography.AsnEncodedData" />
+    ///  对象作为其属性类型和值。
+    ///</summary>
+    ///  <param name="asnEncodedData">
+    ///  一个包含要使用的 PKCS #9 特性类型和值的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  长度 <paramref name="Value" />
+    ///  的成员 <paramref name="Oid" />
+    ///  的成员 <paramref name="asnEncodedData" />
+    ///  为零。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="Oid" />
+    ///  的成员 <paramref name="asnEncodedData" />
+    ///  是 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="Value" />
+    ///  的成员 <paramref name="Oid" />
+    ///  的成员 <paramref name="asnEncodedData" />
+    ///  是 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} function init(asnEncodedData: DDN.System.DNAsnEncodedData): DNPkcs9AttributeObject; overload;
 
   end;
 
+  ///<summary>
+  ///  表示一个属性用于 CMS/PKCS #7 和 PKCS #9 操作。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.Pkcs9AttributeObject')]
   DNPkcs9AttributeObject = interface(DNObject)
   ['{3B4D1CD6-2C4F-3734-B72B-A7040AC3ACA6}']
@@ -337,6 +710,20 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将 PKCS #9 特性类型和值复制此 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  从指定 <see cref="T:System.Security.Cryptography.AsnEncodedData" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="asnEncodedData">
+    ///  一个包含要使用的 PKCS #9 特性类型和值的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="asnEncodeData" />
+    ///  不表示是兼容的属性类型。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="asnEncodedData" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure CopyFrom(asnEncodedData: DDN.System.DNAsnEncodedData);
     function Format(multiLine: Boolean): string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -346,6 +733,15 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，表示与此相关联的特性类型 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个对象，表示与此相关联的特性的类型 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  对象。
+    ///</returns>
     property Oid: DDN.System.DNOid read get_Oid;
     property RawData: TArray<Byte> read get_RawData write set_RawData;
   end;
@@ -357,10 +753,17 @@ type
   ['{1D7C7031-0534-5F63-A041-B5B7D3BF6F8D}']
   { constructors } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.Pkcs9ContentType.#ctor" />
+    ///  构造函数创建 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9ContentType" />
+    ///  类的实例。
+    ///</summary>
     {class} function init: DNPkcs9ContentType;
 
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.Pkcs9ContentType" />
+  ///  类定义的 CMS/PKCS #7 消息内容的类型。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.Pkcs9ContentType')]
   DNPkcs9ContentType = interface(DNPkcs9AttributeObject)
   ['{88BB2A53-22A7-30AC-8D96-0825EC051A70}']
@@ -373,6 +776,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将信息从复制 <see cref="T:System.Security.Cryptography.AsnEncodedData" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="asnEncodedData">
+    ///  要从中复制信息的 <see cref="T:System.Security.Cryptography.AsnEncodedData" />
+    ///  对象。
+    ///</param>
     procedure CopyFrom(asnEncodedData: DDN.System.DNAsnEncodedData);
     function Format(multiLine: Boolean): string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -382,7 +793,23 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.Pkcs9ContentType.ContentType" />
+    ///  属性可以获取 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，其中包含的内容类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，其中包含的内容类型。
+    ///</returns>
     property ContentType: DDN.System.DNOid read get_ContentType;
+    ///<summary>
+    ///  获取 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，表示与此相关联的特性类型 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个对象，表示与此相关联的特性的类型 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  对象。
+    ///</returns>
     property Oid: DDN.System.DNOid read get_Oid;
     property RawData: TArray<Byte> read get_RawData write set_RawData;
   end;
@@ -394,12 +821,34 @@ type
   ['{5A9E0FEA-8CCE-58B8-9932-31D1C839C2B1}']
   { constructors } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.Pkcs9DocumentDescription.#ctor" />
+    ///  构造函数创建 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9DocumentDescription" />
+    ///  类的实例。
+    ///</summary>
     {class} function init: DNPkcs9DocumentDescription; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.Pkcs9DocumentDescription.#ctor(System.String)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9DocumentDescription" />
+    ///  类通过使用指定的 CMS/PKCS #7 消息内容的说明。
+    ///</summary>
+    ///  <param name="documentDescription">
+    ///  一个实例 <see cref="T:System.String" />
+    ///  类，该类指定 CMS/PKCS #7 消息的说明。
+    ///</param>
     {class} function init(documentDescription: string): DNPkcs9DocumentDescription; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.Pkcs9DocumentDescription.#ctor(System.Byte[])" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9DocumentDescription" />
+    ///  类通过使用指定的字节值数组作为 CMS/PKCS #7 消息内容的编码说明。
+    ///</summary>
+    ///  <param name="encodedDocumentDescription">
+    ///  指定 CMS/PKCS #7 消息的编码的描述的字节值数组。
+    ///</param>
     {class} function init(encodedDocumentDescription: TArray<Byte>): DNPkcs9DocumentDescription; overload;
 
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.Pkcs9DocumentDescription" />
+  ///  类定义 CMS/PKCS #7 消息内容的说明。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.Pkcs9DocumentDescription')]
   DNPkcs9DocumentDescription = interface(DNPkcs9AttributeObject)
   ['{41EC3031-FC11-32A4-A3B0-5386D6EF865B}']
@@ -412,6 +861,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将信息从复制 <see cref="T:System.Security.Cryptography.AsnEncodedData" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="asnEncodedData">
+    ///  要从中复制信息的 <see cref="T:System.Security.Cryptography.AsnEncodedData" />
+    ///  对象。
+    ///</param>
     procedure CopyFrom(asnEncodedData: DDN.System.DNAsnEncodedData);
     function Format(multiLine: Boolean): string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -421,7 +878,23 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.Pkcs9DocumentDescription.DocumentDescription" />
+    ///  属性检索文档的说明。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  对象，其中包含文档的说明。
+    ///</returns>
     property DocumentDescription: string read get_DocumentDescription;
+    ///<summary>
+    ///  获取 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，表示与此相关联的特性类型 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个对象，表示与此相关联的特性的类型 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  对象。
+    ///</returns>
     property Oid: DDN.System.DNOid read get_Oid;
     property RawData: TArray<Byte> read get_RawData write set_RawData;
   end;
@@ -433,12 +906,34 @@ type
   ['{7EA2C31F-C1A5-5944-BC78-1C495121CD09}']
   { constructors } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.Pkcs9DocumentName.#ctor" />
+    ///  构造函数创建 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9DocumentName" />
+    ///  类的实例。
+    ///</summary>
     {class} function init: DNPkcs9DocumentName; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.Pkcs9DocumentName.#ctor(System.String)" />
+    ///  构造函数创建的一个实例  <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9DocumentName" />
+    ///  使用 CMS/PKCS #7 消息的指定的名称的类。
+    ///</summary>
+    ///  <param name="documentName">
+    ///  一个  <see cref="T:System.String" />
+    ///  对象，它指定 CMS/PKCS #7 消息的名称。
+    ///</param>
     {class} function init(documentName: string): DNPkcs9DocumentName; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.Pkcs9DocumentName.#ctor(System.Byte[])" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9DocumentName" />
+    ///  类通过使用指定的字节值数组作为 CMS/PKCS #7 消息内容的编码的名称。
+    ///</summary>
+    ///  <param name="encodedDocumentName">
+    ///  指定 CMS/PKCS #7 消息的编码的名称的字节值数组。
+    ///</param>
     {class} function init(encodedDocumentName: TArray<Byte>): DNPkcs9DocumentName; overload;
 
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.Pkcs9DocumentName" />
+  ///  类定义 CMS/PKCS #7 消息的名称。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.Pkcs9DocumentName')]
   DNPkcs9DocumentName = interface(DNPkcs9AttributeObject)
   ['{A849A423-AEAD-394F-8943-EE5921FA53CA}']
@@ -451,6 +946,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将信息从复制 <see cref="T:System.Security.Cryptography.AsnEncodedData" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="asnEncodedData">
+    ///  要从中复制信息的 <see cref="T:System.Security.Cryptography.AsnEncodedData" />
+    ///  对象。
+    ///</param>
     procedure CopyFrom(asnEncodedData: DDN.System.DNAsnEncodedData);
     function Format(multiLine: Boolean): string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -460,7 +963,23 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.Pkcs9DocumentName.DocumentName" />
+    ///  属性检索该文档的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  对象，其中包含该文档的名称。
+    ///</returns>
     property DocumentName: string read get_DocumentName;
+    ///<summary>
+    ///  获取 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，表示与此相关联的特性类型 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个对象，表示与此相关联的特性的类型 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  对象。
+    ///</returns>
     property Oid: DDN.System.DNOid read get_Oid;
     property RawData: TArray<Byte> read get_RawData write set_RawData;
   end;
@@ -472,10 +991,17 @@ type
   ['{FB93868B-A2A3-512F-AECD-4E4E7FF769D2}']
   { constructors } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.Pkcs9MessageDigest.#ctor" />
+    ///  构造函数创建 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9MessageDigest" />
+    ///  类的实例。
+    ///</summary>
     {class} function init: DNPkcs9MessageDigest;
 
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.Pkcs9MessageDigest" />
+  ///  类定义 CMS/PKCS #7 消息的消息摘要。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.Pkcs9MessageDigest')]
   DNPkcs9MessageDigest = interface(DNPkcs9AttributeObject)
   ['{23D9775B-BDEF-324F-98E0-DF0DAD9F1B52}']
@@ -488,6 +1014,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将信息从复制 <see cref="T:System.Security.Cryptography.AsnEncodedData" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="asnEncodedData">
+    ///  要从中复制信息的 <see cref="T:System.Security.Cryptography.AsnEncodedData" />
+    ///  对象。
+    ///</param>
     procedure CopyFrom(asnEncodedData: DDN.System.DNAsnEncodedData);
     function Format(multiLine: Boolean): string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -497,7 +1031,22 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.Pkcs9MessageDigest.MessageDigest" />
+    ///  属性检索消息摘要。
+    ///</summary>
+    ///<returns>
+    ///  包含消息摘要的字节值数组。
+    ///</returns>
     property MessageDigest: TArray<Byte> read get_MessageDigest;
+    ///<summary>
+    ///  获取 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，表示与此相关联的特性类型 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个对象，表示与此相关联的特性的类型 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  对象。
+    ///</returns>
     property Oid: DDN.System.DNOid read get_Oid;
     property RawData: TArray<Byte> read get_RawData write set_RawData;
   end;
@@ -509,12 +1058,37 @@ type
   ['{821FA1D1-8E9A-5218-8B72-B1BD375944BF}']
   { constructors } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.Pkcs9SigningTime.#ctor" />
+    ///  构造函数创建 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9SigningTime" />
+    ///  类的实例。
+    ///</summary>
     {class} function init: DNPkcs9SigningTime; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.Pkcs9SigningTime.#ctor(System.DateTime)" />
+    ///  构造函数通过使用指定的签名日期和时间创建 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9SigningTime" />
+    ///  类的实例。
+    ///</summary>
+    ///  <param name="signingTime">
+    ///  一个 <see cref="T:System.DateTime" />
+    ///  结构，它表示签名的签名日期和时间。
+    ///</param>
     {class} function init(signingTime: DDN.mscorlib.DNDateTime): DNPkcs9SigningTime; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.Pkcs9SigningTime.#ctor(System.Byte[])" />
+    ///  构造函数通过使用指定的字节值数组作为 CMS/PKCS #7 消息内容的编码签名日期和时间来创建 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9SigningTime" />
+    ///  类的实例。
+    ///</summary>
+    ///  <param name="encodedSigningTime">
+    ///  一个字节值数组，它指定 CMS/PKCS #7 消息的编码签名日期和时间。
+    ///</param>
     {class} function init(encodedSigningTime: TArray<Byte>): DNPkcs9SigningTime; overload;
 
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.Pkcs9SigningTime" />
+  ///  类定义签名的签名日期和时间。
+  ///  当要对数字签名附加经过身份验证的日期和时间时，可将 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9SigningTime" />
+  ///  对象用作 <see cref="T:System.Security.Cryptography.Pkcs.CmsSigner" />
+  ///  对象的经过身份验证的特性。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.Pkcs9SigningTime')]
   DNPkcs9SigningTime = interface(DNPkcs9AttributeObject)
   ['{93BF70DC-BEA3-34FE-B172-EC1C0AB7E329}']
@@ -527,6 +1101,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  从 <see cref="T:System.Security.Cryptography.AsnEncodedData" />
+    ///  对象复制信息。
+    ///</summary>
+    ///  <param name="asnEncodedData">
+    ///  要从中复制信息的 <see cref="T:System.Security.Cryptography.AsnEncodedData" />
+    ///  对象。
+    ///</param>
     procedure CopyFrom(asnEncodedData: DDN.System.DNAsnEncodedData);
     function Format(multiLine: Boolean): string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -536,7 +1118,24 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.Pkcs9SigningTime.SigningTime" />
+    ///  属性检索表示消息签名日期和时间的 <see cref="T:System.DateTime" />
+    ///  结构。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.DateTime" />
+    ///  结构，它包含文档的签名日期和时间。
+    ///</returns>
     property SigningTime: DDN.mscorlib.DNDateTime read get_SigningTime;
+    ///<summary>
+    ///  获取 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，表示与此相关联的特性类型 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个对象，表示与此相关联的特性的类型 <see cref="T:System.Security.Cryptography.Pkcs.Pkcs9AttributeObject" />
+    ///  对象。
+    ///</returns>
     property Oid: DDN.System.DNOid read get_Oid;
     property RawData: TArray<Byte> read get_RawData write set_RawData;
   end;
@@ -548,11 +1147,40 @@ type
   ['{BB73E783-E254-5B33-8599-F33388CFE7F1}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  类使用表示由指定的属性 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="oid">
+    ///  该属性将存储在此 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  对象。
+    ///</param>
     {class} function init(oid: DDN.System.DNOid): DNCryptographicAttributeObject; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  类使用表示由指定的属性 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，具有指定表示该属性相关联的值将设置 <see cref="T:System.Security.Cryptography.AsnEncodedDataCollection" />
+    ///  集合。
+    ///</summary>
+    ///  <param name="oid">
+    ///  该属性将存储在此 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  对象。
+    ///</param>
+    ///  <param name="values">
+    ///  与所表示的属性关联的值集 <paramref name="oid" />
+    ///  参数。
+    ///</param>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  该集合包含重复项。
+    ///</exception>
     {class} function init(oid: DDN.System.DNOid; values: DDN.System.DNAsnEncodedDataCollection): DNCryptographicAttributeObject; overload;
 
   end;
 
+  ///<summary>
+  ///  包含一个类型和值与该类型关联的集合。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.CryptographicAttributeObject')]
   DNCryptographicAttributeObject = interface(DDN.mscorlib.DNObject)
   ['{A457D173-FAFD-3DD9-A3BF-4C426D26F47C}']
@@ -570,7 +1198,21 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，它指定该属性的对象标识符。
+    ///</summary>
+    ///<returns>
+    ///  属性的对象标识符。
+    ///</returns>
     property Oid: DDN.System.DNOid read get_Oid;
+    ///<summary>
+    ///  获取 <see cref="T:System.Security.Cryptography.AsnEncodedDataCollection" />
+    ///  集合，其中包含的一套与属性关联的值。
+    ///</summary>
+    ///<returns>
+    ///  与属性相关联的值集。
+    ///</returns>
     property Values: DDN.System.DNAsnEncodedDataCollection read get_Values;
   end;
 
@@ -581,11 +1223,28 @@ type
   ['{991B9107-366A-5CB7-936F-DC56974714E5}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNCryptographicAttributeObjectCollection; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  类中，添加指定 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  到集合。
+    ///</summary>
+    ///  <param name="attribute">
+    ///  一个 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  添加到集合的对象。
+    ///</param>
     {class} function init(attribute: DNCryptographicAttributeObject): DNCryptographicAttributeObjectCollection; overload;
 
   end;
 
+  ///<summary>
+  ///  包含一组 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+  ///  对象。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.CryptographicAttributeObjectCollection')]
   DNCryptographicAttributeObjectCollection = interface(DDN.mscorlib.DNICollection)
   ['{0F16A88D-79CE-358C-8E75-49DA19E8D66D}']
@@ -598,10 +1257,89 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Security.Cryptography.AsnEncodedData" />
+    ///  对象添加到集合。
+    ///</summary>
+    ///  <param name="asnEncodedData">
+    ///  要添加到集合的 <see cref="T:System.Security.Cryptography.AsnEncodedData" />
+    ///  对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果该方法返回所添加的项; 的从零开始的索引否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="asnEncodedData" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     function Add(asnEncodedData: DDN.System.DNAsnEncodedData): Int32; overload;
+    ///<summary>
+    ///  从集合中移除指定的 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="attribute">
+    ///  要从集合中移除的 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="attribute" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure Remove(attribute: DNCryptographicAttributeObject);
+    ///<summary>
+    ///  获取 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectEnumerator" />
+    ///  找不到的对象。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该方法返回 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectEnumerator" />
+    ///  对象，它可用于枚举集合; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function GetEnumerator: DNCryptographicAttributeObjectEnumerator;
+    ///<summary>
+    ///  副本 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  集合到一个数组 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="array">
+    ///  一个数组 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  集合复制到的对象。
+    ///</param>
+    ///  <param name="index">
+    ///  中的从零开始索引 <paramref name="array" />
+    ///  到该集合将被复制。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  提供给方法的参数之一无效。
+    ///</exception><exception cref="T:System.ArgumentNullException"><see langword="null" />
+    ///  传递给不接受它作为有效参数的方法。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException">
+    ///  参数的值超出了允许范围的值时，按照所调用的方法的定义。
+    ///</exception>
     procedure CopyTo(&array: TArray<DNCryptographicAttributeObject>; index: Int32);
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  对象添加到集合。
+    ///</summary>
+    ///  <param name="attribute">
+    ///  要添加到集合的 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果该方法返回所添加的项; 的从零开始的索引否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="asnEncodedData" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  集合中已存在指定的项。
+    ///</exception>
     function Add(attribute: DNCryptographicAttributeObject): Int32; overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -611,8 +1349,29 @@ type
   { propertys } 
 
     property Item[index: Int32]: DNCryptographicAttributeObject read get_Item; default;
+    ///<summary>
+    ///  获取集合中的项数。
+    ///</summary>
+    ///<returns>
+    ///  集合中项的数目。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取一个值，该值指示是否同步对集合的访问，或者线程安全。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果对集合的访问是线程安全的;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary>
+    ///  获取 <see cref="T:System.Object" />
+    ///  用于同步对集合的访问的对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Object" />
+    ///  对象，用于同步对 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  集合。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
   end;
 
@@ -623,6 +1382,11 @@ type
   ['{D726A622-7D65-5E6B-9147-6AB036EF2B6D}']
   end;
 
+  ///<summary>
+  ///  提供 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+  ///  集合的枚举功能。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.CryptographicAttributeObjectEnumerator')]
   DNCryptographicAttributeObjectEnumerator = interface(DDN.mscorlib.DNIEnumerator)
   ['{B1B5B4C5-2D8A-3B62-8375-67BA6ACF2BEF}']
@@ -632,7 +1396,22 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将枚举推进到下一个 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  对象在 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果枚举成功移动到下一个 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  对象; <see langword="false" />
+    ///  如果枚举器枚举的末尾。
+    ///</returns>
     function MoveNext: Boolean;
+    ///<summary>
+    ///  将枚举重置为第一个 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  对象在 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  集合。
+    ///</summary>
     procedure Reset;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -641,6 +1420,16 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取当前 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  对象从 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.CryptographicAttributeObject" />
+    ///  对象，表示在当前的加密特性 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  集合。
+    ///</returns>
     property Current: DNCryptographicAttributeObject read get_Current;
   end;
 
@@ -651,17 +1440,80 @@ type
   ['{EAF46267-1BC9-5663-8442-B38EEB6CFB28}']
   { static methods } 
 
+    ///<summary>
+    ///  使用指定的类的数据保护程序的名称、 应用程序名称、 的主要用途和特定目的创建的数据保护器实现的实例。
+    ///</summary>
+    ///  <param name="providerClass">
+    ///  数据保护器类名。
+    ///</param>
+    ///  <param name="applicationName">
+    ///  应用程序的名称。
+    ///</param>
+    ///  <param name="primaryPurpose">
+    ///  受保护数据的主要用途。
+    ///</param>
+    ///  <param name="specificPurposes">
+    ///  受保护的数据的特定目的。
+    ///</param>
+    ///<returns>
+    ///  数据保护器实现对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="providerClass" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} function Create(providerClass: string; applicationName: string; primaryPurpose: string; specificPurposes: TArray<string>): DNDataProtector;
 
   end;
 
+  ///<summary>
+  ///  提供数据保护器基类。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.DataProtector')]
   DNDataProtector = interface(DDN.mscorlib.DNObject)
   ['{16770A15-E376-3D7F-9349-89DED00E785F}']
   { methods } 
 
+    ///<summary>
+    ///  确定是否为指定的加密数据需要重新加密。
+    ///</summary>
+    ///  <param name="encryptedData">
+    ///  要计算的加密的数据。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果必须对数据进行重新加密;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsReprotectRequired(encryptedData: TArray<Byte>): Boolean;
+    ///<summary>
+    ///  可保护指定的用户数据。
+    ///</summary>
+    ///  <param name="userData">
+    ///  要保护的数据。
+    ///</param>
+    ///<returns>
+    ///  一个包含加密数据的字节数组。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="userData" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     function Protect(userData: TArray<Byte>): TArray<Byte>;
+    ///<summary>
+    ///  取消保护指定的受保护的数据。
+    ///</summary>
+    ///  <param name="encryptedData">
+    ///  要将未受保护的加密的数据。
+    ///</param>
+    ///<returns>
+    ///  包含纯文本数据的字节数组。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="encryptedData" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="encryptedData" />
+    ///  包含无效的用途。
+    ///</exception>
     function Unprotect(encryptedData: TArray<Byte>): TArray<Byte>;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -677,10 +1529,38 @@ type
   ['{6E018184-F4FC-55EF-A0AD-DA1E3FC6DAEC}']
   { constructors } 
 
+    ///<summary>
+    ///  创建的新实例 <see cref="T:System.Security.Cryptography.DpapiDataProtector" />
+    ///  通过使用指定的应用程序名称、 主要用途和特定用途的类。
+    ///</summary>
+    ///  <param name="appName">
+    ///  应用程序的名称。
+    ///</param>
+    ///  <param name="primaryPurpose">
+    ///  此数据的保护主要目的。
+    ///</param>
+    ///  <param name="specificPurpose">
+    ///  数据保护器特定如下。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="appName" />
+    ///  为空字符串或 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="primaryPurpose" />
+    ///  为空字符串或 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="specificPurposes" />
+    ///  包含一个空字符串或 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} function init(appName: string; primaryPurpose: string; specificPurpose: TArray<string>): DNDpapiDataProtector;
 
   end;
 
+  ///<summary>
+  ///  提供了简单的数据保护方法。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.DpapiDataProtector')]
   DNDpapiDataProtector = interface(DNDataProtector)
   ['{BD338ADB-1FD8-3A15-B197-07944BA04681}']
@@ -691,8 +1571,46 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  确定是否必须重新加密数据。
+    ///</summary>
+    ///  <param name="encryptedData">
+    ///  要检查的加密的数据。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果必须对数据进行重新加密;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsReprotectRequired(encryptedData: TArray<Byte>): Boolean;
+    ///<summary>
+    ///  可保护指定的用户数据。
+    ///</summary>
+    ///  <param name="userData">
+    ///  要保护的数据。
+    ///</param>
+    ///<returns>
+    ///  一个包含加密数据的字节数组。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="userData" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     function Protect(userData: TArray<Byte>): TArray<Byte>;
+    ///<summary>
+    ///  取消保护指定的受保护的数据。
+    ///</summary>
+    ///  <param name="encryptedData">
+    ///  要将未受保护的加密的数据。
+    ///</param>
+    ///<returns>
+    ///  包含纯文本数据的字节数组。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="encryptedData" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="encryptedData" />
+    ///  包含无效的用途。
+    ///</exception>
     function Unprotect(encryptedData: TArray<Byte>): TArray<Byte>;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -701,6 +1619,14 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置数据保护范围。
+    ///</summary>
+    ///<returns>
+    ///  指定的数据保护 （当前用户或本地计算机） 的范围的枚举值之一。
+    ///  默认值为 <see cref="F:System.Security.Cryptography.DataProtectionScope.CurrentUser" />
+    ///  。
+    ///</returns>
     property Scope: DNDataProtectionScope read get_Scope write set_Scope;
   end;
 
@@ -711,12 +1637,45 @@ type
   ['{08E51796-3F9A-5A5F-AC5F-5B441A7B4510}']
   { constructors } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.AlgorithmIdentifier.#ctor" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />
+    ///  类通过使用一组默认参数。
+    ///</summary>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     {class} function init: DNAlgorithmIdentifier; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.AlgorithmIdentifier.#ctor(System.Security.Cryptography.Oid)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />
+    ///  类具有指定的算法标识符。
+    ///</summary>
+    ///  <param name="oid">
+    ///  算法的对象标识符。
+    ///</param>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     {class} function init(oid: DDN.System.DNOid): DNAlgorithmIdentifier; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.AlgorithmIdentifier.#ctor(System.Security.Cryptography.Oid,System.Int32)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />
+    ///  类，具有指定的算法标识符和密钥长度。
+    ///</summary>
+    ///  <param name="oid">
+    ///  算法的对象标识符。
+    ///</param>
+    ///  <param name="keyLength">
+    ///  长度 （以位为单位的密钥）。
+    ///</param>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     {class} function init(oid: DDN.System.DNOid; keyLength: Int32): DNAlgorithmIdentifier; overload;
 
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />
+  ///  类定义用于加密操作的算法。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.AlgorithmIdentifier')]
   DNAlgorithmIdentifier = interface(DDN.mscorlib.DNObject)
   ['{016350BD-4169-3D6C-A04E-69FB925ED24E}']
@@ -738,8 +1697,28 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.AlgorithmIdentifier.Oid" />
+    ///  属性设置或检索 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  指定算法的对象标识符的对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Oid" />
+    ///  表示的算法的对象。
+    ///</returns>
     property Oid: DDN.System.DNOid read get_Oid write set_Oid;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.AlgorithmIdentifier.KeyLength" />
+    ///  属性设置或检索的密钥长度，以位为单位。
+    ///  此属性不用于使用固定的密钥长度的算法。
+    ///</summary>
+    ///<returns>
+    ///  一个表示密钥的长度，以位为单位的整数值。
+    ///</returns>
     property KeyLength: Int32 read get_KeyLength write set_KeyLength;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.AlgorithmIdentifier.Parameters" />
+    ///  属性设置或检索由该算法所需任何参数。
+    ///</summary>
+    ///<returns>
+    ///  指定该算法所需的任何参数的字节值数组。
+    ///</returns>
     property Parameters: TArray<Byte> read get_Parameters write set_Parameters;
   end;
 
@@ -750,11 +1729,42 @@ type
   ['{928A6CD5-B65B-5B0A-90D8-7EE66B3884DB}']
   { constructors } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsRecipient.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+    ///  构造函数将构造的实例 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+    ///  类通过使用指定的接收方证书。
+    ///</summary>
+    ///  <param name="certificate"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />
+    ///  对象，表示接收方的证书。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     {class} function init(certificate: DDN.System.DNX509Certificate2): DNCmsRecipient; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsRecipient.#ctor(System.Security.Cryptography.Pkcs.SubjectIdentifierType,System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+    ///  构造函数将构造的实例 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+    ///  类通过使用指定的收件人标识符的类型和接收方证书。
+    ///</summary>
+    ///  <param name="recipientIdentifierType">
+    ///  成员 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+    ///  枚举，用于指定接收方的标识符的类型。
+    ///</param>
+    ///  <param name="certificate"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />
+    ///  对象，表示接收方的证书。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     {class} function init(recipientIdentifierType: DNSubjectIdentifierType; certificate: DDN.System.DNX509Certificate2): DNCmsRecipient; overload;
 
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+  ///  类定义 CMS/PKCS #7 消息的接收方。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.CmsRecipient')]
   DNCmsRecipient = interface(DDN.mscorlib.DNObject)
   ['{E01D5A8E-8F22-3906-BEB7-B00506257CD5}']
@@ -772,7 +1782,20 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.CmsRecipient.RecipientIdentifierType" />
+    ///  属性检索的接收方标识符的类型。
+    ///</summary>
+    ///<returns>
+    ///  成员 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+    ///  枚举，用于指定接收方的标识符的类型。
+    ///</returns>
     property RecipientIdentifierType: DNSubjectIdentifierType read get_RecipientIdentifierType;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.CmsRecipient.Certificate" />
+    ///  属性检索与接收方关联的证书。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />
+    ///  对象，其中包含与接收方关联的证书。
+    ///</returns>
     property Certificate: DDN.System.DNX509Certificate2 read get_Certificate;
   end;
 
@@ -783,12 +1806,42 @@ type
   ['{86C8DE48-D692-5031-A650-A1C9350E3CA1}']
   { constructors } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsRecipientCollection.#ctor" />
+    ///  构造函数创建 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  类的实例。
+    ///</summary>
     {class} function init: DNCmsRecipientCollection; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsRecipientCollection.#ctor(System.Security.Cryptography.Pkcs.CmsRecipient)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  类，并添加指定的收件人。
+    ///</summary>
+    ///  <param name="recipient">
+    ///  一个实例 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+    ///  表示指定的 CMS/PKCS #7 收件人所属的类。
+    ///</param>
     {class} function init(recipient: DNCmsRecipient): DNCmsRecipientCollection; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsRecipientCollection.#ctor(System.Security.Cryptography.Pkcs.SubjectIdentifierType,System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  类，并添加收件人根据指定的主题标识符和一组标识收件人的证书。
+    ///</summary>
+    ///  <param name="recipientIdentifierType">
+    ///  成员 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+    ///  枚举，它指定使用者标识符的类型。
+    ///</param>
+    ///  <param name="certificates"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+    ///  集合，其中包含标识收件人的证书。
+    ///</param>
     {class} function init(recipientIdentifierType: DNSubjectIdentifierType; certificates: DDN.System.DNX509Certificate2Collection): DNCmsRecipientCollection; overload;
 
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+  ///  类表示的一组 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+  ///  对象。
+  ///<see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+  ///  实现 <see cref="T:System.Collections.ICollection" />
+  ///  接口。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.CmsRecipientCollection')]
   DNCmsRecipientCollection = interface(DDN.mscorlib.DNICollection)
   ['{BADE85E0-B862-337A-B8B5-16A9CAB6EAF4}']
@@ -801,10 +1854,103 @@ type
 
   { methods } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsRecipientCollection.Add(System.Security.Cryptography.Pkcs.CmsRecipient)" />
+    ///  方法将添加到收件人 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合。
+    ///</summary>
+    ///  <param name="recipient">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+    ///  对象，表示将添加到收件人 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合。
+    ///</param>
+    ///<returns>
+    ///  如果该方法成功，该方法返回 <see cref="T:System.Int32" />
+    ///  值，该值表示收件人的要插入的从零开始的位置。
+    ///  如果此方法失败，则会引发异常。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="recipient" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     function Add(recipient: DNCmsRecipient): Int32;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsRecipientCollection.Remove(System.Security.Cryptography.Pkcs.CmsRecipient)" />
+    ///  方法可以删除从收件人 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合。
+    ///</summary>
+    ///  <param name="recipient">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+    ///  对象，表示要从集合中移除的接收方。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="recipient" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure Remove(recipient: DNCmsRecipient);
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsRecipientCollection.GetEnumerator" />
+    ///  方法将返回 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientEnumerator" />
+    ///  对象 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientEnumerator" />
+    ///  对象，它可用于枚举 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合。
+    ///</returns>
     function GetEnumerator: DNCmsRecipientEnumerator;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsRecipientCollection.CopyTo(System.Array,System.Int32)" />
+    ///  方法副本 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合到一个数组。
+    ///</summary>
+    ///  <param name="array"><see cref="T:System.Array" />
+    ///  对象传递给该 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合将被复制。
+    ///</param>
+    ///  <param name="index">
+    ///  中的从零开始索引 <paramref name="array" />
+    ///  其中 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合将被复制。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="array" />
+    ///  不足够大以保存指定的元素。
+    ///  - 或 -
+    ///  <paramref name="array" />
+    ///  不包含维度的正确号码。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="array" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />
+    ///  中的元素范围之外 <paramref name="array" />
+    ///  。
+    ///</exception>
     procedure CopyTo(&array: DDN.mscorlib.DNArray; index: Int32); overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsRecipientCollection.CopyTo(System.Security.Cryptography.Pkcs.CmsRecipient[],System.Int32)" />
+    ///  方法副本 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合与 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+    ///  数组。
+    ///</summary>
+    ///  <param name="array">
+    ///  一个数组 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+    ///  对象其中 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合将被复制。
+    ///</param>
+    ///  <param name="index">
+    ///  数组的从零开始的索引 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+    ///  中的对象 <paramref name="array" />
+    ///  到 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合将被复制。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="array" />
+    ///  不足够大以保存指定的元素。
+    ///  - 或 -
+    ///  <paramref name="array" />
+    ///  不包含维度的正确号码。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="array" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />
+    ///  中的元素范围之外 <paramref name="array" />
+    ///  。
+    ///</exception>
     procedure CopyTo(&array: TArray<DNCmsRecipient>; index: Int32); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -814,8 +1960,34 @@ type
   { propertys } 
 
     property Item[index: Int32]: DNCmsRecipient read get_Item; default;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.CmsRecipientCollection.Count" />
+    ///  属性检索中的项数 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  值，该值表示在集合中的项的数目。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.CmsRecipientCollection.IsSynchronized" />
+    ///  属性是否检索到的集合的访问同步的即线程安全。
+    ///  此属性始终返回 <see langword="false" />
+    ///  , ，这意味着该集合不是线程安全。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Boolean" />
+    ///  值 <see langword="false" />
+    ///  , ，这意味着该集合不是线程安全。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.CmsRecipientCollection.SyncRoot" />
+    ///  属性检索 <see cref="T:System.Object" />
+    ///  对象，用于同步对 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Object" />
+    ///  对象，用于对访问进行同步 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
   end;
 
@@ -826,6 +1998,13 @@ type
   ['{EB3FCD61-34AC-5BDA-BD11-7340B8693EAF}']
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientEnumerator" />
+  ///  类为 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+  ///  集合提供枚举功能。
+  ///<see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientEnumerator" />
+  ///  实现 <see cref="T:System.Collections.IEnumerator" />
+  ///  接口。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.CmsRecipientEnumerator')]
   DNCmsRecipientEnumerator = interface(DDN.mscorlib.DNIEnumerator)
   ['{95F00E89-B43C-3A8E-8C8F-FF723400A54F}']
@@ -835,7 +2014,22 @@ type
 
   { methods } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsRecipientEnumerator.MoveNext" />
+    ///  方法将枚举推进到下一个 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+    ///  对象在 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果枚举成功移动到下一个 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+    ///  对象; <see langword="false" />
+    ///  如果枚举移过枚举中的最后一项。
+    ///</returns>
     function MoveNext: Boolean;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsRecipientEnumerator.Reset" />
+    ///  方法将枚举重置为第一个 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+    ///  对象在 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合。
+    ///</summary>
     procedure Reset;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -844,6 +2038,16 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.CmsRecipientEnumerator.Current" />
+    ///  属性检索当前 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+    ///  对象从 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+    ///  对象，表示在当前收件人 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  集合。
+    ///</returns>
     property Current: DNCmsRecipient read get_Current;
   end;
 
@@ -854,14 +2058,57 @@ type
   ['{34AEDDF9-D571-5669-9FE9-109D251A3B7E}']
   { constructors } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsSigner.#ctor" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.CmsSigner" />
+    ///  类通过使用默认的主题标识符类型。
+    ///</summary>
     {class} function init: DNCmsSigner; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsSigner.#ctor(System.Security.Cryptography.Pkcs.SubjectIdentifierType)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.CmsSigner" />
+    ///  类，具有指定的主题标识符类型。
+    ///</summary>
+    ///  <param name="signerIdentifierType">
+    ///  成员 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+    ///  枚举，用于指定签名者标识符类型。
+    ///</param>
     {class} function init(signerIdentifierType: DNSubjectIdentifierType): DNCmsSigner; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsSigner.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.CmsSigner" />
+    ///  类，具有指定的签名证书。
+    ///</summary>
+    ///  <param name="certificate"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />
+    ///  对象，表示签名证书。
+    ///</param>
     {class} function init(certificate: DDN.System.DNX509Certificate2): DNCmsSigner; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsSigner.#ctor(System.Security.Cryptography.CspParameters)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.CmsSigner" />
+    ///  具有指定的加密服务提供程序 (CSP) 参数的类。
+    ///<see cref="M:System.Security.Cryptography.Pkcs.CmsSigner.#ctor(System.Security.Cryptography.CspParameters)" />
+    ///  您知道要用来签名的特定 CSP 和私钥时非常有用。
+    ///</summary>
+    ///  <param name="parameters">
+    ///  一个 <see cref="T:System.Security.Cryptography.CspParameters" />
+    ///  对象，表示要使用的 CSP 参数集。
+    ///</param>
     {class} function init(parameters: DDN.mscorlib.DNCspParameters): DNCmsSigner; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.CmsSigner.#ctor(System.Security.Cryptography.Pkcs.SubjectIdentifierType,System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.CmsSigner" />
+    ///  类，具有指定的签名者标识符类型和签名证书。
+    ///</summary>
+    ///  <param name="signerIdentifierType">
+    ///  成员 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+    ///  枚举，用于指定签名者标识符类型。
+    ///</param>
+    ///  <param name="certificate"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />
+    ///  对象，表示签名证书。
+    ///</param>
     {class} function init(signerIdentifierType: DNSubjectIdentifierType; certificate: DDN.System.DNX509Certificate2): DNCmsSigner; overload;
 
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.CmsSigner" />
+  ///  类提供的签名功能。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.CmsSigner')]
   DNCmsSigner = interface(DDN.mscorlib.DNObject)
   ['{F9F6FB69-AFB1-338E-BA7B-A2296F6A4362}']
@@ -888,12 +2135,94 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.CmsSigner.SignerIdentifierType" />
+    ///  属性设置或检索签名者的标识符的类型。
+    ///</summary>
+    ///<returns>
+    ///  成员 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+    ///  枚举，用于指定签名者的标识符的类型。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException">
+    ///  提供给方法的参数之一无效。
+    ///</exception>
     property SignerIdentifierType: DNSubjectIdentifierType read get_SignerIdentifierType write set_SignerIdentifierType;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.CmsSigner.Certificate" />
+    ///  属性设置或检索 <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />
+    ///  对象，表示签名证书。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />
+    ///  对象，表示签名证书。
+    ///</returns>
     property Certificate: DDN.System.DNX509Certificate2 read get_Certificate write set_Certificate;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.CmsSigner.DigestAlgorithm" />
+    ///  属性设置或检索 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  ，它表示用于计算签名的哈希算法。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，表示用于计算签名的哈希算法。
+    ///</returns>
     property DigestAlgorithm: DDN.System.DNOid read get_DigestAlgorithm write set_DigestAlgorithm;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.CmsSigner.SignedAttributes" />
+    ///  属性检索 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  已签名的特性将与生成关联的集合 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+    ///  内容。
+    ///  签名的特性进行签名以及指定的内容。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  表示有符号的特性集合。
+    ///  如果不有任何已签名的特性，该属性为空集合。
+    ///</returns>
     property SignedAttributes: DNCryptographicAttributeObjectCollection read get_SignedAttributes;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.CmsSigner.UnsignedAttributes" />
+    ///  属性检索 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  未签名的 PKCS #9 特性将与生成关联的集合 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+    ///  内容。
+    ///  可以修改未签名的特性，而只有在签名失效。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  表示无符号的特性集合。
+    ///  如果不有任何无符号的属性，该属性为空集合。
+    ///</returns>
     property UnsignedAttributes: DNCryptographicAttributeObjectCollection read get_UnsignedAttributes;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.CmsSigner.Certificates" />
+    ///  属性检索 <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+    ///  集合，其中包含具有要进行签名的消息相关联的证书。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+    ///  集合，表示要进行签名的消息与关联的证书集合。
+    ///</returns>
     property Certificates: DDN.System.DNX509Certificate2Collection read get_Certificates;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.CmsSigner.IncludeOption" />
+    ///  属性设置或检索控件根节点和整个链是否与签名证书关联的选项是附带创建 CMS/PKCS #7 消息。
+    ///</summary>
+    ///<returns>
+    ///  成员 <see cref="T:System.Security.Cryptography.X509Certificates.X509IncludeOption" />
+    ///  枚举，用于指定 X509 证书链应包括在 <see cref="T:System.Security.Cryptography.Pkcs.CmsSigner" />
+    ///  对象。
+    ///<see cref="P:System.Security.Cryptography.Pkcs.CmsSigner.IncludeOption" />
+    ///  属性可以是下列其中一项 <see cref="T:System.Security.Cryptography.X509Certificates.X509IncludeOption" />
+    ///  成员。
+    ///  名称
+    ///  值
+    ///  含义
+    ///<see cref="F:System.Security.Cryptography.X509Certificates.X509IncludeOption.None" />
+    ///  0
+    ///  证书链不包括。
+    ///<see cref="F:System.Security.Cryptography.X509Certificates.X509IncludeOption.ExcludeRoot" />
+    ///  1
+    ///  证书链，除根证书之外，则包括在内。
+    ///<see cref="F:System.Security.Cryptography.X509Certificates.X509IncludeOption.EndCertOnly" />
+    ///  2
+    ///  只包括最终证书。
+    ///<see cref="F:System.Security.Cryptography.X509Certificates.X509IncludeOption.WholeChain" />
+    ///  3
+    ///  证书链，包括根证书，则包括在内。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException">
+    ///  提供给方法的参数之一无效。
+    ///</exception>
     property IncludeOption: DDN.System.DNX509IncludeOption read get_IncludeOption write set_IncludeOption;
   end;
 
@@ -904,15 +2233,67 @@ type
   ['{18FE1DA7-FCBE-5132-911C-2DDDF9F3EA86}']
   { constructors } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.ContentInfo.#ctor(System.Byte[])" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  类使用的字节值数组数据和默认值来 <paramref name="object identifier" />
+    ///  (OID)，它表示的内容类型。
+    ///</summary>
+    ///  <param name="content">
+    ///  表示从其创建的数据的字节值数组 <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception>
     {class} function init(content: TArray<Byte>): DNContentInfo; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.ContentInfo.#ctor(System.Security.Cryptography.Oid,System.Byte[])" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  通过使用指定的内容类型和一个字节值数组作为数据的类。
+    ///</summary>
+    ///  <param name="contentType"><see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，其中包含 <paramref name="object identifier" />
+    ///  (OID)，它指定内容的内容类型。
+    ///  这可以是数据、 digestedData、 encryptedData、 envelopedData、 hashedData、 signedAndEnvelopedData 或条 signedData。
+    ///  有关详细信息，请参阅备注。
+    ///</param>
+    ///  <param name="content">
+    ///  表示从其创建的数据的字节值数组 <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception>
     {class} function init(contentType: DDN.System.DNOid; content: TArray<Byte>): DNContentInfo; overload;
 
   { static methods } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.ContentInfo.GetContentType(System.Byte[])" />
+    ///  静态方法检索的外部内容类型的编码 <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  由字节值数组的邮件。
+    ///</summary>
+    ///  <param name="encodedMessage">
+    ///  表示已编码的字节值数组 <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  要从中检索的外部内容类型的消息。
+    ///</param>
+    ///<returns>
+    ///  如果该方法成功，该方法返回 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，其中包含指定编码的外部内容类型 <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  消息。
+    ///  如果此方法失败，则会引发异常。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  当加密操作期间出错。
+    ///</exception>
     {class} function GetContentType(encodedMessage: TArray<Byte>): DDN.System.DNOid;
 
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+  ///  类表示 CMS/PKCS #7 ContentInfo 数据结构，如 CMS/PKCS #7 标准文档中定义。
+  ///  这种数据结构是为所有 CMS/PKCS #7 消息的基础。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.ContentInfo')]
   DNContentInfo = interface(DDN.mscorlib.DNObject)
   ['{50A08F43-D731-3583-B830-1F81460F6816}']
@@ -930,7 +2311,21 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.ContentInfo.ContentType" />
+    ///  属性检索 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，其中包含 <paramref name="object identifier" />
+    ///  (OID) 的内部 CMS/PKCS #7 消息内容的内容类型。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，其中包含 OID 值，该值表示的内容类型。
+    ///</returns>
     property ContentType: DDN.System.DNOid read get_ContentType;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.ContentInfo.Content" />
+    ///  属性检索 CMS/PKCS #7 消息的内容。
+    ///</summary>
+    ///<returns>
+    ///  表示内容数据的字节值数组。
+    ///</returns>
     property Content: TArray<Byte> read get_Content;
   end;
 
@@ -941,14 +2336,85 @@ type
   ['{98E07E6F-93FE-5533-A1EE-38A886389CDC}']
   { constructors } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.#ctor" />
+    ///  构造函数创建 <see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />
+    ///  类的实例。
+    ///</summary>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception>
     {class} function init: DNEnvelopedCms; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.#ctor(System.Security.Cryptography.Pkcs.ContentInfo)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />
+    ///  类作为内部的内容类型使用指定的内容信息。
+    ///</summary>
+    ///  <param name="contentInfo">
+    ///  一个实例 <see cref="P:System.Security.Cryptography.Pkcs.EnvelopedCms.ContentInfo" />
+    ///  表示内容及其类型的类。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception>
     {class} function init(contentInfo: DNContentInfo): DNEnvelopedCms; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.#ctor(System.Security.Cryptography.Pkcs.SubjectIdentifierType,System.Security.Cryptography.Pkcs.ContentInfo)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />
+    ///  通过使用指定的主题标识符的类型和内容信息的类。
+    ///  指定的内容信息是要用作内部的内容类型。
+    ///</summary>
+    ///  <param name="recipientIdentifierType">
+    ///  成员 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+    ///  枚举，用于指定标识收件人的方式。
+    ///</param>
+    ///  <param name="contentInfo">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  表示内容及其类型的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception>
     {class} function init(recipientIdentifierType: DNSubjectIdentifierType; contentInfo: DNContentInfo): DNEnvelopedCms; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.#ctor(System.Security.Cryptography.Pkcs.ContentInfo,System.Security.Cryptography.Pkcs.AlgorithmIdentifier)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />
+    ///  类通过使用指定的内容信息和加密算法。
+    ///  指定的内容信息是要用作内部的内容类型。
+    ///</summary>
+    ///  <param name="contentInfo">
+    ///  一个  <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  表示内容及其类型的对象。
+    ///</param>
+    ///  <param name="encryptionAlgorithm"><see cref="T:System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />
+    ///  指定加密算法的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception>
     {class} function init(contentInfo: DNContentInfo; encryptionAlgorithm: DNAlgorithmIdentifier): DNEnvelopedCms; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.#ctor(System.Security.Cryptography.Pkcs.SubjectIdentifierType,System.Security.Cryptography.Pkcs.ContentInfo,System.Security.Cryptography.Pkcs.AlgorithmIdentifier)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />
+    ///  类通过使用指定的主题标识符类型、 内容信息和加密算法。
+    ///  指定的内容信息是要用作内部的内容类型。
+    ///</summary>
+    ///  <param name="recipientIdentifierType">
+    ///  成员 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+    ///  枚举，用于指定标识收件人的方式。
+    ///</param>
+    ///  <param name="contentInfo">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  表示内容及其类型的对象。
+    ///</param>
+    ///  <param name="encryptionAlgorithm"><see cref="T:System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />
+    ///  指定加密算法的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception>
     {class} function init(recipientIdentifierType: DNSubjectIdentifierType; contentInfo: DNContentInfo; encryptionAlgorithm: DNAlgorithmIdentifier): DNEnvelopedCms; overload;
 
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />
+  ///  类表示 CMS/PKCS #7 封装数据结构。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.EnvelopedCms')]
   DNEnvelopedCms = interface(DDN.mscorlib.DNObject)
   ['{422E92AA-9BA8-33F6-BEBE-CC85A080135E}']
@@ -963,14 +2429,129 @@ type
 
   { methods } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Encode" />
+    ///  方法对封装的 CMS/PKCS #7 消息内容进行编码并将其作为一个字节值数组返回。
+    ///  在编码之前，必须完成加密。
+    ///</summary>
+    ///<returns>
+    ///  如果该方法成功，方法将返回一个表示已编码的信息的字节值数组。
+    ///  如果此方法失败，则会引发异常。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  方法调用对于对象的当前状态无效。
+    ///</exception>
     function Encode: TArray<Byte>;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decode(System.Byte[])" />
+    ///  方法解码指定的 CMS/PKCS #7 封装的消息并将重置中的所有成员变量 <see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="encodedMessage">
+    ///  表示信息要解码的字节值的数组。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception>
     procedure Decode(encodedMessage: TArray<Byte>);
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Encrypt" />
+    ///  方法对 CMS/PKCS #7 消息的内容进行加密。
+    ///</summary>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     procedure Encrypt; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Encrypt(System.Security.Cryptography.Pkcs.CmsRecipient)" />
+    ///  方法通过使用指定的收件人信息加密 CMS/PKCS #7 消息的内容。
+    ///</summary>
+    ///  <param name="recipient">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+    ///  对象，表示收件人信息。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     procedure Encrypt(recipient: DNCmsRecipient); overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Encrypt(System.Security.Cryptography.Pkcs.CmsRecipientCollection)" />
+    ///  方法使用指定的收件人列表的信息进行加密的 CMS/PKCS #7 消息内容。
+    ///  通过使用对称加密算法，如三重 DES 消息加密密钥加密消息。
+    ///  随后将使用的每个接收者的公钥进行加密消息的加密密钥。
+    ///</summary>
+    ///  <param name="recipients">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+    ///  表示的收件人列表的信息的集合。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     procedure Encrypt(recipients: DNCmsRecipientCollection); overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt" />
+    ///  方法来解密解码 CMS/PKCS #7 封装消息的内容。
+    ///<see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt" />
+    ///  方法搜索当前用户和计算机我的存储的适当的证书和私钥。
+    ///</summary>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  方法调用对于对象的当前状态无效。
+    ///</exception>
     procedure Decrypt; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.Pkcs.RecipientInfo)" />
+    ///  方法通过使用与由指定的收件人信息标识该证书关联的私钥来解密解码 CMS/PKCS #7 封装消息的内容。
+    ///</summary>
+    ///  <param name="recipientInfo">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+    ///  表示用于标识与要使用用于解密的私钥关联的证书的收件人信息的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  方法调用对于对象的当前状态无效。
+    ///</exception>
     procedure Decrypt(recipientInfo: DNRecipientInfo); overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />
+    ///  方法通过使用指定的证书集合来解密解码 CMS/PKCS #7 封装消息的内容。
+    ///<see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />
+    ///  方法搜索指定的证书集合和正确的证书可用于解密 My 证书存储区。
+    ///</summary>
+    ///  <param name="extraStore"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+    ///  集合，表示要用于解密的其他证书。
+    ///<see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />
+    ///  方法搜索此证书集合和正确的证书可用于解密 My 证书存储区。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  方法调用对于对象的当前状态无效。
+    ///</exception>
     procedure Decrypt(extraStore: DDN.System.DNX509Certificate2Collection); overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.Pkcs.RecipientInfo,System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />
+    ///  方法通过使用与证书标识指定的收件人信息并通过指定的证书集合关联的私钥来解密解码 CMS/PKCS #7 封装消息的内容。
+    ///<see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.Pkcs.RecipientInfo,System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />
+    ///  方法搜索指定的证书集合和正确的证书可用于解密 My 证书存储区。
+    ///</summary>
+    ///  <param name="recipientInfo">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+    ///  对象，表示用于解密的收件人信息。
+    ///</param>
+    ///  <param name="extraStore"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+    ///  集合，表示要用于解密的其他证书。
+    ///<see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.Pkcs.RecipientInfo,System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />
+    ///  方法搜索此证书集合和正确的证书可用于解密 My 证书存储区。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  方法调用对于对象的当前状态无效。
+    ///</exception>
     procedure Decrypt(recipientInfo: DNRecipientInfo; extraStore: DDN.System.DNX509Certificate2Collection); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -979,11 +2560,55 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.EnvelopedCms.Version" />
+    ///  属性检索 CMS/PKCS #7 封装消息版本。
+    ///</summary>
+    ///<returns>
+    ///  一个整数值，该值表示 CMS/PKCS #7 封装消息的版本。
+    ///</returns>
     property Version: Int32 read get_Version;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.EnvelopedCms.ContentInfo" />
+    ///  属性检索 CMS/PKCS #7 封装消息的内部内容信息。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  对象，表示从 CMS/PKCS #7 封装消息内部的内容信息。
+    ///</returns>
     property ContentInfo: DNContentInfo read get_ContentInfo;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.EnvelopedCms.ContentEncryptionAlgorithm" />
+    ///  属性检索使用对内容进行加密的算法的标识符。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />
+    ///  对象，表示算法标识符。
+    ///</returns>
     property ContentEncryptionAlgorithm: DNAlgorithmIdentifier read get_ContentEncryptionAlgorithm;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.EnvelopedCms.Certificates" />
+    ///  属性检索与 CMS/PKCS #7 封装消息关联的证书集。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+    ///  集合，表示与 CMS/PKCS #7 封装消息一起使用的 X.509 证书。
+    ///  如果不存在任何证书，该属性值为空集合。
+    ///</returns>
     property Certificates: DDN.System.DNX509Certificate2Collection read get_Certificates;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.EnvelopedCms.UnprotectedAttributes" />
+    ///  属性检索与 CMS/PKCS #7 封装消息关联的未受保护的 （未加密） 特性。
+    ///  未受保护的特性未经加密，因此不具有数据保密性内的 <see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  表示未受保护的特性集合。
+    ///  如果不存在任何未受保护的属性，该属性值为空集合。
+    ///</returns>
     property UnprotectedAttributes: DNCryptographicAttributeObjectCollection read get_UnprotectedAttributes;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.EnvelopedCms.RecipientInfos" />
+    ///  属性检索与 CMS/PKCS #7 封装消息关联的收件人信息。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  表示的收件人信息的集合。
+    ///  如果不存在任何收件人，属性值为空集合。
+    ///</returns>
     property RecipientInfos: DNRecipientInfoCollection read get_RecipientInfos;
   end;
 
@@ -994,6 +2619,9 @@ type
   ['{23D17C0B-F87C-532F-BEC0-6964FD2B2B38}']
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.PublicKeyInfo" />
+  ///  类表示与公钥相关联的信息。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.PublicKeyInfo')]
   DNPublicKeyInfo = interface(DDN.mscorlib.DNObject)
   ['{BE6D1D7F-0C06-32C8-953F-5C5845D2E43A}']
@@ -1011,7 +2639,19 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.PublicKeyInfo.Algorithm" />
+    ///  属性检索与公钥相关联的算法标识符。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />
+    ///  表示的算法的对象。
+    ///</returns>
     property Algorithm: DNAlgorithmIdentifier read get_Algorithm;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.PublicKeyInfo.KeyValue" />
+    ///  属性检索编码的公共组件的公共密钥对的值。
+    ///</summary>
+    ///<returns>
+    ///  表示公共密钥对的编码公共组件的字节值数组。
+    ///</returns>
     property KeyValue: TArray<Byte> read get_KeyValue;
   end;
 
@@ -1022,6 +2662,13 @@ type
   ['{D7BADC27-3961-5B77-B360-01513D030AC9}']
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+  ///  类表示有关 CMS/PKCS #7 消息接收方的信息。
+  ///<see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+  ///  类是由继承一个抽象类 <see cref="T:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo" />
+  ///  和 <see cref="T:System.Security.Cryptography.Pkcs.KeyTransRecipientInfo" />
+  ///  类。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.RecipientInfo')]
   DNRecipientInfo = interface(DDN.mscorlib.DNObject)
   ['{DD07B4AD-5778-37B4-B7A0-14889EB6B80B}']
@@ -1042,10 +2689,47 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfo.Type" />
+    ///  属性检索令牌接收方的类型。
+    ///  接收方的类型确定这两个主要协议用于建立与发起方和 CMS/PKCS #7 消息的接收方之间的键。
+    ///</summary>
+    ///<returns>
+    ///  值为 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoType" />
+    ///  定义的接收方的类型的枚举。
+    ///</returns>
     property &Type: DNRecipientInfoType read get_Type;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfo.Version" />
+    ///  抽象属性检索的收件人信息的版本。
+    ///  派生的类会自动设置此属性为它们的对象，并且该值指示是否正在使用 PKCS #7 或加密消息语法 (CMS) 来保护消息。
+    ///  此版本还指示是否 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+    ///  对象建立一个加密密钥，密钥协议算法或密钥传输算法。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  值，该值表示的新版 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+    ///  对象。
+    ///</returns>
     property Version: Int32 read get_Version;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfo.RecipientIdentifier" />
+    ///  抽象属性检索接收方的标识符。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifier" />
+    ///  对象，其中包含接收方的标识符。
+    ///</returns>
     property RecipientIdentifier: DNSubjectIdentifier read get_RecipientIdentifier;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfo.KeyEncryptionAlgorithm" />
+    ///  抽象属性检索用来建立密钥的算法。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />
+    ///  对象，其中包含用于建立之间的原始发件人和收件人 CMS/PKCS #7 消息的密钥的算法的值。
+    ///</returns>
     property KeyEncryptionAlgorithm: DNAlgorithmIdentifier read get_KeyEncryptionAlgorithm;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfo.EncryptedKey" />
+    ///  抽象属性检索加密的收件人密钥材料。
+    ///</summary>
+    ///<returns>
+    ///  一个包含加密的收件人密钥材料的字节值数组。
+    ///</returns>
     property EncryptedKey: TArray<Byte> read get_EncryptedKey;
   end;
 
@@ -1056,6 +2740,11 @@ type
   ['{C9D86C92-DA27-524B-867C-A01BBDD7B583}']
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo" />
+  ///  类定义密钥协议收件人信息。
+  ///  密钥协议算法通常使用 Diffie-hellman 密钥协议算法，在其中建立共享的加密密钥的两个参与方参与的生成过程又，根据定义，达成一致该注册表项。
+  ///  这是与密钥传输算法，在其中一方将单独生成密钥和发送，或传输给另一方不同。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo')]
   DNKeyAgreeRecipientInfo = interface(DNRecipientInfo)
   ['{A4423C3A-AD76-3930-8130-3D99DC2A070D}']
@@ -1079,13 +2768,71 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo.Version" />
+    ///  属性检索密钥协议接收方的版本。
+    ///  这自动设置为此类中的对象，其值表示，接收方参与密钥协议算法。
+    ///</summary>
+    ///<returns>
+    ///  版本 <see cref="T:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo" />
+    ///  对象。
+    ///</returns>
     property Version: Int32 read get_Version;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo.OriginatorIdentifierOrKey" />
+    ///  属性检索有关与发起方的信息的保证它的密钥协议算法密钥协议。
+    ///</summary>
+    ///<returns>
+    ///  一个包含有关与发起方密钥协议的信息的对象。
+    ///</returns>
     property OriginatorIdentifierOrKey: DNSubjectIdentifierOrKey read get_OriginatorIdentifierOrKey;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo.RecipientIdentifier" />
+    ///  属性检索接收方的标识符。
+    ///</summary>
+    ///<returns>
+    ///  接收方的标识符。
+    ///</returns>
     property RecipientIdentifier: DNSubjectIdentifier read get_RecipientIdentifier;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo.Date" />
+    ///  属性由发起方检索的日期和时间开始的密钥协商协议。
+    ///</summary>
+    ///<returns>
+    ///  日期和时间开始的发信方密钥协商协议。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  接收方标识符类型不是主题密钥标识符。
+    ///</exception>
     property Date: DDN.mscorlib.DNDateTime read get_Date;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo.OtherKeyAttribute" />
+    ///  属性检索的密钥材料的属性。
+    ///</summary>
+    ///<returns>
+    ///  密钥材料的特性。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  接收方标识符类型不是主题密钥标识符。
+    ///</exception>
     property OtherKeyAttribute: DNCryptographicAttributeObject read get_OtherKeyAttribute;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo.KeyEncryptionAlgorithm" />
+    ///  属性检索用来执行密钥协议的算法。
+    ///</summary>
+    ///<returns>
+    ///  用于执行密钥协议的算法的值。
+    ///</returns>
     property KeyEncryptionAlgorithm: DNAlgorithmIdentifier read get_KeyEncryptionAlgorithm;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo.EncryptedKey" />
+    ///  属性检索加密的收件人密钥材料。
+    ///</summary>
+    ///<returns>
+    ///  一个包含加密的收件人密钥材料的字节值数组。
+    ///</returns>
     property EncryptedKey: TArray<Byte> read get_EncryptedKey;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfo.Type" />
+    ///  属性检索令牌接收方的类型。
+    ///  接收方的类型确定这两个主要协议用于建立与发起方和 CMS/PKCS #7 消息的接收方之间的键。
+    ///</summary>
+    ///<returns>
+    ///  值为 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoType" />
+    ///  定义的接收方的类型的枚举。
+    ///</returns>
     property &Type: DNRecipientInfoType read get_Type;
   end;
 
@@ -1096,6 +2843,11 @@ type
   ['{E2821120-106A-57F0-AE0F-97328BE6E5CF}']
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.KeyTransRecipientInfo" />
+  ///  类定义密钥传输收件人信息。
+  ///  密钥传输 算法通常使用 RSA 算法，在其中发起方与接收方共享的加密密钥通过建立生成该密钥，然后将其传输到接收方。
+  ///  这是与此相反 密钥协议 算法，将使用一个加密的两个参与方键同时参与的生成过程，从而相互认同对该注册表项。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.KeyTransRecipientInfo')]
   DNKeyTransRecipientInfo = interface(DNRecipientInfo)
   ['{9E73218E-3C28-3E4E-9DF6-112A400D4468}']
@@ -1116,10 +2868,45 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.KeyTransRecipientInfo.Version" />
+    ///  属性检索的密钥传输接收方的版本。
+    ///  密钥传输接收方的版本会自动设置为此类中的对象，并且其值表示，接收方参与密钥传输算法。
+    ///</summary>
+    ///<returns>
+    ///  一个整数值，表示密钥的传输版本 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+    ///  对象。
+    ///</returns>
     property Version: Int32 read get_Version;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.KeyTransRecipientInfo.RecipientIdentifier" />
+    ///  属性检索加密的内容与相关联的使用者标识符。
+    ///</summary>
+    ///<returns>
+    ///  一个   <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifier" />
+    ///  对象，它存储参与密钥传输的接收方的标识符。
+    ///</returns>
     property RecipientIdentifier: DNSubjectIdentifier read get_RecipientIdentifier;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.KeyTransRecipientInfo.KeyEncryptionAlgorithm" />
+    ///  属性检索用于内容加密密钥进行加密的密钥加密算法。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />
+    ///  对象，用于存储密钥加密算法标识符。
+    ///</returns>
     property KeyEncryptionAlgorithm: DNAlgorithmIdentifier read get_KeyEncryptionAlgorithm;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.KeyTransRecipientInfo.EncryptedKey" />
+    ///  属性检索该密钥传输收件人的加密的密钥。
+    ///</summary>
+    ///<returns>
+    ///  表示加密的密钥的字节值数组。
+    ///</returns>
     property EncryptedKey: TArray<Byte> read get_EncryptedKey;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfo.Type" />
+    ///  属性检索令牌接收方的类型。
+    ///  接收方的类型确定这两个主要协议用于建立与发起方和 CMS/PKCS #7 消息的接收方之间的键。
+    ///</summary>
+    ///<returns>
+    ///  值为 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoType" />
+    ///  定义的接收方的类型的枚举。
+    ///</returns>
     property &Type: DNRecipientInfoType read get_Type;
   end;
 
@@ -1130,6 +2917,13 @@ type
   ['{34984546-EEBF-5194-AEFF-94667C43B0AE}']
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+  ///  类表示一套 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+  ///  对象。
+  ///<see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+  ///  实现 <see cref="T:System.Collections.ICollection" />
+  ///  接口。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.RecipientInfoCollection')]
   DNRecipientInfoCollection = interface(DDN.mscorlib.DNICollection)
   ['{710BB5DF-E041-3566-B9FA-40548D84D868}']
@@ -1142,8 +2936,60 @@ type
 
   { methods } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.RecipientInfoCollection.GetEnumerator" />
+    ///  方法将返回 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoEnumerator" />
+    ///  对象 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoEnumerator" />
+    ///  对象，它可用于枚举 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  集合。
+    ///</returns>
     function GetEnumerator: DNRecipientInfoEnumerator;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.RecipientInfoCollection.CopyTo(System.Array,System.Int32)" />
+    ///  方法副本 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  集合到一个数组。
+    ///</summary>
+    ///  <param name="array"><see cref="T:System.Array" />
+    ///  对象传递给该 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  集合将被复制。
+    ///</param>
+    ///  <param name="index">
+    ///  中的从零开始索引 <paramref name="array" />
+    ///  其中 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  集合将被复制。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  提供给方法的参数之一无效。
+    ///</exception><exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException">
+    ///  参数的值超出了允许范围的值时，按照所调用的方法的定义。
+    ///</exception>
     procedure CopyTo(&array: DDN.mscorlib.DNArray; index: Int32); overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.RecipientInfoCollection.CopyTo(System.Security.Cryptography.Pkcs.RecipientInfo[],System.Int32)" />
+    ///  方法副本 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  集合与 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+    ///  数组。
+    ///</summary>
+    ///  <param name="array">
+    ///  一个数组 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+    ///  对象其中 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  集合将被复制。
+    ///</param>
+    ///  <param name="index">
+    ///  中的从零开始索引 <paramref name="array" />
+    ///  其中 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  集合将被复制。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  提供给方法的参数之一无效。
+    ///</exception><exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException">
+    ///  参数的值超出了允许范围的值时，按照所调用的方法的定义。
+    ///</exception>
     procedure CopyTo(&array: TArray<DNRecipientInfo>; index: Int32); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1153,8 +2999,34 @@ type
   { propertys } 
 
     property Item[index: Int32]: DNRecipientInfo read get_Item; default;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfoCollection.Count" />
+    ///  属性检索中的项数 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns>
+    ///  一个表示集合中的项数的整数值。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfoCollection.IsSynchronized" />
+    ///  属性是否检索到的集合的访问同步的即线程安全。
+    ///  此属性始终返回 <see langword="false" />
+    ///  , ，这意味着该集合不是线程安全。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Boolean" />
+    ///  值 <see langword="false" />
+    ///  , ，这意味着该集合不是线程安全。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfoCollection.SyncRoot" />
+    ///  属性检索 <see cref="T:System.Object" />
+    ///  对象，用于同步对 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Object" />
+    ///  对象，用于同步对 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  集合。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
   end;
 
@@ -1165,6 +3037,13 @@ type
   ['{40E43F12-CA6B-59E9-9F58-9E2D5405AABE}']
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoEnumerator" />
+  ///  类为 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+  ///  集合提供枚举功能。
+  ///<see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoEnumerator" />
+  ///  实现 <see cref="T:System.Collections.IEnumerator" />
+  ///  接口。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.RecipientInfoEnumerator')]
   DNRecipientInfoEnumerator = interface(DDN.mscorlib.DNIEnumerator)
   ['{193CCA77-EED0-31AF-98D2-40C914E017D9}']
@@ -1174,7 +3053,25 @@ type
 
   { methods } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.RecipientInfoEnumerator.MoveNext" />
+    ///  方法将枚举推进到下一个 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+    ///  对象在 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns>
+    ///  此方法返回一个布尔值，指定是否成功地推进枚举。
+    ///  如果枚举成功移动到下一个 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+    ///  对象，该方法返回 <see langword="true" />
+    ///  。
+    ///  如果枚举移过枚举中的最后一项，它将返回 <see langword="false" />
+    ///  。
+    ///</returns>
     function MoveNext: Boolean;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.RecipientInfoEnumerator.Reset" />
+    ///  方法将枚举重置为第一个 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+    ///  对象在 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  集合。
+    ///</summary>
     procedure Reset;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1183,6 +3080,16 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfoEnumerator.Current" />
+    ///  属性检索当前 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+    ///  对象从 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+    ///  对象，表示在当前的收件人信息结构 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />
+    ///  集合。
+    ///</returns>
     property Current: DNRecipientInfo read get_Current;
   end;
 
@@ -1193,15 +3100,113 @@ type
   ['{B85B3D29-2DEC-599B-95EA-2BD5002B345D}']
   { constructors } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignedCms.#ctor" />
+    ///  构造函数创建 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  类的实例。
+    ///</summary>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception>
     {class} function init: DNSignedCms; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignedCms.#ctor(System.Security.Cryptography.Pkcs.SubjectIdentifierType)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  类通过使用指定的主题标识符类型作为默认的主题标识符类型签名者。
+    ///</summary>
+    ///  <param name="signerIdentifierType">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+    ///  成员，用于为签名者指定默认的主题标识符类型。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception>
     {class} function init(signerIdentifierType: DNSubjectIdentifierType): DNSignedCms; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignedCms.#ctor(System.Security.Cryptography.Pkcs.ContentInfo)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  为内部内容使用指定的内容信息的类。
+    ///</summary>
+    ///  <param name="contentInfo">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  对象，它指定为内部内容的内容信息 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  消息。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception>
     {class} function init(contentInfo: DNContentInfo): DNSignedCms; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignedCms.#ctor(System.Security.Cryptography.Pkcs.SubjectIdentifierType,System.Security.Cryptography.Pkcs.ContentInfo)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  类通过使用指定的主题标识符类型作为默认的主题标识符类型签名者和内容信息作为内部内容。
+    ///</summary>
+    ///  <param name="signerIdentifierType">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+    ///  成员，用于为签名者指定默认的主题标识符类型。
+    ///</param>
+    ///  <param name="contentInfo">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  对象，它指定为内部内容的内容信息 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  消息。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception>
     {class} function init(signerIdentifierType: DNSubjectIdentifierType; contentInfo: DNContentInfo): DNSignedCms; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignedCms.#ctor(System.Security.Cryptography.Pkcs.ContentInfo,System.Boolean)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  类通过使用指定的内容信息为内部内容，并通过使用已分离的状态。
+    ///</summary>
+    ///  <param name="contentInfo">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  对象，它指定为内部内容的内容信息 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  消息。
+    ///</param>
+    ///  <param name="detached">
+    ///  一个 <see cref="T:System.Boolean" />
+    ///  值，该值指定是否 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  对象表示的分离签名。
+    ///  如果 <paramref name="detached" />
+    ///  是 <see langword="true" />
+    ///  , ，则分离签名。
+    ///  如果 <paramref name="detached" />
+    ///  是 <see langword="false" />
+    ///  , ，不分离签名。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception>
     {class} function init(contentInfo: DNContentInfo; detached: Boolean): DNSignedCms; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignedCms.#ctor(System.Security.Cryptography.Pkcs.SubjectIdentifierType,System.Security.Cryptography.Pkcs.ContentInfo,System.Boolean)" />
+    ///  构造函数创建的一个实例 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  类通过使用指定的主题标识符类型作为默认的主题标识符类型签名者，作为内部内容的内容信息以及通过使用已分离的状态。
+    ///</summary>
+    ///  <param name="signerIdentifierType">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+    ///  成员，用于为签名者指定默认的主题标识符类型。
+    ///</param>
+    ///  <param name="contentInfo">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  对象，它指定为内部内容的内容信息 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  消息。
+    ///</param>
+    ///  <param name="detached">
+    ///  一个 <see cref="T:System.Boolean" />
+    ///  值，该值指定是否 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  对象表示的分离签名。
+    ///  如果 <paramref name="detached" />
+    ///  是 <see langword="true" />
+    ///  , ，则分离签名。
+    ///  如果分离是 <see langword="false" />
+    ///  , ，不分离签名。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception>
     {class} function init(signerIdentifierType: DNSubjectIdentifierType; contentInfo: DNContentInfo; detached: Boolean): DNSignedCms; overload;
 
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+  ///  类使签名和验证的 CMS/PKCS #7 消息。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.SignedCms')]
   DNSignedCms = interface(DDN.mscorlib.DNObject)
   ['{3B79B3A9-BF36-3477-BE28-A333B438757F}']
@@ -1215,15 +3220,179 @@ type
 
   { methods } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignedCms.Encode" />
+    ///  方法对 CMS/PKCS #7 消息到对象中的信息进行编码。
+    ///</summary>
+    ///<returns>
+    ///  表示已编码的消息的字节值数组。
+    ///  编码的消息可以由解码 <see cref="M:System.Security.Cryptography.Pkcs.SignedCms.Decode(System.Byte[])" />
+    ///  方法。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  方法调用对于对象的当前状态无效。
+    ///</exception>
     function Encode: TArray<Byte>;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignedCms.Decode(System.Byte[])" />
+    ///  方法则解码已编码 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  消息。
+    ///  解码成功后，可以从属性中检索的已解码的信息 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="encodedMessage">
+    ///  表示已编码的 CMS/PKCS #7 消息，要解码的字节值数组。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     procedure Decode(encodedMessage: TArray<Byte>);
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature" />
+    ///  方法提示用户选择签名证书，创建一个签名，并将该签名添加到 CMS/PKCS #7 消息。
+    ///</summary>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     procedure ComputeSignature; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature(System.Security.Cryptography.Pkcs.CmsSigner)" />
+    ///  方法创建使用指定的签名者的签名并将该签名添加到 CMS/PKCS #7 消息。
+    ///</summary>
+    ///  <param name="signer">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.CmsSigner" />
+    ///  表示签名者的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     procedure ComputeSignature(signer: DNCmsSigner); overload;
+    ///<summary>
+    ///  创建使用指定的签名者签名，并将该签名添加到 CMS/PKCS #7 消息。
+    ///  如果无提示参数的值是 <see langword="false" />
+    ///  和 <see cref="P:System.Security.Cryptography.Pkcs.CmsSigner.Certificate" />
+    ///  属性 <see cref="T:System.Security.Cryptography.Pkcs.CmsSigner" />
+    ///  签名者参数所指定的对象未设置为有效的证书，此方法将提示用户选择签名证书。
+    ///</summary>
+    ///  <param name="signer">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.CmsSigner" />
+    ///  表示签名者的对象。
+    ///</param>
+    ///  <param name="silent"><see langword="false" />
+    ///  若要提示用户选择签名证书。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  值 <paramref name="silent" />
+    ///  参数是 <see langword="true" />
+    ///  且未指定签名证书。
+    ///</exception>
     procedure ComputeSignature(signer: DNCmsSigner; silent: Boolean); overload;
+    ///<summary>
+    ///  删除的指定索引处的签名 <see cref="P:System.Security.Cryptography.Pkcs.SignedCms.SignerInfos" />
+    ///  集合。
+    ///</summary>
+    ///  <param name="index">
+    ///  要移除的签名的从零开始的索引。
+    ///</param>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  CMS/PKCS #7 消息没有签名，并 <paramref name="index" />
+    ///  无效。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />
+    ///  小于零。
+    ///  - 或 -
+    ///  <paramref name="index" />
+    ///  大于签名数减 1。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法删除签名。
+    ///  - 或 -
+    ///  出现内部加密错误。
+    ///</exception>
     procedure RemoveSignature(index: Int32); overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignedCms.RemoveSignature(System.Security.Cryptography.Pkcs.SignerInfo)" />
+    ///  方法中删除指定的签名 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="signerInfo">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+    ///  对象，表示要移除的副署。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException">
+    ///  参数的值超出了允许范围的值时，按照所调用的方法的定义。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     procedure RemoveSignature(signerInfo: DNSignerInfo); overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignedCms.CheckSignature(System.Boolean)" />
+    ///  方法签名 CMS/PKCS #7 消息上的数字签名进行验证，并 （可选） 验证签名者的证书。
+    ///</summary>
+    ///  <param name="verifySignatureOnly">
+    ///  一个 <see cref="T:System.Boolean" />
+    ///  值，该值指定是否仅数字签名验证没有验证签名者证书。
+    ///  如果 <paramref name="verifySignatureOnly" />
+    ///  是 <see langword="true" />
+    ///  , ，仅数字签名进行验证。
+    ///  如果它是 <see langword="false" />
+    ///  , 、 验证数字签名、 签名者的证书进行验证，并验证证书的用途。
+    ///  如果证书有没有密钥用法，或者如果密钥用法支持数字签名或不可否认性，则认为有效证书的用途。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  方法调用对于对象的当前状态无效。
+    ///</exception>
     procedure CheckSignature(verifySignatureOnly: Boolean); overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignedCms.CheckSignature(System.Security.Cryptography.X509Certificates.X509Certificate2Collection,System.Boolean)" />
+    ///  方法通过使用指定的证书集合进行验证签名 CMS/PKCS #7 消息上的数字签名，并 （可选） 验证签名者的证书。
+    ///</summary>
+    ///  <param name="extraStore"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+    ///  对象，它可用于验证证书链。
+    ///  如果没有其他证书以用于验证证书链，请使用 <see cref="M:System.Security.Cryptography.Pkcs.SignedCms.CheckSignature(System.Boolean)" />
+    ///  而不是 <see cref="M:System.Security.Cryptography.Pkcs.SignedCms.CheckSignature(System.Security.Cryptography.X509Certificates.X509Certificate2Collection,System.Boolean)" />
+    ///  。
+    ///</param>
+    ///  <param name="verifySignatureOnly">
+    ///  一个 <see cref="T:System.Boolean" />
+    ///  值，该值指定是否仅数字签名验证没有验证签名者证书。
+    ///  如果 <paramref name="verifySignatureOnly" />
+    ///  是 <see langword="true" />
+    ///  , ，仅数字签名进行验证。
+    ///  如果它是 <see langword="false" />
+    ///  , 、 验证数字签名、 签名者的证书进行验证，并验证证书的用途。
+    ///  如果证书有没有密钥用法，或者如果密钥用法支持数字签名或不可否认性，则认为有效证书的用途。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  方法调用对于对象的当前状态无效。
+    ///</exception>
     procedure CheckSignature(extraStore: DDN.System.DNX509Certificate2Collection; verifySignatureOnly: Boolean); overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignedCms.CheckHash" />
+    ///  方法验证 CMS/PKCS #7 消息的数据完整性。
+    ///<see cref="M:System.Security.Cryptography.Pkcs.SignedCms.CheckHash" />
+    ///  是一个专用的方法，用于在特定的安全基础结构应用程序中程序只希望检查 CMS 消息的哈希，而不是执行完整数字签名验证。
+    ///<see cref="M:System.Security.Cryptography.Pkcs.SignedCms.CheckHash" />
+    ///  由于此方法不涉及验证数字签名，不会验证作者也邮件发件人。
+    ///  对于通用检查完整性和 CMS/PKCS #7 消息的身份验证，请使用 <see cref="M:System.Security.Cryptography.Pkcs.SignedCms.CheckSignature(System.Boolean)" />
+    ///  或 <see cref="M:System.Security.Cryptography.Pkcs.SignedCms.CheckSignature(System.Security.Cryptography.X509Certificates.X509Certificate2Collection,System.Boolean)" />
+    ///  方法。
+    ///</summary>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  方法调用对于对象的当前状态无效。
+    ///</exception>
     procedure CheckHash;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1232,10 +3401,50 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignedCms.Version" />
+    ///  属性检索 CMS/PKCS #7 消息版本。
+    ///</summary>
+    ///<returns>
+    ///  一个整数值，该值表示 CMS/PKCS #7 消息版本。
+    ///</returns>
     property Version: Int32 read get_Version;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignedCms.ContentInfo" />
+    ///  属性检索已编码的 CMS/PKCS #7 消息的内部内容。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+    ///  对象，表示已编码的 CMS/PKCS #7 消息的内容。
+    ///</returns>
     property ContentInfo: DNContentInfo read get_ContentInfo;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignedCms.Detached" />
+    ///  属性检索是否 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  对象表示的分离签名。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Boolean" />
+    ///  值，该值指定是否 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+    ///  对象表示的分离签名。
+    ///  如果此属性为 <see langword="true" />
+    ///  , ，则分离签名。
+    ///  如果此属性为 <see langword="false" />
+    ///  , ，不分离签名。
+    ///</returns>
     property Detached: Boolean read get_Detached;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignedCms.Certificates" />
+    ///  属性检索的已编码的 CMS/PKCS #7 消息关联的证书。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+    ///  集合，表示已编码的 CMS/PKCS #7 消息的证书集。
+    ///</returns>
     property Certificates: DDN.System.DNX509Certificate2Collection read get_Certificates;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignedCms.SignerInfos" />
+    ///  属性检索 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  与 CMS/PKCS #7 消息关联的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  对象，表示 CMS/PKCS #7 消息的签名程序信息。
+    ///</returns>
     property SignerInfos: DNSignerInfoCollection read get_SignerInfos;
   end;
 
@@ -1246,6 +3455,10 @@ type
   ['{9FBD8A1A-8369-50CF-886C-D92254E38BEE}']
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+  ///  类表示签名人与关联 <see cref="T:System.Security.Cryptography.Pkcs.SignedCms" />
+  ///  表示 CMS/PKCS #7 消息的对象。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.SignerInfo')]
   DNSignerInfo = interface(DDN.mscorlib.DNObject)
   ['{85282D35-4C09-3365-B598-C3D3652917AC}']
@@ -1262,12 +3475,120 @@ type
 
   { methods } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfo.ComputeCounterSignature" />
+    ///  方法提示用户选择签名证书，创建副署，并将签名添加到 CMS/PKCS #7 消息。
+    ///  副署仅限于一个级别。
+    ///</summary>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     procedure ComputeCounterSignature; overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfo.ComputeCounterSignature(System.Security.Cryptography.Pkcs.CmsSigner)" />
+    ///  方法通过使用指定的签名者创建副署添加并将该签名添加到 CMS/PKCS #7 消息。
+    ///  副署仅限于一个级别。
+    ///</summary>
+    ///  <param name="signer">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.CmsSigner" />
+    ///  表示副署签名者的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     procedure ComputeCounterSignature(signer: DNCmsSigner); overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfo.RemoveCounterSignature(System.Int32)" />
+    ///  方法中删除的指定索引处的副署 <see cref="P:System.Security.Cryptography.Pkcs.SignerInfo.CounterSignerInfos" />
+    ///  集合。
+    ///</summary>
+    ///  <param name="index">
+    ///  若要删除的副署的从零开始的索引。
+    ///</param>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     procedure RemoveCounterSignature(index: Int32); overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfo.CheckSignature(System.Boolean)" />
+    ///  方法验证该消息的数字签名，并 （可选） 验证证书。
+    ///</summary>
+    ///  <param name="verifySignatureOnly">
+    ///  一个布尔值，指定是否验证仅对数字签名。
+    ///  如果 <paramref name="verifySignatureOnly" />
+    ///  是 <see langword="true" />
+    ///  , ，仅对签名进行验证。
+    ///  如果 <paramref name="verifySignatureOnly" />
+    ///  是 <see langword="false" />
+    ///  , 、 验证数字签名、 证书链已验证，和验证证书的用途。
+    ///  如果证书有没有密钥用法，或者如果密钥用法支持数字签名或不可否认性，则认为有效证书的用途。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  方法调用对于对象的当前状态无效。
+    ///</exception>
     procedure CheckSignature(verifySignatureOnly: Boolean); overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfo.CheckSignature(System.Security.Cryptography.X509Certificates.X509Certificate2Collection,System.Boolean)" />
+    ///  方法通过使用指定的证书集合进行验证的消息的数字签名，并 （可选） 验证证书。
+    ///</summary>
+    ///  <param name="extraStore"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+    ///  可用于验证链的对象。
+    ///  如果没有其他证书以用于验证链，请使用 <see cref="M:System.Security.Cryptography.Pkcs.SignerInfo.CheckSignature(System.Boolean)" />
+    ///  而不是 <see cref="M:System.Security.Cryptography.Pkcs.SignerInfo.CheckSignature(System.Security.Cryptography.X509Certificates.X509Certificate2Collection,System.Boolean)" />
+    ///  。
+    ///</param>
+    ///  <param name="verifySignatureOnly">
+    ///  一个布尔值，指定是否验证仅对数字签名。
+    ///  如果 <paramref name="verifySignatureOnly" />
+    ///  是 <see langword="true" />
+    ///  , ，仅对签名进行验证。
+    ///  如果 <paramref name="verifySignatureOnly" />
+    ///  是 <see langword="false" />
+    ///  , 、 验证数字签名、 证书链已验证，和验证证书的用途。
+    ///  如果证书有没有密钥用法，或者如果密钥用法支持数字签名或不可否认性，则认为有效证书的用途。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception><exception cref="T:System.InvalidOperationException">
+    ///  方法调用对于对象的当前状态无效。
+    ///</exception>
     procedure CheckSignature(extraStore: DDN.System.DNX509Certificate2Collection; verifySignatureOnly: Boolean); overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfo.CheckHash" />
+    ///  方法验证 CMS/PKCS #7 消息签名程序信息的数据完整性。
+    ///<see cref="M:System.Security.Cryptography.Pkcs.SignerInfo.CheckHash" />
+    ///  是在使用者使用特定的安全基础结构应用程序中使用的专用的方法 HashOnly 的成员 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+    ///  枚举设置时 <see cref="T:System.Security.Cryptography.Pkcs.CmsSigner" />
+    ///  对象。
+    ///<see cref="M:System.Security.Cryptography.Pkcs.SignerInfo.CheckHash" />
+    ///  不进行身份验证的签名程序信息，因为此方法不涉及验证数字签名。
+    ///  对于通用检查完整性和 CMS/PKCS #7 消息签名程序信息和副署的身份验证，请使用 <see cref="M:System.Security.Cryptography.Pkcs.SignerInfo.CheckSignature(System.Boolean)" />
+    ///  或 <see cref="M:System.Security.Cryptography.Pkcs.SignerInfo.CheckSignature(System.Security.Cryptography.X509Certificates.X509Certificate2Collection,System.Boolean)" />
+    ///  方法。
+    ///</summary>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     procedure CheckHash;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfo.RemoveCounterSignature(System.Security.Cryptography.Pkcs.SignerInfo)" />
+    ///  方法中删除指定的副署 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="counterSignerInfo">
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+    ///  对象，表示要移除的副署。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException">
+    ///  参数的值超出了允许范围的值时，按照所调用的方法的定义。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法完成加密操作。
+    ///</exception>
     procedure RemoveCounterSignature(counterSignerInfo: DNSignerInfo); overload;
     function GetSignature: TArray<Byte>;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -1277,12 +3598,67 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignerInfo.Version" />
+    ///  属性检索签名者信息版本。
+    ///</summary>
+    ///<returns>
+    ///  一个整数值，指定签名者信息版本。
+    ///</returns>
     property Version: Int32 read get_Version;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignerInfo.Certificate" />
+    ///  属性检索该签名者信息与关联的签名证书。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />
+    ///  对象，表示签名证书。
+    ///</returns>
     property Certificate: DDN.System.DNX509Certificate2 read get_Certificate;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignerInfo.SignerIdentifier" />
+    ///  属性检索与签名者信息关联的签名者的证书标识符。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifier" />
+    ///  对象，用于唯一地标识与该签名者信息关联的证书。
+    ///</returns>
     property SignerIdentifier: DNSubjectIdentifier read get_SignerIdentifier;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignerInfo.DigestAlgorithm" />
+    ///  属性检索 <see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，表示在计算签名中使用的哈希算法。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Oid" />
+    ///  对象，表示用于计算签名的哈希算法。
+    ///</returns>
     property DigestAlgorithm: DDN.System.DNOid read get_DigestAlgorithm;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignerInfo.SignedAttributes" />
+    ///  属性检索 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  签署人信息与相关联的有符号的属性的集合。
+    ///  签名的特性进行签名以及消息内容的剩余部分。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  表示有符号的特性集合。
+    ///  如果不有任何已签名的特性，该属性为空集合。
+    ///</returns>
     property SignedAttributes: DNCryptographicAttributeObjectCollection read get_SignedAttributes;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignerInfo.UnsignedAttributes" />
+    ///  属性检索 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  的无符号与关联的属性集合 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+    ///  内容。
+    ///  可以修改未签名的特性，而只有在签名失效。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />
+    ///  表示无符号的特性集合。
+    ///  如果不有任何无符号的属性，该属性为空集合。
+    ///</returns>
     property UnsignedAttributes: DNCryptographicAttributeObjectCollection read get_UnsignedAttributes;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignerInfo.CounterSignerInfos" />
+    ///  属性检索的一套与签署人信息相关联的副署。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合，表示的签名程序信息的计数器签名者。
+    ///  如果不有任何副署，该属性为空集合。
+    ///</returns>
     property CounterSignerInfos: DNSignerInfoCollection read get_CounterSignerInfos;
     property SignatureAlgorithm: DDN.System.DNOid read get_SignatureAlgorithm;
   end;
@@ -1294,6 +3670,13 @@ type
   ['{105E9E03-91E2-5249-9C06-97BF86DB11C4}']
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+  ///  类表示一套 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+  ///  对象。
+  ///<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+  ///  实现 <see cref="T:System.Collections.ICollection" />
+  ///  接口。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.SignerInfoCollection')]
   DNSignerInfoCollection = interface(DDN.mscorlib.DNICollection)
   ['{508B2DA5-A2BD-3E84-8DFD-C26B1A3B2805}']
@@ -1306,8 +3689,60 @@ type
 
   { methods } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfoCollection.GetEnumerator" />
+    ///  方法将返回 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoEnumerator" />
+    ///  对象 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoEnumerator" />
+    ///  对象，它可用于枚举 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合。
+    ///</returns>
     function GetEnumerator: DNSignerInfoEnumerator;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfoCollection.CopyTo(System.Array,System.Int32)" />
+    ///  方法副本 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合到一个数组。
+    ///</summary>
+    ///  <param name="array"><see cref="T:System.Array" />
+    ///  对象传递给该 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合将被复制。
+    ///</param>
+    ///  <param name="index">
+    ///  中的从零开始索引 <paramref name="array" />
+    ///  其中 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合将被复制。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  提供给方法的参数之一无效。
+    ///</exception><exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException">
+    ///  参数的值超出了允许范围的值时，按照所调用的方法的定义。
+    ///</exception>
     procedure CopyTo(&array: DDN.mscorlib.DNArray; index: Int32); overload;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfoCollection.CopyTo(System.Security.Cryptography.Pkcs.SignerInfo[],System.Int32)" />
+    ///  方法副本 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合与 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+    ///  数组。
+    ///</summary>
+    ///  <param name="array">
+    ///  一个数组 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+    ///  对象其中 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合将被复制。
+    ///</param>
+    ///  <param name="index">
+    ///  中的从零开始索引 <paramref name="array" />
+    ///  其中 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合将被复制。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  提供给方法的参数之一无效。
+    ///</exception><exception cref="T:System.ArgumentNullException">
+    ///  不接受它作为有效参数的方法传递空引用。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException">
+    ///  参数的值超出了允许范围的值时，按照所调用的方法的定义。
+    ///</exception>
     procedure CopyTo(&array: TArray<DNSignerInfo>; index: Int32); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1317,8 +3752,34 @@ type
   { propertys } 
 
     property Item[index: Int32]: DNSignerInfo read get_Item; default;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignerInfoCollection.Count" />
+    ///  属性检索中的项数 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns>
+    ///  一个表示集合中的项数的整数值。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignerInfoCollection.IsSynchronized" />
+    ///  属性是否检索到的集合的访问同步的即线程安全。
+    ///  此属性始终返回 <see langword="false" />
+    ///  , ，这意味着该集合不是线程安全。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Boolean" />
+    ///  值 <see langword="false" />
+    ///  , ，这意味着该集合不是线程安全。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignerInfoCollection.SyncRoot" />
+    ///  属性检索 <see cref="T:System.Object" />
+    ///  对象用于同步对 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Object" />
+    ///  对象用于同步对 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
   end;
 
@@ -1329,6 +3790,13 @@ type
   ['{9ECAF90C-0ADD-5DB8-88AD-7C7329CF6AB2}']
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.SignerInfoEnumerator" />
+  ///  类为 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+  ///  集合提供枚举功能。
+  ///<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoEnumerator" />
+  ///  实现 <see cref="T:System.Collections.IEnumerator" />
+  ///  接口。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.SignerInfoEnumerator')]
   DNSignerInfoEnumerator = interface(DDN.mscorlib.DNIEnumerator)
   ['{963E2083-6AC5-3469-B91C-0557EA20BFFC}']
@@ -1338,7 +3806,25 @@ type
 
   { methods } 
 
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfoEnumerator.MoveNext" />
+    ///  方法将枚举推进到下一个   <see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+    ///  对象在 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns>
+    ///  此方法返回一个布尔值，指定是否成功地推进枚举。
+    ///  如果枚举成功移动到下一个 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+    ///  对象，该方法返回 <see langword="true" />
+    ///  。
+    ///  如果枚举移过枚举中的最后一项，它将返回 <see langword="false" />
+    ///  。
+    ///</returns>
     function MoveNext: Boolean;
+    ///<summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfoEnumerator.Reset" />
+    ///  方法将枚举重置为第一个 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+    ///  对象在 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合。
+    ///</summary>
     procedure Reset;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1347,6 +3833,16 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SignerInfoEnumerator.Current" />
+    ///  属性检索当前 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+    ///  对象从 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />
+    ///  对象，表示在当前的签署人信息结构 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+    ///  集合。
+    ///</returns>
     property Current: DNSignerInfo read get_Current;
   end;
 
@@ -1357,6 +3853,12 @@ type
   ['{AEEBD3EA-F8B1-5137-9960-64A95E9E52AA}']
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifier" />
+  ///  类定义的类型标识符的使用者，如 <see cref="T:System.Security.Cryptography.Pkcs.CmsSigner" />
+  ///  或 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+  ///  。
+  ///  可以通过证书颁发者和序列号或使用者密钥标识主题。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.SubjectIdentifier')]
   DNSubjectIdentifier = interface(DDN.mscorlib.DNObject)
   ['{1F38155D-2FB4-33BC-8B78-22CA1BF5CAB1}']
@@ -1374,7 +3876,34 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SubjectIdentifier.Type" />
+    ///  属性检索主题标识符的类型。
+    ///  可以通过证书颁发者和序列号或使用者密钥标识主题。
+    ///</summary>
+    ///<returns>
+    ///  成员 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+    ///  枚举，用于标识使用者的类型。
+    ///</returns>
     property &Type: DNSubjectIdentifierType read get_Type;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SubjectIdentifier.Value" />
+    ///  属性检索的主题标识符的值。
+    ///  使用 <see cref="P:System.Security.Cryptography.Pkcs.SubjectIdentifier.Type" />
+    ///  属性来确定使用者标识符的类型，并使用 <see cref="P:System.Security.Cryptography.Pkcs.SubjectIdentifier.Value" />
+    ///  属性来检索相应的值。
+    ///</summary>
+    ///<returns><see cref="T:System.Object" />
+    ///  对象，表示使用者标识符的值。
+    ///  这 <see cref="T:System.Object" />
+    ///  可以是由以下对象之一 <see cref="P:System.Security.Cryptography.Pkcs.SubjectIdentifier.Type" />
+    ///  属性。
+    ///<see cref="P:System.Security.Cryptography.Pkcs.SubjectIdentifier.Type" />
+    ///  属性
+    ///  对象
+    ///  IssuerAndSerialNumber
+    ///<see cref="T:System.Security.Cryptography.Xml.X509IssuerSerial" />
+    ///  SubjectKeyIdentifier
+    ///<see cref="T:System.String" />
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value;
   end;
 
@@ -1385,6 +3914,12 @@ type
   ['{C39B449C-ABE5-55CF-86ED-E6C51B44C5AC}']
   end;
 
+  ///<summary><see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierOrKey" />
+  ///  类定义的类型标识符的使用者，如 <see cref="T:System.Security.Cryptography.Pkcs.CmsSigner" />
+  ///  或 <see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />
+  ///  。
+  ///  可以通过证书颁发者和序列号、 使用者密钥或使用者密钥的哈希标识主题。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Pkcs.SubjectIdentifierOrKey')]
   DNSubjectIdentifierOrKey = interface(DDN.mscorlib.DNObject)
   ['{D684C03D-44E3-3738-B7F3-77CDA73C1C8F}']
@@ -1402,7 +3937,36 @@ type
 
   { propertys } 
 
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SubjectIdentifierOrKey.Type" />
+    ///  属性检索主题标识符或密钥的类型。
+    ///  可以通过证书颁发者和序列号、 使用者密钥或使用者密钥的哈希标识主题。
+    ///</summary>
+    ///<returns>
+    ///  成员 <see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierOrKeyType" />
+    ///  枚举，它指定使用者标识符的类型。
+    ///</returns>
     property &Type: DNSubjectIdentifierOrKeyType read get_Type;
+    ///<summary><see cref="P:System.Security.Cryptography.Pkcs.SubjectIdentifierOrKey.Value" />
+    ///  属性检索主题标识符或密钥的值。
+    ///  使用 <see cref="P:System.Security.Cryptography.Pkcs.SubjectIdentifierOrKey.Type" />
+    ///  属性来确定类型的主题标识符或密钥，然后使用 <see cref="P:System.Security.Cryptography.Pkcs.SubjectIdentifierOrKey.Value" />
+    ///  属性来检索相应的值。
+    ///</summary>
+    ///<returns><see cref="T:System.Object" />
+    ///  对象，表示主题标识符或密钥的值。
+    ///  这 <see cref="T:System.Object" />
+    ///  可以是由以下对象之一 <see cref="P:System.Security.Cryptography.Pkcs.SubjectIdentifierOrKey.Type" />
+    ///  属性。
+    ///<see cref="P:System.Security.Cryptography.Pkcs.SubjectIdentifierOrKey.Type" />
+    ///  属性
+    ///  对象
+    ///  IssuerAndSerialNumber
+    ///<see cref="T:System.Security.Cryptography.Xml.X509IssuerSerial" />
+    ///  SubjectKeyIdentifier
+    ///<see cref="T:System.String" />
+    ///  PublicKeyInfo
+    ///<see cref="T:System.Security.Cryptography.Pkcs.PublicKeyInfo" />
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value;
   end;
 
@@ -1413,11 +3977,68 @@ type
   ['{023EB4D0-DEAC-50E7-B95C-8A780C93C31D}']
   { static methods } 
 
+    ///<summary>
+    ///  在指定的字节数组中加密数据，并返回包含已加密数据的字节数组。
+    ///</summary>
+    ///  <param name="userData">
+    ///  包含要加密数据的字节数组。
+    ///</param>
+    ///  <param name="optionalEntropy">
+    ///  用于增加加密复杂度的一个可选附加字节数组或 <see langword="null" />
+    ///  ; 如果不增加复杂度。
+    ///</param>
+    ///  <param name="scope">
+    ///  指定加密范围的枚举值之一。
+    ///</param>
+    ///<returns>
+    ///  表示已加密数据的字节数组。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="userData" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  加密失败。
+    ///</exception><exception cref="T:System.NotSupportedException">
+    ///  操作系统不支持此方法。
+    ///</exception><exception cref="T:System.OutOfMemoryException">
+    ///  对数据进行加密时，系统出现内存不足。
+    ///</exception>
     {class} function Protect(userData: TArray<Byte>; optionalEntropy: TArray<Byte>; scope: DNDataProtectionScope): TArray<Byte>;
+    ///<summary>
+    ///  在指定的字节数组中解密数据，并返回包含已解密数据的字节数组。
+    ///</summary>
+    ///  <param name="encryptedData">
+    ///  一个包含数据使用加密的字节数组 <see cref="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[],System.Security.Cryptography.DataProtectionScope)" />
+    ///  方法。
+    ///</param>
+    ///  <param name="optionalEntropy">
+    ///  用于加密数据，一个可选附加字节数组或 <see langword="null" />
+    ///  如果未使用附加字节数组。
+    ///</param>
+    ///  <param name="scope">
+    ///  指定用于加密数据的数据保护范围的枚举值之一。
+    ///</param>
+    ///<returns>
+    ///  表示已解密数据的字节数组。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="encryptedData" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  解密失败。
+    ///</exception><exception cref="T:System.NotSupportedException">
+    ///  操作系统不支持此方法。
+    ///</exception><exception cref="T:System.OutOfMemoryException">
+    ///  内存不足。
+    ///</exception>
     {class} function Unprotect(encryptedData: TArray<Byte>; optionalEntropy: TArray<Byte>; scope: DNDataProtectionScope): TArray<Byte>;
 
   end;
 
+  ///<summary>
+  ///  提供用于加密和解密数据的方法。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.ProtectedData')]
   DNProtectedData = interface(DDN.mscorlib.DNObject)
   ['{C91FD287-5DEE-390C-AFD5-7A1B574E50DC}']
@@ -1437,11 +4058,57 @@ type
   ['{8BDDD140-F1B4-59D4-9FE1-197B7FABEC05}']
   { static methods } 
 
+    ///<summary>
+    ///  可保护指定的数据。
+    ///</summary>
+    ///  <param name="userData">
+    ///  包含要保护的内存中数据的字节数组。
+    ///  该数组必须是 16 字节的倍数。
+    ///</param>
+    ///  <param name="scope">
+    ///  指定的内存保护范围的枚举值之一。
+    ///</param>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="userData" />
+    ///  必须是 16 字节的长度或以 16 个字节的倍数。
+    ///</exception><exception cref="T:System.NotSupportedException">
+    ///  操作系统不支持此方法。
+    ///  此方法仅用于 Windows 2000 或更高版本操作系统。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="userData " />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} procedure Protect(userData: TArray<Byte>; scope: DNMemoryProtectionScope);
+    ///<summary>
+    ///  取消保护使用保护的内存中的数据 <see cref="M:System.Security.Cryptography.ProtectedMemory.Protect(System.Byte[],System.Security.Cryptography.MemoryProtectionScope)" />
+    ///  方法。
+    ///</summary>
+    ///  <param name="encryptedData">
+    ///  要解密的内存中的字节数组。
+    ///</param>
+    ///  <param name="scope">
+    ///  指定的内存保护范围的枚举值之一。
+    ///</param>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  操作系统不支持此方法。
+    ///  此方法仅用于 Windows 2000 或更高版本操作系统。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="encryptedData " />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="encryptedData " />
+    ///  为空。
+    ///  - 或 -
+    ///  未实现此调用。
+    ///  - 或 -
+    ///  NTSTATUS 包含一个错误。
+    ///</exception>
     {class} procedure Unprotect(encryptedData: TArray<Byte>; scope: DNMemoryProtectionScope);
 
   end;
 
+  ///<summary>
+  ///  提供用于保护和取消内存保护方法。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.ProtectedMemory')]
   DNProtectedMemory = interface(DDN.mscorlib.DNObject)
   ['{E3572D8B-459A-341E-9DE1-2BD8BE627CDB}']
@@ -1461,13 +4128,103 @@ type
   ['{4E273ECA-7FB5-526F-A4CF-1C744D620157}']
   { static methods } 
 
+    ///<summary>
+    ///  显示一个对话框，其中包含 X.509 证书和及其相关联的证书链的属性。
+    ///</summary>
+    ///  <param name="certificate">
+    ///  要显示的 X.509 证书。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="certificate" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="certificate" />
+    ///  参数无效。
+    ///</exception>
     {class} procedure DisplayCertificate(certificate: DDN.System.DNX509Certificate2); overload;
+    ///<summary>
+    ///  显示一个对话框，其中包含 X.509 证书和使用父窗口的句柄及其关联的证书链的属性。
+    ///</summary>
+    ///  <param name="certificate">
+    ///  要显示的 X.509 证书。
+    ///</param>
+    ///  <param name="hwndParent">
+    ///  父窗口用于显示对话框的句柄。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="certificate" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="certificate" />
+    ///  参数无效。
+    ///</exception>
     {class} procedure DisplayCertificate(certificate: DDN.System.DNX509Certificate2; hwndParent: IntPtr); overload;
+    ///<summary>
+    ///  显示用于选择证书集合中的 X.509 证书的对话框。
+    ///</summary>
+    ///  <param name="certificates">
+    ///  若要从选择的 X.509 证书的集合。
+    ///</param>
+    ///  <param name="title">
+    ///  对话框中的标题。
+    ///</param>
+    ///  <param name="message">
+    ///  要指导用户的描述性消息。
+    ///  在对话框中显示消息。
+    ///</param>
+    ///  <param name="selectionFlag">
+    ///  其中一个 <see cref="T:System.Security.Cryptography.X509Certificates.X509SelectionFlag" />
+    ///  值，该值指定是否允许一个或多个选择。
+    ///</param>
+    ///<returns><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+    ///  对象，其中包含所选的证书。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="selectionFlag" />
+    ///  参数不是有效的标志。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="certificates" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="certificates" />
+    ///  参数无效。
+    ///</exception>
     {class} function SelectFromCollection(certificates: DDN.System.DNX509Certificate2Collection; title: string; message: string; selectionFlag: DNX509SelectionFlag): DDN.System.DNX509Certificate2Collection; overload;
+    ///<summary>
+    ///  显示用于从使用父窗口的句柄的证书集合中选择一个 X.509 证书的对话框。
+    ///</summary>
+    ///  <param name="certificates">
+    ///  若要从选择的 X.509 证书的集合。
+    ///</param>
+    ///  <param name="title">
+    ///  对话框中的标题。
+    ///</param>
+    ///  <param name="message">
+    ///  要指导用户的描述性消息。
+    ///  在对话框中显示消息。
+    ///</param>
+    ///  <param name="selectionFlag">
+    ///  其中一个 <see cref="T:System.Security.Cryptography.X509Certificates.X509SelectionFlag" />
+    ///  值，该值指定是否允许一个或多个选择。
+    ///</param>
+    ///  <param name="hwndParent">
+    ///  若要使用显示对话框中的父窗口句柄。
+    ///</param>
+    ///<returns><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+    ///  对象，其中包含所选的证书。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="selectionFlag" />
+    ///  参数不是有效的标志。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="certificates" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="certificates" />
+    ///  参数无效。
+    ///</exception>
     {class} function SelectFromCollection(certificates: DDN.System.DNX509Certificate2Collection; title: string; message: string; selectionFlag: DNX509SelectionFlag; hwndParent: IntPtr): DDN.System.DNX509Certificate2Collection; overload;
 
   end;
 
+  ///<summary>
+  ///  显示用户界面对话框使您可以选择并查看 X.509 证书。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.X509Certificates.X509Certificate2UI')]
   DNX509Certificate2UI = interface(DDN.mscorlib.DNObject)
   ['{6F0D45A8-97F3-35D8-A4C2-66A27C74DCE9}']
@@ -1487,12 +4244,51 @@ type
   ['{12719416-8F29-53A3-BBF1-03D45CB6A036}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.CipherData" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNCipherData; overload;
+    ///<summary>
+    ///  初始化的新实例 <see cref="T:System.Security.Cryptography.Xml.CipherData" />
+    ///  类使用一个字节数组作为 <see cref="P:System.Security.Cryptography.Xml.CipherData.CipherValue" />
+    ///  值。
+    ///</summary>
+    ///  <param name="cipherValue">
+    ///  要用于加密的数据 <see langword="&lt;CipherValue&gt;" />
+    ///  元素。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="cipherValue" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherValue" />
+    ///  属性已经设置。
+    ///</exception>
     {class} function init(cipherValue: TArray<Byte>): DNCipherData; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.CipherData" />
+    ///  类使用 <see cref="T:System.Security.Cryptography.Xml.CipherReference" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="cipherReference">
+    ///  要使用的 <see cref="T:System.Security.Cryptography.Xml.CipherReference" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="cipherValue" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherValue" />
+    ///  属性已经设置。
+    ///</exception>
     {class} function init(cipherReference: DNCipherReference): DNCipherData; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see langword="&lt;CipherData&gt;" />
+  ///  中 XML 加密元素。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.CipherData')]
   DNCipherData = interface(DDN.mscorlib.DNObject)
   ['{3659D1BE-8038-3677-A0AA-090D2A504A32}']
@@ -1505,7 +4301,37 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取的 XML 值 <see cref="T:System.Security.Cryptography.Xml.CipherData" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示的 XML 信息 <see cref="T:System.Security.Cryptography.Xml.CipherData" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherValue" />
+    ///  属性和 <see cref="P:System.Security.Cryptography.Xml.CipherData.CipherReference" />
+    ///  属性 <see langword="null" />
+    ///  。
+    ///</exception>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  从 XML 数据加载 <see cref="T:System.Xml.XmlElement" />
+    ///  到 <see cref="T:System.Security.Cryptography.Xml.CipherData" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Xml.XmlElement" />
+    ///  ，表示要加载的 XML 数据。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherValue" />
+    ///  属性和 <see cref="P:System.Security.Cryptography.Xml.CipherData.CipherReference" />
+    ///  属性 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1514,7 +4340,35 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 <see langword="&lt;CipherReference&gt;" />
+    ///  元素。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.CipherReference" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherReference" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherReference" />
+    ///  属性已设置一次以上。
+    ///</exception>
     property CipherReference: DNCipherReference read get_CipherReference write set_CipherReference;
+    ///<summary>
+    ///  获取或设置 <see langword="&lt;CipherValue&gt;" />
+    ///  元素。
+    ///</summary>
+    ///<returns>
+    ///  字节数组，表示 <see langword="&lt;CipherValue&gt;" />
+    ///  元素。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherValue" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.CipherData.CipherValue" />
+    ///  属性已设置一次以上。
+    ///</exception>
     property CipherValue: TArray<Byte> read get_CipherValue write set_CipherValue;
   end;
 
@@ -1525,11 +4379,42 @@ type
   ['{B72C8303-3285-5E66-9B64-65BDADBB0D7B}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNDataObject; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  类，具有指定的标识、 MIME 类型、 编码和数据。
+    ///</summary>
+    ///  <param name="id">
+    ///  要初始化的新实例的标识 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  与。
+    ///</param>
+    ///  <param name="mimeType">
+    ///  用于初始化的新实例的数据的 MIME 类型 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  。
+    ///</param>
+    ///  <param name="encoding">
+    ///  用于初始化的新实例的数据的编码 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  。
+    ///</param>
+    ///  <param name="data">
+    ///  要初始化的新实例的数据 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  与。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="data" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} function init(id: string; mimeType: string; encoding: string; data: DDN.System.Xml.DNXmlElement): DNDataObject; overload;
 
   end;
 
+  ///<summary>
+  ///  表示包含要签名的数据的 XML 签名的对象元素。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.DataObject')]
   DNDataObject = interface(DDN.mscorlib.DNObject)
   ['{17E65955-BDA6-3F0E-8800-1B654A63FCC6}']
@@ -1546,7 +4431,27 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  对象。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  加载 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  状态从一个 XML 元素。
+    ///</summary>
+    ///  <param name="value">
+    ///  要加载的 XML 元素 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  从状态。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  此 XML 元素的值是 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1555,9 +4460,46 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置当前的标识 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  包含要使用的数据元素的名称。
+    ///</returns>
     property Id: string read get_Id write set_Id;
+    ///<summary>
+    ///  获取或设置当前的 MIME 类型 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 MIME 类型 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  对象。
+    ///  默认值为 <see langword="null" />
+    ///  。
+    ///</returns>
     property MimeType: string read get_MimeType write set_MimeType;
+    ///<summary>
+    ///  获取或设置当前的编码 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的编码类型 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  对象。
+    ///</returns>
     property Encoding: string read get_Encoding write set_Encoding;
+    ///<summary>
+    ///  获取或设置当前的数据值 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前数据 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  用于设置该属性的值是 <see langword="null" />
+    ///  。
+    ///</exception>
     property Data: DDN.System.Xml.DNXmlNodeList read get_Data write set_Data;
   end;
 
@@ -1568,6 +4510,12 @@ type
   ['{5E24E8B3-541B-564C-BA0A-440886A50D0F}']
   end;
 
+  ///<summary>
+  ///  表示 XML 加密中使用的抽象基类 <see cref="T:System.Security.Cryptography.Xml.CipherReference" />
+  ///  , ，<see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+  ///  , ，和 <see cref="T:System.Security.Cryptography.Xml.DataReference" />
+  ///  类派生。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.EncryptedReference')]
   DNEncryptedReference = interface(DDN.mscorlib.DNObject)
   ['{0390C15D-4623-31A1-81E0-8C493785A7A4}']
@@ -1580,8 +4528,40 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  添加 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象传递给的当前转换链 <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="transform">
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  要添加到转换链对象。
+    ///</param>
     procedure AddTransform(transform: DNTransform);
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示的值 <see langword="&lt;EncryptedReference&gt;" />
+    ///  中 XML 加密元素。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.EncryptedReference.ReferenceType" />
+    ///  属性为 <see langword="null" />
+    ///  。
+    ///</exception>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  加载 XML 元素插入 <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Xml.XmlElement" />
+    ///  表示一个 XML 元素的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1590,7 +4570,27 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置的统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.EncryptedReference.Uri" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property Uri: string read get_Uri write set_Uri;
+    ///<summary>
+    ///  获取或设置的转换链 <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.TransformChain" />
+    ///  对象，描述用于对已加密数据的转换。
+    ///</returns>
     property TransformChain: DNTransformChain read get_TransformChain write set_TransformChain;
   end;
 
@@ -1601,12 +4601,39 @@ type
   ['{BB79A29C-ED5D-5E48-B96C-53E9F5B76806}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.CipherReference" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNCipherReference; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.CipherReference" />
+    ///  类使用指定的统一资源标识符 (URI)。
+    ///</summary>
+    ///  <param name="uri">
+    ///  统一资源标识符 (URI) 指向已加密的数据。
+    ///</param>
     {class} function init(uri: string): DNCipherReference; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.CipherReference" />
+    ///  类使用指定的统一资源标识符 (URI) 和转换链信息。
+    ///</summary>
+    ///  <param name="uri">
+    ///  统一资源标识符 (URI) 指向已加密的数据。
+    ///</param>
+    ///  <param name="transformChain">
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.TransformChain" />
+    ///  描述的加密数据进行的转换的对象。
+    ///</param>
     {class} function init(uri: string; transformChain: DNTransformChain): DNCipherReference; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see langword="&lt;CipherReference&gt;" />
+  ///  中 XML 加密元素。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.CipherReference')]
   DNCipherReference = interface(DNEncryptedReference)
   ['{CD382733-E2F7-300D-A22F-D55B4E50FCAE}']
@@ -1619,8 +4646,40 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.CipherReference" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  表示 <see langword="&lt;CipherReference&gt;" />
+    ///  中 XML 加密元素。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="T:System.Security.Cryptography.Xml.CipherReference" />
+    ///  值为 <see langword="null" />
+    ///  。
+    ///</exception>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  XML 将信息加载到 <see langword="&lt;CipherReference&gt;" />
+    ///  中 XML 加密元素。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示要用作引用的 XML 元素。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  提供是 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
+    ///<summary>
+    ///  添加 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象传递给的当前转换链 <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="transform">
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  要添加到转换链对象。
+    ///</param>
     procedure AddTransform(transform: DNTransform);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1629,7 +4688,27 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置的统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.EncryptedReference.Uri" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property Uri: string read get_Uri write set_Uri;
+    ///<summary>
+    ///  获取或设置的转换链 <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.TransformChain" />
+    ///  对象，描述用于对已加密数据的转换。
+    ///</returns>
     property TransformChain: DNTransformChain read get_TransformChain write set_TransformChain;
   end;
 
@@ -1640,12 +4719,40 @@ type
   ['{646EA0AB-9F97-53B8-AF94-B864DE0ED877}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNDataReference; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  类使用指定的统一资源标识符 (URI)。
+    ///</summary>
+    ///  <param name="uri">
+    ///  指向已加密的数据统一资源标识符 (URI)。
+    ///</param>
     {class} function init(uri: string): DNDataReference; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  类使用指定的统一资源标识符 (URI) 和一个 <see cref="T:System.Security.Cryptography.Xml.TransformChain" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="uri">
+    ///  指向已加密的数据统一资源标识符 (URI)。
+    ///</param>
+    ///  <param name="transformChain">
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.TransformChain" />
+    ///  描述的加密数据进行的转换的对象。
+    ///</param>
     {class} function init(uri: string; transformChain: DNTransformChain): DNDataReference; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see langword="&lt;DataReference&gt;" />
+  ///  XML 加密中使用的元素。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.DataReference')]
   DNDataReference = interface(DNEncryptedReference)
   ['{703A7CAD-89F8-32D5-9F29-104824D3CB16}']
@@ -1658,8 +4765,40 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  添加 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象传递给的当前转换链 <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="transform">
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  要添加到转换链对象。
+    ///</param>
     procedure AddTransform(transform: DNTransform);
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示的值 <see langword="&lt;EncryptedReference&gt;" />
+    ///  中 XML 加密元素。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.EncryptedReference.ReferenceType" />
+    ///  属性为 <see langword="null" />
+    ///  。
+    ///</exception>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  加载 XML 元素插入 <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Xml.XmlElement" />
+    ///  表示一个 XML 元素的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1668,7 +4807,27 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置的统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.EncryptedReference.Uri" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property Uri: string read get_Uri write set_Uri;
+    ///<summary>
+    ///  获取或设置的转换链 <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.TransformChain" />
+    ///  对象，描述用于对已加密数据的转换。
+    ///</returns>
     property TransformChain: DNTransformChain read get_TransformChain write set_TransformChain;
   end;
 
@@ -1679,12 +4838,40 @@ type
   ['{9A619B54-E47D-5E7E-8D92-42C2B7B30321}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  XML 加密的类。
+    ///</summary>
     {class} function init: DNKeyReference; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  XML 加密使用提供的统一资源标识符 (URI) 的类。
+    ///</summary>
+    ///  <param name="uri">
+    ///  指向已加密的密钥统一资源标识符 (URI)。
+    ///</param>
     {class} function init(uri: string): DNKeyReference; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  XML 加密使用指定的统一资源标识符 (URI) 的类和一个 <see cref="T:System.Security.Cryptography.Xml.TransformChain" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="uri">
+    ///  指向已加密的密钥统一资源标识符 (URI)。
+    ///</param>
+    ///  <param name="transformChain">
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.TransformChain" />
+    ///  描述加密的密钥进行的转换的对象。
+    ///</param>
     {class} function init(uri: string; transformChain: DNTransformChain): DNKeyReference; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see langword="&lt;KeyReference&gt;" />
+  ///  XML 加密中使用的元素。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.KeyReference')]
   DNKeyReference = interface(DNEncryptedReference)
   ['{FAE94490-3F08-3462-87F0-3280300E5EC3}']
@@ -1697,8 +4884,40 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  添加 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象传递给的当前转换链 <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="transform">
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  要添加到转换链对象。
+    ///</param>
     procedure AddTransform(transform: DNTransform);
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示的值 <see langword="&lt;EncryptedReference&gt;" />
+    ///  中 XML 加密元素。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.EncryptedReference.ReferenceType" />
+    ///  属性为 <see langword="null" />
+    ///  。
+    ///</exception>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  加载 XML 元素插入 <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Xml.XmlElement" />
+    ///  表示一个 XML 元素的对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1707,7 +4926,27 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置的统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.EncryptedReference.Uri" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property Uri: string read get_Uri write set_Uri;
+    ///<summary>
+    ///  获取或设置的转换链 <see cref="T:System.Security.Cryptography.Xml.EncryptedReference" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.TransformChain" />
+    ///  对象，描述用于对已加密数据的转换。
+    ///</returns>
     property TransformChain: DNTransformChain read get_TransformChain write set_TransformChain;
   end;
 
@@ -1718,6 +4957,11 @@ type
   ['{1A58CAF7-1AA2-57B4-B355-5109054389A3}']
   end;
 
+  ///<summary>
+  ///  表示类的抽象基类从中类 <see cref="T:System.Security.Cryptography.Xml.EncryptedData" />
+  ///  和 <see cref="T:System.Security.Cryptography.Xml.EncryptedKey" />
+  ///  派生。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.EncryptedType')]
   DNEncryptedType = interface(DDN.mscorlib.DNObject)
   ['{B16957FA-6313-353D-A27A-D0F59B4E8200}']
@@ -1741,8 +4985,38 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  添加 <see langword="&lt;EncryptionProperty&gt;" />
+    ///  子元素 <see langword="&lt;EncryptedProperties&gt;" />
+    ///  在当前元素 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  XML 加密中的对象。
+    ///</summary>
+    ///  <param name="ep">
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象。
+    ///</param>
     procedure AddProperty(ep: DNEncryptionProperty);
+    ///<summary>
+    ///  XML 将信息加载到 <see langword="&lt;EncryptedType&gt;" />
+    ///  中 XML 加密元素。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示要在中使用的 XML 元素 <see langword="&lt;EncryptedType&gt;" />
+    ///  元素。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  提供是 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示 <see langword="&lt;EncryptedType&gt;" />
+    ///  中 XML 加密元素。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1751,13 +5025,84 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 <see langword="Id" />
+    ///  属性 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  XML 加密中的实例。
+    ///</summary>
+    ///<returns>
+    ///  字符串 <see langword="Id" />
+    ///  属性 <see langword="&lt;EncryptedType&gt;" />
+    ///  元素。
+    ///</returns>
     property Id: string read get_Id write set_Id;
+    ///<summary>
+    ///  获取或设置 <see langword="Type" />
+    ///  属性 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  XML 加密中的实例。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，描述文本格式的已加密的数据。
+    ///</returns>
     property &Type: string read get_Type write set_Type;
+    ///<summary>
+    ///  获取或设置 <see langword="MimeType" />
+    ///  属性 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  XML 加密中的实例。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，描述的加密数据的媒体类型。
+    ///</returns>
     property MimeType: string read get_MimeType write set_MimeType;
+    ///<summary>
+    ///  获取或设置 <see langword="Encoding" />
+    ///  属性 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  XML 加密中的实例。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，描述的加密数据的编码。
+    ///</returns>
     property Encoding: string read get_Encoding write set_Encoding;
+    ///<summary>
+    ///  获取或设置 <see langword="&lt;KeyInfo&gt;" />
+    ///  中 XML 加密元素。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象。
+    ///</returns>
     property KeyInfo: DNKeyInfo read get_KeyInfo write set_KeyInfo;
+    ///<summary>
+    ///  获取或设置 <see langword="&lt;EncryptionMethod&gt;" />
+    ///  XML 加密元素。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" />
+    ///  对象，表示 <see langword="&lt;EncryptionMethod&gt;" />
+    ///  元素。
+    ///</returns>
     property EncryptionMethod: DNEncryptionMethod read get_EncryptionMethod write set_EncryptionMethod;
+    ///<summary>
+    ///  获取或设置 <see langword="&lt;EncryptionProperties&gt;" />
+    ///  中 XML 加密元素。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///</returns>
     property EncryptionProperties: DNEncryptionPropertyCollection read get_EncryptionProperties;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Security.Cryptography.Xml.CipherData" />
+    ///  的实例的值 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  类。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.CipherData" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.EncryptedType.CipherData" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property CipherData: DNCipherData read get_CipherData write set_CipherData;
   end;
 
@@ -1768,10 +5113,19 @@ type
   ['{E56F5504-1E60-5D29-A77B-E993F28DD0D4}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.EncryptedData" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNEncryptedData;
 
   end;
 
+  ///<summary>
+  ///  表示 <see langword="&lt;EncryptedData&gt;" />
+  ///  中 XML 加密元素。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.EncryptedData')]
   DNEncryptedData = interface(DNEncryptedType)
   ['{FC2F57BB-F8D4-3D10-AB53-F65C0D6C9997}']
@@ -1795,8 +5149,45 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  XML 将信息加载到 <see langword="&lt;EncryptedData&gt;" />
+    ///  中 XML 加密元素。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示要用于的 XML 元素 <see langword="&lt;EncryptedData&gt;" />
+    ///  元素。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  提供是 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="value" />
+    ///  参数不包含 &lt;<see langword="CypherData" />
+    ///  &gt; 节点。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.EncryptedData" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  表示 <see langword="&lt;EncryptedData&gt;" />
+    ///  中 XML 加密元素。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="T:System.Security.Cryptography.Xml.EncryptedData" />
+    ///  值为 <see langword="null" />
+    ///  。
+    ///</exception>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  添加 <see langword="&lt;EncryptionProperty&gt;" />
+    ///  子元素 <see langword="&lt;EncryptedProperties&gt;" />
+    ///  在当前元素 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  XML 加密中的对象。
+    ///</summary>
+    ///  <param name="ep">
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象。
+    ///</param>
     procedure AddProperty(ep: DNEncryptionProperty);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1805,13 +5196,84 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 <see langword="Id" />
+    ///  属性 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  XML 加密中的实例。
+    ///</summary>
+    ///<returns>
+    ///  字符串 <see langword="Id" />
+    ///  属性 <see langword="&lt;EncryptedType&gt;" />
+    ///  元素。
+    ///</returns>
     property Id: string read get_Id write set_Id;
+    ///<summary>
+    ///  获取或设置 <see langword="Type" />
+    ///  属性 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  XML 加密中的实例。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，描述文本格式的已加密的数据。
+    ///</returns>
     property &Type: string read get_Type write set_Type;
+    ///<summary>
+    ///  获取或设置 <see langword="MimeType" />
+    ///  属性 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  XML 加密中的实例。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，描述的加密数据的媒体类型。
+    ///</returns>
     property MimeType: string read get_MimeType write set_MimeType;
+    ///<summary>
+    ///  获取或设置 <see langword="Encoding" />
+    ///  属性 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  XML 加密中的实例。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，描述的加密数据的编码。
+    ///</returns>
     property Encoding: string read get_Encoding write set_Encoding;
+    ///<summary>
+    ///  获取或设置 <see langword="&lt;KeyInfo&gt;" />
+    ///  中 XML 加密元素。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象。
+    ///</returns>
     property KeyInfo: DNKeyInfo read get_KeyInfo write set_KeyInfo;
+    ///<summary>
+    ///  获取或设置 <see langword="&lt;EncryptionMethod&gt;" />
+    ///  XML 加密元素。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" />
+    ///  对象，表示 <see langword="&lt;EncryptionMethod&gt;" />
+    ///  元素。
+    ///</returns>
     property EncryptionMethod: DNEncryptionMethod read get_EncryptionMethod write set_EncryptionMethod;
+    ///<summary>
+    ///  获取或设置 <see langword="&lt;EncryptionProperties&gt;" />
+    ///  中 XML 加密元素。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///</returns>
     property EncryptionProperties: DNEncryptionPropertyCollection read get_EncryptionProperties;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Security.Cryptography.Xml.CipherData" />
+    ///  的实例的值 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  类。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.CipherData" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.EncryptedType.CipherData" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property CipherData: DNCipherData read get_CipherData write set_CipherData;
   end;
 
@@ -1822,10 +5284,19 @@ type
   ['{4BDBAED7-48DD-5EEF-A6C6-29ADCF4B1DF8}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.EncryptedKey" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNEncryptedKey;
 
   end;
 
+  ///<summary>
+  ///  表示 <see langword="&lt;EncryptedKey&gt;" />
+  ///  中 XML 加密元素。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.EncryptedKey')]
   DNEncryptedKey = interface(DNEncryptedType)
   ['{48CB09B5-2B67-3196-9158-51F16E388F70}']
@@ -1854,10 +5325,67 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  添加 <see langword="&lt;DataReference&gt; " />
+    ///  元素 <see langword="&lt;ReferenceList&gt;" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="dataReference">
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  要添加到对象 <see cref="P:System.Security.Cryptography.Xml.EncryptedKey.ReferenceList" />
+    ///  属性。
+    ///</param>
     procedure AddReference(dataReference: DNDataReference); overload;
+    ///<summary>
+    ///  添加 <see langword="&lt;KeyReference&gt; " />
+    ///  元素 <see langword="&lt;ReferenceList&gt;" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="keyReference">
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  要添加到对象 <see cref="P:System.Security.Cryptography.Xml.EncryptedKey.ReferenceList" />
+    ///  属性。
+    ///</param>
     procedure AddReference(keyReference: DNKeyReference); overload;
+    ///<summary>
+    ///  指定 XML 将信息加载到 <see langword="&lt;EncryptedKey&gt;" />
+    ///  中 XML 加密元素。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Xml.XmlElement" />
+    ///  表示 XML 元素用于 <see langword="&lt;EncryptedKey&gt;" />
+    ///  元素。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="value" />
+    ///  参数不包含 <see cref="T:System.Security.Cryptography.Xml.CipherData" />
+    ///  元素。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.EncryptedKey" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  表示 <see langword="&lt;EncryptedKey&gt;" />
+    ///  中 XML 加密元素。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="T:System.Security.Cryptography.Xml.EncryptedKey" />
+    ///  值为 <see langword="null" />
+    ///  。
+    ///</exception>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  添加 <see langword="&lt;EncryptionProperty&gt;" />
+    ///  子元素 <see langword="&lt;EncryptedProperties&gt;" />
+    ///  在当前元素 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  XML 加密中的对象。
+    ///</summary>
+    ///  <param name="ep">
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象。
+    ///</param>
     procedure AddProperty(ep: DNEncryptionProperty);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1866,16 +5394,110 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置可选 <see langword="Recipient" />
+    ///  XML 加密中的属性。
+    ///</summary>
+    ///<returns>
+    ///  表示值的字符串 <see langword="Recipient" />
+    ///  属性。
+    ///</returns>
     property Recipient: string read get_Recipient write set_Recipient;
+    ///<summary>
+    ///  获取或设置可选 <see langword="&lt;CarriedKeyName&gt;" />
+    ///  中 XML 加密元素。
+    ///</summary>
+    ///<returns>
+    ///  一个表示密钥的值的名称的字符串。
+    ///</returns>
     property CarriedKeyName: string read get_CarriedKeyName write set_CarriedKeyName;
+    ///<summary>
+    ///  获取或设置 <see langword="&lt;ReferenceList&gt;" />
+    ///  中 XML 加密元素。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  对象。
+    ///</returns>
     property ReferenceList: DNReferenceList read get_ReferenceList;
+    ///<summary>
+    ///  获取或设置 <see langword="Id" />
+    ///  属性 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  XML 加密中的实例。
+    ///</summary>
+    ///<returns>
+    ///  字符串 <see langword="Id" />
+    ///  属性 <see langword="&lt;EncryptedType&gt;" />
+    ///  元素。
+    ///</returns>
     property Id: string read get_Id write set_Id;
+    ///<summary>
+    ///  获取或设置 <see langword="Type" />
+    ///  属性 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  XML 加密中的实例。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，描述文本格式的已加密的数据。
+    ///</returns>
     property &Type: string read get_Type write set_Type;
+    ///<summary>
+    ///  获取或设置 <see langword="MimeType" />
+    ///  属性 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  XML 加密中的实例。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，描述的加密数据的媒体类型。
+    ///</returns>
     property MimeType: string read get_MimeType write set_MimeType;
+    ///<summary>
+    ///  获取或设置 <see langword="Encoding" />
+    ///  属性 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  XML 加密中的实例。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，描述的加密数据的编码。
+    ///</returns>
     property Encoding: string read get_Encoding write set_Encoding;
+    ///<summary>
+    ///  获取或设置 <see langword="&lt;KeyInfo&gt;" />
+    ///  中 XML 加密元素。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象。
+    ///</returns>
     property KeyInfo: DNKeyInfo read get_KeyInfo write set_KeyInfo;
+    ///<summary>
+    ///  获取或设置 <see langword="&lt;EncryptionMethod&gt;" />
+    ///  XML 加密元素。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" />
+    ///  对象，表示 <see langword="&lt;EncryptionMethod&gt;" />
+    ///  元素。
+    ///</returns>
     property EncryptionMethod: DNEncryptionMethod read get_EncryptionMethod write set_EncryptionMethod;
+    ///<summary>
+    ///  获取或设置 <see langword="&lt;EncryptionProperties&gt;" />
+    ///  中 XML 加密元素。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///</returns>
     property EncryptionProperties: DNEncryptionPropertyCollection read get_EncryptionProperties;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Security.Cryptography.Xml.CipherData" />
+    ///  的实例的值 <see cref="T:System.Security.Cryptography.Xml.EncryptedType" />
+    ///  类。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.CipherData" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.EncryptedType.CipherData" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property CipherData: DNCipherData read get_CipherData write set_CipherData;
   end;
 
@@ -1886,8 +5508,35 @@ type
   ['{40AEFBF3-ED84-5B91-A038-F79A01132B3A}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.EncryptedXml" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNEncryptedXml; overload;
+    ///<summary>
+    ///  使用指定的 XML 文档初始化 <see cref="T:System.Security.Cryptography.Xml.EncryptedXml" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="document">
+    ///  一个 <see cref="T:System.Xml.XmlDocument" />
+    ///  对象，用于初始化 <see cref="T:System.Security.Cryptography.Xml.EncryptedXml" />
+    ///  对象。
+    ///</param>
     {class} function init(document: DDN.System.Xml.DNXmlDocument): DNEncryptedXml; overload;
+    ///<summary>
+    ///  使用指定的 XML 文档和证据初始化 <see cref="T:System.Security.Cryptography.Xml.EncryptedXml" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="document">
+    ///  一个 <see cref="T:System.Xml.XmlDocument" />
+    ///  对象，用于初始化 <see cref="T:System.Security.Cryptography.Xml.EncryptedXml" />
+    ///  对象。
+    ///</param>
+    ///  <param name="evidence">
+    ///  与 <see cref="T:System.Security.Policy.Evidence" />
+    ///  对象关联的 <see cref="T:System.Xml.XmlDocument" />
+    ///  对象。
+    ///</param>
     {class} function init(document: DDN.System.Xml.DNXmlDocument; evidence: DDN.mscorlib.DNEvidence): DNEncryptedXml; overload;
 
   { static fields getter & setter } 
@@ -1912,34 +5561,236 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  表示“XML 加密语法和处理”对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncNamespaceUrl: string read __fakeFieldGet_XmlEncNamespaceUrl;
+    ///<summary>
+    ///  表示 XML 加密元素对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncElementUrl: string read __fakeFieldGet_XmlEncElementUrl;
+    ///<summary>
+    ///  表示 XML 加密元素内容对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncElementContentUrl: string read __fakeFieldGet_XmlEncElementContentUrl;
+    ///<summary>
+    ///  表示 XML 加密 <see langword="&lt;EncryptedKey&gt;" />
+    ///  元素对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncEncryptedKeyUrl: string read __fakeFieldGet_XmlEncEncryptedKeyUrl;
+    ///<summary>
+    ///  表示数字加密标准 (DES) 算法对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncDESUrl: string read __fakeFieldGet_XmlEncDESUrl;
+    ///<summary>
+    ///  表示三重 DES 算法对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncTripleDESUrl: string read __fakeFieldGet_XmlEncTripleDESUrl;
+    ///<summary>
+    ///  表示 128 位高级加密标准 (AES) 密钥包装算法（也称作“Rijndael 密钥包装算法”）的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncAES128Url: string read __fakeFieldGet_XmlEncAES128Url;
+    ///<summary>
+    ///  表示 256 位高级加密标准 (AES) 密钥包装算法（也称作“Rijndael 密钥包装算法”）的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncAES256Url: string read __fakeFieldGet_XmlEncAES256Url;
+    ///<summary>
+    ///  表示 192 位高级加密标准 (AES) 密钥包装算法（也称作“Rijndael 密钥包装算法”）的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncAES192Url: string read __fakeFieldGet_XmlEncAES192Url;
+    ///<summary>
+    ///  表示 RSA 公钥加密标准 (PKCS) 1.5 版算法对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncRSA15Url: string read __fakeFieldGet_XmlEncRSA15Url;
+    ///<summary>
+    ///  表示 RSA 优化非对称加密填充 (OAEP) 加密算法对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncRSAOAEPUrl: string read __fakeFieldGet_XmlEncRSAOAEPUrl;
+    ///<summary>
+    ///  表示三重 DES Key Wrap 算法对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncTripleDESKeyWrapUrl: string read __fakeFieldGet_XmlEncTripleDESKeyWrapUrl;
+    ///<summary>
+    ///  表示 128 位高级加密标准 (AES) 密钥包装算法（也称作“Rijndael 密钥包装算法”）的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncAES128KeyWrapUrl: string read __fakeFieldGet_XmlEncAES128KeyWrapUrl;
+    ///<summary>
+    ///  表示 256 位高级加密标准 (AES) 密钥包装算法（也称作“Rijndael 密钥包装算法”）的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncAES256KeyWrapUrl: string read __fakeFieldGet_XmlEncAES256KeyWrapUrl;
+    ///<summary>
+    ///  表示 192 位高级加密标准 (AES) 密钥包装算法（也称作“Rijndael 密钥包装算法”）的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncAES192KeyWrapUrl: string read __fakeFieldGet_XmlEncAES192KeyWrapUrl;
+    ///<summary>
+    ///  表示 SHA-256 算法对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncSHA256Url: string read __fakeFieldGet_XmlEncSHA256Url;
+    ///<summary>
+    ///  表示 SHA-512 算法对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlEncSHA512Url: string read __fakeFieldGet_XmlEncSHA512Url;
 
   { static methods } 
 
+    ///<summary>
+    ///  使用对称算法加密密钥，收件人使用此算法解密 <see langword="&lt;EncryptedData&gt;" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="keyData">
+    ///  要加密的密钥。
+    ///</param>
+    ///  <param name="symmetricAlgorithm">
+    ///  用于加密 <paramref name="keyData" />
+    ///  的对称密钥。
+    ///</param>
+    ///<returns>
+    ///  一个字节数组，表示 <paramref name="keyData" />
+    ///  参数的加密值。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="keyData" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="symmetricAlgorithm" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  值 <paramref name="symmetricAlgorithm" />
+    ///  参数不是三重 DES 密钥包装算法或高级加密标准 (AES) 密钥包装算法 （也称作 rijndael 密钥包装）。
+    ///</exception>
     {class} function EncryptKey(keyData: TArray<Byte>; symmetricAlgorithm: DDN.mscorlib.DNSymmetricAlgorithm): TArray<Byte>; overload;
+    ///<summary>
+    ///  对接收方用来解密 <see langword="&lt;EncryptedData&gt;" />
+    ///  元素的密钥进行加密。
+    ///</summary>
+    ///  <param name="keyData">
+    ///  要加密的密钥。
+    ///</param>
+    ///  <param name="rsa">
+    ///  用于加密 <paramref name="keyData" />
+    ///  的非对称密钥。
+    ///</param>
+    ///  <param name="useOAEP">
+    ///  一个指定是否使用优化非对称加密填充 (OAEP) 的值。
+    ///</param>
+    ///<returns>
+    ///  一个字节数组，表示 <paramref name="keyData" />
+    ///  参数的加密值。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="keyData" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="rsa" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} function EncryptKey(keyData: TArray<Byte>; rsa: DDN.mscorlib.DNRSA; useOAEP: Boolean): TArray<Byte>; overload;
+    ///<summary>
+    ///  使用对称算法解密 <see langword="&lt;EncryptedKey&gt;" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="keyData">
+    ///  一个表示加密 <see langword="&lt;EncryptedKey&gt;" />
+    ///  元素的字节数组。
+    ///</param>
+    ///  <param name="symmetricAlgorithm">
+    ///  用于解密 <paramref name="keyData" />
+    ///  的对称密钥。
+    ///</param>
+    ///<returns>
+    ///  包含纯文本密钥的字节数组。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="keyData" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="symmetricAlgorithm" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  值 <paramref name="symmetricAlgorithm" />
+    ///  元素不是三重 DES 密钥包装算法或高级加密标准 (AES) 密钥包装算法 （也称作 rijndael 密钥包装）。
+    ///</exception>
     {class} function DecryptKey(keyData: TArray<Byte>; symmetricAlgorithm: DDN.mscorlib.DNSymmetricAlgorithm): TArray<Byte>; overload;
+    ///<summary>
+    ///  使用非对称算法解密 <see langword="&lt;EncryptedKey&gt;" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="keyData">
+    ///  一个表示加密 <see langword="&lt;EncryptedKey&gt;" />
+    ///  元素的字节数组。
+    ///</param>
+    ///  <param name="rsa">
+    ///  用于解密 <paramref name="keyData" />
+    ///  的非对称密钥。
+    ///</param>
+    ///  <param name="useOAEP">
+    ///  一个指定是否使用优化非对称加密填充 (OAEP) 的值。
+    ///</param>
+    ///<returns>
+    ///  包含纯文本密钥的字节数组。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="keyData" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="rsa" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} function DecryptKey(keyData: TArray<Byte>; rsa: DDN.mscorlib.DNRSA; useOAEP: Boolean): TArray<Byte>; overload;
+    ///<summary>
+    ///  将指定的元素替换为指定的 <see cref="T:System.Security.Cryptography.Xml.EncryptedData" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="inputElement">
+    ///  要替换为 <see langword="&lt;EncryptedData&gt;" />
+    ///  元素的元素。
+    ///</param>
+    ///  <param name="encryptedData">
+    ///  要替换 <paramref name="inputElement" />
+    ///  参数的 <see cref="T:System.Security.Cryptography.Xml.EncryptedData" />
+    ///  对象。
+    ///</param>
+    ///  <param name="content">
+    ///  如果仅替换元素内容，则为 <see langword="true" />
+    ///  ；如果要替换整个元素，则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="inputElement" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="encryptedData" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} procedure ReplaceElement(inputElement: DDN.System.Xml.DNXmlElement; encryptedData: DNEncryptedData; content: Boolean);
 
   end;
 
+  ///<summary>
+  ///  表示用于实现 XML 加密的进程模型。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.EncryptedXml')]
   DNEncryptedXml = interface(DDN.mscorlib.DNObject)
   ['{05293FB4-17EC-3B7F-92DF-18C9FD266F05}']
@@ -1962,18 +5813,273 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  确定如何解析内部统一资源标识符 (URI) 引用。
+    ///</summary>
+    ///  <param name="document">
+    ///  一个 <see cref="T:System.Xml.XmlDocument" />
+    ///  对象，包含具有 ID 值的元素。
+    ///</param>
+    ///  <param name="idValue">
+    ///  一个表示 ID 值的字符串。
+    ///</param>
+    ///<returns>
+    ///  一个包含 ID 的 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，此 ID 指示如何解析内部统一资源标识符 (URI)。
+    ///</returns>
     function GetIdElement(document: DDN.System.Xml.DNXmlDocument; idValue: string): DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  定义密钥名称和对称密钥或非对称密钥之间的映射。
+    ///</summary>
+    ///  <param name="keyName">
+    ///  要映射到 <paramref name="keyObject" />
+    ///  的名称。
+    ///</param>
+    ///  <param name="keyObject">
+    ///  要映射到 <paramref name="keyName" />
+    ///  的对称密钥。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="keyName" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="keyObject" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  值 <paramref name="keyObject" />
+    ///  参数不是 RSA 算法或对称密钥。
+    ///</exception>
     procedure AddKeyNameMapping(keyName: string; keyObject: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  重置所有密钥名称映射。
+    ///</summary>
     procedure ClearKeyNameMappings;
+    ///<summary>
+    ///  使用指定的对称算法解密 <see langword="&lt;EncryptedData&gt;" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="encryptedData">
+    ///  要解密的数据。
+    ///</param>
+    ///  <param name="symmetricAlgorithm">
+    ///  用于解密 <paramref name="encryptedData" />
+    ///  的对称密钥。
+    ///</param>
+    ///<returns>
+    ///  一个字节数组，包含已解密的原始明文。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="encryptedData" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="symmetricAlgorithm" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///</exception>
     function DecryptData(encryptedData: DNEncryptedData; symmetricAlgorithm: DDN.mscorlib.DNSymmetricAlgorithm): TArray<Byte>;
+    ///<summary>
+    ///  从 <see cref="T:System.Security.Cryptography.Xml.EncryptedData" />
+    ///  对象中检索解密初始化向量 (IV)。
+    ///</summary>
+    ///  <param name="encryptedData">
+    ///  包含要检索的初始化向量 (IV) 的 <see cref="T:System.Security.Cryptography.Xml.EncryptedData" />
+    ///  对象。
+    ///</param>
+    ///  <param name="symmetricAlgorithmUri">
+    ///  描述与 <paramref name="encryptedData" />
+    ///  值关联的加密算法的统一资源标识符 (URI)。
+    ///</param>
+    ///<returns>
+    ///  一个包含解密初始化向量 (IV) 的字节数组。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="encryptedData" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  值 <paramref name="encryptedData" />
+    ///  参数具有 <see cref="P:System.Security.Cryptography.Xml.EncryptedType.EncryptionMethod" />
+    ///  为 null 的属性。
+    ///  - 或 -
+    ///  值 <paramref name="symmetricAlgorithmUrisymAlgUri" />
+    ///  参数不是受支持的算法。
+    ///</exception>
     function GetDecryptionIV(encryptedData: DNEncryptedData; symmetricAlgorithmUri: string): TArray<Byte>;
+    ///<summary>
+    ///  从指定的 <see cref="T:System.Security.Cryptography.Xml.EncryptedData" />
+    ///  对象中检索解密密钥。
+    ///</summary>
+    ///  <param name="encryptedData">
+    ///  包含要检索的解密密钥的 <see cref="T:System.Security.Cryptography.Xml.EncryptedData" />
+    ///  对象。
+    ///</param>
+    ///  <param name="symmetricAlgorithmUri">
+    ///  要检索的解密密钥的大小。
+    ///</param>
+    ///<returns>
+    ///  一个与解密密钥关联的 <see cref="T:System.Security.Cryptography.SymmetricAlgorithm" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="encryptedData" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  EncryptedData 参数具有 <see cref="P:System.Security.Cryptography.Xml.EncryptedType.EncryptionMethod" />
+    ///  为 null 的属性。
+    ///  - 或 -
+    ///  无法使用指定的参数检索加密的密钥。
+    ///</exception>
     function GetDecryptionKey(encryptedData: DNEncryptedData; symmetricAlgorithmUri: string): DDN.mscorlib.DNSymmetricAlgorithm;
+    ///<summary>
+    ///  确定由 <see cref="T:System.Security.Cryptography.Xml.EncryptedKey" />
+    ///  元素表示的密钥。
+    ///</summary>
+    ///  <param name="encryptedKey">
+    ///  包含要检索的密钥的 <see cref="T:System.Security.Cryptography.Xml.EncryptedKey" />
+    ///  对象。
+    ///</param>
+    ///<returns>
+    ///  一个包含密钥的字节数组。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="encryptedKey" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  值 <paramref name="encryptedKey" />
+    ///  参数不是三重 DES 密钥包装算法或高级加密标准 (AES) 密钥包装算法 （也称作 rijndael 密钥包装）。
+    ///</exception>
     function DecryptEncryptedKey(encryptedKey: DNEncryptedKey): TArray<Byte>;
+    ///<summary>
+    ///  使用指定的 X.509 证书对元素的外部 XML 进行加密。
+    ///</summary>
+    ///  <param name="inputElement">
+    ///  要加密的 XML 元素。
+    ///</param>
+    ///  <param name="certificate">
+    ///  要用于加密的 X.509 证书。
+    ///</param>
+    ///<returns>
+    ///  一个表示已加密 XML 数据的 <see cref="T:System.Security.Cryptography.Xml.EncryptedData" />
+    ///  元素。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="inputElement" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="certificate" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.NotSupportedException">
+    ///  值 <paramref name="certificate" />
+    ///  参数不表示 RSA 密钥算法。
+    ///</exception>
     function Encrypt(inputElement: DDN.System.Xml.DNXmlElement; certificate: DDN.System.DNX509Certificate2): DNEncryptedData; overload;
+    ///<summary>
+    ///  使用在密钥映射表中指定的密钥对元素的外部 XML 进行加密。
+    ///</summary>
+    ///  <param name="inputElement">
+    ///  要加密的 XML 元素。
+    ///</param>
+    ///  <param name="keyName">
+    ///  可在密钥映射表中找到的密钥名称。
+    ///</param>
+    ///<returns>
+    ///  一个表示已加密 XML 数据的 <see cref="T:System.Security.Cryptography.Xml.EncryptedData" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="inputElement" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="keyName" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  值 <paramref name="keyName" />
+    ///  参数与已注册的密钥名称对不匹配。
+    ///  - 或 -
+    ///  所描述的加密密钥 <paramref name="keyName" />
+    ///  不支持参数。
+    ///</exception>
     function Encrypt(inputElement: DDN.System.Xml.DNXmlElement; keyName: string): DNEncryptedData; overload;
+    ///<summary>
+    ///  解密 XML 文档中所有在初始化 <see langword="&lt;EncryptedData&gt;" />
+    ///  类期间指定的 <see cref="T:System.Security.Cryptography.Xml.EncryptedXml" />
+    ///  元素。
+    ///</summary>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  找不到用来解密文档的加密密钥。
+    ///</exception>
     procedure DecryptDocument;
+    ///<summary>
+    ///  使用指定的对称算法对指定的字节数组中的数据进行加密。
+    ///</summary>
+    ///  <param name="plaintext">
+    ///  要加密的数据。
+    ///</param>
+    ///  <param name="symmetricAlgorithm">
+    ///  要用于加密的对称算法。
+    ///</param>
+    ///<returns>
+    ///  加密数据的字节数组。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="plaintext" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="symmetricAlgorithm" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  使用指定的参数无法加密数据。
+    ///</exception>
     function EncryptData(plaintext: TArray<Byte>; symmetricAlgorithm: DDN.mscorlib.DNSymmetricAlgorithm): TArray<Byte>; overload;
+    ///<summary>
+    ///  使用指定的对称算法加密指定的元素或其内容。
+    ///</summary>
+    ///  <param name="inputElement">
+    ///  要加密的元素或其内容。
+    ///</param>
+    ///  <param name="symmetricAlgorithm">
+    ///  要用于加密的对称算法。
+    ///</param>
+    ///  <param name="content">
+    ///  如果仅加密元素的内容，则为 <see langword="true" />
+    ///  ；如果要加密整个元素，则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  一个包含加密数据的字节数组。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="inputElement" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="symmetricAlgorithm" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///</exception>
     function EncryptData(inputElement: DDN.System.Xml.DNXmlElement; symmetricAlgorithm: DDN.mscorlib.DNSymmetricAlgorithm; content: Boolean): TArray<Byte>; overload;
+    ///<summary>
+    ///  将 <see langword="&lt;EncryptedData&gt;" />
+    ///  元素替换为指定的解密字节序列。
+    ///</summary>
+    ///  <param name="inputElement">
+    ///  要替换的 <see langword="&lt;EncryptedData&gt;" />
+    ///  元素。
+    ///</param>
+    ///  <param name="decryptedData">
+    ///  要替换 <paramref name="inputElement" />
+    ///  的解密数据。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="inputElement" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="decryptedData" />
+    ///  参数的值为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure ReplaceData(inputElement: DDN.System.Xml.DNXmlElement; decryptedData: TArray<Byte>);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1982,33 +6088,153 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 XML 数字签名递归深度以避免无穷递归和堆栈溢出。
+    ///  如果包括了 URI 的数字签名 XML 随后指回原始 XML，则可能发生这种情况。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.Int32" />
+    ///  。
+    ///</returns>
     property XmlDSigSearchDepth: Int32 read get_XmlDSigSearchDepth write set_XmlDSigSearchDepth;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Xml.XmlDocument" />
+    ///  对象的证据，<see cref="T:System.Security.Cryptography.Xml.EncryptedXml" />
+    ///  对象从该对象构造。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Policy.Evidence" />
+    ///  对象。
+    ///</returns>
     property DocumentEvidence: DDN.mscorlib.DNEvidence read get_DocumentEvidence write set_DocumentEvidence;
+    ///<summary>
+    ///  获取或设置文档对象模型 (DOM) 使用的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象以解析外部 XML 引用。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</returns>
     property Resolver: DDN.System.Xml.DNXmlResolver read get_Resolver write set_Resolver;
+    ///<summary>
+    ///  获取或设置 XML 加密所用的填充模式。
+    ///</summary>
+    ///<returns>
+    ///  指定加密所用的填充类型的 <see cref="T:System.Security.Cryptography.PaddingMode" />
+    ///  值之一。
+    ///</returns>
     property Padding: DDN.mscorlib.DNPaddingMode read get_Padding write set_Padding;
+    ///<summary>
+    ///  获取或设置 XML 加密所用的密码模式。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.CipherMode" />
+    ///  值之一。
+    ///</returns>
     property Mode: DDN.mscorlib.DNCipherMode read get_Mode write set_Mode;
+    ///<summary>
+    ///  获取或设置 XML 加密所用的编码。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Text.Encoding" />
+    ///  对象。
+    ///</returns>
     property Encoding: DDN.mscorlib.DNEncoding read get_Encoding write set_Encoding;
+    ///<summary>
+    ///  获取或设置加密密钥信息的收件人。
+    ///</summary>
+    ///<returns>
+    ///  加密密钥信息的收件人。
+    ///</returns>
     property Recipient: string read get_Recipient write set_Recipient;
   end;
 
   TDNEncryptedXml = class(TDNGenericImport<DNEncryptedXmlClass, DNEncryptedXml>)
   public const
+    ///<summary>
+    ///  表示“XML 加密语法和处理”对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncNamespaceUrl = 'http://www.w3.org/2001/04/xmlenc#';
+    ///<summary>
+    ///  表示 XML 加密元素对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncElementUrl = 'http://www.w3.org/2001/04/xmlenc#Element';
+    ///<summary>
+    ///  表示 XML 加密元素内容对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncElementContentUrl = 'http://www.w3.org/2001/04/xmlenc#Content';
+    ///<summary>
+    ///  表示 XML 加密 <see langword="&lt;EncryptedKey&gt;" />
+    ///  元素对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncEncryptedKeyUrl = 'http://www.w3.org/2001/04/xmlenc#EncryptedKey';
+    ///<summary>
+    ///  表示数字加密标准 (DES) 算法对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncDESUrl = 'http://www.w3.org/2001/04/xmlenc#des-cbc';
+    ///<summary>
+    ///  表示三重 DES 算法对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncTripleDESUrl = 'http://www.w3.org/2001/04/xmlenc#tripledes-cbc';
+    ///<summary>
+    ///  表示 128 位高级加密标准 (AES) 密钥包装算法（也称作“Rijndael 密钥包装算法”）的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncAES128Url = 'http://www.w3.org/2001/04/xmlenc#aes128-cbc';
+    ///<summary>
+    ///  表示 256 位高级加密标准 (AES) 密钥包装算法（也称作“Rijndael 密钥包装算法”）的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncAES256Url = 'http://www.w3.org/2001/04/xmlenc#aes256-cbc';
+    ///<summary>
+    ///  表示 192 位高级加密标准 (AES) 密钥包装算法（也称作“Rijndael 密钥包装算法”）的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncAES192Url = 'http://www.w3.org/2001/04/xmlenc#aes192-cbc';
+    ///<summary>
+    ///  表示 RSA 公钥加密标准 (PKCS) 1.5 版算法对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncRSA15Url = 'http://www.w3.org/2001/04/xmlenc#rsa-1_5';
+    ///<summary>
+    ///  表示 RSA 优化非对称加密填充 (OAEP) 加密算法对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncRSAOAEPUrl = 'http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p';
+    ///<summary>
+    ///  表示三重 DES Key Wrap 算法对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncTripleDESKeyWrapUrl = 'http://www.w3.org/2001/04/xmlenc#kw-tripledes';
+    ///<summary>
+    ///  表示 128 位高级加密标准 (AES) 密钥包装算法（也称作“Rijndael 密钥包装算法”）的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncAES128KeyWrapUrl = 'http://www.w3.org/2001/04/xmlenc#kw-aes128';
+    ///<summary>
+    ///  表示 256 位高级加密标准 (AES) 密钥包装算法（也称作“Rijndael 密钥包装算法”）的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncAES256KeyWrapUrl = 'http://www.w3.org/2001/04/xmlenc#kw-aes256';
+    ///<summary>
+    ///  表示 192 位高级加密标准 (AES) 密钥包装算法（也称作“Rijndael 密钥包装算法”）的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncAES192KeyWrapUrl = 'http://www.w3.org/2001/04/xmlenc#kw-aes192';
+    ///<summary>
+    ///  表示 SHA-256 算法对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncSHA256Url = 'http://www.w3.org/2001/04/xmlenc#sha256';
+    ///<summary>
+    ///  表示 SHA-512 算法对应的命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlEncSHA512Url = 'http://www.w3.org/2001/04/xmlenc#sha512';
   end;
 
@@ -2017,11 +6243,26 @@ type
   ['{BC7F8721-CDD0-5EFD-8314-85D1C9318DEE}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNEncryptionMethod; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" />
+    ///  类指定的算法的统一资源标识符 (URI)。
+    ///</summary>
+    ///  <param name="algorithm">
+    ///  描述的实例所表示的算法的统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" />
+    ///  类。
+    ///</param>
     {class} function init(algorithm: string): DNEncryptionMethod; overload;
 
   end;
 
+  ///<summary>
+  ///  封装用于 XML 加密的加密算法。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.EncryptionMethod')]
   DNEncryptionMethod = interface(DDN.mscorlib.DNObject)
   ['{45373A3E-546E-3C91-A8A0-3F3F1BD7F98B}']
@@ -2034,7 +6275,31 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，它封装实例 <see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" />
+    ///  类。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，它封装实例 <see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" />
+    ///  类。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  分析指定 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，并将配置的内部状态 <see cref="T:System.Security.Cryptography.Xml.EncryptionMethod" />
+    ///  相匹配的对象。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Xml.XmlElement" />
+    ///  对象，以分析。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException">
+    ///  在中表示的密钥大小 <paramref name="value" />
+    ///  参数为小于 0。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2043,7 +6308,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 XML 加密所用的算法的密钥大小。
+    ///</summary>
+    ///<returns>
+    ///  算法密钥的大小，以位为单位，XML 加密所用。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Security.Cryptography.Xml.EncryptionMethod.KeySize" />
+    ///  属性设置为小于 0 的值。
+    ///</exception>
     property KeySize: Int32 read get_KeySize write set_KeySize;
+    ///<summary>
+    ///  获取或设置统一资源标识符 (URI)，用于描述要使用 XML 加密的算法。
+    ///</summary>
+    ///<returns>
+    ///  统一资源标识符 (URI)，用于描述要使用 XML 加密的算法。
+    ///</returns>
     property KeyAlgorithm: string read get_KeyAlgorithm write set_KeyAlgorithm;
   end;
 
@@ -2054,11 +6334,39 @@ type
   ['{C6EC2007-0CC9-5398-89E6-B7502F6CA67C}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNEncryptionProperty; overload;
+    ///<summary>
+    ///  初始化的新实例 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  类使用 <see cref="T:System.Xml.XmlElement" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="elementProperty"><see cref="T:System.Xml.XmlElement" />
+    ///  要用于初始化对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="elementProperty" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Xml.XmlElement.LocalName" />
+    ///  属性 <paramref name="elementProperty" />
+    ///  参数不是"EncryptionProperty"。
+    ///  - 或 -
+    ///<see cref="P:System.Xml.XmlElement.NamespaceURI" />
+    ///  属性 <paramref name="elementProperty" />
+    ///  参数不是"http://www.w3.org/2001/04/xmlenc#"。
+    ///</exception>
     {class} function init(elementProperty: DDN.System.Xml.DNXmlElement): DNEncryptionProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see langword="&lt;EncryptionProperty&gt;" />
+  ///  XML 加密中使用的元素。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.EncryptionProperty')]
   DNEncryptionProperty = interface(DDN.mscorlib.DNObject)
   ['{FBCF2510-EE0D-3BBA-81F9-EB08F217DECD}']
@@ -2071,7 +6379,35 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，它封装实例 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  类。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，它封装实例 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  类。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  分析输入 <see cref="T:System.Xml.XmlElement" />
+    ///  并配置的内部状态 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  相匹配的对象。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Xml.XmlElement" />
+    ///  对象，以分析。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Xml.XmlElement.LocalName" />
+    ///  属性 <paramref name="value" />
+    ///  参数不是"EncryptionProperty"。
+    ///  - 或 -
+    ///<see cref="P:System.Xml.XmlElement.NamespaceURI" />
+    ///  属性 <paramref name="value" />
+    ///  参数不是"http://www.w3.org/2001/04/xmlenc#"。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2080,8 +6416,44 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取当前的 ID <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 ID <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象。
+    ///</returns>
     property Id: string read get_Id;
+    ///<summary>
+    ///  获取的目标 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  目标的 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象。
+    ///</returns>
     property Target: string read get_Target;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.EncryptionProperty.PropertyElement" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Xml.XmlElement.LocalName" />
+    ///  属性值设置为 <see cref="P:System.Security.Cryptography.Xml.EncryptionProperty.PropertyElement" />
+    ///  属性不是"EncryptionProperty"。
+    ///  - 或 -
+    ///<see cref="P:System.Xml.XmlElement.NamespaceURI" />
+    ///  属性值设置为 <see cref="P:System.Security.Cryptography.Xml.EncryptionProperty.PropertyElement" />
+    ///  属性不是"http://www.w3.org/2001/04/xmlenc#"。
+    ///</exception>
     property PropertyElement: DDN.System.Xml.DNXmlElement read get_PropertyElement write set_PropertyElement;
   end;
 
@@ -2092,10 +6464,19 @@ type
   ['{F50F0241-CF57-5ED2-A6F0-DACFBD9BF9DC}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNEncryptionPropertyCollection;
 
   end;
 
+  ///<summary>
+  ///  表示 XML 加密中使用的 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+  ///  类的集合。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.EncryptionPropertyCollection')]
   DNEncryptionPropertyCollection = interface(DDN.mscorlib.DNIList)
   ['{4EDF7CB8-170C-3691-AF15-EE46A5F94BD8}']
@@ -2111,15 +6492,129 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回一个枚举数循环访问 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  可用于循环访问的对象 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    ///<summary>
+    ///  添加 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象传递给 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  要添加到对象 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///</param>
+    ///<returns>
+    ///  在该位置插入新元素的位置。
+    ///</returns>
     function Add(value: DNEncryptionProperty): Int32;
+    ///<summary>
+    ///  确定是否 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象包含特定 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象中定位 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  中找到对象 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function &Contains(value: DNEncryptionProperty): Boolean;
+    ///<summary>
+    ///  确定中特定项的索引 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象中定位 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///</param>
+    ///<returns>
+    ///  索引 <paramref name="value" />
+    ///  如果在集合中找到; 否则为-1。
+    ///</returns>
     function IndexOf(value: DNEncryptionProperty): Int32;
+    ///<summary>
+    ///  将插入 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象插入 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  指定位置处的对象。
+    ///</summary>
+    ///  <param name="index">
+    ///  应插入 <paramref name="value" />
+    ///  的从零开始的索引。
+    ///</param>
+    ///  <param name="value"><see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  要插入到对象 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///</param>
     procedure Insert(index: Int32; value: DNEncryptionProperty);
+    ///<summary>
+    ///  移除特定的第一个匹配项 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象从 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象以去除 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///</param>
     procedure Remove(value: DNEncryptionProperty);
+    ///<summary>
+    ///  删除 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  的指定索引处的对象。
+    ///</summary>
+    ///  <param name="index">
+    ///  要移除的 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象的索引（从零开始）。
+    ///</param>
     procedure RemoveAt(index: Int32);
+    ///<summary>
+    ///  返回 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  中指定索引处的对象。
+    ///</summary>
+    ///  <param name="index">
+    ///  索引 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  要返回对象。
+    ///</param>
+    ///<returns><see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  中指定索引处的对象。
+    ///</returns>
     function Item(index: Int32): DNEncryptionProperty;
+    ///<summary>
+    ///  中的元素复制 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象传递给数组，从特定数组索引处开始。
+    ///</summary>
+    ///  <param name="array">
+    ///  一维 <see cref="T:System.Array" />
+    ///  对象，它是从复制的元素的目标 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///  该数组的索引必须从零开始。
+    ///</param>
+    ///  <param name="index"><paramref name="array" />
+    ///  中从零开始的索引，从此处开始复制。
+    ///</param>
     procedure CopyTo(&array: DDN.mscorlib.DNArray; index: Int32); overload;
+    ///<summary>
+    ///  从特定数组索引处开始，将 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象的元素复制到 <see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象的数组。
+    ///</summary>
+    ///  <param name="array"><see cref="T:System.Security.Cryptography.Xml.EncryptionProperty" />
+    ///  对象的一维数组，该数组是从 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象复制的元素的目标。
+    ///  该数组的索引必须从零开始。
+    ///</param>
+    ///  <param name="index"><paramref name="array" />
+    ///  中从零开始的索引，从此处开始复制。
+    ///</param>
     procedure CopyTo(&array: TArray<DNEncryptionProperty>; index: Int32); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2128,11 +6623,55 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取包含中的元素数 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  中包含的元素数 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象。
+    ///</returns>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取一个值，该值指示 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象是否具有固定大小。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象具有固定大小; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsFixedSize: Boolean read get_IsFixedSize;
+    ///<summary>
+    ///  获取一个值，该值指示 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象是否为只读。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象是只读的; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsReadOnly: Boolean read get_IsReadOnly;
     property ItemOf[index: Int32]: DNEncryptionProperty read get_ItemOf write set_ItemOf; default;
+    ///<summary>
+    ///  获取一个对象，该对象可用于同步对 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象的访问。
+    ///</summary>
+    ///<returns>
+    ///  一个对象，该对象可用于同步对 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象的访问。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
+    ///<summary>
+    ///  获取一个值，该值指示是否访问 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象已同步 （线程安全）。
+    ///</summary>
+    ///<returns>
+    ///  如果对 <see cref="T:System.Security.Cryptography.Xml.EncryptionPropertyCollection" />
+    ///  对象的访问是同步的（线程安全），则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
   end;
 
@@ -2143,10 +6682,18 @@ type
   ['{FC55D02A-89AB-5B1C-A81C-D61D7D5EDE15}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNKeyInfo;
 
   end;
 
+  ///<summary>
+  ///  表示 XML 数字签名或 XML 加密 <see langword="&lt;KeyInfo&gt;" />
+  ///  元素。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.KeyInfo')]
   DNKeyInfo = interface(DDN.mscorlib.DNIEnumerable)
   ['{4FEF8CE8-09B4-3D13-88DD-39A9F077A80C}']
@@ -2158,10 +6705,61 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  添加 <see cref="T:System.Security.Cryptography.Xml.KeyInfoClause" />
+    ///  ，它表示特定类型的 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  信息写入 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="clause"><see cref="T:System.Security.Cryptography.Xml.KeyInfoClause" />
+    ///  将添加到 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象。
+    ///</param>
     procedure AddClause(clause: DNKeyInfoClause);
+    ///<summary>
+    ///  返回的枚举数 <see cref="T:System.Security.Cryptography.Xml.KeyInfoClause" />
+    ///  中的对象 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  子元素的枚举数 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  可用于循环访问集合。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator; overload;
+    ///<summary>
+    ///  返回的枚举数 <see cref="T:System.Security.Cryptography.Xml.KeyInfoClause" />
+    ///  中的指定类型的对象 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="requestedObjectType">
+    ///  要枚举的对象类型。
+    ///</param>
+    ///<returns>
+    ///  子元素的枚举数 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  可用于循环访问集合。
+    ///</returns>
     function GetEnumerator(requestedObjectType: DDN.mscorlib.DNType): DDN.mscorlib.DNIEnumerator; overload;
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  加载 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  状态从一个 XML 元素。
+    ///</summary>
+    ///  <param name="value">
+    ///  要从其中加载的 XML 元素 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  状态。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2170,7 +6768,23 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置密钥信息标识。
+    ///</summary>
+    ///<returns>
+    ///  密钥信息标识。
+    ///</returns>
     property Id: string read get_Id write set_Id;
+    ///<summary>
+    ///  获取的数 <see cref="T:System.Security.Cryptography.Xml.KeyInfoClause" />
+    ///  中所含对象 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  数 <see cref="T:System.Security.Cryptography.Xml.KeyInfoClause" />
+    ///  中所含对象 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象。
+    ///</returns>
     property Count: Int32 read get_Count;
   end;
 
@@ -2181,12 +6795,33 @@ type
   ['{0E78A823-CB35-5307-B462-C2C57C34AFD6}']
   end;
 
+  ///<summary>
+  ///  表示类的抽象基类中的所有实现均从中 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+  ///  子元素继承。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.KeyInfoClause')]
   DNKeyInfoClause = interface(DDN.mscorlib.DNObject)
   ['{C1677807-714E-320B-B67E-77C6F73AFBC3}']
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.KeyInfoClause" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.KeyInfoClause" />
+    ///  。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  当在派生类中重写，则将该输入分析 <see cref="T:System.Xml.XmlElement" />
+    ///  并配置的内部状态 <see cref="T:System.Security.Cryptography.Xml.KeyInfoClause" />
+    ///  相匹配。
+    ///</summary>
+    ///  <param name="element"><see cref="T:System.Xml.XmlElement" />
+    ///  指定的状态 <see cref="T:System.Security.Cryptography.Xml.KeyInfoClause" />
+    ///  。
+    ///</param>
     procedure LoadXml(element: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2202,11 +6837,30 @@ type
   ['{377CFB91-8900-518F-93BB-9A4DAF7A8573}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.DSAKeyValue" />
+    ///  类的新的、 随机生成 <see cref="T:System.Security.Cryptography.DSA" />
+    ///  公共密钥。
+    ///</summary>
     {class} function init: DNDSAKeyValue; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.DSAKeyValue" />
+    ///  类与指定 <see cref="T:System.Security.Cryptography.DSA" />
+    ///  公共密钥。
+    ///</summary>
+    ///  <param name="key">
+    ///  实现的实例 <see cref="T:System.Security.Cryptography.DSA" />
+    ///  包含公钥的类。
+    ///</param>
     {class} function init(key: DDN.mscorlib.DNDSA): DNDSAKeyValue; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Security.Cryptography.DSA" />
+  ///  私钥 <see langword="&lt;KeyInfo&gt;" />
+  ///  元素。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.DSAKeyValue')]
   DNDSAKeyValue = interface(DNKeyInfoClause)
   ['{A0A0C73D-39C1-322A-961E-96C8AC5372E9}']
@@ -2217,7 +6871,30 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.DSAKeyValue" />
+    ///  元素。
+    ///</summary>
+    ///<returns>
+    ///  XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.DSAKeyValue" />
+    ///  元素。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  加载 <see cref="T:System.Security.Cryptography.Xml.DSAKeyValue" />
+    ///  状态从一个 XML 元素。
+    ///</summary>
+    ///  <param name="value">
+    ///  要加载的 XML 元素 <see cref="T:System.Security.Cryptography.Xml.DSAKeyValue" />
+    ///  从状态。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="value" />
+    ///  参数不是有效 <see cref="T:System.Security.Cryptography.Xml.DSAKeyValue" />
+    ///  XML 元素。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2226,6 +6903,14 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置所表示的密钥值 <see cref="T:System.Security.Cryptography.DSA" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  公钥由 <see cref="T:System.Security.Cryptography.DSA" />
+    ///  对象。
+    ///</returns>
     property Key: DDN.mscorlib.DNDSA read get_Key write set_Key;
   end;
 
@@ -2236,11 +6921,28 @@ type
   ['{07FDC586-F492-5315-AD01-43989E8E0ED2}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.KeyInfoEncryptedKey" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNKeyInfoEncryptedKey; overload;
+    ///<summary>
+    ///  初始化的新实例 <see cref="T:System.Security.Cryptography.Xml.KeyInfoEncryptedKey" />
+    ///  类使用 <see cref="T:System.Security.Cryptography.Xml.EncryptedKey" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="encryptedKey"><see cref="T:System.Security.Cryptography.Xml.EncryptedKey" />
+    ///  封装加密的密钥的对象。
+    ///</param>
     {class} function init(encryptedKey: DNEncryptedKey): DNKeyInfoEncryptedKey; overload;
 
   end;
 
+  ///<summary>
+  ///  包装 <see cref="T:System.Security.Cryptography.Xml.EncryptedKey" />
+  ///  类，它作为一个子元素的放置 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+  ///  类。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.KeyInfoEncryptedKey')]
   DNKeyInfoEncryptedKey = interface(DNKeyInfoClause)
   ['{F553DA72-AA00-392C-BA00-264884732880}']
@@ -2251,7 +6953,28 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.KeyInfoEncryptedKey" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.KeyInfoEncryptedKey" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  该加密的密钥是 <see langword="null" />
+    ///  。
+    ///</exception>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  分析输入 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，并将配置的内部状态 <see cref="T:System.Security.Cryptography.Xml.KeyInfoEncryptedKey" />
+    ///  相匹配的对象。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Xml.XmlElement" />
+    ///  对象，它指定的状态 <see cref="T:System.Security.Cryptography.Xml.KeyInfoEncryptedKey" />
+    ///  对象。
+    ///</param>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2260,6 +6983,17 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Security.Cryptography.Xml.EncryptedKey" />
+    ///  封装加密的密钥的对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Xml.EncryptedKey" />
+    ///  封装加密的密钥的对象。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.KeyInfoEncryptedKey.EncryptedKey" />
+    ///  属性为 <see langword="null" />
+    ///  。
+    ///</exception>
     property EncryptedKey: DNEncryptedKey read get_EncryptedKey write set_EncryptedKey;
   end;
 
@@ -2270,11 +7004,29 @@ type
   ['{CF9A57EF-B84F-5BF8-93DE-0E3041631673}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.KeyInfoName" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNKeyInfoName; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.KeyInfoName" />
+    ///  类通过指定的值的字符串标识符 <see langword="&lt;KeyName&gt;" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="keyName">
+    ///  值的字符串标识符 <see langword="&lt;KeyName&gt;" />
+    ///  元素。
+    ///</param>
     {class} function init(keyName: string): DNKeyInfoName; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see langword="&lt;KeyName&gt;" />
+  ///  XMLDSIG 或 XML 加密的子元素 <see langword="&lt;KeyInfo&gt;" />
+  ///  元素。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.KeyInfoName')]
   DNKeyInfoName = interface(DNKeyInfoClause)
   ['{9A4062E1-3932-3BBF-853E-522D7AA04085}']
@@ -2285,7 +7037,28 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.KeyInfoName" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.KeyInfoName" />
+    ///  对象。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  分析输入 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，并将配置的内部状态 <see cref="T:System.Security.Cryptography.Xml.KeyInfoName" />
+    ///  相匹配的对象。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Xml.XmlElement" />
+    ///  对象，它指定的状态 <see cref="T:System.Security.Cryptography.Xml.KeyInfoName" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2294,6 +7067,14 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置中包含的字符串标识符 <see langword="&lt;KeyName&gt;" />
+    ///  元素。
+    ///</summary>
+    ///<returns>
+    ///  值的字符串标识符 <see langword="&lt;KeyName&gt;" />
+    ///  元素。
+    ///</returns>
     property Value: string read get_Value write set_Value;
   end;
 
@@ -2304,11 +7085,28 @@ type
   ['{309743C1-6F21-59A2-9EF2-80AD1F690E56}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.KeyInfoNode" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNKeyInfoNode; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.KeyInfoNode" />
+    ///  类获取从指定的内容 <see cref="T:System.Xml.XmlElement" />
+    ///  。
+    ///</summary>
+    ///  <param name="node">
+    ///  从该对象中获取用于创建的新实例的内容的 XML 元素 <see cref="T:System.Security.Cryptography.Xml.KeyInfoNode" />
+    ///  。
+    ///</param>
     {class} function init(node: DDN.System.Xml.DNXmlElement): DNKeyInfoNode; overload;
 
   end;
 
+  ///<summary>
+  ///  处理 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+  ///  是否有特定实现或在计算机上注册的处理程序的子元素。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.KeyInfoNode')]
   DNKeyInfoNode = interface(DNKeyInfoClause)
   ['{7766A4DB-3072-34A2-972F-B5408656246C}']
@@ -2319,7 +7117,24 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  分析输入 <see cref="T:System.Xml.XmlElement" />
+    ///  并配置的内部状态 <see cref="T:System.Security.Cryptography.Xml.KeyInfoNode" />
+    ///  相匹配。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Xml.XmlElement" />
+    ///  指定的状态 <see cref="T:System.Security.Cryptography.Xml.KeyInfoNode" />
+    ///  。
+    ///</param>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.KeyInfoNode" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.KeyInfoNode" />
+    ///  。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2328,6 +7143,14 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 XML 内容的当前 <see cref="T:System.Security.Cryptography.Xml.KeyInfoNode" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  当前的 XML 内容 <see cref="T:System.Security.Cryptography.Xml.KeyInfoNode" />
+    ///  。
+    ///</returns>
     property Value: DDN.System.Xml.DNXmlElement read get_Value write set_Value;
   end;
 
@@ -2338,12 +7161,41 @@ type
   ['{D856FA4A-AC5A-5A26-A77D-DF088B8C9478}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.KeyInfoRetrievalMethod" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNKeyInfoRetrievalMethod; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.KeyInfoRetrievalMethod" />
+    ///  类与指定统一资源标识符 (URI) 指向所引用 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="strUri">
+    ///  统一资源标识符 (URI) 的信息的新实例的引用 <see cref="T:System.Security.Cryptography.Xml.KeyInfoRetrievalMethod" />
+    ///  。
+    ///</param>
     {class} function init(strUri: string): DNKeyInfoRetrievalMethod; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.KeyInfoRetrievalMethod" />
+    ///  类与指定统一资源标识符 (URI) 指向所引用 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象，并描述要检索的数据类型的 URI。
+    ///</summary>
+    ///  <param name="strUri">
+    ///  统一资源标识符 (URI) 的信息的新实例的引用 <see cref="T:System.Security.Cryptography.Xml.KeyInfoRetrievalMethod" />
+    ///  。
+    ///</param>
+    ///  <param name="typeName">
+    ///  用于描述要检索的数据类型的 URI。
+    ///</param>
     {class} function init(strUri: string; typeName: string): DNKeyInfoRetrievalMethod; overload;
 
   end;
 
+  ///<summary>
+  ///  引用 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+  ///  使用 XMLDSIG 或 XML 加密功能时存储的其他位置的对象。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.KeyInfoRetrievalMethod')]
   DNKeyInfoRetrievalMethod = interface(DNKeyInfoClause)
   ['{57F2BFAA-B0E3-30C3-9649-77A9DDD8B64B}']
@@ -2356,7 +7208,28 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.KeyInfoRetrievalMethod" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.KeyInfoRetrievalMethod" />
+    ///  对象。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  分析输入 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，并将配置的内部状态 <see cref="T:System.Security.Cryptography.Xml.KeyInfoRetrievalMethod" />
+    ///  相匹配的对象。
+    ///</summary>
+    ///  <param name="value">
+    ///  指定的状态的 XML 元素 <see cref="T:System.Security.Cryptography.Xml.KeyInfoRetrievalMethod" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2365,7 +7238,21 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置的统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.Xml.KeyInfoRetrievalMethod" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.Xml.KeyInfoRetrievalMethod" />
+    ///  对象。
+    ///</returns>
     property Uri: string read get_Uri write set_Uri;
+    ///<summary>
+    ///  获取或设置统一资源标识符 (URI)，用于描述要检索的数据类型。
+    ///</summary>
+    ///<returns>
+    ///  统一资源标识符 (URI)，用于描述要检索的数据类型。
+    ///</returns>
     property &Type: string read get_Type write set_Type;
   end;
 
@@ -2376,13 +7263,61 @@ type
   ['{5E166CBF-728D-57E4-A131-18D505F9FA94}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNKeyInfoX509Data; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  X.509v3 证书的指定 ASN.1 的 DER 编码的类。
+    ///</summary>
+    ///  <param name="rgbCert">
+    ///  ASN.1 DER 编码 <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" />
+    ///  要初始化的新实例的对象 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  从。
+    ///</param>
     {class} function init(rgbCert: TArray<Byte>): DNKeyInfoX509Data; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  类从指定的 X.509v3 证书。
+    ///</summary>
+    ///  <param name="cert"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" />
+    ///  要初始化的新实例的对象 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  从。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="cert" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} function init(cert: DDN.mscorlib.DNX509Certificate): DNKeyInfoX509Data; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  类从指定的 X.509v3 证书。
+    ///</summary>
+    ///  <param name="cert"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" />
+    ///  要初始化的新实例的对象 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  从。
+    ///</param>
+    ///  <param name="includeOption">
+    ///  其中一个 <see cref="T:System.Security.Cryptography.X509Certificates.X509IncludeOption" />
+    ///  值，该值指定要包括的证书链。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="cert" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  证书具有完整的证书链。
+    ///</exception>
     {class} function init(cert: DDN.mscorlib.DNX509Certificate; includeOption: DDN.System.DNX509IncludeOption): DNKeyInfoX509Data; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see langword="&lt;X509Data&gt;" />
+  ///  XMLDSIG 或 XML 加密的子元素 <see langword="&lt;KeyInfo&gt;" />
+  ///  元素。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.KeyInfoX509Data')]
   DNKeyInfoX509Data = interface(DNKeyInfoClause)
   ['{80A1B9CB-E826-3393-A806-5689B8289E14}']
@@ -2397,12 +7332,88 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将添加到指定的 X.509v3 证书 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  。
+    ///</summary>
+    ///  <param name="certificate"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" />
+    ///  要添加到对象 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="certificate" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure AddCertificate(certificate: DDN.mscorlib.DNX509Certificate);
+    ///<summary>
+    ///  将添加到指定的使用者密钥标识符 (SKI) 字节数组<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="subjectKeyId">
+    ///  一个表示使用者密钥标识符 (SKI) 将添加到的字节数组<see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</param>
     procedure AddSubjectKeyId(subjectKeyId: TArray<Byte>); overload;
+    ///<summary>
+    ///  指定的主题密钥标识符 (SKI) 将字符串添加到 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="subjectKeyId">
+    ///  一个字符串，表示主题密钥标识符 (SKI) 将添加到 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</param>
     procedure AddSubjectKeyId(subjectKeyId: string); overload;
+    ///<summary>
+    ///  将已颁发给 X.509v3 证书的实体的使用者名称添加 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="subjectName">
+    ///  颁发 X.509 证书将添加到实体的名称 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</param>
     procedure AddSubjectName(subjectName: string);
+    ///<summary>
+    ///  指定的颁发者名称和序列号将对添加到 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="issuerName">
+    ///  要添加到对的颁发者名称部分 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</param>
+    ///  <param name="serialNumber">
+    ///  要添加到对的序列号部分 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</param>
     procedure AddIssuerSerial(issuerName: string; serialNumber: string);
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  分析输入 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，并将配置的内部状态 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  相匹配的对象。
+    ///</summary>
+    ///  <param name="element"><see cref="T:System.Xml.XmlElement" />
+    ///  对象，它指定的状态 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="element" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="element" />
+    ///  参数不包含 &lt;<see langword="X509IssuerName" />
+    ///  &gt; 节点。
+    ///  - 或 -
+    ///  <paramref name="element" />
+    ///  参数不包含 &lt;<see langword="X509SerialNumber" />
+    ///  &gt; 节点。
+    ///</exception>
     procedure LoadXml(element: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2411,10 +7422,50 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取列表中包含的 X.509v3 证书的 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  中包含的 X.509 证书的列表 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</returns>
     property Certificates: DDN.mscorlib.DNArrayList read get_Certificates;
+    ///<summary>
+    ///  获取列表中包含的主题密钥标识符 (Ski) <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  列表中包含的主题密钥标识符 (Ski) <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</returns>
     property SubjectKeyIds: DDN.mscorlib.DNArrayList read get_SubjectKeyIds;
+    ///<summary>
+    ///  获取使用者名称中包含的实体的列表 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  中包含的实体的使用者名称列表 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</returns>
     property SubjectNames: DDN.mscorlib.DNArrayList read get_SubjectNames;
+    ///<summary>
+    ///  获取一份 <see cref="T:System.Security.Cryptography.Xml.X509IssuerSerial" />
+    ///  这些结构表示颁发者名称和序列号对。
+    ///</summary>
+    ///<returns>
+    ///  一份 <see cref="T:System.Security.Cryptography.Xml.X509IssuerSerial" />
+    ///  这些结构表示颁发者名称和序列号对。
+    ///</returns>
     property IssuerSerials: DDN.mscorlib.DNArrayList read get_IssuerSerials;
+    ///<summary>
+    ///  获取或设置证书吊销列表 (CRL) 中包含 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  证书吊销列表 (CRL) 中包含 <see cref="T:System.Security.Cryptography.Xml.KeyInfoX509Data" />
+    ///  对象。
+    ///</returns>
     property CRL: TArray<Byte> read get_CRL write set_CRL;
   end;
 
@@ -2425,11 +7476,29 @@ type
   ['{8ECB78C0-172D-5578-AD47-ED9250A98F6C}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.RSAKeyValue" />
+    ///  随机生成的类的新 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  公共密钥。
+    ///</summary>
     {class} function init: DNRSAKeyValue; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.RSAKeyValue" />
+    ///  类与指定 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  公共密钥。
+    ///</summary>
+    ///  <param name="key">
+    ///  包含公钥的 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  的实现的实例。
+    ///</param>
     {class} function init(key: DDN.mscorlib.DNRSA): DNRSAKeyValue; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 &lt;<see langword="RSAKeyValu" />
+  ///  e &gt; 元素的 XML 签名。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.RSAKeyValue')]
   DNRSAKeyValue = interface(DNKeyInfoClause)
   ['{268DE0CB-0A43-39B7-B1BE-2A08D924C414}']
@@ -2440,7 +7509,30 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  密钥子句。
+    ///</summary>
+    ///<returns>
+    ///  XML 表示形式 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  密钥子句。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  加载 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  从 XML 元素的密钥子句。
+    ///</summary>
+    ///  <param name="value">
+    ///  要从其中加载的 XML 元素 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  密钥子句。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="value" />
+    ///  参数不是有效 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  密钥子句 XML 元素。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2449,6 +7541,14 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置的实例 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  包含公钥。
+    ///</summary>
+    ///<returns>
+    ///  包含公钥的 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  的实例。
+    ///</returns>
     property Key: DDN.mscorlib.DNRSA read get_Key write set_Key;
   end;
 
@@ -2459,12 +7559,38 @@ type
   ['{1B0A8D95-8E8E-5CD5-AD1A-883B141ED377}']
   { constructors } 
 
+    ///<summary>
+    ///  使用默认属性初始化 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNReference; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  与哈希值的指定类 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="stream"><see cref="T:System.IO.Stream" />
+    ///  用来初始化的新实例的 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  。
+    ///</param>
     {class} function init(stream: DDN.mscorlib.DNStream): DNReference; overload;
+    ///<summary>
+    ///  使用指定的 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  初始化 <see cref="T:System.Uri" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="uri"><see cref="T:System.Uri" />
+    ///  用来初始化的新实例的 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  。
+    ///</param>
     {class} function init(uri: string): DNReference; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 XML 签名的 <see langword="&lt;reference&gt;" />
+  ///  元素。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.Reference')]
   DNReference = interface(DDN.mscorlib.DNObject)
   ['{BEF96AF0-4A13-3483-8743-89C05AFE9B89}']
@@ -2485,8 +7611,52 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  添加 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象传递给要传递到的摘要算法之前对数据执行的转换列表。
+    ///</summary>
+    ///  <param name="transform">
+    ///  要添加到列表中的转换的转换。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="transform" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure AddTransform(transform: DNTransform);
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.Reference.DigestMethod" />
+    ///  属性为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///<see cref="P:System.Security.Cryptography.Xml.Reference.DigestValue" />
+    ///  属性为 <see langword="null" />
+    ///  。
+    ///</exception>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  加载 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  状态从一个 XML 元素。
+    ///</summary>
+    ///  <param name="value">
+    ///  要从其中加载的 XML 元素 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  状态。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="value" />
+    ///  参数不包含任何转换。
+    ///  - 或 -
+    ///  <paramref name="value" />
+    ///  参数包含未知的转换。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2495,11 +7665,62 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置当前的 ID <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  当前的 ID <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  。
+    ///  默认值为 <see langword="null" />
+    ///  。
+    ///</returns>
     property Id: string read get_Id write set_Id;
+    ///<summary>
+    ///  获取或设置当前 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  的 <see cref="T:System.Uri" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  当前 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  的 <see cref="T:System.Uri" />
+    ///  。
+    ///</returns>
     property Uri: string read get_Uri write set_Uri;
+    ///<summary>
+    ///  获取或设置被签名的对象的类型。
+    ///</summary>
+    ///<returns>
+    ///  正被签名的对象的类型。
+    ///</returns>
     property &Type: string read get_Type write set_Type;
+    ///<summary>
+    ///  获取或设置摘要式方法的当前的统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  摘要方法当前 URI <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  。
+    ///  默认值为"http://www.w3.org/2000/09/xmldsig#sha1"。
+    ///</returns>
     property DigestMethod: string read get_DigestMethod write set_DigestMethod;
+    ///<summary>
+    ///  获取或设置当前的摘要值 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  当前的摘要值 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  。
+    ///</returns>
     property DigestValue: TArray<Byte> read get_DigestValue write set_DigestValue;
+    ///<summary>
+    ///  获取当前的转换链 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  当前的转换链 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  。
+    ///</returns>
     property TransformChain: DNTransformChain read get_TransformChain write set_TransformChain;
   end;
 
@@ -2510,10 +7731,19 @@ type
   ['{36F6DFA5-BA28-5249-96BA-24643DCCF579}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNReferenceList;
 
   end;
 
+  ///<summary>
+  ///  表示 <see langword="&lt;ReferenceList&gt;" />
+  ///  XML 加密中使用的元素。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.ReferenceList')]
   DNReferenceList = interface(DDN.mscorlib.DNIList)
   ['{BCDD56BB-1E8D-3F2C-BEE0-E43243B00643}']
@@ -2527,12 +7757,115 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回一个枚举数循环访问 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  集合。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.IEnumerator" />
+    ///  可用于循环访问的对象 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  集合。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    ///<summary>
+    ///  确定是否 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  集合包含特定 <see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  或 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  或 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  对象中定位 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  集合。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  或 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  中找到对象 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  集合; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function &Contains(value: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  确定中特定项的索引 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  集合。
+    ///</summary>
+    ///  <param name="value"><see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  或 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  对象中定位 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  集合。
+    ///</param>
+    ///<returns>
+    ///  索引 <paramref name="value" />
+    ///  如果在集合中找到; 否则为-1。
+    ///</returns>
     function IndexOf(value: DDN.mscorlib.DNObject): Int32;
+    ///<summary>
+    ///  将插入 <see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  或 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  对象插入 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  集合中指定的位置。
+    ///</summary>
+    ///  <param name="index">
+    ///  应插入 <paramref name="value" />
+    ///  的从零开始的索引。
+    ///</param>
+    ///  <param name="value">
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  或 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  要插入到对象 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  集合。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="value" />
+    ///  参数不是 <see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  对象。
+    ///  - 或 -
+    ///  <paramref name="value" />
+    ///  参数不是 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  对象。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure Insert(index: Int32; value: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  删除 <see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  或 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  的指定索引处的对象。
+    ///</summary>
+    ///  <param name="index">
+    ///  从零开始的索引 <see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  或 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  要移除对象。
+    ///</param>
     procedure RemoveAt(index: Int32);
+    ///<summary>
+    ///  返回 <see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  或 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  的指定索引处的对象。
+    ///</summary>
+    ///  <param name="index">
+    ///  索引 <see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  或 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  要返回对象。
+    ///</param>
+    ///<returns><see cref="T:System.Security.Cryptography.Xml.DataReference" />
+    ///  或 <see cref="T:System.Security.Cryptography.Xml.KeyReference" />
+    ///  的指定索引处的对象。
+    ///</returns>
     function Item(index: Int32): DNEncryptedReference;
+    ///<summary>
+    ///  中的元素复制 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  对象传递给数组，从指定的数组索引处开始。
+    ///</summary>
+    ///  <param name="array">
+    ///  一维 <see cref="T:System.Array" />
+    ///  对象，它是从复制的元素的目标 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  对象。
+    ///  该数组的索引必须从零开始。
+    ///</param>
+    ///  <param name="index"><paramref name="array" />
+    ///  中从零开始的索引，从此处开始复制。
+    ///</param>
     procedure CopyTo(&array: DDN.mscorlib.DNArray; index: Int32);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2541,9 +7874,35 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取包含中的元素数 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  中包含的元素数 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  对象。
+    ///</returns>
     property Count: Int32 read get_Count;
     property ItemOf[index: Int32]: DNEncryptedReference read get_ItemOf write set_ItemOf; default;
+    ///<summary>
+    ///  获取一个对象，该对象可用于同步对 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  对象的访问。
+    ///</summary>
+    ///<returns>
+    ///  一个对象，该对象可用于同步对 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  对象的访问。
+    ///</returns>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
+    ///<summary>
+    ///  获取一个值，该值指示是否访问 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  对象已同步 （线程安全）。
+    ///</summary>
+    ///<returns>
+    ///  如果对 <see cref="T:System.Security.Cryptography.Xml.ReferenceList" />
+    ///  对象的访问是同步的（线程安全），则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSynchronized: Boolean read get_IsSynchronized;
   end;
 
@@ -2554,10 +7913,18 @@ type
   ['{2C5D1FF7-84D9-58EB-9424-EFCF9097AA71}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.Signature" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSignature;
 
   end;
 
+  ///<summary>
+  ///  表示 <see langword="&lt;Signature&gt;" />
+  ///  XML 签名的元素。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.Signature')]
   DNSignature = interface(DDN.mscorlib.DNObject)
   ['{1693EF5C-FC4B-35A7-8423-C2945D7BE194}']
@@ -2576,8 +7943,50 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  添加 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  到要进行签名的对象列表。
+    ///</summary>
+    ///  <param name="dataObject"><see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  要添加到要进行签名的对象列表。
+    ///</param>
     procedure AddObject(dataObject: DNDataObject);
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.Signature" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.Signature" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.Signature.SignedInfo" />
+    ///  属性为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///<see cref="P:System.Security.Cryptography.Xml.Signature.SignatureValue" />
+    ///  属性为 <see langword="null" />
+    ///  。
+    ///</exception>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  加载 <see cref="T:System.Security.Cryptography.Xml.Signature" />
+    ///  状态从一个 XML 元素。
+    ///</summary>
+    ///  <param name="value">
+    ///  要从其中加载的 XML 元素 <see cref="T:System.Security.Cryptography.Xml.Signature" />
+    ///  状态。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="value" />
+    ///  参数不包含有效 <see cref="P:System.Security.Cryptography.Xml.Signature.SignatureValue" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="value" />
+    ///  参数不包含有效 <see cref="P:System.Security.Cryptography.Xml.Signature.SignedInfo" />
+    ///  。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2586,10 +7995,50 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置当前的 ID <see cref="T:System.Security.Cryptography.Xml.Signature" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  当前的 ID <see cref="T:System.Security.Cryptography.Xml.Signature" />
+    ///  。
+    ///  默认值为 <see langword="null" />
+    ///  。
+    ///</returns>
     property Id: string read get_Id write set_Id;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  的当前 <see cref="T:System.Security.Cryptography.Xml.Signature" />
+    ///  。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  的当前 <see cref="T:System.Security.Cryptography.Xml.Signature" />
+    ///  。
+    ///</returns>
     property SignedInfo: DNSignedInfo read get_SignedInfo write set_SignedInfo;
+    ///<summary>
+    ///  获取或设置数字签名的值。
+    ///</summary>
+    ///<returns>
+    ///  字节数组，包含值的数字签名。
+    ///</returns>
     property SignatureValue: TArray<Byte> read get_SignatureValue write set_SignatureValue;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  的当前 <see cref="T:System.Security.Cryptography.Xml.Signature" />
+    ///  。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  的当前 <see cref="T:System.Security.Cryptography.Xml.Signature" />
+    ///  。
+    ///</returns>
     property KeyInfo: DNKeyInfo read get_KeyInfo write set_KeyInfo;
+    ///<summary>
+    ///  获取或设置要进行签名的对象列表。
+    ///</summary>
+    ///<returns>
+    ///  要进行签名的对象列表。
+    ///</returns>
     property ObjectList: DDN.mscorlib.DNIList read get_ObjectList write set_ObjectList;
   end;
 
@@ -2600,10 +8049,17 @@ type
   ['{87B8ADF6-8E82-5AA3-B273-3597227F4754}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSignedInfo;
 
   end;
 
+  ///<summary>
+  ///  包含有关规范化算法和用于 XML 签名的签名算法的信息。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.SignedInfo')]
   DNSignedInfo = interface(DDN.mscorlib.DNICollection)
   ['{2EB50F73-857A-36B6-A280-799AF76E98BE}']
@@ -2626,10 +8082,81 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回循环访问的引用的集合的枚举。
+    ///</summary>
+    ///<returns>
+    ///  一个枚举器循环访问集合的引用。
+    ///</returns>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  不支持此方法。
+    ///</exception>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
+    ///<summary>
+    ///  到此实例中的元素复制 <see cref="T:System.Array" />
+    ///  对象，该数组中指定索引处开始。
+    ///</summary>
+    ///  <param name="array"><see cref="T:System.Array" />
+    ///  对象，其中包含集合的元素。
+    ///</param>
+    ///  <param name="index">
+    ///  从中复制元素的数组中的起始索引。
+    ///</param>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  不支持此方法。
+    ///</exception>
     procedure CopyTo(&array: DDN.mscorlib.DNArray; index: Int32);
+    ///<summary>
+    ///  添加 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  对象传递给对摘录和签名的引用列表。
+    ///</summary>
+    ///  <param name="reference">
+    ///  要添加的引用列表中的引用。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  引用参数是 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure AddReference(reference: DNReference);
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  实例。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.SignedInfo.SignatureMethod" />
+    ///  属性为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///<see cref="P:System.Security.Cryptography.Xml.SignedInfo.References" />
+    ///  属性为空。
+    ///</exception>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  加载 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  状态从一个 XML 元素。
+    ///</summary>
+    ///  <param name="value">
+    ///  要从其中加载的 XML 元素 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  状态。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="value" />
+    ///  参数不是有效 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  元素。
+    ///  - 或 -
+    ///  <paramref name="value" />
+    ///  参数不包含有效 <see cref="P:System.Security.Cryptography.Xml.SignedInfo.CanonicalizationMethod" />
+    ///  属性。
+    ///  - 或 -
+    ///  <paramref name="value" />
+    ///  参数不包含有效 <see cref="P:System.Security.Cryptography.Xml.SignedInfo.SignatureMethod" />
+    ///  属性。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2638,15 +8165,110 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取在当前的引用的个数 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  在当前引用的数目 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  不支持此属性。
+    ///</exception>
     property Count: Int32 read get_Count;
+    ///<summary>
+    ///  获取一个值，指示集合是否为只读集合。
+    ///</summary>
+    ///<returns>
+    ///  如果该集合为只读，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  不支持此属性。
+    ///</exception>
     property IsReadOnly: Boolean read get_IsReadOnly;
+    ///<summary>
+    ///  获取一个值，该值指示集合是否已同步。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该集合已同步;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  不支持此属性。
+    ///</exception>
     property IsSynchronized: Boolean read get_IsSynchronized;
+    ///<summary>
+    ///  获取用于同步的对象。
+    ///</summary>
+    ///<returns>
+    ///  要用于同步的对象。
+    ///</returns>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  不支持此属性。
+    ///</exception>
     property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
+    ///<summary>
+    ///  获取或设置当前 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  对象的 ID。
+    ///</summary>
+    ///<returns>
+    ///  当前的 ID <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  对象。
+    ///</returns>
     property Id: string read get_Id write set_Id;
+    ///<summary>
+    ///  获取或设置为当前 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  对象签名前使用的规范化算法。
+    ///</summary>
+    ///<returns>
+    ///  为当前 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  对象签名前使用的规范化算法。
+    ///</returns>
     property CanonicalizationMethod: string read get_CanonicalizationMethod write set_CanonicalizationMethod;
+    ///<summary>
+    ///  获取 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  用于规范化的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  用于规范化的对象。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     property CanonicalizationMethodObject: DNTransform read get_CanonicalizationMethodObject;
+    ///<summary>
+    ///  获取或设置用于当前 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  对象的签名生成和验证的算法名称。
+    ///</summary>
+    ///<returns>
+    ///  算法名称，用于当前 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  对象的签名生成和验证。
+    ///</returns>
     property SignatureMethod: string read get_SignatureMethod write set_SignatureMethod;
+    ///<summary>
+    ///  获取或设置当前的签名长度 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前签名长度 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  对象。
+    ///</returns>
     property SignatureLength: string read get_SignatureLength write set_SignatureLength;
+    ///<summary>
+    ///  获取一份 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  的当前对象 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一份 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  的当前元素 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  对象。
+    ///</returns>
     property References: DDN.mscorlib.DNArrayList read get_References;
   end;
 
@@ -2661,8 +8283,41 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSignedXml; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  类从指定的 XML 文档。
+    ///</summary>
+    ///  <param name="document"><see cref="T:System.Xml.XmlDocument" />
+    ///  要用来初始化的新实例的对象 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="document" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="document" />
+    ///  参数将包含 null <see cref="P:System.Xml.XmlDocument.DocumentElement" />
+    ///  属性。
+    ///</exception>
     {class} function init(document: DDN.System.Xml.DNXmlDocument): DNSignedXml; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  类从指定 <see cref="T:System.Xml.XmlElement" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="elem"><see cref="T:System.Xml.XmlElement" />
+    ///  要用来初始化的新实例的对象 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="elem" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} function init(elem: DDN.System.Xml.DNXmlElement): DNSignedXml; overload;
 
   { static fields getter & setter } 
@@ -2694,36 +8349,154 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  表示为 XML 数字签名的标准命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigNamespaceUrl: string read __fakeFieldGet_XmlDsigNamespaceUrl;
+    ///<summary>
+    ///  表示 XML 数字签名的标准的最小规范化算法的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigMinimalCanonicalizationUrl: string read __fakeFieldGet_XmlDsigMinimalCanonicalizationUrl;
+    ///<summary>
+    ///  表示 XML 数字签名的标准的规范化算法的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigCanonicalizationUrl: string read __fakeFieldGet_XmlDsigCanonicalizationUrl;
+    ///<summary>
+    ///  表示 XML 数字签名的标准规范化算法的统一资源标识符 (URI)，并且包括注释。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigCanonicalizationWithCommentsUrl: string read __fakeFieldGet_XmlDsigCanonicalizationWithCommentsUrl;
+    ///<summary>
+    ///  表示用于下列标准统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.SHA1" />
+    ///  摘要 XML 数字签名的方法。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigSHA1Url: string read __fakeFieldGet_XmlDsigSHA1Url;
+    ///<summary>
+    ///  表示用于下列标准统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.DSA" />
+    ///  XML 数字签名算法。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigDSAUrl: string read __fakeFieldGet_XmlDsigDSAUrl;
+    ///<summary>
+    ///  表示用于下列标准统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.RSA" />
+    ///  XML 数字签名的签名方法。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigRSASHA1Url: string read __fakeFieldGet_XmlDsigRSASHA1Url;
+    ///<summary>
+    ///  表示用于下列标准统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.HMACSHA1" />
+    ///  XML 数字签名算法。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigHMACSHA1Url: string read __fakeFieldGet_XmlDsigHMACSHA1Url;
+    ///<summary>
+    ///  代表 XML 数字签名的标准 <see cref="T:System.Security.Cryptography.SHA256" />
+    ///  摘要方法的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigSHA256Url: string read __fakeFieldGet_XmlDsigSHA256Url;
+    ///<summary>
+    ///  代表 XML 数字签名的 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  SHA-256 签名方法变量的统一资源标识符。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigRSASHA256Url: string read __fakeFieldGet_XmlDsigRSASHA256Url;
+    ///<summary>
+    ///  代表 XML 数字签名的标准 <see cref="T:System.Security.Cryptography.SHA384" />
+    ///  摘要方法的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigSHA384Url: string read __fakeFieldGet_XmlDsigSHA384Url;
+    ///<summary>
+    ///  表示 XML 数字签名的 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  SHA-384 签名方法变量的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigRSASHA384Url: string read __fakeFieldGet_XmlDsigRSASHA384Url;
+    ///<summary>
+    ///  代表 XML 数字签名的标准 <see cref="T:System.Security.Cryptography.SHA512" />
+    ///  摘要方法的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigSHA512Url: string read __fakeFieldGet_XmlDsigSHA512Url;
+    ///<summary>
+    ///  代表 XML 数字签名的 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  SHA-512 签名方法变量的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigRSASHA512Url: string read __fakeFieldGet_XmlDsigRSASHA512Url;
+    ///<summary>
+    ///  表示规范的 XML 转换为统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigC14NTransformUrl: string read __fakeFieldGet_XmlDsigC14NTransformUrl;
+    ///<summary>
+    ///  表示规范化 XML 转换，带批注的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigC14NWithCommentsTransformUrl: string read __fakeFieldGet_XmlDsigC14NWithCommentsTransformUrl;
+    ///<summary>
+    ///  表示 XML 专用规范化统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigExcC14NTransformUrl: string read __fakeFieldGet_XmlDsigExcC14NTransformUrl;
+    ///<summary>
+    ///  表示带有注释的专用 XML 规范化统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigExcC14NWithCommentsTransformUrl: string read __fakeFieldGet_XmlDsigExcC14NWithCommentsTransformUrl;
+    ///<summary>
+    ///  表示 base 64 转换统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigBase64TransformUrl: string read __fakeFieldGet_XmlDsigBase64TransformUrl;
+    ///<summary>
+    ///  表示 XML 路径语言 (XPath) 的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigXPathTransformUrl: string read __fakeFieldGet_XmlDsigXPathTransformUrl;
+    ///<summary>
+    ///  表示用于 XSLT 转换的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigXsltTransformUrl: string read __fakeFieldGet_XmlDsigXsltTransformUrl;
+    ///<summary>
+    ///  表示被包封的签名转换为统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDsigEnvelopedSignatureTransformUrl: string read __fakeFieldGet_XmlDsigEnvelopedSignatureTransformUrl;
+    ///<summary>
+    ///  表示 XML 模式解密转换的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
     {class} property XmlDecryptionTransformUrl: string read __fakeFieldGet_XmlDecryptionTransformUrl;
+    ///<summary>
+    ///  表示用于规范化特征码 XrML 许可证的许可证转换算法的统一资源标识符 (URI)。
+    ///</summary>
     {class} property XmlLicenseTransformUrl: string read __fakeFieldGet_XmlLicenseTransformUrl;
 
   { static propertys } 
 
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  默认值是 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     {class} property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
   end;
 
+  ///<summary>
+  ///  在核心 XML 签名对象上提供包装器，以便创建 XML 签名。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.SignedXml')]
   DNSignedXml = interface(DDN.mscorlib.DNObject)
   ['{C1A1D953-CC23-3DA9-A149-1AB9DB11E526}']
@@ -2749,17 +8522,221 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回的 XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  XML 表示形式 <see cref="T:System.Security.Cryptography.Xml.Signature" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.SignedXml.SignedInfo" />
+    ///  属性为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///<see cref="P:System.Security.Cryptography.Xml.SignedXml.SignatureValue" />
+    ///  属性为 <see langword="null" />
+    ///  。
+    ///</exception>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  加载 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  状态从一个 XML 元素。
+    ///</summary>
+    ///  <param name="value">
+    ///  要加载的 XML 元素 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  从状态。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="value" />
+    ///  参数不包含有效 <see cref="P:System.Security.Cryptography.Xml.SignedXml.SignatureValue" />
+    ///  属性。
+    ///  - 或 -
+    ///  <paramref name="value" />
+    ///  参数不包含有效 <see cref="P:System.Security.Cryptography.Xml.SignedXml.SignedInfo" />
+    ///  属性。
+    ///</exception>
     procedure LoadXml(value: DDN.System.Xml.DNXmlElement);
+    ///<summary>
+    ///  添加 <see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  对象传递给 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  描述摘要方法、 摘要值，以及可用于创建 XML 数字签名的转换的对象。
+    ///</summary>
+    ///  <param name="reference"><see cref="T:System.Security.Cryptography.Xml.Reference" />
+    ///  描述摘要方法、 摘要值，以及可用于创建 XML 数字签名的转换的对象。
+    ///</param>
     procedure AddReference(reference: DNReference);
+    ///<summary>
+    ///  添加 <see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  对象传递给要进行签名的对象列表。
+    ///</summary>
+    ///  <param name="dataObject"><see cref="T:System.Security.Cryptography.Xml.DataObject" />
+    ///  对象将添加到要进行签名的对象列表。
+    ///</param>
     procedure AddObject(dataObject: DNDataObject);
+    ///<summary>
+    ///  确定是否 <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" />
+    ///  属性验证的签名中使用的公钥。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" />
+    ///  属性进行验证; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.AsymmetricAlgorithm.SignatureAlgorithm" />
+    ///  的公钥的签名中的属性不符合 <see cref="P:System.Security.Cryptography.Xml.SignedXml.SignatureMethod" />
+    ///  属性。
+    ///  - 或 -
+    ///  无法创建签名说明。
+    ///  - 或 -
+    ///  无法创建哈希算法。
+    ///</exception>
     function CheckSignature: Boolean; overload;
     function CheckSignatureReturningKey(out signingKey: DDN.mscorlib.DNAsymmetricAlgorithm): Boolean;
+    ///<summary>
+    ///  返回 <see cref="T:System.Xml.XmlElement" />
+    ///  具有指定 ID 的指定对象 <see cref="T:System.Xml.XmlDocument" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="document"><see cref="T:System.Xml.XmlDocument" />
+    ///  对象，以检索 <see cref="T:System.Xml.XmlElement" />
+    ///  对象。
+    ///</param>
+    ///  <param name="idValue">
+    ///  ID <see cref="T:System.Xml.XmlElement" />
+    ///  对象从检索 <see cref="T:System.Xml.XmlDocument" />
+    ///  对象。
+    ///</param>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  具有指定 ID 的指定对象 <see cref="T:System.Xml.XmlDocument" />
+    ///  对象，或 <see langword="null" />
+    ///  如果无法找到。
+    ///</returns>
     function GetIdElement(document: DDN.System.Xml.DNXmlDocument; idValue: string): DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  确定是否 <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" />
+    ///  属性指定的密钥对进行验证。
+    ///</summary>
+    ///  <param name="key">
+    ///  实现 <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" />
+    ///  保留该密钥以用于验证的属性 <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" />
+    ///  属性。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" />
+    ///  属性指定验证密钥; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="key" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.AsymmetricAlgorithm.SignatureAlgorithm" />
+    ///  属性 <paramref name="key" />
+    ///  参数不匹配 <see cref="P:System.Security.Cryptography.Xml.SignedXml.SignatureMethod" />
+    ///  属性。
+    ///  - 或 -
+    ///  无法创建签名说明。
+    ///  - 或 -
+    ///  无法创建哈希算法。
+    ///</exception>
     function CheckSignature(key: DDN.mscorlib.DNAsymmetricAlgorithm): Boolean; overload;
+    ///<summary>
+    ///  确定是否 <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" />
+    ///  属性验证指定的消息身份验证代码 (MAC) 算法。
+    ///</summary>
+    ///  <param name="macAlg">
+    ///  实现 <see cref="T:System.Security.Cryptography.KeyedHashAlgorithm" />
+    ///  ，它持有 MAC 要用于验证 <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" />
+    ///  属性。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" />
+    ///  属性验证适用于指定的 MAC 中; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="macAlg" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.HashAlgorithm.HashSize" />
+    ///  属性指定的 <see cref="T:System.Security.Cryptography.KeyedHashAlgorithm" />
+    ///  对象无效。
+    ///  - 或 -
+    ///<see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" />
+    ///  属性为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  无法创建用来检查签名的加密转换。
+    ///</exception>
     function CheckSignature(macAlg: DDN.mscorlib.DNKeyedHashAlgorithm): Boolean; overload;
+    ///<summary>
+    ///  确定是否 <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" />
+    ///  属性指定验证 <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />
+    ///  对象以及 （可选） 该证书是否有效。
+    ///</summary>
+    ///  <param name="certificate"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />
+    ///  对象用来验证 <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" />
+    ///  属性。
+    ///</param>
+    ///  <param name="verifySignatureOnly"><see langword="true" />
+    ///  若要验证的签名 <see langword="false" />
+    ///  来验证签名和证书。
+    ///</param>
+    ///<returns>
+    ///  如果签名有效，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///  - 或 -
+    ///<see langword="true" />
+    ///  如果签名和证书都有效，则为否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="certificate" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  无法用于创建签名说明 <paramref name="certificate" />
+    ///  参数。
+    ///</exception>
     function CheckSignature(certificate: DDN.System.DNX509Certificate2; verifySignatureOnly: Boolean): Boolean; overload;
+    ///<summary>
+    ///  计算的 XML 数字签名。
+    ///</summary>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.Xml.SignedXml.SigningKey" />
+    ///  属性为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///<see cref="P:System.Security.Cryptography.Xml.SignedXml.SigningKey" />
+    ///  属性不是 <see cref="T:System.Security.Cryptography.DSA" />
+    ///  对象或 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  对象。
+    ///  - 或 -
+    ///  无法加载密钥。
+    ///</exception>
     procedure ComputeSignature; overload;
+    ///<summary>
+    ///  计算 XML 数字签名使用指定的消息身份验证代码 (MAC) 算法。
+    ///</summary>
+    ///  <param name="macAlg">
+    ///  一个 <see cref="T:System.Security.Cryptography.KeyedHashAlgorithm" />
+    ///  对象，其中包含要用于计算的值的 MAC <see cref="P:System.Security.Cryptography.Xml.SignedXml.Signature" />
+    ///  属性。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="macAlg" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="T:System.Security.Cryptography.KeyedHashAlgorithm" />
+    ///  指定对象 <paramref name="macAlg" />
+    ///  参数不是实例 <see cref="T:System.Security.Cryptography.HMACSHA1" />
+    ///  。
+    ///  - 或 -
+    ///<see cref="P:System.Security.Cryptography.HashAlgorithm.HashSize" />
+    ///  属性指定的 <see cref="T:System.Security.Cryptography.KeyedHashAlgorithm" />
+    ///  对象无效。
+    ///  - 或 -
+    ///  无法创建用来检查签名的加密转换。
+    ///</exception>
     procedure ComputeSignature(macAlg: DDN.mscorlib.DNKeyedHashAlgorithm); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2768,45 +8745,248 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置要用于签名的已安装密钥名称 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  可用于签名的已安装密钥的名称 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</returns>
     property SigningKeyName: string read get_SigningKeyName write set_SigningKeyName;
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  默认值是 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
+    ///<summary>
+    ///  获取一个委托，将调用以验证的 XML 签名格式 （不加密安全性）。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果格式是可接受;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property SignatureFormatValidator: DDN.mscorlib.DNFunc<DNSignedXml, Boolean> read get_SignatureFormatValidator write set_SignatureFormatValidator;
+    ///<summary>
+    ///  [在 .NET Framework 4.5.1 和更高版本中受支持]
+    ///  获取的方法显式允许其规范化算法的名称。
+    ///</summary>
+    ///<returns>
+    ///  安全地生成的规范化 XML 的方法名称的集合。
+    ///</returns>
     property SafeCanonicalizationMethods: DDN.mscorlib.DNCollection<string> read get_SafeCanonicalizationMethods;
+    ///<summary>
+    ///  获取或设置用于签名的非对称算法密钥 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  用于签名的非对称算法密钥 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</returns>
     property SigningKey: DDN.mscorlib.DNAsymmetricAlgorithm read get_SigningKey write set_SigningKey;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Security.Cryptography.Xml.EncryptedXml" />
+    ///  对象，用于定义 XML 加密处理规则。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Xml.EncryptedXml" />
+    ///  对象，用于定义 XML 加密处理规则。
+    ///</returns>
     property EncryptedXml: DNEncryptedXml read get_EncryptedXml write set_EncryptedXml;
+    ///<summary>
+    ///  获取 <see cref="T:System.Security.Cryptography.Xml.Signature" />
+    ///  对象当前 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Xml.Signature" />
+    ///  对象当前 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</returns>
     property Signature: DNSignature read get_Signature;
+    ///<summary>
+    ///  获取 <see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  对象当前 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Xml.SignedInfo" />
+    ///  对象当前 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</returns>
     property SignedInfo: DNSignedInfo read get_SignedInfo;
+    ///<summary>
+    ///  获取当前的签名方法 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前签名方法 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</returns>
     property SignatureMethod: string read get_SignatureMethod;
+    ///<summary>
+    ///  获取当前的签名长度 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前签名长度 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</returns>
     property SignatureLength: string read get_SignatureLength;
+    ///<summary>
+    ///  获取当前的签名值 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  一个字节数组，包含当前的签名值 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</returns>
     property SignatureValue: TArray<Byte> read get_SignatureValue;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象当前 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Xml.KeyInfo" />
+    ///  对象当前 <see cref="T:System.Security.Cryptography.Xml.SignedXml" />
+    ///  对象。
+    ///</returns>
     property KeyInfo: DNKeyInfo read get_KeyInfo write set_KeyInfo;
   end;
 
   TDNSignedXml = class(TDNGenericImport<DNSignedXmlClass, DNSignedXml>)
   public const
+    ///<summary>
+    ///  表示为 XML 数字签名的标准命名空间统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigNamespaceUrl = 'http://www.w3.org/2000/09/xmldsig#';
+    ///<summary>
+    ///  表示 XML 数字签名的标准的最小规范化算法的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigMinimalCanonicalizationUrl = 'http://www.w3.org/2000/09/xmldsig#minimal';
+    ///<summary>
+    ///  表示 XML 数字签名的标准的规范化算法的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigCanonicalizationUrl = 'http://www.w3.org/TR/2001/REC-xml-c14n-20010315';
+    ///<summary>
+    ///  表示 XML 数字签名的标准规范化算法的统一资源标识符 (URI)，并且包括注释。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigCanonicalizationWithCommentsUrl = 'http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments';
+    ///<summary>
+    ///  表示用于下列标准统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.SHA1" />
+    ///  摘要 XML 数字签名的方法。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigSHA1Url = 'http://www.w3.org/2000/09/xmldsig#sha1';
+    ///<summary>
+    ///  表示用于下列标准统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.DSA" />
+    ///  XML 数字签名算法。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigDSAUrl = 'http://www.w3.org/2000/09/xmldsig#dsa-sha1';
+    ///<summary>
+    ///  表示用于下列标准统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.RSA" />
+    ///  XML 数字签名的签名方法。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigRSASHA1Url = 'http://www.w3.org/2000/09/xmldsig#rsa-sha1';
+    ///<summary>
+    ///  表示用于下列标准统一资源标识符 (URI) <see cref="T:System.Security.Cryptography.HMACSHA1" />
+    ///  XML 数字签名算法。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigHMACSHA1Url = 'http://www.w3.org/2000/09/xmldsig#hmac-sha1';
+    ///<summary>
+    ///  代表 XML 数字签名的标准 <see cref="T:System.Security.Cryptography.SHA256" />
+    ///  摘要方法的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigSHA256Url = 'http://www.w3.org/2001/04/xmlenc#sha256';
+    ///<summary>
+    ///  代表 XML 数字签名的 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  SHA-256 签名方法变量的统一资源标识符。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigRSASHA256Url = 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256';
+    ///<summary>
+    ///  代表 XML 数字签名的标准 <see cref="T:System.Security.Cryptography.SHA384" />
+    ///  摘要方法的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigSHA384Url = 'http://www.w3.org/2001/04/xmldsig-more#sha384';
+    ///<summary>
+    ///  表示 XML 数字签名的 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  SHA-384 签名方法变量的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigRSASHA384Url = 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha384';
+    ///<summary>
+    ///  代表 XML 数字签名的标准 <see cref="T:System.Security.Cryptography.SHA512" />
+    ///  摘要方法的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigSHA512Url = 'http://www.w3.org/2001/04/xmlenc#sha512';
+    ///<summary>
+    ///  代表 XML 数字签名的 <see cref="T:System.Security.Cryptography.RSA" />
+    ///  SHA-512 签名方法变量的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigRSASHA512Url = 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha512';
+    ///<summary>
+    ///  表示规范的 XML 转换为统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigC14NTransformUrl = 'http://www.w3.org/TR/2001/REC-xml-c14n-20010315';
+    ///<summary>
+    ///  表示规范化 XML 转换，带批注的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigC14NWithCommentsTransformUrl = 'http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments';
+    ///<summary>
+    ///  表示 XML 专用规范化统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigExcC14NTransformUrl = 'http://www.w3.org/2001/10/xml-exc-c14n#';
+    ///<summary>
+    ///  表示带有注释的专用 XML 规范化统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigExcC14NWithCommentsTransformUrl = 'http://www.w3.org/2001/10/xml-exc-c14n#WithComments';
+    ///<summary>
+    ///  表示 base 64 转换统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigBase64TransformUrl = 'http://www.w3.org/2000/09/xmldsig#base64';
+    ///<summary>
+    ///  表示 XML 路径语言 (XPath) 的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigXPathTransformUrl = 'http://www.w3.org/TR/1999/REC-xpath-19991116';
+    ///<summary>
+    ///  表示用于 XSLT 转换的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigXsltTransformUrl = 'http://www.w3.org/TR/1999/REC-xslt-19991116';
+    ///<summary>
+    ///  表示被包封的签名转换为统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDsigEnvelopedSignatureTransformUrl = 'http://www.w3.org/2000/09/xmldsig#enveloped-signature';
+    ///<summary>
+    ///  表示 XML 模式解密转换的统一资源标识符 (URI)。
+    ///  此字段为常数。
+    ///</summary>
    XmlDecryptionTransformUrl = 'http://www.w3.org/2002/07/decrypt#XML';
+    ///<summary>
+    ///  表示用于规范化特征码 XrML 许可证的许可证转换算法的统一资源标识符 (URI)。
+    ///</summary>
    XmlLicenseTransformUrl = 'urn:mpeg:mpeg21:2003:01-REL-R-NS:licenseTransform';
   end;
 
@@ -2819,9 +8999,23 @@ type
 
   { static propertys } 
 
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     {class} property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
   end;
 
+  ///<summary>
+  ///  表示所有的抽象基类 <see langword="&lt;Transform&gt;" />
+  ///  可以在 XML 数字签名中使用的元素派生。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.Transform')]
   DNTransform = interface(DDN.mscorlib.DNObject)
   ['{FCC012EE-C0D6-3B96-BD98-4A0A4B09DA94}']
@@ -2838,11 +9032,70 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时返回与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="hash"><see cref="T:System.Security.Cryptography.HashAlgorithm" />
+    ///  对象，用于创建摘要。
+    ///</param>
+    ///<returns>
+    ///  与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetDigestedOutput(hash: DDN.mscorlib.DNHashAlgorithm): TArray<Byte>;
+    ///<summary>
+    ///  返回当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
+    ///<summary>
+    ///  当在派生类中重写，分析指定 <see cref="T:System.Xml.XmlNodeList" />
+    ///  对象的特定转换的内容作为 <see langword="&lt;Transform&gt;" />
+    ///  元素并配置当前的内部状态 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  相匹配的对象 <see langword="&lt;Transform&gt;" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="nodeList"><see cref="T:System.Xml.XmlNodeList" />
+    ///  对象，它指定当前的特定于转换的内容 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</param>
     procedure LoadInnerXml(nodeList: DDN.System.Xml.DNXmlNodeList);
+    ///<summary>
+    ///  当在派生类中重写，将指定的输入加载到当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="obj">
+    ///  要加载到当前的输入 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</param>
     procedure LoadInput(obj: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  当在派生类中重写，将返回当前输出 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetOutput: DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  当在派生类中重写，将返回当前输出 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  指定类型的对象。
+    ///</summary>
+    ///  <param name="type">
+    ///  要返回的输出的类型。
+    ///  这必须是中的类型之一 <see cref="P:System.Security.Cryptography.Xml.Transform.OutputTypes" />
+    ///  属性。
+    ///</param>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象作为指定类型的对象。
+    ///</returns>
     function GetOutput(&type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2851,11 +9104,71 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置标识由当前的转换执行的算法的统一资源标识符 (URI)。
+    ///</summary>
+    ///<returns>
+    ///  标识由当前执行的算法的 URI <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     property Algorithm: string read get_Algorithm write set_Algorithm;
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
+    ///<summary>
+    ///  当在派生类中重写时获取有效的输入的类型的数组 <see cref="M:System.Security.Cryptography.Xml.Transform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输入类型的数组 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象; 您可以只将对象传递到这些类型之一的 <see cref="M:System.Security.Cryptography.Xml.Transform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     property InputTypes: TArray<DDN.mscorlib.DNType> read get_InputTypes;
+    ///<summary>
+    ///  当在派生类中重写时获取的可能输出的类型的数组 <see cref="M:System.Security.Cryptography.Xml.Transform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输出类型的数组 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象; 唯一的其中一种对象类型返回从 <see cref="M:System.Security.Cryptography.Xml.Transform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     property OutputTypes: TArray<DDN.mscorlib.DNType> read get_OutputTypes;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</returns>
     property Context: DDN.System.Xml.DNXmlElement read get_Context write set_Context;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.Transform.PropagatedNamespaces" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property PropagatedNamespaces: DDN.mscorlib.DNHashtable read get_PropagatedNamespaces;
   end;
 
@@ -2870,13 +9183,30 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDecryptionTransform" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXmlDecryptionTransform;
 
   { static propertys } 
 
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     {class} property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
   end;
 
+  ///<summary>
+  ///  同时对同一个文档进行时，请指定 XML 数字签名和 XML 加密操作的顺序。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.XmlDecryptionTransform')]
   DNXmlDecryptionTransform = interface(DNTransform)
   ['{25256B07-B936-38A9-A6A6-D70FE943EB4F}']
@@ -2895,12 +9225,108 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  添加要从处理中排除统一资源标识符 (URI)。
+    ///</summary>
+    ///  <param name="uri">
+    ///  若要从处理中排除统一资源标识符 (URI)
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="uri" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure AddExceptUri(uri: string);
+    ///<summary>
+    ///  分析指定 <see cref="T:System.Xml.XmlNodeList" />
+    ///  对象的特定转换的内容作为 <see langword="&lt;Transform&gt;" />
+    ///  元素并配置当前的内部状态 <see cref="T:System.Security.Cryptography.Xml.XmlDecryptionTransform" />
+    ///  相匹配的对象 <see langword="&lt;Transform&gt;" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="nodeList"><see cref="T:System.Xml.XmlNodeList" />
+    ///  对象，它指定当前的特定于转换的内容 <see cref="T:System.Security.Cryptography.Xml.XmlDecryptionTransform" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="nodeList" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  统一资源标识符 (URI) 值 <see cref="T:System.Xml.XmlNode" />
+    ///  对象在 <paramref name="nodeList" />
+    ///  找不到。
+    ///  - 或 -
+    ///  URI 值的长度 <see cref="T:System.Xml.XmlNode" />
+    ///  对象在 <paramref name="nodeList" />
+    ///  为 0。
+    ///  - 或 -
+    ///  URI 值的第一个字符 <see cref="T:System.Xml.XmlNode" />
+    ///  对象在 <paramref name="nodeList" />
+    ///  不是 '#'。
+    ///</exception>
     procedure LoadInnerXml(nodeList: DDN.System.Xml.DNXmlNodeList);
+    ///<summary>
+    ///  当在派生类中重写，将指定的输入加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlDecryptionTransform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="obj">
+    ///  要加载到当前的输入 <see cref="T:System.Security.Cryptography.Xml.XmlDecryptionTransform" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="obj" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure LoadInput(obj: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  找不到的解密密钥。
+    ///</exception>
     function GetOutput: DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="type">
+    ///  要返回的输出的类型。
+    ///<see cref="T:System.Xml.XmlNodeList" />
+    ///  是为此参数的唯一有效类型。
+    ///</param>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="type" />
+    ///  参数不是 <see cref="T:System.Xml.XmlNodeList" />
+    ///  对象。
+    ///</exception>
     function GetOutput(&type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  当在派生类中重写时返回与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="hash"><see cref="T:System.Security.Cryptography.HashAlgorithm" />
+    ///  对象，用于创建摘要。
+    ///</param>
+    ///<returns>
+    ///  与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetDigestedOutput(hash: DDN.mscorlib.DNHashAlgorithm): TArray<Byte>;
+    ///<summary>
+    ///  返回当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2909,12 +9335,79 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Security.Cryptography.Xml.EncryptedXml" />
+    ///  对象，其中包含有关所需的 XML 文档进行解密的项的信息。
+    ///</summary>
+    ///<returns><see cref="T:System.Security.Cryptography.Xml.EncryptedXml" />
+    ///  对象，其中包含有关所需的 XML 文档进行解密的项的信息。
+    ///</returns>
     property EncryptedXml: DNEncryptedXml read get_EncryptedXml write set_EncryptedXml;
+    ///<summary>
+    ///  获取一个有效的输入的类型数组 <see cref="M:System.Security.Cryptography.Xml.XmlDecryptionTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDecryptionTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输入类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDecryptionTransform" />
+    ///  对象; 您可以只将对象传递到这些类型之一的 <see cref="M:System.Security.Cryptography.Xml.XmlDecryptionTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDecryptionTransform" />
+    ///  对象。
+    ///</returns>
     property InputTypes: TArray<DDN.mscorlib.DNType> read get_InputTypes;
+    ///<summary>
+    ///  获取这些类型是从可能的输出数组 <see cref="M:System.Security.Cryptography.Xml.XmlDecryptionTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDecryptionTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输出类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDecryptionTransform" />
+    ///  对象; 唯一的其中一种对象类型返回从 <see cref="M:System.Security.Cryptography.Xml.XmlDecryptionTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDecryptionTransform" />
+    ///  对象。
+    ///</returns>
     property OutputTypes: TArray<DDN.mscorlib.DNType> read get_OutputTypes;
+    ///<summary>
+    ///  获取或设置标识由当前的转换执行的算法的统一资源标识符 (URI)。
+    ///</summary>
+    ///<returns>
+    ///  标识由当前执行的算法的 URI <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     property Algorithm: string read get_Algorithm write set_Algorithm;
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</returns>
     property Context: DDN.System.Xml.DNXmlElement read get_Context write set_Context;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.Transform.PropagatedNamespaces" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property PropagatedNamespaces: DDN.mscorlib.DNHashtable read get_PropagatedNamespaces;
   end;
 
@@ -2929,13 +9422,31 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDsigBase64Transform" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXmlDsigBase64Transform;
 
   { static propertys } 
 
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     {class} property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
   end;
 
+  ///<summary>
+  ///  表示 <see langword="Base64" />
+  ///  解码 XMLDSIG 规范第 6.6.2 节中定义的转换。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.XmlDsigBase64Transform')]
   DNXmlDsigBase64Transform = interface(DNTransform)
   ['{CC6B5E88-1E4A-3753-A872-B6AD4885E573}']
@@ -2952,11 +9463,80 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigBase64Transform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigBase64Transform" />
+    ///  对象。
+    ///</returns>
     function GetOutput: DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigBase64Transform" />
+    ///  类型的对象 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="type">
+    ///  要返回的输出的类型。
+    ///<see cref="T:System.IO.Stream" />
+    ///  是为此参数的唯一有效类型。
+    ///</param>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigBase64Transform" />
+    ///  类型的对象 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="type" />
+    ///  参数不是 <see cref="T:System.IO.Stream" />
+    ///  对象。
+    ///</exception>
     function GetOutput(&type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  分析指定 <see cref="T:System.Xml.XmlNodeList" />
+    ///  对象的特定转换的内容作为 <see langword="&lt;Transform&gt;" />
+    ///  元素; 此方法不支持，因为 <see cref="T:System.Security.Cryptography.Xml.XmlDsigBase64Transform" />
+    ///  对象不包含任何内部的 XML 元素。
+    ///</summary>
+    ///  <param name="nodeList"><see cref="T:System.Xml.XmlNodeList" />
+    ///  对象加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigBase64Transform" />
+    ///  对象。
+    ///</param>
     procedure LoadInnerXml(nodeList: DDN.System.Xml.DNXmlNodeList);
+    ///<summary>
+    ///  将指定的输入加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigBase64Transform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="obj">
+    ///  要加载到当前的输入 <see cref="T:System.Security.Cryptography.Xml.XmlDsigBase64Transform" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="obj" />
+    ///  参数是 <see cref="T:System.IO.Stream" />
+    ///  且 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure LoadInput(obj: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  当在派生类中重写时返回与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="hash"><see cref="T:System.Security.Cryptography.HashAlgorithm" />
+    ///  对象，用于创建摘要。
+    ///</param>
+    ///<returns>
+    ///  与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetDigestedOutput(hash: DDN.mscorlib.DNHashAlgorithm): TArray<Byte>;
+    ///<summary>
+    ///  返回当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2965,11 +9545,71 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个有效的输入的类型数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigBase64Transform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigBase64Transform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输入类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigBase64Transform" />
+    ///  对象; 您可以只将对象传递到这些类型之一的 <see cref="M:System.Security.Cryptography.Xml.XmlDsigBase64Transform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigBase64Transform" />
+    ///  对象。
+    ///</returns>
     property InputTypes: TArray<DDN.mscorlib.DNType> read get_InputTypes;
+    ///<summary>
+    ///  获取这些类型是从可能的输出数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigBase64Transform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigBase64Transform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输出类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigBase64Transform" />
+    ///  对象; 唯一的其中一种对象类型返回从 <see cref="M:System.Security.Cryptography.Xml.XmlDsigBase64Transform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigBase64Transform" />
+    ///  对象。
+    ///</returns>
     property OutputTypes: TArray<DDN.mscorlib.DNType> read get_OutputTypes;
+    ///<summary>
+    ///  获取或设置标识由当前的转换执行的算法的统一资源标识符 (URI)。
+    ///</summary>
+    ///<returns>
+    ///  标识由当前执行的算法的 URI <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     property Algorithm: string read get_Algorithm write set_Algorithm;
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</returns>
     property Context: DDN.System.Xml.DNXmlElement read get_Context write set_Context;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.Transform.PropagatedNamespaces" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property PropagatedNamespaces: DDN.mscorlib.DNHashtable read get_PropagatedNamespaces;
   end;
 
@@ -2984,14 +9624,39 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXmlDsigC14NTransform; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  类提供意见，如果指定。
+    ///</summary>
+    ///  <param name="includeComments"><see langword="true" />
+    ///  若要包括的注释。否则为 <see langword="false" />
+    ///  。
+    ///</param>
     {class} function init(includeComments: Boolean): DNXmlDsigC14NTransform; overload;
 
   { static propertys } 
 
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     {class} property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
   end;
 
+  ///<summary>
+  ///  表示数字签名的 C14N XML 规范化转换由 World Wide Web 联合会 (W3C) 定义不带注释。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.XmlDsigC14NTransform')]
   DNXmlDsigC14NTransform = interface(DNTransform)
   ['{5D53B79A-51F8-3501-AD4A-58C9EC56C5E1}']
@@ -3008,11 +9673,79 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</returns>
     function GetOutput: DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  类型的对象 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="type">
+    ///  要返回的输出的类型。
+    ///<see cref="T:System.IO.Stream" />
+    ///  是为此参数的唯一有效类型。
+    ///</param>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  类型的对象 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="type" />
+    ///  参数不是 <see cref="T:System.IO.Stream" />
+    ///  对象。
+    ///</exception>
     function GetOutput(&type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  返回与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="hash"><see cref="T:System.Security.Cryptography.HashAlgorithm" />
+    ///  对象，用于创建摘要。
+    ///</param>
+    ///<returns>
+    ///  与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</returns>
     function GetDigestedOutput(hash: DDN.mscorlib.DNHashAlgorithm): TArray<Byte>;
+    ///<summary>
+    ///  分析指定 <see cref="T:System.Xml.XmlNodeList" />
+    ///  对象的特定转换的内容作为 <see langword="&lt;Transform&gt;" />
+    ///  元素; 此方法不支持，因为此元素不包含任何内部的 XML 元素。
+    ///</summary>
+    ///  <param name="nodeList"><see cref="T:System.Xml.XmlNodeList" />
+    ///  对象加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</param>
     procedure LoadInnerXml(nodeList: DDN.System.Xml.DNXmlNodeList);
+    ///<summary>
+    ///  将指定的输入加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="obj">
+    ///  要加载到当前的输入 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="obj" />
+    ///  参数是 <see cref="T:System.IO.Stream" />
+    ///  对象也是如此 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure LoadInput(obj: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  返回当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3021,11 +9754,71 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个有效的输入的类型数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigC14NTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输入类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象; 您可以只将对象传递到这些类型之一的 <see cref="M:System.Security.Cryptography.Xml.XmlDsigC14NTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</returns>
     property InputTypes: TArray<DDN.mscorlib.DNType> read get_InputTypes;
+    ///<summary>
+    ///  获取这些类型是从可能的输出数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigC14NTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输出类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象; <see cref="M:System.Security.Cryptography.Xml.XmlDsigC14NTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象返回的其中一种类型的唯一对象。
+    ///</returns>
     property OutputTypes: TArray<DDN.mscorlib.DNType> read get_OutputTypes;
+    ///<summary>
+    ///  获取或设置标识由当前的转换执行的算法的统一资源标识符 (URI)。
+    ///</summary>
+    ///<returns>
+    ///  标识由当前执行的算法的 URI <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     property Algorithm: string read get_Algorithm write set_Algorithm;
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</returns>
     property Context: DDN.System.Xml.DNXmlElement read get_Context write set_Context;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.Transform.PropagatedNamespaces" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property PropagatedNamespaces: DDN.mscorlib.DNHashtable read get_PropagatedNamespaces;
   end;
 
@@ -3040,6 +9833,10 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NWithCommentsTransform" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXmlDsigC14NWithCommentsTransform;
 
   { static propertys } 
@@ -3047,6 +9844,9 @@ type
     {class} property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
   end;
 
+  ///<summary>
+  ///  表示数字签名的 C14N XML 规范化转换定义由 World Wide Web 联合会 (W3C) 的注释。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.XmlDsigC14NWithCommentsTransform')]
   DNXmlDsigC14NWithCommentsTransform = interface(DNXmlDsigC14NTransform)
   ['{8A2CD598-015C-3B4D-A54A-DD15B27F9468}']
@@ -3063,10 +9863,70 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</returns>
     function GetOutput: DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  类型的对象 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="type">
+    ///  要返回的输出的类型。
+    ///<see cref="T:System.IO.Stream" />
+    ///  是为此参数的唯一有效类型。
+    ///</param>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  类型的对象 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="type" />
+    ///  参数不是 <see cref="T:System.IO.Stream" />
+    ///  对象。
+    ///</exception>
     function GetOutput(&type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  返回与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="hash"><see cref="T:System.Security.Cryptography.HashAlgorithm" />
+    ///  对象，用于创建摘要。
+    ///</param>
+    ///<returns>
+    ///  与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</returns>
     function GetDigestedOutput(hash: DDN.mscorlib.DNHashAlgorithm): TArray<Byte>;
+    ///<summary>
+    ///  分析指定 <see cref="T:System.Xml.XmlNodeList" />
+    ///  对象的特定转换的内容作为 <see langword="&lt;Transform&gt;" />
+    ///  元素; 此方法不支持，因为此元素不包含任何内部的 XML 元素。
+    ///</summary>
+    ///  <param name="nodeList"><see cref="T:System.Xml.XmlNodeList" />
+    ///  对象加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</param>
     procedure LoadInnerXml(nodeList: DDN.System.Xml.DNXmlNodeList);
+    ///<summary>
+    ///  将指定的输入加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="obj">
+    ///  要加载到当前的输入 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="obj" />
+    ///  参数是 <see cref="T:System.IO.Stream" />
+    ///  对象也是如此 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure LoadInput(obj: DDN.mscorlib.DNObject);
     function GetXml: DDN.System.Xml.DNXmlElement;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -3076,7 +9936,29 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个有效的输入的类型数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigC14NTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输入类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象; 您可以只将对象传递到这些类型之一的 <see cref="M:System.Security.Cryptography.Xml.XmlDsigC14NTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</returns>
     property InputTypes: TArray<DDN.mscorlib.DNType> read get_InputTypes;
+    ///<summary>
+    ///  获取这些类型是从可能的输出数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigC14NTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输出类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象; <see cref="M:System.Security.Cryptography.Xml.XmlDsigC14NTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+    ///  对象返回的其中一种类型的唯一对象。
+    ///</returns>
     property OutputTypes: TArray<DDN.mscorlib.DNType> read get_OutputTypes;
     property Algorithm: string read get_Algorithm write set_Algorithm;
     property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
@@ -3095,14 +9977,39 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXmlDsigEnvelopedSignatureTransform; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  类提供意见，如果指定。
+    ///</summary>
+    ///  <param name="includeComments"><see langword="true" />
+    ///  若要包括的注释。否则为 <see langword="false" />
+    ///  。
+    ///</param>
     {class} function init(includeComments: Boolean): DNXmlDsigEnvelopedSignatureTransform; overload;
 
   { static propertys } 
 
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     {class} property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
   end;
 
+  ///<summary>
+  ///  根据 W3C 的定义，则表示封装的签名转换为 XML 数字签名。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform')]
   DNXmlDsigEnvelopedSignatureTransform = interface(DNTransform)
   ['{AC3C0557-1DB7-3B2A-9C15-6A40B07CF03B}']
@@ -3119,11 +10026,87 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  分析指定 <see cref="T:System.Xml.XmlNodeList" />
+    ///  作为特定于转换的内容 <see langword="&lt;Transform&gt;" />
+    ///  元素并配置当前的内部状态 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  相匹配的对象 <see langword="&lt;Transform&gt;" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="nodeList"><see cref="T:System.Xml.XmlNodeList" />
+    ///  要加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  对象。
+    ///</param>
     procedure LoadInnerXml(nodeList: DDN.System.Xml.DNXmlNodeList);
+    ///<summary>
+    ///  将指定的输入加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="obj">
+    ///  要加载到当前的输入 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="obj" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  包含 XML 文档是 <see langword="null" />
+    ///  。
+    ///</exception>
     procedure LoadInput(obj: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  包含 XML 文档是 <see langword="null" />
+    ///  。
+    ///</exception>
     function GetOutput: DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  类型的对象 <see cref="T:System.Xml.XmlNodeList" />
+    ///  。
+    ///</summary>
+    ///  <param name="type">
+    ///  要返回的输出的类型。
+    ///<see cref="T:System.Xml.XmlNodeList" />
+    ///  是为此参数的唯一有效类型。
+    ///</param>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  类型的对象 <see cref="T:System.Xml.XmlNodeList" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="type" />
+    ///  参数不是 <see cref="T:System.Xml.XmlNodeList" />
+    ///  对象。
+    ///</exception>
     function GetOutput(&type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  当在派生类中重写时返回与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="hash"><see cref="T:System.Security.Cryptography.HashAlgorithm" />
+    ///  对象，用于创建摘要。
+    ///</param>
+    ///<returns>
+    ///  与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetDigestedOutput(hash: DDN.mscorlib.DNHashAlgorithm): TArray<Byte>;
+    ///<summary>
+    ///  返回当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3132,11 +10115,71 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个有效的输入的类型数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输入类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  对象; 您可以只将对象传递到这些类型之一的 <see cref="M:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  对象。
+    ///</returns>
     property InputTypes: TArray<DDN.mscorlib.DNType> read get_InputTypes;
+    ///<summary>
+    ///  获取这些类型是从可能的输出数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输出类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  对象; 唯一的其中一种对象类型返回从 <see cref="M:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform" />
+    ///  对象。
+    ///</returns>
     property OutputTypes: TArray<DDN.mscorlib.DNType> read get_OutputTypes;
+    ///<summary>
+    ///  获取或设置标识由当前的转换执行的算法的统一资源标识符 (URI)。
+    ///</summary>
+    ///<returns>
+    ///  标识由当前执行的算法的 URI <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     property Algorithm: string read get_Algorithm write set_Algorithm;
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</returns>
     property Context: DDN.System.Xml.DNXmlElement read get_Context write set_Context;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.Transform.PropagatedNamespaces" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property PropagatedNamespaces: DDN.mscorlib.DNHashtable read get_PropagatedNamespaces;
   end;
 
@@ -3151,16 +10194,59 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXmlDsigExcC14NTransform; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  类指定一个值，确定是否包括注释。
+    ///</summary>
+    ///  <param name="includeComments"><see langword="true" />
+    ///  若要包括的注释。否则为 <see langword="false" />
+    ///  。
+    ///</param>
     {class} function init(includeComments: Boolean): DNXmlDsigExcC14NTransform; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  类指定使用标准规范化算法来规范化的命名空间前缀的列表。
+    ///</summary>
+    ///  <param name="inclusiveNamespacesPrefixList">
+    ///  使用标准规范化算法来规范化的命名空间前缀。
+    ///</param>
     {class} function init(inclusiveNamespacesPrefixList: string): DNXmlDsigExcC14NTransform; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  类指定是否包括注释，并指定命名空间前缀的列表。
+    ///</summary>
+    ///  <param name="includeComments"><see langword="true" />
+    ///  若要包括的注释。否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///  <param name="inclusiveNamespacesPrefixList">
+    ///  使用标准规范化算法来规范化的命名空间前缀。
+    ///</param>
     {class} function init(includeComments: Boolean; inclusiveNamespacesPrefixList: string): DNXmlDsigExcC14NTransform; overload;
 
   { static propertys } 
 
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     {class} property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
   end;
 
+  ///<summary>
+  ///  表示数字签名的专用 C14N XML 规范化转换由 World Wide Web 联合会 (W3C) 定义未添加注释。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.XmlDsigExcC14NTransform')]
   DNXmlDsigExcC14NTransform = interface(DNTransform)
   ['{330A5D1D-DD87-3D52-A8F6-291C8E8CA290}']
@@ -3179,11 +10265,90 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象
+    ///</summary>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</returns>
     function GetOutput: DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象作为指定类型的对象。
+    ///</summary>
+    ///  <param name="type">
+    ///  要返回的输出的类型。
+    ///  这必须是中的类型之一 <see cref="P:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform.OutputTypes" />
+    ///  属性。
+    ///</param>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象作为指定类型的对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="type" />
+    ///  参数不是 <see cref="T:System.IO.Stream" />
+    ///  对象。
+    ///  - 或 -
+    ///  <paramref name="type" />
+    ///  参数不是派生自 <see cref="T:System.IO.Stream" />
+    ///  对象。
+    ///</exception>
     function GetOutput(&type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  返回与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="hash"><see cref="T:System.Security.Cryptography.HashAlgorithm" />
+    ///  对象，用于创建摘要。
+    ///</param>
+    ///<returns>
+    ///  与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</returns>
     function GetDigestedOutput(hash: DDN.mscorlib.DNHashAlgorithm): TArray<Byte>;
+    ///<summary>
+    ///  分析指定 <see cref="T:System.Xml.XmlNodeList" />
+    ///  对象的特定转换的内容作为 <see langword="&lt;Transform&gt;" />
+    ///  元素并配置当前的内部状态 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  相匹配的对象 <see langword="&lt;Transform&gt;" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="nodeList"><see cref="T:System.Xml.XmlNodeList" />
+    ///  对象，它指定当前的特定于转换的内容 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</param>
     procedure LoadInnerXml(nodeList: DDN.System.Xml.DNXmlNodeList);
+    ///<summary>
+    ///  当在派生类中重写，将指定的输入加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="obj">
+    ///  要加载到当前的输入 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="obj" />
+    ///  参数不是 <see cref="T:System.IO.Stream" />
+    ///  对象。
+    ///  - 或 -
+    ///  <paramref name="obj" />
+    ///  参数不是 <see cref="T:System.Xml.XmlDocument" />
+    ///  对象。
+    ///  - 或 -
+    ///  <paramref name="obj" />
+    ///  参数不是 <see cref="T:System.Xml.XmlNodeList" />
+    ///  对象。
+    ///</exception>
     procedure LoadInput(obj: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  返回当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3192,12 +10357,78 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置一个字符串，包含使用标准规范化算法来规范化的命名空间前缀。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，包含命名空间前缀，使用标准规范化算法来规范化。
+    ///</returns>
     property InclusiveNamespacesPrefixList: string read get_InclusiveNamespacesPrefixList write set_InclusiveNamespacesPrefixList;
+    ///<summary>
+    ///  获取一个有效的输入的类型数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输入类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象; 您可以只将对象传递到这些类型之一的 <see cref="M:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</returns>
     property InputTypes: TArray<DDN.mscorlib.DNType> read get_InputTypes;
+    ///<summary>
+    ///  获取这些类型是从可能的输出数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输出类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象; <see cref="Overload:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象返回的其中一种类型的唯一对象。
+    ///</returns>
     property OutputTypes: TArray<DDN.mscorlib.DNType> read get_OutputTypes;
+    ///<summary>
+    ///  获取或设置标识由当前的转换执行的算法的统一资源标识符 (URI)。
+    ///</summary>
+    ///<returns>
+    ///  标识由当前执行的算法的 URI <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     property Algorithm: string read get_Algorithm write set_Algorithm;
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</returns>
     property Context: DDN.System.Xml.DNXmlElement read get_Context write set_Context;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.Transform.PropagatedNamespaces" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property PropagatedNamespaces: DDN.mscorlib.DNHashtable read get_PropagatedNamespaces;
   end;
 
@@ -3212,7 +10443,18 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXmlDsigExcC14NWithCommentsTransform; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform" />
+    ///  类指定使用标准规范化算法来规范化的命名空间前缀的列表。
+    ///</summary>
+    ///  <param name="inclusiveNamespacesPrefixList">
+    ///  使用标准规范化算法来规范化的命名空间前缀。
+    ///</param>
     {class} function init(inclusiveNamespacesPrefixList: string): DNXmlDsigExcC14NWithCommentsTransform; overload;
 
   { static propertys } 
@@ -3220,6 +10462,9 @@ type
     {class} property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
   end;
 
+  ///<summary>
+  ///  表示数字签名的专用 C14N XML 规范化转换定义由 World Wide Web 联合会 (W3C) 的注释。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform')]
   DNXmlDsigExcC14NWithCommentsTransform = interface(DNXmlDsigExcC14NTransform)
   ['{5EEAA1EA-F3A2-322C-B534-A4A63085BDBB}']
@@ -3238,10 +10483,81 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象
+    ///</summary>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</returns>
     function GetOutput: DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象作为指定类型的对象。
+    ///</summary>
+    ///  <param name="type">
+    ///  要返回的输出的类型。
+    ///  这必须是中的类型之一 <see cref="P:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform.OutputTypes" />
+    ///  属性。
+    ///</param>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象作为指定类型的对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="type" />
+    ///  参数不是 <see cref="T:System.IO.Stream" />
+    ///  对象。
+    ///  - 或 -
+    ///  <paramref name="type" />
+    ///  参数不是派生自 <see cref="T:System.IO.Stream" />
+    ///  对象。
+    ///</exception>
     function GetOutput(&type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  返回与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="hash"><see cref="T:System.Security.Cryptography.HashAlgorithm" />
+    ///  对象，用于创建摘要。
+    ///</param>
+    ///<returns>
+    ///  与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</returns>
     function GetDigestedOutput(hash: DDN.mscorlib.DNHashAlgorithm): TArray<Byte>;
+    ///<summary>
+    ///  分析指定 <see cref="T:System.Xml.XmlNodeList" />
+    ///  对象的特定转换的内容作为 <see langword="&lt;Transform&gt;" />
+    ///  元素并配置当前的内部状态 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  相匹配的对象 <see langword="&lt;Transform&gt;" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="nodeList"><see cref="T:System.Xml.XmlNodeList" />
+    ///  对象，它指定当前的特定于转换的内容 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</param>
     procedure LoadInnerXml(nodeList: DDN.System.Xml.DNXmlNodeList);
+    ///<summary>
+    ///  当在派生类中重写，将指定的输入加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="obj">
+    ///  要加载到当前的输入 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="obj" />
+    ///  参数不是 <see cref="T:System.IO.Stream" />
+    ///  对象。
+    ///  - 或 -
+    ///  <paramref name="obj" />
+    ///  参数不是 <see cref="T:System.Xml.XmlDocument" />
+    ///  对象。
+    ///  - 或 -
+    ///  <paramref name="obj" />
+    ///  参数不是 <see cref="T:System.Xml.XmlNodeList" />
+    ///  对象。
+    ///</exception>
     procedure LoadInput(obj: DDN.mscorlib.DNObject);
     function GetXml: DDN.System.Xml.DNXmlElement;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -3251,8 +10567,36 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置一个字符串，包含使用标准规范化算法来规范化的命名空间前缀。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，包含命名空间前缀，使用标准规范化算法来规范化。
+    ///</returns>
     property InclusiveNamespacesPrefixList: string read get_InclusiveNamespacesPrefixList write set_InclusiveNamespacesPrefixList;
+    ///<summary>
+    ///  获取一个有效的输入的类型数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输入类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象; 您可以只将对象传递到这些类型之一的 <see cref="M:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</returns>
     property InputTypes: TArray<DDN.mscorlib.DNType> read get_InputTypes;
+    ///<summary>
+    ///  获取这些类型是从可能的输出数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输出类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象; <see cref="Overload:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+    ///  对象返回的其中一种类型的唯一对象。
+    ///</returns>
     property OutputTypes: TArray<DDN.mscorlib.DNType> read get_OutputTypes;
     property Algorithm: string read get_Algorithm write set_Algorithm;
     property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
@@ -3271,13 +10615,30 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXmlDsigXPathTransform;
 
   { static propertys } 
 
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     {class} property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
   end;
 
+  ///<summary>
+  ///  根据 W3C 的定义表示数字签名的 XPath 转换。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.XmlDsigXPathTransform')]
   DNXmlDsigXPathTransform = interface(DNTransform)
   ['{8A024016-CC3D-3FD0-A9AD-5E64370CBFFE}']
@@ -3294,11 +10655,84 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  分析指定 <see cref="T:System.Xml.XmlNodeList" />
+    ///  对象的特定转换的内容作为 <see langword="&lt;Transform&gt;" />
+    ///  元素并配置当前的内部状态 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  相匹配的对象 <see langword="&lt;Transform&gt;" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="nodeList"><see cref="T:System.Xml.XmlNodeList" />
+    ///  对象加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  对象。
+    ///</param>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="nodeList" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="nodeList" />
+    ///  参数不包含 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  元素。
+    ///</exception>
     procedure LoadInnerXml(nodeList: DDN.System.Xml.DNXmlNodeList);
+    ///<summary>
+    ///  将指定的输入加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="obj">
+    ///  要加载到当前的输入 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  对象。
+    ///</param>
     procedure LoadInput(obj: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  对象。
+    ///</returns>
     function GetOutput: DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  类型的对象 <see cref="T:System.Xml.XmlNodeList" />
+    ///  。
+    ///</summary>
+    ///  <param name="type">
+    ///  要返回的输出的类型。
+    ///<see cref="T:System.Xml.XmlNodeList" />
+    ///  是为此参数的唯一有效类型。
+    ///</param>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  类型的对象 <see cref="T:System.Xml.XmlNodeList" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="type" />
+    ///  参数不是 <see cref="T:System.Xml.XmlNodeList" />
+    ///  对象。
+    ///</exception>
     function GetOutput(&type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  当在派生类中重写时返回与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="hash"><see cref="T:System.Security.Cryptography.HashAlgorithm" />
+    ///  对象，用于创建摘要。
+    ///</param>
+    ///<returns>
+    ///  与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetDigestedOutput(hash: DDN.mscorlib.DNHashAlgorithm): TArray<Byte>;
+    ///<summary>
+    ///  返回当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3307,11 +10741,71 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个有效的输入的类型数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXPathTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输入类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  对象; 您可以只将对象传递到这些类型之一的 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXPathTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  对象。
+    ///</returns>
     property InputTypes: TArray<DDN.mscorlib.DNType> read get_InputTypes;
+    ///<summary>
+    ///  获取这些类型是从可能的输出数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXPathTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输出类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  对象; <see cref="M:System.Security.Cryptography.Xml.XmlDsigXPathTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXPathTransform" />
+    ///  对象返回的其中一种类型的唯一对象。
+    ///</returns>
     property OutputTypes: TArray<DDN.mscorlib.DNType> read get_OutputTypes;
+    ///<summary>
+    ///  获取或设置标识由当前的转换执行的算法的统一资源标识符 (URI)。
+    ///</summary>
+    ///<returns>
+    ///  标识由当前执行的算法的 URI <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     property Algorithm: string read get_Algorithm write set_Algorithm;
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</returns>
     property Context: DDN.System.Xml.DNXmlElement read get_Context write set_Context;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.Transform.PropagatedNamespaces" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property PropagatedNamespaces: DDN.mscorlib.DNHashtable read get_PropagatedNamespaces;
   end;
 
@@ -3326,14 +10820,39 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXmlDsigXsltTransform; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  类提供意见，如果指定。
+    ///</summary>
+    ///  <param name="includeComments"><see langword="true" />
+    ///  若要包括的注释。否则为 <see langword="false" />
+    ///  。
+    ///</param>
     {class} function init(includeComments: Boolean): DNXmlDsigXsltTransform; overload;
 
   { static propertys } 
 
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     {class} property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
   end;
 
+  ///<summary>
+  ///  根据 W3C 的定义表示数字签名的 XSLT 转换。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.XmlDsigXsltTransform')]
   DNXmlDsigXsltTransform = interface(DNTransform)
   ['{0C0220F2-7A67-3D12-8159-6516E01FA7E4}']
@@ -3350,11 +10869,86 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  类型的对象 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="type">
+    ///  要返回的输出的类型。
+    ///<see cref="T:System.IO.Stream" />
+    ///  是为此参数的唯一有效类型。
+    ///</param>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  类型的对象 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="type" />
+    ///  参数不是 <see cref="T:System.IO.Stream" />
+    ///  对象。
+    ///</exception>
     function GetOutput(&type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  分析指定 <see cref="T:System.Xml.XmlNodeList" />
+    ///  对象的特定转换的内容作为 <see langword="&lt;Transform&gt;" />
+    ///  元素并配置当前的内部状态 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  相匹配的对象 <see langword="&lt;Transform&gt;" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="nodeList"><see cref="T:System.Xml.XmlNodeList" />
+    ///  对象，它封装 XSLT 样式表加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  对象。
+    ///  此样式表应用于由加载文档 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.LoadInput(System.Object)" />
+    ///  方法。
+    ///</param>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="nodeList" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///  - 或 -
+    ///  <paramref name="nodeList" />
+    ///  参数不包含 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  对象。
+    ///</exception>
     procedure LoadInnerXml(nodeList: DDN.System.Xml.DNXmlNodeList);
+    ///<summary>
+    ///  将指定的输入加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="obj">
+    ///  要加载到当前的输入 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  对象。
+    ///</param>
     procedure LoadInput(obj: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  返回当前输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的输出 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  对象。
+    ///</returns>
     function GetOutput: DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  当在派生类中重写时返回与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="hash"><see cref="T:System.Security.Cryptography.HashAlgorithm" />
+    ///  对象，用于创建摘要。
+    ///</param>
+    ///<returns>
+    ///  与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetDigestedOutput(hash: DDN.mscorlib.DNHashAlgorithm): TArray<Byte>;
+    ///<summary>
+    ///  返回当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3363,11 +10957,71 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个有效的输入的类型数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输入类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  对象; 您可以只将对象传递到这些类型之一的 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.LoadInput(System.Object)" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  对象。
+    ///</returns>
     property InputTypes: TArray<DDN.mscorlib.DNType> read get_InputTypes;
+    ///<summary>
+    ///  获取这些类型是从可能的输出数组 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输出类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  对象; 唯一的其中一种对象类型返回从 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+    ///  对象。
+    ///</returns>
     property OutputTypes: TArray<DDN.mscorlib.DNType> read get_OutputTypes;
+    ///<summary>
+    ///  获取或设置标识由当前的转换执行的算法的统一资源标识符 (URI)。
+    ///</summary>
+    ///<returns>
+    ///  标识由当前执行的算法的 URI <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     property Algorithm: string read get_Algorithm write set_Algorithm;
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</returns>
     property Context: DDN.System.Xml.DNXmlElement read get_Context write set_Context;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.Transform.PropagatedNamespaces" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property PropagatedNamespaces: DDN.mscorlib.DNHashtable read get_PropagatedNamespaces;
   end;
 
@@ -3382,13 +11036,30 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXmlLicenseTransform;
 
   { static propertys } 
 
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     {class} property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
   end;
 
+  ///<summary>
+  ///  表示用于规范化特征码 XrML 许可证的许可证转换算法。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.XmlLicenseTransform')]
   DNXmlLicenseTransform = interface(DNTransform)
   ['{B828D115-C2A3-3B4D-A717-9FB0462E57B4}']
@@ -3407,11 +11078,87 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回的输出 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  输出 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象。
+    ///</returns>
     function GetOutput: DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  返回的输出 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="type">
+    ///  要返回的输出的类型。
+    ///<see cref="T:System.Xml.XmlDocument" />
+    ///  是为此参数的唯一有效类型。
+    ///</param>
+    ///<returns>
+    ///  输出 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="type" />
+    ///  参数不是 <see cref="T:System.Xml.XmlDocument" />
+    ///  对象。
+    ///</exception>
     function GetOutput(&type: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  分析指定 <see cref="T:System.Xml.XmlNodeList" />
+    ///  对象的特定转换的内容作为 <see langword="&lt;Transform&gt;" />
+    ///  元素; 此方法不支持，因为 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象不包含任何内部的 XML 元素。
+    ///</summary>
+    ///  <param name="nodeList"><see cref="T:System.Xml.XmlNodeList" />
+    ///  对象，它封装要加载到当前的转换 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象。
+    ///</param>
     procedure LoadInnerXml(nodeList: DDN.System.Xml.DNXmlNodeList);
+    ///<summary>
+    ///  将指定的输入加载到当前 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="obj">
+    ///  要加载到当前的输入 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象。
+    ///  输入对象的类型必须为 <see cref="T:System.Xml.XmlDocument" />
+    ///  。
+    ///</param>
+    ///<exception cref="T:System.Security.Cryptography.CryptographicException">
+    ///  调用此转换之前未设置上下文。
+    ///  - 或 -
+    ///<see langword="&lt;issuer&gt;" />
+    ///  之前调用此转换未设置元素。
+    ///  - 或 -
+    ///<see langword="&lt;license&gt;" />
+    ///  之前调用此转换未设置元素。
+    ///  - 或 -
+    ///<see cref="P:System.Security.Cryptography.Xml.XmlLicenseTransform.Decryptor" />
+    ///  之前调用此转换未设置属性。
+    ///</exception>
     procedure LoadInput(obj: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  当在派生类中重写时返回与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="hash"><see cref="T:System.Security.Cryptography.HashAlgorithm" />
+    ///  对象，用于创建摘要。
+    ///</param>
+    ///<returns>
+    ///  与相关联的摘要 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetDigestedOutput(hash: DDN.mscorlib.DNHashAlgorithm): TArray<Byte>;
+    ///<summary>
+    ///  返回当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 XML 表示 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     function GetXml: DDN.System.Xml.DNXmlElement;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3420,12 +11167,81 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个有效的输入的类型数组 <see cref="P:System.Security.Cryptography.Xml.XmlLicenseTransform.OutputTypes" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  这些类型是有效的输入数组 <see cref="P:System.Security.Cryptography.Xml.XmlLicenseTransform.OutputTypes" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象; 您可以只将对象传递到这些类型之一的 <see cref="P:System.Security.Cryptography.Xml.XmlLicenseTransform.OutputTypes" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象。
+    ///</returns>
     property InputTypes: TArray<DDN.mscorlib.DNType> read get_InputTypes;
+    ///<summary>
+    ///  获取数组的有效输出类型 <see cref="P:System.Security.Cryptography.Xml.XmlLicenseTransform.OutputTypes" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  为当前有效的输出类型的数组 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象; 唯一的其中一种对象类型返回从 <see cref="M:System.Security.Cryptography.Xml.XmlLicenseTransform.GetOutput" />
+    ///  方法当前 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象。
+    ///</returns>
     property OutputTypes: TArray<DDN.mscorlib.DNType> read get_OutputTypes;
+    ///<summary>
+    ///  获取或设置当前的解密码 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的解密码 <see cref="T:System.Security.Cryptography.Xml.XmlLicenseTransform" />
+    ///  对象。
+    ///</returns>
     property Decryptor: DNIRelDecryptor read get_Decryptor write set_Decryptor;
+    ///<summary>
+    ///  获取或设置标识由当前的转换执行的算法的统一资源标识符 (URI)。
+    ///</summary>
+    ///<returns>
+    ///  标识由当前执行的算法的 URI <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象。
+    ///</returns>
     property Algorithm: string read get_Algorithm write set_Algorithm;
+    ///<summary>
+    ///  设置当前 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  当前的 <see cref="T:System.Xml.XmlResolver" />
+    ///  对象。
+    ///  此属性默认为 <see cref="T:System.Xml.XmlSecureResolver" />
+    ///  对象。
+    ///</returns>
     property Resolver: DDN.System.Xml.DNXmlResolver write set_Resolver;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</summary>
+    ///<returns><see cref="T:System.Xml.XmlElement" />
+    ///  对象，表示在其中的文档上下文当前 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+    ///  对象运行时。
+    ///</returns>
     property Context: DDN.System.Xml.DNXmlElement read get_Context write set_Context;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Hashtable" />
+    ///  包含传播到签名的命名空间的对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.Transform.PropagatedNamespaces" />
+    ///  属性被设置为 <see langword="null" />
+    ///  。
+    ///</exception>
     property PropagatedNamespaces: DDN.mscorlib.DNHashtable read get_PropagatedNamespaces;
   end;
 
@@ -3436,10 +11252,18 @@ type
   ['{1CEDE88F-1E8A-57B7-9DDB-85B3A20147B3}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Security.Cryptography.Xml.TransformChain" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNTransformChain;
 
   end;
 
+  ///<summary>
+  ///  定义的排序的列表 <see cref="T:System.Security.Cryptography.Xml.Transform" />
+  ///  应用于在摘要计算之前未签名内容的对象。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.TransformChain')]
   DNTransformChain = interface(DDN.mscorlib.DNObject)
   ['{E4668765-48E0-391C-BD17-BF1BBEFB1F6C}']
@@ -3450,7 +11274,21 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将转换添加到要应用于在摘要计算之前未签名的内容的转换列表。
+    ///</summary>
+    ///  <param name="transform">
+    ///  要添加的转换列表中的转换。
+    ///</param>
     procedure Add(transform: DNTransform);
+    ///<summary>
+    ///  返回一个枚举中的转换 <see cref="T:System.Security.Cryptography.Xml.TransformChain" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  在转换枚举数 <see cref="T:System.Security.Cryptography.Xml.TransformChain" />
+    ///  对象。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3459,6 +11297,14 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取中的转换数 <see cref="T:System.Security.Cryptography.Xml.TransformChain" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  中的转换数 <see cref="T:System.Security.Cryptography.Xml.TransformChain" />
+    ///  对象。
+    ///</returns>
     property Count: Int32 read get_Count;
     property Item[index: Int32]: DNTransform read get_Item; default;
   end;
@@ -3470,6 +11316,10 @@ type
   ['{F565DD75-E9B9-5954-8609-296D00DE2C57}']
   end;
 
+  ///<summary>
+  ///  表示 &lt;<see langword="X509IssuerSerial" />
+  ///  &gt; 元素的 XML 数字签名。
+  ///</summary>
   [DNTypeName('System.Security.Cryptography.Xml.X509IssuerSerial')]
   DNX509IssuerSerial = interface(DDN.mscorlib.DNValueType)
   ['{157BE144-3AED-330B-B384-E54129500F99}']
@@ -3489,7 +11339,19 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置 X.509 证书颁发者的可分辨的名称。
+    ///</summary>
+    ///<returns>
+    ///  X.509 证书颁发者的可分辨的名称。
+    ///</returns>
     property IssuerName: string read get_IssuerName write set_IssuerName;
+    ///<summary>
+    ///  获取或设置 X.509 证书颁发者的序列号。
+    ///</summary>
+    ///<returns>
+    ///  X.509 证书颁发者的序列号。
+    ///</returns>
     property SerialNumber: string read get_SerialNumber write set_SerialNumber;
   end;
 

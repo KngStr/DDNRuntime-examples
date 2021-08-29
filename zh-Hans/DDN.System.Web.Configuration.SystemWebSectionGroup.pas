@@ -41,10 +41,19 @@ type
   ['{40467A29-CC29-5118-BBAF-9EE9CB0D4732}']
   { constructors } 
 
+    ///<summary>
+    ///  创建 <see cref="T:System.Web.Configuration.SystemWebSectionGroup" />
+    ///  的新实例。
+    ///</summary>
     {class} function init: DNSystemWebSectionGroup;
 
   end;
 
+  ///<summary>
+  ///  允许以编程方式访问用户 <see langword="system.web" />
+  ///  组的配置文件。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Web.Configuration.SystemWebSectionGroup')]
   DNSystemWebSectionGroup = interface(DNObject)
   ['{1D0E9043-8AEA-30EA-98C4-0FFA24B767EF}']
@@ -107,42 +116,309 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see langword="anonymousIdentification" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.AnonymousIdentificationSection" />
+    ///  对象。
+    ///</returns>
     property AnonymousIdentification: DNAnonymousIdentificationSection read get_AnonymousIdentification;
+    ///<summary>
+    ///  获取 <see langword="authentication" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.AuthenticationSection" />
+    ///  对象。
+    ///</returns>
     property Authentication: DNAuthenticationSection read get_Authentication;
+    ///<summary>
+    ///  获取 <see langword="authorization" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.AuthorizationSection" />
+    ///  对象。
+    ///</returns>
     property Authorization: DNAuthorizationSection read get_Authorization;
+    ///<summary>
+    ///  获取 <see langword="browserCaps" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.DefaultSection" />
+    ///  对象。
+    ///</returns>
     property BrowserCaps: DDN.System.Configuration.DNDefaultSection read get_BrowserCaps;
+    ///<summary>
+    ///  获取 <see langword="clientTarget" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.ClientTargetSection" />
+    ///  对象。
+    ///</returns>
     property ClientTarget: DNClientTargetSection read get_ClientTarget;
+    ///<summary>
+    ///  获取 <see langword="compilation" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.CompilationSection" />
+    ///  对象。
+    ///</returns>
     property Compilation: DNCompilationSection read get_Compilation;
+    ///<summary>
+    ///  获取 <see langword="customErrors" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.CustomErrorsSection" />
+    ///  对象。
+    ///</returns>
     property CustomErrors: DNCustomErrorsSection read get_CustomErrors;
+    ///<summary>
+    ///  获取 <see langword="deployment" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.DeploymentSection" />
+    ///  对象。
+    ///</returns>
     property Deployment: DNDeploymentSection read get_Deployment;
+    ///<summary>
+    ///  获取 <see langword="deviceFilters" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.DefaultSection" />
+    ///  对象。
+    ///</returns>
     property DeviceFilters: DDN.System.Configuration.DNDefaultSection read get_DeviceFilters;
+    ///<summary>
+    ///  获取 <see langword="FullTrustAssemblies" />
+    ///  配置文件节。
+    ///</summary>
+    ///<returns><see langword="FullTrustAssemblies" />
+    ///  配置文件节。
+    ///</returns>
     property FullTrustAssemblies: DNFullTrustAssembliesSection read get_FullTrustAssemblies;
+    ///<summary>
+    ///  获取 <see langword="globalization" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.GlobalizationSection" />
+    ///  对象。
+    ///</returns>
     property Globalization: DNGlobalizationSection read get_Globalization;
+    ///<summary>
+    ///  获取 <see langword="healthMonitoring" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.HealthMonitoringSection" />
+    ///  对象。
+    ///</returns>
     property HealthMonitoring: DNHealthMonitoringSection read get_HealthMonitoring;
+    ///<summary>
+    ///  获取 <see langword="hostingEnvironment" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.HostingEnvironmentSection" />
+    ///  对象是指 <see langword="hostingEnvironment" />
+    ///  配置文件节。
+    ///</returns>
     property HostingEnvironment: DNHostingEnvironmentSection read get_HostingEnvironment;
+    ///<summary>
+    ///  获取 <see langword="httpCookies" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.HttpCookiesSection" />
+    ///  对象。
+    ///</returns>
     property HttpCookies: DNHttpCookiesSection read get_HttpCookies;
+    ///<summary>
+    ///  获取 <see langword="httpHandlers" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.HttpHandlersSection" />
+    ///  对象。
+    ///</returns>
     property HttpHandlers: DNHttpHandlersSection read get_HttpHandlers;
+    ///<summary>
+    ///  获取 <see langword="httpModules" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.HttpModulesSection" />
+    ///  对象。
+    ///</returns>
     property HttpModules: DNHttpModulesSection read get_HttpModules;
+    ///<summary>
+    ///  获取 <see langword="httpRuntime" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.HttpRuntimeSection" />
+    ///  对象。
+    ///</returns>
     property HttpRuntime: DNHttpRuntimeSection read get_HttpRuntime;
+    ///<summary>
+    ///  获取 <see langword="identity" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.IdentitySection" />
+    ///  对象。
+    ///</returns>
     property Identity: DNIdentitySection read get_Identity;
+    ///<summary>
+    ///  获取 <see langword="machineKey" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.MachineKeySection" />
+    ///  对象。
+    ///</returns>
     property MachineKey: DNMachineKeySection read get_MachineKey;
+    ///<summary>
+    ///  获取 <see langword="membership" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.MembershipSection" />
+    ///  对象。
+    ///</returns>
     property Membership: DNMembershipSection read get_Membership;
+    ///<summary>
+    ///  获取 <see langword="mobileControls" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.ConfigurationSection" />
+    ///  对象是指 <see langword="mobileControls" />
+    ///  配置文件节。
+    ///</returns>
     property MobileControls: DDN.System.Configuration.DNConfigurationSection read get_MobileControls;
+    ///<summary>
+    ///  获取 <see langword="pages" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.PagesSection" />
+    ///  对象。
+    ///</returns>
     property Pages: DNPagesSection read get_Pages;
+    ///<summary>
+    ///  获取 <see langword="PartialTrustVisibleAssemblies" />
+    ///  配置文件节。
+    ///</summary>
+    ///<returns><see langword="PartialTrustVisibleAssemblies" />
+    ///  配置文件节。
+    ///</returns>
     property PartialTrustVisibleAssemblies: DNPartialTrustVisibleAssembliesSection read get_PartialTrustVisibleAssemblies;
+    ///<summary>
+    ///  获取 <see langword="processModel" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.ProcessModelSection" />
+    ///  对象。
+    ///</returns>
     property ProcessModel: DNProcessModelSection read get_ProcessModel;
+    ///<summary>
+    ///  获取 <see langword="profile" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.ProfileSection" />
+    ///  对象。
+    ///</returns>
     property Profile: DNProfileSection read get_Profile;
+    ///<summary>
+    ///  获取 <see langword="protocols" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Configuration.DefaultSection" />
+    ///  对象是指 <see langword="protocols" />
+    ///  配置文件节。
+    ///</returns>
     property Protocols: DDN.System.Configuration.DNDefaultSection read get_Protocols;
+    ///<summary>
+    ///  获取 <see langword="roleManager" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.RoleManagerSection" />
+    ///  对象。
+    ///</returns>
     property RoleManager: DNRoleManagerSection read get_RoleManager;
+    ///<summary>
+    ///  获取 <see langword="securityPolicy" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.SecurityPolicySection" />
+    ///  对象。
+    ///</returns>
     property SecurityPolicy: DNSecurityPolicySection read get_SecurityPolicy;
+    ///<summary>
+    ///  获取 <see langword="sessionState" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.SessionStateSection" />
+    ///  对象。
+    ///</returns>
     property SessionState: DNSessionStateSection read get_SessionState;
+    ///<summary>
+    ///  获取 <see langword="siteMap" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.SiteMapSection" />
+    ///  对象。
+    ///</returns>
     property SiteMap: DNSiteMapSection read get_SiteMap;
+    ///<summary>
+    ///  获取 <see langword="trace" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.TraceSection" />
+    ///  对象。
+    ///</returns>
     property Trace: DNTraceSection read get_Trace;
+    ///<summary>
+    ///  获取 <see langword="trust" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.TrustSection" />
+    ///  对象。
+    ///</returns>
     property Trust: DNTrustSection read get_Trust;
+    ///<summary>
+    ///  获取 <see langword="urlMappings" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.UrlMappingsSection" />
+    ///  对象是指 <see langword="urlMappings" />
+    ///  配置文件节。
+    ///</returns>
     property UrlMappings: DNUrlMappingsSection read get_UrlMappings;
+    ///<summary>
+    ///  获取 <see langword="webControls" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.WebControlsSection" />
+    ///  对象是指 <see langword="webControls" />
+    ///  配置文件节。
+    ///</returns>
     property WebControls: DNWebControlsSection read get_WebControls;
+    ///<summary>
+    ///  获取 <see langword="webParts" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.WebPartsSection" />
+    ///  对象是指 <see langword="webParts" />
+    ///  配置文件节。
+    ///</returns>
     property WebParts: DNWebPartsSection read get_WebParts;
+    ///<summary>
+    ///  获取 <see langword="webServices" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Services.Configuration.WebServicesSection" />
+    ///  对象是指 <see langword="webServices" />
+    ///  配置文件节。
+    ///</returns>
     property WebServices: DDN.System.Web.Services.DNWebServicesSection read get_WebServices;
+    ///<summary>
+    ///  获取 <see langword="xhtmlConformance" />
+    ///  部分。
+    ///</summary>
+    ///<returns><see cref="T:System.Web.Configuration.XhtmlConformanceSection" />
+    ///  对象是指 <see langword="xhtmlConformance" />
+    ///  配置文件节。
+    ///</returns>
     property XhtmlConformance: DNXhtmlConformanceSection read get_XhtmlConformance;
     property IsDeclared: Boolean read get_IsDeclared;
     property IsDeclarationRequired: Boolean read get_IsDeclarationRequired;

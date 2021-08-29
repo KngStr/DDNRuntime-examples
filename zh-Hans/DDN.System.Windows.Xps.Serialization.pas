@@ -33,47 +33,102 @@ type
 { enums }
 
   //-------------namespace: System.Windows.Xps.Serialization----------------
+  ///<summary>
+  ///  指定在哪种字体标志符号子集保存在粒度 XPS 文档。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Serialization.FontSubsetterCommitPolicies')]
   DNFontSubsetterCommitPolicies = type Integer;
   DNFontSubsetterCommitPoliciesHelper = record helper for DNFontSubsetterCommitPolicies
   public const
+    ///<summary>
+    ///  无子集。
+    ///  存储在文档中使用的所有字体的所有标志符号。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  存储文本中的每个页使用的所有标志符号。
+    ///</summary>
     CommitPerPage = 1;
+    ///<summary>
+    ///  存储文本中的每个文档使用的所有标志符号。
+    ///</summary>
     CommitPerDocument = 2;
+    ///<summary>
+    ///  通过每个文档的顺序以文本形式存储使用的所有标志符号。
+    ///</summary>
     CommitEntireSequence = 3;
   end;
 
 
   //-------------namespace: System.Windows.Xps.Serialization----------------
+  ///<summary>
+  ///  指定是否 <see cref="T:System.Printing.PrintTicket" />
+  ///  将应用于整个文档序列，只是一个文档中，或只是一页。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Serialization.PrintTicketLevel')]
   DNPrintTicketLevel = type Integer;
   DNPrintTicketLevelHelper = record helper for DNPrintTicketLevel
   public const
+    ///<summary>
+    ///  一种未知或未指定级别。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  文档序列。
+    ///</summary>
     FixedDocumentSequencePrintTicket = 1;
+    ///<summary>
+    ///  本文档。
+    ///</summary>
     FixedDocumentPrintTicket = 2;
+    ///<summary>
+    ///  一个页。
+    ///</summary>
     FixedPagePrintTicket = 3;
   end;
 
 
   //-------------namespace: System.Windows.Xps.Serialization----------------
+  ///<summary>
+  ///  请勿使用。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Serialization.SerializationState')]
   DNSerializationState = type Integer;
   DNSerializationStateHelper = record helper for DNSerializationState
   public const
+    ///<summary>
+    ///  请勿使用。
+    ///</summary>
     Normal = 0;
+    ///<summary>
+    ///  请勿使用。
+    ///</summary>
     Stop = 1;
   end;
 
 
   //-------------namespace: System.Windows.Xps.Serialization----------------
+  ///<summary>
+  ///  指定范围的书面文件的进度指示器 XML 纸张规范 (XPS) 内容。 </summary>
   [DNTypeName('System.Windows.Xps.Serialization.XpsWritingProgressChangeLevel')]
   DNXpsWritingProgressChangeLevel = type Integer;
   DNXpsWritingProgressChangeLevelHelper = record helper for DNXpsWritingProgressChangeLevel
   public const
+    ///<summary>
+    ///  进度值没有意义。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  一个或多个文档的整个序列。
+    ///</summary>
     FixedDocumentSequenceWritingProgress = 1;
+    ///<summary>
+    ///  单个文档。
+    ///</summary>
     FixedDocumentWritingProgress = 2;
+    ///<summary>
+    ///  一页。
+    ///</summary>
     FixedPageWritingProgress = 3;
   end;
 
@@ -98,9 +153,31 @@ type
 
 { delegates }
 
+  ///<summary>
+  ///  表示用于处理的方法 <see cref="E:System.Windows.Xps.Serialization.XpsSerializationManagerAsync.XpsSerializationCompleted" />
+  ///  事件 <see cref="T:System.Windows.Xps.Serialization.XpsSerializationManagerAsync" />
+  ///  。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e">
+  ///  事件数据。
+  ///</param>
   [DNTypeName('System.Windows.Xps.Serialization.XpsSerializationCompletedEventHandler')]
   DNXpsSerializationCompletedEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNXpsSerializationCompletedEventArgs) of object;
 
+  ///<summary>
+  ///  表示用于处理的方法 <see cref="E:System.Windows.Xps.Serialization.XpsSerializationManager.XpsSerializationProgressChanged" />
+  ///  事件 <see cref="T:System.Windows.Xps.Serialization.XpsSerializationManager" />
+  ///  。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e">
+  ///  事件数据。
+  ///</param>
   [DNTypeName('System.Windows.Xps.Serialization.XpsSerializationProgressChangedEventHandler')]
   DNXpsSerializationProgressChangedEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNXpsSerializationProgressChangedEventArgs) of object;
 
@@ -114,24 +191,152 @@ type
   ['{B3D13AC3-2449-54C6-B5E6-53D04151D105}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Xps.Serialization.ColorTypeConverter" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNColorTypeConverter;
 
   { static methods } 
 
+    ///<summary>
+    ///  将 <see cref="T:System.Windows.Media.ColorContext" />
+    ///  序列化为 XML 纸张规范 (XPS) 包，并将其 统一资源标识符 (URI) 返回为字符串。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="colorContext">
+    ///  要序列化的对象。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，表示 URI 颜色上下文。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="colorContext" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} function SerializeColorContext(context: DDN.mscorlib.DNIServiceProvider; colorContext: DDN.PresentationCore.DNColorContext): string;
 
   end;
 
+  ///<summary>
+  ///  提供类型转换器，用于将 <see cref="T:System.Windows.Media.Color" />
+  ///  对象与其他类型的对象进行转换。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Serialization.ColorTypeConverter')]
   DNColorTypeConverter = interface(DNObject)
   ['{14C9AAC9-3CD4-3649-B1DD-C1FE174CE0D0}']
   { methods } 
 
+    ///<summary>
+    ///  返回一个值，该值指示此转换器是否可以转换到指定类型的实例 <see cref="T:System.Windows.Media.Color" />
+    ///  。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="sourceType">
+    ///  是转换的候选版本的对象的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果可以转换指定类型的对象;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertFrom(context: DDN.System.DNITypeDescriptorContext; sourceType: DDN.mscorlib.DNType): Boolean; overload;
+    ///<summary>
+    ///  返回一个值，该值指示是否此 <see cref="T:System.Windows.Xps.Serialization.ColorTypeConverter" />
+    ///  可转换 <see cref="T:System.Windows.Media.Color" />
+    ///  到具有指定类型的实例。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="destinationType">
+    ///  你想要将颜色转换为对象的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果可以转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertTo(context: DDN.System.DNITypeDescriptorContext; destinationType: DDN.mscorlib.DNType): Boolean; overload;
+    ///<summary>
+    ///  指定将对象转换为 <see cref="T:System.Windows.Media.Color" />
+    ///  。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="culture">
+    ///  语言和区域性，转换过程中使用。
+    ///</param>
+    ///  <param name="value">
+    ///  转换的对象。
+    ///</param>
+    ///<returns>
+    ///  新的 <see cref="T:System.Windows.Media.Color" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.NotImplementedException">
+    ///  自此类，而不是在派生类中调用此方法。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.NotSupportedException"><paramref name="value" />
+    ///  不是可以转换的类型。
+    ///</exception>
     function ConvertFrom(context: DDN.System.DNITypeDescriptorContext; culture: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
-    function ConvertTo(context: DDN.System.DNITypeDescriptorContext; culture: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; destinationType: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  获取指定类型的属性说明的集合。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="value">
+    ///  您需要属性说明类型的对象。
+    ///</param>
+    ///  <param name="attributes">
+    ///  这些特性筛选返回的集合，以排除不相关的属性的数组。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.ComponentModel.PropertyDescriptorCollection" />
+    ///  包含组件; 为公开的属性说明或 <see langword="null" />
+    ///  如果不返回了任何属性说明。
+    ///</returns>
+    ///<exception cref="T:System.NotImplementedException">
+    ///  自此类，而不是在派生类中调用此方法。
+    ///</exception>
     function GetProperties(context: DDN.System.DNITypeDescriptorContext; value: DDN.mscorlib.DNObject; attributes: TArray<DDN.mscorlib.DNAttribute>): DDN.System.DNPropertyDescriptorCollection; overload;
+    ///<summary>
+    ///  将转换 <see cref="T:System.Windows.Media.Color" />
+    ///  为指定类型的对象。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="culture">
+    ///  语言和区域性，转换过程中使用。
+    ///</param>
+    ///  <param name="value">
+    ///  要转换的对象。
+    ///</param>
+    ///  <param name="destinationType">
+    ///  该类型的 <paramref name="value" />
+    ///  转换为。
+    ///</param>
+    ///<returns>
+    ///  新 <see cref="T:System.Object" />
+    ///  指定的类型。
+    ///</returns>
+    ///<exception cref="T:System.NotSupportedException"><paramref name="destinationType" />
+    ///  不是一种类型的 <paramref name="value" />
+    ///  可以转换为。
+    ///  - 或 -
+    ///  <paramref name="culture" />
+    ///  是非特定区域性。
+    ///</exception>
+    function ConvertTo(context: DDN.System.DNITypeDescriptorContext; culture: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; destinationType: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
     function GetPropertiesSupported(context: DDN.System.DNITypeDescriptorContext): Boolean; overload;
     function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean; overload;
@@ -176,20 +381,139 @@ type
   ['{02074361-050F-55B7-A19B-EB7BFD5C443A}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Xps.Serialization.FontTypeConverter" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNFontTypeConverter;
 
   end;
 
+  ///<summary>
+  ///  提供了用于转换的类型转换器 <see cref="T:System.Windows.Media.GlyphRun" />
+  ///  对象与其他类型的对象。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Serialization.FontTypeConverter')]
   DNFontTypeConverter = interface(DNObject)
   ['{C11E98EF-B5CC-35E7-8046-B02C311B6CB3}']
   { methods } 
 
+    ///<summary>
+    ///  返回一个值，该值指示此转换器是否可以转换到指定类型的实例 <see cref="T:System.Windows.Media.GlyphRun" />
+    ///  。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="sourceType">
+    ///  要转换的对象的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果可以转换指定类型的对象;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertFrom(context: DDN.System.DNITypeDescriptorContext; sourceType: DDN.mscorlib.DNType): Boolean; overload;
+    ///<summary>
+    ///  返回一个值，该值指示是否此 <see cref="T:System.Windows.Xps.Serialization.FontTypeConverter" />
+    ///  可转换 <see cref="T:System.Windows.Media.GlyphRun" />
+    ///  到具有指定类型的实例。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="destinationType">
+    ///  您想要转换到运行的标志符号的对象的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果可以转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertTo(context: DDN.System.DNITypeDescriptorContext; destinationType: DDN.mscorlib.DNType): Boolean; overload;
+    ///<summary>
+    ///  指定将对象转换为 <see cref="T:System.Windows.Media.GlyphRun" />
+    ///  。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="culture">
+    ///  语言和区域性，转换过程中使用。
+    ///</param>
+    ///  <param name="value">
+    ///  转换的对象。
+    ///</param>
+    ///<returns>
+    ///  新的 <see cref="T:System.Windows.Media.GlyphRun" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.NotImplementedException">
+    ///  自此类，而不是在派生类中调用此方法。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.NotSupportedException"><paramref name="value" />
+    ///  不是可以转换的类型。
+    ///</exception>
     function ConvertFrom(context: DDN.System.DNITypeDescriptorContext; culture: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
-    function ConvertTo(context: DDN.System.DNITypeDescriptorContext; culture: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; destinationType: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  获取指定类型的属性说明的集合。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="value">
+    ///  一个对象，您需要属性说明。
+    ///</param>
+    ///  <param name="attributes">
+    ///  这些特性筛选返回的集合，以排除不相关的属性的数组。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.ComponentModel.PropertyDescriptorCollection" />
+    ///  包含组件; 为公开的属性说明或 <see langword="null" />
+    ///  如果不返回了任何属性说明。
+    ///</returns>
+    ///<exception cref="T:System.NotImplementedException">
+    ///  自此类，而不是在派生类中调用此方法。
+    ///</exception>
     function GetProperties(context: DDN.System.DNITypeDescriptorContext; value: DDN.mscorlib.DNObject; attributes: TArray<DDN.mscorlib.DNAttribute>): DDN.System.DNPropertyDescriptorCollection; overload;
+    ///<summary>
+    ///  将转换 <see cref="T:System.Windows.Media.GlyphRun" />
+    ///  为指定类型的对象。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="culture">
+    ///  语言和区域性，转换过程中使用。
+    ///</param>
+    ///  <param name="value">
+    ///  要转换的对象。
+    ///</param>
+    ///  <param name="destinationType">
+    ///  所需的类型 <paramref name="value" />
+    ///  转换为。
+    ///</param>
+    ///<returns>
+    ///  新 <see cref="T:System.Object" />
+    ///  指定的类型。
+    ///  在此类中实现时，它必须是 <see cref="T:System.Uri" />
+    ///  。
+    ///  它表示 统一资源标识符 (URI) 字体子集，它由 <paramref name="value" />
+    ///  参数。
+    ///</returns>
+    ///<exception cref="T:System.NotSupportedException"><paramref name="destinationType" />
+    ///  不是一种类型的 <paramref name="value" />
+    ///  可以转换为。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="context" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException"><paramref name="value" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Windows.Xps.XpsSerializationException">
+    ///  在序列化标志符号运行时，就会出错。
+    ///</exception>
+    function ConvertTo(context: DDN.System.DNITypeDescriptorContext; culture: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; destinationType: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
     function GetPropertiesSupported(context: DDN.System.DNITypeDescriptorContext): Boolean; overload;
     function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean; overload;
@@ -234,20 +558,139 @@ type
   ['{AA613B50-4599-5C89-87C3-40772B9C0B93}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Xps.Serialization.ImageSourceTypeConverter" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNImageSourceTypeConverter;
 
   end;
 
+  ///<summary>
+  ///  提供了用于转换的类型转换器 <see cref="T:System.Windows.Media.Imaging.BitmapSource" />
+  ///  对象与其他类型的对象。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Serialization.ImageSourceTypeConverter')]
   DNImageSourceTypeConverter = interface(DNObject)
   ['{42592F26-3F39-3DEA-9A7D-EDCC62EB4695}']
   { methods } 
 
+    ///<summary>
+    ///  返回一个值，该值指示此转换器是否可以转换到指定类型的实例 <see cref="T:System.Windows.Media.Imaging.BitmapSource" />
+    ///  。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="sourceType">
+    ///  要转换的对象的类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果可以转换指定类型的对象;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertFrom(context: DDN.System.DNITypeDescriptorContext; sourceType: DDN.mscorlib.DNType): Boolean; overload;
+    ///<summary>
+    ///  返回一个值，该值指示是否此 <see cref="T:System.Windows.Xps.Serialization.ImageSourceTypeConverter" />
+    ///  可转换 <see cref="T:System.Windows.Media.Imaging.BitmapSource" />
+    ///  到具有指定类型的实例。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="destinationType">
+    ///  你想要转换的对象的类型 <see cref="T:System.Windows.Media.Imaging.BitmapSource" />
+    ///  。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果可以转换;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function CanConvertTo(context: DDN.System.DNITypeDescriptorContext; destinationType: DDN.mscorlib.DNType): Boolean; overload;
+    ///<summary>
+    ///  指定将对象转换为 <see cref="T:System.Windows.Media.Imaging.BitmapSource" />
+    ///  。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="culture">
+    ///  语言和区域性，转换过程中使用。
+    ///</param>
+    ///  <param name="value">
+    ///  转换的对象。
+    ///</param>
+    ///<returns>
+    ///  新的 <see cref="T:System.Windows.Media.Imaging.BitmapSource" />
+    ///  对象。
+    ///</returns>
+    ///<exception cref="T:System.NotImplementedException">
+    ///  自此类，而不是在派生类中调用此方法。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="value" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.NotSupportedException"><paramref name="value" />
+    ///  不是可以转换的类型。
+    ///</exception>
     function ConvertFrom(context: DDN.System.DNITypeDescriptorContext; culture: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
-    function ConvertTo(context: DDN.System.DNITypeDescriptorContext; culture: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; destinationType: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    ///<summary>
+    ///  获取指定类型的属性说明的集合。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="value">
+    ///  一个对象，您需要属性说明。
+    ///</param>
+    ///  <param name="attributes">
+    ///  包含用来筛选返回的集合以排除不相关的属性的特性的数组。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.ComponentModel.PropertyDescriptorCollection" />
+    ///  包含组件; 为公开的属性说明或 <see langword="null" />
+    ///  如果不返回了任何属性说明。
+    ///</returns>
+    ///<exception cref="T:System.NotImplementedException">
+    ///  自此类，而不是在派生类中调用此方法。
+    ///</exception>
     function GetProperties(context: DDN.System.DNITypeDescriptorContext; value: DDN.mscorlib.DNObject; attributes: TArray<DDN.mscorlib.DNAttribute>): DDN.System.DNPropertyDescriptorCollection; overload;
+    ///<summary>
+    ///  将转换 <see cref="T:System.Windows.Media.Imaging.BitmapSource" />
+    ///  为指定类型的对象。
+    ///</summary>
+    ///  <param name="context">
+    ///  提供上下文信息的对象。
+    ///</param>
+    ///  <param name="culture">
+    ///  语言和区域性，转换过程中使用。
+    ///</param>
+    ///  <param name="value">
+    ///  您想要转换的对象。
+    ///</param>
+    ///  <param name="destinationType">
+    ///  所需的类型 <paramref name="value" />
+    ///  转换为。
+    ///</param>
+    ///<returns>
+    ///  新 <see cref="T:System.Object" />
+    ///  指定的类型。
+    ///  在此类中实现时，该对象必须是 <see cref="T:System.Uri" />
+    ///  。
+    ///  该对象表示 统一资源标识符 (URI) 的序列化的图像。
+    ///</returns>
+    ///<exception cref="T:System.NotSupportedException"><paramref name="destinationType" />
+    ///  不是一种类型的 <paramref name="value" />
+    ///  可以转换为。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="context" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException"><paramref name="value" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Windows.Xps.XpsSerializationException">
+    ///  在序列化图像时，就会出错。
+    ///</exception>
+    function ConvertTo(context: DDN.System.DNITypeDescriptorContext; culture: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; destinationType: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
     function GetPropertiesSupported(context: DDN.System.DNITypeDescriptorContext): Boolean; overload;
     function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean; overload;
@@ -292,10 +735,29 @@ type
   ['{FC082012-F6EC-50E6-A030-A7CC1C1D829A}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Xps.Serialization.XpsSerializationCompletedEventArgs" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="canceled"><see langword="true" />
+    ///  若要指示序列化已被取消之前完成;否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///  <param name="state">
+    ///  提供事件处理程序的其他数据的用户提供的对象。
+    ///</param>
+    ///  <param name="exception">
+    ///  一个异常，如果有的话，中断的序列化操作。
+    ///</param>
     {class} function init(canceled: Boolean; state: DDN.mscorlib.DNObject; exception: DDN.mscorlib.DNException): DNXpsSerializationCompletedEventArgs;
 
   end;
 
+  ///<summary>
+  ///  将提供数据供 <see cref="E:System.Windows.Xps.Serialization.XpsSerializationManagerAsync.XpsSerializationCompleted" />
+  ///  事件 <see cref="T:System.Windows.Xps.Serialization.XpsSerializationManagerAsync" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Serialization.XpsSerializationCompletedEventArgs')]
   DNXpsSerializationCompletedEventArgs = interface(DNObject)
   ['{5A25F1C9-4C6F-3FBF-82F7-8357F185739A}']
@@ -326,10 +788,30 @@ type
   ['{4B682BD3-1387-5A78-897E-008AED34D5FB}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Xps.Serialization.XpsSerializationProgressChangedEventArgs" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="writingLevel">
+    ///  一个值，指定是否正在进行的更改是因其他页完成或已完成的其他文档。
+    ///</param>
+    ///  <param name="pageNumber">
+    ///  一个值，指定的页的总数，或者会在事件的时间序列化的文档数。
+    ///</param>
+    ///  <param name="progressPercentage">
+    ///  一个值，指定的总序列化作业的完成百分比。
+    ///</param>
+    ///  <param name="userToken">
+    ///  提供的事件处理程序的其他信息的用户提供的对象。
+    ///</param>
     {class} function init(writingLevel: DNXpsWritingProgressChangeLevel; pageNumber: Int32; progressPercentage: Int32; userToken: DDN.mscorlib.DNObject): DNXpsSerializationProgressChangedEventArgs;
 
   end;
 
+  ///<summary>
+  ///  为 <see cref="E:System.Windows.Xps.Serialization.XpsSerializationManager.XpsSerializationProgressChanged" />
+  ///  事件提供数据。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Serialization.XpsSerializationProgressChangedEventArgs')]
   DNXpsSerializationProgressChangedEventArgs = interface(DNObject)
   ['{95CBDE84-ABCC-38CD-9341-70B7F3BA6602}']
@@ -349,7 +831,19 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个值，该值指示进度指示器的作用域。
+    ///</summary>
+    ///<returns>
+    ///  进度指示器的作用域。
+    ///</returns>
     property WritingLevel: DNXpsWritingProgressChangeLevel read get_WritingLevel;
+    ///<summary>
+    ///  获取页数或已序列化的文档的数。
+    ///</summary>
+    ///<returns>
+    ///  总页数或文档已序列化的点处发生该事件时。
+    ///</returns>
     property PageNumber: Int32 read get_PageNumber;
     property ProgressPercentage: Int32 read get_ProgressPercentage;
     property UserState: DDN.mscorlib.DNObject read get_UserState;
@@ -362,11 +856,36 @@ type
   ['{CDBA95A1-CA7A-5FE1-9134-6745C551B795}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.Serialization.XpsPackagingPolicy" />
+    ///  为指定的类 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  。
+    ///</summary>
+    ///  <param name="xpsPackage">
+    ///  与此 <see cref="T:System.Windows.Xps.Serialization.XpsPackagingPolicy" />
+    ///  关联的 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  。
+    ///</param>
     {class} function init(xpsPackage: DNXpsDocument): DNXpsPackagingPolicy; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.Serialization.XpsPackagingPolicy" />
+    ///  与指定类 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  和指定隔行扫描顺序。
+    ///</summary>
+    ///  <param name="xpsPackage">
+    ///  XML 纸张规范 (XPS) 打包策略应用到的文档。
+    ///</param>
+    ///  <param name="interleavingType">
+    ///  在其中隔行扫描文档元素顺序。
+    ///</param>
     {class} function init(xpsPackage: DNXpsDocument; interleavingType: DNPackageInterleavingOrder): DNXpsPackagingPolicy; overload;
 
   end;
 
+  ///<summary>
+  ///  定义编写器、 资源、 打印票证和关联与指定的包关系设置 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Serialization.XpsPackagingPolicy')]
   DNXpsPackagingPolicy = interface(DNObject)
   ['{90CA25D6-E6A0-302A-ADF0-DBDEB52AA61B}']
@@ -382,29 +901,210 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Xml.XmlWriter" />
+    ///  当前 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  XML 当前编写器 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  。
+    ///</returns>
     function AcquireXmlWriterForFixedDocumentSequence: DDN.System.Xml.DNXmlWriter;
+    ///<summary>
+    ///  版本 <see cref="T:System.Xml.XmlWriter" />
+    ///  当前 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  。
+    ///</summary>
     procedure ReleaseXmlWriterForFixedDocumentSequence;
+    ///<summary>
+    ///  获取 <see cref="T:System.Xml.XmlWriter" />
+    ///  当前 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  XML 当前编写器 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</returns>
     function AcquireXmlWriterForFixedDocument: DDN.System.Xml.DNXmlWriter;
+    ///<summary>
+    ///  版本 <see cref="T:System.Xml.XmlWriter" />
+    ///  当前 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  。
+    ///</summary>
     procedure ReleaseXmlWriterForFixedDocument;
+    ///<summary>
+    ///  获取 <see cref="T:System.Xml.XmlWriter" />
+    ///  当前 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  XML 当前编写器 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  。
+    ///</returns>
     function AcquireXmlWriterForFixedPage: DDN.System.Xml.DNXmlWriter;
+    ///<summary>
+    ///  版本 <see cref="T:System.Xml.XmlWriter" />
+    ///  当前 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  。
+    ///</summary>
     procedure ReleaseXmlWriterForFixedPage;
+    ///<summary>
+    ///  获取 <see cref="T:System.Windows.Xps.Serialization.XpsResourceStream" />
+    ///  当前 <see cref="T:System.Windows.Xps.Packaging.XpsFont" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  当前的资源流 <see cref="T:System.Windows.Xps.Packaging.XpsFont" />
+    ///  。
+    ///</returns>
     function AcquireResourceStreamForXpsFont: DNXpsResourceStream; overload;
+    ///<summary>
+    ///  获取 <see cref="T:System.Windows.Xps.Serialization.XpsResourceStream" />
+    ///  是否有指定 <see cref="T:System.Windows.Xps.Packaging.XpsFont" />
+    ///  。
+    ///</summary>
+    ///  <param name="resourceId">
+    ///  标识符 XML 纸张规范 (XPS) 字体。
+    ///</param>
+    ///<returns>
+    ///  资源流 XML 纸张规范 (XPS) 具有指定的字体 <paramref name="resourceId" />
+    ///  。
+    ///</returns>
     function AcquireResourceStreamForXpsFont(resourceId: string): DNXpsResourceStream; overload;
+    ///<summary>
+    ///  版本 <see cref="T:System.Windows.Xps.Serialization.XpsResourceStream" />
+    ///  当前 <see cref="T:System.Windows.Xps.Packaging.XpsFont" />
+    ///  。
+    ///</summary>
     procedure ReleaseResourceStreamForXpsFont; overload;
+    ///<summary>
+    ///  版本 <see cref="T:System.Windows.Xps.Serialization.XpsResourceStream" />
+    ///  是否有指定 <see cref="T:System.Windows.Xps.Packaging.XpsFont" />
+    ///  。
+    ///</summary>
+    ///  <param name="resourceId">
+    ///  标识符 XML 纸张规范 (XPS) 要释放的字体。
+    ///</param>
     procedure ReleaseResourceStreamForXpsFont(resourceId: string); overload;
+    ///<summary>
+    ///  获取为指定的资源流 <see cref="T:System.Windows.Xps.Packaging.XpsImage" />
+    ///  。
+    ///</summary>
+    ///  <param name="resourceId">
+    ///  资源标识符 XML 纸张规范 (XPS) 图像。
+    ///</param>
+    ///<returns>
+    ///  资源流 <see cref="T:System.Windows.Xps.Packaging.XpsImage" />
+    ///  具有指定的 <paramref name="resourceId" />
+    ///  。
+    ///</returns>
     function AcquireResourceStreamForXpsImage(resourceId: string): DNXpsResourceStream;
+    ///<summary>
+    ///  版本 <see cref="T:System.Windows.Xps.Serialization.XpsResourceStream" />
+    ///  当前 <see cref="T:System.Windows.Xps.Packaging.XpsImage" />
+    ///  。
+    ///</summary>
     procedure ReleaseResourceStreamForXpsImage;
+    ///<summary>
+    ///  获取为指定的资源流 <see cref="T:System.Windows.Xps.Packaging.XpsColorContext" />
+    ///  。
+    ///</summary>
+    ///  <param name="resourceId">
+    ///  颜色上下文资源标识符。
+    ///</param>
+    ///<returns>
+    ///  资源流 <see cref="T:System.Windows.Xps.Packaging.XpsColorContext" />
+    ///  具有指定的 <paramref name="resourceId" />
+    ///  。
+    ///</returns>
     function AcquireResourceStreamForXpsColorContext(resourceId: string): DNXpsResourceStream;
+    ///<summary>
+    ///  版本 <see cref="T:System.Windows.Xps.Serialization.XpsResourceStream" />
+    ///  当前 <see cref="T:System.Windows.Xps.Packaging.XpsColorContext" />
+    ///  。
+    ///</summary>
     procedure ReleaseResourceStreamForXpsColorContext;
+    ///<summary>
+    ///  获取为指定的资源流 <see cref="T:System.Windows.Xps.Packaging.XpsResourceDictionary" />
+    ///  。
+    ///</summary>
+    ///  <param name="resourceId">
+    ///  资源字典中的标识符。
+    ///</param>
+    ///<returns>
+    ///  XML 纸张规范 (XPS) 资源流 <see cref="T:System.Windows.Xps.Packaging.XpsResourceDictionary" />
+    ///  具有指定的 <paramref name="resourceId" />
+    ///  。
+    ///</returns>
     function AcquireResourceStreamForXpsResourceDictionary(resourceId: string): DNXpsResourceStream;
+    ///<summary>
+    ///  版本 <see cref="T:System.Windows.Xps.Serialization.XpsResourceStream" />
+    ///  当前 <see cref="T:System.Windows.Xps.Packaging.XpsResourceDictionary" />
+    ///  。
+    ///</summary>
     procedure ReleaseResourceStreamForXpsResourceDictionary;
+    ///<summary>
+    ///  添加 <see cref="T:System.IO.Packaging.PackageRelationship" />
+    ///  具有指定名称，将指定的资源相关联的当前页。
+    ///</summary>
+    ///  <param name="targetUri">
+    ///  统一资源标识符 (URI) 要与当前页相关联的资源。
+    ///</param>
+    ///  <param name="relationshipName">
+    ///  标识名称 <see cref="T:System.IO.Packaging.PackageRelationship" />
+    ///  ，它将使用指定的资源关联的当前页。
+    ///</param>
     procedure RelateResourceToCurrentPage(targetUri: DDN.System.DNUri; relationshipName: string);
-    procedure RelateRestrictedFontToCurrentDocument(targetUri: DDN.System.DNUri);
+    ///<summary>
+    ///  将存储指定 <see cref="T:System.Printing.PrintTicket" />
+    ///  作为的一部分 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  。
+    ///</summary>
+    ///  <param name="printTicket">
+    ///  若要作为的一部分存储的打印票证 XML 纸张规范 (XPS) 文档。
+    ///</param>
     procedure PersistPrintTicket(printTicket: DNPrintTicket);
+    ///<summary>
+    ///  获取 <see cref="T:System.Xml.XmlWriter" />
+    ///  为当前页。
+    ///</summary>
+    ///<returns>
+    ///  XML 当前编写器 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  。
+    ///</returns>
     function AcquireXmlWriterForPage: DDN.System.Xml.DNXmlWriter;
+    ///<summary>
+    ///  准备提交到输出存储当前页。
+    ///</summary>
     procedure PreCommitCurrentPage;
+    ///<summary>
+    ///  获取 <see cref="T:System.Xml.XmlWriter" />
+    ///  当前 <see cref="T:System.Windows.Xps.Packaging.XpsResourceDictionary" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  XML 当前编写器 <see cref="T:System.Windows.Xps.Packaging.XpsResourceDictionary" />
+    ///  。
+    ///</returns>
     function AcquireXmlWriterForResourceDictionary: DDN.System.Xml.DNXmlWriter;
+    ///<summary>
+    ///  返回的列表 <see cref="P:System.Windows.Documents.PageContent.LinkTargets" />
+    ///  为当前页内容。
+    ///</summary>
+    ///<returns>
+    ///  列表 <see cref="P:System.Windows.Documents.PageContent.LinkTargets" />
+    ///  为当前页内容。
+    ///</returns>
     function AcquireStreamForLinkTargets: DDN.mscorlib.DNIList<string>;
+    ///<summary>
+    ///  添加 <see cref="T:System.IO.Packaging.PackageRelationship" />
+    ///  将受限制的字体与当前文档关联。
+    ///</summary>
+    ///  <param name="targetUri">
+    ///  统一资源标识符 (URI) 将与当前的文档相关联的受限字体。
+    ///</param>
+    procedure RelateRestrictedFontToCurrentDocument(targetUri: DDN.System.DNUri);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -412,7 +1112,19 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 统一资源标识符 (URI) 当前固定文档。
+    ///</summary>
+    ///<returns>
+    ///  URI 当前固定文档。
+    ///</returns>
     property CurrentFixedDocumentUri: DDN.System.DNUri read get_CurrentFixedDocumentUri;
+    ///<summary>
+    ///  获取 统一资源标识符 (URI) 当前固定页。
+    ///</summary>
+    ///<returns>
+    ///  URI 当前固定页。
+    ///</returns>
     property CurrentFixedPageUri: DDN.System.DNUri read get_CurrentFixedPageUri;
   end;
 
@@ -423,11 +1135,20 @@ type
   ['{BC389407-9A95-54DB-AF55-DD42520BAA61}']
   end;
 
+  ///<summary>
+  ///  提供基本类来管理序列化程序和类型转换器，该插入 Windows Presentation Foundation (WPF) 根对象插入 XML 纸张规范 (XPS) 包。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Serialization.PackageSerializationManager')]
   DNPackageSerializationManager = interface(DDN.mscorlib.DNIDisposable)
   ['{E433BF8A-D188-3326-B3DA-D72632E40932}']
   { methods } 
 
+    ///<summary>
+    ///  在派生类中重写时，将指定的序列化对象保存到 XML 纸张规范 (XPS) 包中。
+    ///</summary>
+    ///  <param name="serializedObject">
+    ///  要保存的对象。
+    ///</param>
     procedure SaveAsXaml(serializedObject: DDN.mscorlib.DNObject);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -443,10 +1164,23 @@ type
   ['{13CB7F68-157A-5842-9ED4-2FF5D2A26234}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Xps.Serialization.XpsSerializationManager" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="packagingPolicy">
+    ///  提供用于获取序列化读取器和编写器的不同部分的方法的对象 XML 纸张规范 (XPS) 文档。
+    ///</param>
+    ///  <param name="batchMode"><see langword="true" />
+    ///  若要指定批处理模式;否则为 <see langword="false" />
+    ///  。
+    ///</param>
     {class} function init(packagingPolicy: DNBasePackagingPolicy; batchMode: Boolean): DNXpsSerializationManager;
 
   end;
 
+  ///<summary>
+  ///  管理同步 XML 纸张规范 (XPS) 序列化程序和类型转换器。 </summary>
   [DNTypeName('System.Windows.Xps.Serialization.XpsSerializationManager')]
   DNXpsSerializationManager = interface(DNPackageSerializationManager)
   ['{D31AC8AA-3FDE-3CDC-8349-52BC476D96C0}']
@@ -463,10 +1197,31 @@ type
 
   { methods } 
 
-    procedure SaveAsXaml(serializedObject: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  提交所有更改并将所有缓冲的数据写入。
+    ///</summary>
     procedure Commit;
+    ///<summary>
+    ///  设置在其中执行字体子集划分的粒度。
+    ///</summary>
+    ///  <param name="policy">
+    ///  指定字体子集划分策略的枚举值之一。
+    ///</param>
     procedure SetFontSubsettingPolicy(policy: DNFontSubsetterCommitPolicies);
+    ///<summary>
+    ///  设置页面或字体子集划分用于处理的文档数。
+    ///</summary>
+    ///  <param name="countPolicy">
+    ///  页或字体子集划分为一次处理的文档数。
+    ///</param>
     procedure SetFontSubsettingCountPolicy(countPolicy: Int32);
+    ///<summary>
+    ///  保存指定 XAML 序列化到文档包中的对象。
+    ///</summary>
+    ///  <param name="serializedObject">
+    ///  XAML 序列化对象，用于保存。
+    ///</param>
+    procedure SaveAsXaml(serializedObject: DDN.mscorlib.DNObject);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -474,6 +1229,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个值，该值指示序列化管理器是否在批处理模式下。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果管理器在批处理模式下;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsBatchMode: Boolean read get_IsBatchMode;
   end;
 
@@ -484,10 +1246,23 @@ type
   ['{CE61A2DD-C77F-5DC1-8081-49D37B143364}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.Serialization.XpsResourceStream" />
+    ///  类通过使用指定的流和 统一资源标识符 (URI)。
+    ///</summary>
+    ///  <param name="stream">
+    ///  包含资源的流。
+    ///</param>
+    ///  <param name="uri">
+    ///  URI 的资源。
+    ///</param>
     {class} function init(stream: DDN.mscorlib.DNStream; uri: DDN.System.DNUri): DNXpsResourceStream;
 
   end;
 
+  ///<summary>
+  ///  表示的流和 统一资源标识符 (URI)  的 XML 纸张规范 (XPS) 资源。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Serialization.XpsResourceStream')]
   DNXpsResourceStream = interface(DDN.mscorlib.DNObject)
   ['{636D76E7-ED06-3584-88AB-09C9A4565D27}']
@@ -498,6 +1273,11 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.IO.Stream" />
+    ///  中 <see cref="T:System.Windows.Xps.Serialization.XpsResourceStream" />
+    ///  。
+    ///</summary>
     procedure Initialize;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -506,7 +1286,23 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.IO.Stream" />
+    ///  的资源。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.IO.Stream" />
+    ///  ，其中包含 XML 纸张规范 (XPS) 资源。
+    ///</returns>
     property Stream: DDN.mscorlib.DNStream read get_Stream;
+    ///<summary>
+    ///  获取 <see cref="T:System.Uri" />
+    ///  的资源。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Uri" />
+    ///  ，其中包含 XML 纸张规范 (XPS) 资源。
+    ///</returns>
     property Uri: DDN.System.DNUri read get_Uri;
   end;
 
@@ -517,10 +1313,17 @@ type
   ['{D458711B-1DBA-59C0-8A9B-D61BDF107D2C}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Xps.Serialization.XpsSerializerFactory" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXpsSerializerFactory;
 
   end;
 
+  ///<summary>
+  ///  创建并提供有关 XML 纸张规范 (XPS) 序列化程序的信息。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.Serialization.XpsSerializerFactory')]
   DNXpsSerializerFactory = interface(DDN.System.Windows.Documents.Serialization.ISerializerFactory.DNISerializerFactory)
   ['{9FC40D44-A3DA-35B1-B05D-D10514FDAB50}']
@@ -533,6 +1336,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  创建一个可将 XPS 内容输出到指定 <see cref="T:System.IO.Stream" />
+    ///  的 <see cref="T:System.Windows.Documents.Serialization.SerializerWriter" />
+    ///  。
+    ///</summary>
+    ///  <param name="stream">
+    ///  返回的序列化程序要写入其中的输出流。
+    ///</param>
+    ///<returns>
+    ///  将 XPS 内容序列化为指定 <paramref name="stream" />
+    ///  的输出编写器。
+    ///</returns>
     function CreateSerializerWriter(stream: DDN.mscorlib.DNStream): DDN.PresentationFramework.DNSerializerWriter;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -541,9 +1356,33 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取工厂生成的序列化程序的公共名称。
+    ///</summary>
+    ///<returns>
+    ///  工厂生成的序列化程序的公共名称。
+    ///</returns>
     property DisplayName: string read get_DisplayName;
+    ///<summary>
+    ///  获取工厂类生成的序列化程序的制作者类的名称。
+    ///</summary>
+    ///<returns>
+    ///  制作者类的名称。
+    ///</returns>
     property ManufacturerName: string read get_ManufacturerName;
+    ///<summary>
+    ///  获取工厂生成的序列化程序的制造商 Web 地址。
+    ///</summary>
+    ///<returns>
+    ///  制造商的网站。
+    ///</returns>
     property ManufacturerWebsite: DDN.System.DNUri read get_ManufacturerWebsite;
+    ///<summary>
+    ///  获取的标准文件扩展名 XPS 文档。
+    ///</summary>
+    ///<returns>
+    ///  标准文件扩展名 （包括前导句点） XPS 文档。
+    ///</returns>
     property DefaultFileExtension: string read get_DefaultFileExtension;
   end;
 

@@ -29,437 +29,1358 @@ type
 { enums }
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定是否打印机逐份打印输出打印多页打印作业的多个副本时。
+  ///</summary>
   [DNTypeName('System.Printing.Collation')]
   DNCollation = type Integer;
   DNCollationHelper = record helper for DNCollation
   public const
+    ///<summary>
+    ///  （其选项由此枚举表示） 的功能将设置为中未定义选项 Print Schema。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  逐份打印的输出。
+    ///</summary>
     Collated = 1;
+    ///<summary>
+    ///  未逐份打印的输出。
+    ///</summary>
     Uncollated = 2;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定是否进行了任何更改对合并 <see cref="T:System.Printing.PrintTicket" />
+  ///  以确保获得可行 <see cref="T:System.Printing.PrintTicket" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Printing.ConflictStatus')]
   DNConflictStatus = type Integer;
   DNConflictStatusHelper = record helper for DNConflictStatus
   public const
+    ///<summary>
+    ///  初始合并的打印票证和支持的打印机功能之间未不发现任何冲突。
+    ///</summary>
     NoConflict = 0;
+    ///<summary>
+    ///  未发现一个或多个冲突并已解决所有冲突。
+    ///</summary>
     ConflictResolved = 1;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定是否在打印机上启用设备字体替换。
+  ///</summary>
   [DNTypeName('System.Printing.DeviceFontSubstitution')]
   DNDeviceFontSubstitution = type Integer;
   DNDeviceFontSubstitutionHelper = record helper for DNDeviceFontSubstitution
   public const
+    ///<summary>
+    ///  （其选项由此枚举表示） 的功能将设置为中未定义选项 Print Schema。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  禁用设备字体替换。
+    ///</summary>
     Off = 1;
+    ///<summary>
+    ///  启用设备字体替换。
+    ///</summary>
     On_ = 2;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定打印机使用单面打印还是使用某种类型的两面 （双工） 打印。
+  ///</summary>
   [DNTypeName('System.Printing.Duplexing')]
   DNDuplexing = type Integer;
   DNDuplexingHelper = record helper for DNDuplexing
   public const
+    ///<summary>
+    ///  （其选项由此枚举表示） 的功能将设置为中未定义选项 Print Schema。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  每张纸的一面上打印输出。
+    ///</summary>
     OneSided = 1;
+    ///<summary>
+    ///  每个表，沿的边翻转到并行的两面打印输出 <see cref="P:System.Printing.PrintDocumentImageableArea.MediaSizeWidth" />
+    ///  。
+    ///</summary>
     TwoSidedShortEdge = 2;
+    ///<summary>
+    ///  每个表，沿的边翻转到并行的两面打印输出 <see cref="P:System.Printing.PrintDocumentImageableArea.MediaSizeHeight" />
+    ///  。
+    ///</summary>
     TwoSidedLongEdge = 3;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定使用的空白纸张或其他打印介质来源送纸器。
+  ///</summary>
   [DNTypeName('System.Printing.InputBin')]
   DNInputBin = type Integer;
   DNInputBinHelper = record helper for DNInputBin
   public const
+    ///<summary>
+    ///  （其选项由此枚举表示） 的功能将设置为中未定义选项 Print Schema。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  根据纸张大小和介质送纸器自动选择输出类型。
+    ///</summary>
     AutoSelect = 1;
+    ///<summary>
+    ///  使用可移动纸盒。
+    ///</summary>
     Cassette = 2;
+    ///<summary>
+    ///  使用持续送纸牵引源 （也称为 pin 源）。
+    ///</summary>
     Tractor = 3;
+    ///<summary>
+    ///  使用自动送纸器。
+    ///</summary>
     AutoSheetFeeder = 4;
+    ///<summary>
+    ///  使用手动送纸器。
+    ///</summary>
     Manual = 5;
   end;
 
 
   //-------------namespace: System.Printing.Interop----------------
+  ///<summary>
+  ///  指定的默认类型 DEVMODE 要用作基础结构 DEVMODE 的转换为托管 <see cref="T:System.Printing.PrintTicket" />
+  ///  对象传递给非托管 DEVMODE 结构。
+  ///</summary>
   [DNTypeName('System.Printing.Interop.BaseDevModeType')]
   DNBaseDevModeType = type Integer;
   DNBaseDevModeTypeHelper = record helper for DNBaseDevModeType
   public const
+    ///<summary>
+    ///  用户的默认 DEVMODE 结构。
+    ///</summary>
     UserDefault = 0;
+    ///<summary>
+    ///  打印机的默认 DEVMODE 结构。
+    ///</summary>
     PrinterDefault = 1;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定如何打印包含颜色或灰色阴影的内容。
+  ///</summary>
   [DNTypeName('System.Printing.OutputColor')]
   DNOutputColor = type Integer;
   DNOutputColorHelper = record helper for DNOutputColor
   public const
+    ///<summary>
+    ///  （其选项由此枚举表示） 的功能将设置为中未定义选项 Print Schema。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  彩色打印的输出。
+    ///</summary>
     Color = 1;
+    ///<summary>
+    ///  灰度打印的输出。
+    ///</summary>
     Grayscale = 2;
+    ///<summary>
+    ///  一种颜色，并且具有相同程度的明暗度打印输出。
+    ///</summary>
     Monochrome = 3;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定打印设备输出质量的类型。
+  ///</summary>
   [DNTypeName('System.Printing.OutputQuality')]
   DNOutputQuality = type Integer;
   DNOutputQualityHelper = record helper for DNOutputQuality
   public const
+    ///<summary>
+    ///  （其选项由此枚举表示） 的功能将设置为中未定义选项 Print Schema。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  根据打印作业的内容自动选择质量类型。
+    ///</summary>
     Automatic = 1;
+    ///<summary>
+    ///  草稿质量。
+    ///</summary>
     Draft = 2;
+    ///<summary>
+    ///  传真质量。
+    ///</summary>
     Fax = 3;
+    ///<summary>
+    ///  高于正常质量。
+    ///</summary>
     High = 4;
+    ///<summary>
+    ///  正常质量。
+    ///</summary>
     Normal = 5;
+    ///<summary>
+    ///  照片质量。
+    ///  有关详细信息，请参阅“备注”部分中的 有关 OutputQuality.Photographic 说明。
+    ///</summary>
     Photographic = 6;
+    ///<summary>
+    ///  文本质量。
+    ///</summary>
     Text = 7;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定打印设备输出到介质的边缘还是提供了边缘周围有的边距。
+  ///</summary>
   [DNTypeName('System.Printing.PageBorderless')]
   DNPageBorderless = type Integer;
   DNPageBorderlessHelper = record helper for DNPageBorderless
   public const
+    ///<summary>
+    ///  （其选项由此枚举表示） 的功能设置为未定义的选项。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  无边打印，也就是说，设备将打印到打印介质的边缘。
+    ///</summary>
     Borderless = 1;
+    ///<summary>
+    ///  打印使用边框，也就是说，该设备提供打印介质的边缘周围有的边距。
+    ///</summary>
     None = 2;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定纸张或其他打印介质的页大小或纸张宽度。
+  ///</summary>
   [DNTypeName('System.Printing.PageMediaSizeName')]
   DNPageMediaSizeName = type Integer;
   DNPageMediaSizeNameHelper = record helper for DNPageMediaSizeName
   public const
+    ///<summary>
+    ///  未知的纸张大小
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  A0
+    ///</summary>
     ISOA0 = 1;
+    ///<summary>
+    ///  A1
+    ///</summary>
     ISOA1 = 2;
+    ///<summary>
+    ///  A10
+    ///</summary>
     ISOA10 = 3;
+    ///<summary>
+    ///  A2
+    ///</summary>
     ISOA2 = 4;
+    ///<summary>
+    ///  A3
+    ///</summary>
     ISOA3 = 5;
+    ///<summary>
+    ///  A3 旋转
+    ///</summary>
     ISOA3Rotated = 6;
+    ///<summary>
+    ///  A3 特大
+    ///</summary>
     ISOA3Extra = 7;
+    ///<summary>
+    ///  A4
+    ///</summary>
     ISOA4 = 8;
+    ///<summary>
+    ///  A4 旋转
+    ///</summary>
     ISOA4Rotated = 9;
+    ///<summary>
+    ///  A4 特大
+    ///</summary>
     ISOA4Extra = 10;
+    ///<summary>
+    ///  A5
+    ///</summary>
     ISOA5 = 11;
+    ///<summary>
+    ///  A5 旋转
+    ///</summary>
     ISOA5Rotated = 12;
+    ///<summary>
+    ///  A5 特大
+    ///</summary>
     ISOA5Extra = 13;
+    ///<summary>
+    ///  A6
+    ///</summary>
     ISOA6 = 14;
+    ///<summary>
+    ///  A6 旋转
+    ///</summary>
     ISOA6Rotated = 15;
+    ///<summary>
+    ///  A7
+    ///</summary>
     ISOA7 = 16;
+    ///<summary>
+    ///  A8
+    ///</summary>
     ISOA8 = 17;
+    ///<summary>
+    ///  A9
+    ///</summary>
     ISOA9 = 18;
+    ///<summary>
+    ///  B0
+    ///</summary>
     ISOB0 = 19;
+    ///<summary>
+    ///  B1
+    ///</summary>
     ISOB1 = 20;
+    ///<summary>
+    ///  B10
+    ///</summary>
     ISOB10 = 21;
+    ///<summary>
+    ///  B2
+    ///</summary>
     ISOB2 = 22;
+    ///<summary>
+    ///  B3
+    ///</summary>
     ISOB3 = 23;
+    ///<summary>
+    ///  B4
+    ///</summary>
     ISOB4 = 24;
+    ///<summary>
+    ///  B4 信封
+    ///</summary>
     ISOB4Envelope = 25;
+    ///<summary>
+    ///  B5 信封
+    ///</summary>
     ISOB5Envelope = 26;
+    ///<summary>
+    ///  B5 特大
+    ///</summary>
     ISOB5Extra = 27;
+    ///<summary>
+    ///  B7
+    ///</summary>
     ISOB7 = 28;
+    ///<summary>
+    ///  B8
+    ///</summary>
     ISOB8 = 29;
+    ///<summary>
+    ///  B9
+    ///</summary>
     ISOB9 = 30;
+    ///<summary>
+    ///  C0
+    ///</summary>
     ISOC0 = 31;
+    ///<summary>
+    ///  C1
+    ///</summary>
     ISOC1 = 32;
+    ///<summary>
+    ///  C10
+    ///</summary>
     ISOC10 = 33;
+    ///<summary>
+    ///  C2
+    ///</summary>
     ISOC2 = 34;
+    ///<summary>
+    ///  C3
+    ///</summary>
     ISOC3 = 35;
+    ///<summary>
+    ///  C3 信封
+    ///</summary>
     ISOC3Envelope = 36;
+    ///<summary>
+    ///  C4
+    ///</summary>
     ISOC4 = 37;
+    ///<summary>
+    ///  C4 信封
+    ///</summary>
     ISOC4Envelope = 38;
+    ///<summary>
+    ///  C5
+    ///</summary>
     ISOC5 = 39;
+    ///<summary>
+    ///  C5 信封
+    ///</summary>
     ISOC5Envelope = 40;
+    ///<summary>
+    ///  C6
+    ///</summary>
     ISOC6 = 41;
+    ///<summary>
+    ///  C6 信封
+    ///</summary>
     ISOC6Envelope = 42;
+    ///<summary>
+    ///  C6C5 信封
+    ///</summary>
     ISOC6C5Envelope = 43;
+    ///<summary>
+    ///  C7
+    ///</summary>
     ISOC7 = 44;
+    ///<summary>
+    ///  C8
+    ///</summary>
     ISOC8 = 45;
+    ///<summary>
+    ///  C9
+    ///</summary>
     ISOC9 = 46;
+    ///<summary>
+    ///  DL 信封
+    ///</summary>
     ISODLEnvelope = 47;
+    ///<summary>
+    ///  DL 信封旋转
+    ///</summary>
     ISODLEnvelopeRotated = 48;
+    ///<summary>
+    ///  SRA 3
+    ///</summary>
     ISOSRA3 = 49;
+    ///<summary>
+    ///  四倍日式明信片
+    ///</summary>
     JapanQuadrupleHagakiPostcard = 50;
+    ///<summary>
+    ///  JIS B0
+    ///</summary>
     JISB0 = 51;
+    ///<summary>
+    ///  JIS B1
+    ///</summary>
     JISB1 = 52;
+    ///<summary>
+    ///  JIS B10
+    ///</summary>
     JISB10 = 53;
+    ///<summary>
+    ///  JIS B2
+    ///</summary>
     JISB2 = 54;
+    ///<summary>
+    ///  JIS B3
+    ///</summary>
     JISB3 = 55;
+    ///<summary>
+    ///  JIS B4
+    ///</summary>
     JISB4 = 56;
+    ///<summary>
+    ///  JIS B4 旋转
+    ///</summary>
     JISB4Rotated = 57;
+    ///<summary>
+    ///  JIS B5
+    ///</summary>
     JISB5 = 58;
+    ///<summary>
+    ///  JIS B5 旋转
+    ///</summary>
     JISB5Rotated = 59;
+    ///<summary>
+    ///  JIS B6
+    ///</summary>
     JISB6 = 60;
+    ///<summary>
+    ///  JIS B6 旋转
+    ///</summary>
     JISB6Rotated = 61;
+    ///<summary>
+    ///  JIS B7
+    ///</summary>
     JISB7 = 62;
+    ///<summary>
+    ///  JIS B8
+    ///</summary>
     JISB8 = 63;
+    ///<summary>
+    ///  JIS B9
+    ///</summary>
     JISB9 = 64;
+    ///<summary>
+    ///  Chou 3 信封
+    ///</summary>
     JapanChou3Envelope = 65;
+    ///<summary>
+    ///  Chou 3 信封旋转
+    ///</summary>
     JapanChou3EnvelopeRotated = 66;
+    ///<summary>
+    ///  Chou 4 信封
+    ///</summary>
     JapanChou4Envelope = 67;
+    ///<summary>
+    ///  Chou 4 信封旋转
+    ///</summary>
     JapanChou4EnvelopeRotated = 68;
+    ///<summary>
+    ///  日式明信片
+    ///</summary>
     JapanHagakiPostcard = 69;
+    ///<summary>
+    ///  日式明信片旋转
+    ///</summary>
     JapanHagakiPostcardRotated = 70;
+    ///<summary>
+    ///  Kaku 2 信封
+    ///</summary>
     JapanKaku2Envelope = 71;
+    ///<summary>
+    ///  Kaku 2 信封旋转
+    ///</summary>
     JapanKaku2EnvelopeRotated = 72;
+    ///<summary>
+    ///  Kaku 3 信封
+    ///</summary>
     JapanKaku3Envelope = 73;
+    ///<summary>
+    ///  Kaku 3 信封旋转
+    ///</summary>
     JapanKaku3EnvelopeRotated = 74;
+    ///<summary>
+    ///  You 4 信封
+    ///</summary>
     JapanYou4Envelope = 75;
+    ///<summary>
+    ///  10 x 11
+    ///</summary>
     NorthAmerica10x11 = 76;
+    ///<summary>
+    ///  10 x 14
+    ///</summary>
     NorthAmerica10x14 = 77;
+    ///<summary>
+    ///  11 x 17
+    ///</summary>
     NorthAmerica11x17 = 78;
+    ///<summary>
+    ///  9 x 11
+    ///</summary>
     NorthAmerica9x11 = 79;
+    ///<summary>
+    ///  结构 A 型
+    ///</summary>
     NorthAmericaArchitectureASheet = 80;
+    ///<summary>
+    ///  结构 B 型
+    ///</summary>
     NorthAmericaArchitectureBSheet = 81;
+    ///<summary>
+    ///  结构 C 型
+    ///</summary>
     NorthAmericaArchitectureCSheet = 82;
+    ///<summary>
+    ///  结构 D 型
+    ///</summary>
     NorthAmericaArchitectureDSheet = 83;
+    ///<summary>
+    ///  结构 E 型
+    ///</summary>
     NorthAmericaArchitectureESheet = 84;
+    ///<summary>
+    ///  C 型
+    ///</summary>
     NorthAmericaCSheet = 85;
+    ///<summary>
+    ///  D 型
+    ///</summary>
     NorthAmericaDSheet = 86;
+    ///<summary>
+    ///  E 型
+    ///</summary>
     NorthAmericaESheet = 87;
+    ///<summary>
+    ///  Executive
+    ///</summary>
     NorthAmericaExecutive = 88;
+    ///<summary>
+    ///  德国法定规格
+    ///</summary>
     NorthAmericaGermanLegalFanfold = 89;
+    ///<summary>
+    ///  德国标准规格
+    ///</summary>
     NorthAmericaGermanStandardFanfold = 90;
+    ///<summary>
+    ///  Legal
+    ///</summary>
     NorthAmericaLegal = 91;
+    ///<summary>
+    ///  Legal Extra
+    ///</summary>
     NorthAmericaLegalExtra = 92;
+    ///<summary>
+    ///  Letter
+    ///</summary>
     NorthAmericaLetter = 93;
+    ///<summary>
+    ///  Letter Rotated
+    ///</summary>
     NorthAmericaLetterRotated = 94;
+    ///<summary>
+    ///  Letter Extra
+    ///</summary>
     NorthAmericaLetterExtra = 95;
+    ///<summary>
+    ///  Letter Plus
+    ///</summary>
     NorthAmericaLetterPlus = 96;
+    ///<summary>
+    ///  Monarch Envelope
+    ///</summary>
     NorthAmericaMonarchEnvelope = 97;
+    ///<summary>
+    ///  说明
+    ///</summary>
     NorthAmericaNote = 98;
+    ///<summary>
+    ///  #10 信封
+    ///</summary>
     NorthAmericaNumber10Envelope = 99;
+    ///<summary>
+    ///  #10 信封旋转
+    ///</summary>
     NorthAmericaNumber10EnvelopeRotated = 100;
+    ///<summary>
+    ///  #9 信封
+    ///</summary>
     NorthAmericaNumber9Envelope = 101;
+    ///<summary>
+    ///  #11 信封
+    ///</summary>
     NorthAmericaNumber11Envelope = 102;
+    ///<summary>
+    ///  #12 信封
+    ///</summary>
     NorthAmericaNumber12Envelope = 103;
+    ///<summary>
+    ///  #14 信封
+    ///</summary>
     NorthAmericaNumber14Envelope = 104;
+    ///<summary>
+    ///  Personal Envelope
+    ///</summary>
     NorthAmericaPersonalEnvelope = 105;
+    ///<summary>
+    ///  4 开
+    ///</summary>
     NorthAmericaQuarto = 106;
+    ///<summary>
+    ///  Statement
+    ///</summary>
     NorthAmericaStatement = 107;
+    ///<summary>
+    ///  Super A
+    ///</summary>
     NorthAmericaSuperA = 108;
+    ///<summary>
+    ///  Super B
+    ///</summary>
     NorthAmericaSuperB = 109;
+    ///<summary>
+    ///  Tabloid
+    ///</summary>
     NorthAmericaTabloid = 110;
+    ///<summary>
+    ///  Tabloid Extra
+    ///</summary>
     NorthAmericaTabloidExtra = 111;
+    ///<summary>
+    ///  A4 Plus
+    ///</summary>
     OtherMetricA4Plus = 112;
+    ///<summary>
+    ///  A3 Plus
+    ///</summary>
     OtherMetricA3Plus = 113;
+    ///<summary>
+    ///  Folio
+    ///</summary>
     OtherMetricFolio = 114;
+    ///<summary>
+    ///  Invite Envelope
+    ///</summary>
     OtherMetricInviteEnvelope = 115;
+    ///<summary>
+    ///  Italian Envelope
+    ///</summary>
     OtherMetricItalianEnvelope = 116;
+    ///<summary>
+    ///  PRC #1 信封
+    ///</summary>
     PRC1Envelope = 117;
+    ///<summary>
+    ///  PRC #1 信封旋转
+    ///</summary>
     PRC1EnvelopeRotated = 118;
+    ///<summary>
+    ///  PRC #10 信封
+    ///</summary>
     PRC10Envelope = 119;
+    ///<summary>
+    ///  PRC #10 信封旋转
+    ///</summary>
     PRC10EnvelopeRotated = 120;
+    ///<summary>
+    ///  PRC 16K
+    ///</summary>
     PRC16K = 121;
+    ///<summary>
+    ///  PRC 16K 旋转
+    ///</summary>
     PRC16KRotated = 122;
+    ///<summary>
+    ///  PRC #2 信封
+    ///</summary>
     PRC2Envelope = 123;
+    ///<summary>
+    ///  PRC #2 信封旋转
+    ///</summary>
     PRC2EnvelopeRotated = 124;
+    ///<summary>
+    ///  PRC 32K
+    ///</summary>
     PRC32K = 125;
+    ///<summary>
+    ///  PRC 32K 旋转
+    ///</summary>
     PRC32KRotated = 126;
+    ///<summary>
+    ///  PRC 32K 大
+    ///</summary>
     PRC32KBig = 127;
+    ///<summary>
+    ///  PRC #3 信封
+    ///</summary>
     PRC3Envelope = 128;
+    ///<summary>
+    ///  PRC #3 信封旋转
+    ///</summary>
     PRC3EnvelopeRotated = 129;
+    ///<summary>
+    ///  PRC #4 信封
+    ///</summary>
     PRC4Envelope = 130;
+    ///<summary>
+    ///  PRC #4 信封旋转
+    ///</summary>
     PRC4EnvelopeRotated = 131;
+    ///<summary>
+    ///  PRC #5 信封
+    ///</summary>
     PRC5Envelope = 132;
+    ///<summary>
+    ///  PRC #5 信封旋转
+    ///</summary>
     PRC5EnvelopeRotated = 133;
+    ///<summary>
+    ///  PRC #6 信封
+    ///</summary>
     PRC6Envelope = 134;
+    ///<summary>
+    ///  PRC #6 信封旋转
+    ///</summary>
     PRC6EnvelopeRotated = 135;
+    ///<summary>
+    ///  PRC #7 信封
+    ///</summary>
     PRC7Envelope = 136;
+    ///<summary>
+    ///  PRC #7 信封旋转
+    ///</summary>
     PRC7EnvelopeRotated = 137;
+    ///<summary>
+    ///  PRC #8 信封
+    ///</summary>
     PRC8Envelope = 138;
+    ///<summary>
+    ///  PRC #8 信封旋转
+    ///</summary>
     PRC8EnvelopeRotated = 139;
+    ///<summary>
+    ///  PRC #9 信封
+    ///</summary>
     PRC9Envelope = 140;
+    ///<summary>
+    ///  PRC #9 信封旋转
+    ///</summary>
     PRC9EnvelopeRotated = 141;
+    ///<summary>
+    ///  4-inch wide roll
+    ///</summary>
     Roll04Inch = 142;
+    ///<summary>
+    ///  6-inch wide roll
+    ///</summary>
     Roll06Inch = 143;
+    ///<summary>
+    ///  8-inch wide roll
+    ///</summary>
     Roll08Inch = 144;
+    ///<summary>
+    ///  12-inch wide roll
+    ///</summary>
     Roll12Inch = 145;
+    ///<summary>
+    ///  15-inch wide roll
+    ///</summary>
     Roll15Inch = 146;
+    ///<summary>
+    ///  18-inch wide roll
+    ///</summary>
     Roll18Inch = 147;
+    ///<summary>
+    ///  22-inch wide roll
+    ///</summary>
     Roll22Inch = 148;
+    ///<summary>
+    ///  24-inch wide roll
+    ///</summary>
     Roll24Inch = 149;
+    ///<summary>
+    ///  30-inch wide roll
+    ///</summary>
     Roll30Inch = 150;
+    ///<summary>
+    ///  36-inch wide roll
+    ///</summary>
     Roll36Inch = 151;
+    ///<summary>
+    ///  54-inch wide roll
+    ///</summary>
     Roll54Inch = 152;
+    ///<summary>
+    ///  两倍日式明信片
+    ///</summary>
     JapanDoubleHagakiPostcard = 153;
+    ///<summary>
+    ///  两倍日式明信片旋转
+    ///</summary>
     JapanDoubleHagakiPostcardRotated = 154;
+    ///<summary>
+    ///  L Photo
+    ///</summary>
     JapanLPhoto = 155;
+    ///<summary>
+    ///  2L Photo
+    ///</summary>
     Japan2LPhoto = 156;
+    ///<summary>
+    ///  You 1 信封
+    ///</summary>
     JapanYou1Envelope = 157;
+    ///<summary>
+    ///  You 2 信封
+    ///</summary>
     JapanYou2Envelope = 158;
+    ///<summary>
+    ///  You 3 信封
+    ///</summary>
     JapanYou3Envelope = 159;
+    ///<summary>
+    ///  You 4 信封旋转
+    ///</summary>
     JapanYou4EnvelopeRotated = 160;
+    ///<summary>
+    ///  You 6 信封
+    ///</summary>
     JapanYou6Envelope = 161;
+    ///<summary>
+    ///  You 6 信封旋转
+    ///</summary>
     JapanYou6EnvelopeRotated = 162;
+    ///<summary>
+    ///  4 x 6
+    ///</summary>
     NorthAmerica4x6 = 163;
+    ///<summary>
+    ///  4 x 8
+    ///</summary>
     NorthAmerica4x8 = 164;
+    ///<summary>
+    ///  5 x 7
+    ///</summary>
     NorthAmerica5x7 = 165;
+    ///<summary>
+    ///  8 x 10
+    ///</summary>
     NorthAmerica8x10 = 166;
+    ///<summary>
+    ///  10 x 12
+    ///</summary>
     NorthAmerica10x12 = 167;
+    ///<summary>
+    ///  14 x 17
+    ///</summary>
     NorthAmerica14x17 = 168;
+    ///<summary>
+    ///  名片
+    ///</summary>
     BusinessCard = 169;
+    ///<summary>
+    ///  信用卡
+    ///</summary>
     CreditCard = 170;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定类型的打印的纸张或其他媒体。
+  ///</summary>
   [DNTypeName('System.Printing.PageMediaType')]
   DNPageMediaType = type Integer;
   DNPageMediaTypeHelper = record helper for DNPageMediaType
   public const
+    ///<summary>
+    ///  （其选项由此枚举表示） 的功能将设置为中未定义选项 Print Schema。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  打印设备选择介质。
+    ///</summary>
     AutoSelect = 1;
+    ///<summary>
+    ///  存档质量的媒体。
+    ///</summary>
     Archival = 2;
+    ///<summary>
+    ///  专业背面打印胶片。
+    ///</summary>
     BackPrintFilm = 3;
+    ///<summary>
+    ///  标准债券介质。
+    ///</summary>
     Bond = 4;
+    ///<summary>
+    ///  标准卡片纸。
+    ///</summary>
     CardStock = 5;
+    ///<summary>
+    ///  连续源介质。
+    ///</summary>
     Continuous = 6;
+    ///<summary>
+    ///  标准包络线。
+    ///</summary>
     EnvelopePlain = 7;
+    ///<summary>
+    ///  窗口包络线。
+    ///</summary>
     EnvelopeWindow = 8;
+    ///<summary>
+    ///  纤维介质。
+    ///</summary>
     Fabric = 9;
+    ///<summary>
+    ///  专业高分辨率的介质。
+    ///</summary>
     HighResolution = 10;
+    ///<summary>
+    ///  标签的介质。
+    ///</summary>
     Label_ = 11;
+    ///<summary>
+    ///  附加多部分窗体。
+    ///</summary>
     MultiLayerForm = 12;
+    ///<summary>
+    ///  每个多部分窗体。
+    ///</summary>
     MultiPartForm = 13;
+    ///<summary>
+    ///  标准照片介质。
+    ///</summary>
     Photographic = 14;
+    ///<summary>
+    ///  胶片照片介质。
+    ///</summary>
     PhotographicFilm = 15;
+    ///<summary>
+    ///  光泽照片介质。
+    ///</summary>
     PhotographicGlossy = 16;
+    ///<summary>
+    ///  高光泽照片介质。
+    ///</summary>
     PhotographicHighGloss = 17;
+    ///<summary>
+    ///  亚光照片介质。
+    ///</summary>
     PhotographicMatte = 18;
+    ///<summary>
+    ///  光泽照片介质。
+    ///</summary>
     PhotographicSatin = 19;
+    ///<summary>
+    ///  半光照片介质。
+    ///</summary>
     PhotographicSemiGloss = 20;
+    ///<summary>
+    ///  普通纸。
+    ///</summary>
     Plain = 21;
+    ///<summary>
+    ///  在连续窗体中显示输出。
+    ///</summary>
     Screen = 22;
+    ///<summary>
+    ///  分页窗体中显示输出。
+    ///</summary>
     ScreenPaged = 23;
+    ///<summary>
+    ///  专业静止。
+    ///</summary>
     Stationery = 24;
+    ///<summary>
+    ///  常用选项卡上，不预先 （单个选项卡）。
+    ///</summary>
     TabStockFull = 25;
+    ///<summary>
+    ///  选项卡上股票，预先 （多个选项卡）。
+    ///</summary>
     TabStockPreCut = 26;
+    ///<summary>
+    ///  透明工作表。
+    ///</summary>
     Transparency = 27;
+    ///<summary>
+    ///  用于将映像传输到 t 恤的介质。
+    ///</summary>
     TShirtTransfer = 28;
+    ///<summary>
+    ///  未知或未列出的介质。
+    ///</summary>
     None = 29;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定打印设备是否从前端到后端或后到前打印多页文档。
+  ///</summary>
   [DNTypeName('System.Printing.PageOrder')]
   DNPageOrder = type Integer;
   DNPageOrderHelper = record helper for DNPageOrder
   public const
+    ///<summary>
+    ///  （其选项由此枚举表示） 的功能将设置为中未定义选项 Print Schema。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  输出打印从前到后顺序。
+    ///</summary>
     Standard = 1;
+    ///<summary>
+    ///  在后到前的顺序打印输出。
+    ///</summary>
     Reverse = 2;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定如何将页面内容面向在打印介质上。
+  ///</summary>
   [DNTypeName('System.Printing.PageOrientation')]
   DNPageOrientation = type Integer;
   DNPageOrientationHelper = record helper for DNPageOrientation
   public const
+    ///<summary>
+    ///  （其选项由此枚举表示） 的功能将设置为中未定义选项 Print Schema。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  内容将成像区域的方向旋转的页上从标准 （纵向） 方向逆时针旋转 90 度。
+    ///</summary>
     Landscape = 1;
+    ///<summary>
+    ///  标准方向。
+    ///</summary>
     Portrait = 2;
+    ///<summary>
+    ///  内容将成像区域的方向旋转的页上从标准 （纵向） 方向顺时针旋转 90 度。
+    ///</summary>
     ReverseLandscape = 3;
+    ///<summary>
+    ///  内容的成像区域相对于标准 （纵向） 方向是正面朝下。
+    ///</summary>
     ReversePortrait = 4;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定页面分辨率为定性、 非数字值。
+  ///</summary>
   [DNTypeName('System.Printing.PageQualitativeResolution')]
   DNPageQualitativeResolution = type Integer;
   DNPageQualitativeResolutionHelper = record helper for DNPageQualitativeResolution
   public const
+    ///<summary>
+    ///  （其选项由此枚举表示） 的功能将设置为中未定义选项 Print Schema。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  打印机默认定性分辨率。
+    ///</summary>
     Default_ = 1;
+    ///<summary>
+    ///  草稿级质量，这是大多数打印机使用的 300 dpi。
+    ///</summary>
     Draft = 2;
+    ///<summary>
+    ///  高质量，这是 1200 dpi 或更高版本，对于大多数打印机。
+    ///</summary>
     High = 3;
+    ///<summary>
+    ///  正常质量，即对于大多数打印机 600 dpi。
+    ///</summary>
     Normal = 4;
+    ///<summary>
+    ///  其他质量。
+    ///</summary>
     Other = 5;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  单面打印介质上显示的内容的多个页时，请指定页面的排列方式。
+  ///</summary>
   [DNTypeName('System.Printing.PagesPerSheetDirection')]
   DNPagesPerSheetDirection = type Integer;
   DNPagesPerSheetDirectionHelper = record helper for DNPagesPerSheetDirection
   public const
+    ///<summary>
+    ///  （其选项由此枚举表示） 的功能将设置为中未定义选项 Print Schema。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  页面显示在行中，从左到右和自上而下的顺序相对于页面方向。
+    ///</summary>
     RightBottom = 1;
+    ///<summary>
+    ///  页会显示在列中，从自上而下的顺序和从左到右相对于页面方向。
+    ///</summary>
     BottomRight = 2;
+    ///<summary>
+    ///  页面显示在行中，从右到左和自上而下的顺序相对于页面方向。
+    ///</summary>
     LeftBottom = 3;
+    ///<summary>
+    ///  页会显示在列中，从自上而下的顺序从右至左相对于页面方向。
+    ///</summary>
     BottomLeft = 4;
+    ///<summary>
+    ///  页面显示在行中，从左到右和从下到上相对于页面方向。
+    ///</summary>
     RightTop = 5;
+    ///<summary>
+    ///  页会显示在列中，从下到上和从左到右相对于页面方向。
+    ///</summary>
     TopRight = 6;
+    ///<summary>
+    ///  页面显示在行中，从右到左和从下到上相对于页面方向。
+    ///</summary>
     LeftTop = 7;
+    ///<summary>
+    ///  页会显示在列中，从下到上从右至左相对于页面方向。
+    ///</summary>
     TopLeft = 8;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  在打印照片时，请指定输出的质量。
+  ///  打印机驱动程序将 <see cref="T:System.Printing.PhotoPrintingIntent" />
+  ///  转换为分辨率和质量的其他因素的定量值。
+  ///</summary>
   [DNTypeName('System.Printing.PhotoPrintingIntent')]
   DNPhotoPrintingIntent = type Integer;
   DNPhotoPrintingIntentHelper = record helper for DNPhotoPrintingIntent
   public const
+    ///<summary>
+    ///  （其选项由此枚举表示） 的功能将设置为中未定义选项 Print Schema。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  没有照片打印目的。
+    ///  用户设置特定的定量属性。
+    ///</summary>
     None = 1;
+    ///<summary>
+    ///  最佳质量的照片打印。
+    ///</summary>
     PhotoBest = 2;
+    ///<summary>
+    ///  草稿质量的照片打印。
+    ///</summary>
     PhotoDraft = 3;
+    ///<summary>
+    ///  标准质量的照片打印。
+    ///</summary>
     PhotoStandard = 4;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定是否 <see cref="T:System.Printing.PrintTicket" />
+  ///  适用于整个打印作业，打印作业中的一个文档或只打印作业内的页。
+  ///</summary>
   [DNTypeName('System.Printing.PrintTicketScope')]
   DNPrintTicketScope = type Integer;
   DNPrintTicketScopeHelper = record helper for DNPrintTicketScope
   public const
+    ///<summary>
+    ///  一页。
+    ///</summary>
     PageScope = 0;
+    ///<summary>
+    ///  单个文档。
+    ///</summary>
     DocumentScope = 1;
+    ///<summary>
+    ///  整个打印作业。
+    ///</summary>
     JobScope = 2;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定打印机是否，以及在何处，装订多页文档。
+  ///</summary>
   [DNTypeName('System.Printing.Stapling')]
   DNStapling = type Integer;
   DNStaplingHelper = record helper for DNStapling
   public const
+    ///<summary>
+    ///  （其选项由此枚举表示） 的功能将设置为中未定义选项 Print Schema。
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  沿着折线多处书钉。
+    ///  也称为骑马订装订。
+    ///</summary>
     SaddleStitch = 1;
+    ///<summary>
+    ///  在左下角单次装订。
+    ///</summary>
     StapleBottomLeft = 2;
+    ///<summary>
+    ///  在右下角单次装订。
+    ///</summary>
     StapleBottomRight = 3;
+    ///<summary>
+    ///  沿左边缘的两处装订。
+    ///</summary>
     StapleDualLeft = 4;
+    ///<summary>
+    ///  沿右边缘的两处装订。
+    ///</summary>
     StapleDualRight = 5;
+    ///<summary>
+    ///  沿上边缘的两处装订。
+    ///</summary>
     StapleDualTop = 6;
+    ///<summary>
+    ///  下边缘沿两个书钉。
+    ///</summary>
     StapleDualBottom = 7;
+    ///<summary>
+    ///  在左上角进行单次装订。
+    ///</summary>
     StapleTopLeft = 8;
+    ///<summary>
+    ///  在右上角单次装订。
+    ///</summary>
     StapleTopRight = 9;
+    ///<summary>
+    ///  不装订文档。
+    ///</summary>
     None = 10;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定打印机如何处理与 TrueType 字体格式的文本。
+  ///</summary>
   [DNTypeName('System.Printing.TrueTypeFontMode')]
   DNTrueTypeFontMode = type Integer;
   DNTrueTypeFontModeHelper = record helper for DNTrueTypeFontMode
   public const
+    ///<summary>
+    ///  （其选项由此枚举表示） 的功能设置为未定义的选项。
+    ///  in the Print Schema.
+    ///</summary>
     Unknown = 0;
+    ///<summary>
+    ///  打印机驱动程序确定用于处理 TrueType 字体的最佳方法。
+    ///</summary>
     Automatic = 1;
+    ///<summary>
+    ///  打印机驱动程序下载 TrueType 字体作为矢量字。
+    ///</summary>
     DownloadAsOutlineFont = 2;
+    ///<summary>
+    ///  打印机驱动程序创建光栅字体为 TrueType 字体，它需要并全部下载每个大小。
+    ///</summary>
     DownloadAsRasterFont = 3;
+    ///<summary>
+    ///  打印机驱动程序将下载 TrueType 字体。
+    ///</summary>
     DownloadAsNativeTrueTypeFont = 4;
+    ///<summary>
+    ///  打印机驱动程序以图形形式下载每个文本区域。
+    ///</summary>
     RenderAsBitmap = 5;
   end;
 
@@ -499,15 +1420,76 @@ type
   ['{198D5876-7199-58BF-866A-2D282915FA78}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Printing.PrintSystemException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNPrintSystemException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintSystemException" />
+    ///  类，该类提供特定的错误消息。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个字符串，描述错误条件。
+    ///</param>
     {class} function init(message: string): DNPrintSystemException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintSystemException" />
+    ///  类，该类提供特定的错误消息，包括基础导致的异常。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个字符串，描述错误条件。
+    ///</param>
+    ///  <param name="innerException">
+    ///  基础错误条件导致了异常。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNPrintSystemException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintSystemException" />
+    ///  类，该类提供特定错误代码和错误消息。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个字符串，描述错误条件。
+    ///</param>
     {class} function init(errorCode: Int32; message: string): DNPrintSystemException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintSystemException" />
+    ///  提供了特定错误代码、 错误消息和打印机消息的类。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个字符串，描述错误条件。
+    ///</param>
+    ///  <param name="printerMessage">
+    ///  发送的打印机驱动程序或导致异常的非托管打印系统组件的异常消息。
+    ///</param>
     {class} function init(errorCode: Int32; message: string; printerMessage: string): DNPrintSystemException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintSystemException" />
+    ///  类，该类提供特定错误代码和错误消息，包括基础导致的异常。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个字符串，描述错误条件。
+    ///</param>
+    ///  <param name="innerException">
+    ///  基础错误条件导致了异常。
+    ///</param>
     {class} function init(errorCode: Int32; message: string; innerException: DDN.mscorlib.DNException): DNPrintSystemException; overload;
 
   end;
 
+  ///<summary>
+  ///  当错误条件阻止访问或创建时出现的异常 <see cref="T:System.Printing.PrintSystemObject" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Printing.PrintSystemException')]
   DNPrintSystemException = interface(DDN.mscorlib.DNSystemException)
   ['{8453074A-5009-38CB-A255-14E6A4606CAE}']
@@ -526,6 +1508,15 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取可用于序列化对象并获取序列化流的上下文的数据。
+    ///</summary>
+    ///  <param name="info">
+    ///  要序列化或反序列化对象所需的数据。
+    ///</param>
+    ///  <param name="context">
+    ///  包括源和目标，序列化流的上下文。
+    ///</param>
     procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
     function GetBaseException: DDN.mscorlib.DNException;
     function ToString: string;
@@ -552,14 +1543,41 @@ type
   ['{896B065F-B664-540F-B9D6-1FE7BC0FDF26}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Printing.PrintCommitAttributesException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNPrintCommitAttributesException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintCommitAttributesException" />
+    ///  类，并提供使用指定的消息。
+    ///</summary>
+    ///  <param name="message">
+    ///  错误条件的说明。
+    ///</param>
     {class} function init(message: string): DNPrintCommitAttributesException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintCommitAttributesException" />
+    ///  类通过使用指定的消息和内部 <see cref="T:System.Exception" />
+    ///  。
+    ///</summary>
+    ///  <param name="message">
+    ///  错误条件的说明。
+    ///</param>
+    ///  <param name="innerException">
+    ///  基础条件触发 <see cref="T:System.Printing.PrintCommitAttributesException" />
+    ///  。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNPrintCommitAttributesException; overload;
     {class} function init(errorCode: Int32; attributesSuccessList: DDN.mscorlib.DNCollection<string>; attributesFailList: DDN.mscorlib.DNCollection<string>): DNPrintCommitAttributesException; overload;
     {class} function init(errorCode: Int32; message: string; attributesSuccessList: DDN.mscorlib.DNCollection<string>; attributesFailList: DDN.mscorlib.DNCollection<string>; objectName: string): DNPrintCommitAttributesException; overload;
 
   end;
 
+  ///<summary>
+  ///  当错误条件阻止从提交的某些属性时引发的异常 <see cref="T:System.Printing.PrintSystemObject" />
+  ///  到实际的计算机、 打印机或该对象表示的设备。
+  ///</summary>
   [DNTypeName('System.Printing.PrintCommitAttributesException')]
   DNPrintCommitAttributesException = interface(DNPrintSystemException)
   ['{E5811729-701F-3EED-A691-C4998ADC1837}']
@@ -581,6 +1599,15 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取有关序列化的对象和序列化流的上下文信息。
+    ///</summary>
+    ///  <param name="info">
+    ///  存储用于序列化对象的所有数据。
+    ///</param>
+    ///  <param name="context">
+    ///  描述序列化的流，其中包括源和目标的上下文。
+    ///</param>
     procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
     function GetBaseException: DDN.mscorlib.DNException;
     function ToString: string;
@@ -590,8 +1617,35 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取引发了异常的对象的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  引用 <see cref="P:System.Printing.PrintSystemObject.Name" />
+    ///  属性 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  引发异常。
+    ///</returns>
     property PrintObjectName: string read get_PrintObjectName;
+    ///<summary>
+    ///  获取 <see cref="T:System.Collections.ObjectModel.Collection`1" />
+    ///  成功提交的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.Collection`1" />
+    ///  标识的字符串 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  成功提交的属性。
+    ///</returns>
     property CommittedAttributesCollection: DDN.mscorlib.DNCollection<string> read get_CommittedAttributesCollection;
+    ///<summary>
+    ///  获取 <see cref="T:System.Collections.ObjectModel.Collection`1" />
+    ///  的未提交的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.Collection`1" />
+    ///  标识的字符串 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  无法提交您的程序的属性。
+    ///</returns>
     property FailedAttributesCollection: DDN.mscorlib.DNCollection<string> read get_FailedAttributesCollection;
     property Message: string read get_Message;
     property Data: DDN.mscorlib.DNIDictionary read get_Data;
@@ -610,12 +1664,42 @@ type
   ['{93A3C180-1C4A-594C-9C00-014605529371}']
   { constructors } 
 
+    ///<summary>
+    ///  使用由系统提供的用来描述错误的消息初始化 <see cref="T:System.Printing.PrintingNotSupportedException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNPrintingNotSupportedException; overload;
+    ///<summary>
+    ///  使用指定的描述错误的消息初始化 <see cref="T:System.Printing.PrintingNotSupportedException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  描述该异常的消息。
+    ///  此构造函数的调用方需要确保此字符串已针对当前系统区域性进行了本地化。
+    ///</param>
     {class} function init(message: string): DNPrintingNotSupportedException; overload;
+    ///<summary>
+    ///  使用指定的错误消息和对作为此异常原因的内部异常的引用来初始化 <see cref="T:System.Printing.PrintingNotSupportedException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  描述该异常的消息。
+    ///  此构造函数的调用方需要确保此字符串已针对当前系统区域性进行了本地化。
+    ///</param>
+    ///  <param name="innerException">
+    ///  导致当前异常的异常。
+    ///  如果 <paramref name="innerException" />
+    ///  参数不为 <see langword="null" />
+    ///  ，则当前异常将在处理内部异常的 <see langword="catch" />
+    ///  块中引发。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNPrintingNotSupportedException; overload;
 
   end;
 
+  ///<summary>
+  ///  不支持打印操作时引发的异常。
+  ///</summary>
   [DNTypeName('System.Printing.PrintingNotSupportedException')]
   DNPrintingNotSupportedException = interface(DNPrintSystemException)
   ['{1698733E-23D0-354A-B8C1-812F221D5C8B}']
@@ -634,6 +1718,16 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  用序列化数据初始化 <see cref="T:System.Printing.PrintingNotSupportedException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="info">
+    ///  承载序列化对象数据的对象。
+    ///</param>
+    ///  <param name="context">
+    ///  关于来源和目标的上下文信息
+    ///</param>
     procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
     function GetBaseException: DDN.mscorlib.DNException;
     function ToString: string;
@@ -660,16 +1754,112 @@ type
   ['{3CE7B15C-890D-5B2C-80E3-F7664A0BDD1F}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Printing.PrintJobException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNPrintJobException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintJobException" />
+    ///  类，该类提供了特定错误情况。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
     {class} function init(message: string): DNPrintJobException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintJobException" />
+    ///  提供特定的错误情况，包括对导致异常的类。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="innerException">
+    ///  导致的基础错误 <see cref="T:System.Printing.PrintJobException" />
+    ///  。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNPrintJobException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintJobException" />
+    ///  类，该类提供特定错误代码和错误条件。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
     {class} function init(errorCode: Int32; message: string): DNPrintJobException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintJobException" />
+    ///  类，该类提供特定的错误代码、 错误条件、 打印队列名称、 作业名和作业 id。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="printQueueName">
+    ///  打印队列承载打印作业导致了异常的名称。
+    ///</param>
+    ///  <param name="jobName">
+    ///  导致异常的打印作业的名称。
+    ///</param>
+    ///  <param name="jobId">
+    ///  导致异常的打印作业的 ID 号。
+    ///</param>
     {class} function init(errorCode: Int32; message: string; printQueueName: string; jobName: string; jobId: Int32): DNPrintJobException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintJobException" />
+    ///  类，该类提供特定的消息、 错误代码、 错误条件、 打印队列名称、 作业名和作业 id。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="printQueueName">
+    ///  打印队列承载打印作业导致了异常的名称。
+    ///</param>
+    ///  <param name="jobName">
+    ///  导致异常的打印作业的名称。
+    ///</param>
+    ///  <param name="jobId">
+    ///  导致异常的打印作业的 ID 号。
+    ///</param>
+    ///  <param name="innerException">
+    ///  异常的基本原因。
+    ///</param>
     {class} function init(errorCode: Int32; message: string; printQueueName: string; jobName: string; jobId: Int32; innerException: DDN.mscorlib.DNException): DNPrintJobException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintJobException" />
+    ///  类，该类提供特定错误代码和错误情况，包括基础导致的异常。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="innerException">
+    ///  导致的基础错误 <see cref="T:System.Printing.PrintJobException" />
+    ///  。
+    ///</param>
     {class} function init(errorCode: Int32; message: string; innerException: DDN.mscorlib.DNException): DNPrintJobException; overload;
 
   end;
 
+  ///<summary>
+  ///  当打印作业无法正常运行时出现异常。
+  ///</summary>
   [DNTypeName('System.Printing.PrintJobException')]
   DNPrintJobException = interface(DNPrintSystemException)
   ['{D7C2A0FC-D393-31E3-86B4-0B8415750DF3}']
@@ -691,6 +1881,15 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取可用于序列化对象并获取序列化流的上下文的数据。
+    ///</summary>
+    ///  <param name="info">
+    ///  要序列化或反序列化对象所需的数据。
+    ///</param>
+    ///  <param name="context">
+    ///  包括源和目标，序列化流的上下文。
+    ///</param>
     procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
     function GetBaseException: DDN.mscorlib.DNException;
     function ToString: string;
@@ -700,8 +1899,30 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取导致异常的打印作业的 ID 号。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  标识打印作业。
+    ///</returns>
     property JobId: Int32 read get_JobId;
+    ///<summary>
+    ///  获取导致异常的打印作业的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  命名打印作业。
+    ///</returns>
     property JobName: string read get_JobName;
+    ///<summary>
+    ///  获取名称 <see cref="T:System.Printing.PrintQueue" />
+    ///  ，was 承载的打印作业时引发异常。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它指定的名称 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</returns>
     property PrintQueueName: string read get_PrintQueueName;
     property Message: string read get_Message;
     property Data: DDN.mscorlib.DNIDictionary read get_Data;
@@ -720,16 +1941,112 @@ type
   ['{3CAD5CBF-2915-5F65-A32D-3B9C6AC9768C}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Printing.PrintingCanceledException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNPrintingCanceledException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintingCanceledException" />
+    ///  类，该类提供了特定错误情况。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
     {class} function init(message: string): DNPrintingCanceledException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintingCanceledException" />
+    ///  类，该类提供一个特定错误条件，包括基础导致的异常。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="innerException">
+    ///  基础错误条件导致 <see cref="T:System.Printing.PrintingCanceledException" />
+    ///  。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNPrintingCanceledException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintingCanceledException" />
+    ///  类，该类提供特定错误代码和错误条件。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
     {class} function init(errorCode: Int32; message: string): DNPrintingCanceledException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintingCanceledException" />
+    ///  类，该类提供特定错误代码和错误情况，包括基础导致的异常。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="innerException">
+    ///  基础错误条件导致 <see cref="T:System.Printing.PrintingCanceledException" />
+    ///  。
+    ///</param>
     {class} function init(errorCode: Int32; message: string; innerException: DDN.mscorlib.DNException): DNPrintingCanceledException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintingCanceledException" />
+    ///  类，该类提供特定的错误代码、 错误条件、 打印队列名称、 作业名和作业 id。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="printQueueName">
+    ///  打印队列承载打印作业导致了异常的名称。
+    ///</param>
+    ///  <param name="jobName">
+    ///  导致异常的打印作业的名称。
+    ///</param>
+    ///  <param name="jobId">
+    ///  导致异常的打印作业的 ID 号。
+    ///</param>
     {class} function init(errorCode: Int32; message: string; printQueueName: string; jobName: string; jobId: Int32): DNPrintingCanceledException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintingCanceledException" />
+    ///  类，具有特定的错误代码、 错误条件、 打印队列名称、 作业名称、 作业 ID 和异常的基本原因。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="printQueueName">
+    ///  打印队列承载打印作业导致了异常的名称。
+    ///</param>
+    ///  <param name="jobName">
+    ///  导致异常的打印作业的名称。
+    ///</param>
+    ///  <param name="jobId">
+    ///  导致异常的打印作业的 ID 号。
+    ///</param>
+    ///  <param name="innerException">
+    ///  异常的基本原因。
+    ///</param>
     {class} function init(errorCode: Int32; message: string; printQueueName: string; jobName: string; jobId: Int32; innerException: DDN.mscorlib.DNException): DNPrintingCanceledException; overload;
 
   end;
 
+  ///<summary>
+  ///  当代码尝试访问已取消的打印作业时出现异常。
+  ///</summary>
   [DNTypeName('System.Printing.PrintingCanceledException')]
   DNPrintingCanceledException = interface(DNPrintJobException)
   ['{6955CB38-5149-35A0-82AD-2EF01ACB166C}']
@@ -751,6 +2068,15 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取可用于序列化对象并获取序列化流的上下文的数据。
+    ///</summary>
+    ///  <param name="info">
+    ///  要序列化或反序列化对象所需的数据。
+    ///</param>
+    ///  <param name="context">
+    ///  包括源和目标，序列化流的上下文。
+    ///</param>
     procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
     function GetBaseException: DDN.mscorlib.DNException;
     function ToString: string;
@@ -760,8 +2086,30 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取导致异常的打印作业的 ID 号。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  标识打印作业。
+    ///</returns>
     property JobId: Int32 read get_JobId;
+    ///<summary>
+    ///  获取导致异常的打印作业的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  命名打印作业。
+    ///</returns>
     property JobName: string read get_JobName;
+    ///<summary>
+    ///  获取名称 <see cref="T:System.Printing.PrintQueue" />
+    ///  ，was 承载的打印作业时引发异常。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它指定的名称 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</returns>
     property PrintQueueName: string read get_PrintQueueName;
     property Message: string read get_Message;
     property Data: DDN.mscorlib.DNIDictionary read get_Data;
@@ -780,15 +2128,92 @@ type
   ['{3DA2691E-544E-5A08-9F73-63CA571A55C8}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Printing.PrintQueueException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNPrintQueueException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintQueueException" />
+    ///  类，该类提供了特定错误情况。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
     {class} function init(message: string): DNPrintQueueException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintQueueException" />
+    ///  类，该类提供一个特定错误条件，包括基础导致的异常。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="innerException">
+    ///  基础错误条件导致 <see cref="T:System.Printing.PrintQueueException" />
+    ///  。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNPrintQueueException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintQueueException" />
+    ///  类，该类提供特定的错误代码、 错误情况和打印机的名称。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="printerName">
+    ///  发生错误时正在访问打印机的名称。
+    ///</param>
     {class} function init(errorCode: Int32; message: string; printerName: string): DNPrintQueueException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintQueueException" />
+    ///  类，该类提供特定的错误代码、 错误条件、 打印机名称和打印机消息。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="printerName">
+    ///  发生错误时正在访问打印机的名称。
+    ///</param>
+    ///  <param name="printerMessage">
+    ///  由打印机驱动程序或触发异常的非托管打印系统组件发送异常消息。
+    ///</param>
     {class} function init(errorCode: Int32; message: string; printerName: string; printerMessage: string): DNPrintQueueException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintQueueException" />
+    ///  类，该类提供特定的打印机名称、 错误代码和错误情况，包括基础导致的异常。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="printerName">
+    ///  发生错误时正在访问打印机的名称。
+    ///</param>
+    ///  <param name="innerException">
+    ///  基础错误条件导致 <see cref="T:System.Printing.PrintQueueException" />
+    ///  。
+    ///</param>
     {class} function init(errorCode: Int32; message: string; printerName: string; innerException: DDN.mscorlib.DNException): DNPrintQueueException; overload;
 
   end;
 
+  ///<summary>
+  ///  当错误条件阻止访问时引发的异常或创建 <see cref="T:System.Printing.PrintQueue" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Printing.PrintQueueException')]
   DNPrintQueueException = interface(DNPrintSystemException)
   ['{6563EAFD-B476-3D52-A447-CA424792895B}']
@@ -808,6 +2233,15 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取可用于序列化对象并获取序列化流的上下文的数据。
+    ///</summary>
+    ///  <param name="info">
+    ///  要序列化或反序列化对象所需的数据。
+    ///</param>
+    ///  <param name="context">
+    ///  包括源和目标，序列化流的上下文。
+    ///</param>
     procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
     function GetBaseException: DDN.mscorlib.DNException;
     function ToString: string;
@@ -817,6 +2251,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取引发异常时正在访问的打印机的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  命名打印机。
+    ///</returns>
     property PrinterName: string read get_PrinterName;
     property Message: string read get_Message;
     property Data: DDN.mscorlib.DNIDictionary read get_Data;
@@ -835,14 +2276,74 @@ type
   ['{D8796903-65A6-5F87-A05F-22EDF5B30A1E}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Printing.PrintServerException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNPrintServerException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintServerException" />
+    ///  类，该类提供了特定错误情况。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
     {class} function init(message: string): DNPrintServerException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintServerException" />
+    ///  类，该类提供一个特定错误条件，包括基础导致的异常。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="innerException">
+    ///  基础错误条件导致 <see cref="T:System.Printing.PrintServerException" />
+    ///  。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNPrintServerException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintServerException" />
+    ///  类，该类提供特定的错误代码、 错误情况和打印服务器名称。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="serverName">
+    ///  打印时出现错误条件正在访问的服务器的名称。
+    ///</param>
     {class} function init(errorCode: Int32; message: string; serverName: string): DNPrintServerException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintServerException" />
+    ///  类，该类提供特定的打印服务器名称、 错误代码和错误情况，包括基础导致的异常。
+    ///</summary>
+    ///  <param name="errorCode"><see cref="T:System.Int32" />
+    ///  ，将被解释为一个 HRESULT，一个分配给特定异常的编码数字值。
+    ///</param>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="serverName">
+    ///  打印时出现错误条件正在访问的服务器的名称。
+    ///</param>
+    ///  <param name="innerException">
+    ///  基础条件导致 <see cref="T:System.Printing.PrintServerException" />
+    ///  。
+    ///</param>
     {class} function init(errorCode: Int32; message: string; serverName: string; innerException: DDN.mscorlib.DNException): DNPrintServerException; overload;
 
   end;
 
+  ///<summary>
+  ///  当错误条件阻止访问时出现的异常或创建 <see cref="T:System.Printing.PrintServer" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Printing.PrintServerException')]
   DNPrintServerException = interface(DNPrintSystemException)
   ['{62B5E961-A6A6-3B34-8089-97D8FDD7D7C9}']
@@ -862,6 +2363,15 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取可用于序列化对象并获取序列化流的上下文的数据。
+    ///</summary>
+    ///  <param name="info">
+    ///  用于序列化对象数据。
+    ///</param>
+    ///  <param name="context">
+    ///  包括源和目标，序列化流的上下文。
+    ///</param>
     procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
     function GetBaseException: DDN.mscorlib.DNException;
     function ToString: string;
@@ -871,6 +2381,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取引发异常时正在访问的打印服务器的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  命名打印服务器。
+    ///</returns>
     property ServerName: string read get_ServerName;
     property Message: string read get_Message;
     property Data: DDN.mscorlib.DNIDictionary read get_Data;
@@ -889,12 +2406,38 @@ type
   ['{4CC57FE5-068A-5960-B17B-42683BC6894B}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Xps.XpsException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXpsException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.XpsException" />
+    ///  类，该类提供了特定错误情况。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
     {class} function init(message: string): DNXpsException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.XpsException" />
+    ///  提供特定错误条件，并且包含导致异常的类。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="innerException">
+    ///  导致的基础错误 <see cref="T:System.Windows.Xps.XpsException" />
+    ///  。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNXpsException; overload;
 
   end;
 
+  ///<summary>
+  ///  用作所引发异常的基类 XML 纸张规范 (XPS) 打包和序列化 APIs。 </summary>
   [DNTypeName('System.Windows.Xps.XpsException')]
   DNXpsException = interface(DDN.mscorlib.DNException)
   ['{4A8AC7ED-E64B-3F6A-B2E1-8B231F12C69E}']
@@ -939,12 +2482,40 @@ type
   ['{14754F8A-7875-59DA-89A8-441F62AFCFE0}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Xps.XpsPackagingException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXpsPackagingException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.XpsPackagingException" />
+    ///  类，该类提供了特定错误情况。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
     {class} function init(message: string): DNXpsPackagingException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.XpsPackagingException" />
+    ///  提供特定错误条件，并且包含导致异常的类。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="innerException">
+    ///  导致的基础错误 <see cref="T:System.Windows.Xps.XpsPackagingException" />
+    ///  。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNXpsPackagingException; overload;
 
   end;
 
+  ///<summary>
+  ///  读取、 写入、 注册，或以其他某种访问时引发的异常方式 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.XpsPackagingException')]
   DNXpsPackagingException = interface(DNXpsException)
   ['{852654C3-4593-30FB-8D50-D1BE25D4AF4F}']
@@ -989,12 +2560,37 @@ type
   ['{59061FCA-F36B-5886-BBFE-706B676A3A84}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Xps.XpsSerializationException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXpsSerializationException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.XpsSerializationException" />
+    ///  类，该类提供了特定错误情况。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
     {class} function init(message: string): DNXpsSerializationException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.XpsSerializationException" />
+    ///  提供特定错误条件，并且包含导致异常的类。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="innerException">
+    ///  基础错误引发异常的异常。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNXpsSerializationException; overload;
 
   end;
 
+  ///<summary>
+  ///  有关引发的异常 XML 纸张规范 (XPS) 文档 序列化错误。 </summary>
   [DNTypeName('System.Windows.Xps.XpsSerializationException')]
   DNXpsSerializationException = interface(DNXpsException)
   ['{1EDA3182-CBEC-339E-81FE-10077002F7B7}']
@@ -1043,23 +2639,190 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.Interop.PrintTicketConverter" />
+    ///  指定打印机的类。
+    ///</summary>
+    ///  <param name="deviceName">
+    ///  绑定到新的打印机名称 <see cref="T:System.Printing.Interop.PrintTicketConverter" />
+    ///  实例。
+    ///</param>
+    ///  <param name="clientPrintSchemaVersion">
+    ///  要在中使用的打印架构版本 <see cref="T:System.Printing.PrintTicket" />
+    ///  和 DEVMODE 转换。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="deviceName" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="clientPrintSchemaVersion" />
+    ///  小于或等于 0。
+    ///</exception><exception cref="T:System.Printing.PrintQueueException">
+    ///  无法将绑定到转换器 <paramref name="deviceName" />
+    ///  。
+    ///</exception>
     {class} function init(deviceName: string; clientPrintSchemaVersion: Int32): DNPrintTicketConverter;
 
   { static propertys } 
 
+    ///<summary>
+    ///  获取最大值 Print Schema 版本， <see cref="T:System.Printing.Interop.PrintTicketConverter" />
+    ///  可以支持。
+    ///</summary>
+    ///<returns>
+    ///  最大值 Print Schema 版本， <see cref="T:System.Printing.Interop.PrintTicketConverter" />
+    ///  可以支持。
+    ///</returns>
     {class} property MaxPrintSchemaVersion: Int32 read get_MaxPrintSchemaVersion;
   end;
 
+  ///<summary>
+  ///  转换为托管 <see cref="T:System.Printing.PrintTicket" />
+  ///  对象到非托管图形设备接口 (GDI) DEVMODE 结构，反之亦然。
+  ///</summary>
   [DNTypeName('System.Printing.Interop.PrintTicketConverter')]
   DNPrintTicketConverter = interface(DDN.mscorlib.DNIDisposable)
   ['{E6E7BB18-534B-33AC-B8D1-462876C88582}']
   { methods } 
 
+    ///<summary>
+    ///  将指定 DEVMODE 给托管代码的结构 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</summary>
+    ///  <param name="devMode">
+    ///  一个 <see cref="T:System.Byte" />
+    ///  包含 DEVMODE 结构的数组。
+    ///</param>
+    ///<returns>
+    ///  新的托管 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ObjectDisposedException">
+    ///  这 <see cref="T:System.Printing.Interop.PrintTicketConverter" />
+    ///  已被释放。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="devMode" />
+    ///  的值为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentException">
+    ///  内容 <paramref name="devMode" />
+    ///  格式不正确。
+    ///</exception><exception cref="T:System.Printing.PrintQueueException">
+    ///  转换失败。
+    ///</exception>
     function ConvertDevModeToPrintTicket(devMode: TArray<Byte>): DNPrintTicket; overload;
-    function ConvertDevModeToPrintTicket(devMode: TArray<Byte>; scope: DNPrintTicketScope): DNPrintTicket; overload;
+    ///<summary>
+    ///  将指定的托管 <see cref="T:System.Printing.PrintTicket" />
+    ///  指向非托管 DEVMODE 结构，它基于 DEVMODE 结构由标识 <see cref="T:System.Printing.Interop.BaseDevModeType" />
+    ///  。
+    ///</summary>
+    ///  <param name="printTicket">
+    ///  要转换的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</param>
+    ///  <param name="baseType">
+    ///  一个值，指定是否使用用户默认设置或打印机默认值 DEVMODE 作为基 DEVMODE。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Byte" />
+    ///  数组，其中包含新 DEVMODE 结构。
+    ///</returns>
+    ///<exception cref="T:System.ObjectDisposedException">
+    ///  这 <see cref="T:System.Printing.Interop.PrintTicketConverter" />
+    ///  已被释放。
+    ///</exception><exception cref="T:System.ArgumentNullException">
+    ///  值 <paramref name="printTicket" />
+    ///  为 null (<see langword="Nothing" />
+    ///  在 Visual Basic 中)。
+    ///</exception><exception cref="T:System.ArgumentException">
+    ///  内容 <paramref name="printTicket" />
+    ///  格式不正确。
+    ///</exception><exception cref="T:System.Printing.PrintQueueException">
+    ///  转换失败。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="baseType" />
+    ///  不是有效 <see cref="T:System.Printing.Interop.BaseDevModeType" />
+    ///  值。
+    ///</exception>
     function ConvertPrintTicketToDevMode(printTicket: DNPrintTicket; baseType: DNBaseDevModeType): TArray<Byte>; overload;
-    function ConvertPrintTicketToDevMode(printTicket: DNPrintTicket; baseType: DNBaseDevModeType; scope: DNPrintTicketScope): TArray<Byte>; overload;
+    ///<summary>
+    ///  释放由 <see cref="T:System.Printing.Interop.PrintTicketConverter" />
+    ///  占用的资源。
+    ///</summary>
     procedure Dispose;
+    ///<summary>
+    ///  将指定 DEVMODE 给托管代码的结构 <see cref="T:System.Printing.PrintTicket" />
+    ///  具有指定的范围。
+    ///</summary>
+    ///  <param name="devMode">
+    ///  一个 <see cref="T:System.Byte" />
+    ///  缓冲区，其中包含 DEVMODE 结构将转换。
+    ///</param>
+    ///  <param name="scope">
+    ///  一个 <see cref="T:System.Printing.PrintTicketScope" />
+    ///  值，该值指定是否新 <see cref="T:System.Printing.PrintTicket" />
+    ///  应用于网页、 文档还是整个打印作业。
+    ///</param>
+    ///<returns>
+    ///  新的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ObjectDisposedException">
+    ///  这 <see cref="T:System.Printing.Interop.PrintTicketConverter" />
+    ///  已被释放。
+    ///</exception><exception cref="T:System.ArgumentNullException">
+    ///  值 <paramref name="devMode" />
+    ///  为 null (<see langword="Nothing" />
+    ///  在 Visual Basic 中)。
+    ///</exception><exception cref="T:System.ArgumentException">
+    ///  内容 <paramref name="devMode" />
+    ///  格式不正确。
+    ///</exception><exception cref="T:System.Printing.PrintQueueException">
+    ///  转换失败。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="scope" />
+    ///  不是有效 <see cref="T:System.Printing.PrintTicketScope" />
+    ///  值。
+    ///</exception>
+    function ConvertDevModeToPrintTicket(devMode: TArray<Byte>; scope: DNPrintTicketScope): DNPrintTicket; overload;
+    ///<summary>
+    ///  将指定的托管的代码转换 <see cref="T:System.Printing.PrintTicket" />
+    ///  具有指定的范围，到非托管 DEVMODE 结构，它基于 DEVMODE 结构由标识 <see cref="T:System.Printing.Interop.BaseDevModeType" />
+    ///  。
+    ///</summary>
+    ///  <param name="printTicket">
+    ///  要转换的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</param>
+    ///  <param name="baseType">
+    ///  一个值，指定是否使用用户默认设置或打印机默认值 DEVMODE 作为基 DEVMODE。
+    ///</param>
+    ///  <param name="scope">
+    ///  一个 <see cref="T:System.Printing.PrintTicketScope" />
+    ///  值，该值指定是否转换 <see cref="T:System.Printing.PrintTicket" />
+    ///  应该在范围中的网页、 文档或整个打印作业完成。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Byte" />
+    ///  缓冲区，它表示新 DEVMODE 结构。
+    ///</returns>
+    ///<exception cref="T:System.ObjectDisposedException">
+    ///  这 <see cref="T:System.Printing.Interop.PrintTicketConverter" />
+    ///  已被释放。
+    ///</exception><exception cref="T:System.ArgumentNullException">
+    ///  值 <paramref name="printTicket" />
+    ///  为 null (<see langword="Nothing" />
+    ///  在 Visual Basic 中)。
+    ///</exception><exception cref="T:System.ArgumentException">
+    ///  内容 <paramref name="printTicket" />
+    ///  格式不正确。
+    ///</exception><exception cref="T:System.Printing.PrintQueueException">
+    ///  转换失败。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="baseType" />
+    ///  不是有效 <see cref="T:System.Printing.Interop.BaseDevModeType" />
+    ///  值。
+    ///  - 或 -
+    ///  <paramref name="scope" />
+    ///  不是有效 <see cref="T:System.Printing.PrintTicketScope" />
+    ///  值。
+    ///</exception>
+    function ConvertPrintTicketToDevMode(printTicket: DNPrintTicket; baseType: DNBaseDevModeType; scope: DNPrintTicketScope): TArray<Byte>; overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -1074,6 +2837,9 @@ type
   ['{71C551C5-A6E3-52D4-B474-4AB29834B2BC}']
   end;
 
+  ///<summary>
+  ///  表示可打印的页面的区域。
+  ///</summary>
   [DNTypeName('System.Printing.PageImageableArea')]
   DNPageImageableArea = interface(DDN.mscorlib.DNObject)
   ['{96606B8B-7B5F-31C6-9540-F5FFA7D9EF68}']
@@ -1086,6 +2852,16 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回 <see cref="T:System.String" />
+    ///  表示形式 <see cref="T:System.Printing.PageImageableArea" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  表示的属性值 <see cref="T:System.Printing.PageImageableArea" />
+    ///  。
+    ///</returns>
     function ToString: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1093,9 +2869,37 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取原点宽度，即成像区域 （也称为"源"成像区域） 的窗口左上角到页面的左边缘的距离。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Double" />
+    ///  到成像区域以像素为单位的左边距左边缘页上表示的距离 (1/96 英寸)。
+    ///</returns>
     property OriginWidth: Double read get_OriginWidth;
+    ///<summary>
+    ///  获取页的上边缘的最近点原点高度，它是从窗口左上角成像区域 （也称为"源"成像区域） 的距离。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Double" />
+    ///  成像区域以像素为单位的顶部从页上的上边缘表示的距离 (1/96 英寸)。
+    ///</returns>
     property OriginHeight: Double read get_OriginHeight;
+    ///<summary>
+    ///  获取成像区域的宽度。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Double" />
+    ///  表示以像素为单位的成像区域的宽度 (1/96 英寸)。
+    ///</returns>
     property ExtentWidth: Double read get_ExtentWidth;
+    ///<summary>
+    ///  获取成像区域的高度。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Double" />
+    ///  表示成像区域以像素为单位的高度 (1/96 英寸)。
+    ///</returns>
     property ExtentHeight: Double read get_ExtentHeight;
   end;
 
@@ -1106,12 +2910,51 @@ type
   ['{A31FF81B-F144-57E6-9EA0-3E9790854455}']
   { constructors } 
 
+    ///<summary>
+    ///  使用指定的 <see cref="T:System.Printing.PageMediaSize" />
+    ///  初始化 <see cref="T:System.Printing.PageMediaSizeName" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="mediaSizeName">
+    ///  例如，大小对于纸张 （或其他介质） 的页的名称 <see cref="F:System.Printing.PageMediaSizeName.NorthAmericaLetter" />
+    ///  或 <see cref="F:System.Printing.PageMediaSizeName.ISOA4" />
+    ///  。
+    ///</param>
     {class} function init(mediaSizeName: DNPageMediaSizeName): DNPageMediaSize; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PageMediaSize" />
+    ///  类使用的宽度和高度。
+    ///</summary>
+    ///  <param name="width">
+    ///  宽度，以像素为单位，它们是 1/96 英寸的单位。
+    ///</param>
+    ///  <param name="height">
+    ///  高度，以像素为单位，它们是 1/96 英寸的单位。
+    ///</param>
     {class} function init(width: Double; height: Double): DNPageMediaSize; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PageMediaSize" />
+    ///  使用指定的类 <see cref="T:System.Printing.PageMediaSizeName" />
+    ///  以及宽度和高度。
+    ///</summary>
+    ///  <param name="mediaSizeName">
+    ///  例如，大小对于纸张 （或其他介质） 的页的名称 <see cref="F:System.Printing.PageMediaSizeName.NorthAmericaLetter" />
+    ///  或 <see cref="F:System.Printing.PageMediaSizeName.ISOA4" />
+    ///  。
+    ///</param>
+    ///  <param name="width">
+    ///  宽度，以像素为单位，它们是 1/96 英寸的单位。
+    ///</param>
+    ///  <param name="height">
+    ///  高度，以像素为单位，它们是 1/96 英寸的单位。
+    ///</param>
     {class} function init(mediaSizeName: DNPageMediaSizeName; width: Double; height: Double): DNPageMediaSize; overload;
 
   end;
 
+  ///<summary>
+  ///  描述的页面大小为纸张或其他介质。
+  ///</summary>
   [DNTypeName('System.Printing.PageMediaSize')]
   DNPageMediaSize = interface(DDN.mscorlib.DNObject)
   ['{44070251-4A49-32FF-B9CD-D48D50B0B960}']
@@ -1123,6 +2966,13 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  显示的页面大小为纸张或其他介质。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示的页面大小为纸张或其他介质。
+    ///</returns>
     function ToString: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1130,8 +2980,29 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取纸张或其他介质的页大小的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PageMediaSizeName" />
+    ///  命名页大小的值。
+    ///</returns>
     property PageMediaSizeName: DDN.mscorlib.DNNullable<DNPageMediaSizeName> read get_PageMediaSizeName;
+    ///<summary>
+    ///  获取页面的宽度。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Double" />
+    ///  表示页面宽度，以像素为单位，它们是 1/96 英寸的单位。
+    ///</returns>
     property Width: DDN.mscorlib.DNNullable<Double> read get_Width;
+    ///<summary>
+    ///  获取页高度。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Double" />
+    ///  表示页面的高度，以像素为单位，它们是 1/96 英寸的单位。
+    ///</returns>
     property Height: DDN.mscorlib.DNNullable<Double> read get_Height;
   end;
 
@@ -1142,12 +3013,47 @@ type
   ['{5B0FEA70-6812-5EE0-B72F-02DDDDAE913F}']
   { constructors } 
 
+    ///<summary>
+    ///  启动的新实例 <see cref="T:System.Printing.PageResolution" />
+    ///  类，该类具有指定垂直和水平每英寸的点数。
+    ///</summary>
+    ///  <param name="resolutionX">
+    ///  以每英寸点数水平分辨率。
+    ///</param>
+    ///  <param name="resolutionY">
+    ///  垂直分辨率以每英寸点数为单位。
+    ///</param>
     {class} function init(resolutionX: Int32; resolutionY: Int32): DNPageResolution; overload;
+    ///<summary>
+    ///  启动的新实例 <see cref="T:System.Printing.PageResolution" />
+    ///  类，该类具有指定 <see cref="T:System.Printing.PageQualitativeResolution" />
+    ///  。
+    ///</summary>
+    ///  <param name="qualitative">
+    ///  表示解析的值。
+    ///</param>
     {class} function init(qualitative: DNPageQualitativeResolution): DNPageResolution; overload;
+    ///<summary>
+    ///  启动的新实例 <see cref="T:System.Printing.PageResolution" />
+    ///  类，该类具有指定 <see cref="T:System.Printing.PageQualitativeResolution" />
+    ///  而不是每英寸点数指定的水平和垂直制表符。
+    ///</summary>
+    ///  <param name="resolutionX">
+    ///  以每英寸点数水平分辨率。
+    ///</param>
+    ///  <param name="resolutionY">
+    ///  垂直分辨率以每英寸点数为单位。
+    ///</param>
+    ///  <param name="qualitative">
+    ///  表示解析的值。
+    ///</param>
     {class} function init(resolutionX: Int32; resolutionY: Int32; qualitative: DNPageQualitativeResolution): DNPageResolution; overload;
 
   end;
 
+  ///<summary>
+  ///  定义打印输出的页分辨率为定性值或每和 / 或英寸点数为单位。
+  ///</summary>
   [DNTypeName('System.Printing.PageResolution')]
   DNPageResolution = interface(DDN.mscorlib.DNObject)
   ['{CAF781C0-4A5B-3CC9-B99A-3495FC80A80A}']
@@ -1159,6 +3065,15 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回作为页面分辨率 <see cref="T:System.String" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，其中包含的属性值 <see cref="T:System.Printing.PageResolution" />
+    ///  对象。
+    ///</returns>
     function ToString: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1166,8 +3081,28 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取页面水平分辨率的每英寸点数度量值。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  值，该值表示页面水平分辨率。
+    ///</returns>
     property X: DDN.mscorlib.DNNullable<Int32> read get_X;
+    ///<summary>
+    ///  获取页面垂直分辨率的每英寸点数。
+    ///</summary>
+    ///<returns>
+    ///  一个可以为 null <see cref="T:System.Int32" />
+    ///  值，该值表示页面垂直分辨率。
+    ///</returns>
     property Y: DDN.mscorlib.DNNullable<Int32> read get_Y;
+    ///<summary>
+    ///  获取定性的表达式中，如果任何页面分辨率。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PageQualitativeResolution" />
+    ///  值，该值表示页面分辨率的级别。
+    ///</returns>
     property QualitativeResolution: DDN.mscorlib.DNNullable<DNPageQualitativeResolution> read get_QualitativeResolution;
   end;
 
@@ -1178,6 +3113,9 @@ type
   ['{A1942A7D-8750-5CC9-82AF-B708B04225C4}']
   end;
 
+  ///<summary>
+  ///  指定打印机可放大或缩小页面上的打印图像时所依据的百分比的范围。
+  ///</summary>
   [DNTypeName('System.Printing.PageScalingFactorRange')]
   DNPageScalingFactorRange = interface(DDN.mscorlib.DNObject)
   ['{360DE511-00C8-3ABC-8025-5C26D8E66A67}']
@@ -1188,6 +3126,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回 <see cref="T:System.String" />
+    ///  形式显示的范围。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  形式显示的缩放范围。
+    ///</returns>
     function ToString: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1195,7 +3141,19 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取此范围的最小百分比。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  表示百分比的值。
+    ///</returns>
     property MinimumScale: Int32 read get_MinimumScale;
+    ///<summary>
+    ///  获取此范围的最大百分比。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  表示百分比的值。
+    ///</returns>
     property MaximumScale: Int32 read get_MaximumScale;
   end;
 
@@ -1206,10 +3164,27 @@ type
   ['{15F6C0A3-2DA4-5206-B974-D73E1A31CB2C}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintCapabilities" />
+    ///  类通过使用 XML 的 XML 流 （即包含 PrintCapabilities 文档） 指定打印机的功能且不满足 Print Schema。
+    ///</summary>
+    ///  <param name="xmlStream">
+    ///  XML <see cref="T:System.IO.Stream" />
+    ///  ，描述打印机功能并符合打印架构。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="xmlStream" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.FormatException"><paramref name="xmlStream" />
+    ///  不是有效的 XML。
+    ///</exception>
     {class} function init(xmlStream: DDN.mscorlib.DNStream): DNPrintCapabilities;
 
   end;
 
+  ///<summary>
+  ///  定义打印机的功能。
+  ///</summary>
   [DNTypeName('System.Printing.PrintCapabilities')]
   DNPrintCapabilities = interface(DDN.mscorlib.DNObject)
   ['{F2A06CEB-416F-35ED-BA26-4233248BDB42}']
@@ -1247,27 +3222,207 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取标识打印机的排序规则功能的值的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Printing.Collation" />
+    ///  值。
+    ///</returns>
     property CollationCapability: DDN.mscorlib.DNReadOnlyCollection<DNCollation> read get_CollationCapability;
+    ///<summary>
+    ///  获取标识是否以及如何打印机可以用基于设备的基于计算机的字体的字体替换的值的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Printing.DeviceFontSubstitution" />
+    ///  值。
+    ///</returns>
     property DeviceFontSubstitutionCapability: DDN.mscorlib.DNReadOnlyCollection<DNDeviceFontSubstitution> read get_DeviceFontSubstitutionCapability;
+    ///<summary>
+    ///  获取标识是否以及如何执行双面打印，打印机的值的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Printing.Duplexing" />
+    ///  值。
+    ///</returns>
     property DuplexingCapability: DDN.mscorlib.DNReadOnlyCollection<DNDuplexing> read get_DuplexingCapability;
+    ///<summary>
+    ///  获取指示送纸器 （纸盒） 所用的值的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Printing.InputBin" />
+    ///  值。
+    ///</returns>
     property InputBinCapability: DDN.mscorlib.DNReadOnlyCollection<DNInputBin> read get_InputBinCapability;
+    ///<summary>
+    ///  获取一个值，该值最大的设备可以用单个打印作业打印的份数。
+    ///</summary>
+    ///<returns>
+    ///  一个可以为 null <see cref="T:System.Int32" />
+    ///  值，该值指定最大的打印机可以打印的份数。
+    ///  返回 <see langword="null" />
+    ///  如果设备驱动程序不会报告最多。
+    ///</returns>
     property MaxCopyCount: DDN.mscorlib.DNNullable<Int32> read get_MaxCopyCount;
+    ///<summary>
+    ///  获取一个值，该值将成像区域在页面上，其中宽度表示相对于页面方向的水平维度的宽度。
+    ///</summary>
+    ///<returns>
+    ///  一个可以为 null <see cref="T:System.Double" />
+    ///  值，该值指示的宽度，以像素为单位，1/96 英寸递增，打印机能够打印页面上的区域。
+    ///</returns>
     property OrientedPageMediaWidth: DDN.mscorlib.DNNullable<Double> read get_OrientedPageMediaWidth;
+    ///<summary>
+    ///  获取一个值，该值将成像区域在页面上，其中高度表示相对于页面的方向垂直尺寸的高度。
+    ///</summary>
+    ///<returns>
+    ///  一个可以为 null <see cref="T:System.Double" />
+    ///  值，该值指示的高度，以像素为单位，1/96 英寸递增，打印机能够打印页面上的区域。
+    ///</returns>
     property OrientedPageMediaHeight: DDN.mscorlib.DNNullable<Double> read get_OrientedPageMediaHeight;
+    ///<summary>
+    ///  获取指定打印机可以打印内容的颜色的方式的值的集合和灰色阴影。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Printing.OutputColor" />
+    ///  值。
+    ///</returns>
     property OutputColorCapability: DDN.mscorlib.DNReadOnlyCollection<DNOutputColor> read get_OutputColorCapability;
+    ///<summary>
+    ///  获取指示输出质量打印机的类型的值的集合支持。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Printing.OutputQuality" />
+    ///  值。
+    ///</returns>
     property OutputQualityCapability: DDN.mscorlib.DNReadOnlyCollection<DNOutputQuality> read get_OutputQualityCapability;
+    ///<summary>
+    ///  获取指示打印机可以打印到介质的边缘的值的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Printing.PageBorderless" />
+    ///  值。
+    ///</returns>
     property PageBorderlessCapability: DDN.mscorlib.DNReadOnlyCollection<DNPageBorderless> read get_PageBorderlessCapability;
+    ///<summary>
+    ///  获取一个对象，表示可以使用打印机页的区域。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PageImageableArea" />
+    ///  对象，它指定距离，以像素为单位 （的 1/96 英寸为单位），成像区域的左上角。
+    ///  垂直距离计算从纸张的边缘，并从左边缘测量的水平距离。
+    ///  返回值还指定的宽度和高度成像区域。
+    ///  如果打印机驱动程序不会报告成像区域，则此属性为 null。
+    ///</returns>
     property PageImageableArea: DNPageImageableArea read get_PageImageableArea;
+    ///<summary>
+    ///  获取一套 <see cref="T:System.Printing.PageMediaSize" />
+    ///  这些对象标识的打印机支持的纸张和介质大小。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  对象的 <see cref="T:System.Printing.PageMediaSize" />
+    ///  。
+    ///</returns>
     property PageMediaSizeCapability: DDN.mscorlib.DNReadOnlyCollection<DNPageMediaSize> read get_PageMediaSizeCapability;
+    ///<summary>
+    ///  获取标识哪些类型的纸张和打印机支持其他媒体的值的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Printing.PageMediaType" />
+    ///  值指定打印介质，如卡股价图、 标签、 无格式、 或照片。
+    ///</returns>
     property PageMediaTypeCapability: DDN.mscorlib.DNReadOnlyCollection<DNPageMediaType> read get_PageMediaTypeCapability;
+    ///<summary>
+    ///  获取的值，用于指示打印机是否能够从前端到后端、 后往前或这两种方式打印多页文档的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Printing.PageOrder" />
+    ///  值。
+    ///</returns>
     property PageOrderCapability: DDN.mscorlib.DNReadOnlyCollection<DNPageOrder> read get_PageOrderCapability;
+    ///<summary>
+    ///  获取标识哪些类型的页面方向打印机支持的值的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Printing.PageOrientation" />
+    ///  值。
+    ///</returns>
     property PageOrientationCapability: DDN.mscorlib.DNReadOnlyCollection<DNPageOrientation> read get_PageOrientationCapability;
+    ///<summary>
+    ///  获取一套 <see cref="T:System.Printing.PageResolution" />
+    ///  标识什么级别的页面分辨率打印机支持的对象。
+    ///</summary>
+    ///<returns><see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  对象的 <see cref="T:System.Printing.PageResolution" />
+    ///  。
+    ///  每个值表示定性值和 / 或每英寸点数的值，作为页面分辨率。
+    ///</returns>
     property PageResolutionCapability: DDN.mscorlib.DNReadOnlyCollection<DNPageResolution> read get_PageResolutionCapability;
+    ///<summary>
+    ///  获取的最大和最小百分比依据打印机可以放大或缩小页面上打印的图像。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PageScalingFactorRange" />
+    ///  对象 <see cref="P:System.Printing.PageScalingFactorRange.MaximumScale" />
+    ///  和 <see cref="P:System.Printing.PageScalingFactorRange.MinimumScale" />
+    ///  属性持有 <see cref="T:System.Int32" />
+    ///  表示百分比的值。
+    ///</returns>
     property PageScalingFactorRange: DNPageScalingFactorRange read get_PageScalingFactorRange;
+    ///<summary>
+    ///  获取集合的整数，每个标识的用户可以选择要在一张纸的一面上打印的页数。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Int32" />
+    ///  表示打印机打印每侧的多个页面所支持的选项的值。
+    ///</returns>
     property PagesPerSheetCapability: DDN.mscorlib.DNReadOnlyCollection<Int32> read get_PagesPerSheetCapability;
+    ///<summary>
+    ///  获取识别哪些打印机支持的一张纸的一面上呈现多页的模式的值的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Printing.PagesPerSheetDirection" />
+    ///  值。
+    ///</returns>
     property PagesPerSheetDirectionCapability: DDN.mscorlib.DNReadOnlyCollection<DNPagesPerSheetDirection> read get_PagesPerSheetDirectionCapability;
+    ///<summary>
+    ///  获取标识的打印机支持用于打印照片的质量选项的值的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Printing.PhotoPrintingIntent" />
+    ///  值。
+    ///</returns>
     property PhotoPrintingIntentCapability: DDN.mscorlib.DNReadOnlyCollection<DNPhotoPrintingIntent> read get_PhotoPrintingIntentCapability;
+    ///<summary>
+    ///  获取标识的自动装订打印机支持的类型的值的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Printing.Stapling" />
+    ///  值。
+    ///</returns>
     property StaplingCapability: DDN.mscorlib.DNReadOnlyCollection<DNStapling> read get_StaplingCapability;
+    ///<summary>
+    ///  获取标识用于处理 TrueType 字体的打印机支持的方法的值的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Printing.TrueTypeFontMode" />
+    ///  值。
+    ///</returns>
     property TrueTypeFontModeCapability: DDN.mscorlib.DNReadOnlyCollection<DNTrueTypeFontMode> read get_TrueTypeFontModeCapability;
   end;
 
@@ -1278,11 +3433,31 @@ type
   ['{2AB5CE1F-B1D4-57DD-88FE-E491C6055CD2}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Printing.PrintTicket" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNPrintTicket; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintTicket" />
+    ///  使用 XML 流 （即包含 PrintTicket 文档） 相兼容的 xml 类 Print Schema。
+    ///</summary>
+    ///  <param name="xmlStream">
+    ///  XML 流，用于描述打印作业并符合打印架构。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="xmlStream" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.FormatException"><paramref name="xmlStream" />
+    ///  不是有效的 XML。
+    ///</exception>
     {class} function init(xmlStream: DDN.mscorlib.DNStream): DNPrintTicket; overload;
 
   end;
 
+  ///<summary>
+  ///  定义打印作业的设置。
+  ///</summary>
   [DNTypeName('System.Printing.PrintTicket')]
   DNPrintTicket = interface(DDN.System.DNINotifyPropertyChanged)
   ['{5CBE7B4B-BDB5-300B-BC94-1614B6838AE7}']
@@ -1334,8 +3509,33 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  创建的可修改复本 <see cref="T:System.Printing.PrintTicket" />
+    ///  , ，从而深度复制此对象的值。
+    ///</summary>
+    ///<returns>
+    ///  当前对象的可修改复本。
+    ///</returns>
     function Clone: DNPrintTicket;
+    ///<summary>
+    ///  返回 <see cref="T:System.IO.MemoryStream" />
+    ///  对象，表示的属性值 <see cref="T:System.Printing.PrintTicket" />
+    ///  作为 XML 流符合 Print Schema。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.IO.MemoryStream" />
+    ///  对象，用于描述使用符合的 XML 的打印票证 Print Schema。
+    ///</returns>
     function GetXmlStream: DDN.mscorlib.DNMemoryStream;
+    ///<summary>
+    ///  将保存 <see cref="T:System.Printing.PrintTicket" />
+    ///  设置应用于 <see cref="T:System.IO.Stream" />
+    ///  对象使用的 XML 格式，符合 Print Schema。
+    ///</summary>
+    ///  <param name="outStream"><see cref="T:System.IO.Stream" />
+    ///  ，它持有保存 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</param>
     procedure SaveTo(outStream: DDN.mscorlib.DNStream);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1344,24 +3544,250 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否打印机逐份打印其输出。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.Collation" />
+    ///  值，该值指示是否打印机逐份打印其输出。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码已尝试将属性设置为一个值，将不在 <see cref="T:System.Printing.Collation" />
+    ///  枚举。
+    ///</exception>
     property Collation: DDN.mscorlib.DNNullable<DNCollation> read get_Collation write set_Collation;
+    ///<summary>
+    ///  获取或设置为打印作业的份数。
+    ///</summary>
+    ///<returns>
+    ///  一个可以为 null <see cref="T:System.Int32" />
+    ///  值，该值指定要打印的份数。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码试图将属性设置为小于 1 的值。
+    ///</exception>
     property CopyCount: DDN.mscorlib.DNNullable<Int32> read get_CopyCount write set_CopyCount;
+    ///<summary>
+    ///  获取或设置一个值，该值打印机是否用基于设备的打印作业的基于计算机的字体的字体替换。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.DeviceFontSubstitution" />
+    ///  值，该值指示设备是否用基于设备的基于计算机的当前的打印作业的字体的字体替换。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码已尝试将属性设置为一个值，将不在 <see cref="T:System.Printing.DeviceFontSubstitution" />
+    ///  枚举。
+    ///</exception>
     property DeviceFontSubstitution: DDN.mscorlib.DNNullable<DNDeviceFontSubstitution> read get_DeviceFontSubstitution write set_DeviceFontSubstitution;
+    ///<summary>
+    ///  获取或设置一个值，该值什么样的双面打印，如果有的话，打印机时使用的打印作业。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.Duplexing" />
+    ///  值，该值指示哪种双面打印，如果有的话，打印机时使用的打印作业。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码已尝试将属性设置为一个值，将不在 <see cref="T:System.Printing.Duplexing" />
+    ///  枚举。
+    ///</exception>
     property Duplexing: DDN.mscorlib.DNNullable<DNDuplexing> read get_Duplexing write set_Duplexing;
+    ///<summary>
+    ///  获取或设置一个值，该值的送纸器 （送纸器） 使用。
+    ///</summary>
+    ///<returns><see cref="T:System.Printing.InputBin" />
+    ///  值，该值指示使用哪些输入送纸器以及是否选择了手动或自动。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码已尝试将属性设置为一个值，将不在 <see cref="T:System.Printing.InputBin" />
+    ///  枚举。
+    ///</exception>
     property InputBin: DDN.mscorlib.DNNullable<DNInputBin> read get_InputBin write set_InputBin;
+    ///<summary>
+    ///  获取或设置一个值，指示打印机如何处理具有颜色或灰色阴影的内容。
+    ///</summary>
+    ///<returns><see cref="T:System.Printing.OutputColor" />
+    ///  值，该值指示打印机如何处理具有颜色或灰色阴影的内容。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码已尝试将属性设置为一个值，将不在 <see cref="T:System.Printing.OutputColor" />
+    ///  枚举。
+    ///</exception>
     property OutputColor: DDN.mscorlib.DNNullable<DNOutputColor> read get_OutputColor write set_OutputColor;
+    ///<summary>
+    ///  获取或设置一个值，该值为打印作业的输出的质量。
+    ///</summary>
+    ///<returns><see cref="T:System.Printing.OutputQuality" />
+    ///  值，该值指定所需的质量级别。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码已尝试将属性设置为一个值，将不在 <see cref="T:System.Printing.OutputQuality" />
+    ///  枚举。
+    ///</exception>
     property OutputQuality: DDN.mscorlib.DNNullable<DNOutputQuality> read get_OutputQuality write set_OutputQuality;
+    ///<summary>
+    ///  获取或设置一个值，指示设备是否将内容打印到介质的边缘或离开边缘周围有的边距。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PageBorderless" />
+    ///  值，该值指定打印机是否采用无边距打印。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码已尝试将属性设置为一个值，将不在 <see cref="T:System.Printing.PageBorderless" />
+    ///  枚举。
+    ///</exception>
     property PageBorderless: DDN.mscorlib.DNNullable<DNPageBorderless> read get_PageBorderless write set_PageBorderless;
+    ///<summary>
+    ///  获取或设置打印机时使用的打印作业的页大小的纸张 （或其他媒体）。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PageMediaSize" />
+    ///  使用一个名称和 / 或维度，表示页面大小的对象。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码操作试图使用设置属性 <see cref="T:System.Printing.PageMediaSize" />
+    ///  对象，它具有至少一个 <see langword="null" />
+    ///  属性。
+    ///  - 或 -
+    ///  调用代码操作试图使用设置属性 <see cref="T:System.Printing.PageMediaSize" />
+    ///  对象，其 <see cref="P:System.Printing.PageMediaSize.PageMediaSizeName" />
+    ///  属性设置为一个值，将不在 <see cref="T:System.Printing.PageMediaSizeName" />
+    ///  枚举。
+    ///  - 或 -
+    ///  调用代码操作试图使用设置属性 <see cref="T:System.Printing.PageMediaSize" />
+    ///  对象，其 <see cref="P:System.Printing.PageMediaSize.Width" />
+    ///  或 <see cref="P:System.Printing.PageMediaSize.Height" />
+    ///  属性设置为小于 1 的值。
+    ///</exception>
     property PageMediaSize: DNPageMediaSize read get_PageMediaSize write set_PageMediaSize;
+    ///<summary>
+    ///  获取或设置一个值，该值什么样的纸张或介质打印机时使用的打印作业。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PageMediaType" />
+    ///  值，该值指定打印介质，如卡股价图、 标签、 无格式、 或照片。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码已尝试将属性设置为一个值，将不在 <see cref="T:System.Printing.PageMediaType" />
+    ///  枚举。
+    ///</exception>
     property PageMediaType: DDN.mscorlib.DNNullable<DNPageMediaType> read get_PageMediaType write set_PageMediaType;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否打印机打印多页后到前或前端到后端。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PageOrder" />
+    ///  值，该值指定第一页上一次的打印或第一页先打印。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码已尝试将属性设置为一个值，将不在 <see cref="T:System.Printing.PageOrder" />
+    ///  枚举。
+    ///</exception>
     property PageOrder: DDN.mscorlib.DNNullable<DNPageOrder> read get_PageOrder write set_PageOrder;
+    ///<summary>
+    ///  获取或设置一个值，该值方向打印的页面内容的方式。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PageOrientation" />
+    ///  值，该值指定如何页面内容面向，例如， <see cref="F:System.Printing.PageOrientation.Landscape" />
+    ///  或 <see cref="F:System.Printing.PageOrientation.ReversePortrait" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码已尝试将属性设置为一个值，将不在 <see cref="T:System.Printing.PageOrientation" />
+    ///  枚举。
+    ///</exception>
     property PageOrientation: DDN.mscorlib.DNNullable<DNPageOrientation> read get_PageOrientation write set_PageOrientation;
+    ///<summary>
+    ///  获取或设置打印机时使用的打印作业的页面分辨率的级别。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PageResolution" />
+    ///  值，该值表示定性值和 / 或每英寸点数的值，作为解决方法。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码操作试图使用设置属性 <see cref="T:System.Printing.PageResolution" />
+    ///  对象，它具有至少一个 <see langword="null" />
+    ///  属性。
+    ///  - 或 -
+    ///  调用代码操作试图使用设置属性 <see cref="T:System.Printing.PageMediaSize" />
+    ///  对象，其 <see cref="P:System.Printing.PageResolution.QualitativeResolution" />
+    ///  属性设置为一个值，将不在 <see cref="T:System.Printing.PageQualitativeResolution" />
+    ///  枚举。
+    ///  - 或 -
+    ///  调用代码操作试图使用设置属性 <see cref="T:System.Printing.PageResolution" />
+    ///  对象，其 <see cref="P:System.Printing.PageResolution.X" />
+    ///  或 <see cref="P:System.Printing.PageResolution.Y" />
+    ///  属性设置为小于 1 的值。
+    ///</exception>
     property PageResolution: DNPageResolution read get_PageResolution write set_PageResolution;
+    ///<summary>
+    ///  获取或设置的百分比依据打印机放大或缩小页面上打印的图像。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  表示百分比的值。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码试图将属性设置为等于或大于 1 的值。
+    ///</exception>
     property PageScalingFactor: DDN.mscorlib.DNNullable<Int32> read get_PageScalingFactor write set_PageScalingFactor;
+    ///<summary>
+    ///  获取或设置在一张纸的每个打印面打印的页面数。
+    ///</summary>
+    ///<returns>
+    ///  一个可以为 null <see cref="T:System.Int32" />
+    ///  值，该值表示的每个打印的页数打印一张纸的面。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码试图将属性设置为等于或大于 1 的值。
+    ///</exception>
     property PagesPerSheet: DDN.mscorlib.DNNullable<Int32> read get_PagesPerSheet write set_PagesPerSheet;
+    ///<summary>
+    ///  获取或设置一个值，指示打印机如何排列打印一张纸的每一侧的多个页面。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PagesPerSheetDirection" />
+    ///  值，该值指示打印机如何呈现每张纸打印多页。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码已尝试将属性设置为一个值，将不在 <see cref="T:System.Printing.PagesPerSheetDirection" />
+    ///  枚举。
+    ///</exception>
     property PagesPerSheetDirection: DDN.mscorlib.DNNullable<DNPagesPerSheetDirection> read get_PagesPerSheetDirection write set_PagesPerSheetDirection;
+    ///<summary>
+    ///  获取或设置一个值，该值指示在定性术语中的打印机用于打印照片的质量级别。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PhotoPrintingIntent" />
+    ///  值，该值指示的照片质量级别。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码已尝试将属性设置为一个值，将不在 <see cref="T:System.Printing.PhotoPrintingIntent" />
+    ///  枚举。
+    ///</exception>
     property PhotoPrintingIntent: DDN.mscorlib.DNNullable<DNPhotoPrintingIntent> read get_PhotoPrintingIntent write set_PhotoPrintingIntent;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否，以及在何处，打印机装订多页。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.Stapling" />
+    ///  值，该值指定打印机如何装订输出。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码已尝试将属性设置为一个值，将不在 <see cref="T:System.Printing.Stapling" />
+    ///  枚举。
+    ///</exception>
     property Stapling: DDN.mscorlib.DNNullable<DNStapling> read get_Stapling write set_Stapling;
+    ///<summary>
+    ///  获取或设置一个值，指示打印机如何处理使用 TrueType 字体的文本。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.TrueTypeFontMode" />
+    ///  值，该值指定打印机如何处理 TrueType 字体。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  调用代码已尝试将属性设置为一个值，将不在 <see cref="T:System.Printing.TrueTypeFontMode" />
+    ///  枚举。
+    ///</exception>
     property TrueTypeFontMode: DDN.mscorlib.DNNullable<DNTrueTypeFontMode> read get_TrueTypeFontMode write set_TrueTypeFontMode;
   end;
 
@@ -1372,6 +3798,10 @@ type
   ['{348DAD8C-EA09-52BE-B188-39C6394FC1E5}']
   end;
 
+  ///<summary>
+  ///  表示合并 <see cref="T:System.Printing.PrintTicket" />
+  ///  ，保证是可行的与某一任何的报表设置都已更改为使其可行的。
+  ///</summary>
   [DNTypeName('System.Printing.ValidationResult')]
   DNValidationResult = interface(DDN.mscorlib.DNValueType)
   ['{33DA9668-674F-3464-A9AC-D5A47647CD7E}']
@@ -1382,14 +3812,61 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  确定指定的 <see cref="T:System.Printing.ValidationResult" />
+    ///  是否等同于当前的 <see cref="T:System.Printing.ValidationResult" />
+    ///  。
+    ///</summary>
+    ///  <param name="o">
+    ///  要比较的 <see cref="T:System.Printing.ValidationResult" />
+    ///  。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <see cref="T:System.Printing.ValidationResult" />
+    ///  对象是否相等; 否则为 <see langword="false" />
+    ///  。
+    ///<see langword="false" />
+    ///  如果传递的对象不可也返回 <see cref="T:System.Printing.ValidationResult" />
+    ///  。
+    ///</returns>
     function Equals(o: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取与关联的哈希代码 <see cref="T:System.Printing.ValidationResult" />
+    ///  并将其 <see cref="T:System.Printing.PrintTicket" />
+    ///  和打印的流。
+    ///</summary>
+    ///<returns>
+    ///  当前 <see cref="T:System.Printing.ValidationResult" />
+    ///  的哈希代码。
+    ///</returns>
     function GetHashCode: Int32;
     function ToString: string;
     function GetType: DDN.mscorlib.DNType;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Printing.PrintTicket" />
+    ///  得出合并两个对象 <see cref="T:System.Printing.PrintTicket" />
+    ///  可能调整以确保其生存性的对象。
+    ///</summary>
+    ///<returns>
+    ///  有效且可行 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///  默认值为 <see langword="null" />
+    ///  。
+    ///</returns>
     property ValidatedPrintTicket: DNPrintTicket read get_ValidatedPrintTicket;
+    ///<summary>
+    ///  获取一个值，该值由打印机所支持的功能和两个源的初始合并所需的功能之间是否发生了冲突 <see cref="T:System.Printing.PrintTicket" />
+    ///  s。
+    ///</summary>
+    ///<returns>
+    ///  其中一个 <see cref="T:System.Printing.ConflictStatus" />
+    ///  值，该值指示未发生冲突或至少一个冲突发生，但已得到解决。
+    ///  默认值为 <see cref="F:System.Printing.ConflictStatus.NoConflict" />
+    ///  。
+    ///</returns>
     property ConflictStatus: DNConflictStatus read get_ConflictStatus;
   end;
 

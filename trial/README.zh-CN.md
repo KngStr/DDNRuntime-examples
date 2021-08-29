@@ -4,6 +4,13 @@
 
 ### 更新日志
 
+* v0.1.20
+  * 1、增加泛型类型支持（暂不支持嵌套的泛型）。
+  * 2、修复创建委托数据时没有强制清理数据。
+  * 3、增加新的`DDN.Helpers`单元。
+  * 4、优化类型查找的速度。
+  * 5、重构GenCode工具，不再生成Common单元，MS标准库将直接提供。
+
 * v0.1.16
   * 1、增加`SetShowDetailedExceptionMessage`，用于异常时可以显示详细错误信息。
   * 2、initialization中还原`SetExceptionMask`，用于默认屏蔽某些异常。

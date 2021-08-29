@@ -41,10 +41,17 @@ type
   ['{293A92D6-AEF9-58DF-A5B1-6BA3861F2E94}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Xml.XmlConfiguration.XmlReaderSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXmlReaderSection;
 
   end;
 
+  ///<summary>
+  ///  表示 XML 读取器部分。
+  ///</summary>
   [DNTypeName('System.Xml.XmlConfiguration.XmlReaderSection')]
   DNXmlReaderSection = interface(DNObject)
   ['{EA347DAF-7390-3B48-9D4C-FB9DF63C7405}']
@@ -74,7 +81,21 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置表示禁止默认冲突解决程序的字符串。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  表示禁止默认冲突解决程序。
+    ///</returns>
     property ProhibitDefaultResolverString: string read get_ProhibitDefaultResolverString write set_ProhibitDefaultResolverString;
+    ///<summary>
+    ///  获取或设置表示布尔值的字符串，该值指示是否已将空格折叠为空字符串。
+    ///  默认值为“false”。
+    ///</summary>
+    ///<returns>
+    ///  一个表示布尔值的字符串，该值指示是否已将空格折叠为空字符串。
+    ///</returns>
     property CollapseWhiteSpaceIntoEmptyStringString: string read get_CollapseWhiteSpaceIntoEmptyStringString write set_CollapseWhiteSpaceIntoEmptyStringString;
     property SectionInformation: DDN.System.Configuration.DNSectionInformation read get_SectionInformation;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
@@ -93,10 +114,17 @@ type
   ['{A33C0589-2404-58C8-84B6-3E4B9D33A8DD}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Xml.XmlConfiguration.XsltConfigSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXsltConfigSection;
 
   end;
 
+  ///<summary>
+  ///  表示 XSLT 配置节。
+  ///</summary>
   [DNTypeName('System.Xml.XmlConfiguration.XsltConfigSection')]
   DNXsltConfigSection = interface(DNObject)
   ['{B2BD5B40-20F9-3AE2-84E2-4626C5C4C2C9}']
@@ -124,6 +152,12 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置一个字符串，表示 XSLT 禁止默认冲突解决程序。
+    ///</summary>
+    ///<returns>
+    ///  一个字符串，表示 XSLT 禁止默认冲突解决程序。
+    ///</returns>
     property ProhibitDefaultResolverString: string read get_ProhibitDefaultResolverString write set_ProhibitDefaultResolverString;
     property SectionInformation: DDN.System.Configuration.DNSectionInformation read get_SectionInformation;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;

@@ -7,7 +7,7 @@
  DDNRuntime(Delphi .NET Runtime)  
 
 ----
- **Latest version: v0.1.16**    
+ **Latest version: v0.1.20**    
  ----  
 
  **This is not an open source and free project. Only examples are stored here.**  
@@ -17,10 +17,11 @@
 * No need for COM support.
 * It is very simple to use, just declare the type and method of .NET in Delphi.
 * Dedicated translation tool, input one or more .NET assembly DLL, output one or two Delphi import units.
-* Support interface types (including generic interface).
+* Support interface types.
 * Support dynamic array (one-dimensional array).
 * Support Delegate type.
 * Support Event.
+* Generic type (Currently does not support nested generics, such as: `DNICollection<DNKeyValuePair<TKey, TValue>>` such multi-level nesting).
 
 ## Requires
 
@@ -31,11 +32,9 @@
 
 ## Not supported
 
-* Generic type (excluding generic interface).
 
 ## Implementing features
 
-* Generic type.
 
 ## Trial
 

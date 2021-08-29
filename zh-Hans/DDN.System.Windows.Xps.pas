@@ -31,12 +31,24 @@ type
 { enums }
 
   //-------------namespace: System.Windows.Xps----------------
+  ///<summary>
+  ///  指示对 XML 纸张规范 (XPS) 文档或打印队列的写入操作是按页还是按文档发送回进度通知。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.XpsDocumentNotificationLevel')]
   DNXpsDocumentNotificationLevel = type Integer;
   DNXpsDocumentNotificationLevelHelper = record helper for DNXpsDocumentNotificationLevel
   public const
+    ///<summary>
+    ///  未指示通知状态。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  已启用进度通知。
+    ///</summary>
     ReceiveNotificationEnabled = 1;
+    ///<summary>
+    ///  已禁用进度通知。
+    ///</summary>
     ReceiveNotificationDisabled = 2;
   end;
 
@@ -60,12 +72,41 @@ type
   ['{9E00F93A-6967-59FD-AC51-4932C1B32B9D}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.XpsWriterException" />
+    ///  提供特定错误条件，并且包含导致异常的类。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
+    ///  <param name="innerException">
+    ///  导致的基础错误 <see cref="T:System.Windows.Xps.XpsWriterException" />
+    ///  。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNXpsWriterException; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Windows.Xps.XpsWriterException" />
+    ///  类，该类提供了特定错误情况。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  描述错误条件。
+    ///</param>
     {class} function init(message: string): DNXpsWriterException; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Xps.XpsWriterException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNXpsWriterException; overload;
 
   end;
 
+  ///<summary>
+  ///  当调用的 <see cref="T:System.Windows.Xps.XpsDocumentWriter" />
+  ///  或 <see cref="T:System.Windows.Xps.VisualsToXpsDocument" />
+  ///  对象的方法与对象的当前状态不兼容时引发的异常。
+  ///</summary>
   [DNTypeName('System.Windows.Xps.XpsWriterException')]
   DNXpsWriterException = interface(DDN.mscorlib.DNException)
   ['{71331F4C-A5DA-392B-A607-37027A22CF73}']
@@ -110,6 +151,8 @@ type
   ['{EDA04938-441E-501B-AB5F-1AF36C5233A3}']
   end;
 
+  ///<summary>
+  ///  提供方法来写入 XPS 文档或打印队列。  </summary>
   [DNTypeName('System.Windows.Xps.XpsDocumentWriter')]
   DNXpsDocumentWriter = interface(DNObject)
   ['{F398D7C3-13B0-3A47-90DD-C739F949136B}']
@@ -118,40 +161,469 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  与 <see cref="T:System.Printing.PrintTicket" />
+    ///  一起异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedPage">
+    ///  写入的页。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它表示页的默认打印首选项。
+    ///</param>
     procedure Write(fixedPage: DDN.PresentationFramework.DNFixedPage; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  同步写入到目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedPage">
+    ///  写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  的页面。
+    ///</param>
     procedure Write(fixedPage: DDN.PresentationFramework.DNFixedPage); overload;
+    ///<summary>
+    ///  将 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  连同 <see cref="T:System.Printing.PrintTicket" />
+    ///  一起异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocument">
+    ///  写入的文档。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它表示文档的默认打印首选项。
+    ///</param>
     procedure Write(fixedDocument: DDN.PresentationFramework.DNFixedDocument; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  同步写入到目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocument">
+    ///  写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  的文档。
+    ///</param>
     procedure Write(fixedDocument: DDN.PresentationFramework.DNFixedDocument); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  与 <see cref="T:System.Printing.PrintTicket" />
+    ///  一起异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocumentSequence">
+    ///  被写入的文档集。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它表示文档集的默认打印首选项。
+    ///</param>
     procedure Write(fixedDocumentSequence: DDN.PresentationFramework.DNFixedDocumentSequence; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  同步写入到目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocumentSequence">
+    ///  写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  的文档集。
+    ///</param>
     procedure Write(fixedDocumentSequence: DDN.PresentationFramework.DNFixedDocumentSequence); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Media.Visual" />
+    ///  与 <see cref="T:System.Printing.PrintTicket" />
+    ///  一起异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="visual">
+    ///  写入的 <see cref="T:System.Windows.Media.Visual" />
+    ///  。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它表示文档的默认打印首选项。
+    ///</param>
     procedure Write(visual: DDN.PresentationCore.DNVisual; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Media.Visual" />
+    ///  同步写入到目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="visual">
+    ///  写入的 <see cref="T:System.Windows.Media.Visual" />
+    ///  。
+    ///</param>
     procedure Write(visual: DDN.PresentationCore.DNVisual); overload;
+    ///<summary>
+    ///  将分页内容从指定的 <see cref="T:System.Windows.Documents.DocumentPaginator" />
+    ///  和 <see cref="T:System.Printing.PrintTicket" />
+    ///  同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="documentPaginator">
+    ///  包含指向未分页源材料的指针并包含材料分页方法的对象。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，表示材料的默认打印首选项。
+    ///</param>
     procedure Write(documentPaginator: DDN.PresentationCore.DNDocumentPaginator; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  将指定 <see cref="T:System.Windows.Documents.DocumentPaginator" />
+    ///  中的分页内容同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="documentPaginator">
+    ///  包含指向未分页源材料的指针并包含材料分页方法的对象。
+    ///</param>
     procedure Write(documentPaginator: DDN.PresentationCore.DNDocumentPaginator); overload;
+    ///<summary>
+    ///  将指定的 XPS 文档同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="documentPath">
+    ///  源文档的路径。
+    ///</param>
+    ///  <param name="notificationLevel">
+    ///  对是否已启用通知的指示。
+    ///</param>
     procedure Write(documentPath: string; notificationLevel: DNXpsDocumentNotificationLevel); overload;
+    ///<summary>
+    ///  将指定的 XPS 文档同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="documentPath">
+    ///  源文档的路径。
+    ///</param>
     procedure Write(documentPath: string); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  连同 <see cref="T:System.Printing.PrintTicket" />
+    ///  一起异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedPage">
+    ///  写入的页。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它表示页的默认打印首选项。
+    ///</param>
+    ///  <param name="userSuppliedState">
+    ///  用户指定的对象，用于标识并关联异步操作。
+    ///</param>
     procedure WriteAsync(fixedPage: DDN.PresentationFramework.DNFixedPage; printTicket: DDN.ReachFramework.DNPrintTicket; userSuppliedState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedPage">
+    ///  写入的页。
+    ///</param>
+    ///  <param name="userSuppliedState">
+    ///  用户指定的对象，用于标识并关联异步操作。
+    ///</param>
     procedure WriteAsync(fixedPage: DDN.PresentationFramework.DNFixedPage; userSuppliedState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  连同 <see cref="T:System.Printing.PrintTicket" />
+    ///  一起异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedPage">
+    ///  写入的页。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它表示页的默认打印首选项。
+    ///</param>
     procedure WriteAsync(fixedPage: DDN.PresentationFramework.DNFixedPage; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedPage">
+    ///  写入的页。
+    ///</param>
     procedure WriteAsync(fixedPage: DDN.PresentationFramework.DNFixedPage); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  连同 <see cref="T:System.Printing.PrintTicket" />
+    ///  一起异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocument">
+    ///  写入的文档。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它表示文档的默认打印首选项。
+    ///</param>
+    ///  <param name="userSuppliedState">
+    ///  用户指定的对象，用于标识并关联异步操作。
+    ///</param>
     procedure WriteAsync(fixedDocument: DDN.PresentationFramework.DNFixedDocument; printTicket: DDN.ReachFramework.DNPrintTicket; userSuppliedState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocument">
+    ///  写入的文档。
+    ///</param>
+    ///  <param name="userSuppliedState">
+    ///  用户指定的对象，用于标识并关联异步操作。
+    ///</param>
     procedure WriteAsync(fixedDocument: DDN.PresentationFramework.DNFixedDocument; userSuppliedState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  连同 <see cref="T:System.Printing.PrintTicket" />
+    ///  一起异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocument">
+    ///  写入的文档。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它表示文档的默认打印首选项。
+    ///</param>
     procedure WriteAsync(fixedDocument: DDN.PresentationFramework.DNFixedDocument; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocument">
+    ///  写入的文档。
+    ///</param>
     procedure WriteAsync(fixedDocument: DDN.PresentationFramework.DNFixedDocument); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  连同 <see cref="T:System.Printing.PrintTicket" />
+    ///  一起异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocumentSequence">
+    ///  要写入的文档集。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它表示文档集的默认打印首选项。
+    ///</param>
+    ///  <param name="userSuppliedState">
+    ///  用户指定的对象，用于标识并关联异步操作。
+    ///</param>
     procedure WriteAsync(fixedDocumentSequence: DDN.PresentationFramework.DNFixedDocumentSequence; printTicket: DDN.ReachFramework.DNPrintTicket; userSuppliedState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocumentSequence">
+    ///  被写入的文档集。
+    ///</param>
+    ///  <param name="userSuppliedState">
+    ///  用户指定的对象，用于标识并关联异步操作。
+    ///</param>
     procedure WriteAsync(fixedDocumentSequence: DDN.PresentationFramework.DNFixedDocumentSequence; userSuppliedState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  连同 <see cref="T:System.Printing.PrintTicket" />
+    ///  一起异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocumentSequence">
+    ///  被写入的文档集。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它表示文档集的默认打印首选项。
+    ///</param>
     procedure WriteAsync(fixedDocumentSequence: DDN.PresentationFramework.DNFixedDocumentSequence; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocumentSequence">
+    ///  编写的文档集。
+    ///</param>
     procedure WriteAsync(fixedDocumentSequence: DDN.PresentationFramework.DNFixedDocumentSequence); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Media.Visual" />
+    ///  连同 <see cref="T:System.Printing.PrintTicket" />
+    ///  一起异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="visual">
+    ///  写入的 <see cref="T:System.Windows.Media.Visual" />
+    ///  。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它表示文档的默认打印首选项。
+    ///</param>
+    ///  <param name="userSuppliedState">
+    ///  用户指定的对象，用于标识并关联异步操作。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual; printTicket: DDN.ReachFramework.DNPrintTicket; userSuppliedState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Media.Visual" />
+    ///  异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="visual">
+    ///  写入的 <see cref="T:System.Windows.Media.Visual" />
+    ///  。
+    ///</param>
+    ///  <param name="userSuppliedState">
+    ///  用户指定的对象，用于标识并关联异步操作。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual; userSuppliedState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Media.Visual" />
+    ///  连同 <see cref="T:System.Printing.PrintTicket" />
+    ///  一起异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="visual">
+    ///  写入的 <see cref="T:System.Windows.Media.Visual" />
+    ///  。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它表示文档的默认打印首选项。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  将指定的 <see cref="T:System.Windows.Media.Visual" />
+    ///  异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="visual">
+    ///  写入的 <see cref="T:System.Windows.Media.Visual" />
+    ///  。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual); overload;
+    ///<summary>
+    ///  将分页内容从指定的 <see cref="T:System.Windows.Documents.DocumentPaginator" />
+    ///  和 <see cref="T:System.Printing.PrintTicket" />
+    ///  同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="documentPaginator">
+    ///  包含指向未分页源材料的指针和材料分页方法的对象。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  表示材料的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</param>
+    ///  <param name="userSuppliedState">
+    ///  用户指定的对象，用于标识并关联异步操作。
+    ///</param>
     procedure WriteAsync(documentPaginator: DDN.PresentationCore.DNDocumentPaginator; printTicket: DDN.ReachFramework.DNPrintTicket; userSuppliedState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  将指定 <see cref="T:System.Windows.Documents.DocumentPaginator" />
+    ///  中的分页内容异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="documentPaginator">
+    ///  包含指向未分页源材料的指针和材料分页方法的对象。
+    ///</param>
+    ///  <param name="userSuppliedState">
+    ///  用户指定的对象，用于标识并关联异步操作。
+    ///</param>
     procedure WriteAsync(documentPaginator: DDN.PresentationCore.DNDocumentPaginator; userSuppliedState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  将分页内容从指定的 <see cref="T:System.Windows.Documents.DocumentPaginator" />
+    ///  和 <see cref="T:System.Printing.PrintTicket" />
+    ///  同步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="documentPaginator">
+    ///  包含指向未分页源材料的指针并包含材料分页方法的对象。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  表示材料的默认打印首选项的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</param>
     procedure WriteAsync(documentPaginator: DDN.PresentationCore.DNDocumentPaginator; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  将指定 <see cref="T:System.Windows.Documents.DocumentPaginator" />
+    ///  中的分页内容异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="documentPaginator">
+    ///  包含指向未分页源材料的指针并包含材料分页方法的对象。
+    ///</param>
     procedure WriteAsync(documentPaginator: DDN.PresentationCore.DNDocumentPaginator); overload;
+    ///<summary>
+    ///  将带有通知选项的指定的 XPS 文档异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  中。
+    ///</summary>
+    ///  <param name="documentPath">
+    ///  源文档的路径。
+    ///</param>
+    ///  <param name="notificationLevel">
+    ///  对是否已启用通知的指示。
+    ///</param>
     procedure WriteAsync(documentPath: string; notificationLevel: DNXpsDocumentNotificationLevel); overload;
+    ///<summary>
+    ///  将指定的 XPS 文档异步写入目标 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="documentPath">
+    ///  源文档的路径。
+    ///</param>
     procedure WriteAsync(documentPath: string); overload;
+    ///<summary>
+    ///  取消当前 <see cref="Overload:System.Windows.Xps.XpsDocumentWriter.WriteAsync" />
+    ///  操作。
+    ///</summary>
+    ///<exception cref="T:System.Windows.Xps.XpsWriterException">
+    ///  没有正在进行的异步写入操作。
+    ///</exception>
     procedure CancelAsync;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -167,20 +639,126 @@ type
   ['{3EACA6E5-DEB6-5D97-88B0-B253816007B9}']
   end;
 
+  ///<summary>
+  ///  提供用于编写方法<see cref="T:System.Windows.Media.Visual" />
+  ///  对象添加到XML 纸张规范 (XPS)文档或以批处理模式打印队列。 </summary>
   [DNTypeName('System.Windows.Xps.VisualsToXpsDocument')]
   DNVisualsToXpsDocument = interface(DNObject)
   ['{7A0C58B6-6D57-31EB-AF35-A3FC337B5249}']
   { methods } 
 
+    ///<summary>
+    ///  指示可以开始写入操作。
+    ///</summary>
     procedure BeginBatchWrite;
+    ///<summary>
+    ///  指示写操作必须结束。
+    ///</summary>
     procedure EndBatchWrite;
+    ///<summary>
+    ///  将 <see cref="T:System.Windows.Media.Visual" />
+    ///  同步写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  并包含 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</summary>
+    ///  <param name="visual">
+    ///  写入的 <see cref="T:System.Windows.Media.Visual" />
+    ///  。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它表示文档的默认打印首选项。
+    ///</param>
     procedure Write(visual: DDN.PresentationCore.DNVisual; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  将 <see cref="T:System.Windows.Media.Visual" />
+    ///  同步写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="visual">
+    ///  写入的 <see cref="T:System.Windows.Media.Visual" />
+    ///  。
+    ///</param>
     procedure Write(visual: DDN.PresentationCore.DNVisual); overload;
+    ///<summary>
+    ///  将 <see cref="T:System.Windows.Media.Visual" />
+    ///  异步写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  ，写入内容还包含调用方想要传递到事件处理程序的 <see cref="T:System.Printing.PrintTicket" />
+    ///  和任何其他信息。
+    ///</summary>
+    ///  <param name="visual">
+    ///  写入的 <see cref="T:System.Windows.Media.Visual" />
+    ///  。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它表示文档的默认打印首选项。
+    ///</param>
+    ///  <param name="userSuppliedState">
+    ///  一个对象，包含调用方想要传递到 <see cref="E:System.Windows.Xps.XpsDocumentWriter.WritingCompleted" />
+    ///  事件处理程序的数据。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual; printTicket: DDN.ReachFramework.DNPrintTicket; userSuppliedState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  将 <see cref="T:System.Windows.Media.Visual" />
+    ///  异步写入到 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  ，并包含调用方想要传递到事件处理程序的其他信息。
+    ///</summary>
+    ///  <param name="visual">
+    ///  写入的 <see cref="T:System.Windows.Media.Visual" />
+    ///  。
+    ///</param>
+    ///  <param name="userSuppliedState">
+    ///  一个对象，它包含调用方想要传递到 <see cref="E:System.Windows.Xps.XpsDocumentWriter.WritingCompleted" />
+    ///  事件处理程序的数据。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual; userSuppliedState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  将 <see cref="T:System.Windows.Media.Visual" />
+    ///  异步写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  并包含 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</summary>
+    ///  <param name="visual">
+    ///  写入的 <see cref="T:System.Windows.Media.Visual" />
+    ///  。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  ，它表示文档的默认打印首选项。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  将 <see cref="T:System.Windows.Media.Visual" />
+    ///  异步写入 <see cref="T:System.Windows.Xps.Packaging.XpsDocument" />
+    ///  或 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="visual">
+    ///  写入的 <see cref="T:System.Windows.Media.Visual" />
+    ///  。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual); overload;
+    ///<summary>
+    ///  取消异步写入操作。
+    ///</summary>
+    ///<exception cref="T:System.Windows.Xps.XpsWriterException"><see cref="T:System.Windows.Xps.VisualsToXpsDocument" />
+    ///  的状态与 <see cref="M:System.Windows.Xps.VisualsToXpsDocument.CancelAsync" />
+    ///  操作不兼容。
+    ///</exception>
     procedure CancelAsync;
+    ///<summary>
+    ///  取消同步写入操作。
+    ///</summary>
+    ///<exception cref="T:System.Windows.Xps.XpsWriterException"><see cref="T:System.Windows.Xps.VisualsToXpsDocument" />
+    ///  的状态与 <see cref="M:System.Windows.Xps.VisualsToXpsDocument.Cancel" />
+    ///  操作不兼容。
+    ///</exception>
     procedure Cancel;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;

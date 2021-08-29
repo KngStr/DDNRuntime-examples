@@ -29,80 +29,193 @@ type
 { enums }
 
   //-------------namespace: System.Transactions----------------
+  ///<summary>
+  ///  控制要创建依赖事务的种类。
+  ///</summary>
   [DNTypeName('System.Transactions.DependentCloneOption')]
   DNDependentCloneOption = type Integer;
   DNDependentCloneOptionHelper = record helper for DNDependentCloneOption
   public const
+    ///<summary>
+    ///  该依赖事务被阻止的事务的提交过程，直至父事务超时或 <see cref="M:System.Transactions.DependentTransaction.Complete" />
+    ///  调用。
+    ///  在这种情况下，可以对事务进行额外的工作，并可以创建新的登记。
+    ///</summary>
     BlockCommitUntilComplete = 0;
+    ///<summary>
+    ///  如果在之前对父事务上调用提交后，该依赖事务将自动中止该事务 <see cref="M:System.Transactions.DependentTransaction.Complete" />
+    ///  调用。
+    ///</summary>
     RollbackIfNotComplete = 1;
   end;
 
 
   //-------------namespace: System.Transactions----------------
+  ///<summary>
+  ///  确定是否应在准备阶段登记该对象。
+  ///</summary>
   [DNTypeName('System.Transactions.EnlistmentOptions')]
   DNEnlistmentOptions = type Integer;
   DNEnlistmentOptionsHelper = record helper for DNEnlistmentOptions
   public const
+    ///<summary>
+    ///  该对象不需要做出的承诺过程的初始阶段中登记。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  该对象必须在提交过程的初始阶段中登记。
+    ///</summary>
     EnlistDuringPrepareRequired = 1;
   end;
 
 
   //-------------namespace: System.Transactions----------------
+  ///<summary>
+  ///  指定如何分布式的事务与 COM + 事务交互。
+  ///</summary>
   [DNTypeName('System.Transactions.EnterpriseServicesInteropOption')]
   DNEnterpriseServicesInteropOption = type Integer;
   DNEnterpriseServicesInteropOptionHelper = record helper for DNEnterpriseServicesInteropOption
   public const
+    ///<summary>
+    ///  不能同步之间 <see cref="P:System.EnterpriseServices.ContextUtil.Transaction" />
+    ///  和 <see cref="P:System.Transactions.Transaction.Current" />
+    ///  。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  搜索现有 COM + 上下文，并与之同步，如果存在。
+    ///</summary>
     Automatic = 1;
+    ///<summary><see cref="N:System.EnterpriseServices" />
+    ///  上下文 (可以通过调用静态方法来检索其 <see cref="P:System.EnterpriseServices.ContextUtil.Transaction" />
+    ///  的 <see cref="T:System.EnterpriseServices.ContextUtil" />
+    ///  类) 和 <see cref="N:System.Transactions" />
+    ///  环境事务 (可以通过调用静态方法来检索其 <see cref="P:System.Transactions.Transaction.Current" />
+    ///  的 <see cref="T:System.Transactions.Transaction" />
+    ///  类) 始终保持同步。
+    ///  这带来了对性能产生负面影响，因为新 <see cref="N:System.EnterpriseServices" />
+    ///  上下文可能需要创建。
+    ///</summary>
     Full = 2;
   end;
 
 
   //-------------namespace: System.Transactions----------------
+  ///<summary>
+  ///  指定事务的隔离级别。
+  ///</summary>
   [DNTypeName('System.Transactions.IsolationLevel')]
   DNIsolationLevel = type Integer;
   DNIsolationLevelHelper = record helper for DNIsolationLevel
   public const
+    ///<summary>
+    ///  易失数据可以读取但不是会修改，并在事务处理期间，可以添加任何新数据。
+    ///</summary>
     Serializable = 0;
+    ///<summary>
+    ///  可以读取但不是会修改在事务处理期间易失数据。
+    ///  在事务处理期间，可以添加新数据。
+    ///</summary>
     RepeatableRead = 1;
+    ///<summary>
+    ///  易失数据不能在事务期间读取，但可以修改。
+    ///</summary>
     ReadCommitted = 2;
+    ///<summary>
+    ///  可以读取和修改在事务处理期间易失性数据。
+    ///</summary>
     ReadUncommitted = 3;
+    ///<summary>
+    ///  可以读取易失数据。
+    ///  在事务修改数据之前，它验证后最初读取其他事务是否已更改数据。
+    ///  如果已更新的数据，则引发错误。
+    ///  这允许一个事务来获取对此数据的以前提交的值。
+    ///</summary>
     Snapshot = 4;
+    ///<summary>
+    ///  无法覆盖从更高隔离级别的事务挂起的更改。
+    ///</summary>
     Chaos = 5;
+    ///<summary>
+    ///  正在使用比指定不同的隔离级别，但不能确定其级别。
+    ///  如果设置此值，将引发异常。
+    ///</summary>
     Unspecified = 6;
   end;
 
 
   //-------------namespace: System.Transactions----------------
+  ///<summary>
+  ///  [在 .NET Framework 4.5.1 和更高版本中受支持]
+  ///  指定是否为启用事务流跨线程延续 <see cref="T:System.Transactions.TransactionScope" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Transactions.TransactionScopeAsyncFlowOption')]
   DNTransactionScopeAsyncFlowOption = type Integer;
   DNTransactionScopeAsyncFlowOptionHelper = record helper for DNTransactionScopeAsyncFlowOption
   public const
+    ///<summary>
+    ///  指定隐藏跨线程继续符的事务流。
+    ///</summary>
     Suppress = 0;
+    ///<summary>
+    ///  指定启用了事务流跨线程继续符。
+    ///</summary>
     Enabled = 1;
   end;
 
 
   //-------------namespace: System.Transactions----------------
+  ///<summary>
+  ///  提供用于创建事务的作用域的其他选项。
+  ///</summary>
   [DNTypeName('System.Transactions.TransactionScopeOption')]
   DNTransactionScopeOption = type Integer;
   DNTransactionScopeOptionHelper = record helper for DNTransactionScopeOption
   public const
+    ///<summary>
+    ///  由范围，则需要使用事务。
+    ///  如果已存在，它使用环境事务。
+    ///  否则，它创建新的事务，然后才能进入该范围。
+    ///  这是默认值。
+    ///</summary>
     Required = 0;
+    ///<summary>
+    ///  为作用域始终创建一个新事务。
+    ///</summary>
     RequiresNew = 1;
+    ///<summary>
+    ///  创建作用域时取消环境事务上下文。
+    ///  所有作用域内操作没有环境事务上下文。
+    ///</summary>
     Suppress = 2;
   end;
 
 
   //-------------namespace: System.Transactions----------------
+  ///<summary>
+  ///  介绍分布式事务的当前状态。
+  ///</summary>
   [DNTypeName('System.Transactions.TransactionStatus')]
   DNTransactionStatus = type Integer;
   DNTransactionStatusHelper = record helper for DNTransactionStatus
   public const
+    ///<summary>
+    ///  事务的状态是未知的，因为仍必须轮询一些参与者。
+    ///</summary>
     Active = 0;
+    ///<summary>
+    ///  该事务已提交。
+    ///</summary>
     Committed = 1;
+    ///<summary>
+    ///  该事务已回滚。
+    ///</summary>
     Aborted = 2;
+    ///<summary>
+    ///  事务的状态是未知的。
+    ///</summary>
     InDoubt = 3;
   end;
 
@@ -146,12 +259,43 @@ type
 
 { delegates }
 
+  ///<summary>
+  ///  提供宿主环境可以提供其自己的默认概念的一种机制 <see cref="P:System.Transactions.Transaction.Current" />
+  ///  。
+  ///</summary>
+  ///<returns>
+  ///  一个 <see cref="T:System.Transactions.Transaction" />
+  ///  对象。
+  ///</returns>
   [DNTypeName('System.Transactions.HostCurrentTransactionCallback')]
   DNHostCurrentTransactionCallback = function: DNTransaction of object;
 
+  ///<summary>
+  ///  表示用于处理的方法 <see cref="E:System.Transactions.Transaction.TransactionCompleted" />
+  ///  事件 <see cref="T:System.Transactions.Transaction" />
+  ///  类。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e">
+  ///  包含事件数据的 <see cref="T:System.Transactions.TransactionEventArgs" />
+  ///  。
+  ///</param>
   [DNTypeName('System.Transactions.TransactionCompletedEventHandler')]
   DNTransactionCompletedEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNTransactionEventArgs) of object;
 
+  ///<summary>
+  ///  表示将处理的方法 <see cref="E:System.Transactions.TransactionManager.DistributedTransactionStarted" />
+  ///  事件 <see cref="T:System.Transactions.TransactionManager" />
+  ///  类。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e"><see cref="T:System.Transactions.TransactionEventArgs" />
+  ///  包含可以从哪些事务检索信息的事务。
+  ///</param>
   [DNTypeName('System.Transactions.TransactionStartedEventHandler')]
   DNTransactionStartedEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNTransactionEventArgs) of object;
 
@@ -161,68 +305,192 @@ type
 { objects }
 
   //-------------namespace: System.Transactions----------------
+  ///<summary>
+  ///  描述 DTC 事务。
+  ///</summary>
   [DNTypeName('System.Transactions.IDtcTransaction')]
   DNIDtcTransaction = interface(DDN.mscorlib.DNObject)
   ['{0FB15084-AF41-11CE-BD2B-204C4F4F5020}']
   { methods } 
 
+    ///<summary>
+    ///  提交事务。
+    ///</summary>
+    ///  <param name="retaining">
+    ///  此值必须是 <see langword="false" />
+    ///  。
+    ///</param>
+    ///  <param name="commitType">
+    ///  从 OLE DB 枚举的值 <see langword="XACTTC" />
+    ///  。
+    ///</param>
+    ///  <param name="reserved">
+    ///  此值必须为零。
+    ///</param>
     procedure Commit(retaining: Int32; commitType: Int32; reserved: Int32);
+    ///<summary>
+    ///  中止事务。
+    ///</summary>
+    ///  <param name="reason">
+    ///  一个可选 <see cref="T:System.EnterpriseServices.BOID" />
+    ///  ，该值指示在事务中止原因。
+    ///  此参数可以为 <see langword="null" />
+    ///  , ，指示不提供任何原因有关中止。
+    ///</param>
+    ///  <param name="retaining">
+    ///  此值必须是 <see langword="false" />
+    ///  。
+    ///</param>
+    ///  <param name="async">
+    ///  当 <paramref name="async" />
+    ///  是 <see langword="true" />
+    ///  , ，执行异步中止，并且调用方必须使用 <see langword="ITransactionOutcomeEvents" />
+    ///  若要了解有关该事务的结果。
+    ///</param>
     procedure &Abort(reason: IntPtr; retaining: Int32; async: Int32);
+    ///<summary>
+    ///  检索有关事务的信息。
+    ///</summary>
+    ///  <param name="transactionInformation">
+    ///  指向调用方分配 <see cref="T:System.EnterpriseServices.XACTTRANSINFO" />
+    ///  结构，它将接收有关事务的信息。
+    ///  此值不能 <see langword="null" />
+    ///  。
+    ///</param>
     procedure GetTransactionInfo(transactionInformation: IntPtr);
 
   end;
 
   //-------------namespace: System.Transactions----------------
+  ///<summary>
+  ///  描述一个接口，资源管理器应实现该接口以在登记参与时为事务管理器提供两阶段提交通知回调。
+  ///</summary>
   [DNTypeName('System.Transactions.IEnlistmentNotification')]
   DNIEnlistmentNotification = interface(DDN.mscorlib.DNObject)
   ['{68723FCB-A005-3CD5-AF43-E27703E304F2}']
   { methods } 
 
+    ///<summary>
+    ///  通知登记的事务正准备承诺的对象。
+    ///</summary>
+    ///  <param name="preparingEnlistment">
+    ///  一个 <see cref="T:System.Transactions.PreparingEnlistment" />
+    ///  对象，用于向事务管理器发送响应。
+    ///</param>
     procedure Prepare(preparingEnlistment: DNPreparingEnlistment);
+    ///<summary>
+    ///  通知登记对象正在提交事务。
+    ///</summary>
+    ///  <param name="enlistment"><see cref="T:System.Transactions.Enlistment" />
+    ///  对象，用于向事务管理器发送响应。
+    ///</param>
     procedure Commit(enlistment: DNEnlistment);
+    ///<summary>
+    ///  通知正在回滚事务的登记的对象 （已中止）。
+    ///</summary>
+    ///  <param name="enlistment">
+    ///  一个 <see cref="T:System.Transactions.Enlistment" />
+    ///  对象，用于向事务管理器发送响应。
+    ///</param>
     procedure Rollback(enlistment: DNEnlistment);
+    ///<summary>
+    ///  通知已登记参与的事务的状态不确定的对象。
+    ///</summary>
+    ///  <param name="enlistment"><see cref="T:System.Transactions.Enlistment" />
+    ///  对象，用于向事务管理器发送响应。
+    ///</param>
     procedure InDoubt(enlistment: DNEnlistment);
 
   end;
 
   //-------------namespace: System.Transactions----------------
+  ///<summary>
+  ///  描述支持单阶段提交优化以参与事务的资源对象。
+  ///</summary>
   [DNTypeName('System.Transactions.ISinglePhaseNotification')]
   DNISinglePhaseNotification = interface(DNIEnlistmentNotification)
   ['{2354C464-7457-3AE8-AF68-751AF5A1FFC0}']
   { methods } 
 
+    ///<summary>
+    ///  表示资源管理器的实现的单阶段提交优化的回调。
+    ///</summary>
+    ///  <param name="singlePhaseEnlistment">
+    ///  一个 <see cref="T:System.Transactions.SinglePhaseEnlistment" />
+    ///  用来向事务管理器发送响应。
+    ///</param>
     procedure SinglePhaseCommit(singlePhaseEnlistment: DNSinglePhaseEnlistment);
 
   end;
 
   //-------------namespace: System.Transactions----------------
+  ///<summary>
+  ///  描述可升级为由 MSDTC 在需要时管理的现有事务的委派的事务。
+  ///</summary>
   [DNTypeName('System.Transactions.ITransactionPromoter')]
   DNITransactionPromoter = interface(DDN.mscorlib.DNObject)
   ['{2EE24BD6-197C-3BD2-ABB2-03F7113E3B60}']
   { methods } 
 
+    ///<summary>
+    ///  通知登记对象已经请求委托事务升级。
+    ///</summary>
+    ///<returns>
+    ///  将分布式的事务的封送传输器/接收器传播标记。
+    ///  有关详细信息，请参阅<see cref="M:System.Transactions.TransactionInterop.GetTransactionFromTransmitterPropagationToken(System.Byte[])" />
+    ///  。
+    ///</returns>
     function Promote: TArray<Byte>;
 
   end;
 
   //-------------namespace: System.Transactions----------------
+  ///<summary>
+  ///  描述可作为资源管理器的内部非分布式事务的提交委托的对象。
+  ///</summary>
   [DNTypeName('System.Transactions.IPromotableSinglePhaseNotification')]
   DNIPromotableSinglePhaseNotification = interface(DNITransactionPromoter)
   ['{5C25E3AA-572A-331E-88C5-CD69DCEF4C71}']
   { methods } 
 
+    ///<summary>
+    ///  通知事务参与者列入已成功完成。
+    ///</summary>
+    ///<exception cref="T:System.Transactions.TransactionException">
+    ///  尝试登记或序列化事务。
+    ///</exception>
     procedure Initialize;
+    ///<summary>
+    ///  通知登记对象提交事务。
+    ///</summary>
+    ///  <param name="singlePhaseEnlistment">
+    ///  一个 <see cref="T:System.Transactions.SinglePhaseEnlistment" />
+    ///  接口，用于向事务管理器发送响应。
+    ///</param>
     procedure SinglePhaseCommit(singlePhaseEnlistment: DNSinglePhaseEnlistment);
+    ///<summary>
+    ///  通知正在回滚事务的登记的对象。
+    ///</summary>
+    ///  <param name="singlePhaseEnlistment">
+    ///  一个 <see cref="T:System.Transactions.SinglePhaseEnlistment" />
+    ///  对象，用于向事务管理器发送响应。
+    ///</param>
     procedure Rollback(singlePhaseEnlistment: DNSinglePhaseEnlistment);
 
   end;
 
   //-------------namespace: System.Transactions----------------
+  ///<summary>
+  ///  表示不是根事务，但可升级为由 MSDTC 管理的事务。
+  ///</summary>
   [DNTypeName('System.Transactions.ISimpleTransactionSuperior')]
   DNISimpleTransactionSuperior = interface(DNITransactionPromoter)
   ['{8C30F42C-7396-303C-89E2-3EB683EF53BD}']
   { methods } 
 
+    ///<summary>
+    ///  通知正在回滚事务的登记的对象。
+    ///</summary>
     procedure Rollback;
 
   end;
@@ -232,10 +500,23 @@ type
   ['{00E2FE68-2AF0-5A9B-8E84-804525B63B24}']
   { constructors } 
 
+    ///<summary>
+    ///  使用指定的 <see cref="T:System.Transactions.DistributedTransactionPermissionAttribute" />
+    ///  初始化 <see cref="T:System.Security.Permissions.SecurityAction" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="action"><see cref="T:System.Security.Permissions.SecurityAction" />
+    ///  值之一。
+    ///</param>
     {class} function init(action: DDN.mscorlib.DNSecurityAction): DNDistributedTransactionPermissionAttribute;
 
   end;
 
+  ///<summary>
+  ///  允许的操作安全 <see cref="T:System.Transactions.DistributedTransactionPermission" />
+  ///  要应用于代码中使用声明性安全。
+  ///  无法继承此类。
+  ///</summary>
   [DNTypeName('System.Transactions.DistributedTransactionPermissionAttribute')]
   DNDistributedTransactionPermissionAttribute = interface(DDN.mscorlib.DNCodeAccessSecurityAttribute)
   ['{D2A55554-97B4-34B9-90A9-CEB2B8A01CAF}']
@@ -249,6 +530,13 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  创建一个权限对象，随后可序列化为二进制格式并永久地存储连同 <see cref="T:System.Security.Permissions.SecurityAction" />
+    ///  程序集的元数据中。
+    ///</summary>
+    ///<returns>
+    ///  可序列化的权限对象。
+    ///</returns>
     function CreatePermission: DDN.mscorlib.DNIPermission;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -259,6 +547,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否声明对受该属性的资源的完整 （无限制） 权限。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果声明对受保护资源的完全权限;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property Unrestricted: Boolean read get_Unrestricted write set_Unrestricted;
     property Action: DDN.mscorlib.DNSecurityAction read get_Action write set_Action;
     property TypeId: DDN.mscorlib.DNObject read get_TypeId;
@@ -271,10 +566,18 @@ type
   ['{CFEC6732-E21B-556D-B7FE-FEE0A0C05207}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Transactions.Configuration.DefaultSettingsSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNDefaultSettingsSection;
 
   end;
 
+  ///<summary>
+  ///  表示配置文件中的 XML 节，其中包含事务的默认值。
+  ///  无法继承此类。
+  ///</summary>
   [DNTypeName('System.Transactions.Configuration.DefaultSettingsSection')]
   DNDefaultSettingsSection = interface(DNObject)
   ['{E24E4EFA-EEB2-399F-B5FC-B348F421E78C}']
@@ -304,7 +607,30 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取事务管理器的名称。
+    ///</summary>
+    ///<returns>
+    ///  事务管理器的名称。
+    ///  默认值为一个空字符串。
+    ///</returns>
+    ///<exception cref="T:System.NotSupportedException">
+    ///  试图将此属性设置为完全限定的域名或 IP 地址。
+    ///</exception><exception cref="T:System.Transactions.TransactionAbortedException">
+    ///  试图将此属性设置为 localhost。
+    ///</exception>
     property DistributedTransactionManagerName: string read get_DistributedTransactionManagerName write set_DistributedTransactionManagerName;
+    ///<summary>
+    ///  获取或设置事务的默认超时时间。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  对象。
+    ///  默认属性为 00:01:00。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  试图将此属性设置为负值。
+    ///</exception>
     property Timeout: DDN.mscorlib.DNTimeSpan read get_Timeout write set_Timeout;
     property SectionInformation: DDN.System.Configuration.DNSectionInformation read get_SectionInformation;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
@@ -323,10 +649,18 @@ type
   ['{0150FFB0-583B-5E10-8176-B432576BE0E0}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Transactions.Configuration.MachineSettingsSection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNMachineSettingsSection;
 
   end;
 
+  ///<summary>
+  ///  表示封装可修改仅在计算机级别的所有设置的配置文件中的 XML 节。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Transactions.Configuration.MachineSettingsSection')]
   DNMachineSettingsSection = interface(DNObject)
   ['{0F166A72-33B1-32E3-95D5-E72F596A703B}']
@@ -354,6 +688,17 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取最大允许事务超时前的时间量。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  对象，其中包含最大时间。
+    ///  默认值为 00:10:00。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  试图将此属性设置为负值。
+    ///</exception>
     property MaxTimeout: DDN.mscorlib.DNTimeSpan read get_MaxTimeout write set_MaxTimeout;
     property SectionInformation: DDN.System.Configuration.DNSectionInformation read get_SectionInformation;
     property LockAttributes: DDN.System.Configuration.DNConfigurationLockCollection read get_LockAttributes;
@@ -372,14 +717,34 @@ type
   ['{9477E008-2455-550C-B0E8-D02F758484B9}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Transactions.Configuration.TransactionsSectionGroup" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNTransactionsSectionGroup;
 
   { static methods } 
 
+    ///<summary>
+    ///  提供对静态访问 <see cref="T:System.Transactions.Configuration.TransactionsSectionGroup" />
+    ///  。
+    ///</summary>
+    ///  <param name="config">
+    ///  一个 <see cref="T:System.Configuration.Configuration" />
+    ///  表示应用于特定计算机、 应用程序中或资源的配置设置。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.Configuration.TransactionsSectionGroup" />
+    ///  对象。
+    ///</returns>
     {class} function GetSectionGroup(config: DDN.System.Configuration.DNConfiguration): DNTransactionsSectionGroup;
 
   end;
 
+  ///<summary>
+  ///  表示一个配置节，封装并允许遍历所有事务配置 XML 元素和此配置节中的属性。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Transactions.Configuration.TransactionsSectionGroup')]
   DNTransactionsSectionGroup = interface(DNObject)
   ['{610A65FB-6AD3-3BD2-B78C-6E7D1FE961CC}']
@@ -407,7 +772,25 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取用来初始化的元素和事务节中的属性的默认设置。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.Configuration.DefaultSettingsSection" />
+    ///  表示的默认设置。
+    ///  默认值是 <see cref="T:System.Transactions.Configuration.DefaultSettingsSection" />
+    ///  ，即会填充默认值。
+    ///</returns>
     property DefaultSettings: DNDefaultSettingsSection read get_DefaultSettings;
+    ///<summary>
+    ///  获取在计算机级别设置的配置设置。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.Configuration.MachineSettingsSection" />
+    ///  ，表示在计算机级别的配置设置。
+    ///  默认值是 <see cref="T:System.Transactions.Configuration.MachineSettingsSection" />
+    ///  ，即会填充默认值。
+    ///</returns>
     property MachineSettings: DNMachineSettingsSection read get_MachineSettings;
     property IsDeclared: Boolean read get_IsDeclared;
     property IsDeclarationRequired: Boolean read get_IsDeclarationRequired;
@@ -425,10 +808,19 @@ type
   ['{5C2E318B-7CCE-52E5-9100-75B339191E55}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Transactions.TransactionEventArgs" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNTransactionEventArgs;
 
   end;
 
+  ///<summary>
+  ///  以下事务事件提供数据︰ <see cref="E:System.Transactions.TransactionManager.DistributedTransactionStarted" />
+  ///  , ，<see cref="E:System.Transactions.Transaction.TransactionCompleted" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Transactions.TransactionEventArgs')]
   DNTransactionEventArgs = interface(DDN.mscorlib.DNEventArgs)
   ['{E3243E94-2E74-3227-A119-810C85B9D3DA}']
@@ -445,6 +837,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取事件提供状态的事务。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.Transaction" />
+    ///  事件提供状态。
+    ///</returns>
     property Transaction: DNTransaction read get_Transaction;
   end;
 
@@ -455,12 +854,40 @@ type
   ['{F391B338-8EAF-5A4E-BC31-1501E30EF695}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Transactions.TransactionException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNTransactionException; overload;
+    ///<summary>
+    ///  使用指定的消息初始化 <see cref="T:System.Transactions.TransactionException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  ，其中包含一条消息，说明该异常发生的原因。
+    ///</param>
     {class} function init(message: string): DNTransactionException; overload;
+    ///<summary>
+    ///  使用指定的消息和内部异常初始化 <see cref="T:System.Transactions.TransactionException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  ，其中包含一条消息，说明该异常发生的原因。
+    ///</param>
+    ///  <param name="innerException">
+    ///  获取导致当前异常的异常实例。
+    ///  有关更多信息，请参见 <see cref="P:System.Exception.InnerException" />
+    ///  属性。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNTransactionException; overload;
 
   end;
 
+  ///<summary>
+  ///  当您尝试执行不能接受新的工作的事务上工作时引发的异常。
+  ///</summary>
   [DNTypeName('System.Transactions.TransactionException')]
   DNTransactionException = interface(DDN.mscorlib.DNSystemException)
   ['{32C3E8D4-C5F9-3FF7-90F2-57726E395867}']
@@ -505,12 +932,40 @@ type
   ['{11A22E82-CA40-5A28-ADCE-8DDAA6C26A0D}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Transactions.TransactionAbortedException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNTransactionAbortedException; overload;
+    ///<summary>
+    ///  使用指定的消息初始化 <see cref="T:System.Transactions.TransactionAbortedException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  ，其中包含一条消息，说明该异常发生的原因。
+    ///</param>
     {class} function init(message: string): DNTransactionAbortedException; overload;
+    ///<summary>
+    ///  使用指定的消息和内部异常初始化 <see cref="T:System.Transactions.TransactionAbortedException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  ，其中包含一条消息，说明该异常发生的原因。
+    ///</param>
+    ///  <param name="innerException">
+    ///  获取导致当前异常的异常实例。
+    ///  有关更多信息，请参见 <see cref="P:System.Exception.InnerException" />
+    ///  属性。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNTransactionAbortedException; overload;
 
   end;
 
+  ///<summary>
+  ///  当某个操作尝试对已返回，回滚的事务或尝试提交事务和事务时引发的异常中止。
+  ///</summary>
   [DNTypeName('System.Transactions.TransactionAbortedException')]
   DNTransactionAbortedException = interface(DNTransactionException)
   ['{264A2CB8-A0F1-39DF-907F-B3A449161777}']
@@ -555,12 +1010,40 @@ type
   ['{F2E13E7D-2311-5EE2-9190-EDBF56FA8813}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Transactions.TransactionInDoubtException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNTransactionInDoubtException; overload;
+    ///<summary>
+    ///  使用指定的消息初始化 <see cref="T:System.Transactions.TransactionInDoubtException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  ，其中包含一条消息，说明该异常发生的原因。
+    ///</param>
     {class} function init(message: string): DNTransactionInDoubtException; overload;
+    ///<summary>
+    ///  使用指定的消息和内部异常初始化 <see cref="T:System.Transactions.TransactionInDoubtException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  ，其中包含一条消息，说明该异常发生的原因。
+    ///</param>
+    ///  <param name="innerException">
+    ///  获取导致当前异常的异常实例。
+    ///  有关更多信息，请参见 <see cref="P:System.Exception.InnerException" />
+    ///  属性。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNTransactionInDoubtException; overload;
 
   end;
 
+  ///<summary>
+  ///  上的事务才有疑问，请尝试执行操作或尝试提交事务而事务时引发的异常将成为 InDoubt。
+  ///</summary>
   [DNTypeName('System.Transactions.TransactionInDoubtException')]
   DNTransactionInDoubtException = interface(DNTransactionException)
   ['{E42E0FE2-B25F-31AD-A323-14EF161C5DE7}']
@@ -605,12 +1088,40 @@ type
   ['{2692616C-FBE5-5C3E-870A-1BD89EEA6486}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Transactions.TransactionManagerCommunicationException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNTransactionManagerCommunicationException; overload;
+    ///<summary>
+    ///  使用指定的消息初始化 <see cref="T:System.Transactions.TransactionManagerCommunicationException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  ，其中包含一条消息，说明该异常发生的原因。
+    ///</param>
     {class} function init(message: string): DNTransactionManagerCommunicationException; overload;
+    ///<summary>
+    ///  使用指定的消息和内部异常初始化 <see cref="T:System.Transactions.TransactionManagerCommunicationException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  ，其中包含一条消息，说明该异常发生的原因。
+    ///</param>
+    ///  <param name="innerException">
+    ///  获取导致当前异常的异常实例。
+    ///  有关更多信息，请参见 <see cref="P:System.Exception.InnerException" />
+    ///  属性。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNTransactionManagerCommunicationException; overload;
 
   end;
 
+  ///<summary>
+  ///  当资源管理器无法与事务管理器进行通信时引发的异常。
+  ///</summary>
   [DNTypeName('System.Transactions.TransactionManagerCommunicationException')]
   DNTransactionManagerCommunicationException = interface(DNTransactionException)
   ['{E6A4F19D-3F75-3801-B803-AA8D5AE73B7B}']
@@ -655,12 +1166,40 @@ type
   ['{3106D3F5-BCE9-5645-956C-307DBA493DFE}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Transactions.TransactionPromotionException" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNTransactionPromotionException; overload;
+    ///<summary>
+    ///  使用指定的消息初始化 <see cref="T:System.Transactions.TransactionPromotionException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  ，其中包含一条消息，说明该异常发生的原因。
+    ///</param>
     {class} function init(message: string): DNTransactionPromotionException; overload;
+    ///<summary>
+    ///  使用指定的消息和内部异常初始化 <see cref="T:System.Transactions.TransactionPromotionException" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="message">
+    ///  一个 <see cref="T:System.String" />
+    ///  ，其中包含一条消息，说明该异常发生的原因。
+    ///</param>
+    ///  <param name="innerException">
+    ///  获取导致当前异常的异常实例。
+    ///  有关更多信息，请参见 <see cref="P:System.Exception.InnerException" />
+    ///  属性。
+    ///</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNTransactionPromotionException; overload;
 
   end;
 
+  ///<summary>
+  ///  在提升失败时引发的异常。
+  ///</summary>
   [DNTypeName('System.Transactions.TransactionPromotionException')]
   DNTransactionPromotionException = interface(DNTransactionException)
   ['{A5DE4030-63EE-3BC5-9FB3-6144CA4234E4}']
@@ -705,21 +1244,95 @@ type
   ['{CC5250A9-DCFD-5FC3-910A-AC753F139F5D}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Transactions.DistributedTransactionPermission" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="state"><see cref="T:System.Security.Permissions.PermissionState" />
+    ///  值之一。
+    ///</param>
     {class} function init(state: DDN.mscorlib.DNPermissionState): DNDistributedTransactionPermission;
 
   end;
 
+  ///<summary>
+  ///  为所需的权限 <see cref="N:System.Transactions" />
+  ///  时的事务管理升级到 MSDTC。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Transactions.DistributedTransactionPermission')]
   DNDistributedTransactionPermission = interface(DDN.mscorlib.DNCodeAccessPermission)
   ['{E4FCAA7B-A6A2-3405-A95A-469AC05E43D5}']
   { methods } 
 
+    ///<summary>
+    ///  返回一个值，该值指示是否允许无限制地的访问由当前的权限保护的资源。
+    ///</summary>
+    ///<returns>
+    ///  如果允许不受限制的使用权限所保护的资源，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsUnrestricted: Boolean;
+    ///<summary>
+    ///  创建并返回当前权限的相同副本。
+    ///</summary>
+    ///<returns>
+    ///  当前权限的副本。
+    ///</returns>
     function Copy: DDN.mscorlib.DNIPermission;
+    ///<summary>
+    ///  创建并返回一个权限，该权限是当前权限与指定权限的交集。
+    ///</summary>
+    ///  <param name="target">
+    ///  要与当前权限相交的权限。
+    ///  它必须与当前权限属于同一类型。
+    ///</param>
+    ///<returns>
+    ///  表示当前权限和指定权限的交集的一个新权限。
+    ///  如果交集为空，则此新权限为 <see langword="null" />
+    ///  。
+    ///</returns>
     function Intersect(target: DDN.mscorlib.DNIPermission): DDN.mscorlib.DNIPermission;
+    ///<summary>
+    ///  创建一个权限，该权限是当前权限与指定权限的并集。
+    ///</summary>
+    ///  <param name="target">
+    ///  与当前权限合并的权限。
+    ///  它必须与当前权限属于同一类型。
+    ///</param>
+    ///<returns><see cref="T:System.Security.IPermission" />
+    ///  ，它表示当前的权限和指定的权限的并集。
+    ///</returns>
     function Union(target: DDN.mscorlib.DNIPermission): DDN.mscorlib.DNIPermission;
+    ///<summary>
+    ///  返回一个值，该值指示当前的权限是否为指定权限的子集。
+    ///</summary>
+    ///  <param name="target">
+    ///  将要测试子集关系的权限。
+    ///  此权限必须与当前权限属于同一类型。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果当前 <see cref="T:System.Security.IPermission" />
+    ///  是指定的一个子集 <see cref="T:System.Security.IPermission" />
+    ///  ; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function IsSubsetOf(target: DDN.mscorlib.DNIPermission): Boolean;
+    ///<summary>
+    ///  创建安全对象及其当前状态的 XML 编码。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Security.SecurityElement" />
+    ///  ，其中包含的 XML 编码的安全对象，包括任何状态信息。
+    ///</returns>
     function ToXml: DDN.mscorlib.DNSecurityElement;
+    ///<summary>
+    ///  从 XML 编码重新构造具有指定状态的权限。
+    ///</summary>
+    ///  <param name="securityElement">
+    ///  用于重新构造权限的 XML 编码。
+    ///</param>
     procedure FromXml(securityElement: DDN.mscorlib.DNSecurityElement);
     procedure Demand;
     procedure Assert;
@@ -739,11 +1352,17 @@ type
   ['{9A4DC1D8-37A2-5741-ADDC-33798B1EFA36}']
   end;
 
+  ///<summary>
+  ///  促进事务的最后阶段登记的事务参与者和事务管理器之间的通信。
+  ///</summary>
   [DNTypeName('System.Transactions.Enlistment')]
   DNEnlistment = interface(DDN.mscorlib.DNObject)
   ['{490BE79B-6E73-355B-B77C-20970441382A}']
   { methods } 
 
+    ///<summary>
+    ///  指示事务参与者都已完成其工作。
+    ///</summary>
     procedure Done;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -759,15 +1378,42 @@ type
   ['{53E64456-0FFF-5FD0-B255-79F77681BC92}']
   end;
 
+  ///<summary>
+  ///  促进事务在准备阶段登记的事务参与者和事务管理器之间的通信。
+  ///</summary>
   [DNTypeName('System.Transactions.PreparingEnlistment')]
   DNPreparingEnlistment = interface(DNEnlistment)
   ['{2E8C254B-7445-31C0-ADF5-8E190CFF7C3E}']
   { methods } 
 
+    ///<summary>
+    ///  指示可以提交该事务。
+    ///</summary>
     procedure Prepared;
+    ///<summary>
+    ///  指示应回滚事务。
+    ///</summary>
     procedure ForceRollback; overload;
+    ///<summary>
+    ///  指示应回滚事务。
+    ///</summary>
+    ///  <param name="e">
+    ///  触发回滚原因的说明。
+    ///</param>
     procedure ForceRollback(e: DDN.mscorlib.DNException); overload;
+    ///<summary>
+    ///  获取登记的恢复信息。
+    ///</summary>
+    ///<returns>
+    ///  登记将恢复信息。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  尝试获取中不会生成任何恢复信息的可变参与者的恢复信息。
+    ///</exception>
     function RecoveryInformation: TArray<Byte>;
+    ///<summary>
+    ///  指示事务参与者都已完成其工作。
+    ///</summary>
     procedure Done;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -783,16 +1429,44 @@ type
   ['{B6024651-53EB-5EAF-8191-36AF8325C7AA}']
   end;
 
+  ///<summary>
+  ///  提供了一套帮助为 Single Phase Commit and 事务管理器登记的参与者之间进行通信的回调时 <see cref="M:System.Transactions.ISinglePhaseNotification.SinglePhaseCommit(System.Transactions.SinglePhaseEnlistment)" />
+  ///  收到通知。
+  ///</summary>
   [DNTypeName('System.Transactions.SinglePhaseEnlistment')]
   DNSinglePhaseEnlistment = interface(DNEnlistment)
   ['{531BEC56-D463-318A-9BF2-F9F4A19DEAE7}']
   { methods } 
 
+    ///<summary>
+    ///  表示用于向事务管理器指示应回滚事务的回调。
+    ///</summary>
     procedure Aborted; overload;
+    ///<summary>
+    ///  表示用于向事务管理器指示事务应被回滚，并提供说明的回调。
+    ///</summary>
+    ///  <param name="e">
+    ///  说明为什么启动回滚。
+    ///</param>
     procedure Aborted(e: DDN.mscorlib.DNException); overload;
+    ///<summary>
+    ///  表示用于向事务管理器指示 SinglePhaseCommit 成功回调。
+    ///</summary>
     procedure Committed;
+    ///<summary>
+    ///  表示用于向事务管理器指示事务的状态不确定的回调。
+    ///</summary>
     procedure InDoubt; overload;
+    ///<summary>
+    ///  表示用于向事务管理器指示事务的状态不确定，并提供说明的回调。
+    ///</summary>
+    ///  <param name="e">
+    ///  为什么说事务是不确定的说明。
+    ///</param>
     procedure InDoubt(e: DDN.mscorlib.DNException); overload;
+    ///<summary>
+    ///  指示事务参与者都已完成其工作。
+    ///</summary>
     procedure Done;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -813,9 +1487,19 @@ type
 
   { static propertys } 
 
+    ///<summary>
+    ///  获取或设置环境事务。
+    ///</summary>
+    ///<returns>
+    ///  描述当前事务的 <see cref="T:System.Transactions.Transaction" />
+    ///  。
+    ///</returns>
     {class} property Current: DNTransaction read get_Current write set_Current;
   end;
 
+  ///<summary>
+  ///  表示的事务。
+  ///</summary>
   [DNTypeName('System.Transactions.Transaction')]
   DNTransaction = interface(DDN.mscorlib.DNIDisposable)
   ['{E1F23ACF-DC76-3B52-8794-5BB90592C284}']
@@ -832,29 +1516,214 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回此实例的哈希代码。
+    ///</summary>
+    ///<returns>
+    ///  32 位有符号整数哈希代码。
+    ///</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  确定此事务和指定的对象是否相等。
+    ///</summary>
+    ///  <param name="obj">
+    ///  与该实例进行比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="obj" />
+    ///  与此事务完全相同; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  释放由该对象占用的资源。
+    ///</summary>
     procedure Dispose;
+    ///<summary>
+    ///  对资源管理器进行登记，该资源管理器具有使用可提升的单阶段登记 (PSPE) 的内部事务。
+    ///</summary>
+    ///  <param name="promotableSinglePhaseNotification">
+    ///  由参与者实现的 <see cref="T:System.Transactions.IPromotableSinglePhaseNotification" />
+    ///  接口。
+    ///</param>
+    ///<returns>
+    ///  描述登记的 <see cref="T:System.Transactions.SinglePhaseEnlistment" />
+    ///  接口实现。
+    ///</returns>
     function EnlistPromotableSinglePhase(promotableSinglePhaseNotification: DNIPromotableSinglePhaseNotification): Boolean; overload;
+    ///<summary>
+    ///  获取提升事务时由 Promote 方法返回的 byte[]。
+    ///</summary>
+    ///<returns>
+    ///  提升事务时由 Promote 方法返回的 byte[]。
+    ///</returns>
     function GetPromotedToken: TArray<Byte>;
+    ///<summary>
+    ///  登记在事务中支持两阶段提交参与的持久资源管理器。
+    ///</summary>
+    ///  <param name="resourceManagerIdentifier">
+    ///  资源管理器，它应保留在资源管理器发生故障或重新启动一个唯一标识符。
+    ///</param>
+    ///  <param name="enlistmentNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.IEnlistmentNotification" />
+    ///  接口来接收两阶段提交通知。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
+    ///<returns><see cref="T:System.Transactions.Enlistment" />
+    ///  描述登记的对象。
+    ///</returns>
     function EnlistDurable(resourceManagerIdentifier: DDN.mscorlib.DNGuid; enlistmentNotification: DNIEnlistmentNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  登记在事务中支持单阶段提交优化，以参与持久资源管理器。
+    ///</summary>
+    ///  <param name="resourceManagerIdentifier">
+    ///  资源管理器，它应保留在资源管理器发生故障或重新启动一个唯一标识符。
+    ///</param>
+    ///  <param name="singlePhaseNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.ISinglePhaseNotification" />
+    ///  必须能够接收单阶段提交和两阶段提交通知的接口。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
+    ///<returns><see cref="T:System.Transactions.Enlistment" />
+    ///  描述登记的对象。
+    ///</returns>
     function EnlistDurable(resourceManagerIdentifier: DDN.mscorlib.DNGuid; singlePhaseNotification: DNISinglePhaseNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  回滚 （中止） 事务。
+    ///</summary>
     procedure Rollback; overload;
+    ///<summary>
+    ///  回滚 （中止） 事务。
+    ///</summary>
+    ///  <param name="e">
+    ///  回滚发生原因的说明。
+    ///</param>
     procedure Rollback(e: DDN.mscorlib.DNException); overload;
+    ///<summary>
+    ///  登记在事务中支持两阶段提交参与的易失性资源管理器。
+    ///</summary>
+    ///  <param name="enlistmentNotification">
+    ///  实现 <see cref="T:System.Transactions.IEnlistmentNotification" />
+    ///  接口，以接收两阶段提交通知的对象。
+    ///</param>
+    ///  <param name="enlistmentOptions">
+    ///  如果资源管理器在准备阶段想要执行额外工作，则为 <see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  描述登记的 <see cref="T:System.Transactions.Enlistment" />
+    ///  对象。
+    ///</returns>
     function EnlistVolatile(enlistmentNotification: DNIEnlistmentNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  登记在事务中支持单阶段提交优化，以参与可变资源管理器。
+    ///</summary>
+    ///  <param name="singlePhaseNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.ISinglePhaseNotification" />
+    ///  必须能够接收单阶段提交和两阶段提交通知的接口。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
+    ///<returns><see cref="T:System.Transactions.Enlistment" />
+    ///  描述登记的对象。
+    ///</returns>
     function EnlistVolatile(singlePhaseNotification: DNISinglePhaseNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  创建事务的克隆。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.Transaction" />
+    ///  ，它是当前的事务对象的副本。
+    ///</returns>
     function Clone: DNTransaction;
+    ///<summary>
+    ///  创建依赖的克隆的事务。
+    ///</summary>
+    ///  <param name="cloneOption">
+    ///  一个 <see cref="T:System.Transactions.DependentCloneOption" />
+    ///  控制哪种依赖事务来创建。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.DependentTransaction" />
+    ///  ，它表示依赖的克隆。
+    ///</returns>
     function DependentClone(cloneOption: DNDependentCloneOption): DNDependentTransaction;
+    ///<summary>
+    ///  对资源管理器进行登记，该资源管理器具有使用可提升的单阶段登记 (PSPE) 的内部事务。
+    ///</summary>
+    ///  <param name="promotableSinglePhaseNotification">
+    ///  由参与者实现的 <see cref="T:System.Transactions.IPromotableSinglePhaseNotification" />
+    ///  接口。
+    ///</param>
+    ///  <param name="promoterType">
+    ///  分布式事务处理器的类型。
+    ///</param>
+    ///<returns>
+    ///  描述登记的 <see cref="T:System.Transactions.SinglePhaseEnlistment" />
+    ///  接口实现。
+    ///</returns>
     function EnlistPromotableSinglePhase(promotableSinglePhaseNotification: DNIPromotableSinglePhaseNotification; promoterType: DDN.mscorlib.DNGuid): Boolean; overload;
+    ///<summary>
+    ///  [仅在 .NET Framework 4.5.2 及更高版本中受支持]
+    ///  升级并登记在事务中支持两阶段提交参与的持久资源管理器。
+    ///</summary>
+    ///  <param name="resourceManagerIdentifier">
+    ///  资源管理器，它应保留在资源管理器发生故障或重新启动一个唯一标识符。
+    ///</param>
+    ///  <param name="promotableNotification">
+    ///  一个充当资源管理器的内部非分布式事务的提交委托的对象。
+    ///</param>
+    ///  <param name="enlistmentNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.IEnlistmentNotification" />
+    ///  接口来接收两阶段提交通知。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
     function PromoteAndEnlistDurable(resourceManagerIdentifier: DDN.mscorlib.DNGuid; promotableNotification: DNIPromotableSinglePhaseNotification; enlistmentNotification: DNISinglePhaseNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment;
+    ///<summary>
+    ///  设置由非 MSDTC 提升程序生成的分布式事务标识符。
+    ///</summary>
+    ///  <param name="promotableNotification">
+    ///  由参与者实现的 <see cref="T:System.Transactions.IPromotableSinglePhaseNotification" />
+    ///  接口。
+    ///</param>
+    ///  <param name="distributedTransactionIdentifier">
+    ///  分布式事务管理器使用的事务的标识符。
+    ///</param>
     procedure SetDistributedTransactionIdentifier(promotableNotification: DNIPromotableSinglePhaseNotification; distributedTransactionIdentifier: DDN.mscorlib.DNGuid);
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  检索有关一个事务的其他信息。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.TransactionInformation" />
+    ///  包含有关该事务的其他信息。
+    ///</returns>
     property TransactionInformation: DNTransactionInformation read get_TransactionInformation;
+    ///<summary>
+    ///  获取事务的隔离级别。
+    ///</summary>
+    ///<returns>
+    ///  其中一个 <see cref="T:System.Transactions.IsolationLevel" />
+    ///  值，该值指示该事务的隔离级别。
+    ///</returns>
     property IsolationLevel: DNIsolationLevel read get_IsolationLevel;
+    ///<summary>
+    ///  对提升事务时由 Promote 方法返回的 byte[] 的格式进行唯一标识。
+    ///</summary>
+    ///<returns>
+    ///  对提升事务时由 Promote 方法返回的 byte[] 的格式进行唯一标识的 GUID。
+    ///</returns>
     property PromoterType: DDN.mscorlib.DNGuid read get_PromoterType;
   end;
 
@@ -865,12 +1734,46 @@ type
   ['{2CC0C5CF-9BF7-5CFC-99A9-DDF181ED2672}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Transactions.CommittableTransaction" />
+    ///  类的新实例。
+    ///</summary>
+    ///<exception cref="T:System.PlatformNotSupportedException">
+    ///  尝试创建一个在 Windows 98、 Windows 98 Second Edition 或 Windows Millennium Edition 的事务。
+    ///</exception>
     {class} function init: DNCommittableTransaction; overload;
+    ///<summary>
+    ///  使用指定的 <paramref name="timeout" />
+    ///  值初始化 <see cref="T:System.Transactions.CommittableTransaction" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="timeout">
+    ///  最大事务可以存在之前被中止, 的时间量。
+    ///</param>
+    ///<exception cref="T:System.PlatformNotSupportedException">
+    ///  尝试创建一个在 Windows 98、 Windows 98 Second Edition 或 Windows Millennium Edition 的事务。
+    ///</exception>
     {class} function init(timeout: DDN.mscorlib.DNTimeSpan): DNCommittableTransaction; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Transactions.CommittableTransaction" />
+    ///  类，具有指定的事务选项。
+    ///</summary>
+    ///  <param name="options">
+    ///  一个 <see cref="T:System.Transactions.TransactionOptions" />
+    ///  结构，它描述了要用于新事务的事务选项。
+    ///</param>
+    ///<exception cref="T:System.PlatformNotSupportedException">
+    ///  尝试创建一个在 Windows 98、 Windows 98 Second Edition 或 Windows Millennium Edition 的事务。
+    ///</exception><exception cref="T:System.ArgumentException"><paramref name="options" />
+    ///  无效。
+    ///</exception>
     {class} function init(options: DNTransactionOptions): DNCommittableTransaction; overload;
 
   end;
 
+  ///<summary>
+  ///  描述可提交的事务。
+  ///</summary>
   [DNTypeName('System.Transactions.CommittableTransaction')]
   DNCommittableTransaction = interface(DNTransaction)
   ['{7586BDAA-D0AB-305A-9999-A0B5719BDDD3}']
@@ -887,32 +1790,255 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  开始以异步方式提交事务的尝试。
+    ///</summary>
+    ///  <param name="asyncCallback"><see cref="T:System.AsyncCallback" />
+    ///  事务完成时调用的委托。
+    ///  此参数可以为 <see langword="null" />
+    ///  , ，在这种情况下应用程序不会得到通知的事务的完成。
+    ///  相反，应用程序必须使用 <see cref="T:System.IAsyncResult" />
+    ///  接口将检查完成，并相应地，等到或致电 <see cref="M:System.Transactions.CommittableTransaction.EndCommit(System.IAsyncResult)" />
+    ///  等待完成。
+    ///</param>
+    ///  <param name="asyncState">
+    ///  一个对象，它可能包含与异步提交相关联的任意状态信息。
+    ///  此对象传递给回调，并由不解释 <see cref="N:System.Transactions" />
+    ///  。
+    ///  允许为 null 引用。
+    ///</param>
+    ///<returns><see cref="T:System.IAsyncResult" />
+    ///  检查异步操作的状态或等待要完成的操作可由调用方的接口。
+    ///</returns>
     function BeginCommit(asyncCallback: DDN.mscorlib.DNAsyncCallback; asyncState: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
+    ///<summary>
+    ///  尝试提交该事务。
+    ///</summary>
+    ///<exception cref="T:System.Transactions.TransactionInDoubtException"><see cref="M:System.Transactions.CommittableTransaction.Commit" />
+    ///  事务和事务上调用变得 <see cref="F:System.Transactions.TransactionStatus.InDoubt" />
+    ///  。
+    ///</exception><exception cref="T:System.Transactions.TransactionAbortedException"><see cref="M:System.Transactions.CommittableTransaction.Commit" />
+    ///  调用，并在事务回滚第一次。
+    ///</exception>
     procedure Commit;
+    ///<summary>
+    ///  结束异步提交事务的尝试。
+    ///</summary>
+    ///  <param name="asyncResult"><see cref="T:System.IAsyncResult" />
+    ///  的异步提交相关联的对象。
+    ///</param>
+    ///<exception cref="T:System.Transactions.TransactionAbortedException"><see cref="M:System.Transactions.CommittableTransaction.BeginCommit(System.AsyncCallback,System.Object)" />
+    ///  调用，并在事务回滚第一次。
+    ///</exception>
     procedure EndCommit(asyncResult: DDN.mscorlib.DNIAsyncResult);
+    ///<summary>
+    ///  返回此实例的哈希代码。
+    ///</summary>
+    ///<returns>
+    ///  32 位有符号整数哈希代码。
+    ///</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  确定此事务和指定的对象是否相等。
+    ///</summary>
+    ///  <param name="obj">
+    ///  与该实例进行比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="obj" />
+    ///  与此事务完全相同; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  释放由该对象占用的资源。
+    ///</summary>
     procedure Dispose;
+    ///<summary>
+    ///  对资源管理器进行登记，该资源管理器具有使用可提升的单阶段登记 (PSPE) 的内部事务。
+    ///</summary>
+    ///  <param name="promotableSinglePhaseNotification">
+    ///  由参与者实现的 <see cref="T:System.Transactions.IPromotableSinglePhaseNotification" />
+    ///  接口。
+    ///</param>
+    ///<returns>
+    ///  描述登记的 <see cref="T:System.Transactions.SinglePhaseEnlistment" />
+    ///  接口实现。
+    ///</returns>
     function EnlistPromotableSinglePhase(promotableSinglePhaseNotification: DNIPromotableSinglePhaseNotification): Boolean; overload;
+    ///<summary>
+    ///  获取提升事务时由 Promote 方法返回的 byte[]。
+    ///</summary>
+    ///<returns>
+    ///  提升事务时由 Promote 方法返回的 byte[]。
+    ///</returns>
     function GetPromotedToken: TArray<Byte>;
+    ///<summary>
+    ///  登记在事务中支持两阶段提交参与的持久资源管理器。
+    ///</summary>
+    ///  <param name="resourceManagerIdentifier">
+    ///  资源管理器，它应保留在资源管理器发生故障或重新启动一个唯一标识符。
+    ///</param>
+    ///  <param name="enlistmentNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.IEnlistmentNotification" />
+    ///  接口来接收两阶段提交通知。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
+    ///<returns><see cref="T:System.Transactions.Enlistment" />
+    ///  描述登记的对象。
+    ///</returns>
     function EnlistDurable(resourceManagerIdentifier: DDN.mscorlib.DNGuid; enlistmentNotification: DNIEnlistmentNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  登记在事务中支持单阶段提交优化，以参与持久资源管理器。
+    ///</summary>
+    ///  <param name="resourceManagerIdentifier">
+    ///  资源管理器，它应保留在资源管理器发生故障或重新启动一个唯一标识符。
+    ///</param>
+    ///  <param name="singlePhaseNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.ISinglePhaseNotification" />
+    ///  必须能够接收单阶段提交和两阶段提交通知的接口。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
+    ///<returns><see cref="T:System.Transactions.Enlistment" />
+    ///  描述登记的对象。
+    ///</returns>
     function EnlistDurable(resourceManagerIdentifier: DDN.mscorlib.DNGuid; singlePhaseNotification: DNISinglePhaseNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  回滚 （中止） 事务。
+    ///</summary>
     procedure Rollback; overload;
+    ///<summary>
+    ///  回滚 （中止） 事务。
+    ///</summary>
+    ///  <param name="e">
+    ///  回滚发生原因的说明。
+    ///</param>
     procedure Rollback(e: DDN.mscorlib.DNException); overload;
+    ///<summary>
+    ///  登记在事务中支持两阶段提交参与的易失性资源管理器。
+    ///</summary>
+    ///  <param name="enlistmentNotification">
+    ///  实现 <see cref="T:System.Transactions.IEnlistmentNotification" />
+    ///  接口，以接收两阶段提交通知的对象。
+    ///</param>
+    ///  <param name="enlistmentOptions">
+    ///  如果资源管理器在准备阶段想要执行额外工作，则为 <see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  描述登记的 <see cref="T:System.Transactions.Enlistment" />
+    ///  对象。
+    ///</returns>
     function EnlistVolatile(enlistmentNotification: DNIEnlistmentNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  登记在事务中支持单阶段提交优化，以参与可变资源管理器。
+    ///</summary>
+    ///  <param name="singlePhaseNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.ISinglePhaseNotification" />
+    ///  必须能够接收单阶段提交和两阶段提交通知的接口。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
+    ///<returns><see cref="T:System.Transactions.Enlistment" />
+    ///  描述登记的对象。
+    ///</returns>
     function EnlistVolatile(singlePhaseNotification: DNISinglePhaseNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  创建事务的克隆。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.Transaction" />
+    ///  ，它是当前的事务对象的副本。
+    ///</returns>
     function Clone: DNTransaction;
+    ///<summary>
+    ///  创建依赖的克隆的事务。
+    ///</summary>
+    ///  <param name="cloneOption">
+    ///  一个 <see cref="T:System.Transactions.DependentCloneOption" />
+    ///  控制哪种依赖事务来创建。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.DependentTransaction" />
+    ///  ，它表示依赖的克隆。
+    ///</returns>
     function DependentClone(cloneOption: DNDependentCloneOption): DNDependentTransaction;
+    ///<summary>
+    ///  对资源管理器进行登记，该资源管理器具有使用可提升的单阶段登记 (PSPE) 的内部事务。
+    ///</summary>
+    ///  <param name="promotableSinglePhaseNotification">
+    ///  由参与者实现的 <see cref="T:System.Transactions.IPromotableSinglePhaseNotification" />
+    ///  接口。
+    ///</param>
+    ///  <param name="promoterType">
+    ///  分布式事务处理器的类型。
+    ///</param>
+    ///<returns>
+    ///  描述登记的 <see cref="T:System.Transactions.SinglePhaseEnlistment" />
+    ///  接口实现。
+    ///</returns>
     function EnlistPromotableSinglePhase(promotableSinglePhaseNotification: DNIPromotableSinglePhaseNotification; promoterType: DDN.mscorlib.DNGuid): Boolean; overload;
+    ///<summary>
+    ///  [仅在 .NET Framework 4.5.2 及更高版本中受支持]
+    ///  升级并登记在事务中支持两阶段提交参与的持久资源管理器。
+    ///</summary>
+    ///  <param name="resourceManagerIdentifier">
+    ///  资源管理器，它应保留在资源管理器发生故障或重新启动一个唯一标识符。
+    ///</param>
+    ///  <param name="promotableNotification">
+    ///  一个充当资源管理器的内部非分布式事务的提交委托的对象。
+    ///</param>
+    ///  <param name="enlistmentNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.IEnlistmentNotification" />
+    ///  接口来接收两阶段提交通知。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
     function PromoteAndEnlistDurable(resourceManagerIdentifier: DDN.mscorlib.DNGuid; promotableNotification: DNIPromotableSinglePhaseNotification; enlistmentNotification: DNISinglePhaseNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment;
+    ///<summary>
+    ///  设置由非 MSDTC 提升程序生成的分布式事务标识符。
+    ///</summary>
+    ///  <param name="promotableNotification">
+    ///  由参与者实现的 <see cref="T:System.Transactions.IPromotableSinglePhaseNotification" />
+    ///  接口。
+    ///</param>
+    ///  <param name="distributedTransactionIdentifier">
+    ///  分布式事务管理器使用的事务的标识符。
+    ///</param>
     procedure SetDistributedTransactionIdentifier(promotableNotification: DNIPromotableSinglePhaseNotification; distributedTransactionIdentifier: DDN.mscorlib.DNGuid);
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  检索有关一个事务的其他信息。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.TransactionInformation" />
+    ///  包含有关该事务的其他信息。
+    ///</returns>
     property TransactionInformation: DNTransactionInformation read get_TransactionInformation;
+    ///<summary>
+    ///  获取事务的隔离级别。
+    ///</summary>
+    ///<returns>
+    ///  其中一个 <see cref="T:System.Transactions.IsolationLevel" />
+    ///  值，该值指示该事务的隔离级别。
+    ///</returns>
     property IsolationLevel: DNIsolationLevel read get_IsolationLevel;
+    ///<summary>
+    ///  对提升事务时由 Promote 方法返回的 byte[] 的格式进行唯一标识。
+    ///</summary>
+    ///<returns>
+    ///  对提升事务时由 Promote 方法返回的 byte[] 的格式进行唯一标识的 GUID。
+    ///</returns>
     property PromoterType: DDN.mscorlib.DNGuid read get_PromoterType;
   end;
 
@@ -923,6 +2049,10 @@ type
   ['{1E04B959-AC53-5D01-84ED-64B6829BDE00}']
   end;
 
+  ///<summary>
+  ///  描述提供之前在应用程序停止工作有关停留在该事务无法提交事务的保证事务的副本。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Transactions.DependentTransaction')]
   DNDependentTransaction = interface(DNTransaction)
   ['{168759F4-7CA6-3DF9-A44F-3FED676C58EF}']
@@ -939,30 +2069,226 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  尝试完成从属事务。
+    ///</summary>
+    ///<exception cref="T:System.Transactions.TransactionException">
+    ///  调用此方法后任何针对此事务进行额外工作的尝试。
+    ///  这包括调用 <see cref="Overload:System.Transactions.Transaction.EnlistVolatile" />
+    ///  、<see cref="Overload:System.Transactions.Transaction.EnlistDurable" />
+    ///  、<see cref="M:System.Transactions.Transaction.Clone" />
+    ///  、<see cref="M:System.Transactions.Transaction.DependentClone(System.Transactions.DependentCloneOption)" />
+    ///  等方法，或针对事务的任何序列化操作。
+    ///</exception>
     procedure Complete;
+    ///<summary>
+    ///  返回此实例的哈希代码。
+    ///</summary>
+    ///<returns>
+    ///  32 位有符号整数哈希代码。
+    ///</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  确定此事务和指定的对象是否相等。
+    ///</summary>
+    ///  <param name="obj">
+    ///  与该实例进行比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="obj" />
+    ///  与此事务完全相同; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  释放由该对象占用的资源。
+    ///</summary>
     procedure Dispose;
+    ///<summary>
+    ///  对资源管理器进行登记，该资源管理器具有使用可提升的单阶段登记 (PSPE) 的内部事务。
+    ///</summary>
+    ///  <param name="promotableSinglePhaseNotification">
+    ///  由参与者实现的 <see cref="T:System.Transactions.IPromotableSinglePhaseNotification" />
+    ///  接口。
+    ///</param>
+    ///<returns>
+    ///  描述登记的 <see cref="T:System.Transactions.SinglePhaseEnlistment" />
+    ///  接口实现。
+    ///</returns>
     function EnlistPromotableSinglePhase(promotableSinglePhaseNotification: DNIPromotableSinglePhaseNotification): Boolean; overload;
+    ///<summary>
+    ///  获取提升事务时由 Promote 方法返回的 byte[]。
+    ///</summary>
+    ///<returns>
+    ///  提升事务时由 Promote 方法返回的 byte[]。
+    ///</returns>
     function GetPromotedToken: TArray<Byte>;
+    ///<summary>
+    ///  登记在事务中支持两阶段提交参与的持久资源管理器。
+    ///</summary>
+    ///  <param name="resourceManagerIdentifier">
+    ///  资源管理器，它应保留在资源管理器发生故障或重新启动一个唯一标识符。
+    ///</param>
+    ///  <param name="enlistmentNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.IEnlistmentNotification" />
+    ///  接口来接收两阶段提交通知。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
+    ///<returns><see cref="T:System.Transactions.Enlistment" />
+    ///  描述登记的对象。
+    ///</returns>
     function EnlistDurable(resourceManagerIdentifier: DDN.mscorlib.DNGuid; enlistmentNotification: DNIEnlistmentNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  登记在事务中支持单阶段提交优化，以参与持久资源管理器。
+    ///</summary>
+    ///  <param name="resourceManagerIdentifier">
+    ///  资源管理器，它应保留在资源管理器发生故障或重新启动一个唯一标识符。
+    ///</param>
+    ///  <param name="singlePhaseNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.ISinglePhaseNotification" />
+    ///  必须能够接收单阶段提交和两阶段提交通知的接口。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
+    ///<returns><see cref="T:System.Transactions.Enlistment" />
+    ///  描述登记的对象。
+    ///</returns>
     function EnlistDurable(resourceManagerIdentifier: DDN.mscorlib.DNGuid; singlePhaseNotification: DNISinglePhaseNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  回滚 （中止） 事务。
+    ///</summary>
     procedure Rollback; overload;
+    ///<summary>
+    ///  回滚 （中止） 事务。
+    ///</summary>
+    ///  <param name="e">
+    ///  回滚发生原因的说明。
+    ///</param>
     procedure Rollback(e: DDN.mscorlib.DNException); overload;
+    ///<summary>
+    ///  登记在事务中支持两阶段提交参与的易失性资源管理器。
+    ///</summary>
+    ///  <param name="enlistmentNotification">
+    ///  实现 <see cref="T:System.Transactions.IEnlistmentNotification" />
+    ///  接口，以接收两阶段提交通知的对象。
+    ///</param>
+    ///  <param name="enlistmentOptions">
+    ///  如果资源管理器在准备阶段想要执行额外工作，则为 <see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  描述登记的 <see cref="T:System.Transactions.Enlistment" />
+    ///  对象。
+    ///</returns>
     function EnlistVolatile(enlistmentNotification: DNIEnlistmentNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  登记在事务中支持单阶段提交优化，以参与可变资源管理器。
+    ///</summary>
+    ///  <param name="singlePhaseNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.ISinglePhaseNotification" />
+    ///  必须能够接收单阶段提交和两阶段提交通知的接口。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
+    ///<returns><see cref="T:System.Transactions.Enlistment" />
+    ///  描述登记的对象。
+    ///</returns>
     function EnlistVolatile(singlePhaseNotification: DNISinglePhaseNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  创建事务的克隆。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.Transaction" />
+    ///  ，它是当前的事务对象的副本。
+    ///</returns>
     function Clone: DNTransaction;
+    ///<summary>
+    ///  创建依赖的克隆的事务。
+    ///</summary>
+    ///  <param name="cloneOption">
+    ///  一个 <see cref="T:System.Transactions.DependentCloneOption" />
+    ///  控制哪种依赖事务来创建。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.DependentTransaction" />
+    ///  ，它表示依赖的克隆。
+    ///</returns>
     function DependentClone(cloneOption: DNDependentCloneOption): DNDependentTransaction;
+    ///<summary>
+    ///  对资源管理器进行登记，该资源管理器具有使用可提升的单阶段登记 (PSPE) 的内部事务。
+    ///</summary>
+    ///  <param name="promotableSinglePhaseNotification">
+    ///  由参与者实现的 <see cref="T:System.Transactions.IPromotableSinglePhaseNotification" />
+    ///  接口。
+    ///</param>
+    ///  <param name="promoterType">
+    ///  分布式事务处理器的类型。
+    ///</param>
+    ///<returns>
+    ///  描述登记的 <see cref="T:System.Transactions.SinglePhaseEnlistment" />
+    ///  接口实现。
+    ///</returns>
     function EnlistPromotableSinglePhase(promotableSinglePhaseNotification: DNIPromotableSinglePhaseNotification; promoterType: DDN.mscorlib.DNGuid): Boolean; overload;
+    ///<summary>
+    ///  [仅在 .NET Framework 4.5.2 及更高版本中受支持]
+    ///  升级并登记在事务中支持两阶段提交参与的持久资源管理器。
+    ///</summary>
+    ///  <param name="resourceManagerIdentifier">
+    ///  资源管理器，它应保留在资源管理器发生故障或重新启动一个唯一标识符。
+    ///</param>
+    ///  <param name="promotableNotification">
+    ///  一个充当资源管理器的内部非分布式事务的提交委托的对象。
+    ///</param>
+    ///  <param name="enlistmentNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.IEnlistmentNotification" />
+    ///  接口来接收两阶段提交通知。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
     function PromoteAndEnlistDurable(resourceManagerIdentifier: DDN.mscorlib.DNGuid; promotableNotification: DNIPromotableSinglePhaseNotification; enlistmentNotification: DNISinglePhaseNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment;
+    ///<summary>
+    ///  设置由非 MSDTC 提升程序生成的分布式事务标识符。
+    ///</summary>
+    ///  <param name="promotableNotification">
+    ///  由参与者实现的 <see cref="T:System.Transactions.IPromotableSinglePhaseNotification" />
+    ///  接口。
+    ///</param>
+    ///  <param name="distributedTransactionIdentifier">
+    ///  分布式事务管理器使用的事务的标识符。
+    ///</param>
     procedure SetDistributedTransactionIdentifier(promotableNotification: DNIPromotableSinglePhaseNotification; distributedTransactionIdentifier: DDN.mscorlib.DNGuid);
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  检索有关一个事务的其他信息。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.TransactionInformation" />
+    ///  包含有关该事务的其他信息。
+    ///</returns>
     property TransactionInformation: DNTransactionInformation read get_TransactionInformation;
+    ///<summary>
+    ///  获取事务的隔离级别。
+    ///</summary>
+    ///<returns>
+    ///  其中一个 <see cref="T:System.Transactions.IsolationLevel" />
+    ///  值，该值指示该事务的隔离级别。
+    ///</returns>
     property IsolationLevel: DNIsolationLevel read get_IsolationLevel;
+    ///<summary>
+    ///  对提升事务时由 Promote 方法返回的 byte[] 的格式进行唯一标识。
+    ///</summary>
+    ///<returns>
+    ///  对提升事务时由 Promote 方法返回的 byte[] 的格式进行唯一标识的 GUID。
+    ///</returns>
     property PromoterType: DDN.mscorlib.DNGuid read get_PromoterType;
   end;
 
@@ -973,10 +2299,24 @@ type
   ['{6DA2EEFD-A857-5A38-B552-99DB799C6F63}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Transactions.SubordinateTransaction" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="isoLevel">
+    ///  事务的隔离级别
+    ///</param>
+    ///  <param name="superior">
+    ///  一个 <see cref="T:System.Transactions.ISimpleTransactionSuperior" />
+    ///</param>
     {class} function init(isoLevel: DNIsolationLevel; superior: DNISimpleTransactionSuperior): DNSubordinateTransaction;
 
   end;
 
+  ///<summary>
+  ///  表示可以委派非根事务。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Transactions.SubordinateTransaction')]
   DNSubordinateTransaction = interface(DNTransaction)
   ['{560E99D3-37B1-3D38-8530-684E6F16B9B5}']
@@ -993,29 +2333,214 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回此实例的哈希代码。
+    ///</summary>
+    ///<returns>
+    ///  32 位有符号整数哈希代码。
+    ///</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  确定此事务和指定的对象是否相等。
+    ///</summary>
+    ///  <param name="obj">
+    ///  与该实例进行比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="obj" />
+    ///  与此事务完全相同; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  释放由该对象占用的资源。
+    ///</summary>
     procedure Dispose;
+    ///<summary>
+    ///  对资源管理器进行登记，该资源管理器具有使用可提升的单阶段登记 (PSPE) 的内部事务。
+    ///</summary>
+    ///  <param name="promotableSinglePhaseNotification">
+    ///  由参与者实现的 <see cref="T:System.Transactions.IPromotableSinglePhaseNotification" />
+    ///  接口。
+    ///</param>
+    ///<returns>
+    ///  描述登记的 <see cref="T:System.Transactions.SinglePhaseEnlistment" />
+    ///  接口实现。
+    ///</returns>
     function EnlistPromotableSinglePhase(promotableSinglePhaseNotification: DNIPromotableSinglePhaseNotification): Boolean; overload;
+    ///<summary>
+    ///  获取提升事务时由 Promote 方法返回的 byte[]。
+    ///</summary>
+    ///<returns>
+    ///  提升事务时由 Promote 方法返回的 byte[]。
+    ///</returns>
     function GetPromotedToken: TArray<Byte>;
+    ///<summary>
+    ///  登记在事务中支持两阶段提交参与的持久资源管理器。
+    ///</summary>
+    ///  <param name="resourceManagerIdentifier">
+    ///  资源管理器，它应保留在资源管理器发生故障或重新启动一个唯一标识符。
+    ///</param>
+    ///  <param name="enlistmentNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.IEnlistmentNotification" />
+    ///  接口来接收两阶段提交通知。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
+    ///<returns><see cref="T:System.Transactions.Enlistment" />
+    ///  描述登记的对象。
+    ///</returns>
     function EnlistDurable(resourceManagerIdentifier: DDN.mscorlib.DNGuid; enlistmentNotification: DNIEnlistmentNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  登记在事务中支持单阶段提交优化，以参与持久资源管理器。
+    ///</summary>
+    ///  <param name="resourceManagerIdentifier">
+    ///  资源管理器，它应保留在资源管理器发生故障或重新启动一个唯一标识符。
+    ///</param>
+    ///  <param name="singlePhaseNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.ISinglePhaseNotification" />
+    ///  必须能够接收单阶段提交和两阶段提交通知的接口。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
+    ///<returns><see cref="T:System.Transactions.Enlistment" />
+    ///  描述登记的对象。
+    ///</returns>
     function EnlistDurable(resourceManagerIdentifier: DDN.mscorlib.DNGuid; singlePhaseNotification: DNISinglePhaseNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  回滚 （中止） 事务。
+    ///</summary>
     procedure Rollback; overload;
+    ///<summary>
+    ///  回滚 （中止） 事务。
+    ///</summary>
+    ///  <param name="e">
+    ///  回滚发生原因的说明。
+    ///</param>
     procedure Rollback(e: DDN.mscorlib.DNException); overload;
+    ///<summary>
+    ///  登记在事务中支持两阶段提交参与的易失性资源管理器。
+    ///</summary>
+    ///  <param name="enlistmentNotification">
+    ///  实现 <see cref="T:System.Transactions.IEnlistmentNotification" />
+    ///  接口，以接收两阶段提交通知的对象。
+    ///</param>
+    ///  <param name="enlistmentOptions">
+    ///  如果资源管理器在准备阶段想要执行额外工作，则为 <see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  描述登记的 <see cref="T:System.Transactions.Enlistment" />
+    ///  对象。
+    ///</returns>
     function EnlistVolatile(enlistmentNotification: DNIEnlistmentNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  登记在事务中支持单阶段提交优化，以参与可变资源管理器。
+    ///</summary>
+    ///  <param name="singlePhaseNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.ISinglePhaseNotification" />
+    ///  必须能够接收单阶段提交和两阶段提交通知的接口。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
+    ///<returns><see cref="T:System.Transactions.Enlistment" />
+    ///  描述登记的对象。
+    ///</returns>
     function EnlistVolatile(singlePhaseNotification: DNISinglePhaseNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment; overload;
+    ///<summary>
+    ///  创建事务的克隆。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.Transaction" />
+    ///  ，它是当前的事务对象的副本。
+    ///</returns>
     function Clone: DNTransaction;
+    ///<summary>
+    ///  创建依赖的克隆的事务。
+    ///</summary>
+    ///  <param name="cloneOption">
+    ///  一个 <see cref="T:System.Transactions.DependentCloneOption" />
+    ///  控制哪种依赖事务来创建。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.DependentTransaction" />
+    ///  ，它表示依赖的克隆。
+    ///</returns>
     function DependentClone(cloneOption: DNDependentCloneOption): DNDependentTransaction;
+    ///<summary>
+    ///  对资源管理器进行登记，该资源管理器具有使用可提升的单阶段登记 (PSPE) 的内部事务。
+    ///</summary>
+    ///  <param name="promotableSinglePhaseNotification">
+    ///  由参与者实现的 <see cref="T:System.Transactions.IPromotableSinglePhaseNotification" />
+    ///  接口。
+    ///</param>
+    ///  <param name="promoterType">
+    ///  分布式事务处理器的类型。
+    ///</param>
+    ///<returns>
+    ///  描述登记的 <see cref="T:System.Transactions.SinglePhaseEnlistment" />
+    ///  接口实现。
+    ///</returns>
     function EnlistPromotableSinglePhase(promotableSinglePhaseNotification: DNIPromotableSinglePhaseNotification; promoterType: DDN.mscorlib.DNGuid): Boolean; overload;
+    ///<summary>
+    ///  [仅在 .NET Framework 4.5.2 及更高版本中受支持]
+    ///  升级并登记在事务中支持两阶段提交参与的持久资源管理器。
+    ///</summary>
+    ///  <param name="resourceManagerIdentifier">
+    ///  资源管理器，它应保留在资源管理器发生故障或重新启动一个唯一标识符。
+    ///</param>
+    ///  <param name="promotableNotification">
+    ///  一个充当资源管理器的内部非分布式事务的提交委托的对象。
+    ///</param>
+    ///  <param name="enlistmentNotification">
+    ///  实现的对象 <see cref="T:System.Transactions.IEnlistmentNotification" />
+    ///  接口来接收两阶段提交通知。
+    ///</param>
+    ///  <param name="enlistmentOptions"><see cref="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+    ///  如果资源管理器想要执行的准备阶段的额外工作。
+    ///</param>
     function PromoteAndEnlistDurable(resourceManagerIdentifier: DDN.mscorlib.DNGuid; promotableNotification: DNIPromotableSinglePhaseNotification; enlistmentNotification: DNISinglePhaseNotification; enlistmentOptions: DNEnlistmentOptions): DNEnlistment;
+    ///<summary>
+    ///  设置由非 MSDTC 提升程序生成的分布式事务标识符。
+    ///</summary>
+    ///  <param name="promotableNotification">
+    ///  由参与者实现的 <see cref="T:System.Transactions.IPromotableSinglePhaseNotification" />
+    ///  接口。
+    ///</param>
+    ///  <param name="distributedTransactionIdentifier">
+    ///  分布式事务管理器使用的事务的标识符。
+    ///</param>
     procedure SetDistributedTransactionIdentifier(promotableNotification: DNIPromotableSinglePhaseNotification; distributedTransactionIdentifier: DDN.mscorlib.DNGuid);
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  检索有关一个事务的其他信息。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.TransactionInformation" />
+    ///  包含有关该事务的其他信息。
+    ///</returns>
     property TransactionInformation: DNTransactionInformation read get_TransactionInformation;
+    ///<summary>
+    ///  获取事务的隔离级别。
+    ///</summary>
+    ///<returns>
+    ///  其中一个 <see cref="T:System.Transactions.IsolationLevel" />
+    ///  值，该值指示该事务的隔离级别。
+    ///</returns>
     property IsolationLevel: DNIsolationLevel read get_IsolationLevel;
+    ///<summary>
+    ///  对提升事务时由 Promote 方法返回的 byte[] 的格式进行唯一标识。
+    ///</summary>
+    ///<returns>
+    ///  对提升事务时由 Promote 方法返回的 byte[] 的格式进行唯一标识的 GUID。
+    ///</returns>
     property PromoterType: DDN.mscorlib.DNGuid read get_PromoterType;
   end;
 
@@ -1026,6 +2551,9 @@ type
   ['{38D6BA6A-F0F3-5A40-B9C2-F6DC314258F6}']
   end;
 
+  ///<summary>
+  ///  提供有关事务的其他信息。
+  ///</summary>
   [DNTypeName('System.Transactions.TransactionInformation')]
   DNTransactionInformation = interface(DDN.mscorlib.DNObject)
   ['{CD41D142-1F2D-352D-9DE5-A5035C9529BD}']
@@ -1045,9 +2573,36 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取事务的唯一标识符。
+    ///</summary>
+    ///<returns>
+    ///  事务的唯一标识符。
+    ///</returns>
     property LocalIdentifier: string read get_LocalIdentifier;
+    ///<summary>
+    ///  获取已升级的事务的唯一标识符。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Guid" />
+    ///  ，其中包含已升级的事务的唯一标识符。
+    ///</returns>
     property DistributedIdentifier: DDN.mscorlib.DNGuid read get_DistributedIdentifier;
+    ///<summary>
+    ///  获取事务的创建时间。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.DateTime" />
+    ///  ，其中包含事务的创建时间。
+    ///</returns>
     property CreationTime: DDN.mscorlib.DNDateTime read get_CreationTime;
+    ///<summary>
+    ///  获取事务的状态。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.TransactionStatus" />
+    ///  包含事务的状态。
+    ///</returns>
     property Status: DNTransactionStatus read get_Status;
   end;
 
@@ -1062,20 +2617,120 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  分布式事务处理器的类型。
+    ///</summary>
+    ///<returns>
+    ///  分布式事务处理器的类型。
+    ///</returns>
     {class} property PromoterTypeDtc: DDN.mscorlib.DNGuid read __fakeFieldGet_PromoterTypeDtc;
 
   { static methods } 
 
+    ///<summary>
+    ///  将事务对象转换为导出事务 Cookie。
+    ///</summary>
+    ///  <param name="transaction">
+    ///  要封送处理的 <see cref="T:System.Transactions.Transaction" />
+    ///  对象。
+    ///</param>
+    ///  <param name="whereabouts">
+    ///  描述目标事务管理器位置的地址。
+    ///  这允许两个事务管理器相互通信，从而将事务从一个系统传播到另一个系统。
+    ///</param>
+    ///<returns>
+    ///  表示指定的 <see cref="T:System.Transactions.Transaction" />
+    ///  对象的导出事务 Cookie。
+    ///</returns>
     {class} function GetExportCookie(transaction: DNTransaction; whereabouts: TArray<Byte>): TArray<Byte>;
+    ///<summary>
+    ///  从指定的导出 Cookie 生成 <see cref="T:System.Transactions.Transaction" />
+    ///  。  </summary>
+    ///  <param name="cookie">
+    ///  事务对象的封送处理形式。
+    ///</param>
+    ///<returns>
+    ///  指定的导出 Cookie 中的 <see cref="T:System.Transactions.Transaction" />
+    ///  。
+    ///</returns>
     {class} function GetTransactionFromExportCookie(cookie: TArray<Byte>): DNTransaction;
+    ///<summary>
+    ///  为指定的 <see cref="T:System.Transactions.Transaction" />
+    ///  生成传播标记。
+    ///</summary>
+    ///  <param name="transaction">
+    ///  要封送处理到传播标记中的事务。
+    ///</param>
+    ///<returns>
+    ///  此方法与 <see cref="M:System.Transactions.TransactionInterop.GetTransactionFromTransmitterPropagationToken(System.Byte[])" />
+    ///  方法一起提供了用于“传输器/接收器”传播的功能，在该传播中，如果后者取消对事务的封送，则会从远程计算机“拉取”事务。
+    ///  有关不同传播模型的更多信息，请参阅 <see cref="T:System.Transactions.TransactionInterop" />
+    ///  类的“备注”部分。
+    ///</returns>
     {class} function GetTransmitterPropagationToken(transaction: DNTransaction): TArray<Byte>;
+    ///<summary>
+    ///  从指定的传输器传播标记生成 <see cref="T:System.Transactions.Transaction" />
+    ///  实例。 </summary>
+    ///  <param name="propagationToken">
+    ///  表示事务的传播标记。
+    ///</param>
+    ///<returns>
+    ///  指定的传输程序传播标记中的 <see cref="T:System.Transactions.Transaction" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Transactions.TransactionManagerCommunicationException">
+    ///  反序列化的事务失败，因为当无法联系事务管理器。
+    ///  原因可能是网络防火墙或安全设置。
+    ///</exception>
     {class} function GetTransactionFromTransmitterPropagationToken(propagationToken: TArray<Byte>): DNTransaction;
+    ///<summary>
+    ///  获取表示 <see cref="T:System.Transactions.Transaction" />
+    ///  的 <see cref="T:System.Transactions.IDtcTransaction" />
+    ///  实例。  </summary>
+    ///  <param name="transaction">
+    ///  要封送处理的 <see cref="T:System.Transactions.Transaction" />
+    ///  实例。
+    ///</param>
+    ///<returns>
+    ///  表示 <see cref="T:System.Transactions.Transaction" />
+    ///  的 <see cref="T:System.Transactions.IDtcTransaction" />
+    ///  实例。
+    ///<see cref="T:System.Transactions.IDtcTransaction" />
+    ///  实例是否与非托管形式兼容 ITransaction msdtc 版本以及托管形式使用 <see cref="T:System.EnterpriseServices.ITransaction" />
+    ///  使用 <see cref="N:System.EnterpriseServices" />
+    ///  。
+    ///</returns>
     {class} function GetDtcTransaction(transaction: DNTransaction): DNIDtcTransaction;
+    ///<summary>
+    ///  从指定的 <see cref="T:System.Transactions.IDtcTransaction" />
+    ///  生成 <see cref="T:System.Transactions.Transaction" />
+    ///  。
+    ///</summary>
+    ///  <param name="transactionNative">
+    ///  要封送处理的 <see cref="T:System.Transactions.IDtcTransaction" />
+    ///  对象。
+    ///</param>
+    ///<returns>
+    ///  表示给定的 <see cref="T:System.Transactions.IDtcTransaction" />
+    ///  的 <see cref="T:System.Transactions.Transaction" />
+    ///  实例。
+    ///</returns>
     {class} function GetTransactionFromDtcTransaction(transactionNative: DNIDtcTransaction): DNTransaction;
+    ///<summary>
+    ///  获取 <see cref="N:System.Transactions" />
+    ///  使用的分布式事务管理器的“行踪”。  </summary>
+    ///<returns><see cref="N:System.Transactions" />
+    ///  使用的分布式事务管理器的“行踪”。  </returns>
     {class} function GetWhereabouts: TArray<Byte>;
 
   end;
 
+  ///<summary>
+  ///  促进 <see cref="N:System.Transactions" />
+  ///  和以前编写的用于与 MSDTC、COM+ 或 <see cref="N:System.EnterpriseServices" />
+  ///  进行交互的组件之间的交互。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Transactions.TransactionInterop')]
   DNTransactionInterop = interface(DDN.mscorlib.DNObject)
   ['{F67C6D69-E281-3062-AA0B-8F77C17C1751}']
@@ -1102,16 +2757,86 @@ type
 
   { static methods } 
 
+    ///<summary>
+    ///  重新登记在事务中的持久参与者。
+    ///</summary>
+    ///  <param name="resourceManagerIdentifier">
+    ///  一个 <see cref="T:System.Guid" />
+    ///  ，用于唯一标识资源管理器。
+    ///</param>
+    ///  <param name="recoveryInformation">
+    ///  包含恢复信息的其他信息。
+    ///</param>
+    ///  <param name="enlistmentNotification">
+    ///  实现的资源对象 <see cref="T:System.Transactions.IEnlistmentNotification" />
+    ///  以接收通知。
+    ///</param>
+    ///<returns><see cref="T:System.Transactions.Enlistment" />
+    ///  描述登记。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException"><paramref name="recoveryInformation" />
+    ///  无效。
+    ///  - 或 -
+    ///  事务管理器中的信息 <paramref name="recoveryInformation" />
+    ///  与已配置的事务管理器不匹配。
+    ///  - 或 -
+    ///  <paramref name="RecoveryInformation" />
+    ///  不能识别 <see cref="N:System.Transactions" />
+    ///  。
+    ///</exception><exception cref="T:System.InvalidOperationException"><see cref="M:System.Transactions.TransactionManager.RecoveryComplete(System.Guid)" />
+    ///  已调用指定 <paramref name="resourceManagerIdentifier" />
+    ///  。
+    ///  重新登记将被拒绝。
+    ///</exception><exception cref="T:System.Transactions.TransactionException"><paramref name="resourceManagerIdentifier" />
+    ///  中指定的恢复信息的内容不匹配 <paramref name="recoveryInformation" />
+    ///  。
+    ///</exception>
     {class} function Reenlist(resourceManagerIdentifier: DDN.mscorlib.DNGuid; recoveryInformation: TArray<Byte>; enlistmentNotification: DNIEnlistmentNotification): DNEnlistment;
+    ///<summary>
+    ///  通知事务管理器资源管理器从故障中恢复已完成所有未解决的事务中重新登记。
+    ///</summary>
+    ///  <param name="resourceManagerIdentifier">
+    ///  一个 <see cref="T:System.Guid" />
+    ///  ，用于唯一标识要从恢复的资源。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="resourceManagerIdentifier" />
+    ///  参数为 <see langword="null" />
+    ///  。
+    ///</exception>
     {class} procedure RecoveryComplete(resourceManagerIdentifier: DDN.mscorlib.DNGuid);
 
   { static propertys } 
 
+    ///<summary>
+    ///  获取或设置自定义事务工厂。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.HostCurrentTransactionCallback" />
+    ///  ，其中包含自定义事务工厂。
+    ///</returns>
     {class} property HostCurrentCallback: DNHostCurrentTransactionCallback read get_HostCurrentCallback write set_HostCurrentCallback;
+    ///<summary>
+    ///  获取默认的超时间隔的新事务。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  值，该值指定新事务的超时间隔。
+    ///</returns>
     {class} property DefaultTimeout: DDN.mscorlib.DNTimeSpan read get_DefaultTimeout;
+    ///<summary>
+    ///  获取新的事务的默认最大超时间隔。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  值，该值指定创建新事务时允许的最大超时间隔。
+    ///</returns>
     {class} property MaximumTimeout: DDN.mscorlib.DNTimeSpan read get_MaximumTimeout;
   end;
 
+  ///<summary>
+  ///  包含用于事务管理的方法。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Transactions.TransactionManager')]
   DNTransactionManager = interface(DDN.mscorlib.DNObject)
   ['{E8617F9C-039A-3366-A383-67B5F73D1E48}']
@@ -1136,29 +2861,212 @@ type
   ['{0EC82406-28A2-5E1A-AE67-3DFE1BD054EF}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Transactions.TransactionScope" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNTransactionScope; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Transactions.TransactionScope" />
+    ///  类以指定的要求。
+    ///</summary>
+    ///  <param name="scopeOption">
+    ///  一个实例 <see cref="T:System.Transactions.TransactionScopeOption" />
+    ///  枚举，它说明了与此事务作用域关联的事务要求。
+    ///</param>
     {class} function init(scopeOption: DNTransactionScopeOption): DNTransactionScope; overload;
+    ///<summary>
+    ///  [在 .NET Framework 4.5.1 和更高版本中受支持]
+    ///  新实例初始化 <see cref="T:System.Transactions.TransactionScope" />
+    ///  类的指定异步流选项。
+    ///</summary>
+    ///  <param name="asyncFlowOption">
+    ///  一个实例 <see cref="T:System.Transactions.TransactionScopeAsyncFlowOption" />
+    ///  描述是否在使用任务或 async/await.NET 异步编程模式时，与事务作用域关联的环境事务将跨线程延续流动的枚举。
+    ///</param>
     {class} function init(asyncFlowOption: DNTransactionScopeAsyncFlowOption): DNTransactionScope; overload;
+    ///<summary>
+    ///  [在 .NET Framework 4.5.1 和更高版本中受支持]
+    ///  新实例初始化 <see cref="T:System.Transactions.TransactionScope" />
+    ///  用指定的要求和异步流选项。
+    ///</summary>
+    ///  <param name="scopeOption">
+    ///  一个实例 <see cref="T:System.Transactions.TransactionScopeOption" />
+    ///  枚举，它说明了与此事务作用域关联的事务要求。
+    ///</param>
+    ///  <param name="asyncFlowOption">
+    ///  一个实例 <see cref="T:System.Transactions.TransactionScopeAsyncFlowOption" />
+    ///  描述是否在使用任务或 async/await.NET 异步编程模式时，与事务作用域关联的环境事务将跨线程延续流动的枚举。
+    ///</param>
     {class} function init(scopeOption: DNTransactionScopeOption; asyncFlowOption: DNTransactionScopeAsyncFlowOption): DNTransactionScope; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Transactions.TransactionScope" />
+    ///  类具有指定的超时值和要求。
+    ///</summary>
+    ///  <param name="scopeOption">
+    ///  一个实例 <see cref="T:System.Transactions.TransactionScopeOption" />
+    ///  枚举，它说明了与此事务作用域关联的事务要求。
+    ///</param>
+    ///  <param name="scopeTimeout"><see cref="T:System.TimeSpan" />
+    ///  其后的事务范围将超时并中止该事务。
+    ///</param>
     {class} function init(scopeOption: DNTransactionScopeOption; scopeTimeout: DDN.mscorlib.DNTimeSpan): DNTransactionScope; overload;
+    ///<summary>
+    ///  [在 .NET Framework 4.5.1 和更高版本中受支持]
+    ///  新实例初始化 <see cref="T:System.Transactions.TransactionScope" />
+    ///  类，具有指定的超时值、 要求和异步流选项。
+    ///</summary>
+    ///  <param name="scopeOption">
+    ///  一个实例 <see cref="T:System.Transactions.TransactionScopeOption" />
+    ///  枚举，它说明了与此事务作用域关联的事务要求。
+    ///</param>
+    ///  <param name="scopeTimeout"><see cref="T:System.TimeSpan" />
+    ///  其后的事务范围将超时并中止该事务。
+    ///</param>
+    ///  <param name="asyncFlowOption">
+    ///  一个实例 <see cref="T:System.Transactions.TransactionScopeAsyncFlowOption" />
+    ///  描述是否在使用任务或 async/await.NET 异步编程模式时，与事务作用域关联的环境事务将跨线程延续流动的枚举。
+    ///</param>
     {class} function init(scopeOption: DNTransactionScopeOption; scopeTimeout: DDN.mscorlib.DNTimeSpan; asyncFlowOption: DNTransactionScopeAsyncFlowOption): DNTransactionScope; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Transactions.TransactionScope" />
+    ///  类以指定的要求。
+    ///</summary>
+    ///  <param name="scopeOption">
+    ///  一个实例 <see cref="T:System.Transactions.TransactionScopeOption" />
+    ///  枚举，它说明了与此事务作用域关联的事务要求。
+    ///</param>
+    ///  <param name="transactionOptions">
+    ///  一个 <see cref="T:System.Transactions.TransactionOptions" />
+    ///  结构描述要使用如果创建一个新事务的事务选项。
+    ///  如果使用现有事务，则此参数中的超时值适用于该事务范围。
+    ///  如果在范围被释放之前，该时间到期，则中止事务。
+    ///</param>
     {class} function init(scopeOption: DNTransactionScopeOption; transactionOptions: DNTransactionOptions): DNTransactionScope; overload;
+    ///<summary>
+    ///  [在 .NET Framework 4.5.1 和更高版本中受支持]
+    ///  新实例初始化 <see cref="T:System.Transactions.TransactionScope" />
+    ///  用指定的要求和异步流选项。
+    ///</summary>
+    ///  <param name="scopeOption">
+    ///  一个实例 <see cref="T:System.Transactions.TransactionScopeOption" />
+    ///  枚举，它说明了与此事务作用域关联的事务要求。
+    ///</param>
+    ///  <param name="transactionOptions">
+    ///  一个 <see cref="T:System.Transactions.TransactionOptions" />
+    ///  结构描述要使用如果创建一个新事务的事务选项。
+    ///  如果使用现有事务，则此参数中的超时值适用于该事务范围。
+    ///  如果在范围被释放之前，该时间到期，则中止事务。
+    ///</param>
+    ///  <param name="asyncFlowOption">
+    ///  一个实例 <see cref="T:System.Transactions.TransactionScopeAsyncFlowOption" />
+    ///  描述是否在使用任务或 async/await.NET 异步编程模式时，与事务作用域关联的环境事务将跨线程延续流动的枚举。
+    ///</param>
     {class} function init(scopeOption: DNTransactionScopeOption; transactionOptions: DNTransactionOptions; asyncFlowOption: DNTransactionScopeAsyncFlowOption): DNTransactionScope; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Transactions.TransactionScope" />
+    ///  类，具有指定的作用域和 COM + 互操作性要求以及事务选项。
+    ///</summary>
+    ///  <param name="scopeOption">
+    ///  一个实例 <see cref="T:System.Transactions.TransactionScopeOption" />
+    ///  枚举，它说明了与此事务作用域关联的事务要求。
+    ///</param>
+    ///  <param name="transactionOptions">
+    ///  一个 <see cref="T:System.Transactions.TransactionOptions" />
+    ///  结构描述要使用如果创建一个新事务的事务选项。
+    ///  如果使用现有事务，则此参数中的超时值适用于该事务范围。
+    ///  如果在范围被释放之前，该时间到期，则中止事务。
+    ///</param>
+    ///  <param name="interopOption">
+    ///  一个实例 <see cref="T:System.Transactions.EnterpriseServicesInteropOption" />
+    ///  描述关联的事务与 COM + 事务交互的方式的枚举。
+    ///</param>
     {class} function init(scopeOption: DNTransactionScopeOption; transactionOptions: DNTransactionOptions; interopOption: DNEnterpriseServicesInteropOption): DNTransactionScope; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Transactions.TransactionScope" />
+    ///  类并将指定的事务设置为环境事务，以便进行作用域内的事务性工作使用此事务。
+    ///</summary>
+    ///  <param name="transactionToUse">
+    ///  要设置为环境事务，以便进行作用域内的事务性工作使用此事务的事务。
+    ///</param>
     {class} function init(transactionToUse: DNTransaction): DNTransactionScope; overload;
+    ///<summary>
+    ///  [在 .NET Framework 4.5.1 和更高版本中受支持]
+    ///  新实例初始化 <see cref="T:System.Transactions.TransactionScope" />
+    ///  类并将指定的事务设置为环境事务，以便进行作用域内的事务性工作使用此事务。
+    ///</summary>
+    ///  <param name="transactionToUse">
+    ///  要设置为环境事务，以便进行作用域内的事务性工作使用此事务的事务。
+    ///</param>
+    ///  <param name="asyncFlowOption">
+    ///  一个实例 <see cref="T:System.Transactions.TransactionScopeAsyncFlowOption" />
+    ///  描述是否在使用任务或 async/await.NET 异步编程模式时，与事务作用域关联的环境事务将跨线程延续流动的枚举。
+    ///</param>
     {class} function init(transactionToUse: DNTransaction; asyncFlowOption: DNTransactionScopeAsyncFlowOption): DNTransactionScope; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Transactions.TransactionScope" />
+    ///  类，具有指定的超时值，并将指定的事务设置为环境事务，以便进行作用域内的事务性工作使用此事务。
+    ///</summary>
+    ///  <param name="transactionToUse">
+    ///  要设置为环境事务，以便进行作用域内的事务性工作使用此事务的事务。
+    ///</param>
+    ///  <param name="scopeTimeout"><see cref="T:System.TimeSpan" />
+    ///  其后的事务范围将超时并中止该事务。
+    ///</param>
     {class} function init(transactionToUse: DNTransaction; scopeTimeout: DDN.mscorlib.DNTimeSpan): DNTransactionScope; overload;
+    ///<summary>
+    ///  [在 .NET Framework 4.5.1 和更高版本中受支持]
+    ///  新实例初始化 <see cref="T:System.Transactions.TransactionScope" />
+    ///  类，具有指定的超时值，并将指定的事务设置为环境事务，以便进行作用域内的事务性工作使用此事务。
+    ///</summary>
+    ///  <param name="transactionToUse">
+    ///  要设置为环境事务，以便进行作用域内的事务性工作使用此事务的事务。
+    ///</param>
+    ///  <param name="scopeTimeout"><see cref="T:System.TimeSpan" />
+    ///  其后的事务范围将超时并中止该事务。
+    ///</param>
+    ///  <param name="asyncFlowOption">
+    ///  一个实例 <see cref="T:System.Transactions.TransactionScopeAsyncFlowOption" />
+    ///  描述是否在使用任务或 async/await.NET 异步编程模式时，与事务作用域关联的环境事务将跨线程延续流动的枚举。
+    ///</param>
     {class} function init(transactionToUse: DNTransaction; scopeTimeout: DDN.mscorlib.DNTimeSpan; asyncFlowOption: DNTransactionScopeAsyncFlowOption): DNTransactionScope; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Transactions.TransactionScope" />
+    ///  类具有指定的超时值和 COM + 互操作性要求，并将指定的事务设置为环境事务，以便进行作用域内的事务性工作使用此事务。
+    ///</summary>
+    ///  <param name="transactionToUse">
+    ///  要设置为环境事务，以便进行作用域内的事务性工作使用此事务的事务。
+    ///</param>
+    ///  <param name="scopeTimeout"><see cref="T:System.TimeSpan" />
+    ///  其后的事务范围将超时并中止该事务。
+    ///</param>
+    ///  <param name="interopOption">
+    ///  一个实例 <see cref="T:System.Transactions.EnterpriseServicesInteropOption" />
+    ///  描述关联的事务与 COM + 事务交互的方式的枚举。
+    ///</param>
     {class} function init(transactionToUse: DNTransaction; scopeTimeout: DDN.mscorlib.DNTimeSpan; interopOption: DNEnterpriseServicesInteropOption): DNTransactionScope; overload;
 
   end;
 
+  ///<summary>
+  ///  使代码块事务。
+  ///  此类不能被继承。
+  ///</summary>
   [DNTypeName('System.Transactions.TransactionScope')]
   DNTransactionScope = interface(DDN.mscorlib.DNIDisposable)
   ['{9D930A75-06D4-3E93-A49C-17E4928B3821}']
   { methods } 
 
+    ///<summary>
+    ///  结束事务范围。
+    ///</summary>
     procedure Dispose;
+    ///<summary>
+    ///  指示范围内的所有操作都已成功都完成。
+    ///</summary>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  具有已调用一次此方法。
+    ///</exception>
     procedure Complete;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1174,6 +3082,9 @@ type
   ['{3B69E5E5-8A0C-54BD-91E1-FAAE8DECD7D8}']
   end;
 
+  ///<summary>
+  ///  包含指定事务行为的其他信息。
+  ///</summary>
   [DNTypeName('System.Transactions.TransactionOptions')]
   DNTransactionOptions = interface(DDN.mscorlib.DNValueType)
   ['{89EEABA3-B630-3A67-84EA-EDE60AE287B5}']
@@ -1186,14 +3097,47 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  返回此实例的哈希代码。
+    ///</summary>
+    ///<returns>
+    ///  32 位有符号整数哈希代码。
+    ///</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  确定是否这 <see cref="T:System.Transactions.TransactionOptions" />
+    ///  实例与指定的对象是否相等。
+    ///</summary>
+    ///  <param name="obj">
+    ///  与该实例进行比较的对象。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果 <paramref name="obj" />
+    ///  并且此 <see cref="T:System.Transactions.TransactionOptions" />
+    ///  实例都相同; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function ToString: string;
     function GetType: DDN.mscorlib.DNType;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置事务的超时期限。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.TimeSpan" />
+    ///  值，该值指定事务的超时期限。
+    ///</returns>
     property Timeout: DDN.mscorlib.DNTimeSpan read get_Timeout write set_Timeout;
+    ///<summary>
+    ///  获取或设置事务的隔离级别。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Transactions.IsolationLevel" />
+    ///  指定事务的隔离级别的枚举。
+    ///</returns>
     property IsolationLevel: DNIsolationLevel read get_IsolationLevel write set_IsolationLevel;
   end;
 

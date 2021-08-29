@@ -28,16 +28,40 @@ type
 { enums }
 
   //-------------namespace: System.Windows.Input.Manipulations----------------
+  ///<summary>
+  ///  表示可能仿射二维 (2-d) 操作。
+  ///</summary>
   [DNTypeName('System.Windows.Input.Manipulations.Manipulations2D')]
   DNManipulations2D = type Integer;
   DNManipulations2DHelper = record helper for DNManipulations2D
   public const
+    ///<summary>
+    ///  执行任何操作。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  在 x 轴的转换。
+    ///</summary>
     TranslateX = 1;
+    ///<summary>
+    ///  在 y 轴的转换。
+    ///</summary>
     TranslateY = 2;
+    ///<summary>
+    ///  转换中的 x 和/或 y 轴。
+    ///</summary>
     Translate = 3;
+    ///<summary>
+    ///  在两个方向的小数位数。
+    ///</summary>
     Scale = 4;
+    ///<summary>
+    ///  旋转。
+    ///</summary>
     Rotate = 8;
+    ///<summary>
+    ///  所有可用操作。
+    ///</summary>
     All = 15;
   end;
 
@@ -72,6 +96,9 @@ type
   ['{E7276BC5-A971-5751-9F76-1F8564D7CD6C}']
   end;
 
+  ///<summary>
+  ///  表示与一起发送的数据 ManipulationProcessor2D.Completed 事件或 InertiaProcessor2D.Completed 事件。
+  ///</summary>
   [DNTypeName('System.Windows.Input.Manipulations.Manipulation2DCompletedEventArgs')]
   DNManipulation2DCompletedEventArgs = interface(DDN.mscorlib.DNEventArgs)
   ['{66DE92D9-31C6-38BA-B895-96B3E827EF35}']
@@ -91,9 +118,33 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取新的 x 坐标的复合操作的位置。
+    ///</summary>
+    ///<returns>
+    ///  操作的复合位置新 x 坐标。
+    ///</returns>
     property OriginX: Single read get_OriginX;
+    ///<summary>
+    ///  获取新的 y 坐标的复合操作的位置。
+    ///</summary>
+    ///<returns>
+    ///  操作的复合位置新 y 坐标。
+    ///</returns>
     property OriginY: Single read get_OriginY;
+    ///<summary>
+    ///  获取操作的当前速度。
+    ///</summary>
+    ///<returns>
+    ///  操作当前速度。
+    ///</returns>
     property Velocities: DNManipulationVelocities2D read get_Velocities;
+    ///<summary>
+    ///  由于操作开始获取更改的总量。
+    ///</summary>
+    ///<returns>
+    ///  更改操作启动后的总量。
+    ///</returns>
     property Total: DNManipulationDelta2D read get_Total;
   end;
 
@@ -104,6 +155,11 @@ type
   ['{CF65B3B9-3F33-5F9E-A511-161AC9E9BB31}']
   end;
 
+  ///<summary>
+  ///  表示与一起发送的数据 <see cref="E:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta" />
+  ///  事件或 <see cref="E:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta" />
+  ///  事件。
+  ///</summary>
   [DNTypeName('System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs')]
   DNManipulation2DDeltaEventArgs = interface(DDN.mscorlib.DNEventArgs)
   ['{85ED80E1-97DD-3452-8376-E0F11C8CAD78}']
@@ -124,10 +180,40 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取新的 x 坐标的复合操作的位置。
+    ///</summary>
+    ///<returns>
+    ///  操作的复合位置新 x 坐标。
+    ///</returns>
     property OriginX: Single read get_OriginX;
+    ///<summary>
+    ///  获取新的 y 坐标的复合操作的位置。
+    ///</summary>
+    ///<returns>
+    ///  操作的复合位置新 y 坐标。
+    ///</returns>
     property OriginY: Single read get_OriginY;
+    ///<summary>
+    ///  获取操作的当前速度。
+    ///</summary>
+    ///<returns>
+    ///  操作当前速度。
+    ///</returns>
     property Velocities: DNManipulationVelocities2D read get_Velocities;
+    ///<summary>
+    ///  获取自上次事件以来的更改量。
+    ///</summary>
+    ///<returns>
+    ///  自上次事件以来的更改量。
+    ///</returns>
     property Delta: DNManipulationDelta2D read get_Delta;
+    ///<summary>
+    ///  由于操作开始获取更改的总量。
+    ///</summary>
+    ///<returns>
+    ///  更改操作启动后的总量。
+    ///</returns>
     property Cumulative: DNManipulationDelta2D read get_Cumulative;
   end;
 
@@ -138,6 +224,10 @@ type
   ['{B432B716-8F13-5581-9669-C46B625BF161}']
   end;
 
+  ///<summary>
+  ///  表示与一起发送的数据 <see cref="E:System.Windows.Input.Manipulations.ManipulationProcessor2D.Started" />
+  ///  事件。
+  ///</summary>
   [DNTypeName('System.Windows.Input.Manipulations.Manipulation2DStartedEventArgs')]
   DNManipulation2DStartedEventArgs = interface(DDN.mscorlib.DNEventArgs)
   ['{BEACC47C-5457-31A7-898B-066614BFF35A}']
@@ -155,7 +245,19 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取原点的 x 坐标。
+    ///</summary>
+    ///<returns>
+    ///  起点的 x 坐标。
+    ///</returns>
     property OriginX: Single read get_OriginX;
+    ///<summary>
+    ///  获取起点的 y 坐标。
+    ///</summary>
+    ///<returns>
+    ///  起点的 y 坐标。
+    ///</returns>
     property OriginY: Single read get_OriginY;
   end;
 
@@ -166,10 +268,34 @@ type
   ['{E66AF2D9-14D8-56E5-A1F7-AE2C19FE1A26}']
   { constructors } 
 
+    ///<summary>
+    ///  创建一个新 <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />
+    ///  对象使用指定的属性。
+    ///</summary>
+    ///  <param name="id">
+    ///  此操控器唯一 ID。
+    ///</param>
+    ///  <param name="x">
+    ///  操控器 x 坐标。
+    ///</param>
+    ///  <param name="y">
+    ///  操控器 y 坐标。
+    ///</param>
+    ///<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="x" />
+    ///  -协调或 <paramref name="y" />
+    ///  的坐标是 <see langword="float.NaN" />
+    ///  , ，<see langword="float.PositiveInfinity" />
+    ///  , ，或 <see langword="float.NegativeInfinity" />
+    ///  。
+    ///  这些值都无效。
+    ///</exception>
     {class} function init(id: Int32; x: Single; y: Single): DNManipulator2D;
 
   end;
 
+  ///<summary>
+  ///  表示某一瞬间 2D 操控器时间。
+  ///</summary>
   [DNTypeName('System.Windows.Input.Manipulations.Manipulator2D')]
   DNManipulator2D = interface(DDN.mscorlib.DNValueType)
   ['{C029A5C3-2662-3986-BD7D-6DA9F2D03DC0}']
@@ -184,15 +310,60 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  确定此 <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />
+    ///  对象是否具有与指定 <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />
+    ///  对象相同的值。
+    ///</summary>
+    ///  <param name="obj">
+    ///  要与此对象比较的 <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />
+    ///  对象。
+    ///</param>
+    ///<returns>
+    ///  如果两个 <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />
+    ///  对象具有相同的类型并表示相同的值，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  返回此实例的哈希代码。
+    ///</summary>
+    ///<returns>
+    ///  此实例的哈希代码。
+    ///</returns>
     function GetHashCode: Int32;
     function ToString: string;
     function GetType: DDN.mscorlib.DNType;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置此唯一 ID <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  对此的唯一 ID <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />
+    ///  对象。
+    ///</returns>
     property Id: Int32 read get_Id write set_Id;
+    ///<summary>
+    ///  获取或设置此的 x 坐标 <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  此的 x 坐标 <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />
+    ///  对象。
+    ///</returns>
     property X: Single read get_X write set_X;
+    ///<summary>
+    ///  获取或设置此的 y 坐标 <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />
+    ///  对象。
+    ///</summary>
+    ///<returns>
+    ///  此的 y 坐标 <see cref="T:System.Windows.Input.Manipulations.Manipulator2D" />
+    ///  对象。
+    ///</returns>
     property Y: Single read get_Y write set_Y;
   end;
 
@@ -203,6 +374,9 @@ type
   ['{94A1E0F6-A75D-5B38-8213-4DAC84E0331C}']
   end;
 
+  ///<summary>
+  ///  所有惯性参数都派生自的基类。
+  ///</summary>
   [DNTypeName('System.Windows.Input.Manipulations.InertiaParameters2D')]
   DNInertiaParameters2D = interface(DDN.mscorlib.DNObject)
   ['{9E7559B3-3627-3791-AF60-BCBA97C0CE85}']
@@ -222,10 +396,17 @@ type
   ['{DE3DE1F8-5DBB-5190-87A1-B766E15D9134}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Input.Manipulations.InertiaExpansionBehavior2D" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNInertiaExpansionBehavior2D;
 
   end;
 
+  ///<summary>
+  ///  描述所需的扩展延时处理器的行为。
+  ///</summary>
   [DNTypeName('System.Windows.Input.Manipulations.InertiaExpansionBehavior2D')]
   DNInertiaExpansionBehavior2D = interface(DNInertiaParameters2D)
   ['{72C562A1-F80E-3AC6-8EC6-32B4E079298C}']
@@ -253,11 +434,47 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置初始平均半径，以坐标单位。
+    ///</summary>
+    ///<returns>
+    ///  初始平均半径，以坐标单位。
+    ///</returns>
     property InitialRadius: Single read get_InitialRadius write set_InitialRadius;
+    ///<summary>
+    ///  获取或设置所需的扩展减速度移动，以坐标单位 / 平方毫秒为单位。
+    ///</summary>
+    ///<returns>
+    ///  所需的延伸减速度，以坐标单位 / 平方毫秒为单位。
+    ///</returns>
     property DesiredDeceleration: Single read get_DesiredDeceleration write set_DesiredDeceleration;
+    ///<summary>
+    ///  获取或设置所需的扩展沿 x 轴，以坐标单位。
+    ///</summary>
+    ///<returns>
+    ///  沿 x 轴以坐标单位所需的扩展。
+    ///</returns>
     property DesiredExpansionX: Single read get_DesiredExpansionX write set_DesiredExpansionX;
+    ///<summary>
+    ///  获取或设置所需的扩展沿 y 轴，以坐标单位。
+    ///</summary>
+    ///<returns>
+    ///  沿 y 轴坐标的单位所需的扩展。
+    ///</returns>
     property DesiredExpansionY: Single read get_DesiredExpansionY write set_DesiredExpansionY;
+    ///<summary>
+    ///  获取或设置的初始延伸速度沿 x 轴，以坐标单位 / 毫秒为单位。
+    ///</summary>
+    ///<returns>
+    ///  沿 x 轴上以坐标单位 / 毫秒为单位的初始延伸速度。
+    ///</returns>
     property InitialVelocityX: Single read get_InitialVelocityX write set_InitialVelocityX;
+    ///<summary>
+    ///  获取或设置的初始延伸速度沿 y 轴，以坐标单位 / 毫秒为单位。
+    ///</summary>
+    ///<returns>
+    ///  沿 y 轴坐标单位 / 毫秒为单位的初始延伸速度。
+    ///</returns>
     property InitialVelocityY: Single read get_InitialVelocityY write set_InitialVelocityY;
   end;
 
@@ -268,10 +485,17 @@ type
   ['{17D86188-4316-592D-8F8E-258A53ABDC9A}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Input.Manipulations.InertiaRotationBehavior2D" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNInertiaRotationBehavior2D;
 
   end;
 
+  ///<summary>
+  ///  介绍预期的旋转延时处理器的行为。
+  ///</summary>
   [DNTypeName('System.Windows.Input.Manipulations.InertiaRotationBehavior2D')]
   DNInertiaRotationBehavior2D = interface(DNInertiaParameters2D)
   ['{9926A321-6FDD-36D7-B9C1-8E78FAE4A31B}']
@@ -293,8 +517,26 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置所需的角度减速度，以弧度为单位/平方毫秒。
+    ///</summary>
+    ///<returns>
+    ///  所需的角度减速度，以弧度为单位/平方毫秒。
+    ///</returns>
     property DesiredDeceleration: Single read get_DesiredDeceleration write set_DesiredDeceleration;
+    ///<summary>
+    ///  获取或设置所需的旋转，以弧度为单位。
+    ///</summary>
+    ///<returns>
+    ///  所需的旋转，以弧度为单位。
+    ///</returns>
     property DesiredRotation: Single read get_DesiredRotation write set_DesiredRotation;
+    ///<summary>
+    ///  获取或设置初始旋转速度，以弧度为单位 / 毫秒为单位。
+    ///</summary>
+    ///<returns>
+    ///  初始旋转速度，以弧度为单位 / 毫秒为单位。
+    ///</returns>
     property InitialVelocity: Single read get_InitialVelocity write set_InitialVelocity;
   end;
 
@@ -305,10 +547,17 @@ type
   ['{71F4E558-57AD-5ECC-82DD-FD96F5A8B85B}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Input.Manipulations.InertiaTranslationBehavior2D" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNInertiaTranslationBehavior2D;
 
   end;
 
+  ///<summary>
+  ///  描述惯性处理器的所需的转换行为。
+  ///</summary>
   [DNTypeName('System.Windows.Input.Manipulations.InertiaTranslationBehavior2D')]
   DNInertiaTranslationBehavior2D = interface(DNInertiaParameters2D)
   ['{3D6F4080-74E9-33E3-A658-0104E8382B1A}']
@@ -332,9 +581,33 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置所需的减速，以坐标单位 / 平方毫秒为单位。
+    ///</summary>
+    ///<returns>
+    ///  所需的减速，以坐标单位 / 平方毫秒为单位。
+    ///</returns>
     property DesiredDeceleration: Single read get_DesiredDeceleration write set_DesiredDeceleration;
+    ///<summary>
+    ///  获取或设置对象所需的沿速度向量坐标单位的绝对距离。
+    ///</summary>
+    ///<returns>
+    ///  对象所需的沿速度向量坐标单位表示绝对距离。
+    ///</returns>
     property DesiredDisplacement: Single read get_DesiredDisplacement write set_DesiredDisplacement;
+    ///<summary>
+    ///  获取或设置沿 x 轴的初始速度以坐标单位 / 毫秒为单位。
+    ///</summary>
+    ///<returns>
+    ///  沿 x 轴上以坐标单位 / 毫秒为单位的初始速度。
+    ///</returns>
     property InitialVelocityX: Single read get_InitialVelocityX write set_InitialVelocityX;
+    ///<summary>
+    ///  获取或设置沿 y 轴的初始速度以坐标单位 / 毫秒为单位。
+    ///</summary>
+    ///<returns>
+    ///  沿 y 轴坐标单位 / 毫秒为单位的初始速度。
+    ///</returns>
     property InitialVelocityY: Single read get_InitialVelocityY write set_InitialVelocityY;
   end;
 
@@ -345,10 +618,17 @@ type
   ['{68A5A2DE-F0AB-562F-B382-DEFE78AE88F8}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Input.Manipulations.InertiaProcessor2D" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNInertiaProcessor2D;
 
   end;
 
+  ///<summary>
+  ///  实现操作的位置、 方向和平均半径的推断。
+  ///</summary>
   [DNTypeName('System.Windows.Input.Manipulations.InertiaProcessor2D')]
   DNInertiaProcessor2D = interface(DDN.mscorlib.DNObject)
   ['{D7EFC75C-5844-3EEB-A225-E65253AC4985}']
@@ -375,8 +655,39 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  推断操作的位置、方向和指定时间的平均半径。
+    ///</summary>
+    ///  <param name="timestamp">
+    ///  用于执行外推的时间戳（以 100 纳秒刻度为单位）。
+    ///</param>
+    ///<returns>
+    ///  操作的位置、方向和指定时间的平均半径。
+    ///  如果外推正在进行，则为 <see langword="true" />
+    ///  ；如果外推已完成，则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  时间戳参数小于初始或上一个时间戳。
+    ///</exception>
     function Process(timestamp: Int64): Boolean;
+    ///<summary>
+    ///  通过使用指定时间戳完成最终外推并引发 <see cref="E:System.Windows.Input.Manipulations.InertiaProcessor2D.Completed" />
+    ///  事件。
+    ///</summary>
+    ///  <param name="timestamp">
+    ///  用于完成外推的时间戳（以 100 纳秒为单位的时钟周期）。
+    ///</param>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  时间戳参数小于初始或上一个时间戳。
+    ///</exception>
     procedure Complete(timestamp: Int64);
+    ///<summary>
+    ///  在延时处理器上设置参数。
+    ///</summary>
+    ///  <param name="parameters">
+    ///  要设置的参数。
+    ///</param>
     procedure SetParameters(parameters: DNInertiaParameters2D);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -385,11 +696,47 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置以坐标单位的初始原点的 x 坐标。
+    ///</summary>
+    ///<returns>
+    ///  以坐标单位表示的初始原点的 x 坐标。
+    ///</returns>
     property InitialOriginX: Single read get_InitialOriginX write set_InitialOriginX;
+    ///<summary>
+    ///  获取或设置以坐标单位的初始原点的 y 坐标。
+    ///</summary>
+    ///<returns>
+    ///  以坐标单位表示的初始原点 y 坐标。
+    ///</returns>
     property InitialOriginY: Single read get_InitialOriginY write set_InitialOriginY;
+    ///<summary>
+    ///  获取是否惯性当前正在进行。
+    ///</summary>
+    ///<returns>
+    ///  一个布尔值，该值指示惯性当前是否正在进行中。
+    ///</returns>
     property IsRunning: Boolean read get_IsRunning;
+    ///<summary>
+    ///  获取或设置惯性处理器的转换行为。
+    ///</summary>
+    ///<returns>
+    ///  惯性处理器的转换行为。
+    ///</returns>
     property TranslationBehavior: DNInertiaTranslationBehavior2D read get_TranslationBehavior write set_TranslationBehavior;
+    ///<summary>
+    ///  获取或设置惯性处理器的旋转行为。
+    ///</summary>
+    ///<returns>
+    ///  惯性处理器的旋转行为。
+    ///</returns>
     property RotationBehavior: DNInertiaRotationBehavior2D read get_RotationBehavior write set_RotationBehavior;
+    ///<summary>
+    ///  获取或设置惯性处理器的延伸行为。
+    ///</summary>
+    ///<returns>
+    ///  惯性处理器的扩展行为。
+    ///</returns>
     property ExpansionBehavior: DNInertiaExpansionBehavior2D read get_ExpansionBehavior write set_ExpansionBehavior;
   end;
 
@@ -400,6 +747,9 @@ type
   ['{DD45D25B-2B2B-507B-859F-FCFD355F9689}']
   end;
 
+  ///<summary>
+  ///  表示二维操作的结果。
+  ///</summary>
   [DNTypeName('System.Windows.Input.Manipulations.ManipulationDelta2D')]
   DNManipulationDelta2D = interface(DDN.mscorlib.DNObject)
   ['{E96ADC36-FB06-328A-B0AA-CABD7B2F8606}']
@@ -422,12 +772,54 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取以坐标单位沿 x 轴的转换。
+    ///</summary>
+    ///<returns>
+    ///  沿 x 轴上以坐标单位的转换。
+    ///</returns>
     property TranslationX: Single read get_TranslationX;
+    ///<summary>
+    ///  获取以坐标单位沿 y 轴的转换。
+    ///</summary>
+    ///<returns>
+    ///  沿 y 轴坐标单位中的转换。
+    ///</returns>
     property TranslationY: Single read get_TranslationY;
+    ///<summary>
+    ///  获取以弧度表示的旋转量。
+    ///</summary>
+    ///<returns>
+    ///  以弧度表示的旋转量。
+    ///</returns>
     property Rotation: Single read get_Rotation;
+    ///<summary>
+    ///  获取沿 x 轴的刻度因子。
+    ///</summary>
+    ///<returns>
+    ///  沿 x 轴的缩放比例。
+    ///</returns>
     property ScaleX: Single read get_ScaleX;
+    ///<summary>
+    ///  获取沿 y 轴的刻度因子。
+    ///</summary>
+    ///<returns>
+    ///  沿 y 轴的比例系数。
+    ///</returns>
     property ScaleY: Single read get_ScaleY;
+    ///<summary>
+    ///  获取以坐标单位沿 x 轴的延伸量。
+    ///</summary>
+    ///<returns>
+    ///  沿 x 轴上以坐标单位的延伸量。
+    ///</returns>
     property ExpansionX: Single read get_ExpansionX;
+    ///<summary>
+    ///  获取以坐标单位沿 y 轴的延伸量。
+    ///</summary>
+    ///<returns>
+    ///  沿 y 轴坐标单位的延伸量。
+    ///</returns>
     property ExpansionY: Single read get_ExpansionY;
   end;
 
@@ -438,6 +830,9 @@ type
   ['{5F890FBC-3049-5354-9A85-B79DDFDDA86F}']
   end;
 
+  ///<summary>
+  ///  派生的所有操作参数类的基类。
+  ///</summary>
   [DNTypeName('System.Windows.Input.Manipulations.ManipulationParameters2D')]
   DNManipulationParameters2D = interface(DDN.mscorlib.DNObject)
   ['{67782D8E-E680-3F05-B96E-FCED00ED48A1}']
@@ -457,10 +852,17 @@ type
   ['{5F2720D7-0D12-5AB1-901E-FAEF3E5CE5B2}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Input.Manipulations.ManipulationPivot2D" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNManipulationPivot2D;
 
   end;
 
+  ///<summary>
+  ///  表示透视操作处理器用于单操控程序旋转信息。
+  ///</summary>
   [DNTypeName('System.Windows.Input.Manipulations.ManipulationPivot2D')]
   DNManipulationPivot2D = interface(DNManipulationParameters2D)
   ['{314CCCAC-3BA5-3D29-BB12-7CB4FD05CAC8}']
@@ -482,8 +884,26 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置轴的 X 位置。
+    ///</summary>
+    ///<returns>
+    ///  X 轴的位置。
+    ///</returns>
     property X: Single read get_X write set_X;
+    ///<summary>
+    ///  获取或设置轴的 Y 位置。
+    ///</summary>
+    ///<returns>
+    ///  Y 轴的位置。
+    ///</returns>
     property Y: Single read get_Y write set_Y;
+    ///<summary>
+    ///  获取或设置从中心点到可区域的边缘之间的距离。
+    ///</summary>
+    ///<returns>
+    ///  从中心点到可区域的边缘之间的距离。
+    ///</returns>
     property Radius: Single read get_Radius write set_Radius;
   end;
 
@@ -494,11 +914,39 @@ type
   ['{DC776A95-743E-516B-9CCE-7E3E82F87C97}']
   { constructors } 
 
+    ///<summary>
+    ///  创建一个新的 <see cref="T:System.Windows.Input.Manipulations.ManipulationProcessor2D" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="supportedManipulations">
+    ///  初始设置受支持的操作。
+    ///</param>
+    ///<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="supportedManipulations" />
+    ///  参数不是一个有效的组合 <see cref="T:System.Windows.Input.Manipulations.Manipulations2D" />
+    ///  枚举值。
+    ///</exception>
     {class} function init(supportedManipulations: DNManipulations2D): DNManipulationProcessor2D; overload;
+    ///<summary>
+    ///  创建一个新的 <see cref="T:System.Windows.Input.Manipulations.ManipulationProcessor2D" />
+    ///  对象。
+    ///</summary>
+    ///  <param name="supportedManipulations">
+    ///  初始设置受支持的操作。
+    ///</param>
+    ///  <param name="pivot">
+    ///  单操控程序旋转的轴信息。
+    ///</param>
+    ///<exception cref="T:System.ArgumentOutOfRangeException"><paramref name="supportedManipulations" />
+    ///  参数不是一个有效的组合 <see cref="T:System.Windows.Input.Manipulations.Manipulations2D" />
+    ///  枚举值。
+    ///</exception>
     {class} function init(supportedManipulations: DNManipulations2D; pivot: DNManipulationPivot2D): DNManipulationProcessor2D; overload;
 
   end;
 
+  ///<summary>
+  ///  在共享的坐标空间中实现多个输入、 单一输出合成器中的，为二维 (2-d) 转换。
+  ///</summary>
   [DNTypeName('System.Windows.Input.Manipulations.ManipulationProcessor2D')]
   DNManipulationProcessor2D = interface(DDN.mscorlib.DNObject)
   ['{425C6FE6-3F72-3261-B782-31250F234A05}']
@@ -522,9 +970,25 @@ type
 
   { methods } 
 
-    procedure ProcessManipulators(timestamp: Int64; manipulators: DDN.mscorlib.DNIEnumerable<DNManipulator2D>);
+    ///<summary>
+    ///  强制完成当前的操作并引发 <see cref="E:System.Windows.Input.Manipulations.ManipulationProcessor2D.Completed" />
+    ///  事件。
+    ///</summary>
+    ///  <param name="timestamp">
+    ///  用于完成了操作，以 100 纳秒为刻度为单位的时间戳。
+    ///</param>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  时间戳小于当前操作的上一个时间戳。
+    ///</exception>
     procedure CompleteManipulation(timestamp: Int64);
+    ///<summary>
+    ///  对操作处理器设置参数。
+    ///</summary>
+    ///  <param name="parameters">
+    ///  若要设置的参数。
+    ///</param>
     procedure SetParameters(parameters: DNManipulationParameters2D);
+    procedure ProcessManipulators(timestamp: Int64; manipulators: DDN.mscorlib.DNIEnumerable<DNManipulator2D>);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -532,8 +996,30 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置以坐标单位的最小的半径，必要操控程序参与缩放和旋转。
+    ///</summary>
+    ///<returns>
+    ///  最小的半径，以参与缩放和旋转操控程序所需的坐标单位。
+    ///</returns>
     property MinimumScaleRotateRadius: Single read get_MinimumScaleRotateRadius write set_MinimumScaleRotateRadius;
+    ///<summary>
+    ///  获取或设置操作处理器的枢轴信息。
+    ///</summary>
+    ///<returns>
+    ///  操作处理器的枢轴信息。
+    ///</returns>
     property Pivot: DNManipulationPivot2D read get_Pivot write set_Pivot;
+    ///<summary>
+    ///  获取或设置当前受支持的操作集。
+    ///</summary>
+    ///<returns>
+    ///  当前受支持的操作集。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentOutOfRangeException">
+    ///  该属性尝试设置一个值，不是一个有效的组合 <see cref="T:System.Windows.Input.Manipulations.Manipulations2D" />
+    ///  枚举值。
+    ///</exception>
     property SupportedManipulations: DNManipulations2D read get_SupportedManipulations write set_SupportedManipulations;
   end;
 
@@ -548,10 +1034,17 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Windows.Input.Manipulations.ManipulationVelocities2D" />
+    ///  其所有速度均设置为零。
+    ///</summary>
     {class} property Zero: DNManipulationVelocities2D read __fakeFieldGet_Zero;
 
   end;
 
+  ///<summary>
+  ///  表示一的组操作和惯性处理器通过计算的速度。
+  ///</summary>
   [DNTypeName('System.Windows.Input.Manipulations.ManipulationVelocities2D')]
   DNManipulationVelocities2D = interface(DDN.mscorlib.DNObject)
   ['{9007A674-9A87-3EF9-947E-9FAFAA8EA342}']
@@ -572,10 +1065,40 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取以坐标单位 / 毫秒为单位沿 x 轴的速度。
+    ///</summary>
+    ///<returns>
+    ///  沿 x 轴上以坐标单位 / 毫秒为单位的速度。
+    ///</returns>
     property LinearVelocityX: Single read get_LinearVelocityX;
+    ///<summary>
+    ///  获取以坐标单位 / 毫秒为单位沿 y 轴的速度。
+    ///</summary>
+    ///<returns>
+    ///  沿 y 轴坐标单位 / 毫秒为单位的速度。
+    ///</returns>
     property LinearVelocityY: Single read get_LinearVelocityY;
+    ///<summary>
+    ///  获取角速度，以弧度为单位 / 毫秒为单位。
+    ///</summary>
+    ///<returns>
+    ///  角速度，以弧度为单位 / 毫秒为单位。
+    ///</returns>
     property AngularVelocity: Single read get_AngularVelocity;
+    ///<summary>
+    ///  获取沿 x 轴的延伸速度以坐标单位 / 毫秒为单位。
+    ///</summary>
+    ///<returns>
+    ///  沿 x 轴上以坐标单位 / 毫秒为单位的延伸速度。
+    ///</returns>
     property ExpansionVelocityX: Single read get_ExpansionVelocityX;
+    ///<summary>
+    ///  获取沿 y 轴的延伸速度以坐标单位 / 毫秒为单位。
+    ///</summary>
+    ///<returns>
+    ///  沿 y 轴坐标单位 / 毫秒为单位的延伸速度。
+    ///</returns>
     property ExpansionVelocityY: Single read get_ExpansionVelocityY;
   end;
 

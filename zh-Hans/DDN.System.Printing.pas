@@ -33,241 +33,701 @@ type
 { enums }
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定打印队列的属性。
+  ///</summary>
   [DNTypeName('System.Printing.EnumeratedPrintQueueTypes')]
   DNEnumeratedPrintQueueTypes = type Integer;
   DNEnumeratedPrintQueueTypesHelper = record helper for DNEnumeratedPrintQueueTypes
   public const
+    ///<summary>
+    ///  允许在队列中的多个打印作业打印队列。
+    ///</summary>
     Queued = 1;
+    ///<summary>
+    ///  打印作业将直接发送到打印而不是第一次后台处理作业的打印队列。
+    ///</summary>
     DirectPrinting = 2;
+    ///<summary>
+    ///  共享打印队列。
+    ///</summary>
     Shared = 8;
+    ///<summary>
+    ///  连接到指定的打印服务器打印队列。
+    ///</summary>
     Connections = 16;
+    ///<summary>
+    ///  安装为指定的打印服务器上的本地打印队列打印队列。
+    ///</summary>
     Local = 64;
+    ///<summary>
+    ///  文档和打印机配置不匹配时将保留其打印作业打印队列。
+    ///</summary>
     EnableDevQuery = 128;
+    ///<summary>
+    ///  打印它们之后将作业保存在队列中打印队列。
+    ///</summary>
     KeepPrintedJobs = 256;
+    ///<summary>
+    ///  打印队列可脱机工作。
+    ///</summary>
     WorkOffline = 1024;
+    ///<summary>
+    ///  已启用双向通信的打印机打印队列。
+    ///</summary>
     EnableBidi = 2048;
+    ///<summary>
+    ///  只有原始数据后台处理打印队列。
+    ///</summary>
     RawOnly = 4096;
+    ///<summary>
+    ///  是可见的目录中的打印机的打印队列。
+    ///</summary>
     PublishedInDirectoryServices = 8192;
+    ///<summary>
+    ///  服务于传真机打印队列。
+    ///</summary>
     Fax = 16384;
+    ///<summary>
+    ///  安装终端服务中的重定向功能的打印队列。
+    ///</summary>
     TerminalServer = 32768;
+    ///<summary>
+    ///  使用推入打印机连接用户策略安装打印队列。
+    ///  请参阅“备注”。
+    ///</summary>
     PushedUserConnection = 131072;
+    ///<summary>
+    ///  使用推入打印机连接计算机策略安装打印队列。
+    ///  请参阅“备注”。
+    ///</summary>
     PushedMachineConnection = 262144;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定的属性 <see cref="T:System.Printing.LocalPrintServer" />
+  ///  构造时初始化的对象。
+  ///</summary>
   [DNTypeName('System.Printing.LocalPrintServerIndexedProperty')]
   DNLocalPrintServerIndexedProperty = type Integer;
   DNLocalPrintServerIndexedPropertyHelper = record helper for DNLocalPrintServerIndexedProperty
   public const
+    ///<summary>
+    ///  用于指定后台处理作业作为临时文件所在的文件夹的路径的属性。
+    ///</summary>
     DefaultSpoolDirectory = 0;
+    ///<summary>
+    ///  用于指定管理端口 I/O 的线程的优先级的属性。
+    ///</summary>
     PortThreadPriority = 1;
+    ///<summary>
+    ///  指定管理的线程的默认优先级的属性端口 I / 0。
+    ///</summary>
     DefaultPortThreadPriority = 2;
+    ///<summary>
+    ///  指定计划程序的优先级的属性。
+    ///</summary>
     SchedulerPriority = 3;
+    ///<summary>
+    ///  计划程序指定默认优先级的属性。
+    ///</summary>
     DefaultSchedulerPriority = 4;
+    ///<summary>
+    ///  用于指定打印机错误是否会引起本地打印服务器发出提示音的属性。
+    ///</summary>
     BeepEnabled = 5;
+    ///<summary>
+    ///  用于指定是否在客户端计算机或打印服务器接收作业已完成的通知的属性。
+    ///</summary>
     NetPopup = 6;
+    ///<summary>
+    ///  用于指定由本地打印服务器提供的事件日志记录的类型的属性。
+    ///</summary>
     EventLog = 7;
+    ///<summary>
+    ///  指定操作系统的主版本的属性。
+    ///</summary>
     MajorVersion = 8;
+    ///<summary>
+    ///  指定操作系统的次要版本属性。
+    ///</summary>
     MinorVersion = 9;
+    ///<summary>
+    ///  用于指定可以在打印机池正在使用时重新启动作业之前的等待时间的属性。
+    ///</summary>
     RestartJobOnPoolTimeout = 10;
+    ///<summary>
+    ///  用于指定是否用户可以重新启动作业时打印机池正在使用的属性。
+    ///</summary>
     RestartJobOnPoolEnabled = 11;
+    ///<summary>
+    ///  指定本地打印服务器的默认打印队列的属性。
+    ///</summary>
     DefaultPrintQueue = 12;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  打印队列中指定为相对于其他打印作业打印作业的非数值优先级。
+  ///</summary>
   [DNTypeName('System.Printing.PrintJobPriority')]
   DNPrintJobPriority = type Integer;
   DNPrintJobPriorityHelper = record helper for DNPrintJobPriority
   public const
+    ///<summary>
+    ///  具有任何非数字优先级的作业。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  一个具有最低优先级的作业。
+    ///</summary>
     Minimum = 1;
+    ///<summary>
+    ///  包含的作业 <see cref="P:System.Printing.PrintQueue.DefaultPriority" />
+    ///  为 <see cref="T:System.Printing.PrintQueueStream" />
+    ///  。
+    ///</summary>
     Default_ = 1;
+    ///<summary>
+    ///  具有最高优先级作业。
+    ///</summary>
     Maximum = 99;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  打印队列中指定打印作业的当前的状态。
+  ///</summary>
   [DNTypeName('System.Printing.PrintJobStatus')]
   DNPrintJobStatus = type Integer;
   DNPrintJobStatusHelper = record helper for DNPrintJobStatus
   public const
+    ///<summary>
+    ///  打印作业没有任何指定的状态。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  打印作业已暂停。
+    ///</summary>
     Paused = 1;
+    ///<summary>
+    ///  打印作业处于错误状态。
+    ///</summary>
     Error = 2;
+    ///<summary>
+    ///  正在删除正在打印的作业。
+    ///</summary>
     Deleting = 4;
+    ///<summary>
+    ///  打印作业正在进行后台打印。
+    ///</summary>
     Spooling = 8;
+    ///<summary>
+    ///  现在正在打印打印作业。
+    ///</summary>
     Printing = 16;
+    ///<summary>
+    ///  打印机处于脱机状态。
+    ///</summary>
     Offline = 32;
+    ///<summary>
+    ///  所需的纸张大小超出了打印机。
+    ///</summary>
     PaperOut = 64;
+    ///<summary>
+    ///  打印打印作业。
+    ///</summary>
     Printed = 128;
+    ///<summary>
+    ///  打印作业已从队列中删除，通常打印后。
+    ///</summary>
     Deleted = 256;
+    ///<summary>
+    ///  出现错误，可能是之前它在队列中的打印作业，阻止打印作业。
+    ///</summary>
     Blocked = 512;
+    ///<summary>
+    ///  打印机要求用户操作来修复错误条件。
+    ///</summary>
     UserIntervention = 1024;
+    ///<summary>
+    ///  打印作业被阻止，但已重新启动。
+    ///</summary>
     Restarted = 2048;
+    ///<summary>
+    ///  打印作业已完成，包括所有打印后处理。
+    ///</summary>
     Completed = 4096;
+    ///<summary>
+    ///  在打印完成后，打印作业将保留在打印队列。
+    ///</summary>
     Retained = 8192;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定是否打印作业使用 XML 纸张规范 (XPS)。
+  ///</summary>
   [DNTypeName('System.Printing.PrintJobType')]
   DNPrintJobType = type Integer;
   DNPrintJobTypeHelper = record helper for DNPrintJobType
   public const
+    ///<summary>
+    ///  未指定打印作业是否 XPS。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  XPS 打印作业。
+    ///</summary>
     Xps = 1;
+    ///<summary>
+    ///  非 XPS 打印作业。
+    ///</summary>
     Legacy = 2;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定打印队列及其打印机的属性。
+  ///</summary>
   [DNTypeName('System.Printing.PrintQueueAttributes')]
   DNPrintQueueAttributes = type Integer;
   DNPrintQueueAttributesHelper = record helper for DNPrintQueueAttributes
   public const
+    ///<summary>
+    ///  指定没有打印队列属性。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  打印队列一次可容纳多个打印作业。
+    ///</summary>
     Queued = 1;
+    ///<summary>
+    ///  打印队列打印作业立即向打印机发送而不是后台处理作业第一次。
+    ///</summary>
     Direct = 2;
+    ///<summary>
+    ///  共享的打印队列。
+    ///</summary>
     Shared = 8;
+    ///<summary>
+    ///  打印队列不是在应用程序 UI 中可见的。
+    ///</summary>
     Hidden = 32;
+    ///<summary>
+    ///  文档和打印机配置不匹配时，队列将保留其作业。
+    ///</summary>
     EnableDevQuery = 128;
+    ///<summary>
+    ///  将打印该文件后，不会删除打印机语言文件。
+    ///</summary>
     KeepPrintedJobs = 256;
+    ///<summary>
+    ///  队列打印完全进行后台处理的作业，然后再打印仍在后台处理的较高优先级作业。
+    ///</summary>
     ScheduleCompletedJobsFirst = 512;
+    ///<summary>
+    ///  启用打印机的双向通信。
+    ///</summary>
     EnableBidi = 2048;
+    ///<summary>
+    ///  打印队列不能使用增强型图元文件 (EMF) 打印。
+    ///</summary>
     RawOnly = 4096;
+    ///<summary>
+    ///  打印队列是对其他网络用户可见。
+    ///</summary>
     Published_ = 8192;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定将初始化的属性时 <see cref="T:System.Printing.PrintQueue" />
+  ///  构造对象。
+  ///</summary>
   [DNTypeName('System.Printing.PrintQueueIndexedProperty')]
   DNPrintQueueIndexedProperty = type Integer;
   DNPrintQueueIndexedPropertyHelper = record helper for DNPrintQueueIndexedProperty
   public const
+    ///<summary>
+    ///  打印队列的名称。
+    ///</summary>
     Name = 0;
+    ///<summary>
+    ///  队列的共享名称。
+    ///</summary>
     ShareName = 1;
+    ///<summary>
+    ///  特定于打印队列中的注释。
+    ///</summary>
     Comment = 2;
+    ///<summary>
+    ///  物理打印机的位置。
+    ///</summary>
     Location = 3;
+    ///<summary>
+    ///  队列描述。
+    ///</summary>
     Description = 4;
+    ///<summary>
+    ///  相对于其他服务同一打印机的打印队列打印队列的优先级。
+    ///</summary>
     Priority = 5;
+    ///<summary>
+    ///  默认优先级。
+    ///</summary>
     DefaultPriority = 6;
+    ///<summary>
+    ///  队列开始打印作业的时间。
+    ///</summary>
     StartTimeOfDay = 7;
+    ///<summary>
+    ///  队列停止打印作业的时间。
+    ///</summary>
     UntilTimeOfDay = 8;
+    ///<summary>
+    ///  打印队列的速度。
+    ///</summary>
     AveragePagesPerMinute = 9;
+    ///<summary>
+    ///  打印队列中的作业数。
+    ///</summary>
     NumberOfJobs = 10;
+    ///<summary>
+    ///  打印队列的属性。
+    ///</summary>
     QueueAttributes = 11;
+    ///<summary>
+    ///  队列打印机的打印机驱动程序。
+    ///</summary>
     QueueDriver = 12;
+    ///<summary>
+    ///  使用打印队列的打印机端口。
+    ///</summary>
     QueuePort = 13;
+    ///<summary>
+    ///  打印队列打印处理器。
+    ///</summary>
     QueuePrintProcessor = 14;
+    ///<summary>
+    ///  主机打印服务器。
+    ///</summary>
     HostingPrintServer = 15;
+    ///<summary>
+    ///  队列的当前状态。
+    ///</summary>
     QueueStatus = 16;
+    ///<summary>
+    ///  分隔符文件的路径。
+    ///</summary>
     SeparatorFile = 17;
+    ///<summary>
+    ///  用户的打印的票证。
+    ///</summary>
     UserPrintTicket = 18;
+    ///<summary>
+    ///  默认打印票证对象。
+    ///</summary>
     DefaultPrintTicket = 19;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定打印队列或其打印机的状态。
+  ///</summary>
   [DNTypeName('System.Printing.PrintQueueStatus')]
   DNPrintQueueStatus = type Integer;
   DNPrintQueueStatusHelper = record helper for DNPrintQueueStatus
   public const
+    ///<summary>
+    ///  未指定状态。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  打印队列已暂停。
+    ///</summary>
     Paused = 1;
+    ///<summary>
+    ///  由于出现错误而无法打印打印机。
+    ///</summary>
     Error = 2;
+    ///<summary>
+    ///  打印队列正在删除打印作业。
+    ///</summary>
     PendingDeletion = 4;
+    ///<summary>
+    ///  打印机纸张夹纸。
+    ///</summary>
     PaperJam = 8;
+    ///<summary>
+    ///  打印机不具有，或超出当前的打印作业所需的纸张类型。
+    ///</summary>
     PaperOut = 16;
+    ///<summary>
+    ///  打印机正在等待用户将打印介质放入手动送纸盒。
+    ///</summary>
     ManualFeed = 32;
+    ///<summary>
+    ///  打印机纸张导致未指明的错误条件。
+    ///</summary>
     PaperProblem = 64;
+    ///<summary>
+    ///  打印机处于脱机状态。
+    ///</summary>
     Offline = 128;
+    ///<summary>
+    ///  打印机交换与打印服务器的数据。
+    ///</summary>
     IOActive = 256;
+    ///<summary>
+    ///  打印机正忙。
+    ///</summary>
     Busy = 512;
+    ///<summary>
+    ///  打印设备。
+    ///</summary>
     Printing = 1024;
+    ///<summary>
+    ///  打印机的输出纸盒已满。
+    ///</summary>
     OutputBinFull = 2048;
+    ///<summary>
+    ///  状态信息将不可用。
+    ///</summary>
     NotAvailable = 4096;
+    ///<summary>
+    ///  打印机正在等待打印的作业。
+    ///</summary>
     Waiting = 8192;
+    ///<summary>
+    ///  设备正在执行某种类型的工作，如果该设备是组合打印机、 传真机和扫描程序不需要打印。
+    ///</summary>
     Processing = 16384;
+    ///<summary>
+    ///  正在初始化打印机。
+    ///</summary>
     Initializing = 32768;
+    ///<summary>
+    ///  打印机正在预热。
+    ///</summary>
     WarmingUp = 65536;
+    ///<summary>
+    ///  只有少量的墨粉仍保留在打印机中。
+    ///</summary>
     TonerLow = 131072;
+    ///<summary>
+    ///  墨粉超出了打印机。
+    ///</summary>
     NoToner = 262144;
+    ///<summary>
+    ///  打印机将无法打印当前页。
+    ///</summary>
     PagePunt = 524288;
+    ///<summary>
+    ///  打印机需要用户执行任何操作来更正错误条件。
+    ///</summary>
     UserIntervention = 1048576;
+    ///<summary>
+    ///  打印机具有无可用内存。
+    ///</summary>
     OutOfMemory = 2097152;
+    ///<summary>
+    ///  在打印机上的门处于打开状态。
+    ///</summary>
     DoorOpen = 4194304;
+    ///<summary>
+    ///  打印机处于错误状态。
+    ///</summary>
     ServerUnknown = 8388608;
+    ///<summary>
+    ///  打印机处于节能模式。
+    ///</summary>
     PowerSave = 16777216;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定的各自的含义 <see cref="T:System.Printing.PrintQueueStringProperty" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Printing.PrintQueueStringPropertyType')]
   DNPrintQueueStringPropertyType = type Integer;
   DNPrintQueueStringPropertyTypeHelper = record helper for DNPrintQueueStringPropertyType
   public const
+    ///<summary>
+    ///  物理打印机的位置。
+    ///</summary>
     Location = 0;
+    ///<summary>
+    ///  有关打印队列的注释。
+    ///</summary>
     Comment = 1;
+    ///<summary>
+    ///  打印队列的共享名称。
+    ///</summary>
     ShareName = 2;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定的可以记录的事件类型 <see cref="T:System.Printing.PrintServer" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Printing.PrintServerEventLoggingTypes')]
   DNPrintServerEventLoggingTypes = type Integer;
   DNPrintServerEventLoggingTypesHelper = record helper for DNPrintServerEventLoggingTypes
   public const
+    ///<summary>
+    ///  任何事件。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  成功的打印事件。
+    ///</summary>
     LogPrintingSuccessEvents = 1;
+    ///<summary>
+    ///  打印的错误事件。
+    ///</summary>
     LogPrintingErrorEvents = 2;
+    ///<summary>
+    ///  警告事件。
+    ///</summary>
     LogPrintingWarningEvents = 3;
+    ///<summary>
+    ///  打印的信息事件。
+    ///</summary>
     LogPrintingInformationEvents = 4;
+    ///<summary>
+    ///  所有打印事件。
+    ///</summary>
     LogAllPrintingEvents = 5;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定的属性 <see cref="T:System.Printing.PrintServer" />
+  ///  构造时初始化的对象。
+  ///</summary>
   [DNTypeName('System.Printing.PrintServerIndexedProperty')]
   DNPrintServerIndexedProperty = type Integer;
   DNPrintServerIndexedPropertyHelper = record helper for DNPrintServerIndexedProperty
   public const
+    ///<summary>
+    ///  用于指定后台处理作业作为临时文件所在的文件夹的路径的属性。
+    ///</summary>
     DefaultSpoolDirectory = 0;
+    ///<summary>
+    ///  用于指定管理端口 I/O 的线程的优先级的属性。
+    ///</summary>
     PortThreadPriority = 1;
+    ///<summary>
+    ///  指定管理的线程的默认优先级的属性端口 I / 0。
+    ///</summary>
     DefaultPortThreadPriority = 2;
+    ///<summary>
+    ///  指定计划程序的优先级的属性。
+    ///</summary>
     SchedulerPriority = 3;
+    ///<summary>
+    ///  指定用于打印作业的计划的默认线程优先级的属性。
+    ///</summary>
     DefaultSchedulerPriority = 4;
+    ///<summary>
+    ///  用于指定打印机错误是否会导致发出提示音的打印服务器的属性。
+    ///</summary>
     BeepEnabled = 5;
+    ///<summary>
+    ///  用于指定是否在客户端计算机或打印服务器接收作业已完成的通知的属性。
+    ///</summary>
     NetPopup = 6;
+    ///<summary>
+    ///  打印服务器提供指定的日志记录的事件类型的属性。
+    ///</summary>
     EventLog = 7;
+    ///<summary>
+    ///  指定操作系统的主版本的属性。
+    ///</summary>
     MajorVersion = 8;
+    ///<summary>
+    ///  指定操作系统的次要版本属性。
+    ///</summary>
     MinorVersion = 9;
+    ///<summary>
+    ///  用于指定打印机池正在使用时重新启动打印作业之前要等待多长时间的属性。
+    ///</summary>
     RestartJobOnPoolTimeout = 10;
+    ///<summary>
+    ///  属性，用于指定用户可重新启动打印作业时打印机池正在使用。
+    ///</summary>
     RestartJobOnPoolEnabled = 11;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  打印对象指定不同的访问权限 （或级别的访问权限）。
+  ///</summary>
   [DNTypeName('System.Printing.PrintSystemDesiredAccess')]
   DNPrintSystemDesiredAccess = type Integer;
   DNPrintSystemDesiredAccessHelper = record helper for DNPrintSystemDesiredAccess
   public const
+    ///<summary>
+    ///  没有访问权限。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  列出的打印服务器上的队列的权限。
+    ///</summary>
     EnumerateServer = 131074;
+    ///<summary>
+    ///  若要将打印作业添加到队列以及权限删除和枚举自己的作业。
+    ///</summary>
     UsePrinter = 131080;
+    ///<summary>
+    ///  用于为打印服务器执行所有管理任务的权限。
+    ///  此访问级别未 不 包括 <see cref="F:System.Printing.PrintSystemDesiredAccess.AdministratePrinter" />
+    ///  承载服务器的打印队列的权限。
+    ///</summary>
     AdministrateServer = 983041;
+    ///<summary>
+    ///  打印队列，包括 right 暂停和继续执行任何打印作业，则执行所有管理任务的权限以及有权从队列中删除所有作业。
+    ///  此访问级别还包括之下的所有权限 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />
+    ///  。
+    ///</summary>
     AdministratePrinter = 983052;
   end;
 
 
   //-------------namespace: System.Printing----------------
+  ///<summary>
+  ///  指定是否加载对象时初始化的对象的属性。
+  ///</summary>
   [DNTypeName('System.Printing.PrintSystemObjectLoadMode')]
   DNPrintSystemObjectLoadMode = type Integer;
   DNPrintSystemObjectLoadModeHelper = record helper for DNPrintSystemObjectLoadMode
   public const
+    ///<summary>
+    ///  未指定是否初始化属性。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  在加载期间不初始化属性。
+    ///</summary>
     LoadUninitialized = 1;
+    ///<summary>
+    ///  在加载期间初始化属性。
+    ///</summary>
     LoadInitialized = 2;
   end;
 
@@ -327,10 +787,18 @@ type
   ['{C8321301-CD28-5D2C-90FE-9759DA988651}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNPrintPropertyDictionary;
 
   end;
 
+  ///<summary>
+  ///  表示属性和与中的对象相关联的值的集合 <see cref="N:System.Printing" />
+  ///  命名空间。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintPropertyDictionary')]
   DNPrintPropertyDictionary = interface(DDN.mscorlib.DNHashtable)
   ['{35D0C565-A93C-3961-9AE8-A3A16C051876}']
@@ -348,11 +816,68 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  添加指定的对象 (派生自的类 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  ) 到字典。
+    ///</summary>
+    ///  <param name="attributeValue">
+    ///  一个对象 (派生自的类 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  )，它表示打印系统硬件或软件组件的属性。
+    ///</param>
     procedure Add(attributeValue: DNPrintProperty); overload;
+    ///<summary>
+    ///  实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在完成反序列化之后引发反序列化事件。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  填充 <see cref="T:System.Runtime.Serialization.SerializationInfo" />
+    ///  序列化所需的数据 <see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" />
+    ///  。
+    ///</summary>
+    ///  <param name="info">
+    ///  存储用于序列化对象的所有数据。
+    ///</param>
+    ///  <param name="context">
+    ///  描述序列化的流，其中包括源和目标的上下文。
+    ///</param>
     procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
+    ///<summary>
+    ///  获取的对象 (派生自的类 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  )，它表示指定的属性。
+    ///</summary>
+    ///  <param name="attribName">
+    ///  由表示属性的名称 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  从派生类的对象 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</returns>
     function GetProperty(attribName: string): DNPrintProperty;
+    ///<summary>
+    ///  将指定的属性值设置为从派生类的对象 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
+    ///  <param name="attribName">
+    ///  属性名。
+    ///</param>
+    ///  <param name="attribValue">
+    ///  派生自类型的对象 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</param>
+    ///<exception cref="T:System.ArgumentException"><paramref name="attribName" />
+    ///  在字典中已存在并且已具有值 <paramref name="attribValue" />
+    ///  。
+    ///</exception>
     procedure SetProperty(attribName: string; attribValue: DNPrintProperty);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     procedure Add(key: DDN.mscorlib.DNObject; value: DDN.mscorlib.DNObject); overload;
     procedure Clear;
@@ -387,10 +912,20 @@ type
   ['{B9B1D768-C687-521F-94FD-F887A36D4730}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Printing.PrintSystemObjectPropertiesChangedEventArgs" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="events">
+    ///  一个字符串集合，其中每个标识已更改的属性。
+    ///</param>
     {class} function init(events: DDN.System.DNStringCollection): DNPrintSystemObjectPropertiesChangedEventArgs;
 
   end;
 
+  ///<summary>
+  ///  对于 PropertiesChanged 事件，必须创建提供数据。
+  ///</summary>
   [DNTypeName('System.Printing.PrintSystemObjectPropertiesChangedEventArgs')]
   DNPrintSystemObjectPropertiesChangedEventArgs = interface(DDN.mscorlib.DNEventArgs)
   ['{A190E5AB-D048-3873-A91A-F56718BE248E}']
@@ -400,6 +935,10 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  释放由 <see cref="T:System.Printing.PrintSystemObjectPropertiesChangedEventArgs" />
+    ///  对象使用的所有资源。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -408,6 +947,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取已更改属性的名称的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.Specialized.StringCollection" />
+    ///  的属性名称。
+    ///</returns>
     property PropertiesNames: DDN.System.DNStringCollection read get_PropertiesNames;
   end;
 
@@ -418,10 +964,20 @@ type
   ['{C25C35E3-1A7A-501E-8EAB-1607C91A2866}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Printing.PrintSystemObjectPropertyChangedEventArgs" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="eventName">
+    ///  已更改属性的名称。
+    ///</param>
     {class} function init(eventName: string): DNPrintSystemObjectPropertyChangedEventArgs;
 
   end;
 
+  ///<summary>
+  ///  对于 PropertyChanged 事件，必须创建提供数据。
+  ///</summary>
   [DNTypeName('System.Printing.PrintSystemObjectPropertyChangedEventArgs')]
   DNPrintSystemObjectPropertyChangedEventArgs = interface(DDN.mscorlib.DNEventArgs)
   ['{88DF1A0B-45D9-37D4-B0D0-3DBB96F956D9}']
@@ -431,6 +987,10 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  释放由 <see cref="T:System.Printing.PrintSystemObjectPropertyChangedEventArgs" />
+    ///  使用的所有资源。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -439,6 +999,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取已更改属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  保存的属性名称。
+    ///</returns>
     property PropertyName: string read get_PropertyName;
   end;
 
@@ -449,12 +1016,65 @@ type
   ['{C4B32F22-7FBC-54B9-A991-6CCA2E49DB58}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintQueueStream" />
+    ///  类的指定打印承载的作业在指定 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="printQueue"><see cref="T:System.Printing.PrintQueue" />
+    ///  承载提供内容的流的打印作业。
+    ///</param>
+    ///  <param name="printJobName">
+    ///  提供内容的流的打印作业的名称。
+    ///</param>
     {class} function init(printQueue: DNPrintQueue; printJobName: string): DNPrintQueueStream; overload;
+    ///<summary>
+    ///  初始化的新实例 <see cref="T:System.Printing.PrintQueueStream" />
+    ///  类的指定打印承载的作业在指定 <see cref="T:System.Printing.PrintQueue" />
+    ///  , ，相对值的指示是否使用中的数据 <see cref="T:System.Printing.PrintQueueStream" />
+    ///  应提交该流已关闭。
+    ///</summary>
+    ///  <param name="printQueue"><see cref="T:System.Printing.PrintQueue" />
+    ///  承载提供内容的流的打印作业。
+    ///</param>
+    ///  <param name="printJobName">
+    ///  提供内容的流的打印作业的名称。
+    ///</param>
+    ///  <param name="commitDataOnClose"><see langword="true" />
+    ///  若要在数据提交 <see cref="T:System.Printing.PrintQueueStream" />
+    ///  时 <see cref="M:System.Printing.PrintQueueStream.Close" />
+    ///  方法是调用; 否则为<see langword=" false" />
+    ///  。
+    ///</param>
     {class} function init(printQueue: DNPrintQueue; printJobName: string; commitDataOnClose: Boolean): DNPrintQueueStream; overload;
+    ///<summary>
+    ///  初始化的新实例 <see cref="T:System.Printing.PrintQueueStream" />
+    ///  类的指定打印承载的作业在指定 <see cref="T:System.Printing.PrintQueue" />
+    ///  , 、 与指定的设置和相对值的指示是否中的数据 <see cref="T:System.Printing.PrintQueueStream" />
+    ///  应提交该流已关闭。
+    ///</summary>
+    ///  <param name="printQueue"><see cref="T:System.Printing.PrintQueue" />
+    ///  承载提供内容的流的打印作业。
+    ///</param>
+    ///  <param name="printJobName">
+    ///  提供内容的流的打印作业的名称。
+    ///</param>
+    ///  <param name="commitDataOnClose"><see langword="true" />
+    ///  若要在数据提交 <see cref="T:System.Printing.PrintQueueStream" />
+    ///  时 <see cref="M:System.Printing.PrintQueueStream.Close" />
+    ///  方法是调用; 否则为<see langword=" false" />
+    ///  。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  打印作业的设置。
+    ///</param>
     {class} function init(printQueue: DNPrintQueue; printJobName: string; commitDataOnClose: Boolean; printTicket: DDN.ReachFramework.DNPrintTicket): DNPrintQueueStream; overload;
 
   end;
 
+  ///<summary>
+  ///  一个流，表示打印队列中进行后台处理的打印作业。
+  ///</summary>
   [DNTypeName('System.Printing.PrintQueueStream')]
   DNPrintQueueStream = interface(DDN.mscorlib.DNStream)
   ['{21C8E2F4-A074-3A09-BB57-74E34A0A4A97}']
@@ -475,14 +1095,107 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  开始异步写操作。
+    ///</summary>
+    ///  <param name="buffer">
+    ///  从中写入数据的缓冲区。
+    ///</param>
+    ///  <param name="offset">
+    ///  从中开始写入的缓冲区中的字节偏移量。
+    ///</param>
+    ///  <param name="count">
+    ///  最多写入的字节数。
+    ///</param>
+    ///  <param name="callback">
+    ///  异步回叫，写操作完成时调用。
+    ///</param>
+    ///  <param name="state">
+    ///  一个用户提供的对象，它将该异步写入请求与其他请求区别开来。
+    ///</param>
+    ///<returns>
+    ///  表示异步写入的 <see cref="T:System.IAsyncResult" />
+    ///  （可能仍处于挂起状态）。
+    ///</returns>
     function BeginWrite(buffer: TArray<Byte>; offset: Int32; count: Int32; callback: DDN.mscorlib.DNAsyncCallback; state: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
+    ///<summary>
+    ///  结束异步写操作。
+    ///</summary>
+    ///  <param name="asyncResult">
+    ///  对挂起的异步 I/O 请求的引用。
+    ///</param>
     procedure EndWrite(asyncResult: DDN.mscorlib.DNIAsyncResult);
+    ///<summary>
+    ///  从流中读取字节序列，并按所读取的字节数向前移动在流中的读/写位置。
+    ///</summary>
+    ///  <param name="buffer">
+    ///  字节数组。
+    ///</param>
+    ///  <param name="offset">
+    ///  缓冲区（想在此开始存储从流中读取的数据）中从零开始的字节偏移量。
+    ///</param>
+    ///  <param name="count">
+    ///  要从流中读取的最大字节数。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Int32" />
+    ///  ，拥有读入缓冲区的字节总数。
+    ///</returns>
     function Read(buffer: TArray<Byte>; offset: Int32; count: Int32): Int32;
+    ///<summary>
+    ///  将字节序列写入流，并按所写入的字节数向前移动在流中的读/写位置。
+    ///</summary>
+    ///  <param name="buffer">
+    ///  要从其复制到流的字节数组。
+    ///</param>
+    ///  <param name="offset"><paramref name="buffer" />
+    ///  中从零开始的字节偏移量，从此处开始将字节复制到流中。
+    ///</param>
+    ///  <param name="count">
+    ///  要写入流的字节数。
+    ///</param>
     procedure Write(buffer: TArray<Byte>; offset: Int32; count: Int32);
+    ///<summary>
+    ///  清除此流的所有缓冲区并将所有缓冲数据都写入基础设备中。
+    ///</summary>
     procedure Flush;
+    ///<summary>
+    ///  设置流中的读取/写入位置。
+    ///</summary>
+    ///  <param name="offset">
+    ///  相对于 origin 参数的字节偏移量。
+    ///</param>
+    ///  <param name="origin">
+    ///  类型 <see cref="T:System.IO.SeekOrigin" />
+    ///  的值，该值指示用于获取新位置的引用点。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Int64" />
+    ///  ，表示新的读取/写入位置。
+    ///</returns>
     function Seek(offset: Int64; origin: DDN.mscorlib.DNSeekOrigin): Int64;
+    ///<summary>
+    ///  关闭流并释放与之关联的所有资源（如套接字和文件句柄）。
+    ///</summary>
     procedure Close;
+    ///<summary>
+    ///  设置流的长度。
+    ///</summary>
+    ///  <param name="value">
+    ///  所需的当前流的长度（以字节为单位）。
+    ///</param>
     procedure SetLength(value: Int64);
+    ///<summary>
+    ///  使 <see cref="T:System.Printing.PrintQueueStream" />
+    ///  通过来响应打包过程处理 <see cref="E:System.Windows.Xps.Serialization.XpsPackagingPolicy.PackagingProgressEvent" />
+    ///  。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
+    ///  <param name="e">
+    ///  事件数据。
+    ///</param>
     procedure HandlePackagingProgressEvent(sender: DDN.mscorlib.DNObject; e: DDN.System.Windows.Xps.Packaging.DNPackagingProgressEventArgs);
     function CopyToAsync(destination: DDN.mscorlib.DNStream; bufferSize: Int32; cancellationToken: DDN.mscorlib.DNCancellationToken): DDN.mscorlib.DNTask; overload;
     procedure Dispose;
@@ -510,11 +1223,55 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取打印作业的 ID 号。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  ，它表示一个 ID 号。
+    ///</returns>
     property JobIdentifier: Int32 read get_JobIdentifier;
+    ///<summary>
+    ///  获取或设置流中的当前读取/写入位置。
+    ///</summary>
+    ///<returns>
+    ///  表示流中的当前位置的 <see cref="T:System.Int64" />
+    ///  。
+    ///</returns>
     property Position: Int64 read get_Position write set_Position;
+    ///<summary>
+    ///  获取流的长度（以字节为单位）。
+    ///</summary>
+    ///<returns>
+    ///  表示流的长度的 <see cref="T:System.Int64" />
+    ///  （以字节为单位）。
+    ///</returns>
     property Length: Int64 read get_Length;
+    ///<summary>
+    ///  获取一个指示流是否支持查找的值，该值会将读/写位置移动到流中的新位置。
+    ///</summary>
+    ///<returns>
+    ///  如果支持查找，则为 <see langword="true" />
+    ///  否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property CanSeek: Boolean read get_CanSeek;
+    ///<summary>
+    ///  获取一个值，该值指示流是否支持写入。
+    ///</summary>
+    ///<returns>
+    ///  如果支持写入，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property CanWrite: Boolean read get_CanWrite;
+    ///<summary>
+    ///  获取一个值，该值指示流是否支持读取。
+    ///</summary>
+    ///<returns>
+    ///  如果支持读取，则为 <see langword="true" />
+    ///  ；否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property CanRead: Boolean read get_CanRead;
     property CanTimeout: Boolean read get_CanTimeout;
     property ReadTimeout: Int32 read get_ReadTimeout write set_ReadTimeout;
@@ -528,6 +1285,9 @@ type
   ['{8F32D3AB-674B-5DFD-A992-9A5F5297AC16}']
   end;
 
+  ///<summary>
+  ///  表示打印系统硬件或软件组件属性 （和属性的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintProperty')]
   DNPrintProperty = interface(DDN.mscorlib.DNIDisposable)
   ['{6D8082E6-2DC0-3AE4-A6E2-BD72FB313BEC}']
@@ -539,7 +1299,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -548,7 +1319,17 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  当在派生类中重写，获取或设置该对象表示的属性的值。
+    ///</summary>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -559,11 +1340,37 @@ type
   ['{D1F96E5C-7A1A-5242-B7B1-C8AF78D8D4DF}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" />
+    ///  使用指定的值的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Boolean" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintBooleanProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" />
+    ///  指定属性类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Boolean" />
+    ///  特性的 <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintBooleanProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Boolean" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintBooleanProperty')]
   DNPrintBooleanProperty = interface(DNPrintProperty)
   ['{C5C69579-1C8D-3EEC-88C5-44D0835614DA}']
@@ -575,7 +1382,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -584,7 +1402,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintBooleanProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个装箱 <see cref="T:System.Boolean" />
+    ///  。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -595,11 +1428,37 @@ type
   ['{C976F79B-B497-553B-B17B-9995EEC6EDE9}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" />
+    ///  类，该类具有指定的属性指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称的属性类型的数组 <see cref="T:System.Byte" />
+    ///  , ，则该 <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintByteArrayProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" />
+    ///  指定属性类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称的属性类型的数组 <see cref="T:System.Byte" />
+    ///  , ，则该 <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintByteArrayProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示其值是一个数组打印系统硬件或软件组件的属性的 <see cref="T:System.Byte" />
+  ///  值。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintByteArrayProperty')]
   DNPrintByteArrayProperty = interface(DNPrintProperty)
   ['{F01BDE99-17A7-33DD-BCC9-2EFAE91F5F91}']
@@ -611,7 +1470,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -620,7 +1490,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintByteArrayProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个装箱的数组 <see cref="T:System.Byte" />
+    ///  值。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -631,11 +1516,37 @@ type
   ['{31F2A3AA-98B6-5670-8EC4-EFBF044C3E11}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintDateTimeProperty" />
+    ///  类，该类具有指定的属性指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.DateTime" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintDateTimeProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintDateTimeProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintDateTimeProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintDateTimeProperty" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.DateTime" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintDateTimeProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintDateTimeProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.DateTime" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintDateTimeProperty')]
   DNPrintDateTimeProperty = interface(DNPrintProperty)
   ['{E7A1C45F-0145-3039-93FA-6D163D25E27A}']
@@ -647,7 +1558,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -656,7 +1578,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintDateTimeProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个装箱 <see cref="T:System.DateTime" />
+    ///  。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -667,11 +1604,37 @@ type
   ['{820601AF-B282-5847-84F2-1D5A895E7B6C}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" />
+    ///  类，该类具有指定的属性指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintDriver" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintDriverProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintDriver" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintDriverProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Printing.PrintDriver" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintDriverProperty')]
   DNPrintDriverProperty = interface(DNPrintProperty)
   ['{A67A4F49-0B24-30FD-9CD2-636FD8DB105A}']
@@ -683,7 +1646,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -692,7 +1666,23 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintDriverProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个可以强制转换为 <see cref="T:System.Printing.PrintDriver" />
+    ///  的 <see cref="T:System.Object" />
+    ///  。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -703,11 +1693,38 @@ type
   ['{2CFDD4BD-CF4C-52A3-BC18-550A3D8132D8}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" />
+    ///  指定属性的类并为其指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Int32" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  值 <see cref="T:System.Object" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintInt32Property; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Int32" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintInt32Property; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Int32" />
+  ///  打印系统硬件或软件组件属性 （和属性的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintInt32Property')]
   DNPrintInt32Property = interface(DNPrintProperty)
   ['{B6269A58-62AE-3FEA-950F-B507FAF084DE}']
@@ -719,7 +1736,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -728,7 +1756,25 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintInt32Property" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个装箱 <see cref="T:System.Int32" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  属性不能设置为调用的代码提供的值。
+    ///</exception>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -739,11 +1785,37 @@ type
   ['{CED8CBD1-469C-5475-9187-43131457AB9B}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintJobPriorityProperty" />
+    ///  类，该类具有指定的属性指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintJobPriority" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintJobPriorityProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintJobPriorityProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintJobPriorityProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintJobPriorityProperty" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintJobPriority" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintJobPriorityProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintJobPriorityProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Printing.PrintJobPriority" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintJobPriorityProperty')]
   DNPrintJobPriorityProperty = interface(DNPrintProperty)
   ['{A8A172E8-20A3-3918-94E7-502FBC7297CC}']
@@ -755,7 +1827,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -764,7 +1847,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintJobPriorityProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个装箱 <see cref="T:System.Printing.PrintJobPriority" />
+    ///  值。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -775,11 +1873,37 @@ type
   ['{E2FE5683-2D58-5AD1-BC48-B5D2406A66A8}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" />
+    ///  类，该类具有指定属性的指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintJobStatus" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintJobStatusProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintJobStatus" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintJobStatusProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Printing.PrintJobStatus" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintJobStatusProperty')]
   DNPrintJobStatusProperty = interface(DNPrintProperty)
   ['{A990B357-38E2-3909-B094-F8802E4F9603}']
@@ -791,7 +1915,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -800,7 +1935,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintJobStatusProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个装箱 <see cref="T:System.Printing.PrintJobStatus" />
+    ///  值。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -811,11 +1961,37 @@ type
   ['{42BACE57-DFB5-52AD-9A6C-88CA25F4C47E}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" />
+    ///  类，该类具有指定属性的指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintPort" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintPortProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintPort" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintPortProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Printing.PrintPort" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintPortProperty')]
   DNPrintPortProperty = interface(DNPrintProperty)
   ['{CAFD843C-6453-390D-8C58-52CB7B2F821D}']
@@ -827,7 +2003,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -836,7 +2023,23 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个可以强制转换为 <see cref="T:System.Printing.IndexedProperties.PrintPortProperty" />
+    ///  的 <see cref="T:System.Object" />
+    ///  。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -847,11 +2050,35 @@ type
   ['{EFAE7012-5758-57C9-A5EC-568D5B646A2D}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" />
+    ///  类，该类具有指定属性的指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintProcessor" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintProcessorProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName"><see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" />
+    ///  已转换。
+    ///</param>
     {class} function init(attributeName: string): DNPrintProcessorProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Printing.PrintProcessor" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintProcessorProperty')]
   DNPrintProcessorProperty = interface(DNPrintProperty)
   ['{5044E74F-5C15-3D37-9546-ED6A557FFBFE}']
@@ -863,7 +2090,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -872,7 +2110,23 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintProcessorProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个可以强制转换为 <see cref="T:System.Printing.PrintProcessor" />
+    ///  的 <see cref="T:System.Object" />
+    ///  。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -883,11 +2137,38 @@ type
   ['{69BF687A-3AAE-581C-B1C2-8AD752C01A1D}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" />
+    ///  类，该类具有指定属性的指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintQueueAttributes" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  值 <see cref="T:System.Object" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintQueueAttributeProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintQueueAttributes" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintQueueAttributeProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Printing.PrintQueueAttributes" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintQueueAttributeProperty')]
   DNPrintQueueAttributeProperty = interface(DNPrintProperty)
   ['{8BCDE6CF-93DC-3EEB-9B8E-794C22EFCD8B}']
@@ -899,7 +2180,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -908,7 +2200,25 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintQueueAttributeProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个装箱 <see cref="T:System.Printing.PrintQueueAttributes" />
+    ///  值。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  该属性不能通过提供由调用代码的值设置。
+    ///</exception>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -919,11 +2229,37 @@ type
   ['{CFD9B131-42F7-5A65-806C-6788B880A20F}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" />
+    ///  类，该类具有指定属性的指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintQueue" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintQueueProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintQueue" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintQueueProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Printing.PrintQueue" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintQueueProperty')]
   DNPrintQueueProperty = interface(DNPrintProperty)
   ['{3D372BDA-A151-385E-82DE-FA81E96AB269}']
@@ -935,7 +2271,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -944,7 +2291,23 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintQueueProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个可以强制转换为 <see cref="T:System.Printing.PrintQueue" />
+    ///  的 <see cref="T:System.Object" />
+    ///  。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -955,11 +2318,37 @@ type
   ['{A922C761-583E-5EB4-BC21-47EC01834D89}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" />
+    ///  类，该类具有指定属性的指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintQueueStatus" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintQueueStatusProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintQueueStatus" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintQueueStatusProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Printing.PrintQueueStatus" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintQueueStatusProperty')]
   DNPrintQueueStatusProperty = interface(DNPrintProperty)
   ['{B9A67BD7-9892-3B3E-80FB-5B7E75D3A327}']
@@ -971,7 +2360,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -980,7 +2380,25 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintQueueStatusProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个装箱 <see cref="T:System.Printing.PrintQueueStatus" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  该属性不能通过提供由调用代码的值设置。
+    ///</exception>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -991,11 +2409,37 @@ type
   ['{EB47DBFB-EDF3-5C8E-98D7-57D52EBB7E3C}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" />
+    ///  类，该类具有指定属性的指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintServerEventLoggingTypes" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintServerLoggingProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintServerEventLoggingTypes" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintServerLoggingProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Printing.PrintServerEventLoggingTypes" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintServerLoggingProperty')]
   DNPrintServerLoggingProperty = interface(DNPrintProperty)
   ['{FA5AAD09-F15A-3B80-8A76-064C526B2A70}']
@@ -1007,7 +2451,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1016,7 +2471,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintServerLoggingProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个装箱 <see cref="T:System.Printing.PrintServerEventLoggingTypes" />
+    ///  值。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -1027,11 +2497,37 @@ type
   ['{025C86D1-63D6-54AE-A556-A8D7BD2B1B2F}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" />
+    ///  类，该类具有指定属性的指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintServer" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintServerProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintServer" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintServerProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Printing.PrintServer" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintServerProperty')]
   DNPrintServerProperty = interface(DNPrintProperty)
   ['{2A752E70-1A17-3C64-833B-3319B6DA0DFE}']
@@ -1043,7 +2539,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1052,7 +2559,26 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintServerProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Object" />
+    ///  可强制转换为 <see cref="T:System.Printing.PrintServer" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.InvalidOperationException">
+    ///  不在内部初始化该属性。
+    ///</exception>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -1063,11 +2589,37 @@ type
   ['{1CB2BC27-3197-5A35-A43B-125E9BCE5EBD}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" />
+    ///  类，该类具有指定属性的指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.IO.Stream" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintStreamProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.IO.Stream" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintStreamProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.IO.Stream" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintStreamProperty')]
   DNPrintStreamProperty = interface(DNPrintProperty)
   ['{DCBFC541-263E-34F2-B9CC-CBDD43C0A4B6}']
@@ -1079,7 +2631,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1088,7 +2651,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintStreamProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns><see cref="T:System.Object" />
+    ///  可强制转换为 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -1099,11 +2677,37 @@ type
   ['{B2098F15-244F-59E4-8D64-9526738ED252}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" />
+    ///  类，该类具有指定属性的指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.String" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintStringProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.String" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintStringProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.String" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintStringProperty')]
   DNPrintStringProperty = interface(DNPrintProperty)
   ['{0DFA4FDB-E35C-394C-AD0A-ACDD909A9075}']
@@ -1115,7 +2719,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1124,7 +2739,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintStringProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个装箱 <see cref="T:System.String" />
+    ///  。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -1135,11 +2765,35 @@ type
   ['{CD702CFB-C136-5789-9EB5-1E31B52EE88A}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" />
+    ///  类，该类具有指定的属性名称和值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  属性的名称， <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintSystemTypeProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" />
+    ///  类，该类具有指定的属性名称。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  属性的名称， <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintSystemTypeProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Type" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintSystemTypeProperty')]
   DNPrintSystemTypeProperty = interface(DNPrintProperty)
   ['{5F9132BC-CACA-3755-8A6A-85A37C987DF6}']
@@ -1151,7 +2805,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1160,7 +2825,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintSystemTypeProperty" />
+    ///  表示。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -1171,11 +2851,37 @@ type
   ['{7CC87BAC-80CD-5770-9D04-63A761E3F520}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" />
+    ///  类，该类具有指定属性的指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Threading.ThreadPriority" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintThreadPriorityProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Threading.ThreadPriority" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintThreadPriorityProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Threading.ThreadPriority" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintThreadPriorityProperty')]
   DNPrintThreadPriorityProperty = interface(DNPrintProperty)
   ['{71879EB8-41C8-3A23-904D-EC9FCECC543C}']
@@ -1187,7 +2893,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1196,7 +2913,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintThreadPriorityProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个装箱 <see cref="T:System.Threading.ThreadPriority" />
+    ///  值。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -1207,11 +2939,37 @@ type
   ['{E23E93D6-D4EA-5C1C-A37C-6F8A3D41DED5}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" />
+    ///  类，该类具有指定属性的指定的值。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintTicket" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" />
+    ///  表示。
+    ///</param>
+    ///  <param name="attributeValue">
+    ///  属性的值， <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string; attributeValue: DDN.mscorlib.DNObject): DNPrintTicketProperty; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" />
+    ///  的指定属性的类。
+    ///</summary>
+    ///  <param name="attributeName">
+    ///  名称 <see cref="T:System.Printing.PrintTicket" />
+    ///  属性， <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" />
+    ///  表示。
+    ///</param>
     {class} function init(attributeName: string): DNPrintTicketProperty; overload;
 
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Printing.PrintTicket" />
+  ///  打印系统硬件或软件组件属性 （和它的值）。
+  ///</summary>
   [DNTypeName('System.Printing.IndexedProperties.PrintTicketProperty')]
   DNPrintTicketProperty = interface(DNPrintProperty)
   ['{759773B6-A939-3457-B837-BA1CB1BF70D4}']
@@ -1223,7 +2981,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时实现 <see cref="T:System.Runtime.Serialization.ISerializable" />
+    ///  接口，并在反序列化时引发事件已完成反序列化。
+    ///</summary>
+    ///  <param name="sender">
+    ///  事件源。
+    ///</param>
     procedure OnDeserialization(sender: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  释放正在使用的所有资源 <see cref="T:System.Printing.IndexedProperties.PrintProperty" />
+    ///  。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1232,7 +3001,23 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置属性的值 <see cref="T:System.Printing.IndexedProperties.PrintTicketProperty" />
+    ///  表示。
+    ///</summary>
+    ///<returns>
+    ///  一个可以强制转换为 <see cref="T:System.Printing.PrintTicket" />
+    ///  的 <see cref="T:System.Object" />
+    ///  。
+    ///</returns>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  当在派生类中重写，获取该对象表示的属性的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示属性的名称。
+    ///</returns>
     property Name: string read get_Name;
   end;
 
@@ -1243,6 +3028,9 @@ type
   ['{6317BE83-A6C1-51A3-A976-37CFA4A4E2D3}']
   end;
 
+  ///<summary>
+  ///  指定大小的纸张 （或其他介质） 的大小以及成像区域成像区域的位置。
+  ///</summary>
   [DNTypeName('System.Printing.PrintDocumentImageableArea')]
   DNPrintDocumentImageableArea = interface(DDN.mscorlib.DNObject)
   ['{CEEDE8BC-852C-3267-AC3E-E11E717A8150}']
@@ -1264,11 +3052,53 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取的纸张或介质的高度。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Double" />
+    ///  代表从页面的左上角到左下角的距离。
+    ///</returns>
     property MediaSizeHeight: Double read get_MediaSizeHeight;
+    ///<summary>
+    ///  获取的纸张或介质的宽度。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Double" />
+    ///  代表从页面的左上角到右上角的距离。
+    ///</returns>
     property MediaSizeWidth: Double read get_MediaSizeWidth;
+    ///<summary>
+    ///  获取成像区域的高度。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Double" />
+    ///  表示从原点的距离。
+    ///</returns>
     property ExtentHeight: Double read get_ExtentHeight;
+    ///<summary>
+    ///  获取成像区域的宽度。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Double" />
+    ///  表示从原点的距离。
+    ///</returns>
     property ExtentWidth: Double read get_ExtentWidth;
+    ///<summary>
+    ///  获取从成像区域 （也称为 origin 成像区域） 的窗口左上角到页面上边缘最接近的点的距离。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Double" />
+    ///  ，表示从成像区域 （也称为 origin 成像区域） 的窗口左上角到页面上边缘最接近的点的距离 （以像素为单位的 1/96 英寸）。
+    ///</returns>
     property OriginHeight: Double read get_OriginHeight;
+    ///<summary>
+    ///  获取原点宽度，即成像区域 （也称为"源"成像区域） 的窗口左上角到页面的左边缘的距离。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Double" />
+    ///  表示原点宽度 （以像素为单位的 1/96 英寸），这是成像区域 （也称为"源"成像区域） 的窗口左上角到页面的左边缘的距离。
+    ///</returns>
     property OriginWidth: Double read get_OriginWidth;
   end;
 
@@ -1279,6 +3109,9 @@ type
   ['{54298164-3898-5585-8A04-ECA48BE5A862}']
   end;
 
+  ///<summary>
+  ///  描述打印作业。
+  ///</summary>
   [DNTypeName('System.Printing.PrintJobSettings')]
   DNPrintJobSettings = interface(DDN.mscorlib.DNObject)
   ['{38A85713-FED5-3C22-9366-C13CF3C20464}']
@@ -1298,7 +3131,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置打印作业的说明。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  描述打印作业，例如，"每季度报表"。
+    ///</returns>
     property Description: string read get_Description write set_Description;
+    ///<summary>
+    ///  获取或设置 <see cref="T:System.Printing.PrintTicket" />
+    ///  对象，其中包含所有打印作业的详细的设置。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintTicket" />
+    ///  对象，它持有的全部详细信息的打印作业，如要打印的份数以及是否使用装订或双面打印。
+    ///</returns>
     property CurrentPrintTicket: DDN.ReachFramework.DNPrintTicket read get_CurrentPrintTicket write set_CurrentPrintTicket;
   end;
 
@@ -1309,10 +3157,20 @@ type
   ['{A379A27C-9D6F-51D8-8DEE-BAD9FC746B2B}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Printing.PrintQueueStringProperty" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNPrintQueueStringProperty;
 
   end;
 
+  ///<summary>
+  ///  表示一个，并且只有一个打印队列的三个可能的属性︰ <see cref="P:System.Printing.PrintQueue.Location" />
+  ///  , ，<see cref="P:System.Printing.PrintQueue.Comment" />
+  ///  , ，或 <see cref="P:System.Printing.PrintQueue.ShareName" />
+  ///  。
+  ///</summary>
   [DNTypeName('System.Printing.PrintQueueStringProperty')]
   DNPrintQueueStringProperty = interface(DDN.mscorlib.DNObject)
   ['{2931EAA1-2656-3D23-927D-D26C418C98B9}']
@@ -1332,7 +3190,21 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置表示的打印队列属性的值。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  与属性的值。
+    ///</returns>
     property Name: string read get_Name write set_Name;
+    ///<summary>
+    ///  获取或设置要表示的是一个值，标识哪些打印队列的三个可能的属性。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintQueueStringPropertyType" />
+    ///  ，它指定所表示的打印队列属性的类型。
+    ///</returns>
     property &Type: DNPrintQueueStringPropertyType read get_Type write set_Type;
   end;
 
@@ -1343,6 +3215,10 @@ type
   ['{C443CE8F-6948-543D-8450-3266BE1F3F2C}']
   end;
 
+  ///<summary>
+  ///  定义基本属性和方法所共有的打印系统对象。
+  ///  从此类派生的类表示一些对象，如打印队列、 打印服务器和打印作业。
+  ///</summary>
   [DNTypeName('System.Printing.PrintSystemObject')]
   DNPrintSystemObject = interface(DDN.mscorlib.DNIDisposable)
   ['{C217C8CC-2887-3BFD-9A60-B7476189F695}']
@@ -1354,8 +3230,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时写入的任何更改您的程序具有对对象的属性添加到实际的软件或硬件组件，该对象表示。
+    ///</summary>
     procedure Commit;
+    ///<summary>
+    ///  当在派生类中重写时，使其值与实际的软件或硬件组件，该对象表示的值更新派生的类的对象的属性。
+    ///</summary>
     procedure Refresh;
+    ///<summary>
+    ///  释放由 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  使用的所有资源。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1364,8 +3250,29 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取该对象的父级。
+    ///</summary>
+    ///<returns>
+    ///  另一个 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  。
+    ///</returns>
     property Parent: DNPrintSystemObject read get_Parent;
+    ///<summary>
+    ///  获取对象的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示对象的名称。
+    ///</returns>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取属性和值对的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" />
+    ///  ，其中包含属性和值对。
+    ///</returns>
     property PropertiesCollection: DNPrintPropertyDictionary read get_PropertiesCollection;
   end;
 
@@ -1376,6 +3283,13 @@ type
   ['{6335CBD9-48B1-5DED-842D-AF7DE92C25CA}']
   end;
 
+  ///<summary>
+  ///  定义可供使用行为，则共有的 <see cref="T:System.Printing.PrintDriver" />
+  ///  和 <see cref="T:System.Printing.PrintProcessor" />
+  ///  类。
+  ///<see cref="T:System.Printing.PrintFilter" />
+  ///  支持 Windows Presentation Foundation (WPF) 基础结构，不应在代码中直接使用。
+  ///</summary>
   [DNTypeName('System.Printing.PrintFilter')]
   DNPrintFilter = interface(DNPrintSystemObject)
   ['{E36AD9F7-BA4B-3BB4-9BAD-85DD7163A2CF}']
@@ -1387,8 +3301,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时写入的任何更改您的程序具有对对象的属性添加到实际的软件或硬件组件，该对象表示。
+    ///</summary>
     procedure Commit;
+    ///<summary>
+    ///  当在派生类中重写时，使其值与实际的软件或硬件组件，该对象表示的值更新派生的类的对象的属性。
+    ///</summary>
     procedure Refresh;
+    ///<summary>
+    ///  释放由 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  使用的所有资源。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1397,8 +3321,29 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取该对象的父级。
+    ///</summary>
+    ///<returns>
+    ///  另一个 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  。
+    ///</returns>
     property Parent: DNPrintSystemObject read get_Parent;
+    ///<summary>
+    ///  获取对象的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示对象的名称。
+    ///</returns>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取属性和值对的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" />
+    ///  ，其中包含属性和值对。
+    ///</returns>
     property PropertiesCollection: DNPrintPropertyDictionary read get_PropertiesCollection;
   end;
 
@@ -1409,6 +3354,9 @@ type
   ['{B8B5EC5B-201C-53CD-BA08-E611704FAC41}']
   end;
 
+  ///<summary>
+  ///  表示打印驱动程序。
+  ///</summary>
   [DNTypeName('System.Printing.PrintDriver')]
   DNPrintDriver = interface(DNPrintFilter)
   ['{6BE07925-6009-3454-9BED-30439425E0B6}']
@@ -1420,7 +3368,13 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  请勿使用。
+    ///</summary>
     procedure Commit;
+    ///<summary>
+    ///  请勿使用。
+    ///</summary>
     procedure Refresh;
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -1442,6 +3396,9 @@ type
   ['{4889B664-09F9-59CC-A249-E5D6FF791425}']
   end;
 
+  ///<summary>
+  ///  表示在打印服务器上的打印处理器。
+  ///</summary>
   [DNTypeName('System.Printing.PrintProcessor')]
   DNPrintProcessor = interface(DNPrintFilter)
   ['{AD308001-EB8C-3FE6-B5F8-5B06D6D62CD8}']
@@ -1453,7 +3410,13 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  请勿使用。
+    ///</summary>
     procedure Commit;
+    ///<summary>
+    ///  请勿使用。
+    ///</summary>
     procedure Refresh;
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -1475,6 +3438,10 @@ type
   ['{DF1D94AA-5B3E-5E67-B5F4-4E789B9076F6}']
   end;
 
+  ///<summary>
+  ///  表示在打印服务器上的打印机端口。
+  ///  每个打印队列具有分配给它的打印端口。
+  ///</summary>
   [DNTypeName('System.Printing.PrintPort')]
   DNPrintPort = interface(DNPrintSystemObject)
   ['{84D4A992-718E-3562-8E7A-2BB727A6DB07}']
@@ -1486,8 +3453,18 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  请勿使用。
+    ///</summary>
     procedure Commit;
+    ///<summary>
+    ///  请勿使用。
+    ///</summary>
     procedure Refresh;
+    ///<summary>
+    ///  释放由 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  使用的所有资源。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1496,8 +3473,29 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取该对象的父级。
+    ///</summary>
+    ///<returns>
+    ///  另一个 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  。
+    ///</returns>
     property Parent: DNPrintSystemObject read get_Parent;
+    ///<summary>
+    ///  获取对象的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示对象的名称。
+    ///</returns>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取属性和值对的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" />
+    ///  ，其中包含属性和值对。
+    ///</returns>
     property PropertiesCollection: DNPrintPropertyDictionary read get_PropertiesCollection;
   end;
 
@@ -1512,13 +3510,167 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintQueue" />
+    ///  类与指定 <see cref="T:System.Printing.PrintServer" />
+    ///  , ，队列名称、 数组 <see cref="T:System.Printing.PrintQueueIndexedProperty" />
+    ///  值初始化，以及所需的访问。
+    ///</summary>
+    ///  <param name="printServer">
+    ///  打印队列中打印服务器。
+    ///</param>
+    ///  <param name="printQueueName">
+    ///  打印队列的名称。
+    ///</param>
+    ///  <param name="propertyFilter">
+    ///  一个数组 <see cref="T:System.Printing.PrintQueueIndexedProperty" />
+    ///  值，该值指定要初始化的属性。
+    ///</param>
+    ///  <param name="desiredAccess">
+    ///  其中一个 <see cref="T:System.Printing.PrintSystemDesiredAccess" />
+    ///  值，该值指定对程序所需的打印队列的访问类型。
+    ///</param>
+    ///<exception cref="T:System.Printing.PrintQueueException"><paramref name="desiredAccess" />
+    ///  是一个值，可以仅可应用到 <see cref="T:System.Printing.PrintServer" />
+    ///  对象，而不 <see cref="T:System.Printing.PrintQueue" />
+    ///  对象。
+    ///  例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.AdministrateServer" />
+    ///  。
+    ///</exception>
     {class} function init(printServer: DNPrintServer; printQueueName: string; propertyFilter: TArray<DNPrintQueueIndexedProperty>; desiredAccess: DNPrintSystemDesiredAccess): DNPrintQueue; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintQueue" />
+    ///  类使用指定 <see cref="T:System.Printing.PrintServer" />
+    ///  , 、 队列名称，属性筛选器和所需的访问。
+    ///</summary>
+    ///  <param name="printServer">
+    ///  打印队列中打印服务器。
+    ///</param>
+    ///  <param name="printQueueName">
+    ///  打印队列的名称。
+    ///</param>
+    ///  <param name="propertyFilter">
+    ///  要初始化的属性名称的数组。
+    ///</param>
+    ///  <param name="desiredAccess">
+    ///  其中一个 <see cref="T:System.Printing.PrintSystemDesiredAccess" />
+    ///  值，该值指定对程序所需的打印队列的访问类型。
+    ///</param>
+    ///<exception cref="T:System.Printing.PrintQueueException"><paramref name="desiredAccess" />
+    ///  是一个值，可以仅可应用到 <see cref="T:System.Printing.PrintServer" />
+    ///  对象，而不 <see cref="T:System.Printing.PrintQueue" />
+    ///  对象。
+    ///  例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.AdministrateServer" />
+    ///  。
+    ///</exception>
     {class} function init(printServer: DNPrintServer; printQueueName: string; propertyFilter: TArray<string>; desiredAccess: DNPrintSystemDesiredAccess): DNPrintQueue; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintQueue" />
+    ///  类使用指定 <see cref="T:System.Printing.PrintServer" />
+    ///  , 、 队列名称、 打印架构版本和所需的访问。
+    ///</summary>
+    ///  <param name="printServer">
+    ///  打印队列中打印服务器。
+    ///</param>
+    ///  <param name="printQueueName">
+    ///  打印队列的名称。
+    ///</param>
+    ///  <param name="printSchemaVersion">
+    ///  要使用的打印架构的版本。
+    ///</param>
+    ///  <param name="desiredAccess">
+    ///  其中一个 <see cref="T:System.Printing.PrintSystemDesiredAccess" />
+    ///  值，该值指定对程序所需的打印队列的访问类型。
+    ///</param>
+    ///<exception cref="T:System.Printing.PrintQueueException"><paramref name="desiredAccess" />
+    ///  是一个值，可以仅可应用到 <see cref="T:System.Printing.PrintServer" />
+    ///  对象，而不 <see cref="T:System.Printing.PrintQueue" />
+    ///  对象。
+    ///  例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.AdministrateServer" />
+    ///  。
+    ///</exception>
     {class} function init(printServer: DNPrintServer; printQueueName: string; printSchemaVersion: Int32; desiredAccess: DNPrintSystemDesiredAccess): DNPrintQueue; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintQueue" />
+    ///  类使用指定 <see cref="T:System.Printing.PrintServer" />
+    ///  , 、 队列名称和所需的访问。
+    ///</summary>
+    ///  <param name="printServer">
+    ///  打印队列中打印服务器。
+    ///</param>
+    ///  <param name="printQueueName">
+    ///  打印队列的名称。
+    ///</param>
+    ///  <param name="desiredAccess">
+    ///  其中一个 <see cref="T:System.Printing.PrintSystemDesiredAccess" />
+    ///  值，该值指定对程序所需的打印队列的访问类型。
+    ///</param>
+    ///<exception cref="T:System.Printing.PrintQueueException"><paramref name="desiredAccess" />
+    ///  是一个值，可以仅可应用到 <see cref="T:System.Printing.PrintServer" />
+    ///  对象，而不 <see cref="T:System.Printing.PrintQueue" />
+    ///  对象。
+    ///  例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.AdministrateServer" />
+    ///  。
+    ///</exception>
     {class} function init(printServer: DNPrintServer; printQueueName: string; desiredAccess: DNPrintSystemDesiredAccess): DNPrintQueue; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintQueue" />
+    ///  类使用指定 <see cref="T:System.Printing.PrintServer" />
+    ///  , ，队列名称和构成的数组 <see cref="T:System.Printing.PrintQueueIndexedProperty" />
+    ///  值，以初始化。
+    ///</summary>
+    ///  <param name="printServer">
+    ///  打印队列中打印服务器。
+    ///</param>
+    ///  <param name="printQueueName">
+    ///  打印队列的名称。
+    ///</param>
+    ///  <param name="propertyFilter">
+    ///  一个数组 <see cref="T:System.Printing.PrintQueueIndexedProperty" />
+    ///  值，该值指定要初始化的属性值。
+    ///</param>
     {class} function init(printServer: DNPrintServer; printQueueName: string; propertyFilter: TArray<DNPrintQueueIndexedProperty>): DNPrintQueue; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintQueue" />
+    ///  类使用指定 <see cref="T:System.Printing.PrintServer" />
+    ///  , ，队列名称和属性名称来初始化的数组。
+    ///</summary>
+    ///  <param name="printServer">
+    ///  打印队列中打印服务器。
+    ///</param>
+    ///  <param name="printQueueName">
+    ///  打印队列的名称。
+    ///</param>
+    ///  <param name="propertyFilter">
+    ///  要初始化的属性名称的数组。
+    ///</param>
     {class} function init(printServer: DNPrintServer; printQueueName: string; propertyFilter: TArray<string>): DNPrintQueue; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintQueue" />
+    ///  类使用指定 <see cref="T:System.Printing.PrintServer" />
+    ///  , ，队列名称，然后打印架构版本。
+    ///</summary>
+    ///  <param name="printServer">
+    ///  打印队列中打印服务器。
+    ///</param>
+    ///  <param name="printQueueName">
+    ///  打印队列的名称。
+    ///</param>
+    ///  <param name="printSchemaVersion">
+    ///  要使用的打印架构的版本。
+    ///</param>
     {class} function init(printServer: DNPrintServer; printQueueName: string; printSchemaVersion: Int32): DNPrintQueue; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintQueue" />
+    ///  类使用指定 <see cref="T:System.Printing.PrintServer" />
+    ///  和队列名称。
+    ///</summary>
+    ///  <param name="printServer">
+    ///  要承载的打印队列的打印服务器。
+    ///</param>
+    ///  <param name="printQueueName">
+    ///  打印队列的名称。
+    ///</param>
     {class} function init(printServer: DNPrintServer; printQueueName: string): DNPrintQueue; overload;
 
   { static methods } 
@@ -1528,13 +3680,32 @@ type
     {class} function CreateXpsDocumentWriter(out documentImageableArea: DNPrintDocumentImageableArea; out pageRangeSelection: DDN.PresentationFramework.DNPageRangeSelection; out pageRange: DDN.PresentationFramework.DNPageRange): DNXpsDocumentWriter; overload;
     {class} function CreateXpsDocumentWriter(out documentImageableArea: DNPrintDocumentImageableArea): DNXpsDocumentWriter; overload;
     {class} function CreateXpsDocumentWriter(out width: Double; out height: Double): DNXpsDocumentWriter; overload;
+    ///<summary>
+    ///  创建 <see cref="T:System.Windows.Xps.XpsDocumentWriter" />
+    ///  对象，并将其与指定的打印队列关联。
+    ///</summary>
+    ///  <param name="printQueue">
+    ///  要打印 XPS 文档的打印队列。
+    ///</param>
+    ///<returns><see cref="T:System.Windows.Xps.XpsDocumentWriter" />
+    ///  ，它将写入到 XPS 流。
+    ///</returns>
     {class} function CreateXpsDocumentWriter(printQueue: DNPrintQueue): DNXpsDocumentWriter; overload;
 
   { static propertys } 
 
+    ///<summary>
+    ///  获取最新版本可能数 Print Schema 队列可以使用。
+    ///</summary>
+    ///<returns>
+    ///  最新版本号 Print Schema 队列可以使用。
+    ///</returns>
     {class} property MaxPrintSchemaVersion: Int32 read get_MaxPrintSchemaVersion;
   end;
 
+  ///<summary>
+  ///  管理打印机和打印作业。
+  ///</summary>
   [DNTypeName('System.Printing.PrintQueue')]
   DNPrintQueue = interface(DNPrintSystemObject)
   ['{C187B99F-1003-3809-A31A-FD19FB6FC45F}']
@@ -1622,24 +3793,270 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Printing.PrintCapabilities" />
+    ///  对象，用于标识打印机的功能。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintCapabilities" />
+    ///  对象，它指定打印机可以和不能完成，如在双侧复印或自动装订。
+    ///</returns>
+    ///<exception cref="T:System.Printing.PrintQueueException"><see cref="T:System.Printing.PrintCapabilities" />
+    ///  检索不到对象。
+    ///</exception>
     function GetPrintCapabilities: DDN.ReachFramework.DNPrintCapabilities; overload;
+    ///<summary>
+    ///  获取 <see cref="T:System.Printing.PrintCapabilities" />
+    ///  对象，用于标识打印机的功能。
+    ///</summary>
+    ///  <param name="printTicket">
+    ///  提供打印功能报告在其的基础打印票证。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintCapabilities" />
+    ///  对象，它指定打印机可以和不能完成，如在双侧复印或自动装订。
+    ///</returns>
+    ///<exception cref="T:System.Printing.PrintQueueException"><see cref="T:System.Printing.PrintCapabilities" />
+    ///  检索不到对象。
+    ///</exception><exception cref="T:System.ArgumentException"><paramref name="printTicket" />
+    ///  格式不正确。
+    ///</exception>
     function GetPrintCapabilities(printTicket: DDN.ReachFramework.DNPrintTicket): DDN.ReachFramework.DNPrintCapabilities; overload;
+    ///<summary>
+    ///  获取 <see cref="T:System.IO.MemoryStream" />
+    ///  对象，它指定打印机的功能作为 XML 流符合 Print Schema。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.IO.MemoryStream" />
+    ///  并通过使用 XML 架构"PrintCapabilities，"的一部分指定打印机的功能 Print Schema 系统。
+    ///</returns>
+    ///<exception cref="T:System.Printing.PrintQueueException">
+    ///  无法检索的打印功能。
+    ///</exception>
     function GetPrintCapabilitiesAsXml: DDN.mscorlib.DNMemoryStream; overload;
+    ///<summary>
+    ///  获取 <see cref="T:System.IO.MemoryStream" />
+    ///  指定打印机的功能以 XML 格式的对象符合 Print Schema。
+    ///</summary>
+    ///  <param name="printTicket">
+    ///  提供打印功能报告在其的基础打印票证。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.IO.MemoryStream" />
+    ///  并通过使用 XML 架构"PrintCapabilities，"的一部分指定打印机的功能 Print Schema 系统。
+    ///</returns>
+    ///<exception cref="T:System.Printing.PrintQueueException">
+    ///  无法检索的打印功能。
+    ///</exception><exception cref="T:System.ArgumentException"><paramref name="printTicket" />
+    ///  格式不正确。
+    ///</exception>
     function GetPrintCapabilitiesAsXml(printTicket: DDN.ReachFramework.DNPrintTicket): DDN.mscorlib.DNMemoryStream; overload;
+    ///<summary>
+    ///  合并两个 <see cref="T:System.Printing.PrintTicket" />
+    ///  s 和保证所得 <see cref="T:System.Printing.PrintTicket" />
+    ///  是否有效，不支持的打印机，并限制为指定的范围并不要求任何打印功能。
+    ///</summary>
+    ///  <param name="basePrintTicket">
+    ///  第一个打印票证。
+    ///</param>
+    ///  <param name="deltaPrintTicket">
+    ///  第二个打印票证。
+    ///  这可能是 <see langword="null" />
+    ///  。
+    ///</param>
+    ///  <param name="scope">
+    ///  一个值，该值指示是否的作用域 <paramref name="deltaPrintTicket" />
+    ///  , ，以及在中返回的打印票证的作用域 <see cref="T:System.Printing.ValidationResult" />
+    ///  , ，是 page、 一个文档或全部工作。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.ValidationResult" />
+    ///  ，其中包括合并 <see cref="T:System.Printing.PrintTicket" />
+    ///  以及它的任何设置已进行更改以保证可行性的指示。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException">
+    ///  至少一个输入打印票证无效。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="basePrintTicket" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.ArgumentOutOfRangeException"><paramref name="scope" />
+    ///  参数没有有效 <see cref="T:System.Printing.PrintTicketScope" />
+    ///  值。
+    ///</exception><exception cref="T:System.Printing.PrintQueueException">
+    ///  验证、 合并和可行性检查操作失败。
+    ///</exception>
     function MergeAndValidatePrintTicket(basePrintTicket: DDN.ReachFramework.DNPrintTicket; deltaPrintTicket: DDN.ReachFramework.DNPrintTicket; scope: DDN.ReachFramework.DNPrintTicketScope): DDN.ReachFramework.DNValidationResult; overload;
+    ///<summary>
+    ///  合并两个 <see cref="T:System.Printing.PrintTicket" />
+    ///  s 和保证所得 <see cref="T:System.Printing.PrintTicket" />
+    ///  有效，并且不要求提供打印机不支持任何打印功能。
+    ///</summary>
+    ///  <param name="basePrintTicket">
+    ///  第一个打印票证。
+    ///</param>
+    ///  <param name="deltaPrintTicket">
+    ///  第二个打印票证。
+    ///  这可能是 <see langword="null" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.ValidationResult" />
+    ///  ，其中包括合并 <see cref="T:System.Printing.PrintTicket" />
+    ///  以及它的任何设置已进行更改以保证可行性的指示。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentException">
+    ///  至少一个输入打印票证无效。
+    ///</exception><exception cref="T:System.ArgumentNullException"><paramref name="basePrintTicket" />
+    ///  为 <see langword="null" />
+    ///  。
+    ///</exception><exception cref="T:System.Printing.PrintQueueException">
+    ///  验证、 合并和可行性检查操作失败。
+    ///</exception>
     function MergeAndValidatePrintTicket(basePrintTicket: DDN.ReachFramework.DNPrintTicket; deltaPrintTicket: DDN.ReachFramework.DNPrintTicket): DDN.ReachFramework.DNValidationResult; overload;
+    ///<summary>
+    ///  暂停的打印队列。
+    ///  保持暂停状态，直到 <see cref="M:System.Printing.PrintQueue.Resume" />
+    ///  执行。
+    ///</summary>
+    ///<exception cref="T:System.Printing.PrintSystemException">
+    ///  不能暂停的打印机。
+    ///</exception>
     procedure Pause;
+    ///<summary>
+    ///  重新启动已暂停的打印队列。
+    ///</summary>
+    ///<exception cref="T:System.Printing.PrintSystemException">
+    ///  打印机无法继续。
+    ///</exception>
     procedure Resume;
+    ///<summary>
+    ///  将插入新的打印作业 XML 纸张规范 (XPS) 文档到队列中，为其提供指定的名称和设置，并且指定是否应验证。
+    ///</summary>
+    ///  <param name="jobName">
+    ///  路径和要打印的文档名称。
+    ///</param>
+    ///  <param name="documentPath">
+    ///  路径和要打印的文档名称。
+    ///</param>
+    ///  <param name="fastCopy"><see langword="true" />
+    ///  若要快速后台处理，而无需按页进度反馈，也不验证的文件是否有效 XPS; 否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  打印作业的设置。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  ，它表示该打印作业，而且其状态。
+    ///</returns>
     function AddJob(jobName: string; documentPath: string; fastCopy: Boolean; printTicket: DDN.ReachFramework.DNPrintTicket): DNPrintSystemJobInfo; overload;
+    ///<summary>
+    ///  将插入新的打印作业 XML 纸张规范 (XPS) 文档到队列中，为其提供指定的名称，并且指定是否应验证。
+    ///</summary>
+    ///  <param name="jobName">
+    ///  打印作业的名称。
+    ///</param>
+    ///  <param name="documentPath">
+    ///  路径和要打印的文档名称。
+    ///</param>
+    ///  <param name="fastCopy"><see langword="true" />
+    ///  若要快速后台处理，而无需按页进度反馈，也不验证的文件是否有效 XPS; 否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  ，它表示该打印作业，而且其状态。
+    ///</returns>
     function AddJob(jobName: string; documentPath: string; fastCopy: Boolean): DNPrintSystemJobInfo; overload;
+    ///<summary>
+    ///  将插入新的打印作业 XML 纸张规范 (XPS) 文档到队列中，并使其具有指定的名称和设置。
+    ///</summary>
+    ///  <param name="jobName">
+    ///  路径和要打印的文档名称。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  打印作业的设置。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  ，它表示该打印作业，而且其状态。
+    ///</returns>
     function AddJob(jobName: string; printTicket: DDN.ReachFramework.DNPrintTicket): DNPrintSystemJobInfo; overload;
+    ///<summary>
+    ///  将插入一个新的打印作业，其内容在 <see cref="T:System.Byte" />
+    ///  到队列的数组。
+    ///</summary>
+    ///  <param name="jobName">
+    ///  打印作业的名称。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  ，它表示该打印作业，而且其状态。
+    ///</returns>
     function AddJob(jobName: string): DNPrintSystemJobInfo; overload;
+    ///<summary>
+    ///  将插入新 （通常已命名） 的打印作业，其内容在 <see cref="T:System.Byte" />
+    ///  到队列的数组。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  ，它表示该打印作业，而且其状态。
+    ///</returns>
     function AddJob: DNPrintSystemJobInfo; overload;
+    ///<summary>
+    ///  获取具有指定的 ID 号的打印作业。
+    ///</summary>
+    ///  <param name="jobId">
+    ///  在队列中的作业数。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  ，它指定该作业，而且其状态的属性。
+    ///</returns>
     function GetJob(jobId: Int32): DNPrintSystemJobInfo;
+    ///<summary>
+    ///  创建一个包含集合 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  在队列中的每个作业的对象。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.Printing.PrintJobInfoCollection" />
+    ///  的 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  对象。
+    ///  没有分别对应于在队列中的每个作业。
+    ///</returns>
     function GetPrintJobInfoCollection: DNPrintJobInfoCollection;
+    ///<summary>
+    ///  打印队列中删除所有作业。
+    ///</summary>
+    ///<exception cref="T:System.Printing.PrintSystemException">
+    ///  无法从队列中删除某些打印作业。
+    ///</exception>
     procedure Purge;
+    ///<summary>
+    ///  当前属性的写入 <see cref="T:System.Printing.PrintQueue" />
+    ///  到打印服务器上的实际打印队列的对象。
+    ///</summary>
+    ///<exception cref="T:System.Printing.PrintSystemException">
+    ///  某些属性无法提交。
+    ///</exception><exception cref="T:System.Printing.PrintCommitAttributesException">
+    ///  某些属性无法提交。
+    ///  - 或 -
+    ///<see cref="T:System.Printing.PrintQueue" />
+    ///  对象不创建具有足够权限。
+    ///</exception>
     procedure Commit;
+    ///<summary>
+    ///  更新的属性 <see cref="T:System.Printing.PrintQueue" />
+    ///  对象使用的打印机并在计算机运行的打印队列实用工具中的值。
+    ///</summary>
+    ///<exception cref="T:System.Printing.PrintSystemException">
+    ///  无法刷新的某些属性。
+    ///</exception>
     procedure Refresh;
+    ///<summary>
+    ///  释放由 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  使用的所有资源。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1648,68 +4065,505 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置一个值，指示队列是否在部分信任模式下，更高级别的信任运行。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果在部分受信任的模式; 操作队列否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property InPartialTrust: Boolean read get_InPartialTrust write set_InPartialTrust;
+    ///<summary>
+    ///  获取的版本 Print Schema。
+    ///</summary>
+    ///<returns>
+    ///  版本 Print Schema 正在使用。
+    ///</returns>
     property ClientPrintSchemaVersion: Int32 read get_ClientPrintSchemaVersion;
+    ///<summary>
+    ///  获取一个值，该值指示是否生成的打印机驱动程序 打印概述 因此它使用 XML 纸张规范 (XPS) 作为其页面描述语言。 </summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机使用 打印概述; 否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsXpsDevice: Boolean read get_IsXpsDevice;
+    ///<summary>
+    ///  获取一个值，该值指示该打印机是否是对其他网络用户可见。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机是对其他网络用户; 可见否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsPublished: Boolean read get_IsPublished;
+    ///<summary>
+    ///  获取一个值，该值指示是否打印队列可以使用 EMF （增强型元文件），使打印的应用程序中，对 Windows 打印后台处理程序更快的数据流。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机不能使用 EMF 打印，则否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsRawOnlyEnabled: Boolean read get_IsRawOnlyEnabled;
+    ///<summary>
+    ///  获取一个值，该值指示是否启用与打印机的双向通信。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果启用双向通信与打印机;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsBidiEnabled: Boolean read get_IsBidiEnabled;
+    ///<summary>
+    ///  获取一个值，该值指示是否打印机打印作业完成之前有尚未完全完成后台处理即使后者进入队列的作业后台处理过程的第一个或更高的优先级。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机打印作业完成之前有尚未完全完成后台处理; 的作业后台处理过程否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property ScheduleCompletedJobsFirst: Boolean read get_ScheduleCompletedJobsFirst;
+    ///<summary>
+    ///  获取一个值，指示队列是否保存打印机语言文件，而不是打印后删除。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果队列保存打印机语言文件;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property KeepPrintedJobs: Boolean read get_KeepPrintedJobs;
+    ///<summary>
+    ///  获取一个值，该值指示文档和打印机配置不匹配时，队列是否保留的文档。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果队列包含不匹配的配置;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsDevQueryEnabled: Boolean read get_IsDevQueryEnabled;
+    ///<summary>
+    ///  获取一个值，该值指示是否在应用程序的用户界面中隐藏的打印队列。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果在 Windows 用户界面; 打印队列处于隐藏状态，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsHidden: Boolean read get_IsHidden;
+    ///<summary>
+    ///  获取一个值，该值指示该打印机是否是可供使用的网络上其他计算机。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果此打印机共享。，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsShared: Boolean read get_IsShared;
+    ///<summary>
+    ///  获取一个值，该值指示是否队列直接打印到打印机或后台打印文档的第一个，然后打印它们。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该队列直接打印到打印机。否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsDirect: Boolean read get_IsDirect;
+    ///<summary>
+    ///  获取一个值，该值指示是否打印机可以支持具有多个打印作业的队列中一次。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机可以支持多个打印作业; 在队列，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsQueued: Boolean read get_IsQueued;
+    ///<summary>
+    ///  获取一个值，该值指示打印机是否处于节能模式。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机是否处于电源，保存模式;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsPowerSaveOn: Boolean read get_IsPowerSaveOn;
+    ///<summary>
+    ///  获取一个值，该值指示打印机是否处于错误状态。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果在打印机中处于错误状态;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsServerUnknown: Boolean read get_IsServerUnknown;
+    ///<summary>
+    ///  获取一个值，该值指示是否对门处于打开状态在打印机上。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果门处于打开状态;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsDoorOpened: Boolean read get_IsDoorOpened;
+    ///<summary>
+    ///  获取一个值，该值指示该打印机是否是内存不足。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机内存; 不足否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsOutOfMemory: Boolean read get_IsOutOfMemory;
+    ///<summary>
+    ///  获取一个值，该值指示打印机是否需要以人关注。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机需要人工关注;，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property NeedUserIntervention: Boolean read get_NeedUserIntervention;
+    ///<summary>
+    ///  获取一个值，该值指示打印机是否无法打印当前页。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机无法打印当前页;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property PagePunt: Boolean read get_PagePunt;
+    ///<summary>
+    ///  获取一个值，该值指示是否打印机具有墨粉。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果当前打印机有墨粉;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property HasToner: Boolean read get_HasToner;
+    ///<summary>
+    ///  获取一个值，该值指示是否缺少墨粉运行打印机。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机运行缺少墨粉;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsTonerLow: Boolean read get_IsTonerLow;
+    ///<summary>
+    ///  获取一个值，该值指示是否正在预热打印机。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机正在预热;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsWarmingUp: Boolean read get_IsWarmingUp;
+    ///<summary>
+    ///  获取一个值，该值指示是否打印机正在初始化自身。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机正在初始化;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsInitializing: Boolean read get_IsInitializing;
+    ///<summary>
+    ///  获取一个值，该值指示打印机是否正在处理打印作业。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机正在处理打印作业，则，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsProcessing: Boolean read get_IsProcessing;
+    ///<summary>
+    ///  获取一个值，该值指示是否要添加的作业正在等待队列。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果队列等待作业，则否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsWaiting: Boolean read get_IsWaiting;
+    ///<summary>
+    ///  获取一个值，该值指示打印机是否可用。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果可用，则打印机否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsNotAvailable: Boolean read get_IsNotAvailable;
+    ///<summary>
+    ///  获取一个值，该值指示输出区域中的打印机是否存在溢出危险。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机输出区域已满。否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsOutputBinFull: Boolean read get_IsOutputBinFull;
+    ///<summary>
+    ///  获取一个值，该值指示是否正在打印作业。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印作业;，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsPrinting: Boolean read get_IsPrinting;
+    ///<summary>
+    ///  获取一个值，该值指示是否打印设备正忙。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果设备正忙;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsBusy: Boolean read get_IsBusy;
+    ///<summary>
+    ///  获取一个值，该值指示是否接收或发送数据或信号打印机。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机是接收或发送;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsIOActive: Boolean read get_IsIOActive;
+    ///<summary>
+    ///  获取一个值，该值指示打印机处于脱机状态。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机处于脱机状态。否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsOffline: Boolean read get_IsOffline;
+    ///<summary>
+    ///  获取一个值，该值指示打印机是否遇到了未指定的纸张问题。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果未指定的纸张的问题;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property HasPaperProblem: Boolean read get_HasPaperProblem;
+    ///<summary>
+    ///  获取一个值，该值指示是否需要手动送纸用于当前的打印作业的纸张打印机。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果需要手动将该打印机纸应用程序。否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsManualFeedRequired: Boolean read get_IsManualFeedRequired;
+    ///<summary>
+    ///  获取一个值，该值指示是否需要重新与当前作业所需大小的纸张装入打印机。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机需要时重新加载;，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsOutOfPaper: Boolean read get_IsOutOfPaper;
+    ///<summary>
+    ///  获取一个值，该值指示是否当前的一张纸陷入打印机。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果纸卡住;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsPaperJammed: Boolean read get_IsPaperJammed;
+    ///<summary>
+    ///  获取一个值，该值指示该打印机是否是在过程中删除打印作业。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机正在删除作业，则否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsPendingDeletion: Boolean read get_IsPendingDeletion;
+    ///<summary>
+    ///  获取一个值，该值指示打印机或设备是否处于错误状态。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果该设备不中出现错误;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsInError: Boolean read get_IsInError;
+    ///<summary>
+    ///  获取一个值，该值指示是否已暂停的打印队列。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果已暂停的打印队列，则否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsPaused: Boolean read get_IsPaused;
+    ///<summary>
+    ///  获取打印队列的属性。
+    ///</summary>
+    ///<returns><see cref="T:System.Printing.PrintQueueAttributes" />
+    ///  枚举值的按位组合。
+    ///</returns>
     property QueueAttributes: DNPrintQueueAttributes read get_QueueAttributes;
+    ///<summary>
+    ///  获取一个值，表示该打印机的状态。
+    ///  其中包括"预热、"初始化时，""打印"以及其他人。
+    ///</summary>
+    ///<returns>
+    ///  当前 <see cref="T:System.Printing.PrintQueueStatus" />
+    ///  值。
+    ///</returns>
     property QueueStatus: DNPrintQueueStatus read get_QueueStatus;
+    ///<summary>
+    ///  获取队列的完整名称。
+    ///</summary>
+    ///<returns>
+    ///  打印队列的完整名称。
+    ///</returns>
     property FullName: string read get_FullName;
+    ///<summary>
+    ///  获取或设置 （受保护） 控制打印队列的打印服务器。
+    ///</summary>
+    ///<returns>
+    ///  名称和其他属性 <see cref="T:System.Printing.PrintServer" />
+    ///  承载打印队列。
+    ///</returns>
     property HostingPrintServer: DNPrintServer read get_HostingPrintServer;
+    ///<summary>
+    ///  获取或设置队列使用的打印处理器。
+    ///</summary>
+    ///<returns><see cref="T:System.Printing.PrintProcessor" />
+    ///  队列使用，如 WinPrint 或 ModiPrint。
+    ///</returns>
     property QueuePrintProcessor: DNPrintProcessor read get_QueuePrintProcessor write set_QueuePrintProcessor;
+    ///<summary>
+    ///  获取或设置队列使用的端口。
+    ///</summary>
+    ///<returns><see cref="T:System.Printing.PrintPort" />
+    ///  ，分配到的打印队列。
+    ///</returns>
     property QueuePort: DNPrintPort read get_QueuePort write set_QueuePort;
+    ///<summary>
+    ///  获取或设置队列的打印机驱动程序。
+    ///</summary>
+    ///<returns><see cref="T:System.Printing.PrintDriver" />
+    ///  队列使用。
+    ///</returns>
     property QueueDriver: DNPrintDriver read get_QueueDriver write set_QueueDriver;
+    ///<summary>
+    ///  获取或设置与此相关的默认打印机选项 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  默认值 <see cref="T:System.Printing.PrintTicket" />
+    ///  打印队列中; 或 <see langword="null" />
+    ///  如果打印队列中出现错误。
+    ///</returns>
     property DefaultPrintTicket: DDN.ReachFramework.DNPrintTicket read get_DefaultPrintTicket write set_DefaultPrintTicket;
+    ///<summary>
+    ///  获取或设置当前用户的默认 <see cref="T:System.Printing.PrintTicket" />
+    ///  对象，其中包含有关打印作业的详细的信息。
+    ///</summary>
+    ///<returns><see cref="T:System.Printing.PrintTicket" />
+    ///  为当前用户或 <see langword="null" />
+    ///  如果用户 <see cref="T:System.Printing.PrintTicket" />
+    ///  未指定。
+    ///</returns>
     property UserPrintTicket: DDN.ReachFramework.DNPrintTicket read get_UserPrintTicket write set_UserPrintTicket;
+    ///<summary>
+    ///  获取或设置在每个打印作业的开头插入一个文件路径和文件名。
+    ///</summary>
+    ///<returns>
+    ///  分隔符文件的路径和文件名称。
+    ///</returns>
     property SeparatorFile: string read get_SeparatorFile write set_SeparatorFile;
+    ///<summary>
+    ///  获取打印队列的说明。
+    ///</summary>
+    ///<returns>
+    ///  打印队列的描述。
+    ///</returns>
     property Description: string read get_Description;
+    ///<summary>
+    ///  获取或设置打印机的物理位置。
+    ///</summary>
+    ///<returns>
+    ///  打印机的物理位置。
+    ///</returns>
     property Location: string read get_Location write set_Location;
+    ///<summary>
+    ///  获取或设置有关打印机的注释。
+    ///</summary>
+    ///<returns>
+    ///  有关打印机的注释。
+    ///</returns>
     property Comment: string read get_Comment write set_Comment;
+    ///<summary>
+    ///  获取或设置当它共享网络上的用户看到的打印机的名称。
+    ///</summary>
+    ///<returns>
+    ///  共享打印机的公用名称。
+    ///</returns>
     property ShareName: string read get_ShareName write set_ShareName;
+    ///<summary>
+    ///  获取在打印队列中排队的作业总数。
+    ///</summary>
+    ///<returns>
+    ///  在队列中的作业数。
+    ///</returns>
     property NumberOfJobs: Int32 read get_NumberOfJobs;
+    ///<summary>
+    ///  获取以每分钟页为单位的打印机的速度。
+    ///</summary>
+    ///<returns>
+    ///  每分钟的打印机打印的平均页数。
+    ///</returns>
     property AveragePagesPerMinute: Int32 read get_AveragePagesPerMinute;
+    ///<summary>
+    ///  获取或设置表示协调世界时 (UTC) （也称为格林威治标准时间 [GMT]） 打印机打印作业的最晚时间。
+    ///</summary>
+    ///<returns>
+    ///  打印机已不再可用，表示为午夜 (UTC) 后经过的分钟数的一天的时间。
+    ///  最大值为
+    ///  使用首次安装打印机 Microsoft Windows 添加打印机向导中，打印机默认为可用的所有时间，并且此属性在所有时区返回 0。
+    ///</returns>
     property UntilTimeOfDay: Int32 read get_UntilTimeOfDay write set_UntilTimeOfDay;
+    ///<summary>
+    ///  获取或设置一天，表示为协调世界时 (UTC) 午夜过后 （也称为格林威治标准时间 [GMT]） 打印机打印作业的分钟数的最早时间。
+    ///</summary>
+    ///<returns>
+    ///  第一次的打印机将成为可用的一天的时间表示为午夜 (UTC) 后经过的分钟数。
+    ///  最大值为
+    ///  使用首次安装打印机 Microsoft Windows 添加打印机向导中，打印机默认为可用的所有时间，并且此属性在所有时区返回 0。
+    ///</returns>
     property StartTimeOfDay: Int32 read get_StartTimeOfDay write set_StartTimeOfDay;
+    ///<summary>
+    ///  获取或设置提供给每个新的打印作业添加到队列的默认优先级。
+    ///</summary>
+    ///<returns>
+    ///  添加到队列中的打印作业默认优先级。
+    ///  可能的值介于 1 到 99 之间。
+    ///  默认值为 1。
+    ///</returns>
     property DefaultPriority: Int32 read get_DefaultPriority write set_DefaultPriority;
+    ///<summary>
+    ///  获取或设置打印队列的名称。
+    ///</summary>
+    ///<returns>
+    ///  打印队列的名称。
+    ///</returns>
     property Name: string read get_Name write set_Name;
+    ///<summary>
+    ///  获取或设置相对于其他打印队列，它由同一台打印服务器承载和使用同一台物理打印机的打印队列的优先级。
+    ///</summary>
+    ///<returns>
+    ///  打印队列的优先级。
+    ///  可能的值为从 1 到 99 之间。
+    ///  默认值为 1。
+    ///</returns>
     property Priority: Int32 read get_Priority write set_Priority;
+    ///<summary>
+    ///  获取包含当前的打印作业的配置设置的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintJobSettings" />
+    ///  保存当前打印作业的设置的值。
+    ///  这些设置包括作业和作业的引用的说明 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</returns>
     property CurrentJobSettings: DNPrintJobSettings read get_CurrentJobSettings;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否要取消当前的打印作业。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果正在取消打印作业;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property PrintingIsCancelled: Boolean read get_PrintingIsCancelled write set_PrintingIsCancelled;
+    ///<summary>
+    ///  获取该对象的父级。
+    ///</summary>
+    ///<returns>
+    ///  另一个 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  。
+    ///</returns>
     property Parent: DNPrintSystemObject read get_Parent;
+    ///<summary>
+    ///  获取属性和值对的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" />
+    ///  ，其中包含属性和值对。
+    ///</returns>
     property PropertiesCollection: DNPrintPropertyDictionary read get_PropertiesCollection;
   end;
 
@@ -1720,22 +4574,151 @@ type
   ['{0D52BA78-FF3D-59D6-9242-C6ABCDB15BC1}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintServer" />
+    ///  类，该类具有指定的路径属性筛选器和所需的访问。
+    ///</summary>
+    ///  <param name="path">
+    ///  名称和打印服务器的完整路径。
+    ///</param>
+    ///  <param name="propertiesFilter">
+    ///  构造函数初始化的属性名称的数组。
+    ///</param>
+    ///  <param name="desiredAccess">
+    ///  一个值，指定程序所需的打印服务器访问的类型。
+    ///</param>
+    ///<exception cref="T:System.Printing.PrintServerException"><paramref name="desiredAccess" />
+    ///  是一个值，可以仅可应用到 <see cref="T:System.Printing.PrintQueue" />
+    ///  对象，而不 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  对象。
+    ///  例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />
+    ///  。
+    ///</exception>
     {class} function init(path: string; propertiesFilter: TArray<string>; desiredAccess: DNPrintSystemDesiredAccess): DNPrintServer; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintServer" />
+    ///  类，并提供指定的路径、 <see cref="T:System.Printing.PrintServerIndexedProperty" />
+    ///  数组和所需的访问。
+    ///</summary>
+    ///  <param name="path">
+    ///  完整路径和打印服务器的名称
+    ///</param>
+    ///  <param name="propertiesFilter">
+    ///  构造函数初始化的属性。
+    ///</param>
+    ///  <param name="desiredAccess">
+    ///  一个值，指定程序所需的打印服务器访问的类型。
+    ///</param>
+    ///<exception cref="T:System.Printing.PrintServerException"><paramref name="desiredAccess" />
+    ///  是一个值，可以仅可应用到 <see cref="T:System.Printing.PrintQueue" />
+    ///  对象，而不 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  对象。
+    ///  例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />
+    ///  。
+    ///</exception>
     {class} function init(path: string; propertiesFilter: TArray<DNPrintServerIndexedProperty>; desiredAccess: DNPrintSystemDesiredAccess): DNPrintServer; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintServer" />
+    ///  类，该类具有指定的路径和所需的访问。
+    ///</summary>
+    ///  <param name="path">
+    ///  名称和打印服务器的完整路径。
+    ///</param>
+    ///  <param name="desiredAccess">
+    ///  一个值，指定程序所需的打印服务器访问的类型。
+    ///</param>
+    ///<exception cref="T:System.Printing.PrintServerException"><paramref name="desiredAccess" />
+    ///  是一个值，可以仅可应用到 <see cref="T:System.Printing.PrintQueue" />
+    ///  对象，而不 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  对象。
+    ///  例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />
+    ///  。
+    ///</exception>
     {class} function init(path: string; desiredAccess: DNPrintSystemDesiredAccess): DNPrintServer; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintServer" />
+    ///  类，该类表示本地打印服务器并将其分配指定 <see cref="T:System.Printing.PrintSystemDesiredAccess" />
+    ///  。
+    ///</summary>
+    ///  <param name="desiredAccess">
+    ///  一个值，指定程序所需的打印服务器访问的类型。
+    ///</param>
+    ///<exception cref="T:System.Printing.PrintServerException"><paramref name="desiredAccess" />
+    ///  是一个值，可以仅可应用到 <see cref="T:System.Printing.PrintQueue" />
+    ///  对象，而不 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  对象。
+    ///  例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />
+    ///  。
+    ///</exception>
     {class} function init(desiredAccess: DNPrintSystemDesiredAccess): DNPrintServer; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintServer" />
+    ///  类，该类具有指定的路径和属性筛选器。
+    ///</summary>
+    ///  <param name="path">
+    ///  名称和打印服务器的完整路径。
+    ///</param>
+    ///  <param name="propertiesFilter">
+    ///  构造函数初始化的属性名称的数组。
+    ///</param>
     {class} function init(path: string; propertiesFilter: TArray<string>): DNPrintServer; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintServer" />
+    ///  使用指定的类 <see cref="T:System.Printing.PrintServerIndexedProperty" />
+    ///  数组以确定哪些属性将被初始化。
+    ///</summary>
+    ///  <param name="path">
+    ///  完整路径和打印服务器的名称
+    ///</param>
+    ///  <param name="propertiesFilter">
+    ///  构造函数初始化的属性。
+    ///</param>
     {class} function init(path: string; propertiesFilter: TArray<DNPrintServerIndexedProperty>): DNPrintServer; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintServer" />
+    ///  类，该类具有指定的路径。
+    ///</summary>
+    ///  <param name="path">
+    ///  名称和打印服务器的完整路径。
+    ///</param>
     {class} function init(path: string): DNPrintServer; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Printing.PrintServer" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNPrintServer; overload;
 
   { static methods } 
 
+    ///<summary>
+    ///  移除指定 <see cref="T:System.Printing.PrintQueue" />
+    ///  从打印服务器。
+    ///</summary>
+    ///  <param name="printQueue">
+    ///  删除队列。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果成功删除队列;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     {class} function DeletePrintQueue(printQueue: DNPrintQueue): Boolean; overload;
+    ///<summary>
+    ///  从打印服务器中删除具有指定名称的打印队列。
+    ///</summary>
+    ///  <param name="printQueueName">
+    ///  删除队列的名称。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果成功删除队列;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     {class} function DeletePrintQueue(printQueueName: string): Boolean; overload;
 
   end;
 
+  ///<summary>
+  ///  管理打印服务器，这通常是一台计算机，但可以是专用的硬件打印服务器设备上的打印队列。
+  ///</summary>
   [DNTypeName('System.Printing.PrintServer')]
   DNPrintServer = interface(DNPrintSystemObject)
   ['{8B4C09E2-3D6D-3892-AB39-F38E3B771EFF}']
@@ -1768,20 +4751,245 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  打印服务器上安装的打印队列及关联的打印机驱动程序。
+    ///</summary>
+    ///  <param name="printQueueName">
+    ///  新的队列的名称。
+    ///</param>
+    ///  <param name="driverName">
+    ///  路径和名称的打印机驱动程序。
+    ///</param>
+    ///  <param name="portNames">
+    ///  新的队列使用的端口的 Id。
+    ///</param>
+    ///  <param name="printProcessorName">
+    ///  打印处理器的名称。
+    ///</param>
+    ///  <param name="initialParameters">
+    ///  初始化参数。
+    ///</param>
+    ///<returns>
+    ///  新的 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</returns>
     function InstallPrintQueue(printQueueName: string; driverName: string; portNames: TArray<string>; printProcessorName: string; initialParameters: DNPrintPropertyDictionary): DNPrintQueue; overload;
+    ///<summary>
+    ///  打印服务器上安装共享、 按优先级排列的打印队列及关联的打印机驱动程序。
+    ///</summary>
+    ///  <param name="printQueueName">
+    ///  新的队列的名称。
+    ///</param>
+    ///  <param name="driverName">
+    ///  路径和名称的打印机驱动程序。
+    ///</param>
+    ///  <param name="portNames">
+    ///  新的队列使用的端口的 Id。
+    ///</param>
+    ///  <param name="printProcessorName">
+    ///  打印处理器的名称。
+    ///</param>
+    ///  <param name="printQueueAttributes">
+    ///  属性，如新队列的标志。
+    ///</param>
+    ///  <param name="printQueueShareName">
+    ///  新队列的共享名称。
+    ///</param>
+    ///  <param name="printQueueComment">
+    ///  有关中的用户可见的队列的注释 Microsoft Windows UI。
+    ///</param>
+    ///  <param name="printQueueLocation">
+    ///  新队列的位置。
+    ///</param>
+    ///  <param name="printQueueSeparatorFile">
+    ///  在每个打印作业的开头插入文件的路径。
+    ///</param>
+    ///  <param name="printQueuePriority">
+    ///  一个从 1 到 99 之间，指定相对于打印服务器所承载的其他队列的队列的优先级值。
+    ///</param>
+    ///  <param name="printQueueDefaultPriority">
+    ///  一个指定新的打印作业发送到队列的默认优先级的 1 到 99 之间的值。
+    ///</param>
+    ///<returns>
+    ///  新创建的 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</returns>
     function InstallPrintQueue(printQueueName: string; driverName: string; portNames: TArray<string>; printProcessorName: string; printQueueAttributes: DNPrintQueueAttributes; printQueueShareName: string; printQueueComment: string; printQueueLocation: string; printQueueSeparatorFile: string; printQueuePriority: Int32; printQueueDefaultPriority: Int32): DNPrintQueue; overload;
+    ///<summary>
+    ///  打印服务器上安装按优先顺序排列的打印队列及关联的打印机驱动程序。
+    ///</summary>
+    ///  <param name="printQueueName">
+    ///  新的队列的名称。
+    ///</param>
+    ///  <param name="driverName">
+    ///  路径和名称的打印机驱动程序。
+    ///</param>
+    ///  <param name="portNames">
+    ///  新的队列使用的端口的 Id。
+    ///</param>
+    ///  <param name="printProcessorName">
+    ///  打印处理器的名称。
+    ///</param>
+    ///  <param name="printQueueAttributes">
+    ///  属性，如新队列的标志。
+    ///</param>
+    ///  <param name="printQueueProperty">
+    ///  注释、 位置或新队列的共享名中。
+    ///</param>
+    ///  <param name="printQueuePriority">
+    ///  一个从 1 到 99 之间，指定相对于打印服务器所承载的其他队列此打印队列的优先级值。
+    ///</param>
+    ///  <param name="printQueueDefaultPriority">
+    ///  一个从 1 到 99 之间的值，指定发送到队列的打印作业的默认优先级。
+    ///</param>
+    ///<returns>
+    ///  新创建的 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</returns>
     function InstallPrintQueue(printQueueName: string; driverName: string; portNames: TArray<string>; printProcessorName: string; printQueueAttributes: DNPrintQueueAttributes; printQueueProperty: DNPrintQueueStringProperty; printQueuePriority: Int32; printQueueDefaultPriority: Int32): DNPrintQueue; overload;
+    ///<summary>
+    ///  打印服务器上安装的打印队列及关联的打印机驱动程序。
+    ///</summary>
+    ///  <param name="printQueueName">
+    ///  新的队列的名称。
+    ///</param>
+    ///  <param name="driverName">
+    ///  路径和名称的打印机驱动程序。
+    ///</param>
+    ///  <param name="portNames">
+    ///  新的队列使用的端口的 Id。
+    ///</param>
+    ///  <param name="printProcessorName">
+    ///  打印处理器的名称。
+    ///</param>
+    ///  <param name="printQueueAttributes">
+    ///  属性，如新队列的标志。
+    ///</param>
+    ///<returns>
+    ///  新创建的 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</returns>
     function InstallPrintQueue(printQueueName: string; driverName: string; portNames: TArray<string>; printProcessorName: string; printQueueAttributes: DNPrintQueueAttributes): DNPrintQueue; overload;
+    ///<summary>
+    ///  从打印服务器中获取指定的打印队列。
+    ///</summary>
+    ///  <param name="printQueueName">
+    ///  打印队列的名称。
+    ///</param>
+    ///  <param name="propertiesFilter">
+    ///  返回队列中初始化的属性的名称。
+    ///</param>
+    ///<returns><see cref="T:System.Printing.PrintQueue" />
+    ///  与指定的名称从打印服务器。
+    ///</returns>
     function GetPrintQueue(printQueueName: string; propertiesFilter: TArray<string>): DNPrintQueue; overload;
+    ///<summary>
+    ///  获取对指定的打印队列中打印服务器的引用。
+    ///</summary>
+    ///  <param name="printQueueName">
+    ///  打印队列的名称。
+    ///</param>
+    ///<returns><see cref="T:System.Printing.PrintQueue" />
+    ///  与指定的名称从打印服务器。
+    ///</returns>
     function GetPrintQueue(printQueueName: string): DNPrintQueue; overload;
+    ///<summary>
+    ///  获取属于指定的打印队列的集合 <see cref="T:System.Printing.EnumeratedPrintQueueTypes" />
+    ///  并且仅在指定的属性中初始化。
+    ///</summary>
+    ///  <param name="propertiesFilter">
+    ///  已初始化的队列属性的名称。
+    ///</param>
+    ///  <param name="enumerationFlag">
+    ///  表示集合中返回的打印队列的类型的值的数组。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintQueueCollection" />
+    ///  的打印队列的指定类型; 每个打印队列仅包含的指定的属性初始化。
+    ///</returns>
     function GetPrintQueues(propertiesFilter: TArray<string>; enumerationFlag: TArray<DNEnumeratedPrintQueueTypes>): DNPrintQueueCollection; overload;
+    ///<summary>
+    ///  获取指定类型的打印队列的集合。
+    ///  中指定的属性中只初始化这些打印队列 <see cref="T:System.Printing.PrintQueueIndexedProperty" />
+    ///  数组。
+    ///</summary>
+    ///  <param name="propertiesFilter">
+    ///  构造函数初始化的属性。
+    ///</param>
+    ///  <param name="enumerationFlag">
+    ///  表示集合中的打印队列的类型的值的数组。
+    ///</param>
+    ///<returns><see cref="T:System.Printing.PrintQueueCollection" />
+    ///  的打印服务器。
+    ///</returns>
     function GetPrintQueues(propertiesFilter: TArray<DNPrintQueueIndexedProperty>; enumerationFlag: TArray<DNEnumeratedPrintQueueTypes>): DNPrintQueueCollection; overload;
+    ///<summary>
+    ///  获取集合中名为指定类型的打印队列的 <see cref="T:System.Printing.EnumeratedPrintQueueTypes" />
+    ///  和托管的打印服务器。
+    ///</summary>
+    ///  <param name="enumerationFlag">
+    ///  表示集合中的打印队列的类型的值的数组。
+    ///</param>
+    ///<returns><see cref="T:System.Printing.PrintQueueCollection" />
+    ///  的打印队列，打印服务器上的指定类型。
+    ///</returns>
     function GetPrintQueues(enumerationFlag: TArray<DNEnumeratedPrintQueueTypes>): DNPrintQueueCollection; overload;
+    ///<summary>
+    ///  获取由打印服务器承载和仅在指定的属性中初始化打印队列的集合。
+    ///</summary>
+    ///  <param name="propertiesFilter">
+    ///  已初始化的队列属性的名称。
+    ///</param>
+    ///<returns><see cref="T:System.Printing.PrintQueueCollection" />
+    ///  打印服务器; 上的打印队列的每个打印队列仅在中指定的属性中初始化 <paramref name="propertiesFilter" />
+    ///  。
+    ///</returns>
     function GetPrintQueues(propertiesFilter: TArray<string>): DNPrintQueueCollection; overload;
+    ///<summary>
+    ///  获取由打印服务器承载和仅在中指定的属性中初始化打印队列的集合 <see cref="T:System.Printing.PrintQueueIndexedProperty" />
+    ///  数组。
+    ///</summary>
+    ///  <param name="propertiesFilter">
+    ///  构造函数初始化的属性。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintQueueCollection" />
+    ///  仅在指定的属性中初始化其成员 <paramref name="propertiesFilter" />
+    ///  。
+    ///</returns>
     function GetPrintQueues(propertiesFilter: TArray<DNPrintQueueIndexedProperty>): DNPrintQueueCollection; overload;
+    ///<summary>
+    ///  获取的打印队列集合的打印服务器主机。
+    ///</summary>
+    ///<returns><see cref="T:System.Printing.PrintQueueCollection" />
+    ///  的打印服务器上的打印队列。
+    ///</returns>
     function GetPrintQueues: DNPrintQueueCollection; overload;
+    ///<summary>
+    ///  提交您的程序通过将其写入到的打印服务器，该对象表示对打印服务器对象的属性进行任何更改。
+    ///</summary>
+    ///<exception cref="T:System.Printing.PrintSystemException">
+    ///  某些属性不是已提交。
+    ///</exception><exception cref="T:System.Printing.PrintCommitAttributesException">
+    ///  某些属性无法提交。
+    ///  - 或 -
+    ///<see cref="T:System.Printing.PrintServer" />
+    ///  对象不创建具有足够权限。
+    ///  请参阅“备注”。
+    ///</exception>
     procedure Commit;
+    ///<summary>
+    ///  更新的属性 <see cref="T:System.Printing.PrintServer" />
+    ///  对象，以便让每个属性值匹配的打印服务器，该对象表示的相应属性值。
+    ///</summary>
+    ///<exception cref="T:System.Printing.PrintSystemException">
+    ///  无法刷新的某些属性。
+    ///</exception>
     procedure Refresh;
+    ///<summary>
+    ///  释放由 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  使用的所有资源。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1790,21 +4998,137 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取打印服务器的名称。
+    ///</summary>
+    ///<returns>
+    ///  打印服务器的名称。
+    ///</returns>
+    ///<exception cref="T:System.Printing.PrintSystemException">
+    ///  未初始化该属性。
+    ///</exception>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取后台打印程序系统的版本。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Byte" />
+    ///  ，标识打印后台处理程序系统的版本。
+    ///</returns>
     property SubSystemVersion: Byte read get_SubSystemVersion;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否用户可以重新启动作业后如果启用了打印机连接池，则会发生错误。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果可以启用打印机池后，重新启动作业否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property RestartJobOnPoolEnabled: Boolean read get_RestartJobOnPoolEnabled write set_RestartJobOnPoolEnabled;
+    ///<summary>
+    ///  获取或设置一个值，指示可以重新启动作业之前, 的等待时间，如果还启用打印机池时发生了错误。
+    ///</summary>
+    ///<returns>
+    ///  等待时间，以分钟为单位，一个作业重启之前。
+    ///</returns>
     property RestartJobOnPoolTimeout: Int32 read get_RestartJobOnPoolTimeout write set_RestartJobOnPoolTimeout;
+    ///<summary>
+    ///  获取操作系统的主版本中的次版本。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  ，标识操作系统的次要版本。
+    ///</returns>
     property MinorVersion: Int32 read get_MinorVersion;
+    ///<summary>
+    ///  获取操作系统的主版本。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  ，标识操作系统的主要版本。
+    ///</returns>
     property MajorVersion: Int32 read get_MajorVersion;
+    ///<summary>
+    ///  获取或设置打印服务器记录的事件的类型。
+    ///</summary>
+    ///<returns>
+    ///  值为 <see cref="T:System.Printing.PrintServerEventLoggingTypes" />
+    ///  标识由打印服务器提供的事件日志记录的类型。
+    ///  默认值为 <see cref="F:System.Printing.PrintServerEventLoggingTypes.LogPrintingErrorEvents" />
+    ///  。
+    ///</returns>
     property EventLog: DNPrintServerEventLoggingTypes read get_EventLog write set_EventLog;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否打印作业已完成的通知发送到打印服务器或客户端计算机。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果将通知发送到客户端计算机; <see langword="false" />
+    ///  如果将通知发送到打印服务器。
+    ///</returns>
     property NetPopup: Boolean read get_NetPopup write set_NetPopup;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否打印服务器在发出提示音到打印机中的错误条件。
+    ///</summary>
+    ///<returns><see cref="T:System.Boolean" />
+    ///<see langword="true" />
+    ///  如果打印服务器发出蜂鸣声以响应错误。，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property BeepEnabled: Boolean read get_BeepEnabled write set_BeepEnabled;
+    ///<summary>
+    ///  请勿使用。
+    ///</summary>
+    ///<returns>
+    ///  默认计划程序线程优先级。
+    ///</returns>
     property DefaultSchedulerPriority: DDN.mscorlib.DNThreadPriority read get_DefaultSchedulerPriority;
+    ///<summary>
+    ///  获取或设置将路由打印作业从打印队列的应用程序的进程的线程优先级。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Threading.ThreadPriority" />
+    ///  标识打印服务器安排进程的线程优先级别的枚举值。
+    ///  默认值为 <see cref="F:System.Threading.ThreadPriority.Normal" />
+    ///  。
+    ///</returns>
     property SchedulerPriority: DDN.mscorlib.DNThreadPriority read get_SchedulerPriority write set_SchedulerPriority;
+    ///<summary>
+    ///  请勿使用。
+    ///</summary>
+    ///<returns>
+    ///  线程的优先级。
+    ///</returns>
     property DefaultPortThreadPriority: DDN.mscorlib.DNThreadPriority read get_DefaultPortThreadPriority;
+    ///<summary>
+    ///  获取或设置通过打印机管理 I/O 的进程的线程优先级的端口。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Threading.ThreadPriority" />
+    ///  标识管理打印机端口的进程的线程优先级别的枚举值。
+    ///  默认值为 <see cref="F:System.Threading.ThreadPriority.Normal" />
+    ///  。
+    ///</returns>
     property PortThreadPriority: DDN.mscorlib.DNThreadPriority read get_PortThreadPriority write set_PortThreadPriority;
+    ///<summary>
+    ///  获取或设置打印服务器的后台打印文件的位置的路径。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  标识假脱机文件的文件夹的完整路径。
+    ///</returns>
     property DefaultSpoolDirectory: string read get_DefaultSpoolDirectory write set_DefaultSpoolDirectory;
+    ///<summary>
+    ///  获取该对象的父级。
+    ///</summary>
+    ///<returns>
+    ///  另一个 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  。
+    ///</returns>
     property Parent: DNPrintSystemObject read get_Parent;
+    ///<summary>
+    ///  获取属性和值对的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" />
+    ///  ，其中包含属性和值对。
+    ///</returns>
     property PropertiesCollection: DNPrintPropertyDictionary read get_PropertiesCollection;
   end;
 
@@ -1815,19 +5139,101 @@ type
   ['{FAA50997-9999-5CCC-8160-8F200AE3074F}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  类，该类具有指定的属性和 <see cref="T:System.Printing.PrintSystemDesiredAccess" />
+    ///  。
+    ///</summary>
+    ///  <param name="propertiesFilter">
+    ///  构造函数初始化的属性名称的数组。
+    ///</param>
+    ///  <param name="desiredAccess">
+    ///  指定对应用程序所需要的打印服务器的访问类型的值。
+    ///</param>
+    ///<exception cref="T:System.Printing.PrintServerException"><paramref name="desiredAccess" />
+    ///  是一个值，可以仅可应用到 <see cref="T:System.Printing.PrintQueue" />
+    ///  对象，而不 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  对象。
+    ///  例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />
+    ///  。
+    ///</exception>
     {class} function init(propertiesFilter: TArray<string>; desiredAccess: DNPrintSystemDesiredAccess): DNLocalPrintServer; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  类，该类具有指定 <see cref="T:System.Printing.LocalPrintServerIndexedProperty" />
+    ///  数组和指定 <see cref="T:System.Printing.PrintSystemDesiredAccess" />
+    ///  。
+    ///</summary>
+    ///  <param name="propertiesFilter">
+    ///  构造函数初始化的属性的数组。
+    ///</param>
+    ///  <param name="desiredAccess">
+    ///  指定对程序所需的打印服务器的访问类型的值。
+    ///</param>
+    ///<exception cref="T:System.Printing.PrintServerException"><paramref name="desiredAccess" />
+    ///  是一个值，可以仅可应用到 <see cref="T:System.Printing.PrintQueue" />
+    ///  对象，而不 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  对象。
+    ///  例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />
+    ///  。
+    ///</exception>
     {class} function init(propertiesFilter: TArray<DNLocalPrintServerIndexedProperty>; desiredAccess: DNPrintSystemDesiredAccess): DNLocalPrintServer; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  类，该类具有指定 <see cref="T:System.Printing.PrintSystemDesiredAccess" />
+    ///  。
+    ///</summary>
+    ///  <param name="desiredAccess">
+    ///  指定对应用程序所需要的打印服务器的访问类型的值。
+    ///</param>
+    ///<exception cref="T:System.Printing.PrintServerException"><paramref name="desiredAccess" />
+    ///  是一个值，可以仅可应用到 <see cref="T:System.Printing.PrintQueue" />
+    ///  对象，而不 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  对象。
+    ///  例如 <see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" />
+    ///  。
+    ///</exception>
     {class} function init(desiredAccess: DNPrintSystemDesiredAccess): DNLocalPrintServer; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  类，该类具有指定的属性。
+    ///</summary>
+    ///  <param name="propertiesFilter">
+    ///  构造函数初始化的属性名称的数组。
+    ///</param>
     {class} function init(propertiesFilter: TArray<string>): DNLocalPrintServer; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  类，该类具有指定 <see cref="T:System.Printing.LocalPrintServerIndexedProperty" />
+    ///  数组。
+    ///</summary>
+    ///  <param name="propertiesFilter">
+    ///  构造函数初始化的属性的数组。
+    ///</param>
     {class} function init(propertiesFilter: TArray<DNLocalPrintServerIndexedProperty>): DNLocalPrintServer; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNLocalPrintServer; overload;
 
   { static methods } 
 
+    ///<summary>
+    ///  返回到默认的打印队列的引用 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  默认的 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</returns>
     {class} function GetDefaultPrintQueue: DNPrintQueue;
 
   end;
 
+  ///<summary>
+  ///  表示本地打印服务器 （在其运行你的应用程序的计算机），并使其打印队列的管理。
+  ///</summary>
   [DNTypeName('System.Printing.LocalPrintServer')]
   DNLocalPrintServer = interface(DNPrintServer)
   ['{7822A26F-5EE1-3533-99C7-A054F018CFBB}']
@@ -1862,23 +5268,305 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  连接到使用指定的打印队列 <see cref="T:System.String" />
+    ///  。
+    ///</summary>
+    ///  <param name="printQueuePath">
+    ///  正在连接的打印队列的完整路径。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果建立连接;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Printing.PrintServerException">
+    ///  找不到具有指定的路径的打印队列。
+    ///</exception>
     function ConnectToPrintQueue(printQueuePath: string): Boolean; overload;
+    ///<summary>
+    ///  连接到指定的本地打印服务器 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="printer">
+    ///  要连接的打印队列。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果建立连接;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Printing.PrintServerException">
+    ///  匹配的打印队列 <see cref="P:System.Printing.PrintQueue.FullName" />
+    ///  属性 <paramref name="printer" />
+    ///  找不到。
+    ///</exception>
     function ConnectToPrintQueue(printer: DNPrintQueue): Boolean; overload;
+    ///<summary>
+    ///  从指定断开连接本地打印服务器 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="printer">
+    ///  打印队列，正在断开连接。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果成功，则断开连接则否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Printing.PrintServerException">
+    ///  打印队列匹配 <see cref="P:System.Printing.PrintQueue.FullName" />
+    ///  属性 <paramref name="printer" />
+    ///  找不到。
+    ///</exception>
     function DisconnectFromPrintQueue(printer: DNPrintQueue): Boolean; overload;
+    ///<summary>
+    ///  断开连接中指定的打印队列 <see cref="T:System.String" />
+    ///  。
+    ///</summary>
+    ///  <param name="printQueuePath">
+    ///  为断开连接的打印队列的完整路径。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果成功，则断开连接则否则为 <see langword="false" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.Printing.PrintServerException">
+    ///  找不到具有指定的路径的打印队列。
+    ///</exception>
     function DisconnectFromPrintQueue(printQueuePath: string): Boolean; overload;
+    ///<summary>
+    ///  写入的任何更改，您的应用程序的属性所做的 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  到该对象表示的实际打印服务器。
+    ///</summary>
+    ///<exception cref="T:System.Printing.PrintServerException">
+    ///  某些属性不会提交。
+    ///</exception><exception cref="T:System.Printing.PrintCommitAttributesException">
+    ///  某些属性无法提交。
+    ///  - 或 -
+    ///<see cref="T:System.Printing.LocalPrintServer" />
+    ///  对象不创建具有足够权限。
+    ///  请参阅“备注”。
+    ///</exception>
     procedure Commit;
+    ///<summary>
+    ///  更新的属性 <see cref="T:System.Printing.LocalPrintServer" />
+    ///  对象，以便让它们的值匹配的打印服务器，该对象表示的值。
+    ///</summary>
+    ///<exception cref="T:System.Printing.PrintServerException">
+    ///  某些属性不会更新。
+    ///</exception>
     procedure Refresh;
+    ///<summary>
+    ///  打印服务器上安装的打印队列及关联的打印机驱动程序。
+    ///</summary>
+    ///  <param name="printQueueName">
+    ///  新的队列的名称。
+    ///</param>
+    ///  <param name="driverName">
+    ///  路径和名称的打印机驱动程序。
+    ///</param>
+    ///  <param name="portNames">
+    ///  新的队列使用的端口的 Id。
+    ///</param>
+    ///  <param name="printProcessorName">
+    ///  打印处理器的名称。
+    ///</param>
+    ///  <param name="initialParameters">
+    ///  初始化参数。
+    ///</param>
+    ///<returns>
+    ///  新的 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</returns>
     function InstallPrintQueue(printQueueName: string; driverName: string; portNames: TArray<string>; printProcessorName: string; initialParameters: DNPrintPropertyDictionary): DNPrintQueue; overload;
+    ///<summary>
+    ///  打印服务器上安装共享、 按优先级排列的打印队列及关联的打印机驱动程序。
+    ///</summary>
+    ///  <param name="printQueueName">
+    ///  新的队列的名称。
+    ///</param>
+    ///  <param name="driverName">
+    ///  路径和名称的打印机驱动程序。
+    ///</param>
+    ///  <param name="portNames">
+    ///  新的队列使用的端口的 Id。
+    ///</param>
+    ///  <param name="printProcessorName">
+    ///  打印处理器的名称。
+    ///</param>
+    ///  <param name="printQueueAttributes">
+    ///  属性，如新队列的标志。
+    ///</param>
+    ///  <param name="printQueueShareName">
+    ///  新队列的共享名称。
+    ///</param>
+    ///  <param name="printQueueComment">
+    ///  有关中的用户可见的队列的注释 Microsoft Windows UI。
+    ///</param>
+    ///  <param name="printQueueLocation">
+    ///  新队列的位置。
+    ///</param>
+    ///  <param name="printQueueSeparatorFile">
+    ///  在每个打印作业的开头插入文件的路径。
+    ///</param>
+    ///  <param name="printQueuePriority">
+    ///  一个从 1 到 99 之间，指定相对于打印服务器所承载的其他队列的队列的优先级值。
+    ///</param>
+    ///  <param name="printQueueDefaultPriority">
+    ///  一个指定新的打印作业发送到队列的默认优先级的 1 到 99 之间的值。
+    ///</param>
+    ///<returns>
+    ///  新创建的 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</returns>
     function InstallPrintQueue(printQueueName: string; driverName: string; portNames: TArray<string>; printProcessorName: string; printQueueAttributes: DNPrintQueueAttributes; printQueueShareName: string; printQueueComment: string; printQueueLocation: string; printQueueSeparatorFile: string; printQueuePriority: Int32; printQueueDefaultPriority: Int32): DNPrintQueue; overload;
+    ///<summary>
+    ///  打印服务器上安装按优先顺序排列的打印队列及关联的打印机驱动程序。
+    ///</summary>
+    ///  <param name="printQueueName">
+    ///  新的队列的名称。
+    ///</param>
+    ///  <param name="driverName">
+    ///  路径和名称的打印机驱动程序。
+    ///</param>
+    ///  <param name="portNames">
+    ///  新的队列使用的端口的 Id。
+    ///</param>
+    ///  <param name="printProcessorName">
+    ///  打印处理器的名称。
+    ///</param>
+    ///  <param name="printQueueAttributes">
+    ///  属性，如新队列的标志。
+    ///</param>
+    ///  <param name="printQueueProperty">
+    ///  注释、 位置或新队列的共享名中。
+    ///</param>
+    ///  <param name="printQueuePriority">
+    ///  一个从 1 到 99 之间，指定相对于打印服务器所承载的其他队列此打印队列的优先级值。
+    ///</param>
+    ///  <param name="printQueueDefaultPriority">
+    ///  一个从 1 到 99 之间的值，指定发送到队列的打印作业的默认优先级。
+    ///</param>
+    ///<returns>
+    ///  新创建的 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</returns>
     function InstallPrintQueue(printQueueName: string; driverName: string; portNames: TArray<string>; printProcessorName: string; printQueueAttributes: DNPrintQueueAttributes; printQueueProperty: DNPrintQueueStringProperty; printQueuePriority: Int32; printQueueDefaultPriority: Int32): DNPrintQueue; overload;
+    ///<summary>
+    ///  打印服务器上安装的打印队列及关联的打印机驱动程序。
+    ///</summary>
+    ///  <param name="printQueueName">
+    ///  新的队列的名称。
+    ///</param>
+    ///  <param name="driverName">
+    ///  路径和名称的打印机驱动程序。
+    ///</param>
+    ///  <param name="portNames">
+    ///  新的队列使用的端口的 Id。
+    ///</param>
+    ///  <param name="printProcessorName">
+    ///  打印处理器的名称。
+    ///</param>
+    ///  <param name="printQueueAttributes">
+    ///  属性，如新队列的标志。
+    ///</param>
+    ///<returns>
+    ///  新创建的 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</returns>
     function InstallPrintQueue(printQueueName: string; driverName: string; portNames: TArray<string>; printProcessorName: string; printQueueAttributes: DNPrintQueueAttributes): DNPrintQueue; overload;
+    ///<summary>
+    ///  从打印服务器中获取指定的打印队列。
+    ///</summary>
+    ///  <param name="printQueueName">
+    ///  打印队列的名称。
+    ///</param>
+    ///  <param name="propertiesFilter">
+    ///  返回队列中初始化的属性的名称。
+    ///</param>
+    ///<returns><see cref="T:System.Printing.PrintQueue" />
+    ///  与指定的名称从打印服务器。
+    ///</returns>
     function GetPrintQueue(printQueueName: string; propertiesFilter: TArray<string>): DNPrintQueue; overload;
+    ///<summary>
+    ///  获取对指定的打印队列中打印服务器的引用。
+    ///</summary>
+    ///  <param name="printQueueName">
+    ///  打印队列的名称。
+    ///</param>
+    ///<returns><see cref="T:System.Printing.PrintQueue" />
+    ///  与指定的名称从打印服务器。
+    ///</returns>
     function GetPrintQueue(printQueueName: string): DNPrintQueue; overload;
+    ///<summary>
+    ///  获取属于指定的打印队列的集合 <see cref="T:System.Printing.EnumeratedPrintQueueTypes" />
+    ///  并且仅在指定的属性中初始化。
+    ///</summary>
+    ///  <param name="propertiesFilter">
+    ///  已初始化的队列属性的名称。
+    ///</param>
+    ///  <param name="enumerationFlag">
+    ///  表示集合中返回的打印队列的类型的值的数组。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintQueueCollection" />
+    ///  的打印队列的指定类型; 每个打印队列仅包含的指定的属性初始化。
+    ///</returns>
     function GetPrintQueues(propertiesFilter: TArray<string>; enumerationFlag: TArray<DNEnumeratedPrintQueueTypes>): DNPrintQueueCollection; overload;
+    ///<summary>
+    ///  获取指定类型的打印队列的集合。
+    ///  中指定的属性中只初始化这些打印队列 <see cref="T:System.Printing.PrintQueueIndexedProperty" />
+    ///  数组。
+    ///</summary>
+    ///  <param name="propertiesFilter">
+    ///  构造函数初始化的属性。
+    ///</param>
+    ///  <param name="enumerationFlag">
+    ///  表示集合中的打印队列的类型的值的数组。
+    ///</param>
+    ///<returns><see cref="T:System.Printing.PrintQueueCollection" />
+    ///  的打印服务器。
+    ///</returns>
     function GetPrintQueues(propertiesFilter: TArray<DNPrintQueueIndexedProperty>; enumerationFlag: TArray<DNEnumeratedPrintQueueTypes>): DNPrintQueueCollection; overload;
+    ///<summary>
+    ///  获取集合中名为指定类型的打印队列的 <see cref="T:System.Printing.EnumeratedPrintQueueTypes" />
+    ///  和托管的打印服务器。
+    ///</summary>
+    ///  <param name="enumerationFlag">
+    ///  表示集合中的打印队列的类型的值的数组。
+    ///</param>
+    ///<returns><see cref="T:System.Printing.PrintQueueCollection" />
+    ///  的打印队列，打印服务器上的指定类型。
+    ///</returns>
     function GetPrintQueues(enumerationFlag: TArray<DNEnumeratedPrintQueueTypes>): DNPrintQueueCollection; overload;
+    ///<summary>
+    ///  获取由打印服务器承载和仅在指定的属性中初始化打印队列的集合。
+    ///</summary>
+    ///  <param name="propertiesFilter">
+    ///  已初始化的队列属性的名称。
+    ///</param>
+    ///<returns><see cref="T:System.Printing.PrintQueueCollection" />
+    ///  打印服务器; 上的打印队列的每个打印队列仅在中指定的属性中初始化 <paramref name="propertiesFilter" />
+    ///  。
+    ///</returns>
     function GetPrintQueues(propertiesFilter: TArray<string>): DNPrintQueueCollection; overload;
+    ///<summary>
+    ///  获取由打印服务器承载和仅在中指定的属性中初始化打印队列的集合 <see cref="T:System.Printing.PrintQueueIndexedProperty" />
+    ///  数组。
+    ///</summary>
+    ///  <param name="propertiesFilter">
+    ///  构造函数初始化的属性。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintQueueCollection" />
+    ///  仅在指定的属性中初始化其成员 <paramref name="propertiesFilter" />
+    ///  。
+    ///</returns>
     function GetPrintQueues(propertiesFilter: TArray<DNPrintQueueIndexedProperty>): DNPrintQueueCollection; overload;
+    ///<summary>
+    ///  获取的打印队列集合的打印服务器主机。
+    ///</summary>
+    ///<returns><see cref="T:System.Printing.PrintQueueCollection" />
+    ///  的打印服务器上的打印队列。
+    ///</returns>
     function GetPrintQueues: DNPrintQueueCollection; overload;
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -1888,20 +5576,128 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取或设置默认打印队列。
+    ///</summary>
+    ///<returns><see cref="T:System.Printing.PrintQueue" />
+    ///  被指定为本地计算机的默认队列。
+    ///</returns>
     property DefaultPrintQueue: DNPrintQueue read get_DefaultPrintQueue write set_DefaultPrintQueue;
+    ///<summary>
+    ///  获取打印服务器的名称。
+    ///</summary>
+    ///<returns>
+    ///  打印服务器的名称。
+    ///</returns>
+    ///<exception cref="T:System.Printing.PrintSystemException">
+    ///  未初始化该属性。
+    ///</exception>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取后台打印程序系统的版本。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Byte" />
+    ///  ，标识打印后台处理程序系统的版本。
+    ///</returns>
     property SubSystemVersion: Byte read get_SubSystemVersion;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否用户可以重新启动作业后如果启用了打印机连接池，则会发生错误。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果可以启用打印机池后，重新启动作业否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property RestartJobOnPoolEnabled: Boolean read get_RestartJobOnPoolEnabled write set_RestartJobOnPoolEnabled;
+    ///<summary>
+    ///  获取或设置一个值，指示可以重新启动作业之前, 的等待时间，如果还启用打印机池时发生了错误。
+    ///</summary>
+    ///<returns>
+    ///  等待时间，以分钟为单位，一个作业重启之前。
+    ///</returns>
     property RestartJobOnPoolTimeout: Int32 read get_RestartJobOnPoolTimeout write set_RestartJobOnPoolTimeout;
+    ///<summary>
+    ///  获取操作系统的主版本中的次版本。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  ，标识操作系统的次要版本。
+    ///</returns>
     property MinorVersion: Int32 read get_MinorVersion;
+    ///<summary>
+    ///  获取操作系统的主版本。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  ，标识操作系统的主要版本。
+    ///</returns>
     property MajorVersion: Int32 read get_MajorVersion;
+    ///<summary>
+    ///  获取或设置打印服务器记录的事件的类型。
+    ///</summary>
+    ///<returns>
+    ///  值为 <see cref="T:System.Printing.PrintServerEventLoggingTypes" />
+    ///  标识由打印服务器提供的事件日志记录的类型。
+    ///  默认值为 <see cref="F:System.Printing.PrintServerEventLoggingTypes.LogPrintingErrorEvents" />
+    ///  。
+    ///</returns>
     property EventLog: DNPrintServerEventLoggingTypes read get_EventLog write set_EventLog;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否打印作业已完成的通知发送到打印服务器或客户端计算机。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果将通知发送到客户端计算机; <see langword="false" />
+    ///  如果将通知发送到打印服务器。
+    ///</returns>
     property NetPopup: Boolean read get_NetPopup write set_NetPopup;
+    ///<summary>
+    ///  获取或设置一个值，该值指示是否打印服务器在发出提示音到打印机中的错误条件。
+    ///</summary>
+    ///<returns><see cref="T:System.Boolean" />
+    ///<see langword="true" />
+    ///  如果打印服务器发出蜂鸣声以响应错误。，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property BeepEnabled: Boolean read get_BeepEnabled write set_BeepEnabled;
+    ///<summary>
+    ///  请勿使用。
+    ///</summary>
+    ///<returns>
+    ///  默认计划程序线程优先级。
+    ///</returns>
     property DefaultSchedulerPriority: DDN.mscorlib.DNThreadPriority read get_DefaultSchedulerPriority;
+    ///<summary>
+    ///  获取或设置将路由打印作业从打印队列的应用程序的进程的线程优先级。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Threading.ThreadPriority" />
+    ///  标识打印服务器安排进程的线程优先级别的枚举值。
+    ///  默认值为 <see cref="F:System.Threading.ThreadPriority.Normal" />
+    ///  。
+    ///</returns>
     property SchedulerPriority: DDN.mscorlib.DNThreadPriority read get_SchedulerPriority write set_SchedulerPriority;
+    ///<summary>
+    ///  请勿使用。
+    ///</summary>
+    ///<returns>
+    ///  线程的优先级。
+    ///</returns>
     property DefaultPortThreadPriority: DDN.mscorlib.DNThreadPriority read get_DefaultPortThreadPriority;
+    ///<summary>
+    ///  获取或设置通过打印机管理 I/O 的进程的线程优先级的端口。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Threading.ThreadPriority" />
+    ///  标识管理打印机端口的进程的线程优先级别的枚举值。
+    ///  默认值为 <see cref="F:System.Threading.ThreadPriority.Normal" />
+    ///  。
+    ///</returns>
     property PortThreadPriority: DDN.mscorlib.DNThreadPriority read get_PortThreadPriority write set_PortThreadPriority;
+    ///<summary>
+    ///  获取或设置打印服务器的后台打印文件的位置的路径。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  标识假脱机文件的文件夹的完整路径。
+    ///</returns>
     property DefaultSpoolDirectory: string read get_DefaultSpoolDirectory write set_DefaultSpoolDirectory;
     property Parent: DNPrintSystemObject read get_Parent;
     property PropertiesCollection: DNPrintPropertyDictionary read get_PropertiesCollection;
@@ -1914,10 +5710,29 @@ type
   ['{7A8A1CE6-1206-539E-A570-1F4C5FB18C20}']
   { static methods } 
 
+    ///<summary>
+    ///  获取 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  指定作业中指定 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///  <param name="printQueue">
+    ///  承载打印作业打印队列。
+    ///</param>
+    ///  <param name="jobIdentifier">
+    ///  打印作业的数字 ID。
+    ///</param>
+    ///<returns>
+    ///  与 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  对应的 <paramref name="jobIdentifier" />
+    ///  。
+    ///</returns>
     {class} function Get(printQueue: DNPrintQueue; jobIdentifier: Int32): DNPrintSystemJobInfo;
 
   end;
 
+  ///<summary>
+  ///  在详细信息定义打印作业。
+  ///</summary>
   [DNTypeName('System.Printing.PrintSystemJobInfo')]
   DNPrintSystemJobInfo = interface(DNPrintSystemObject)
   ['{A28863F8-FA1F-3DFA-8450-858EFE8692CC}']
@@ -1960,12 +5775,37 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  暂停打印作业之前 <see cref="M:System.Printing.PrintSystemJobInfo.Resume" />
+    ///  运行。
+    ///</summary>
     procedure Pause;
+    ///<summary>
+    ///  恢复暂停的打印作业进行打印。
+    ///</summary>
     procedure Resume;
+    ///<summary>
+    ///  取消打印作业。
+    ///</summary>
     procedure Cancel;
+    ///<summary>
+    ///  重新启动从一开始打印作业。
+    ///</summary>
     procedure Restart;
+    ///<summary>
+    ///  将任何更改的属性写入 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  对象传递给该对象表示的实际打印作业。
+    ///</summary>
     procedure Commit;
+    ///<summary>
+    ///  更新的属性 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  对象，以便让它们的值与实际的打印作业，该对象表示的值匹配。
+    ///</summary>
     procedure Refresh;
+    ///<summary>
+    ///  释放由 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  使用的所有资源。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1974,38 +5814,270 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取承载打印作业的打印队列的打印服务器。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintServer" />
+    ///  值，该值表示为宿主的打印服务器 （通常为计算机） <see cref="T:System.Printing.PrintQueue" />
+    ///  拥有打印作业。
+    ///</returns>
     property HostingPrintServer: DNPrintServer read get_HostingPrintServer;
+    ///<summary>
+    ///  获取承载打印作业的打印队列。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintQueue" />
+    ///  值，该值表示拥有打印作业的打印队列。
+    ///</returns>
     property HostingPrintQueue: DNPrintQueue read get_HostingPrintQueue;
+    ///<summary>
+    ///  获取或设置打印作业的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  为打印作业的名称。
+    ///</returns>
     property JobName: string read get_JobName write set_JobName;
+    ///<summary>
+    ///  获取一个值，该值指示是否已保存打印作业队列中打印后。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果已保存打印作业。否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsRetained: Boolean read get_IsRetained;
+    ///<summary>
+    ///  获取一个值，该值指示打印机是否需要用户干预。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果需要用户干预。否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsUserInterventionRequired: Boolean read get_IsUserInterventionRequired;
+    ///<summary>
+    ///  获取一个值，该值指示是否阻止打印作业，因此，无法打印。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果被阻止的打印作业;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsBlocked: Boolean read get_IsBlocked;
+    ///<summary>
+    ///  获取一个值，该值指示是否打印作业，由表示 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  对象，从打印队列已被删除。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果已删除打印作业;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsDeleted: Boolean read get_IsDeleted;
+    ///<summary>
+    ///  获取一个值，该值指示打印机已用完的纸张大小和打印作业所需的类型。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机已用完所需的纸张;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsPaperOut: Boolean read get_IsPaperOut;
+    ///<summary>
+    ///  获取一个值，该值指示打印机处于脱机状态。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机处于脱机状态。否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsOffline: Boolean read get_IsOffline;
+    ///<summary>
+    ///  获取一个值，该值指示是否正在打印打印作业。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机打印;，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsPrinting: Boolean read get_IsPrinting;
+    ///<summary>
+    ///  获取一个值，该值指示是否与打印作业相关联的错误条件。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印作业; 与相关联的错误条件否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsInError: Boolean read get_IsInError;
+    ///<summary>
+    ///  获取一个值，该值指示是否正在后台处理打印作业。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果正在进行后台处理打印作业;，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsSpooling: Boolean read get_IsSpooling;
+    ///<summary>
+    ///  获取一个值，该值指示是否已重新启动打印作业。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印机打印;，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsRestarted: Boolean read get_IsRestarted;
+    ///<summary>
+    ///  获取一个值，该值指示是否打印打印作业。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果已打印的打印作业;，否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsPrinted: Boolean read get_IsPrinted;
+    ///<summary>
+    ///  获取一个值，该值指示是否已暂停打印作业。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印作业已暂停;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsPaused: Boolean read get_IsPaused;
+    ///<summary>
+    ///  获取一个值，该值指示是否正在从打印队列中删除打印作业。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果正在删除打印作业;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsDeleting: Boolean read get_IsDeleting;
+    ///<summary>
+    ///  获取一个值，该值指示是否已完成打印作业。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果打印作业已完成;否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsCompleted: Boolean read get_IsCompleted;
+    ///<summary>
+    ///  获取打印作业的当前状态。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintJobStatus" />
+    ///  值。
+    ///</returns>
     property JobStatus: DNPrintJobStatus read get_JobStatus;
+    ///<summary>
+    ///  获取时间，以毫秒为单位，因为打印作业开始打印。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  打印作业启动后，它表示的时间，以毫秒为单位。
+    ///</returns>
     property TimeSinceStartedPrinting: Int32 read get_TimeSinceStartedPrinting;
+    ///<summary>
+    ///  获取日期和提交打印作业的时间。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.DateTime" />
+    ///  对象，其中包含的日期和提交打印作业的时间。
+    ///</returns>
     property TimeJobSubmitted: DDN.mscorlib.DNDateTime read get_TimeJobSubmitted;
+    ///<summary>
+    ///  获取大小，以字节为单位的打印作业。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  ，它指示的大小，以字节为单位的打印作业。
+    ///</returns>
     property JobSize: Int32 read get_JobSize;
+    ///<summary>
+    ///  获取已打印的页数。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  ，说明的已打印的页数。
+    ///</returns>
     property NumberOfPagesPrinted: Int32 read get_NumberOfPagesPrinted;
+    ///<summary>
+    ///  在打印作业中获取的页数。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  ，它指示在打印作业中的页面数。
+    ///</returns>
     property NumberOfPages: Int32 read get_NumberOfPages;
+    ///<summary>
+    ///  获取一天，表示协调世界时 (UTC) （也称为格林威治标准时间 [GMT]） 打印作业可以开始打印的最后一个时间。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  ，指定可以打印作业，以表示午夜 (UTC) 后经过的分钟数的最后一个时间。
+    ///  最大值为
+    ///</returns>
     property UntilTimeOfDay: Int32 read get_UntilTimeOfDay;
+    ///<summary>
+    ///  获取一天，表示为协调世界时 (UTC) 午夜过后 （也称为格林威治标准时间 [GMT]） 打印作业可以开始打印的分钟数的最早时间。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  指定可能的最早开始时间为打印作业，以表示午夜 (UTC) 后经过的分钟数。
+    ///  最大值为
+    ///</returns>
     property StartTimeOfDay: Int32 read get_StartTimeOfDay;
+    ///<summary>
+    ///  获取在打印队列中的打印作业的位置。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  ，它指示在队列中的打印作业的位置。
+    ///</returns>
     property PositionInPrintQueue: Int32 read get_PositionInPrintQueue;
+    ///<summary>
+    ///  获取表示相对于其他作业打印队列中打印作业的优先级的非数值表达式。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintJobPriority" />
+    ///  ，表示为打印作业的优先级 <see cref="F:System.Printing.PrintJobPriority.Maximum" />
+    ///  , ，<see cref="F:System.Printing.PrintJobPriority.Minimum" />
+    ///  , ，<see cref="F:System.Printing.PrintJobPriority.Default" />
+    ///  , ，或 <see cref="F:System.Printing.PrintJobPriority.None" />
+    ///  。
+    ///</returns>
     property Priority: DNPrintJobPriority read get_Priority;
+    ///<summary>
+    ///  获取提交打印作业的用户的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  标识提交打印作业的用户。
+    ///</returns>
     property Submitter: string read get_Submitter;
+    ///<summary>
+    ///  获取为打印作业的标识号。
+    ///</summary>
+    ///<returns><see cref="T:System.Int32" />
+    ///  标识打印作业。
+    ///</returns>
     property JobIdentifier: Int32 read get_JobIdentifier;
+    ///<summary>
+    ///  获取对打印作业的 <see cref="T:System.IO.Stream" />
+    ///  的引用。
+    ///</summary>
+    ///<returns>
+    ///  一个包含打印作业的 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</returns>
     property JobStream: DDN.mscorlib.DNStream read get_JobStream;
+    ///<summary>
+    ///  获取该对象的父级。
+    ///</summary>
+    ///<returns>
+    ///  另一个 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  。
+    ///</returns>
     property Parent: DNPrintSystemObject read get_Parent;
+    ///<summary>
+    ///  获取对象的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  ，它表示对象的名称。
+    ///</returns>
     property Name: string read get_Name;
+    ///<summary>
+    ///  获取属性和值对的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.IndexedProperties.PrintPropertyDictionary" />
+    ///  ，其中包含属性和值对。
+    ///</returns>
     property PropertiesCollection: DNPrintPropertyDictionary read get_PropertiesCollection;
   end;
 
@@ -2016,11 +6088,18 @@ type
   ['{F171EE2C-DEA5-59DA-B326-AD0083BC0075}']
   end;
 
+  ///<summary>
+  ///  表示打印系统对象的集合。
+  ///</summary>
   [DNTypeName('System.Printing.PrintSystemObjects')]
   DNPrintSystemObjects = interface(DDN.mscorlib.DNIDisposable)
   ['{91B37FBF-B9FD-3196-B6C0-913E4197E91D}']
   { methods } 
 
+    ///<summary>
+    ///  释放由 <see cref="T:System.Printing.PrintSystemObjects" />
+    ///  使用的所有资源。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2036,18 +6115,67 @@ type
   ['{EC38D05B-7535-527D-842E-A8B208E18031}']
   { constructors } 
 
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintJobInfoCollection" />
+    ///  类，该类包含 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  对象在指定每个作业 <see cref="T:System.Printing.PrintQueue" />
+    ///  并初始化这些对象仅在指定的属性筛选器中列出的属性。
+    ///</summary>
+    ///  <param name="printQueue">
+    ///  打印队列的打印作业将填充的集合。
+    ///</param>
+    ///  <param name="propertyFilter">
+    ///  列表的属性子集 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  对象。
+    ///</param>
     {class} function init(printQueue: DNPrintQueue; propertyFilter: TArray<string>): DNPrintJobInfoCollection;
 
   end;
 
+  ///<summary>
+  ///  表示一个或多个 <see cref="T:System.Printing.PrintSystemJobInfo" />
+  ///  对象。
+  ///</summary>
   [DNTypeName('System.Printing.PrintJobInfoCollection')]
   DNPrintJobInfoCollection = interface(DNPrintSystemObjects)
   ['{E770F674-237E-3104-910A-955E6DFC96AD}']
   { methods } 
 
+    ///<summary>
+    ///  获取一个对象，实现非泛型 <see cref="T:System.Collections.IEnumerator" />
+    ///  接口。
+    ///</summary>
+    ///<returns>
+    ///  实现非泛型的对象 <see cref="T:System.Collections.IEnumerator" />
+    ///  接口，并且可循环访问 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  对象 <see cref="T:System.Printing.PrintJobInfoCollection" />
+    ///  包含。
+    ///</returns>
     function GetNonGenericEnumerator: DDN.mscorlib.DNIEnumerator;
+    ///<summary>
+    ///  获取一个对象，实现泛型 <see cref="T:System.Collections.IEnumerator" />
+    ///  接口与关闭 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个对象，实现泛型 <see cref="T:System.Collections.IEnumerator" />
+    ///  接口，并且可循环访问 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  对象 <see cref="T:System.Printing.PrintJobInfoCollection" />
+    ///  包含。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator<DNPrintSystemJobInfo>;
+    ///<summary>
+    ///  添加到成员 <see cref="T:System.Printing.PrintJobInfoCollection" />
+    ///  。
+    ///</summary>
+    ///  <param name="printObject">
+    ///  为添加的对象。
+    ///</param>
     procedure Add(printObject: DNPrintSystemJobInfo);
+    ///<summary>
+    ///  释放由 <see cref="T:System.Printing.PrintSystemObjects" />
+    ///  使用的所有资源。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2067,23 +6195,97 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  为指定的 <see cref="T:System.Printing.PrintServer" />
+    ///  初始化 <see cref="T:System.Printing.PrintQueueCollection" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="printServer">
+    ///  承载该集合中的打印服务器。
+    ///</param>
+    ///  <param name="propertyFilter">
+    ///  已初始化的集合成员的属性。
+    ///</param>
     {class} function init(printServer: DNPrintServer; propertyFilter: TArray<string>): DNPrintQueueCollection; overload;
+    ///<summary>
+    ///  新实例初始化 <see cref="T:System.Printing.PrintQueueCollection" />
+    ///  为指定的类 <see cref="T:System.Printing.PrintServer" />
+    ///  , ，包含指定的打印服务器的队列仅 <see cref="T:System.Printing.EnumeratedPrintQueueTypes" />
+    ///  。
+    ///</summary>
+    ///  <param name="printServer">
+    ///  承载该集合中的打印服务器。
+    ///</param>
+    ///  <param name="propertyFilter">
+    ///  已初始化的集合成员的属性。
+    ///</param>
+    ///  <param name="enumerationFlag">
+    ///  一个数组，指定集合中包括的打印队列的类型。
+    ///</param>
     {class} function init(printServer: DNPrintServer; propertyFilter: TArray<string>; enumerationFlag: TArray<DNEnumeratedPrintQueueTypes>): DNPrintQueueCollection; overload;
+    ///<summary>
+    ///  初始化 <see cref="T:System.Printing.PrintQueueCollection" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNPrintQueueCollection; overload;
 
   { static propertys } 
 
+    ///<summary>
+    ///  获取可用于同步对 <see cref="T:System.Printing.PrintQueueCollection" />
+    ///  的访问的对象。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Object" />
+    ///  可用于同步对集合的访问。
+    ///</returns>
     {class} property SyncRoot: DDN.mscorlib.DNObject read get_SyncRoot;
   end;
 
+  ///<summary>
+  ///  表示 <see cref="T:System.Printing.PrintQueue" />
+  ///  对象集合。
+  ///</summary>
   [DNTypeName('System.Printing.PrintQueueCollection')]
   DNPrintQueueCollection = interface(DNPrintSystemObjects)
   ['{7B152755-3B52-3782-9942-86C71A3ACB91}']
   { methods } 
 
+    ///<summary>
+    ///  获取一个对象，实现非泛型 <see cref="T:System.Collections.IEnumerator" />
+    ///  接口。
+    ///</summary>
+    ///<returns>
+    ///  实现非泛型的对象 <see cref="T:System.Collections.IEnumerator" />
+    ///  和可遍历 <see cref="T:System.Printing.PrintQueue" />
+    ///  对象 <see cref="T:System.Printing.PrintQueueCollection" />
+    ///  包含。
+    ///</returns>
     function GetNonGenericEnumerator: DDN.mscorlib.DNIEnumerator;
+    ///<summary>
+    ///  返回一个对象，实现泛型 <see cref="T:System.Collections.IEnumerator" />
+    ///  接口已关闭与 <see cref="T:System.Printing.PrintQueue" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个对象，实现泛型 <see cref="T:System.Collections.IEnumerator" />
+    ///  和可遍历 <see cref="T:System.Printing.PrintQueue" />
+    ///  对象 <see cref="T:System.Printing.PrintQueueCollection" />
+    ///  包含。
+    ///</returns>
     function GetEnumerator: DDN.mscorlib.DNIEnumerator<DNPrintQueue>;
+    ///<summary>
+    ///  将 <see cref="T:System.Printing.PrintQueue" />
+    ///  添加到集合。
+    ///</summary>
+    ///  <param name="printObject">
+    ///  添加打印队列。
+    ///</param>
     procedure Add(printObject: DNPrintQueue);
+    ///<summary>
+    ///  释放由 <see cref="T:System.Printing.PrintSystemObjects" />
+    ///  使用的所有资源。
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;

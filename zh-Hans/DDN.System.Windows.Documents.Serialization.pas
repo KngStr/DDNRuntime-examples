@@ -33,13 +33,29 @@ type
 { enums }
 
   //-------------namespace: System.Windows.Documents.Serialization----------------
+  ///<summary>
+  ///  指定的范围 <see cref="E:System.Windows.Documents.Serialization.SerializerWriter.WritingProgressChanged" />
+  ///  事件。
+  ///</summary>
   [DNTypeName('System.Windows.Documents.Serialization.WritingProgressChangeLevel')]
   DNWritingProgressChangeLevel = type Integer;
   DNWritingProgressChangeLevelHelper = record helper for DNWritingProgressChangeLevel
   public const
+    ///<summary>
+    ///  未指定输出进度。
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  多个文档的顺序输出进度。
+    ///</summary>
     FixedDocumentSequenceWritingProgress = 1;
+    ///<summary>
+    ///  单个文档输出进度。
+    ///</summary>
     FixedDocumentWritingProgress = 2;
+    ///<summary>
+    ///  单个页面输出进度。
+    ///</summary>
     FixedPageWritingProgress = 3;
   end;
 
@@ -63,15 +79,58 @@ type
 
 { delegates }
 
+  ///<summary>
+  ///  表示将处理的方法 <see cref="E:System.Windows.Xps.XpsDocumentWriter.WritingCancelled" />
+  ///  事件。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e">
+  ///  事件数据。
+  ///</param>
   [DNTypeName('System.Windows.Documents.Serialization.WritingCancelledEventHandler')]
   DNWritingCancelledEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNWritingCancelledEventArgs) of object;
 
+  ///<summary>
+  ///  表示处理的方法的 <see cref="E:System.Windows.Xps.XpsDocumentWriter.WritingCompleted" />
+  ///  事件 <see cref="T:System.Windows.Xps.XpsDocumentWriter" />
+  ///  类。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e">
+  ///  事件数据。
+  ///</param>
   [DNTypeName('System.Windows.Documents.Serialization.WritingCompletedEventHandler')]
   DNWritingCompletedEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNWritingCompletedEventArgs) of object;
 
+  ///<summary>
+  ///  表示用于处理的方法 <see cref="E:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired" />
+  ///  事件 <see cref="T:System.Windows.Xps.XpsDocumentWriter" />
+  ///  。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e">
+  ///  事件数据。
+  ///</param>
   [DNTypeName('System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventHandler')]
   DNWritingPrintTicketRequiredEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNWritingPrintTicketRequiredEventArgs) of object;
 
+  ///<summary>
+  ///  表示将处理的方法 <see cref="E:System.Windows.Xps.XpsDocumentWriter.WritingProgressChanged" />
+  ///  事件 <see cref="T:System.Windows.Xps.XpsDocumentWriter" />
+  ///  。
+  ///</summary>
+  ///  <param name="sender">
+  ///  事件源。
+  ///</param>
+  ///  <param name="e">
+  ///  事件数据。
+  ///</param>
   [DNTypeName('System.Windows.Documents.Serialization.WritingProgressChangedEventHandler')]
   DNWritingProgressChangedEventHandler = procedure(sender: DDN.mscorlib.DNObject; e: DNWritingProgressChangedEventArgs) of object;
 
@@ -81,6 +140,8 @@ type
 { objects }
 
   //-------------namespace: System.Windows.Documents.Serialization----------------
+  ///<summary>
+  ///  提供了一种方法创建的软件组件可以序列化的任何部分 Windows Presentation Foundation (WPF) 制造商的专用格式的应用程序的内容。 </summary>
   [DNTypeName('System.Windows.Documents.Serialization.ISerializerFactory')]
   DNISerializerFactory = interface(DDN.mscorlib.DNObject)
   ['{07938333-3C70-3A12-8E75-B2DF4E938EB0}']
@@ -93,13 +154,53 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  初始化一个对象派生自抽象 <see cref="T:System.Windows.Documents.Serialization.SerializerWriter" />
+    ///  为指定的类 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="stream"><see cref="T:System.IO.Stream" />
+    ///  向其中写入返回的对象。
+    ///</param>
+    ///<returns>
+    ///  类的对象派生自 <see cref="T:System.Windows.Documents.Serialization.SerializerWriter" />
+    ///  。
+    ///</returns>
     function CreateSerializerWriter(stream: DDN.mscorlib.DNStream): DNSerializerWriter;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取制造商的序列化组件的公共名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  表示序列化组件的公共名称。
+    ///</returns>
     property DisplayName: string read get_DisplayName;
+    ///<summary>
+    ///  获取序列化组件制造商的名称。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  表示制造商的名称。
+    ///</returns>
     property ManufacturerName: string read get_ManufacturerName;
+    ///<summary>
+    ///  获取序列化组件制造商的 web 地址。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Uri" />
+    ///  表示制造商的网站。
+    ///</returns>
     property ManufacturerWebsite: DDN.System.DNUri read get_ManufacturerWebsite;
+    ///<summary>
+    ///  获取制造商的专有格式的文件的默认扩展插件。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.String" />
+    ///  表示专用格式的默认文件扩展名。
+    ///</returns>
     property DefaultFileExtension: string read get_DefaultFileExtension;
   end;
 
@@ -108,10 +209,30 @@ type
   ['{9F19C0E8-EEF5-5B3B-9658-6CFEFA2086E9}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Documents.Serialization.WritingCompletedEventArgs" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="cancelled"><see langword="true" />
+    ///  如果已取消;否则为 <see langword="false" />
+    ///  如果正常情况下，写操作完成。
+    ///</param>
+    ///  <param name="state">
+    ///  传递给的用户提供的状态对象 <see cref="Overload:System.Windows.Documents.Serialization.SerializerWriter.WriteAsync" />
+    ///  方法。
+    ///</param>
+    ///  <param name="exception">
+    ///  写入操作过程中发生的错误或 <see langword="null" />
+    ///  是否存在任何错误。
+    ///</param>
     {class} function init(cancelled: Boolean; state: DDN.mscorlib.DNObject; exception: DDN.mscorlib.DNException): DNWritingCompletedEventArgs;
 
   end;
 
+  ///<summary>
+  ///  为 <see cref="E:System.Windows.Documents.Serialization.SerializerWriter.WritingCompleted" />
+  ///  事件提供数据。
+  ///</summary>
   [DNTypeName('System.Windows.Documents.Serialization.WritingCompletedEventArgs')]
   DNWritingCompletedEventArgs = interface(DNObject)
   ['{852F4278-0220-3656-AD67-6C1937A5ED15}']
@@ -142,10 +263,31 @@ type
   ['{FD6FDCEC-59A0-5E67-B4A2-9B8C7045BDD0}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Documents.Serialization.WritingProgressChangedEventArgs" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="writingLevel">
+    ///  指定更改事件（例如，针对整个多文档序列、单个文档或单页的事件）的进度范围的枚举值。
+    ///</param>
+    ///  <param name="number">
+    ///  已写入的文档数或页数，取决于 <paramref name="writingLevel" />
+    ///  定义的范围。
+    ///</param>
+    ///  <param name="progressPercentage">
+    ///  已写入的数据的百分比。
+    ///</param>
+    ///  <param name="state">
+    ///  标识写操作的用户提供的对象。
+    ///</param>
     {class} function init(writingLevel: DNWritingProgressChangeLevel; number: Int32; progressPercentage: Int32; state: DDN.mscorlib.DNObject): DNWritingProgressChangedEventArgs;
 
   end;
 
+  ///<summary>
+  ///  为 <see cref="E:System.Windows.Xps.XpsDocumentWriter.WritingProgressChanged" />
+  ///  事件提供数据。
+  ///</summary>
   [DNTypeName('System.Windows.Documents.Serialization.WritingProgressChangedEventArgs')]
   DNWritingProgressChangedEventArgs = interface(DNObject)
   ['{D0140974-7F7A-3DAA-BECE-B7E17B678581}']
@@ -165,7 +307,19 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取文档或页面都已写入的数目。
+    ///</summary>
+    ///<returns>
+    ///  文档或页面的事件时都已写入数。
+    ///</returns>
     property Number: Int32 read get_Number;
+    ///<summary>
+    ///  获取一个值，该值指示写入进度的作用域。
+    ///</summary>
+    ///<returns>
+    ///  一个枚举，指示写入多个文档序列、 单个文档或单个页面的作用域。
+    ///</returns>
     property WritingLevel: DNWritingProgressChangeLevel read get_WritingLevel;
     property ProgressPercentage: Int32 read get_ProgressPercentage;
     property UserState: DDN.mscorlib.DNObject read get_UserState;
@@ -178,10 +332,21 @@ type
   ['{4103B60A-7BB9-569E-A981-19D50E509467}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Documents.Serialization.WritingCancelledEventArgs" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="exception">
+    ///  取消执行写入操作的异常。
+    ///</param>
     {class} function init(exception: DDN.mscorlib.DNException): DNWritingCancelledEventArgs;
 
   end;
 
+  ///<summary>
+  ///  为 <see cref="E:System.Windows.Xps.XpsDocumentWriter.WritingCancelled" />
+  ///  事件提供数据。
+  ///</summary>
   [DNTypeName('System.Windows.Documents.Serialization.WritingCancelledEventArgs')]
   DNWritingCancelledEventArgs = interface(DDN.mscorlib.DNEventArgs)
   ['{DAD5EB8B-4F84-30C8-8DED-33CBA7788B46}']
@@ -198,6 +363,12 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取取消写操作的异常。
+    ///</summary>
+    ///<returns>
+    ///  取消执行写入操作的异常。
+    ///</returns>
     property Error: DDN.mscorlib.DNException read get_Error;
   end;
 
@@ -208,10 +379,27 @@ type
   ['{681A7D8F-5AC9-5DDE-A84B-D4E55DEB566F}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs" />
+    ///  类的新实例。
+    ///</summary>
+    ///  <param name="printTicketLevel">
+    ///  一个枚举值，指定范围 <see cref="P:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicket" />
+    ///  作为网页、 文档或文档序列。
+    ///</param>
+    ///  <param name="sequence">
+    ///  基于的作用域定义的 <paramref name="printTicketLevel" />
+    ///  , ，数目的页或与相关联的文档数 <see cref="P:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicket" />
+    ///  。
+    ///</param>
     {class} function init(printTicketLevel: DDN.System.Windows.Documents.Serialization.DNPrintTicketLevel; sequence: Int32): DNWritingPrintTicketRequiredEventArgs;
 
   end;
 
+  ///<summary>
+  ///  为 <see cref="E:System.Windows.Documents.Serialization.SerializerWriter.WritingPrintTicketRequired" />
+  ///  事件提供数据。
+  ///</summary>
   [DNTypeName('System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs')]
   DNWritingPrintTicketRequiredEventArgs = interface(DDN.mscorlib.DNEventArgs)
   ['{0AB9C9DB-9187-3880-A79E-ED6B4881C60C}']
@@ -231,8 +419,30 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取一个值，指示的范围 <see cref="E:System.Windows.Documents.Serialization.SerializerWriter.WritingPrintTicketRequired" />
+    ///  事件。
+    ///</summary>
+    ///<returns>
+    ///  一个枚举，指示的范围 <see cref="E:System.Windows.Documents.Serialization.SerializerWriter.WritingPrintTicketRequired" />
+    ///  至于的一系列文档、 单个文档或单个页面的事件。
+    ///</returns>
     property CurrentPrintTicketLevel: DDN.System.Windows.Documents.Serialization.DNPrintTicketLevel read get_CurrentPrintTicketLevel;
+    ///<summary>
+    ///  获取与文档或页面输出的数目 <see cref="P:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicket" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  使用的文档或页面输出的数目 <see cref="P:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicket" />
+    ///  。
+    ///</returns>
     property Sequence: Int32 read get_Sequence;
+    ///<summary>
+    ///  获取或设置打印机设置打印文档时使用的默认值。
+    ///</summary>
+    ///<returns>
+    ///  要打印文档时使用的默认打印机设置。
+    ///</returns>
     property CurrentPrintTicket: DDN.ReachFramework.DNPrintTicket read get_CurrentPrintTicket write set_CurrentPrintTicket;
   end;
 
@@ -243,10 +453,36 @@ type
   ['{76279A96-84AA-538B-A229-533F41F9B360}']
   { static methods } 
 
+    ///<summary>
+    ///  创建一个新 <see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />
+    ///  通过给定 <see cref="T:System.Windows.Documents.Serialization.ISerializerFactory" />
+    ///  实现。
+    ///</summary>
+    ///  <param name="factoryInstance">
+    ///  新的数据源的 <see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  一个新 <see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />
+    ///  其属性初始化中的值与给定 <see cref="T:System.Windows.Documents.Serialization.ISerializerFactory" />
+    ///  实现。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="factoryInstance" />
+    ///  为 null。
+    ///</exception><exception cref="T:System.ArgumentException">
+    ///  一个或多个的下列属性 <paramref name="factoryInstance" />
+    ///  为 null: <see cref="P:System.Windows.Documents.Serialization.SerializerDescriptor.DisplayName" />
+    ///  , ，<see cref="P:System.Windows.Documents.Serialization.SerializerDescriptor.ManufacturerName" />
+    ///  , ，<see cref="P:System.Windows.Documents.Serialization.SerializerDescriptor.ManufacturerWebsite" />
+    ///  , ，和 <see cref="P:System.Windows.Documents.Serialization.SerializerDescriptor.DefaultFileExtension" />
+    ///</exception>
     {class} function CreateFromFactoryInstance(factoryInstance: DNISerializerFactory): DNSerializerDescriptor;
 
   end;
 
+  ///<summary>
+  ///  提供有关安装插件序列化程序的信息。
+  ///</summary>
   [DNTypeName('System.Windows.Documents.Serialization.SerializerDescriptor')]
   DNSerializerDescriptor = interface(DDN.mscorlib.DNObject)
   ['{0D25A491-84F5-31B7-A268-9C5E773AB52C}']
@@ -265,22 +501,104 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  测试两个 <see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />
+    ///  对象是否相等。
+    ///</summary>
+    ///  <param name="obj">
+    ///  与此比较的对象 <see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />
+    ///  。
+    ///</param>
+    ///<returns><see langword="true" />
+    ///  如果两个值相等。否则为 <see langword="false" />
+    ///  。
+    ///</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  获取序列化程序的唯一哈希代码值。
+    ///</summary>
+    ///<returns>
+    ///  序列化程序的唯一哈希代码值。
+    ///</returns>
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  获取序列化程序将公开显示名称。
+    ///</summary>
+    ///<returns>
+    ///  序列化程序将公开显示名称。
+    ///</returns>
     property DisplayName: string read get_DisplayName;
+    ///<summary>
+    ///  获取开发序列化程序的公司的名称。
+    ///</summary>
+    ///<returns>
+    ///  开发插件的序列化程序的公司的名称。
+    ///</returns>
     property ManufacturerName: string read get_ManufacturerName;
+    ///<summary>
+    ///  获取开发序列化程序的公司的 web 地址。
+    ///</summary>
+    ///<returns>
+    ///  开发序列化程序的公司 web 地址。
+    ///</returns>
     property ManufacturerWebsite: DDN.System.DNUri read get_ManufacturerWebsite;
+    ///<summary>
+    ///  获取与序列化程序将输出的文件相关联的默认扩展名。
+    ///</summary>
+    ///<returns>
+    ///  使用序列化程序将输出的文件关联的默认扩展插件。
+    ///</returns>
     property DefaultFileExtension: string read get_DefaultFileExtension;
+    ///<summary>
+    ///  获取包含序列化程序的程序集的名称。
+    ///</summary>
+    ///<returns>
+    ///  包含插件的序列化程序的程序集 (通常为 DLL) 的名称。
+    ///</returns>
     property AssemblyName: string read get_AssemblyName;
+    ///<summary>
+    ///  获取包含序列化程序的程序集文件的路径。
+    ///</summary>
+    ///<returns>
+    ///  包含插件的序列化程序的程序集文件路径。
+    ///</returns>
     property AssemblyPath: string read get_AssemblyPath;
+    ///<summary>
+    ///  获取名称 <see cref="T:System.Windows.Documents.Serialization.ISerializerFactory" />
+    ///  派生类，该类实现序列化程序。
+    ///</summary>
+    ///<returns>
+    ///  名称 <see cref="T:System.Windows.Documents.Serialization.ISerializerFactory" />
+    ///  派生类，该类实现序列化程序。
+    ///</returns>
     property FactoryInterfaceName: string read get_FactoryInterfaceName;
+    ///<summary>
+    ///  获取包含序列化程序的程序集的版本。
+    ///</summary>
+    ///<returns>
+    ///  包含插件的序列化程序的程序集的版本。
+    ///</returns>
     property AssemblyVersion: DDN.mscorlib.DNVersion read get_AssemblyVersion;
+    ///<summary>
+    ///  获取的版本 Microsoft .NET Framework 所需的序列化程序。
+    ///</summary>
+    ///<returns>
+    ///  版本 Microsoft .NET Framework 所需的插件的序列化程序。 </returns>
     property WinFXVersion: DDN.mscorlib.DNVersion read get_WinFXVersion;
+    ///<summary>
+    ///  获取一个值，该值指示序列化程序是否可以为与当前安装的版本加载 Microsoft .NET Framework。
+    ///</summary>
+    ///<returns><see langword="true" />
+    ///  如果序列化程序程序集可以加载;否则为 <see langword="false" />
+    ///  。
+    ///  默认值为 <see langword="false" />
+    ///  。
+    ///</returns>
     property IsLoadable: Boolean read get_IsLoadable;
   end;
 
@@ -291,15 +609,53 @@ type
   ['{9A9A4090-88FA-510B-BAC0-B065E9D87D84}']
   { constructors } 
 
+    ///<summary>
+    ///  初始化 <see cref="T:System.Windows.Documents.Serialization.SerializerProvider" />
+    ///  类的新实例。
+    ///</summary>
     {class} function init: DNSerializerProvider;
 
   { static methods } 
 
+    ///<summary>
+    ///  注册序列化程序插件。
+    ///</summary>
+    ///  <param name="serializerDescriptor"><see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />
+    ///  的插件。
+    ///</param>
+    ///  <param name="overwrite"><see langword="true" />
+    ///  若要覆盖现有注册同一插件;否则为 <see langword="false" />
+    ///  。
+    ///  请参阅“备注”。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="serializerDescriptor" />
+    ///  为 null。
+    ///</exception><exception cref="T:System.ArgumentException"><paramref name="overwrite" />
+    ///  是 <see langword="false" />
+    ///  和已注册的插件。
+    ///</exception>
     {class} procedure RegisterSerializer(serializerDescriptor: DNSerializerDescriptor; overwrite: Boolean);
+    ///<summary>
+    ///  从注册表中删除插件的序列化程序。
+    ///</summary>
+    ///  <param name="serializerDescriptor"><see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />
+    ///  的插件。
+    ///</param>
+    ///<exception cref="T:System.ArgumentNullException"><paramref name="serializerDescriptor" />
+    ///  为 null。
+    ///</exception><exception cref="T:System.ArgumentException">
+    ///  未注册该插件。
+    ///  请参阅 备注。
+    ///</exception>
     {class} procedure UnregisterSerializer(serializerDescriptor: DNSerializerDescriptor);
 
   end;
 
+  ///<summary>
+  ///  管理序列化的插件创建的使用 <see cref="T:System.Windows.Documents.Serialization.ISerializerFactory" />
+  ///  和 <see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />
+  ///  , ，由制造商拥有其自己的专有的序列化格式。
+  ///</summary>
   [DNTypeName('System.Windows.Documents.Serialization.SerializerProvider')]
   DNSerializerProvider = interface(DDN.mscorlib.DNObject)
   ['{F7384B1E-E4C2-3F0A-83FB-9C1781136C38}']
@@ -309,6 +665,34 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  初始化一个对象派生自抽象 <see cref="T:System.Windows.Documents.Serialization.SerializerWriter" />
+    ///  为指定的类 <see cref="T:System.IO.Stream" />
+    ///  ，将使用指定的描述符。
+    ///</summary>
+    ///  <param name="serializerDescriptor">
+    ///  一个 <see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />
+    ///  ，它包含序列化信息 <see cref="T:System.Windows.Documents.Serialization.SerializerWriter" />
+    ///  。
+    ///</param>
+    ///  <param name="stream"><see cref="T:System.IO.Stream" />
+    ///  向其中写入返回的对象。
+    ///</param>
+    ///<returns>
+    ///  类的对象派生自 <see cref="T:System.Windows.Documents.Serialization.SerializerWriter" />
+    ///  。
+    ///</returns>
+    ///<exception cref="T:System.ArgumentNullException">
+    ///  其中一个参数为 null。
+    ///</exception><exception cref="T:System.ArgumentException"><paramref name="serializerDescriptor" />
+    ///  指定了错误版本。
+    ///  - 或 -
+    ///  未注册。
+    ///  - 或 -
+    ///  找不到程序集文件。
+    ///  - 或 -
+    ///  无法加载的程序集。
+    ///</exception>
     function CreateSerializerWriter(serializerDescriptor: DNSerializerDescriptor; stream: DDN.mscorlib.DNStream): DNSerializerWriter;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -317,6 +701,14 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  获取已安装的插件序列化程序的集合。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  的 <see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />
+    ///  已注册的对象。
+    ///</returns>
     property InstalledSerializers: DDN.mscorlib.DNReadOnlyCollection<DNSerializerDescriptor> read get_InstalledSerializers;
   end;
 
@@ -327,6 +719,9 @@ type
   ['{AA312EE0-DEF2-5134-9304-09C3338DAD51}']
   end;
 
+  ///<summary>
+  ///  定义实现插件文档输出序列化程序所需的抽象方法和事件。
+  ///</summary>
   [DNTypeName('System.Windows.Documents.Serialization.SerializerWriter')]
   DNSerializerWriter = interface(DDN.mscorlib.DNObject)
   ['{125B777D-0764-3575-913C-EA1DCF3C9991}']
@@ -343,38 +738,432 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写时，以同步方式将给定 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素写入到序列化 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="visual">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素。
+    ///</param>
     procedure Write(visual: DDN.PresentationCore.DNVisual); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  同步写入一个给定的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素和一个关联的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</summary>
+    ///  <param name="visual">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="visual" />
+    ///  元素的默认打印首选项。
+    ///</param>
     procedure Write(visual: DDN.PresentationCore.DNVisual; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  异步写入一个给定的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="visual">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  异步写入一个给定的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="visual">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素。
+    ///</param>
+    ///  <param name="userState">
+    ///  用于标识异步写入操作的调用方指定的对象。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual; userState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  异步写入一个给定的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素以及一个关联的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</summary>
+    ///  <param name="visual">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="visual" />
+    ///  元素的默认打印首选项。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  异步写入一个给定的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素以及一个关联的 <see cref="T:System.Printing.PrintTicket" />
+    ///  和标识符。
+    ///</summary>
+    ///  <param name="visual">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="visual" />
+    ///  元素的默认打印首选项。
+    ///</param>
+    ///  <param name="userState">
+    ///  用于标识异步写入操作的调用方指定的对象。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual; printTicket: DDN.ReachFramework.DNPrintTicket; userState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  在派生类中重写时，将给定 <see cref="T:System.Windows.Documents.DocumentPaginator" />
+    ///  的内容同步写入序列化 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="documentPaginator">
+    ///  定义写入序列化 <see cref="T:System.IO.Stream" />
+    ///  中的内容的文档分页符。
+    ///</param>
     procedure Write(documentPaginator: DDN.PresentationCore.DNDocumentPaginator); overload;
+    ///<summary>
+    ///  在派生类中重写时，将已分页的内容与关联的 <see cref="T:System.Printing.PrintTicket" />
+    ///  一起同步写入序列化 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="documentPaginator">
+    ///  定义写入序列化 <see cref="T:System.IO.Stream" />
+    ///  中的内容的文档分页符。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="documentPaginator" />
+    ///  内容的默认打印首选项。
+    ///</param>
     procedure Write(documentPaginator: DDN.PresentationCore.DNDocumentPaginator; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  异步写入一个给定 <see cref="T:System.Windows.Documents.DocumentPaginator" />
+    ///  的内容。
+    ///</summary>
+    ///  <param name="documentPaginator">
+    ///  定义写入序列化 <see cref="T:System.IO.Stream" />
+    ///  中的内容的文档分页符。
+    ///</param>
     procedure WriteAsync(documentPaginator: DDN.PresentationCore.DNDocumentPaginator); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  异步写入一个给定 <see cref="T:System.Windows.Documents.DocumentPaginator" />
+    ///  的内容。
+    ///</summary>
+    ///  <param name="documentPaginator">
+    ///  定义写入序列化 <see cref="T:System.IO.Stream" />
+    ///  中的内容的文档分页符。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="documentPaginator" />
+    ///  内容的默认打印首选项。
+    ///</param>
     procedure WriteAsync(documentPaginator: DDN.PresentationCore.DNDocumentPaginator; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  异步写入一个给定 <see cref="T:System.Windows.Documents.DocumentPaginator" />
+    ///  的内容。
+    ///</summary>
+    ///  <param name="documentPaginator">
+    ///  定义写入序列化 <see cref="T:System.IO.Stream" />
+    ///  中的内容的文档分页符。
+    ///</param>
+    ///  <param name="userState">
+    ///  用于标识异步写入操作的调用方指定的对象。
+    ///</param>
     procedure WriteAsync(documentPaginator: DDN.PresentationCore.DNDocumentPaginator; userState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  在派生类中重写时，将已分页的内容与关联的 <see cref="T:System.Printing.PrintTicket" />
+    ///  一起同步写入序列化 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="documentPaginator">
+    ///  定义写入序列化 <see cref="T:System.IO.Stream" />
+    ///  中的内容的文档分页符。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="documentPaginator" />
+    ///  内容的默认打印首选项。
+    ///</param>
+    ///  <param name="userState">
+    ///  用于标识异步写入操作的调用方指定的对象。
+    ///</param>
     procedure WriteAsync(documentPaginator: DDN.PresentationCore.DNDocumentPaginator; printTicket: DDN.ReachFramework.DNPrintTicket; userState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  在派生类中重写时，将给定的 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  同步写入序列化 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedPage">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的页面。
+    ///</param>
     procedure Write(fixedPage: DNFixedPage); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  同步写入一个给定的 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  和一个关联的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedPage">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的页面。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="fixedPage" />
+    ///  内容的默认打印首选项。
+    ///</param>
     procedure Write(fixedPage: DNFixedPage; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  在派生类中重写时，将给定的 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  异步写入序列化 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedPage">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的页面。
+    ///</param>
     procedure WriteAsync(fixedPage: DNFixedPage); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  异步写入一个给定的 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  以及一个关联的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedPage">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的页面。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="fixedPage" />
+    ///  内容的默认打印首选项。
+    ///</param>
     procedure WriteAsync(fixedPage: DNFixedPage; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  在派生类中重写时，将给定的 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  异步写入序列化 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedPage">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的页面。
+    ///</param>
+    ///  <param name="userState">
+    ///  用于标识异步写入操作的调用方指定的对象。
+    ///</param>
     procedure WriteAsync(fixedPage: DNFixedPage; userState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  异步写入一个给定的 <see cref="T:System.Windows.Documents.FixedPage" />
+    ///  以及一个关联的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedPage">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的页面。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="fixedPage" />
+    ///  内容的默认打印首选项。
+    ///</param>
+    ///  <param name="userState">
+    ///  用于标识异步写入操作的调用方指定的对象。
+    ///</param>
     procedure WriteAsync(fixedPage: DNFixedPage; printTicket: DDN.ReachFramework.DNPrintTicket; userState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  在派生类中重写时，将给定的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  同步写入序列化 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocument">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的文档。
+    ///</param>
     procedure Write(fixedDocument: DNFixedDocument); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  同步写入一个给定的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  和一个关联的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocument">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的文档。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="fixedDocument" />
+    ///  内容的默认打印首选项。
+    ///</param>
     procedure Write(fixedDocument: DNFixedDocument; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  在派生类中重写时，将给定的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  异步写入序列化 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocument">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的文档。
+    ///</param>
     procedure WriteAsync(fixedDocument: DNFixedDocument); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  异步写入一个给定的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  以及一个关联的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocument">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的文档。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="fixedDocument" />
+    ///  内容的默认打印首选项。
+    ///</param>
     procedure WriteAsync(fixedDocument: DNFixedDocument; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  在派生类中重写时，将给定的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  异步写入序列化 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocument">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的文档。
+    ///</param>
+    ///  <param name="userState">
+    ///  用于标识异步写入操作的调用方指定的对象。
+    ///</param>
     procedure WriteAsync(fixedDocument: DNFixedDocument; userState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  异步写入一个给定的 <see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  以及一个关联的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocument">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的文档。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="fixedDocument" />
+    ///  内容的默认打印首选项。
+    ///</param>
+    ///  <param name="userState">
+    ///  用于标识异步写入操作的调用方指定的对象。
+    ///</param>
     procedure WriteAsync(fixedDocument: DNFixedDocument; printTicket: DDN.ReachFramework.DNPrintTicket; userState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  在派生类中重写时，将给定的 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  同步写入序列化 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocumentSequence">
+    ///  一个文档序列，用于定义要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的内容。
+    ///</param>
     procedure Write(fixedDocumentSequence: DNFixedDocumentSequence); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  同步写入一个给定的 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  和一个关联的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocumentSequence">
+    ///  一个文档序列，用于定义要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的内容。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="fixedDocumentSequence" />
+    ///  内容的默认打印首选项。
+    ///</param>
     procedure Write(fixedDocumentSequence: DNFixedDocumentSequence; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  在派生类中重写时，将给定的 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  异步写入序列化 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocumentSequence">
+    ///  一个文档序列，用于定义要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的内容。
+    ///</param>
     procedure WriteAsync(fixedDocumentSequence: DNFixedDocumentSequence); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  异步写入一个给定的 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  以及一个关联的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocumentSequence">
+    ///  一个文档序列，用于定义要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的内容。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="fixedDocumentSequence" />
+    ///  内容的默认打印首选项。
+    ///</param>
     procedure WriteAsync(fixedDocumentSequence: DNFixedDocumentSequence; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  在派生类中重写时，将给定的 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  异步写入序列化 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocumentSequence">
+    ///  一个文档序列，用于定义要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的内容。
+    ///</param>
+    ///  <param name="userState">
+    ///  用于标识异步写入操作的调用方指定的对象。
+    ///</param>
     procedure WriteAsync(fixedDocumentSequence: DNFixedDocumentSequence; userState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将向序列化 <see cref="T:System.IO.Stream" />
+    ///  异步写入一个给定的 <see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  以及一个关联的 <see cref="T:System.Printing.PrintTicket" />
+    ///  。
+    ///</summary>
+    ///  <param name="fixedDocumentSequence">
+    ///  一个文档序列，用于定义要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的内容。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="fixedDocumentSequence" />
+    ///  内容的默认打印首选项。
+    ///</param>
+    ///  <param name="userState">
+    ///  用于标识异步写入操作的调用方指定的对象。
+    ///</param>
     procedure WriteAsync(fixedDocumentSequence: DNFixedDocumentSequence; printTicket: DDN.ReachFramework.DNPrintTicket; userState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  在派生类中重写时，取消异步写入操作。
+    ///</summary>
     procedure CancelAsync;
+    ///<summary>
+    ///  在派生类中重写时，返回写入调整后的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素的 <see cref="T:System.Windows.Documents.Serialization.SerializerWriterCollator" />
+    ///  。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Windows.Documents.Serialization.SerializerWriterCollator" />
+    ///  ，它可将整理后的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素写入到文档输出序列化 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</returns>
     function CreateVisualsCollator: DNSerializerWriterCollator; overload;
+    ///<summary>
+    ///  当在派生类中重写时，返回写入已调整 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素的 <see cref="T:System.Windows.Documents.Serialization.SerializerWriterCollator" />
+    ///  ，同时返回打印票证。
+    ///</summary>
+    ///  <param name="documentSequencePT"><see cref="T:System.Windows.Documents.FixedDocumentSequence" />
+    ///  内容的默认打印首选项。
+    ///</param>
+    ///  <param name="documentPT"><see cref="T:System.Windows.Documents.FixedDocument" />
+    ///  内容的默认打印首选项。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Windows.Documents.Serialization.SerializerWriterCollator" />
+    ///  ，它可将整理后的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素写入到文档输出序列化 <see cref="T:System.IO.Stream" />
+    ///  。
+    ///</returns>
     function CreateVisualsCollator(documentSequencePT: DDN.ReachFramework.DNPrintTicket; documentPT: DDN.ReachFramework.DNPrintTicket): DNSerializerWriterCollator; overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -390,20 +1179,101 @@ type
   ['{9BF0A070-6D17-51DD-BFBD-659C71AA5A8A}']
   end;
 
+  ///<summary>
+  ///  定义实现插件文档序列化 <see cref="T:System.Windows.Media.Visual" />
+  ///  排序程序所需的抽象方法。
+  ///</summary>
   [DNTypeName('System.Windows.Documents.Serialization.SerializerWriterCollator')]
   DNSerializerWriterCollator = interface(DDN.mscorlib.DNObject)
   ['{B1E0E9B4-5E6B-330A-BD73-436F8C248EF3}']
   { methods } 
 
+    ///<summary>
+    ///  当在派生类中重写，将启动批处理写入操作的开始。
+    ///</summary>
     procedure BeginBatchWrite;
+    ///<summary>
+    ///  当在派生类中重写，完成批处理写入操作。
+    ///</summary>
     procedure EndBatchWrite;
+    ///<summary>
+    ///  当在派生类中重写时，向序列化流同步写入一个给定的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素。
+    ///</summary>
+    ///  <param name="visual">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的可视元素。
+    ///</param>
     procedure Write(visual: DDN.PresentationCore.DNVisual); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将给定的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素与关联的打印票证一起同步写入序列化流。
+    ///</summary>
+    ///  <param name="visual">
+    ///  写入流的 <see cref="T:System.Windows.Media.Visual" />
+    ///  。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  为材料打印方式指定首选项的对象。
+    ///</param>
     procedure Write(visual: DDN.PresentationCore.DNVisual; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  在派生类中重写时，将给定 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素异步写入序列化流。
+    ///</summary>
+    ///  <param name="visual">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的可视元素。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual); overload;
+    ///<summary>
+    ///  在派生类中重写时，将具有指定事件标识符的给定 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素异步写入序列化流。
+    ///</summary>
+    ///  <param name="visual">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的可视元素。
+    ///</param>
+    ///  <param name="userState">
+    ///  用于标识异步写入操作的调用方指定的对象。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual; userState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将给定的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素与关联的打印票证一起异步写入序列化流。
+    ///</summary>
+    ///  <param name="visual">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的可视元素。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="visual" />
+    ///  元素的默认打印首选项。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual; printTicket: DDN.ReachFramework.DNPrintTicket); overload;
+    ///<summary>
+    ///  当在派生类中重写时，将给定的 <see cref="T:System.Windows.Media.Visual" />
+    ///  元素与关联的打印票证和标识符一起异步写入序列化流。
+    ///</summary>
+    ///  <param name="visual">
+    ///  要写入序列化 <see cref="T:System.IO.Stream" />
+    ///  的可视元素。
+    ///</param>
+    ///  <param name="printTicket"><paramref name="visual" />
+    ///  元素的默认打印首选项。
+    ///</param>
+    ///  <param name="userState">
+    ///  用于标识异步写入操作的调用方指定的对象。
+    ///</param>
     procedure WriteAsync(visual: DDN.PresentationCore.DNVisual; printTicket: DDN.ReachFramework.DNPrintTicket; userState: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  当在派生类中重写时，取消异步 <see cref="Overload:System.Windows.Documents.Serialization.SerializerWriterCollator.WriteAsync" />
+    ///  操作。
+    ///</summary>
     procedure CancelAsync;
+    ///<summary>
+    ///  当在派生类中重写时，取消同步 <see cref="Overload:System.Windows.Documents.Serialization.SerializerWriterCollator.Write" />
+    ///  操作。
+    ///</summary>
     procedure Cancel;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;

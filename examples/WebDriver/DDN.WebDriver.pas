@@ -30,67 +30,160 @@ type
 { enums }
 
   //-------------namespace: OpenQA.Selenium.Edge----------------
+  ///<summary>
+  ///  Specifies the behavior of waiting for page loads in the Edge driver.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Edge.EdgePageLoadStrategy')]
   DNEdgePageLoadStrategy = type Integer;
   DNEdgePageLoadStrategyHelper = record helper for DNEdgePageLoadStrategy
   public const
+    ///<summary>
+    ///  Indicates the behavior is not set.
+    ///</summary>
     Default_ = 0;
+    ///<summary>
+    ///  Waits for pages to load and ready state to be 'complete'.
+    ///</summary>
     Normal = 1;
+    ///<summary>
+    ///  Waits for pages to load and for ready state to be 'interactive' or 'complete'.
+    ///</summary>
     Eager = 2;
+    ///<summary>
+    ///  Does not wait for pages to load, returning immediately.
+    ///</summary>
     None = 3;
   end;
 
 
   //-------------namespace: OpenQA.Selenium.Firefox----------------
+  ///<summary>
+  ///  Represents the valid values of logging levels available with the Firefox driver (geckodriver.exe).
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Firefox.FirefoxDriverLogLevel')]
   DNFirefoxDriverLogLevel = type Integer;
   DNFirefoxDriverLogLevelHelper = record helper for DNFirefoxDriverLogLevel
   public const
+    ///<summary>
+    ///  Represents the Trace value, the most detailed logging level available.
+    ///</summary>
     Trace = 0;
+    ///<summary>
+    ///  Represents the Debug value
+    ///</summary>
     Debug = 1;
+    ///<summary>
+    ///  Represents the Config value
+    ///</summary>
     Config = 2;
+    ///<summary>
+    ///  Represents the Info value
+    ///</summary>
     Info = 3;
+    ///<summary>
+    ///  Represents the Warn value
+    ///</summary>
     Warn = 4;
+    ///<summary>
+    ///  Represents the Error value
+    ///</summary>
     Error = 5;
+    ///<summary>
+    ///  Represents the Fatal value, the least detailed logging level available.
+    ///</summary>
     Fatal = 6;
+    ///<summary>
+    ///  Represents that the logging value is unspecified, and should be the default level.
+    ///</summary>
     Default_ = 7;
   end;
 
 
   //-------------namespace: OpenQA.Selenium.Html5----------------
+  ///<summary>
+  ///  Represents the application cache status.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Html5.AppCacheStatus')]
   DNAppCacheStatus = type Integer;
   DNAppCacheStatusHelper = record helper for DNAppCacheStatus
   public const
+    ///<summary>
+    ///  AppCache status is uncached
+    ///</summary>
     Uncached = 0;
+    ///<summary>
+    ///  AppCache status is idle
+    ///</summary>
     Idle = 1;
+    ///<summary>
+    ///  AppCache status is checkint
+    ///</summary>
     Checking = 2;
+    ///<summary>
+    ///  AppCache status is downloading
+    ///</summary>
     Downloading = 3;
+    ///<summary>
+    ///  AppCache status is updated-ready
+    ///</summary>
     UpdateReady = 4;
+    ///<summary>
+    ///  AppCache status is obsolete
+    ///</summary>
     Obsolete = 5;
   end;
 
 
   //-------------namespace: OpenQA.Selenium.IE----------------
+  ///<summary>
+  ///  Represents the valid values of logging levels available with the IEDriverServer.exe.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.IE.InternetExplorerDriverLogLevel')]
   DNInternetExplorerDriverLogLevel = type Integer;
   DNInternetExplorerDriverLogLevelHelper = record helper for DNInternetExplorerDriverLogLevel
   public const
+    ///<summary>
+    ///  Represents the Trace value, the most detailed logging level available.
+    ///</summary>
     Trace = 0;
+    ///<summary>
+    ///  Represents the Debug value
+    ///</summary>
     Debug = 1;
+    ///<summary>
+    ///  Represents the Info value
+    ///</summary>
     Info = 2;
+    ///<summary>
+    ///  Represents the Warn value
+    ///</summary>
     Warn = 3;
+    ///<summary>
+    ///  Represents the Error value
+    ///</summary>
     Error = 4;
+    ///<summary>
+    ///  Represents the Fatal value, the least detailed logging level available.
+    ///</summary>
     Fatal = 5;
   end;
 
 
   //-------------namespace: OpenQA.Selenium.IE----------------
+  ///<summary>
+  ///  Specifies the scroll behavior of elements scrolled into view in the IE driver.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.IE.InternetExplorerElementScrollBehavior')]
   DNInternetExplorerElementScrollBehavior = type Integer;
   DNInternetExplorerElementScrollBehaviorHelper = record helper for DNInternetExplorerElementScrollBehavior
   public const
+    ///<summary>
+    ///  Scrolls elements to align with the top of the viewport.
+    ///</summary>
     Top = 0;
+    ///<summary>
+    ///  Scrolls elements to align with the bottom of the viewport.
+    ///</summary>
     Bottom = 1;
   end;
 
@@ -120,121 +213,346 @@ type
 
 
   //-------------namespace: OpenQA.Selenium.Interactions----------------
+  ///<summary>
+  ///  Enumerated values for the kinds of devices available.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Interactions.InputDeviceKind')]
   DNInputDeviceKind = type Integer;
   DNInputDeviceKindHelper = record helper for DNInputDeviceKind
   public const
+    ///<summary>
+    ///  Represents the null device.
+    ///</summary>
     None = 0;
+    ///<summary>
+    ///  Represents a key-based device, primarily for entering text.
+    ///</summary>
     Key = 1;
+    ///<summary>
+    ///  Represents a pointer-based device, such as a mouse, pen, or stylus.
+    ///</summary>
     Pointer = 2;
   end;
 
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Represents the levels of logging available to driver instances.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.LogLevel')]
   DNLogLevel = type Integer;
   DNLogLevelHelper = record helper for DNLogLevel
   public const
+    ///<summary>
+    ///  Show all log messages.
+    ///</summary>
     All = 0;
+    ///<summary>
+    ///  Show messages with information useful for debugging.
+    ///</summary>
     Debug = 1;
+    ///<summary>
+    ///  Show informational messages.
+    ///</summary>
     Info = 2;
+    ///<summary>
+    ///  Show messages corresponding to non-critical issues.
+    ///</summary>
     Warning = 3;
+    ///<summary>
+    ///  Show messages corresponding to critical issues.
+    ///</summary>
     Severe = 4;
+    ///<summary>
+    ///  Show no log messages.
+    ///</summary>
     Off = 5;
   end;
 
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Represents the known and supported Platforms that WebDriver runs on.
+  ///</summary>
+  ///<remarks>The <see cref="T:OpenQA.Selenium.Platform" />
+  ///  class maps closely to the Operating System,
+  ///  but differs slightly, because this class is used to extract information such as
+  ///  program locations and line endings. </remarks>
   [DNTypeName('OpenQA.Selenium.PlatformType')]
   DNPlatformType = type Integer;
   DNPlatformTypeHelper = record helper for DNPlatformType
   public const
+    ///<summary>
+    ///  Any platform. This value is never returned by a driver, but can be used to find
+    ///  drivers with certain capabilities.
+    ///</summary>
     Any = 0;
+    ///<summary>
+    ///  Any version of Microsoft Windows. This value is never returned by a driver,
+    ///  but can be used to find drivers with certain capabilities.
+    ///</summary>
     Windows = 1;
+    ///<summary>
+    ///  Any Windows NT-based version of Microsoft Windows. This value is never returned
+    ///  by a driver, but can be used to find drivers with certain capabilities. This value
+    ///  is equivalent to PlatformType.Windows.
+    ///</summary>
     WinNT = 1;
+    ///<summary>
+    ///  Versions of Microsoft Windows that are compatible with Windows XP.
+    ///</summary>
     XP = 2;
+    ///<summary>
+    ///  Versions of Microsoft Windows that are compatible with Windows Vista.
+    ///</summary>
     Vista = 3;
+    ///<summary>
+    ///  Any version of the Macintosh OS
+    ///</summary>
     Mac = 4;
+    ///<summary>
+    ///  Any version of the Unix operating system.
+    ///</summary>
     Unix = 5;
+    ///<summary>
+    ///  Any version of the Linux operating system.
+    ///</summary>
     Linux = 6;
+    ///<summary>
+    ///  A version of the Android mobile operating system.
+    ///</summary>
     Android = 7;
   end;
 
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Describes the kind of proxy.
+  ///</summary>
+  ///<remarks>
+  ///  Keep these in sync with the Firefox preferences numbers:
+  ///  http://kb.mozillazine.org/Network.proxy.type
+  ///</remarks>
   [DNTypeName('OpenQA.Selenium.ProxyKind')]
   DNProxyKind = type Integer;
   DNProxyKindHelper = record helper for DNProxyKind
   public const
+    ///<summary>
+    ///  Direct connection, no proxy (default on Windows).
+    ///</summary>
     Direct = 0;
+    ///<summary>
+    ///  Manual proxy settings (e.g., for httpProxy).
+    ///</summary>
     Manual = 1;
+    ///<summary>
+    ///  Proxy automatic configuration from URL.
+    ///</summary>
     ProxyAutoConfigure = 2;
+    ///<summary>
+    ///  Use proxy automatic detection.
+    ///</summary>
     AutoDetect = 4;
+    ///<summary>
+    ///  Use the system values for proxy settings (default on Linux).
+    ///</summary>
     System = 5;
+    ///<summary>
+    ///  No proxy type is specified.
+    ///</summary>
     Unspecified = 6;
   end;
 
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Represents possible screen orientations.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.ScreenOrientation')]
   DNScreenOrientation = type Integer;
   DNScreenOrientationHelper = record helper for DNScreenOrientation
   public const
+    ///<summary>
+    ///  Represents a portrait mode, where the screen is vertical.
+    ///</summary>
     Portrait = 0;
+    ///<summary>
+    ///  Represents Landscape mode, where the screen is horizontal.
+    ///</summary>
     Landscape = 1;
   end;
 
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  File format for saving screenshots.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.ScreenshotImageFormat')]
   DNScreenshotImageFormat = type Integer;
   DNScreenshotImageFormatHelper = record helper for DNScreenshotImageFormat
   public const
+    ///<summary>
+    ///  W3C Portable Network Graphics image format.
+    ///</summary>
     Png = 0;
+    ///<summary>
+    ///  Joint Photgraphic Experts Group image format.
+    ///</summary>
     Jpeg = 1;
+    ///<summary>
+    ///  Graphics Interchange Format image format.
+    ///</summary>
     Gif = 2;
+    ///<summary>
+    ///  Tagged Image File Format image format.
+    ///</summary>
     Tiff = 3;
+    ///<summary>
+    ///  Bitmap image format.
+    ///</summary>
     Bmp = 4;
   end;
 
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Specifies return values for actions in the driver.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.WebDriverResult')]
   DNWebDriverResult = type Integer;
   DNWebDriverResultHelper = record helper for DNWebDriverResult
   public const
+    ///<summary>
+    ///  The action was successful.
+    ///</summary>
     Success = 0;
+    ///<summary>
+    ///  The index specified for the action was out of the acceptable range.
+    ///</summary>
     IndexOutOfBounds = 1;
+    ///<summary>
+    ///  No collection was specified.
+    ///</summary>
     NoCollection = 2;
+    ///<summary>
+    ///  No string was specified.
+    ///</summary>
     NoString = 3;
+    ///<summary>
+    ///  No string length was specified.
+    ///</summary>
     NoStringLength = 4;
+    ///<summary>
+    ///  No string wrapper was specified.
+    ///</summary>
     NoStringWrapper = 5;
+    ///<summary>
+    ///  No driver matching the criteria exists.
+    ///</summary>
     NoSuchDriver = 6;
+    ///<summary>
+    ///  No element matching the criteria exists.
+    ///</summary>
     NoSuchElement = 7;
+    ///<summary>
+    ///  No frame matching the criteria exists.
+    ///</summary>
     NoSuchFrame = 8;
+    ///<summary>
+    ///  The functionality is not supported.
+    ///</summary>
     UnknownCommand = 9;
+    ///<summary>
+    ///  The specified element is no longer valid.
+    ///</summary>
     ObsoleteElement = 10;
+    ///<summary>
+    ///  The specified element is not displayed.
+    ///</summary>
     ElementNotDisplayed = 11;
+    ///<summary>
+    ///  The specified element is not enabled.
+    ///</summary>
     InvalidElementState = 12;
+    ///<summary>
+    ///  An unhandled error occurred.
+    ///</summary>
     UnhandledError = 13;
+    ///<summary>
+    ///  An error occurred, but it was expected.
+    ///</summary>
     ExpectedError = 14;
+    ///<summary>
+    ///  The specified element is not selected.
+    ///</summary>
     ElementNotSelectable = 15;
+    ///<summary>
+    ///  No document matching the criteria exists.
+    ///</summary>
     NoSuchDocument = 16;
+    ///<summary>
+    ///  An unexpected JavaScript error occurred.
+    ///</summary>
     UnexpectedJavaScriptError = 17;
+    ///<summary>
+    ///  No result is available from the JavaScript execution.
+    ///</summary>
     NoScriptResult = 18;
+    ///<summary>
+    ///  The result from the JavaScript execution is not recognized.
+    ///</summary>
     XPathLookupError = 19;
+    ///<summary>
+    ///  No collection matching the criteria exists.
+    ///</summary>
     NoSuchCollection = 20;
+    ///<summary>
+    ///  A timeout occurred.
+    ///</summary>
     Timeout = 21;
+    ///<summary>
+    ///  A null pointer was received.
+    ///</summary>
     NullPointer = 22;
+    ///<summary>
+    ///  No window matching the criteria exists.
+    ///</summary>
     NoSuchWindow = 23;
+    ///<summary>
+    ///  An illegal attempt was made to set a cookie under a different domain than the current page.
+    ///</summary>
     InvalidCookieDomain = 24;
+    ///<summary>
+    ///  A request to set a cookie's value could not be satisfied.
+    ///</summary>
     UnableToSetCookie = 25;
+    ///<summary>
+    ///  An alert was found open unexpectedly.
+    ///</summary>
     UnexpectedAlertOpen = 26;
+    ///<summary>
+    ///  A request was made to switch to an alert, but no alert is currently open.
+    ///</summary>
     NoAlertPresent = 27;
+    ///<summary>
+    ///  An asynchronous JavaScript execution timed out.
+    ///</summary>
     AsyncScriptTimeout = 28;
+    ///<summary>
+    ///  The coordinates of the element are invalid.
+    ///</summary>
     InvalidElementCoordinates = 29;
+    ///<summary>
+    ///  The selector used (CSS/XPath) was invalid.
+    ///</summary>
     InvalidSelector = 32;
+    ///<summary>
+    ///  An insecure SSl certificate was specified.
+    ///</summary>
     InsecureCertificate = 33;
+    ///<summary>
+    ///  No cookie was found matching the name requested.
+    ///</summary>
     NoSuchCookie = 34;
   end;
 
@@ -393,6 +711,9 @@ type
 { objects }
 
   //-------------namespace: OpenQA.Selenium.Html5----------------
+  ///<summary>
+  ///  Defines an interface allowing the user to access application cache status
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Html5.IApplicationCache')]
   DNIApplicationCache = interface(DDN.mscorlib.DNObject)
   ['{99A43007-8C3C-3409-B8F6-40173C3373A8}']
@@ -402,10 +723,16 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the current state of the application cache.
+    ///</summary>
     property Status: DNAppCacheStatus read get_Status;
   end;
 
   //-------------namespace: OpenQA.Selenium.Html5----------------
+  ///<summary>
+  ///  Interface allowing the user to determine if the driver instance supports application cache.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Html5.IHasApplicationCache')]
   DNIHasApplicationCache = interface(DDN.mscorlib.DNObject)
   ['{C22BE39D-7594-3842-96DF-B73EAED092D4}']
@@ -416,11 +743,21 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets a value indicating whether manipulating the application cache is supported for this driver.
+    ///</summary>
     property HasApplicationCache: Boolean read get_HasApplicationCache;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IApplicationCache" />
+    ///  object for managing application cache.
+    ///</summary>
     property ApplicationCache: DNIApplicationCache read get_ApplicationCache;
   end;
 
   //-------------namespace: OpenQA.Selenium.Html5----------------
+  ///<summary>
+  ///  Interface allowing the user to determine if the driver instance supports geolocation.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Html5.IHasLocationContext')]
   DNIHasLocationContext = interface(DDN.mscorlib.DNObject)
   ['{9A8CDE0B-FE72-368E-AC51-A21526D6A6AD}']
@@ -431,11 +768,21 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets a value indicating whether manipulating geolocation is supported for this driver.
+    ///</summary>
     property HasLocationContext: Boolean read get_HasLocationContext;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.ILocationContext" />
+    ///  object for managing browser location.
+    ///</summary>
     property LocationContext: DNILocationContext read get_LocationContext;
   end;
 
   //-------------namespace: OpenQA.Selenium.Html5----------------
+  ///<summary>
+  ///  Interface allowing the user to determine if the driver instance supports web storage.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Html5.IHasWebStorage')]
   DNIHasWebStorage = interface(DDN.mscorlib.DNObject)
   ['{8F6ADAE9-909F-383A-ADFA-7A1E7B0CF051}']
@@ -446,11 +793,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets a value indicating whether web storage is supported for this driver.
+    ///</summary>
     property HasWebStorage: Boolean read get_HasWebStorage;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IWebStorage" />
+    ///  object for managing web storage.
+    ///</summary>
     property WebStorage: DNIWebStorage read get_WebStorage;
   end;
 
   //-------------namespace: OpenQA.Selenium.Html5----------------
+  ///<summary>
+  ///  Represents the local storage for the site currently opened in the browser.
+  ///  Each site has its own separate storage area.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Html5.ILocalStorage')]
   DNILocalStorage = interface(DDN.mscorlib.DNObject)
   ['{A000E65C-8F86-3D07-8FEE-A195958E52DB}']
@@ -460,18 +818,48 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Returns value of the local storage given a key.
+    ///</summary>
+    ///  <param name="key">key to for a local storage entry</param>
+    ///<returns>Value of the local storage entry as <see cref="T:System.String" />
+    ///  given a key.</returns>
     function GetItem(key: string): string;
+    ///<summary>
+    ///  Returns the set of keys associated with local storage.
+    ///</summary>
+    ///<returns>Returns the set of keys associated with local storage as <see cref="T:System.Collections.Generic.HashSet`1" />
+    ///  .</returns>
     function KeySet: DDN.mscorlib.DNReadOnlyCollection<string>;
+    ///<summary>
+    ///  Adds key/value pair to local storage.
+    ///</summary>
+    ///  <param name="key">storage key</param>
+    ///  <param name="value">storage value</param>
     procedure SetItem(key: string; value: string);
+    ///<summary>
+    ///  Removes key/value pair from local storage.
+    ///</summary>
+    ///  <param name="key">key to remove from storage</param>
+    ///<returns>Value from local storage as <see cref="T:System.String">string</see> for the given key.</returns>
     function RemoveItem(key: string): string;
+    ///<summary>
+    ///  Clears local storage.
+    ///</summary>
     procedure Clear;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the number of items in local storage.
+    ///</summary>
     property Count: Int32 read get_Count;
   end;
 
   //-------------namespace: OpenQA.Selenium.Html5----------------
+  ///<summary>
+  ///  Interface for location context
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Html5.ILocationContext')]
   DNILocationContext = interface(DDN.mscorlib.DNObject)
   ['{47D9754E-CD0F-3A27-8CCF-81860093EA66}']
@@ -482,10 +870,17 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets a value indicating the physical location of the browser.
+    ///</summary>
     property PhysicalLocation: DNLocation read get_PhysicalLocation write set_PhysicalLocation;
   end;
 
   //-------------namespace: OpenQA.Selenium.Html5----------------
+  ///<summary>
+  ///  Represents the session storage for the site currently opened in the browser.
+  ///  Each site has its own separate storage area.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Html5.ISessionStorage')]
   DNISessionStorage = interface(DDN.mscorlib.DNObject)
   ['{DFB230DD-EA9D-3A46-8472-FC2121572A76}']
@@ -495,18 +890,48 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Returns value of the session storage given a key.
+    ///</summary>
+    ///  <param name="key">key to for a session storage entry</param>
+    ///<returns>Value of the session storage entry as <see cref="T:System.String" />
+    ///  given a key.</returns>
     function GetItem(key: string): string;
+    ///<summary>
+    ///  Returns the set of keys associated with session storage.
+    ///</summary>
+    ///<returns>Returns the set of keys associated with session storage as <see cref="T:System.Collections.Generic.HashSet`1" />
+    ///  .</returns>
     function KeySet: DDN.mscorlib.DNReadOnlyCollection<string>;
+    ///<summary>
+    ///  Adds key/value pair to session storage.
+    ///</summary>
+    ///  <param name="key">storage key</param>
+    ///  <param name="value">storage value</param>
     procedure SetItem(key: string; value: string);
+    ///<summary>
+    ///  Removes key/value pair from session storage.
+    ///</summary>
+    ///  <param name="key">key to remove from storage</param>
+    ///<returns>Value from session storage as <see cref="T:System.String">string</see> for the given key.</returns>
     function RemoveItem(key: string): string;
+    ///<summary>
+    ///  Clears local storage.
+    ///</summary>
     procedure Clear;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the number of items in session storage.
+    ///</summary>
     property Count: Int32 read get_Count;
   end;
 
   //-------------namespace: OpenQA.Selenium.Html5----------------
+  ///<summary>
+  ///  Represents both local and session storage for the site currently opened in the browser.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Html5.IWebStorage')]
   DNIWebStorage = interface(DDN.mscorlib.DNObject)
   ['{8EE9C1E3-CF0C-3F39-AA79-5483E7FF609F}']
@@ -517,11 +942,20 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the local storage for the site currently opened in the browser.
+    ///</summary>
     property LocalStorage: DNILocalStorage read get_LocalStorage;
+    ///<summary>
+    ///  Gets the session storage for the site currently opened in the browser.
+    ///</summary>
     property SessionStorage: DNISessionStorage read get_SessionStorage;
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Defines the interface through which the user can manipulate JavaScript alerts.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.IAlert')]
   DNIAlert = interface(DDN.mscorlib.DNObject)
   ['{71545BE7-77D9-3017-8563-9F4E80E3A934}']
@@ -531,17 +965,39 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Dismisses the alert.
+    ///</summary>
     procedure Dismiss;
+    ///<summary>
+    ///  Accepts the alert.
+    ///</summary>
     procedure Accept;
+    ///<summary>
+    ///  Sends keys to the alert.
+    ///</summary>
+    ///  <param name="keysToSend">The keystrokes to send.</param>
     procedure SendKeys(keysToSend: string);
+    ///<summary>
+    ///  Sets the user name and password in an alert prompting for credentials.
+    ///</summary>
+    ///  <param name="userName">The user name to set.</param>
+    ///  <param name="password">The password to set.</param>
     procedure SetAuthenticationCredentials(userName: string; password: string);
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the text of the alert.
+    ///</summary>
     property Text: string read get_Text;
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Interface determining whether the driver implementation allows detection of files
+  ///  when sending keystrokes to a file upload element.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.IAllowsFileDetection')]
   DNIAllowsFileDetection = interface(DDN.mscorlib.DNObject)
   ['{6A3A4FE6-8FE6-36CD-A463-CD31A7FEA182}']
@@ -552,10 +1008,18 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the <see cref="T:OpenQA.Selenium.IFileDetector" />
+    ///  responsible for detecting
+    ///  sequences of keystrokes representing file paths and names.
+    ///</summary>
     property FileDetector: DNIFileDetector read get_FileDetector write set_FileDetector;
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Capabilities of the browser that you are going to use
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.ICapabilities')]
   DNICapabilities = interface(DDN.mscorlib.DNObject)
   ['{05D3ED3A-AF15-367C-BBB0-D71C0316A661}']
@@ -568,7 +1032,20 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Gets a value indicating whether the browser has a given capability.
+    ///</summary>
+    ///  <param name="capability">The capability to get.</param>
+    ///<returns>Returns <see langword="true" />
+    ///  if the browser has the capability; otherwise, <see langword="false" />
+    ///  .</returns>
     function HasCapability(capability: string): Boolean;
+    ///<summary>
+    ///  Gets a capability of the browser.
+    ///</summary>
+    ///  <param name="capability">The capability to get.</param>
+    ///<returns>An object associated with the capability, or <see langword="null" />
+    ///  if the capability is not set on the browser.</returns>
     function GetCapability(capability: string): DDN.mscorlib.DNObject;
 
   { propertys } 
@@ -580,6 +1057,9 @@ type
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Defines an interface allowing the user to manipulate cookies on the current page.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.ICookieJar')]
   DNICookieJar = interface(DDN.mscorlib.DNObject)
   ['{4B84C9A9-A1CC-3438-B58A-3E2FC351799B}']
@@ -589,28 +1069,70 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Adds a cookie to the current page.
+    ///</summary>
+    ///  <param name="cookie">The <see cref="T:OpenQA.Selenium.Cookie" />
+    ///  object to be added.</param>
     procedure AddCookie(cookie: DNCookie);
+    ///<summary>
+    ///  Gets a cookie with the specified name.
+    ///</summary>
+    ///  <param name="name">The name of the cookie to retrieve.</param>
+    ///<returns>The <see cref="T:OpenQA.Selenium.Cookie" />
+    ///  containing the name. Returns <see langword="null" />
+    ///  if no cookie with the specified name is found.</returns>
     function GetCookieNamed(name: string): DNCookie;
+    ///<summary>
+    ///  Deletes the specified cookie from the page.
+    ///</summary>
+    ///  <param name="cookie">The <see cref="T:OpenQA.Selenium.Cookie" />
+    ///  to be deleted.</param>
     procedure DeleteCookie(cookie: DNCookie);
+    ///<summary>
+    ///  Deletes the cookie with the specified name from the page.
+    ///</summary>
+    ///  <param name="name">The name of the cookie to be deleted.</param>
     procedure DeleteCookieNamed(name: string);
+    ///<summary>
+    ///  Deletes all cookies from the page.
+    ///</summary>
     procedure DeleteAllCookies;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets all cookies defined for the current page.
+    ///</summary>
     property AllCookies: DDN.mscorlib.DNReadOnlyCollection<DNCookie> read get_AllCookies;
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Defines an object responsible for detecting sequences of keystrokes
+  ///  representing file paths and names.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.IFileDetector')]
   DNIFileDetector = interface(DDN.mscorlib.DNObject)
   ['{25BE2120-F1DE-3E91-94FC-C5CEAA2260E2}']
   { methods } 
 
+    ///<summary>
+    ///  Returns a value indicating whether a specified key sequence represents
+    ///  a file name and path.
+    ///</summary>
+    ///  <param name="keySequence">The sequence to test for file existence.</param>
+    ///<returns><see langword="true" />
+    ///  if the key sequence represents a file; otherwise, <see langword="false" />
+    ///  .</returns>
     function IsFile(keySequence: string): Boolean;
 
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Defines the interface through which the user can determine the capabilities of a driver.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.IHasCapabilities')]
   DNIHasCapabilities = interface(DDN.mscorlib.DNObject)
   ['{84FD5EBE-1157-36DA-A990-E330844BEF4E}']
@@ -620,10 +1142,17 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the <see cref="T:OpenQA.Selenium.ICapabilities" />
+    ///  object describing the driver's capabilities.
+    ///</summary>
     property Capabilities: DNICapabilities read get_Capabilities;
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Provides access to input devices for advanced user interactions.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.IHasInputDevices')]
   DNIHasInputDevices = interface(DDN.mscorlib.DNObject)
   ['{225DC6BB-7B39-388B-A803-F93FF60777AF}']
@@ -634,11 +1163,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IKeyboard" />
+    ///  object for sending keystrokes to the browser.
+    ///</summary>
     property Keyboard: DNIKeyboard read get_Keyboard;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IMouse" />
+    ///  object for sending mouse commands to the browser.
+    ///</summary>
     property Mouse: DNIMouse read get_Mouse;
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Interface implemented by each driver that allows access to touch screen capabilities.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.IHasTouchScreen')]
   DNIHasTouchScreen = interface(DDN.mscorlib.DNObject)
   ['{08C44024-2A15-3A23-B0AC-C2071ED29594}']
@@ -648,33 +1188,112 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the device representing the touch screen.
+    ///</summary>
     property TouchScreen: DNITouchScreen read get_TouchScreen;
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Defines the interface through which the user can execute JavaScript.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.IJavaScriptExecutor')]
   DNIJavaScriptExecutor = interface(DDN.mscorlib.DNObject)
   ['{B5070B44-FF01-3F39-B430-67FE8AEC6A42}']
   { methods } 
 
+    ///<summary>
+    ///  Executes JavaScript in the context of the currently selected frame or window.
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
+    ///<remarks><para>
+    ///  The <see cref="M:OpenQA.Selenium.IJavaScriptExecutor.ExecuteScript(System.String,System.Object[])" />
+    ///  method executes JavaScript in the context of
+    ///  the currently selected frame or window. This means that "document" will refer
+    ///  to the current document. If the script has a return value, then the following
+    ///  steps will be taken:
+    ///</para><para><list type="bullet"><item><description>For an HTML element, this method returns a <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///</description>
+    ///</item>
+    ///<item><description>For a number, a <see cref="T:System.Int64" />
+    ///  is returned</description>
+    ///</item>
+    ///<item><description>For a boolean, a <see cref="T:System.Boolean" />
+    ///  is returned</description>
+    ///</item>
+    ///<item><description>For all other cases a <see cref="T:System.String" />
+    ///  is returned.</description>
+    ///</item>
+    ///<item><description>For an array,we check the first element, and attempt to return a
+    ///<see cref="T:System.Collections.Generic.List`1" />
+    ///  of that type, following the rules above. Nested lists are not
+    ///  supported.</description>
+    ///</item>
+    ///<item><description>If the value is null or there is no return value,
+    ///<see langword="null" />
+    ///  is returned.</description>
+    ///</item>
+    ///</list>
+    ///</para><para>
+    ///  Arguments must be a number (which will be converted to a <see cref="T:System.Int64" />
+    ///  ),
+    ///  a <see cref="T:System.Boolean" />
+    ///  , a <see cref="T:System.String" />
+    ///  or a <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  .
+    ///  An exception will be thrown if the arguments do not meet these criteria.
+    ///  The arguments will be made available to the JavaScript via the "arguments" magic
+    ///  variable, as if the function were called via "Function.apply"
+    ///</para></remarks>
     function ExecuteScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Executes JavaScript asynchronously in the context of the currently selected frame or window.
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteAsyncScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
 
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Provides methods representing basic keyboard actions.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.IKeyboard')]
   DNIKeyboard = interface(DDN.mscorlib.DNObject)
   ['{8B2A7C1F-F008-3089-8E99-0B7BA196B4DD}']
   { methods } 
 
+    ///<summary>
+    ///  Sends a sequence of keystrokes to the target.
+    ///</summary>
+    ///  <param name="keySequence">A string representing the keystrokes to send.</param>
     procedure SendKeys(keySequence: string);
+    ///<summary>
+    ///  Presses a key.
+    ///</summary>
+    ///  <param name="keyToPress">The key value representing the key to press.</param>
+    ///<remarks>The key value must be one of the values from the <see cref="T:OpenQA.Selenium.Keys" />
+    ///  class.</remarks>
     procedure PressKey(keyToPress: string);
+    ///<summary>
+    ///  Releases a key.
+    ///</summary>
+    ///  <param name="keyToRelease">The key value representing the key to release.</param>
+    ///<remarks>The key value must be one of the values from the <see cref="T:OpenQA.Selenium.Keys" />
+    ///  class.</remarks>
     procedure ReleaseKey(keyToRelease: string);
 
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Defines the interface through which the user can discover where an element is on the screen.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.ILocatable')]
   DNILocatable = interface(DDN.mscorlib.DNObject)
   ['{198F0DA4-E5F6-357C-ADF7-D5E893BE1B3A}']
@@ -685,11 +1304,22 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the location of an element on the screen, scrolling it into view
+    ///  if it is not currently on the screen.
+    ///</summary>
     property LocationOnScreenOnceScrolledIntoView: DDN.System.Drawing.DNPoint read get_LocationOnScreenOnceScrolledIntoView;
+    ///<summary>
+    ///  Gets the coordinates identifying the location of this element using
+    ///  various frames of reference.
+    ///</summary>
     property Coordinates: DNICoordinates read get_Coordinates;
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Interface allowing handling of driver logs.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.ILogs')]
   DNILogs = interface(DDN.mscorlib.DNObject)
   ['{0EB9C20C-4C2A-3192-83F9-A66EE60CB7D1}']
@@ -699,54 +1329,159 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Gets the set of <see cref="T:OpenQA.Selenium.LogEntry" />
+    ///  objects for a specified log.
+    ///</summary>
+    ///  <param name="logKind">The log for which to retrieve the log entries.
+    ///  Log types can be found in the <see cref="T:OpenQA.Selenium.LogType" />
+    ///  class.</param>
+    ///<returns>The list of <see cref="T:OpenQA.Selenium.LogEntry" />
+    ///  objects for the specified log.</returns>
     function GetLog(logKind: string): DDN.mscorlib.DNReadOnlyCollection<DNLogEntry>;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the list of available log types for this driver.
+    ///</summary>
     property AvailableLogTypes: DDN.mscorlib.DNReadOnlyCollection<string> read get_AvailableLogTypes;
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Provides methods representing basic mouse actions.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.IMouse')]
   DNIMouse = interface(DDN.mscorlib.DNObject)
   ['{7475AB5D-2EA3-3AF2-8E3F-2F554DC19D8D}']
   { methods } 
 
+    ///<summary>
+    ///  Clicks at a set of coordinates using the primary mouse button.
+    ///</summary>
+    ///  <param name="where">An <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  describing where to click.</param>
     procedure Click(where: DNICoordinates);
+    ///<summary>
+    ///  Double-clicks at a set of coordinates.
+    ///</summary>
+    ///  <param name="where">A <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  describing where to double-click.</param>
     procedure DoubleClick(where: DNICoordinates);
+    ///<summary>
+    ///  Presses the primary mouse button at a set of coordinates.
+    ///</summary>
+    ///  <param name="where">A <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  describing where to press the mouse button down.</param>
     procedure MouseDown(where: DNICoordinates);
+    ///<summary>
+    ///  Releases the primary mouse button at a set of coordinates.
+    ///</summary>
+    ///  <param name="where">A <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  describing where to release the mouse button.</param>
     procedure MouseUp(where: DNICoordinates);
+    ///<summary>
+    ///  Moves the mouse to the specified set of coordinates.
+    ///</summary>
+    ///  <param name="where">A <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  describing where to move the mouse to.</param>
     procedure MouseMove(where: DNICoordinates); overload;
+    ///<summary>
+    ///  Moves the mouse to the specified set of coordinates.
+    ///</summary>
+    ///  <param name="where">A <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  describing where to click.</param>
+    ///  <param name="offsetX">A horizontal offset from the coordinates specified in <paramref name="where" />
+    ///  .</param>
+    ///  <param name="offsetY">A vertical offset from the coordinates specified in <paramref name="where" />
+    ///  .</param>
     procedure MouseMove(where: DNICoordinates; offsetX: Int32; offsetY: Int32); overload;
+    ///<summary>
+    ///  Clicks at a set of coordinates using the secondary mouse button.
+    ///</summary>
+    ///  <param name="where">A <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  describing where to click.</param>
     procedure ContextClick(where: DNICoordinates);
 
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Defines an interface allowing the user to access the browser's history and to
+  ///  navigate to a given URL.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.INavigation')]
   DNINavigation = interface(DDN.mscorlib.DNObject)
   ['{371DB8C7-A039-32AE-A483-23FE422039CF}']
   { methods } 
 
+    ///<summary>
+    ///  Move back a single entry in the browser's history.
+    ///</summary>
     procedure Back;
+    ///<summary>
+    ///  Move a single "item" forward in the browser's history.
+    ///</summary>
+    ///<remarks>Does nothing if we are on the latest page viewed.</remarks>
     procedure &Forward;
+    ///<summary>
+    ///  Load a new web page in the current browser window.
+    ///</summary>
+    ///  <param name="url">The URL to load. It is best to use a fully qualified URL</param>
+    ///<remarks>
+    ///  Calling the <see cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.String)" />
+    ///  method will load a new web page in the current browser window.
+    ///  This is done using an HTTP GET operation, and the method will block until the
+    ///  load is complete. This will follow redirects issued either by the server or
+    ///  as a meta-redirect from within the returned HTML. Should a meta-redirect "rest"
+    ///  for any duration of time, it is best to wait until this timeout is over, since
+    ///  should the underlying page change while your test is executing the results of
+    ///  future calls against this interface will be against the freshly loaded page.
+    ///</remarks>
     procedure GoToUrl(url: string); overload;
+    ///<summary>
+    ///  Load a new web page in the current browser window.
+    ///</summary>
+    ///  <param name="url">The URL to load.</param>
+    ///<remarks>
+    ///  Calling the <see cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.Uri)" />
+    ///  method will load a new web page in the current browser window.
+    ///  This is done using an HTTP GET operation, and the method will block until the
+    ///  load is complete. This will follow redirects issued either by the server or
+    ///  as a meta-redirect from within the returned HTML. Should a meta-redirect "rest"
+    ///  for any duration of time, it is best to wait until this timeout is over, since
+    ///  should the underlying page change while your test is executing the results of
+    ///  future calls against this interface will be against the freshly loaded page.
+    ///</remarks>
     procedure GoToUrl(url: DDN.System.DNUri); overload;
+    ///<summary>
+    ///  Refreshes the current page.
+    ///</summary>
     procedure Refresh;
 
   end;
 
   //-------------namespace: OpenQA.Selenium.Interactions----------------
+  ///<summary>
+  ///  Provides methods by which an interaction with the browser can be performed.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Interactions.IAction')]
   DNIAction = interface(DDN.mscorlib.DNObject)
   ['{FB9CC6AE-05C3-3E09-BFA4-0517B072BB60}']
   { methods } 
 
+    ///<summary>
+    ///  Performs this action on the browser.
+    ///</summary>
     procedure Perform;
 
   end;
 
   //-------------namespace: OpenQA.Selenium.Interactions.Internal----------------
+  ///<summary>
+  ///  Provides location of the element using various frames of reference.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Interactions.Internal.ICoordinates')]
   DNICoordinates = interface(DDN.mscorlib.DNObject)
   ['{FCF8B1C1-DFAC-3663-A8A9-80E9DF3046E1}']
@@ -759,13 +1494,28 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the location of an element in absolute screen coordinates.
+    ///</summary>
     property LocationOnScreen: DDN.System.Drawing.DNPoint read get_LocationOnScreen;
+    ///<summary>
+    ///  Gets the location of an element relative to the origin of the view port.
+    ///</summary>
     property LocationInViewport: DDN.System.Drawing.DNPoint read get_LocationInViewport;
+    ///<summary>
+    ///  Gets the location of an element's position within the HTML DOM.
+    ///</summary>
     property LocationInDom: DDN.System.Drawing.DNPoint read get_LocationInDom;
+    ///<summary>
+    ///  Gets a locator providing a user-defined location for this element.
+    ///</summary>
     property AuxiliaryLocator: DDN.mscorlib.DNObject read get_AuxiliaryLocator;
   end;
 
   //-------------namespace: OpenQA.Selenium.Internal----------------
+  ///<summary>
+  ///  Interface allowing execution of W3C Specification-compliant actions.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Internal.IActionExecutor')]
   DNIActionExecutor = interface(DDN.mscorlib.DNObject)
   ['{944E6EB4-8FEC-31E5-9467-7D782F523E52}']
@@ -776,102 +1526,239 @@ type
   { methods } 
 
     procedure PerformActions(actionSequenceList: DDN.mscorlib.DNIList<DNActionSequence>);
+    ///<summary>
+    ///  Resets the input state of the action executor.
+    ///</summary>
     procedure ResetInputState;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets a value indicating whether this object is a valid action executor.
+    ///</summary>
     property IsActionExecutor: Boolean read get_IsActionExecutor;
   end;
 
   //-------------namespace: OpenQA.Selenium.Internal----------------
+  ///<summary>
+  ///  Defines the interface through which the user finds elements by their CSS class.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Internal.IFindsByClassName')]
   DNIFindsByClassName = interface(DDN.mscorlib.DNObject)
   ['{8AB82485-BDD8-38F2-9C6F-B4308B0ACA5F}']
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element matching the specified CSS class.
+    ///</summary>
+    ///  <param name="className">The CSS class to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS class.
+    ///</summary>
+    ///  <param name="className">The CSS class to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
 
   end;
 
   //-------------namespace: OpenQA.Selenium.Internal----------------
+  ///<summary>
+  ///  Defines the interface through which the user finds elements by their cascading style sheet (CSS) selector.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Internal.IFindsByCssSelector')]
   DNIFindsByCssSelector = interface(DDN.mscorlib.DNObject)
   ['{5E14D768-185E-3F80-B2B1-A1480AA25E1D}']
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The id to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
 
   end;
 
   //-------------namespace: OpenQA.Selenium.Internal----------------
+  ///<summary>
+  ///  Defines the interface through which the user finds elements by their ID.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Internal.IFindsById')]
   DNIFindsById = interface(DDN.mscorlib.DNObject)
   ['{6E3A628F-5403-3F9B-A396-4E14836A941E}']
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element matching the specified id.
+    ///</summary>
+    ///  <param name="id">The id to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified id.
+    ///</summary>
+    ///  <param name="id">The id to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
 
   end;
 
   //-------------namespace: OpenQA.Selenium.Internal----------------
+  ///<summary>
+  ///  Defines the interface through which the user finds elements by their link text.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Internal.IFindsByLinkText')]
   DNIFindsByLinkText = interface(DDN.mscorlib.DNObject)
   ['{7C3324C4-7A2C-3ADC-B697-5CF52B5E2E68}']
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element matching the specified link text.
+    ///</summary>
+    ///  <param name="linkText">The link text to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified link text.
+    ///</summary>
+    ///  <param name="linkText">The link text to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
 
   end;
 
   //-------------namespace: OpenQA.Selenium.Internal----------------
+  ///<summary>
+  ///  Defines the interface through which the user finds elements by their name.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Internal.IFindsByName')]
   DNIFindsByName = interface(DDN.mscorlib.DNObject)
   ['{520C10F8-C462-3F4E-BA37-A469F056EA4F}']
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element matching the specified name.
+    ///</summary>
+    ///  <param name="name">The name to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified name.
+    ///</summary>
+    ///  <param name="name">The name to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
 
   end;
 
   //-------------namespace: OpenQA.Selenium.Internal----------------
+  ///<summary>
+  ///  Defines the interface through which the user finds elements by a partial match on their link text.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Internal.IFindsByPartialLinkText')]
   DNIFindsByPartialLinkText = interface(DDN.mscorlib.DNObject)
   ['{ECBB04B9-6FBD-39E9-B33A-9D15F8EE4948}']
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element matching the specified partial link text.
+    ///</summary>
+    ///  <param name="partialLinkText">The partial link text to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified partial link text.
+    ///</summary>
+    ///  <param name="partialLinkText">The partial link text to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
 
   end;
 
   //-------------namespace: OpenQA.Selenium.Internal----------------
+  ///<summary>
+  ///  Defines the interface through which the user finds elements by their tag name.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Internal.IFindsByTagName')]
   DNIFindsByTagName = interface(DDN.mscorlib.DNObject)
   ['{5718DB68-92B0-3617-AF49-743EE308AFEF}']
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element matching the specified tag name.
+    ///</summary>
+    ///  <param name="tagName">The tag name to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified tag name.
+    ///</summary>
+    ///  <param name="tagName">The tag name to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
 
   end;
 
   //-------------namespace: OpenQA.Selenium.Internal----------------
+  ///<summary>
+  ///  Defines the interface through which the user finds elements by XPath.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Internal.IFindsByXPath')]
   DNIFindsByXPath = interface(DDN.mscorlib.DNObject)
   ['{8EA9D700-B52F-350D-9902-DDBF00981FD0}']
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element matching the specified XPath query.
+    ///</summary>
+    ///  <param name="xpath">The XPath query to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified XPath query.
+    ///</summary>
+    ///  <param name="xpath">The XPath query to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
 
   end;
 
   //-------------namespace: OpenQA.Selenium.Internal----------------
+  ///<summary>
+  ///  Defines the interface through which the user can access the driver used to find an element.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Internal.IWrapsDriver')]
   DNIWrapsDriver = interface(DDN.mscorlib.DNObject)
   ['{27EB7D21-7B21-3117-A51D-92268006E526}']
@@ -881,10 +1768,17 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  used to find this element.
+    ///</summary>
     property WrappedDriver: DNIWebDriver read get_WrappedDriver;
   end;
 
   //-------------namespace: OpenQA.Selenium.Internal----------------
+  ///<summary>
+  ///  Defines the interface through which the user can discover if there is an underlying element to be used.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Internal.IWrapsElement')]
   DNIWrapsElement = interface(DDN.mscorlib.DNObject)
   ['{B7A1CE37-506F-3854-8172-7F9C92092F59}']
@@ -894,10 +1788,17 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  wrapped by this object.
+    ///</summary>
     property WrappedElement: DNIWebElement read get_WrappedElement;
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Defines an interface allowing the user to set options on the browser.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.IOptions')]
   DNIOptions = interface(DDN.mscorlib.DNObject)
   ['{66653B1C-CA49-354B-B740-18324DAD4A06}']
@@ -909,16 +1810,37 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Provides access to the timeouts defined for this driver.
+    ///</summary>
+    ///<returns>An object implementing the <see cref="T:OpenQA.Selenium.ITimeouts" />
+    ///  interface.</returns>
     function Timeouts: DNITimeouts;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets an object allowing the user to manipulate cookies on the page.
+    ///</summary>
     property Cookies: DNICookieJar read get_Cookies;
+    ///<summary>
+    ///  Gets an object allowing the user to manipulate the currently-focused browser window.
+    ///</summary>
+    ///<remarks>"Currently-focused" is defined as the browser window having the window handle
+    ///  returned when IWebDriver.CurrentWindowHandle is called.</remarks>
     property Window: DNIWindow read get_Window;
+    ///<summary>
+    ///  Gets an object allowing the user to examing the logs for this driver instance.
+    ///</summary>
     property Logs: DNILogs read get_Logs;
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Represents rotation of the browser view for orientation-sensitive devices.
+  ///  When using this with a real device, the device should not be moved so that
+  ///  the built-in sensors do not interfere.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.IRotatable')]
   DNIRotatable = interface(DDN.mscorlib.DNObject)
   ['{F3665991-B99E-3D5B-B3ED-C3A04303688C}']
@@ -929,21 +1851,68 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the screen orientation of the browser on the device.
+    ///</summary>
     property Orientation: DNScreenOrientation read get_Orientation write set_Orientation;
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Defines the interface used to search for elements.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.ISearchContext')]
   DNISearchContext = interface(DDN.mscorlib.DNObject)
   ['{FACE9609-D4DD-39A7-A236-D9659A721122}']
   { methods } 
 
+    ///<summary>
+    ///  Finds the first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  using the given method.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>The first matching <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  on the current context.</returns>
+    ///<exception cref="T:OpenQA.Selenium.NoSuchElementException">If no element matches the criteria.</exception>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds all <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> within the current context
+    ///  using the given mechanism.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  of all <see cref="T:OpenQA.Selenium.IWebElement">WebElements</see>
+    ///  matching the current criteria, or an empty list if nothing matches.</returns>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
 
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Defines the interface through which the user controls the browser.
+  ///</summary>
+  ///<remarks>
+  ///  The <see cref="T:OpenQA.Selenium.IWebDriver" />
+  ///  interface is the main interface to use for testing, which
+  ///  represents an idealized web browser. The methods in this class fall into three categories:
+  ///<list type="bullet"><item><description>Control of the browser itself</description>
+  ///</item>
+  ///<item><description>Selection of <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see></description>
+  ///</item>
+  ///<item><description>Debugging aids</description>
+  ///</item>
+  ///</list>
+  ///  <para>
+  ///  Key properties and methods are <see cref="P:OpenQA.Selenium.IWebDriver.Url" />
+  ///  , which is used to
+  ///  load a new web page by setting the property, and the various methods similar
+  ///  to <see cref="M:OpenQA.Selenium.ISearchContext.FindElement(OpenQA.Selenium.By)" />
+  ///  , which is used to find <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see>.
+  ///</para><para>
+  ///  You use the interface by instantiate drivers that implement of this interface.
+  ///  You should write your tests against this interface so that you may "swap in" a
+  ///  more fully featured browser when there is a requirement for one.
+  ///</para></remarks>
   [DNTypeName('OpenQA.Selenium.IWebDriver')]
   DNIWebDriver = interface(DNISearchContext)
   ['{1C9DFC62-736E-3B41-9244-B5204C699BA5}']
@@ -958,22 +1927,91 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Close the current window, quitting the browser if it is the last window currently open.
+    ///</summary>
     procedure Close;
+    ///<summary>
+    ///  Quits this driver, closing every associated window.
+    ///</summary>
     procedure Quit;
+    ///<summary>
+    ///  Instructs the driver to change its settings.
+    ///</summary>
+    ///<returns>An <see cref="T:OpenQA.Selenium.IOptions" />
+    ///  object allowing the user to change
+    ///  the settings of the driver.</returns>
     function Manage: DNIOptions;
+    ///<summary>
+    ///  Instructs the driver to navigate the browser to another location.
+    ///</summary>
+    ///<returns>An <see cref="T:OpenQA.Selenium.INavigation" />
+    ///  object allowing the user to access
+    ///  the browser's history and to navigate to a given URL.</returns>
     function Navigate: DNINavigation;
+    ///<summary>
+    ///  Instructs the driver to send future commands to a different frame or window.
+    ///</summary>
+    ///<returns>An <see cref="T:OpenQA.Selenium.ITargetLocator" />
+    ///  object which can be used to select
+    ///  a frame or window.</returns>
     function SwitchTo: DNITargetLocator;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the URL the browser is currently displaying.
+    ///</summary>
+    ///<remarks>
+    ///  Setting the <see cref="P:OpenQA.Selenium.IWebDriver.Url" />
+    ///  property will load a new web page in the current browser window.
+    ///  This is done using an HTTP GET operation, and the method will block until the
+    ///  load is complete. This will follow redirects issued either by the server or
+    ///  as a meta-redirect from within the returned HTML. Should a meta-redirect "rest"
+    ///  for any duration of time, it is best to wait until this timeout is over, since
+    ///  should the underlying page change while your test is executing the results of
+    ///  future calls against this interface will be against the freshly loaded page.
+    ///</remarks>
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.String)" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.Uri)" />
     property Url: string read get_Url write set_Url;
+    ///<summary>
+    ///  Gets the title of the current browser window.
+    ///</summary>
     property Title: string read get_Title;
+    ///<summary>
+    ///  Gets the source of the page last loaded by the browser.
+    ///</summary>
+    ///<remarks>
+    ///  If the page has been modified after loading (for example, by JavaScript)
+    ///  there is no guarantee that the returned text is that of the modified page.
+    ///  Please consult the documentation of the particular driver being used to
+    ///  determine whether the returned text reflects the current state of the page
+    ///  or the text last sent by the web server. The page source returned is a
+    ///  representation of the underlying DOM: do not expect it to be formatted
+    ///  or escaped in the same way as the response sent from the web server.
+    ///</remarks>
     property PageSource: string read get_PageSource;
+    ///<summary>
+    ///  Gets the current window handle, which is an opaque handle to this
+    ///  window that uniquely identifies it within this driver instance.
+    ///</summary>
     property CurrentWindowHandle: string read get_CurrentWindowHandle;
+    ///<summary>
+    ///  Gets the window handles of open browser windows.
+    ///</summary>
     property WindowHandles: DDN.mscorlib.DNReadOnlyCollection<string> read get_WindowHandles;
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Defines the interface through which the user controls elements on the page.
+  ///</summary>
+  ///<remarks>The <see cref="T:OpenQA.Selenium.IWebElement" />
+  ///  interface represents an HTML element.
+  ///  Generally, all interesting operations to do with interacting with a page will
+  ///  be performed through this interface.
+  ///</remarks>
   [DNTypeName('OpenQA.Selenium.IWebElement')]
   DNIWebElement = interface(DNISearchContext)
   ['{AD063E71-7F97-3BFC-9422-7ADE3B20E97A}']
@@ -989,52 +2027,242 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Clears the content of this element.
+    ///</summary>
+    ///<remarks>If this element is a text entry element, the <see cref="M:OpenQA.Selenium.IWebElement.Clear" />
+    ///  method will clear the value. It has no effect on other elements. Text entry elements
+    ///  are defined as elements with INPUT or TEXTAREA tags.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Clear;
+    ///<summary>
+    ///  Simulates typing text into the element.
+    ///</summary>
+    ///  <param name="text">The text to type into the element.</param>
+    ///<remarks>The text to be typed may include special characters like arrow keys,
+    ///  backspaces, function keys, and so on. Valid special keys are defined in
+    ///<see cref="T:OpenQA.Selenium.Keys" />
+    ///  .</remarks>
+    ///<seealso cref="T:OpenQA.Selenium.Keys" />
+    ///<exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception><exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure SendKeys(text: string);
+    ///<summary>
+    ///  Submits this element to the web server.
+    ///</summary>
+    ///<remarks>If this current element is a form, or an element within a form,
+    ///  then this will be submitted to the web server. If this causes the current
+    ///  page to change, then this method will block until the new page is loaded.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Submit;
+    ///<summary>
+    ///  Clicks this element.
+    ///</summary>
+    ///<remarks><para>
+    ///  Click this element. If the click causes a new page to load, the <see cref="M:OpenQA.Selenium.IWebElement.Click" />
+    ///  method will attempt to block until the page has loaded. After calling the
+    ///<see cref="M:OpenQA.Selenium.IWebElement.Click" />
+    ///  method, you should discard all references to this
+    ///  element unless you know that the element and the page will still be present.
+    ///  Otherwise, any further operations performed on this element will have an undefined.
+    ///  behavior.
+    ///</para><para>
+    ///  If this element is not clickable, then this operation is ignored. This allows you to
+    ///  simulate a users to accidentally missing the target when clicking.
+    ///</para></remarks>
+    ///<exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Click;
+    ///<summary>
+    ///  Gets the value of the specified attribute for this element.
+    ///</summary>
+    ///  <param name="attributeName">The name of the attribute.</param>
+    ///<returns>The attribute's current value. Returns a <see langword="null" />
+    ///  if the
+    ///  value is not set.</returns>
+    ///<remarks>The <see cref="M:OpenQA.Selenium.IWebElement.GetAttribute(System.String)" />
+    ///  method will return the current value
+    ///  of the attribute, even if the value has been modified after the page has been
+    ///  loaded. Note that the value of the following attributes will be returned even if
+    ///  there is no explicit attribute on the element:
+    ///<list type="table"><listheader><term>Attribute name</term><term>Value returned if not explicitly specified</term><term>Valid element types</term></listheader><item><description>checked</description>
+    ///<description>checked</description>
+    ///<description>Check Box</description>
+    ///</item>
+    ///<item><description>selected</description>
+    ///<description>selected</description>
+    ///<description>Options in Select elements</description>
+    ///</item>
+    ///<item><description>disabled</description>
+    ///<description>disabled</description>
+    ///<description>Input and other UI elements</description>
+    ///</item>
+    ///</list>
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetAttribute(attributeName: string): string;
+    ///<summary>
+    ///  Gets the value of a CSS property of this element.
+    ///</summary>
+    ///  <param name="propertyName">The name of the CSS property to get the value of.</param>
+    ///<returns>The value of the specified CSS property.</returns>
+    ///<remarks>The value returned by the <see cref="M:OpenQA.Selenium.IWebElement.GetCssValue(System.String)" />
+    ///  method is likely to be unpredictable in a cross-browser environment.
+    ///  Color values should be returned as hex strings. For example, a
+    ///  "background-color" property set as "green" in the HTML source, will
+    ///  return "#008000" for its value.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetCssValue(propertyName: string): string;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the tag name of this element.
+    ///</summary>
+    ///<remarks>
+    ///  The <see cref="P:OpenQA.Selenium.IWebElement.TagName" />
+    ///  property returns the tag name of the
+    ///  element, not the value of the name attribute. For example, it will return
+    ///  "input" for an element specified by the HTML markup &lt;input name="foo" /&gt;.
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property TagName: string read get_TagName;
+    ///<summary>
+    ///  Gets the innerText of this element, without any leading or trailing whitespace,
+    ///  and with other whitespace collapsed.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Text: string read get_Text;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is enabled.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.IWebElement.Enabled" />
+    ///  property will generally
+    ///  return <see langword="true" />
+    ///  for everything except explicitly disabled input elements.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Enabled: Boolean read get_Enabled;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is selected.
+    ///</summary>
+    ///<remarks>This operation only applies to input elements such as checkboxes,
+    ///  options in a select element and radio buttons.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Selected: Boolean read get_Selected;
+    ///<summary>
+    ///  Gets a <see cref="T:System.Drawing.Point" />
+    ///  object containing the coordinates of the upper-left corner
+    ///  of this element relative to the upper-left corner of the page.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Location: DDN.System.Drawing.DNPoint read get_Location;
+    ///<summary>
+    ///  Gets a <see cref="P:OpenQA.Selenium.IWebElement.Size" />
+    ///  object containing the height and width of this element.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Size: DDN.System.Drawing.DNSize read get_Size;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is displayed.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.IWebElement.Displayed" />
+    ///  property avoids the problem
+    ///  of having to parse an element's "style" attribute to determine
+    ///  visibility of an element.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Displayed: Boolean read get_Displayed;
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Defines the interface used to take screen shot images of the screen.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.ITakesScreenshot')]
   DNITakesScreenshot = interface(DDN.mscorlib.DNObject)
   ['{608D96EF-01A3-3122-B48F-8D09E2905BA2}']
   { methods } 
 
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of the page on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
 
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Defines the interface through which the user can locate a given frame or window.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.ITargetLocator')]
   DNITargetLocator = interface(DDN.mscorlib.DNObject)
   ['{E5443C94-1885-3B1F-88F9-2015EE3FBAD2}']
   { methods } 
 
+    ///<summary>
+    ///  Select a frame by its (zero-based) index.
+    ///</summary>
+    ///  <param name="frameIndex">The zero-based index of the frame to select.</param>
+    ///<returns>An <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  instance focused on the specified frame.</returns>
+    ///<exception cref="T:OpenQA.Selenium.NoSuchFrameException">If the frame cannot be found.</exception>
     function Frame(frameIndex: Int32): DNIWebDriver; overload;
+    ///<summary>
+    ///  Select a frame by its name or ID.
+    ///</summary>
+    ///  <param name="frameName">The name of the frame to select.</param>
+    ///<returns>An <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  instance focused on the specified frame.</returns>
+    ///<exception cref="T:OpenQA.Selenium.NoSuchFrameException">If the frame cannot be found.</exception>
     function Frame(frameName: string): DNIWebDriver; overload;
+    ///<summary>
+    ///  Select a frame using its previously located <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///</summary>
+    ///  <param name="frameElement">The frame element to switch to.</param>
+    ///<returns>An <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  instance focused on the specified frame.</returns>
+    ///<exception cref="T:OpenQA.Selenium.NoSuchFrameException">If the element is neither a FRAME nor an IFRAME element.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">If the element is no longer valid.</exception>
     function Frame(frameElement: DNIWebElement): DNIWebDriver; overload;
+    ///<summary>
+    ///  Select the parent frame of the currently selected frame.
+    ///</summary>
+    ///<returns>An <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  instance focused on the specified frame.</returns>
     function ParentFrame: DNIWebDriver;
+    ///<summary>
+    ///  Switches the focus of future commands for this driver to the window with the given name.
+    ///</summary>
+    ///  <param name="windowName">The name of the window to select.</param>
+    ///<returns>An <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  instance focused on the given window.</returns>
+    ///<exception cref="T:OpenQA.Selenium.NoSuchWindowException">If the window cannot be found.</exception>
     function Window(windowName: string): DNIWebDriver;
+    ///<summary>
+    ///  Selects either the first frame on the page or the main document when a page contains iFrames.
+    ///</summary>
+    ///<returns>An <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  instance focused on the default frame.</returns>
     function DefaultContent: DNIWebDriver;
+    ///<summary>
+    ///  Switches to the element that currently has the focus, or the body element
+    ///  if no element with focus can be detected.
+    ///</summary>
+    ///<returns>An <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  instance representing the element
+    ///  with the focus, or the body element if no element with focus can be detected.</returns>
     function ActiveElement: DNIWebElement;
+    ///<summary>
+    ///  Switches to the currently active modal dialog for this particular driver instance.
+    ///</summary>
+    ///<returns>A handle to the dialog.</returns>
     function Alert: DNIAlert;
 
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Defines the interface through which the user can define timeouts.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.ITimeouts')]
   DNITimeouts = interface(DDN.mscorlib.DNObject)
   ['{5D312598-5F93-35DA-AB94-9E8DA119B40F}']
@@ -1055,31 +2283,132 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the implicit wait timeout, which is the  amount of time the
+    ///  driver should wait when searching for an element if it is not immediately
+    ///  present.
+    ///</summary>
+    ///<remarks>
+    ///  When searching for a single element, the driver should poll the page
+    ///  until the element has been found, or this timeout expires before throwing
+    ///  a <see cref="T:OpenQA.Selenium.NoSuchElementException" />
+    ///  . When searching for multiple elements,
+    ///  the driver should poll the page until at least one element has been found
+    ///  or this timeout has expired.
+    ///  <para>
+    ///  Increasing the implicit wait timeout should be used judiciously as it
+    ///  will have an adverse effect on test run time, especially when used with
+    ///  slower location strategies like XPath.
+    ///</para></remarks>
     property ImplicitWait: DDN.mscorlib.DNTimeSpan read get_ImplicitWait write set_ImplicitWait;
+    ///<summary>
+    ///  Gets or sets the asynchronous script timeout, which is the amount
+    ///  of time the driver should wait when executing JavaScript asynchronously.
+    ///  This timeout only affects the <see cref="M:OpenQA.Selenium.IJavaScriptExecutor.ExecuteAsyncScript(System.String,System.Object[])" />
+    ///  method.
+    ///</summary>
     property AsynchronousJavaScript: DDN.mscorlib.DNTimeSpan read get_AsynchronousJavaScript write set_AsynchronousJavaScript;
+    ///<summary>
+    ///  Gets or sets the page load timeout, which is the amount of time the driver
+    ///  should wait for a page to load when setting the <see cref="P:OpenQA.Selenium.IWebDriver.Url" />
+    ///  property.
+    ///</summary>
     property PageLoad: DDN.mscorlib.DNTimeSpan read get_PageLoad write set_PageLoad;
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Interface representing basic touch screen operations.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.ITouchScreen')]
   DNITouchScreen = interface(DDN.mscorlib.DNObject)
   ['{A0AD896F-D924-36FD-9F61-107277EB3470}']
   { methods } 
 
+    ///<summary>
+    ///  Allows the execution of single tap on the screen, analogous to click using a Mouse.
+    ///</summary>
+    ///  <param name="where">The <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  object representing the location on the screen,
+    ///  usually an <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  .</param>
     procedure SingleTap(where: DNICoordinates);
+    ///<summary>
+    ///  Allows the execution of the gesture 'down' on the screen. It is typically the first of a
+    ///  sequence of touch gestures.
+    ///</summary>
+    ///  <param name="locationX">The x coordinate relative to the view port.</param>
+    ///  <param name="locationY">The y coordinate relative to the view port.</param>
     procedure Down(locationX: Int32; locationY: Int32);
+    ///<summary>
+    ///  Allows the execution of the gesture 'up' on the screen. It is typically the last of a
+    ///  sequence of touch gestures.
+    ///</summary>
+    ///  <param name="locationX">The x coordinate relative to the view port.</param>
+    ///  <param name="locationY">The y coordinate relative to the view port.</param>
     procedure Up(locationX: Int32; locationY: Int32);
+    ///<summary>
+    ///  Allows the execution of the gesture 'move' on the screen.
+    ///</summary>
+    ///  <param name="locationX">The x coordinate relative to the view port.</param>
+    ///  <param name="locationY">The y coordinate relative to the view port.</param>
     procedure Move(locationX: Int32; locationY: Int32);
+    ///<summary>
+    ///  Creates a scroll gesture that starts on a particular screen location.
+    ///</summary>
+    ///  <param name="where">The <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  object representing the location on the screen
+    ///  where the scroll starts, usually an <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  .</param>
+    ///  <param name="offsetX">The x coordinate relative to the view port.</param>
+    ///  <param name="offsetY">The y coordinate relative to the view port.</param>
     procedure Scroll(where: DNICoordinates; offsetX: Int32; offsetY: Int32); overload;
+    ///<summary>
+    ///  Creates a scroll gesture for a particular x and y offset.
+    ///</summary>
+    ///  <param name="offsetX">The horizontal offset relative to the view port.</param>
+    ///  <param name="offsetY">The vertical offset relative to the view port.</param>
     procedure Scroll(offsetX: Int32; offsetY: Int32); overload;
+    ///<summary>
+    ///  Allows the execution of double tap on the screen, analogous to click using a Mouse.
+    ///</summary>
+    ///  <param name="where">The <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  object representing the location on the screen,
+    ///  usually an <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  .</param>
     procedure DoubleTap(where: DNICoordinates);
+    ///<summary>
+    ///  Allows the execution of a long press gesture on the screen.
+    ///</summary>
+    ///  <param name="where">The <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  object representing the location on the screen,
+    ///  usually an <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  .</param>
     procedure LongPress(where: DNICoordinates);
+    ///<summary>
+    ///  Creates a flick gesture for the current view.
+    ///</summary>
+    ///  <param name="speedX">The horizontal speed in pixels per second.</param>
+    ///  <param name="speedY">The vertical speed in pixels per second.</param>
     procedure Flick(speedX: Int32; speedY: Int32); overload;
+    ///<summary>
+    ///  Creates a flick gesture for the current view starting at a specific location.
+    ///</summary>
+    ///  <param name="where">The <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  object representing the location on the screen
+    ///  where the scroll starts, usually an <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  .</param>
+    ///  <param name="offsetX">The x offset relative to the viewport.</param>
+    ///  <param name="offsetY">The y offset relative to the viewport.</param>
+    ///  <param name="speed">The speed in pixels per second.</param>
     procedure Flick(where: DNICoordinates; offsetX: Int32; offsetY: Int32; speed: Int32); overload;
 
   end;
 
   //-------------namespace: OpenQA.Selenium----------------
+  ///<summary>
+  ///  Provides methods for getting and setting the size and position of the browser window.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.IWindow')]
   DNIWindow = interface(DDN.mscorlib.DNObject)
   ['{2326EB24-0CD6-3E17-BA8C-F3D0FED192AC}']
@@ -1092,15 +2421,29 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Maximizes the current window if it is not already maximized.
+    ///</summary>
     procedure Maximize;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the position of the browser window relative to the upper-left corner of the screen.
+    ///</summary>
+    ///<remarks>When setting this property, it should act as the JavaScript window.moveTo() method.</remarks>
     property Position: DDN.System.Drawing.DNPoint read get_Position write set_Position;
+    ///<summary>
+    ///  Gets or sets the size of the outer browser window, including title bars and window borders.
+    ///</summary>
+    ///<remarks>When setting this property, it should act as the JavaScript window.resizeTo() method.</remarks>
     property Size: DDN.System.Drawing.DNSize read get_Size write set_Size;
   end;
 
   //-------------namespace: OpenQA.Selenium.Remote----------------
+  ///<summary>
+  ///  Provides a way to send commands to the remote server
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.ICommandExecutor')]
   DNICommandExecutor = interface(DDN.mscorlib.DNObject)
   ['{31025164-17F7-396D-B574-F0E0D48FCA6B}']
@@ -1110,14 +2453,25 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Executes a command
+    ///</summary>
+    ///  <param name="commandToExecute">The command you wish to execute</param>
+    ///<returns>A response from the browser</returns>
     function Execute(commandToExecute: DNCommand): DNResponse;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the repository of objects containin information about commands.
+    ///</summary>
     property CommandInfoRepository: DNCommandInfoRepository read get_CommandInfoRepository;
   end;
 
   //-------------namespace: OpenQA.Selenium.Remote----------------
+  ///<summary>
+  ///  Interface indicating the driver has a Session ID.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.IHasSessionId')]
   DNIHasSessionId = interface(DDN.mscorlib.DNObject)
   ['{AC523B5F-AAA8-3381-8850-8E8806B1EBD4}']
@@ -1127,15 +2481,24 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the session ID of the current session.
+    ///</summary>
     property SessionId: DNSessionId read get_SessionId;
   end;
 
   //-------------namespace: OpenQA.Selenium.Remote----------------
+  ///<summary>
+  ///  Provides a way to start a server that understands remote commands
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.ICommandServer')]
   DNICommandServer = interface(DDN.mscorlib.DNIDisposable)
   ['{D97CBE6B-14F0-3351-B19F-E241D4EB993F}']
   { methods } 
 
+    ///<summary>
+    ///  Starts the server.
+    ///</summary>
     procedure Start;
 
   end;
@@ -1145,26 +2508,122 @@ type
   ['{1E1ED29E-C813-5488-82FE-0CEACF113EE6}']
   { static methods } 
 
+    ///<summary>
+    ///  Gets a mechanism to find elements by their ID.
+    ///</summary>
+    ///  <param name="idToFind">The ID to find.</param>
+    ///<returns>A <see cref="T:OpenQA.Selenium.By" />
+    ///  object the driver can use to find the elements.</returns>
     {class} function Id(idToFind: string): DNBy;
+    ///<summary>
+    ///  Gets a mechanism to find elements by their link text.
+    ///</summary>
+    ///  <param name="linkTextToFind">The link text to find.</param>
+    ///<returns>A <see cref="T:OpenQA.Selenium.By" />
+    ///  object the driver can use to find the elements.</returns>
     {class} function LinkText(linkTextToFind: string): DNBy;
+    ///<summary>
+    ///  Gets a mechanism to find elements by their name.
+    ///</summary>
+    ///  <param name="nameToFind">The name to find.</param>
+    ///<returns>A <see cref="T:OpenQA.Selenium.By" />
+    ///  object the driver can use to find the elements.</returns>
     {class} function Name(nameToFind: string): DNBy;
+    ///<summary>
+    ///  Gets a mechanism to find elements by an XPath query.
+    ///  When searching within a WebElement using xpath be aware that WebDriver follows standard conventions:
+    ///  a search prefixed with "//" will search the entire document, not just the children of this current node.
+    ///  Use ".//" to limit your search to the children of this WebElement.
+    ///</summary>
+    ///  <param name="xpathToFind">The XPath query to use.</param>
+    ///<returns>A <see cref="T:OpenQA.Selenium.By" />
+    ///  object the driver can use to find the elements.</returns>
     {class} function XPath(xpathToFind: string): DNBy;
+    ///<summary>
+    ///  Gets a mechanism to find elements by their CSS class.
+    ///</summary>
+    ///  <param name="classNameToFind">The CSS class to find.</param>
+    ///<returns>A <see cref="T:OpenQA.Selenium.By" />
+    ///  object the driver can use to find the elements.</returns>
+    ///<remarks>If an element has many classes then this will match against each of them.
+    ///  For example if the value is "one two onone", then the following values for the
+    ///  className parameter will match: "one" and "two".</remarks>
     {class} function ClassName(classNameToFind: string): DNBy;
+    ///<summary>
+    ///  Gets a mechanism to find elements by a partial match on their link text.
+    ///</summary>
+    ///  <param name="partialLinkTextToFind">The partial link text to find.</param>
+    ///<returns>A <see cref="T:OpenQA.Selenium.By" />
+    ///  object the driver can use to find the elements.</returns>
     {class} function PartialLinkText(partialLinkTextToFind: string): DNBy;
+    ///<summary>
+    ///  Gets a mechanism to find elements by their tag name.
+    ///</summary>
+    ///  <param name="tagNameToFind">The tag name to find.</param>
+    ///<returns>A <see cref="T:OpenQA.Selenium.By" />
+    ///  object the driver can use to find the elements.</returns>
     {class} function TagName(tagNameToFind: string): DNBy;
+    ///<summary>
+    ///  Gets a mechanism to find elements by their cascading style sheet (CSS) selector.
+    ///</summary>
+    ///  <param name="cssSelectorToFind">The CSS selector to find.</param>
+    ///<returns>A <see cref="T:OpenQA.Selenium.By" />
+    ///  object the driver can use to find the elements.</returns>
     {class} function CssSelector(cssSelectorToFind: string): DNBy;
 
   end;
 
+  ///<summary>
+  ///  Provides a mechanism by which to find elements within a document.
+  ///</summary>
+  ///<remarks>It is possible to create your own locating mechanisms for finding documents.
+  ///  In order to do this,subclass this class and override the protected methods. However,
+  ///  it is expected that that all subclasses rely on the basic finding mechanisms provided
+  ///  through static methods of this class. An example of this can be found in OpenQA.Support.ByIdOrName
+  ///</remarks>
   [DNTypeName('OpenQA.Selenium.By')]
   DNBy = interface(DDN.mscorlib.DNObject)
   ['{0D3C66E0-B0AE-3D83-B97D-1032477E3C57}']
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element matching the criteria.
+    ///</summary>
+    ///  <param name="context">An <see cref="T:OpenQA.Selenium.ISearchContext" />
+    ///  object to use to search for the elements.</param>
+    ///<returns>The first matching <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  on the current context.</returns>
     function FindElement(context: DNISearchContext): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the criteria.
+    ///</summary>
+    ///  <param name="context">An <see cref="T:OpenQA.Selenium.ISearchContext" />
+    ///  object to use to search for the elements.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  of all <see cref="T:OpenQA.Selenium.IWebElement">WebElements</see>
+    ///  matching the current criteria, or an empty list if nothing matches.</returns>
     function FindElements(context: DNISearchContext): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a string representation of the finder.
+    ///</summary>
+    ///<returns>The string displaying the finder content.</returns>
     function ToString: string;
+    ///<summary>
+    ///  Determines whether the specified <see cref="T:System.Object">Object</see> is equal
+    ///  to the current <see cref="T:System.Object">Object</see>.
+    ///</summary>
+    ///  <param name="obj">The <see cref="T:System.Object">Object</see> to compare with the
+    ///  current <see cref="T:System.Object">Object</see>.</param>
+    ///<returns><see langword="true" />
+    ///  if the specified <see cref="T:System.Object">Object</see>
+    ///  is equal to the current <see cref="T:System.Object">Object</see>; otherwise,
+    ///<see langword="false" />
+    ///  .</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  Serves as a hash function for a particular type.
+    ///</summary>
+    ///<returns>A hash code for the current <see cref="T:System.Object">Object</see>.</returns>
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
 
@@ -1177,11 +2636,25 @@ type
   ['{53559B15-1D1A-55D3-8124-7EADA7D75BAB}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Chrome.ChromeMobileEmulationDeviceSettings" />
+    ///  class.
+    ///</summary>
     {class} function init: DNChromeMobileEmulationDeviceSettings; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Chrome.ChromeMobileEmulationDeviceSettings" />
+    ///  class.
+    ///</summary>
+    ///  <param name="userAgent">The user agent string to be used by the browser when emulating
+    ///  a mobile device.</param>
     {class} function init(userAgent: string): DNChromeMobileEmulationDeviceSettings; overload;
 
   end;
 
+  ///<summary>
+  ///  Represents the type-safe options for setting settings for emulating a
+  ///  mobile device in the Chrome browser.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Chrome.ChromeMobileEmulationDeviceSettings')]
   DNChromeMobileEmulationDeviceSettings = interface(DDN.mscorlib.DNObject)
   ['{3C208706-0EB6-3766-A785-20B97C490821}']
@@ -1207,10 +2680,31 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the user agent string to be used by the browser when emulating
+    ///  a mobile device.
+    ///</summary>
     property UserAgent: string read get_UserAgent write set_UserAgent;
+    ///<summary>
+    ///  Gets or sets the width in pixels to be used by the browser when emulating
+    ///  a mobile device.
+    ///</summary>
     property Width: Int64 read get_Width write set_Width;
+    ///<summary>
+    ///  Gets or sets the height in pixels to be used by the browser when emulating
+    ///  a mobile device.
+    ///</summary>
     property Height: Int64 read get_Height write set_Height;
+    ///<summary>
+    ///  Gets or sets the pixel ratio to be used by the browser when emulating
+    ///  a mobile device.
+    ///</summary>
     property PixelRatio: Double read get_PixelRatio write set_PixelRatio;
+    ///<summary>
+    ///  Gets or sets a value indicating whether touch events should be enabled by
+    ///  the browser when emulating a mobile device. Defaults to <see langword="true" />
+    ///  .
+    ///</summary>
     property EnableTouchEvents: Boolean read get_EnableTouchEvents write set_EnableTouchEvents;
   end;
 
@@ -1225,6 +2719,10 @@ type
 
   end;
 
+  ///<summary>
+  ///  Represents the type-safe options for setting preferences for performance
+  ///  logging in the Chrome browser.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Chrome.ChromePerformanceLoggingPreferences')]
   DNChromePerformanceLoggingPreferences = interface(DDN.mscorlib.DNObject)
   ['{38C0FE08-CE87-3C27-9715-F244616DD9F6}']
@@ -1242,7 +2740,15 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Adds a single category to the list of Chrome tracing categories for which events should be collected.
+    ///</summary>
+    ///  <param name="category">The category to add.</param>
     procedure AddTracingCategory(category: string);
+    ///<summary>
+    ///  Adds categories to the list of Chrome tracing categories for which events should be collected.
+    ///</summary>
+    ///  <param name="categoriesToAdd">An array of categories to add.</param>
     procedure AddTracingCategories(categoriesToAdd: TArray<string>); overload;
     procedure AddTracingCategories(categoriesToAdd: DDN.mscorlib.DNIEnumerable<string>); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -1252,10 +2758,29 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets a value indicating whether Chrome will collect events from the Network domain.
+    ///  Defaults to <see langword="true" />
+    ///  .
+    ///</summary>
     property IsCollectingNetworkEvents: Boolean read get_IsCollectingNetworkEvents write set_IsCollectingNetworkEvents;
+    ///<summary>
+    ///  Gets or sets a value indicating whether Chrome will collect events from the Page domain.
+    ///  Defaults to <see langword="true" />
+    ///  .
+    ///</summary>
     property IsCollectingPageEvents: Boolean read get_IsCollectingPageEvents write set_IsCollectingPageEvents;
     property IsCollectingTimelineEvents: Boolean read get_IsCollectingTimelineEvents write set_IsCollectingTimelineEvents;
+    ///<summary>
+    ///  Gets or sets the interval between Chrome DevTools trace buffer usage events.
+    ///  Defaults to 1000 milliseconds.
+    ///</summary>
+    ///<exception cref="T:System.ArgumentException">Thrown when an attempt is made to set
+    ///  the value to a time span of less tnan or equal to zero milliseconds.</exception>
     property BufferUsageReportingInterval: DDN.mscorlib.DNTimeSpan read get_BufferUsageReportingInterval write set_BufferUsageReportingInterval;
+    ///<summary>
+    ///  Gets a comma-separated list of the categories for which tracing is enabled.
+    ///</summary>
     property TracingCategories: string read get_TracingCategories;
   end;
 
@@ -1268,7 +2793,29 @@ type
 
     {class} function init(name: string; value: string; domain: string; path: string; expiry: DDN.mscorlib.DNNullable<DDN.mscorlib.DNDateTime>): DNCookie; overload;
     {class} function init(name: string; value: string; path: string; expiry: DDN.mscorlib.DNNullable<DDN.mscorlib.DNDateTime>): DNCookie; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Cookie" />
+    ///  class with a specific name,
+    ///  value, and path.
+    ///</summary>
+    ///  <param name="name">The name of the cookie.</param>
+    ///  <param name="value">The value of the cookie.</param>
+    ///  <param name="path">The path of the cookie.</param>
+    ///<exception cref="T:System.ArgumentException">If the name is <see langword="null" />
+    ///  or an empty string,
+    ///  or if it contains a semi-colon.</exception><exception cref="T:System.ArgumentNullException">If the value is <see langword="null" />
+    ///  .</exception>
     {class} function init(name: string; value: string; path: string): DNCookie; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Cookie" />
+    ///  class with a specific name and value.
+    ///</summary>
+    ///  <param name="name">The name of the cookie.</param>
+    ///  <param name="value">The value of the cookie.</param>
+    ///<exception cref="T:System.ArgumentException">If the name is <see langword="null" />
+    ///  or an empty string,
+    ///  or if it contains a semi-colon.</exception><exception cref="T:System.ArgumentNullException">If the value is <see langword="null" />
+    ///  .</exception>
     {class} function init(name: string; value: string): DNCookie; overload;
 
   { static methods } 
@@ -1277,6 +2824,9 @@ type
 
   end;
 
+  ///<summary>
+  ///  Represents a cookie in the browser.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Cookie')]
   DNCookie = interface(DDN.mscorlib.DNObject)
   ['{1E0B093D-F58B-3B67-8C26-03BE1DA74BA0}']
@@ -1292,19 +2842,59 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Creates and returns a string representation of the cookie.
+    ///</summary>
+    ///<returns>A string representation of the cookie.</returns>
     function ToString: string;
+    ///<summary>
+    ///  Determines whether the specified <see cref="T:System.Object">Object</see> is equal
+    ///  to the current <see cref="T:System.Object">Object</see>.
+    ///</summary>
+    ///  <param name="obj">The <see cref="T:System.Object">Object</see> to compare with the
+    ///  current <see cref="T:System.Object">Object</see>.</param>
+    ///<returns><see langword="true" />
+    ///  if the specified <see cref="T:System.Object">Object</see>
+    ///  is equal to the current <see cref="T:System.Object">Object</see>; otherwise,
+    ///<see langword="false" />
+    ///  .</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  Serves as a hash function for a particular type.
+    ///</summary>
+    ///<returns>A hash code for the current <see cref="T:System.Object">Object</see>.</returns>
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the name of the cookie.
+    ///</summary>
     property Name: string read get_Name;
+    ///<summary>
+    ///  Gets the value of the cookie.
+    ///</summary>
     property Value: string read get_Value;
+    ///<summary>
+    ///  Gets the domain of the cookie.
+    ///</summary>
     property Domain: string read get_Domain;
+    ///<summary>
+    ///  Gets the path of the cookie.
+    ///</summary>
     property Path: string read get_Path;
+    ///<summary>
+    ///  Gets a value indicating whether the cookie is secure.
+    ///</summary>
     property Secure: Boolean read get_Secure;
+    ///<summary>
+    ///  Gets a value indicating whether the cookie is an HTTP-only cookie.
+    ///</summary>
     property IsHttpOnly: Boolean read get_IsHttpOnly;
+    ///<summary>
+    ///  Gets the expiration date of the cookie.
+    ///</summary>
     property Expiry: DDN.mscorlib.DNNullable<DDN.mscorlib.DNDateTime> read get_Expiry;
   end;
 
@@ -1319,6 +2909,9 @@ type
 
   end;
 
+  ///<summary>
+  ///  Represents a cookie returned to the driver by the browser.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Internal.ReturnedCookie')]
   DNReturnedCookie = interface(DNCookie)
   ['{9B490816-BEDA-35C0-B2C9-BB0307279B73}']
@@ -1334,19 +2927,59 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Creates and returns a string representation of the current cookie.
+    ///</summary>
+    ///<returns>A string representation of the current cookie.</returns>
     function ToString: string;
+    ///<summary>
+    ///  Determines whether the specified <see cref="T:System.Object">Object</see> is equal
+    ///  to the current <see cref="T:System.Object">Object</see>.
+    ///</summary>
+    ///  <param name="obj">The <see cref="T:System.Object">Object</see> to compare with the
+    ///  current <see cref="T:System.Object">Object</see>.</param>
+    ///<returns><see langword="true" />
+    ///  if the specified <see cref="T:System.Object">Object</see>
+    ///  is equal to the current <see cref="T:System.Object">Object</see>; otherwise,
+    ///<see langword="false" />
+    ///  .</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  Serves as a hash function for a particular type.
+    ///</summary>
+    ///<returns>A hash code for the current <see cref="T:System.Object">Object</see>.</returns>
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets a value indicating whether the cookie is secure.
+    ///</summary>
     property Secure: Boolean read get_Secure;
+    ///<summary>
+    ///  Gets a value indicating whether the cookie is an HTTP-only cookie.
+    ///</summary>
     property IsHttpOnly: Boolean read get_IsHttpOnly;
+    ///<summary>
+    ///  Gets the name of the cookie.
+    ///</summary>
     property Name: string read get_Name;
+    ///<summary>
+    ///  Gets the value of the cookie.
+    ///</summary>
     property Value: string read get_Value;
+    ///<summary>
+    ///  Gets the domain of the cookie.
+    ///</summary>
     property Domain: string read get_Domain;
+    ///<summary>
+    ///  Gets the path of the cookie.
+    ///</summary>
     property Path: string read get_Path;
+    ///<summary>
+    ///  Gets the expiration date of the cookie.
+    ///</summary>
     property Expiry: DDN.mscorlib.DNNullable<DDN.mscorlib.DNDateTime> read get_Expiry;
   end;
 
@@ -1361,11 +2994,22 @@ type
 
   end;
 
+  ///<summary>
+  ///  Represents the default file detector for determining whether a file
+  ///  must be uploaded to a remote server.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.DefaultFileDetector')]
   DNDefaultFileDetector = interface(DNIFileDetector)
   ['{E445503C-F2F7-3C48-B45A-BFA64DFFD10D}']
   { methods } 
 
+    ///<summary>
+    ///  Returns a value indicating whether a specified key sequence represents
+    ///  a file name and path.
+    ///</summary>
+    ///  <param name="keySequence">The sequence to test for file existence.</param>
+    ///<returns>This method always returns <see langword="false" />
+    ///  in this implementation.</returns>
     function IsFile(keySequence: string): Boolean;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1381,17 +3025,59 @@ type
   ['{EA66603C-F72E-5321-8F04-0528AF46AE7E}']
   end;
 
+  ///<summary>
+  ///  Base class for managing options specific to a browser driver.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.DriverOptions')]
   DNDriverOptions = interface(DDN.mscorlib.DNObject)
   ['{490818E0-2F36-3C2C-9B0D-9FBBB36BE8AA}']
   { methods } 
 
+    ///<summary>
+    ///  Provides a means to add additional capabilities not yet added as type safe options
+    ///  for the specific browser driver.
+    ///</summary>
+    ///  <param name="capabilityName">The name of the capability to add.</param>
+    ///  <param name="capabilityValue">The value of the capability to add.</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  thrown when attempting to add a capability for which there is already a type safe option, or
+    ///  when <paramref name="capabilityName" />
+    ///  is <see langword="null" />
+    ///  or the empty string.
+    ///</exception><remarks>Calling <see cref="M:OpenQA.Selenium.DriverOptions.AddAdditionalCapability(System.String,System.Object)" />
+    ///  where <paramref name="capabilityName" />
+    ///  has already been added will overwrite the
+    ///  existing value with the new value in <paramref name="capabilityValue" />
+    ///  .
+    ///</remarks>
     procedure AddAdditionalCapability(capabilityName: string; capabilityValue: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  Returns the <see cref="T:OpenQA.Selenium.ICapabilities" />
+    ///  for the specific browser driver with these
+    ///  options included as capabilities. This does not copy the options. Further
+    ///  changes will be reflected in the returned capabilities.
+    ///</summary>
+    ///<returns>The <see cref="T:OpenQA.Selenium.ICapabilities" />
+    ///  for browser driver with these options.</returns>
     function ToCapabilities: DNICapabilities;
+    ///<summary>
+    ///  Sets the logging preferences for this driver.
+    ///</summary>
+    ///  <param name="logType">The type of log for which to set the preference.
+    ///  Known log types can be found in the <see cref="T:OpenQA.Selenium.LogType" />
+    ///  class.</param>
+    ///  <param name="logLevel">The <see cref="T:OpenQA.Selenium.LogLevel" />
+    ///  value to which to set the log level.</param>
     procedure SetLoggingPreference(logType: string; logLevel: DNLogLevel);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
+    ///<summary>
+    ///  Returns a string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .
+    ///</summary>
+    ///<returns>A string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .</returns>
     function ToString: string;
 
   end;
@@ -1411,10 +3097,30 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  Gets the name of the capability used to store Chrome options in
+    ///  a <see cref="T:OpenQA.Selenium.Remote.DesiredCapabilities" />
+    ///  object.
+    ///</summary>
     {class} property Capability: string read __fakeFieldGet_Capability;
 
   end;
 
+  ///<summary>
+  ///  Class to manage options specific to <see cref="T:OpenQA.Selenium.Chrome.ChromeDriver" />
+  ///</summary>
+  ///<remarks>
+  ///  Used with ChromeDriver.exe v17.0.963.0 and higher.
+  ///</remarks>
+  ///<example><code>
+  ///  ChromeOptions options = new ChromeOptions();
+  ///  options.AddExtensions("\path\to\extension.crx");
+  ///  options.BinaryLocation = "\path\to\chrome";
+  ///</code><para /><para>For use with ChromeDriver:</para><para /><code>
+  ///  ChromeDriver driver = new ChromeDriver(options);
+  ///</code><para /><para>For use with RemoteWebDriver:</para><para /><code>
+  ///  RemoteWebDriver driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), options.ToCapabilities());
+  ///</code></example>
   [DNTypeName('OpenQA.Selenium.Chrome.ChromeOptions')]
   DNChromeOptions = interface(DNDriverOptions)
   ['{883E3B0F-7348-3C5B-A880-87A258988D09}']
@@ -1437,43 +3143,208 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Adds a single argument to the list of arguments to be appended to the Chrome.exe command line.
+    ///</summary>
+    ///  <param name="argument">The argument to add.</param>
     procedure AddArgument(argument: string);
+    ///<summary>
+    ///  Adds arguments to be appended to the Chrome.exe command line.
+    ///</summary>
+    ///  <param name="argumentsToAdd">An array of arguments to add.</param>
     procedure AddArguments(argumentsToAdd: TArray<string>); overload;
     procedure AddArguments(argumentsToAdd: DDN.mscorlib.DNIEnumerable<string>); overload;
+    ///<summary>
+    ///  Adds a single argument to be excluded from the list of arguments passed by default
+    ///  to the Chrome.exe command line by chromedriver.exe.
+    ///</summary>
+    ///  <param name="argument">The argument to exclude.</param>
     procedure AddExcludedArgument(argument: string);
+    ///<summary>
+    ///  Adds arguments to be excluded from the list of arguments passed by default
+    ///  to the Chrome.exe command line by chromedriver.exe.
+    ///</summary>
+    ///  <param name="argumentsToExclude">An array of arguments to exclude.</param>
     procedure AddExcludedArguments(argumentsToExclude: TArray<string>); overload;
     procedure AddExcludedArguments(argumentsToExclude: DDN.mscorlib.DNIEnumerable<string>); overload;
+    ///<summary>
+    ///  Adds a path to a packed Chrome extension (.crx file) to the list of extensions
+    ///  to be installed in the instance of Chrome.
+    ///</summary>
+    ///  <param name="pathToExtension">The full path to the extension to add.</param>
     procedure AddExtension(pathToExtension: string);
+    ///<summary>
+    ///  Adds a list of paths to packed Chrome extensions (.crx files) to be installed
+    ///  in the instance of Chrome.
+    ///</summary>
+    ///  <param name="extensions">An array of full paths to the extensions to add.</param>
     procedure AddExtensions(extensions: TArray<string>); overload;
     procedure AddExtensions(extensions: DDN.mscorlib.DNIEnumerable<string>); overload;
+    ///<summary>
+    ///  Adds a base64-encoded string representing a Chrome extension to the list of extensions
+    ///  to be installed in the instance of Chrome.
+    ///</summary>
+    ///  <param name="extension">A base64-encoded string representing the extension to add.</param>
     procedure AddEncodedExtension(extension: string);
+    ///<summary>
+    ///  Adds a list of base64-encoded strings representing Chrome extensions to the list of extensions
+    ///  to be installed in the instance of Chrome.
+    ///</summary>
+    ///  <param name="extensions">An array of base64-encoded strings representing the extensions to add.</param>
     procedure AddEncodedExtensions(extensions: TArray<string>); overload;
     procedure AddEncodedExtensions(extensions: DDN.mscorlib.DNIEnumerable<string>); overload;
+    ///<summary>
+    ///  Adds a preference for the user-specific profile or "user data directory."
+    ///  If the specified preference already exists, it will be overwritten.
+    ///</summary>
+    ///  <param name="preferenceName">The name of the preference to set.</param>
+    ///  <param name="preferenceValue">The value of the preference to set.</param>
     procedure AddUserProfilePreference(preferenceName: string; preferenceValue: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  Adds a preference for the local state file in the user's data directory for Chrome.
+    ///  If the specified preference already exists, it will be overwritten.
+    ///</summary>
+    ///  <param name="preferenceName">The name of the preference to set.</param>
+    ///  <param name="preferenceValue">The value of the preference to set.</param>
     procedure AddLocalStatePreference(preferenceName: string; preferenceValue: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  Allows the Chrome browser to emulate a mobile device.
+    ///</summary>
+    ///  <param name="deviceName">The name of the device to emulate. The device name must be a
+    ///  valid device name from the Chrome DevTools Emulation panel.</param>
+    ///<remarks>Specifying an invalid device name will not throw an exeption, but
+    ///  will generate an error in Chrome when the driver starts. To unset mobile
+    ///  emulation, call this method with <see langword="null" />
+    ///  as the argument.</remarks>
     procedure EnableMobileEmulation(deviceName: string); overload;
+    ///<summary>
+    ///  Allows the Chrome browser to emulate a mobile device.
+    ///</summary>
+    ///  <param name="deviceSettings">The <see cref="T:OpenQA.Selenium.Chrome.ChromeMobileEmulationDeviceSettings" />
+    ///  object containing the settings of the device to emulate.</param>
+    ///<exception cref="T:System.ArgumentException">Thrown if the device settings option does
+    ///  not have a user agent string set.</exception><remarks>Specifying an invalid device name will not throw an exeption, but
+    ///  will generate an error in Chrome when the driver starts. To unset mobile
+    ///  emulation, call this method with <see langword="null" />
+    ///  as the argument.</remarks>
     procedure EnableMobileEmulation(deviceSettings: DNChromeMobileEmulationDeviceSettings); overload;
+    ///<summary>
+    ///  Adds a type of window that will be listed in the list of window handles
+    ///  returned by the Chrome driver.
+    ///</summary>
+    ///  <param name="windowType">The name of the window type to add.</param>
+    ///<remarks>This method can be used to allow the driver to access {webview}
+    ///  elements by adding "webview" as a window type.</remarks>
     procedure AddWindowType(windowType: string);
+    ///<summary>
+    ///  Adds a list of window types that will be listed in the list of window handles
+    ///  returned by the Chrome driver.
+    ///</summary>
+    ///  <param name="windowTypesToAdd">An array of window types to add.</param>
     procedure AddWindowTypes(windowTypesToAdd: TArray<string>); overload;
     procedure AddWindowTypes(windowTypesToAdd: DDN.mscorlib.DNIEnumerable<string>); overload;
+    ///<summary>
+    ///  Provides a means to add additional capabilities not yet added as type safe options
+    ///  for the Chrome driver.
+    ///</summary>
+    ///  <param name="capabilityName">The name of the capability to add.</param>
+    ///  <param name="capabilityValue">The value of the capability to add.</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  thrown when attempting to add a capability for which there is already a type safe option, or
+    ///  when <paramref name="capabilityName" />
+    ///  is <see langword="null" />
+    ///  or the empty string.
+    ///</exception><remarks>Calling <see cref="M:OpenQA.Selenium.Chrome.ChromeOptions.AddAdditionalCapability(System.String,System.Object)" />
+    ///  where <paramref name="capabilityName" />
+    ///  has already been added will overwrite the
+    ///  existing value with the new value in <paramref name="capabilityValue" />
+    ///  .
+    ///  Also, by default, calling this method adds capabilities to the options object passed to
+    ///  chromedriver.exe.</remarks>
     procedure AddAdditionalCapability(capabilityName: string; capabilityValue: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  Provides a means to add additional capabilities not yet added as type safe options
+    ///  for the Chrome driver.
+    ///</summary>
+    ///  <param name="capabilityName">The name of the capability to add.</param>
+    ///  <param name="capabilityValue">The value of the capability to add.</param>
+    ///  <param name="isGlobalCapability">Indicates whether the capability is to be set as a global
+    ///  capability for the driver instead of a Chrome-specific option.</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  thrown when attempting to add a capability for which there is already a type safe option, or
+    ///  when <paramref name="capabilityName" />
+    ///  is <see langword="null" />
+    ///  or the empty string.
+    ///</exception><remarks>Calling <see cref="M:OpenQA.Selenium.Chrome.ChromeOptions.AddAdditionalCapability(System.String,System.Object,System.Boolean)" />
+    ///  where <paramref name="capabilityName" />
+    ///  has already been added will overwrite the
+    ///  existing value with the new value in <paramref name="capabilityValue" />
+    ///</remarks>
     procedure AddAdditionalCapability(capabilityName: string; capabilityValue: DDN.mscorlib.DNObject; isGlobalCapability: Boolean); overload;
+    ///<summary>
+    ///  Returns DesiredCapabilities for Chrome with these options included as
+    ///  capabilities. This does not copy the options. Further changes will be
+    ///  reflected in the returned capabilities.
+    ///</summary>
+    ///<returns>The DesiredCapabilities for Chrome with these options.</returns>
     function ToCapabilities: DNICapabilities;
+    ///<summary>
+    ///  Sets the logging preferences for this driver.
+    ///</summary>
+    ///  <param name="logType">The type of log for which to set the preference.
+    ///  Known log types can be found in the <see cref="T:OpenQA.Selenium.LogType" />
+    ///  class.</param>
+    ///  <param name="logLevel">The <see cref="T:OpenQA.Selenium.LogLevel" />
+    ///  value to which to set the log level.</param>
     procedure SetLoggingPreference(logType: string; logLevel: DNLogLevel);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
+    ///<summary>
+    ///  Returns a string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .
+    ///</summary>
+    ///<returns>A string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .</returns>
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the location of the Chrome browser's binary executable file.
+    ///</summary>
     property BinaryLocation: string read get_BinaryLocation write set_BinaryLocation;
+    ///<summary>
+    ///  Gets or sets a value indicating whether Chrome should be left running after the
+    ///  ChromeDriver instance is exited. Defaults to <see langword="false" />
+    ///  .
+    ///</summary>
     property LeaveBrowserRunning: Boolean read get_LeaveBrowserRunning write set_LeaveBrowserRunning;
+    ///<summary>
+    ///  Gets or sets the <see cref="P:OpenQA.Selenium.DriverOptions.Proxy" />
+    ///  to be used with this browser.
+    ///</summary>
     property Proxy: DNProxy read get_Proxy write set_Proxy;
+    ///<summary>
+    ///  Gets the list of arguments appended to the Chrome command line as a string array.
+    ///</summary>
     property Arguments: DDN.mscorlib.DNReadOnlyCollection<string> read get_Arguments;
+    ///<summary>
+    ///  Gets the list of extensions to be installed as an array of base64-encoded strings.
+    ///</summary>
     property Extensions: DDN.mscorlib.DNReadOnlyCollection<string> read get_Extensions;
+    ///<summary>
+    ///  Gets or sets the address of a Chrome debugger server to connect to.
+    ///  Should be of the form "{hostname|IP address}:port".
+    ///</summary>
     property DebuggerAddress: string read get_DebuggerAddress write set_DebuggerAddress;
+    ///<summary>
+    ///  Gets or sets the directory in which to store minidump files.
+    ///</summary>
     property MinidumpPath: string read get_MinidumpPath write set_MinidumpPath;
+    ///<summary>
+    ///  Gets or sets the performance logging preferences for the driver.
+    ///</summary>
     property PerformanceLoggingPreferences: DNChromePerformanceLoggingPreferences read get_PerformanceLoggingPreferences write set_PerformanceLoggingPreferences;
   end;
 
@@ -1488,6 +3359,16 @@ type
 
   end;
 
+  ///<summary>
+  ///  Class to manage options specific to <see cref="T:OpenQA.Selenium.Edge.EdgeDriver" />
+  ///</summary>
+  ///<example><code>
+  ///  EdgeOptions options = new EdgeOptions();
+  ///</code><para /><para>For use with EdgeDriver:</para><para /><code>
+  ///  EdgeDriver driver = new EdgeDriver(options);
+  ///</code><para /><para>For use with RemoteWebDriver:</para><para /><code>
+  ///  RemoteWebDriver driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), options.ToCapabilities());
+  ///</code></example>
   [DNTypeName('OpenQA.Selenium.Edge.EdgeOptions')]
   DNEdgeOptions = interface(DNDriverOptions)
   ['{EAF53844-470F-3FA5-BCB2-296C902128C7}']
@@ -1498,16 +3379,56 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Provides a means to add additional capabilities not yet added as type safe options
+    ///  for the Edge driver.
+    ///</summary>
+    ///  <param name="capabilityName">The name of the capability to add.</param>
+    ///  <param name="capabilityValue">The value of the capability to add.</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  thrown when attempting to add a capability for which there is already a type safe option, or
+    ///  when <paramref name="capabilityName" />
+    ///  is <see langword="null" />
+    ///  or the empty string.
+    ///</exception><remarks>Calling <see cref="M:OpenQA.Selenium.Edge.EdgeOptions.AddAdditionalCapability(System.String,System.Object)" />
+    ///  where <paramref name="capabilityName" />
+    ///  has already been added will overwrite the existing value with the new value in <paramref name="capabilityValue" />
+    ///</remarks>
     procedure AddAdditionalCapability(capabilityName: string; capabilityValue: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  Returns DesiredCapabilities for Edge with these options included as
+    ///  capabilities. This copies the options. Further changes will not be
+    ///  reflected in the returned capabilities.
+    ///</summary>
+    ///<returns>The DesiredCapabilities for Edge with these options.</returns>
     function ToCapabilities: DNICapabilities;
+    ///<summary>
+    ///  Sets the logging preferences for this driver.
+    ///</summary>
+    ///  <param name="logType">The type of log for which to set the preference.
+    ///  Known log types can be found in the <see cref="T:OpenQA.Selenium.LogType" />
+    ///  class.</param>
+    ///  <param name="logLevel">The <see cref="T:OpenQA.Selenium.LogLevel" />
+    ///  value to which to set the log level.</param>
     procedure SetLoggingPreference(logType: string; logLevel: DNLogLevel);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
+    ///<summary>
+    ///  Returns a string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .
+    ///</summary>
+    ///<returns>A string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .</returns>
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the value for describing how the browser is to wait for pages to load in the browser.
+    ///  Defaults to <see cref="F:OpenQA.Selenium.PageLoadStrategy.Default" />
+    ///  .
+    ///</summary>
     property PageLoadStrategy: DNEdgePageLoadStrategy read get_PageLoadStrategy write set_PageLoadStrategy;
   end;
 
@@ -1518,10 +3439,27 @@ type
   ['{6E0ED74C-1608-5733-B2B8-795CC6D8795C}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Firefox.FirefoxOptions" />
+    ///  class.
+    ///</summary>
     {class} function init: DNFirefoxOptions;
 
   end;
 
+  ///<summary>
+  ///  Class to manage options specific to <see cref="T:OpenQA.Selenium.Firefox.FirefoxDriver" />
+  ///</summary>
+  ///<remarks>
+  ///  Used with the marionette executable wires.exe.
+  ///</remarks>
+  ///<example><code>
+  ///  FirefoxOptions options = new FirefoxOptions();
+  ///</code><para /><para>For use with FirefoxDriver:</para><para /><code>
+  ///  FirefoxDriver driver = new FirefoxDriver(options);
+  ///</code><para /><para>For use with RemoteWebDriver:</para><para /><code>
+  ///  RemoteWebDriver driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), options.ToCapabilities());
+  ///</code></example>
   [DNTypeName('OpenQA.Selenium.Firefox.FirefoxOptions')]
   DNFirefoxOptions = interface(DNDriverOptions)
   ['{62486E1E-5771-3345-A7B8-A631528810A5}']
@@ -1538,28 +3476,132 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Adds an argument to be used in launching the Firefox browser.
+    ///</summary>
+    ///  <param name="argumentName">The argument to add.</param>
+    ///<remarks>Arguments must be preceeded by two dashes ("--").</remarks>
     procedure AddArgument(argumentName: string);
+    ///<summary>
+    ///  Adds a list arguments to be used in launching the Firefox browser.
+    ///</summary>
+    ///  <param name="argumentsToAdd">An array of arguments to add.</param>
+    ///<remarks>Each argument must be preceeded by two dashes ("--").</remarks>
     procedure AddArguments(argumentsToAdd: TArray<string>); overload;
     procedure AddArguments(argumentsToAdd: DDN.mscorlib.DNIEnumerable<string>); overload;
+    ///<summary>
+    ///  Sets a preference in the profile used by Firefox.
+    ///</summary>
+    ///  <param name="preferenceName">Name of the preference to set.</param>
+    ///  <param name="preferenceValue">Value of the preference to set.</param>
     procedure SetPreference(preferenceName: string; preferenceValue: Boolean); overload;
+    ///<summary>
+    ///  Sets a preference in the profile used by Firefox.
+    ///</summary>
+    ///  <param name="preferenceName">Name of the preference to set.</param>
+    ///  <param name="preferenceValue">Value of the preference to set.</param>
     procedure SetPreference(preferenceName: string; preferenceValue: Int32); overload;
+    ///<summary>
+    ///  Sets a preference in the profile used by Firefox.
+    ///</summary>
+    ///  <param name="preferenceName">Name of the preference to set.</param>
+    ///  <param name="preferenceValue">Value of the preference to set.</param>
     procedure SetPreference(preferenceName: string; preferenceValue: Int64); overload;
+    ///<summary>
+    ///  Sets a preference in the profile used by Firefox.
+    ///</summary>
+    ///  <param name="preferenceName">Name of the preference to set.</param>
+    ///  <param name="preferenceValue">Value of the preference to set.</param>
     procedure SetPreference(preferenceName: string; preferenceValue: Double); overload;
+    ///<summary>
+    ///  Sets a preference in the profile used by Firefox.
+    ///</summary>
+    ///  <param name="preferenceName">Name of the preference to set.</param>
+    ///  <param name="preferenceValue">Value of the preference to set.</param>
     procedure SetPreference(preferenceName: string; preferenceValue: string); overload;
+    ///<summary>
+    ///  Provides a means to add additional capabilities not yet added as type safe options
+    ///  for the Firefox driver.
+    ///</summary>
+    ///  <param name="capabilityName">The name of the capability to add.</param>
+    ///  <param name="capabilityValue">The value of the capability to add.</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  thrown when attempting to add a capability for which there is already a type safe option, or
+    ///  when <paramref name="capabilityName" />
+    ///  is <see langword="null" />
+    ///  or the empty string.
+    ///</exception><remarks>Calling <see cref="M:OpenQA.Selenium.Firefox.FirefoxOptions.AddAdditionalCapability(System.String,System.Object)" />
+    ///  where <paramref name="capabilityName" />
+    ///  has already been added will overwrite the
+    ///  existing value with the new value in <paramref name="capabilityValue" />
+    ///  .
+    ///  Also, by default, calling this method adds capabilities to the options object passed to
+    ///  geckodriver.exe.</remarks>
     procedure AddAdditionalCapability(capabilityName: string; capabilityValue: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  Provides a means to add additional capabilities not yet added as type safe options
+    ///  for the Firefox driver.
+    ///</summary>
+    ///  <param name="capabilityName">The name of the capability to add.</param>
+    ///  <param name="capabilityValue">The value of the capability to add.</param>
+    ///  <param name="isGlobalCapability">Indicates whether the capability is to be set as a global
+    ///  capability for the driver instead of a Firefox-specific option.</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  thrown when attempting to add a capability for which there is already a type safe option, or
+    ///  when <paramref name="capabilityName" />
+    ///  is <see langword="null" />
+    ///  or the empty string.
+    ///</exception><remarks>Calling <see cref="M:OpenQA.Selenium.Firefox.FirefoxOptions.AddAdditionalCapability(System.String,System.Object,System.Boolean)" />
+    ///  where <paramref name="capabilityName" />
+    ///  has already been added will overwrite the
+    ///  existing value with the new value in <paramref name="capabilityValue" />
+    ///</remarks>
     procedure AddAdditionalCapability(capabilityName: string; capabilityValue: DDN.mscorlib.DNObject; isGlobalCapability: Boolean); overload;
+    ///<summary>
+    ///  Returns DesiredCapabilities for Firefox with these options included as
+    ///  capabilities. This does not copy the options. Further changes will be
+    ///  reflected in the returned capabilities.
+    ///</summary>
+    ///<returns>The DesiredCapabilities for Firefox with these options.</returns>
     function ToCapabilities: DNICapabilities;
+    ///<summary>
+    ///  Sets the logging preferences for this driver.
+    ///</summary>
+    ///  <param name="logType">The type of log for which to set the preference.
+    ///  Known log types can be found in the <see cref="T:OpenQA.Selenium.LogType" />
+    ///  class.</param>
+    ///  <param name="logLevel">The <see cref="T:OpenQA.Selenium.LogLevel" />
+    ///  value to which to set the log level.</param>
     procedure SetLoggingPreference(logType: string; logLevel: DNLogLevel);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
+    ///<summary>
+    ///  Returns a string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .
+    ///</summary>
+    ///<returns>A string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .</returns>
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets a value indicating whether to use the legacy driver implementation.
+    ///</summary>
     property UseLegacyImplementation: Boolean read get_UseLegacyImplementation write set_UseLegacyImplementation;
+    ///<summary>
+    ///  Gets or sets the <see cref="T:OpenQA.Selenium.Firefox.FirefoxProfile" />
+    ///  object to be used with this instance.
+    ///</summary>
     property Profile: DNFirefoxProfile read get_Profile write set_Profile;
+    ///<summary>
+    ///  Gets or sets the path and file name of the Firefox browser executable.
+    ///</summary>
     property BrowserExecutableLocation: string read get_BrowserExecutableLocation write set_BrowserExecutableLocation;
+    ///<summary>
+    ///  Gets or sets the logging level of the Firefox driver.
+    ///</summary>
     property LogLevel: DNFirefoxDriverLogLevel read get_LogLevel write set_LogLevel;
   end;
 
@@ -1578,10 +3620,26 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  Gets the name of the capability used to store IE options in
+    ///  a <see cref="T:OpenQA.Selenium.Remote.DesiredCapabilities" />
+    ///  object.
+    ///</summary>
     {class} property Capability: string read __fakeFieldGet_Capability;
 
   end;
 
+  ///<summary>
+  ///  Class to manage options specific to <see cref="T:OpenQA.Selenium.IE.InternetExplorerDriver" />
+  ///</summary>
+  ///<example><code>
+  ///  InternetExplorerOptions options = new InternetExplorerOptions();
+  ///  options.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+  ///</code><para /><para>For use with InternetExplorerDriver:</para><para /><code>
+  ///  InternetExplorerDriver driver = new InternetExplorerDriver(options);
+  ///</code><para /><para>For use with RemoteWebDriver:</para><para /><code>
+  ///  RemoteWebDriver driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), options.ToCapabilities());
+  ///</code></example>
   [DNTypeName('OpenQA.Selenium.IE.InternetExplorerOptions')]
   DNInternetExplorerOptions = interface(DNDriverOptions)
   ['{4084C647-E9C2-3ADA-A6E7-B4C8F3D86F5E}']
@@ -1628,34 +3686,176 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Provides a means to add additional capabilities not yet added as type safe options
+    ///  for the Internet Explorer driver.
+    ///</summary>
+    ///  <param name="capabilityName">The name of the capability to add.</param>
+    ///  <param name="capabilityValue">The value of the capability to add.</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  thrown when attempting to add a capability for which there is already a type safe option, or
+    ///  when <paramref name="capabilityName" />
+    ///  is <see langword="null" />
+    ///  or the empty string.
+    ///</exception><remarks>Calling <see cref="M:OpenQA.Selenium.IE.InternetExplorerOptions.AddAdditionalCapability(System.String,System.Object)" />
+    ///  where <paramref name="capabilityName" />
+    ///  has already been added will overwrite the
+    ///  existing value with the new value in <paramref name="capabilityValue" />
+    ///  .
+    ///  Also, by default, calling this method adds capabilities to the options object passed to
+    ///  IEDriverServer.exe.</remarks>
     procedure AddAdditionalCapability(capabilityName: string; capabilityValue: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  Provides a means to add additional capabilities not yet added as type safe options
+    ///  for the Internet Explorer driver.
+    ///</summary>
+    ///  <param name="capabilityName">The name of the capability to add.</param>
+    ///  <param name="capabilityValue">The value of the capability to add.</param>
+    ///  <param name="isGlobalCapability">Indicates whether the capability is to be set as a global
+    ///  capability for the driver instead of a IE-specific option.</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  thrown when attempting to add a capability for which there is already a type safe option, or
+    ///  when <paramref name="capabilityName" />
+    ///  is <see langword="null" />
+    ///  or the empty string.
+    ///</exception><remarks>Calling <see cref="M:OpenQA.Selenium.IE.InternetExplorerOptions.AddAdditionalCapability(System.String,System.Object,System.Boolean)" />
+    ///  where <paramref name="capabilityName" />
+    ///  has already been added will overwrite the existing value with the new value in <paramref name="capabilityValue" />
+    ///</remarks>
     procedure AddAdditionalCapability(capabilityName: string; capabilityValue: DDN.mscorlib.DNObject; isGlobalCapability: Boolean); overload;
+    ///<summary>
+    ///  Returns DesiredCapabilities for IE with these options included as
+    ///  capabilities. This copies the options. Further changes will not be
+    ///  reflected in the returned capabilities.
+    ///</summary>
+    ///<returns>The DesiredCapabilities for IE with these options.</returns>
     function ToCapabilities: DNICapabilities;
+    ///<summary>
+    ///  Sets the logging preferences for this driver.
+    ///</summary>
+    ///  <param name="logType">The type of log for which to set the preference.
+    ///  Known log types can be found in the <see cref="T:OpenQA.Selenium.LogType" />
+    ///  class.</param>
+    ///  <param name="logLevel">The <see cref="T:OpenQA.Selenium.LogLevel" />
+    ///  value to which to set the log level.</param>
     procedure SetLoggingPreference(logType: string; logLevel: DNLogLevel);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
+    ///<summary>
+    ///  Returns a string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .
+    ///</summary>
+    ///<returns>A string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .</returns>
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets a value indicating whether to ignore the settings of the Internet Explorer Protected Mode.
+    ///</summary>
     property IntroduceInstabilityByIgnoringProtectedModeSettings: Boolean read get_IntroduceInstabilityByIgnoringProtectedModeSettings write set_IntroduceInstabilityByIgnoringProtectedModeSettings;
+    ///<summary>
+    ///  Gets or sets a value indicating whether to ignore the zoom level of Internet Explorer .
+    ///</summary>
     property IgnoreZoomLevel: Boolean read get_IgnoreZoomLevel write set_IgnoreZoomLevel;
+    ///<summary>
+    ///  Gets or sets a value indicating whether to use native events in interacting with elements.
+    ///</summary>
     property EnableNativeEvents: Boolean read get_EnableNativeEvents write set_EnableNativeEvents;
+    ///<summary>
+    ///  Gets or sets a value indicating whether to require the browser window to have focus before interacting with elements.
+    ///</summary>
     property RequireWindowFocus: Boolean read get_RequireWindowFocus write set_RequireWindowFocus;
+    ///<summary>
+    ///  Gets or sets the initial URL displayed when IE is launched. If not set, the browser launches
+    ///  with the internal startup page for the WebDriver server.
+    ///</summary>
+    ///<remarks>
+    ///  By setting the  <see cref="P:OpenQA.Selenium.IE.InternetExplorerOptions.IntroduceInstabilityByIgnoringProtectedModeSettings" />
+    ///  to <see langword="true" />
+    ///  and this property to a correct URL, you can launch IE in the Internet Protected Mode zone. This can be helpful
+    ///  to avoid the flakiness introduced by ignoring the Protected Mode settings. Nevertheless, setting Protected Mode
+    ///  zone settings to the same value in the IE configuration is the preferred method.
+    ///</remarks>
     property InitialBrowserUrl: string read get_InitialBrowserUrl write set_InitialBrowserUrl;
+    ///<summary>
+    ///  Gets or sets the value for describing how elements are scrolled into view in the IE driver. Defaults
+    ///  to scrolling the element to the top of the viewport.
+    ///</summary>
     property ElementScrollBehavior: DNInternetExplorerElementScrollBehavior read get_ElementScrollBehavior write set_ElementScrollBehavior;
     property UnexpectedAlertBehavior: DNInternetExplorerUnexpectedAlertBehavior read get_UnexpectedAlertBehavior write set_UnexpectedAlertBehavior;
+    ///<summary>
+    ///  Gets or sets the value for describing how the browser is to wait for pages to load in the browser.
+    ///  Defaults to <see cref="F:OpenQA.Selenium.PageLoadStrategy.Default" />
+    ///  .
+    ///</summary>
     property PageLoadStrategy: DNInternetExplorerPageLoadStrategy read get_PageLoadStrategy write set_PageLoadStrategy;
+    ///<summary>
+    ///  Gets or sets a value indicating whether to enable persistently sending WM_MOUSEMOVE messages
+    ///  to the IE window during a mouse hover.
+    ///</summary>
     property EnablePersistentHover: Boolean read get_EnablePersistentHover write set_EnablePersistentHover;
+    ///<summary>
+    ///  Gets or sets the amount of time the driver will attempt to look for a newly launched instance
+    ///  of Internet Explorer.
+    ///</summary>
     property BrowserAttachTimeout: DDN.mscorlib.DNTimeSpan read get_BrowserAttachTimeout write set_BrowserAttachTimeout;
+    ///<summary>
+    ///  Gets or sets the amount of time the driver will attempt to look for the file selection
+    ///  dialog when attempting to upload a file.
+    ///</summary>
     property FileUploadDialogTimeout: DDN.mscorlib.DNTimeSpan read get_FileUploadDialogTimeout write set_FileUploadDialogTimeout;
+    ///<summary>
+    ///  Gets or sets a value indicating whether to force the use of the Windows CreateProcess API
+    ///  when launching Internet Explorer. The default value is <see langword="false" />
+    ///  .
+    ///</summary>
     property ForceCreateProcessApi: Boolean read get_ForceCreateProcessApi write set_ForceCreateProcessApi;
+    ///<summary>
+    ///  Gets or sets a value indicating whether to force the use of the Windows ShellWindows API
+    ///  when attaching to Internet Explorer. The default value is <see langword="false" />
+    ///  .
+    ///</summary>
     property ForceShellWindowsApi: Boolean read get_ForceShellWindowsApi write set_ForceShellWindowsApi;
     property ValidateCookieDocumentType: Boolean read get_ValidateCookieDocumentType write set_ValidateCookieDocumentType;
+    ///<summary>
+    ///  Gets or sets the command line arguments used in launching Internet Explorer when the
+    ///  Windows CreateProcess API is used. This property only has an effect when the
+    ///<see cref="P:OpenQA.Selenium.IE.InternetExplorerOptions.ForceCreateProcessApi" />
+    ///  is <see langword="true" />
+    ///  .
+    ///</summary>
     property BrowserCommandLineArguments: string read get_BrowserCommandLineArguments write set_BrowserCommandLineArguments;
+    ///<summary>
+    ///  Gets or sets the <see cref="P:OpenQA.Selenium.DriverOptions.Proxy" />
+    ///  to be used with this browser.
+    ///</summary>
     property Proxy: DNProxy read get_Proxy write set_Proxy;
+    ///<summary>
+    ///  Gets or sets a value indicating whether to use the supplied <see cref="T:OpenQA.Selenium.Proxy" />
+    ///  settings on a per-process basis, not updating the system installed proxy setting.
+    ///  This property is only valid when setting a <see cref="T:OpenQA.Selenium.Proxy" />
+    ///  , where the
+    ///<see cref="P:OpenQA.Selenium.Proxy.Kind" />
+    ///  property is either <see cref="F:OpenQA.Selenium.ProxyKind.Direct" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.ProxyKind.System" />
+    ///  , or <see cref="F:OpenQA.Selenium.ProxyKind.Manual" />
+    ///  , and is
+    ///  otherwise ignored. Defaults to <see langword="false" />
+    ///  .
+    ///</summary>
     property UsePerProcessProxy: Boolean read get_UsePerProcessProxy write set_UsePerProcessProxy;
+    ///<summary>
+    ///  Gets or sets a value indicating whether to clear the Internet Explorer cache
+    ///  before launching the browser. When set to <see langword="true" />
+    ///  , clears the
+    ///  system cache for all instances of Internet Explorer, even those already running
+    ///  when the driven instance is launched. Defaults to <see langword="false" />
+    ///  .
+    ///</summary>
     property EnsureCleanSession: Boolean read get_EnsureCleanSession write set_EnsureCleanSession;
     property EnableFullPageScreenshot: Boolean read get_EnableFullPageScreenshot write set_EnableFullPageScreenshot;
   end;
@@ -1675,10 +3875,30 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  Gets the name of the capability used to store Opera options in
+    ///  a <see cref="T:OpenQA.Selenium.Remote.DesiredCapabilities" />
+    ///  object.
+    ///</summary>
     {class} property Capability: string read __fakeFieldGet_Capability;
 
   end;
 
+  ///<summary>
+  ///  Class to manage options specific to <see cref="T:OpenQA.Selenium.Opera.OperaDriver" />
+  ///</summary>
+  ///<remarks>
+  ///  Used with OperaDriver.exe for Chromium v0.1.0 and higher.
+  ///</remarks>
+  ///<example><code>
+  ///  OperaOptions options = new OperaOptions();
+  ///  options.AddExtensions("\path\to\extension.crx");
+  ///  options.BinaryLocation = "\path\to\opera";
+  ///</code><para /><para>For use with OperaDriver:</para><para /><code>
+  ///  OperaDriver driver = new OperaDriver(options);
+  ///</code><para /><para>For use with RemoteWebDriver:</para><para /><code>
+  ///  RemoteWebDriver driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), options.ToCapabilities());
+  ///</code></example>
   [DNTypeName('OpenQA.Selenium.Opera.OperaOptions')]
   DNOperaOptions = interface(DNDriverOptions)
   ['{E889D1CF-CB96-3488-A4FE-3D97966AE5A3}']
@@ -1699,37 +3919,168 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Adds a single argument to the list of arguments to be appended to the Opera.exe command line.
+    ///</summary>
+    ///  <param name="argument">The argument to add.</param>
     procedure AddArgument(argument: string);
+    ///<summary>
+    ///  Adds arguments to be appended to the Opera.exe command line.
+    ///</summary>
+    ///  <param name="argumentsToAdd">An array of arguments to add.</param>
     procedure AddArguments(argumentsToAdd: TArray<string>); overload;
     procedure AddArguments(argumentsToAdd: DDN.mscorlib.DNIEnumerable<string>); overload;
+    ///<summary>
+    ///  Adds a single argument to be excluded from the list of arguments passed by default
+    ///  to the Opera.exe command line by operadriver.exe.
+    ///</summary>
+    ///  <param name="argument">The argument to exclude.</param>
     procedure AddExcludedArgument(argument: string);
+    ///<summary>
+    ///  Adds arguments to be excluded from the list of arguments passed by default
+    ///  to the Opera.exe command line by operadriver.exe.
+    ///</summary>
+    ///  <param name="argumentsToExclude">An array of arguments to exclude.</param>
     procedure AddExcludedArguments(argumentsToExclude: TArray<string>); overload;
     procedure AddExcludedArguments(argumentsToExclude: DDN.mscorlib.DNIEnumerable<string>); overload;
+    ///<summary>
+    ///  Adds a path to a packed Opera extension (.crx file) to the list of extensions
+    ///  to be installed in the instance of Opera.
+    ///</summary>
+    ///  <param name="pathToExtension">The full path to the extension to add.</param>
     procedure AddExtension(pathToExtension: string);
+    ///<summary>
+    ///  Adds a list of paths to packed Opera extensions (.crx files) to be installed
+    ///  in the instance of Opera.
+    ///</summary>
+    ///  <param name="extensions">An array of full paths to the extensions to add.</param>
     procedure AddExtensions(extensions: TArray<string>); overload;
     procedure AddExtensions(extensions: DDN.mscorlib.DNIEnumerable<string>); overload;
+    ///<summary>
+    ///  Adds a base64-encoded string representing a Opera extension to the list of extensions
+    ///  to be installed in the instance of Opera.
+    ///</summary>
+    ///  <param name="extension">A base64-encoded string representing the extension to add.</param>
     procedure AddEncodedExtension(extension: string);
+    ///<summary>
+    ///  Adds a list of base64-encoded strings representing Opera extensions to the list of extensions
+    ///  to be installed in the instance of Opera.
+    ///</summary>
+    ///  <param name="extensions">An array of base64-encoded strings representing the extensions to add.</param>
     procedure AddEncodedExtensions(extensions: TArray<string>); overload;
     procedure AddEncodedExtensions(extensions: DDN.mscorlib.DNIEnumerable<string>); overload;
+    ///<summary>
+    ///  Adds a preference for the user-specific profile or "user data directory."
+    ///  If the specified preference already exists, it will be overwritten.
+    ///</summary>
+    ///  <param name="preferenceName">The name of the preference to set.</param>
+    ///  <param name="preferenceValue">The value of the preference to set.</param>
     procedure AddUserProfilePreference(preferenceName: string; preferenceValue: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  Adds a preference for the local state file in the user's data directory for Opera.
+    ///  If the specified preference already exists, it will be overwritten.
+    ///</summary>
+    ///  <param name="preferenceName">The name of the preference to set.</param>
+    ///  <param name="preferenceValue">The value of the preference to set.</param>
     procedure AddLocalStatePreference(preferenceName: string; preferenceValue: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  Provides a means to add additional capabilities not yet added as type safe options
+    ///  for the Opera driver.
+    ///</summary>
+    ///  <param name="capabilityName">The name of the capability to add.</param>
+    ///  <param name="capabilityValue">The value of the capability to add.</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  thrown when attempting to add a capability for which there is already a type safe option, or
+    ///  when <paramref name="capabilityName" />
+    ///  is <see langword="null" />
+    ///  or the empty string.
+    ///</exception><remarks>Calling <see cref="M:OpenQA.Selenium.Opera.OperaOptions.AddAdditionalCapability(System.String,System.Object)" />
+    ///  where <paramref name="capabilityName" />
+    ///  has already been added will overwrite the
+    ///  existing value with the new value in <paramref name="capabilityValue" />
+    ///  .
+    ///  Also, by default, calling this method adds capabilities to the options object passed to
+    ///  operadriver.exe.</remarks>
     procedure AddAdditionalCapability(capabilityName: string; capabilityValue: DDN.mscorlib.DNObject); overload;
+    ///<summary>
+    ///  Provides a means to add additional capabilities not yet added as type safe options
+    ///  for the Opera driver.
+    ///</summary>
+    ///  <param name="capabilityName">The name of the capability to add.</param>
+    ///  <param name="capabilityValue">The value of the capability to add.</param>
+    ///  <param name="isGlobalCapability">Indicates whether the capability is to be set as a global
+    ///  capability for the driver instead of a Opera-specific option.</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  thrown when attempting to add a capability for which there is already a type safe option, or
+    ///  when <paramref name="capabilityName" />
+    ///  is <see langword="null" />
+    ///  or the empty string.
+    ///</exception><remarks>Calling <see cref="M:OpenQA.Selenium.Opera.OperaOptions.AddAdditionalCapability(System.String,System.Object,System.Boolean)" />
+    ///  where <paramref name="capabilityName" />
+    ///  has already been added will overwrite the
+    ///  existing value with the new value in <paramref name="capabilityValue" />
+    ///</remarks>
     procedure AddAdditionalCapability(capabilityName: string; capabilityValue: DDN.mscorlib.DNObject; isGlobalCapability: Boolean); overload;
+    ///<summary>
+    ///  Returns DesiredCapabilities for Opera with these options included as
+    ///  capabilities. This does not copy the options. Further changes will be
+    ///  reflected in the returned capabilities.
+    ///</summary>
+    ///<returns>The DesiredCapabilities for Opera with these options.</returns>
     function ToCapabilities: DNICapabilities;
+    ///<summary>
+    ///  Sets the logging preferences for this driver.
+    ///</summary>
+    ///  <param name="logType">The type of log for which to set the preference.
+    ///  Known log types can be found in the <see cref="T:OpenQA.Selenium.LogType" />
+    ///  class.</param>
+    ///  <param name="logLevel">The <see cref="T:OpenQA.Selenium.LogLevel" />
+    ///  value to which to set the log level.</param>
     procedure SetLoggingPreference(logType: string; logLevel: DNLogLevel);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
+    ///<summary>
+    ///  Returns a string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .
+    ///</summary>
+    ///<returns>A string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .</returns>
     function ToString: string;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the location of the Opera browser's binary executable file.
+    ///</summary>
     property BinaryLocation: string read get_BinaryLocation write set_BinaryLocation;
+    ///<summary>
+    ///  Gets or sets a value indicating whether Opera should be left running after the
+    ///  OperaDriver instance is exited. Defaults to <see langword="false" />
+    ///  .
+    ///</summary>
     property LeaveBrowserRunning: Boolean read get_LeaveBrowserRunning write set_LeaveBrowserRunning;
+    ///<summary>
+    ///  Gets or sets the <see cref="P:OpenQA.Selenium.DriverOptions.Proxy" />
+    ///  to be used with this browser.
+    ///</summary>
     property Proxy: DNProxy read get_Proxy write set_Proxy;
+    ///<summary>
+    ///  Gets the list of arguments appended to the Opera command line as a string array.
+    ///</summary>
     property Arguments: DDN.mscorlib.DNReadOnlyCollection<string> read get_Arguments;
+    ///<summary>
+    ///  Gets the list of extensions to be installed as an array of base64-encoded strings.
+    ///</summary>
     property Extensions: DDN.mscorlib.DNReadOnlyCollection<string> read get_Extensions;
+    ///<summary>
+    ///  Gets or sets the address of a Opera debugger server to connect to.
+    ///  Should be of the form "{hostname|IP address}:port".
+    ///</summary>
     property DebuggerAddress: string read get_DebuggerAddress write set_DebuggerAddress;
+    ///<summary>
+    ///  Gets or sets the directory in which to store minidump files.
+    ///</summary>
     property MinidumpPath: string read get_MinidumpPath write set_MinidumpPath;
   end;
 
@@ -1744,17 +4095,59 @@ type
 
   end;
 
+  ///<summary>
+  ///  Base class for managing options specific to a browser driver.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.PhantomJS.PhantomJSOptions')]
   DNPhantomJSOptions = interface(DNDriverOptions)
   ['{80DC90AE-F62E-3915-BA87-C13C7DAE9E1B}']
   { methods } 
 
+    ///<summary>
+    ///  Provides a means to add additional capabilities not yet added as type safe options
+    ///  for the specific browser driver.
+    ///</summary>
+    ///  <param name="capabilityName">The name of the capability to add.</param>
+    ///  <param name="capabilityValue">The value of the capability to add.</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  thrown when attempting to add a capability for which there is already a type safe option, or
+    ///  when <paramref name="capabilityName" />
+    ///  is <see langword="null" />
+    ///  or the empty string.
+    ///</exception><remarks>Calling <see cref="M:OpenQA.Selenium.DriverOptions.AddAdditionalCapability(System.String,System.Object)" />
+    ///  where <paramref name="capabilityName" />
+    ///  has already been added will overwrite the
+    ///  existing value with the new value in <paramref name="capabilityValue" />
+    ///  .
+    ///</remarks>
     procedure AddAdditionalCapability(capabilityName: string; capabilityValue: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  Returns the <see cref="T:OpenQA.Selenium.ICapabilities" />
+    ///  for the specific browser driver with these
+    ///  options included as capabilities. This does not copy the options. Further
+    ///  changes will be reflected in the returned capabilities.
+    ///</summary>
+    ///<returns>The <see cref="T:OpenQA.Selenium.ICapabilities" />
+    ///  for browser driver with these options.</returns>
     function ToCapabilities: DNICapabilities;
+    ///<summary>
+    ///  Sets the logging preferences for this driver.
+    ///</summary>
+    ///  <param name="logType">The type of log for which to set the preference.
+    ///  Known log types can be found in the <see cref="T:OpenQA.Selenium.LogType" />
+    ///  class.</param>
+    ///  <param name="logLevel">The <see cref="T:OpenQA.Selenium.LogLevel" />
+    ///  value to which to set the log level.</param>
     procedure SetLoggingPreference(logType: string; logLevel: DNLogLevel);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
+    ///<summary>
+    ///  Returns a string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .
+    ///</summary>
+    ///<returns>A string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .</returns>
     function ToString: string;
 
   end;
@@ -1766,21 +4159,71 @@ type
   ['{2928E3C0-DB36-59E8-A94C-675271D575DA}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Safari.SafariOptions" />
+    ///  class.
+    ///</summary>
     {class} function init: DNSafariOptions;
 
   end;
 
+  ///<summary>
+  ///  Class to manage options specific to <see cref="T:OpenQA.Selenium.Safari.SafariDriver" />
+  ///</summary>
+  ///<example><code>
+  ///  SafariOptions options = new SafariOptions();
+  ///  options.SkipExtensionInstallation = true;
+  ///</code><para /><para>For use with SafariDriver:</para><para /><code>
+  ///  SafariDriver driver = new SafariDriver(options);
+  ///</code><para /><para>For use with RemoteWebDriver:</para><para /><code>
+  ///  RemoteWebDriver driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), options.ToCapabilities());
+  ///</code></example>
   [DNTypeName('OpenQA.Selenium.Safari.SafariOptions')]
   DNSafariOptions = interface(DNDriverOptions)
   ['{849EEE56-BBC8-3B1D-A536-0426847CB908}']
   { methods } 
 
+    ///<summary>
+    ///  Provides a means to add additional capabilities not yet added as type safe options
+    ///  for the Safari driver.
+    ///</summary>
+    ///  <param name="capabilityName">The name of the capability to add.</param>
+    ///  <param name="capabilityValue">The value of the capability to add.</param>
+    ///<exception cref="T:System.ArgumentException">
+    ///  thrown when attempting to add a capability for which there is already a type safe option, or
+    ///  when <paramref name="capabilityName" />
+    ///  is <see langword="null" />
+    ///  or the empty string.
+    ///</exception><remarks>Calling <see cref="M:OpenQA.Selenium.Safari.SafariOptions.AddAdditionalCapability(System.String,System.Object)" />
+    ///  where <paramref name="capabilityName" />
+    ///  has already been added will overwrite the existing value with the new value in <paramref name="capabilityValue" />
+    ///</remarks>
     procedure AddAdditionalCapability(capabilityName: string; capabilityValue: DDN.mscorlib.DNObject);
+    ///<summary>
+    ///  Returns ICapabilities for Safari with these options included as
+    ///  capabilities. This copies the options. Further changes will not be
+    ///  reflected in the returned capabilities.
+    ///</summary>
+    ///<returns>The ICapabilities for Safari with these options.</returns>
     function ToCapabilities: DNICapabilities;
+    ///<summary>
+    ///  Sets the logging preferences for this driver.
+    ///</summary>
+    ///  <param name="logType">The type of log for which to set the preference.
+    ///  Known log types can be found in the <see cref="T:OpenQA.Selenium.LogType" />
+    ///  class.</param>
+    ///  <param name="logLevel">The <see cref="T:OpenQA.Selenium.LogLevel" />
+    ///  value to which to set the log level.</param>
     procedure SetLoggingPreference(logType: string; logLevel: DNLogLevel);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
+    ///<summary>
+    ///  Returns a string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .
+    ///</summary>
+    ///<returns>A string representation of this <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  .</returns>
     function ToString: string;
 
   end;
@@ -1792,6 +4235,9 @@ type
   ['{2C2080D5-1C91-57CA-8729-63A9C4D87AB4}']
   end;
 
+  ///<summary>
+  ///  Exposes the service provided by a native WebDriver server executable.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.DriverService')]
   DNDriverService = interface(DNICommandServer)
   ['{303A62C5-C5A0-3BDC-AF5E-B6B2AD4B44F9}']
@@ -1809,7 +4255,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Releases all resources associated with this <see cref="T:OpenQA.Selenium.DriverService" />
+    ///  .
+    ///</summary>
     procedure Dispose;
+    ///<summary>
+    ///  Starts the DriverService.
+    ///</summary>
     procedure Start;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1818,11 +4271,32 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the Uri of the service.
+    ///</summary>
     property ServiceUrl: DDN.System.DNUri read get_ServiceUrl;
+    ///<summary>
+    ///  Gets or sets the port of the service.
+    ///</summary>
     property Port: Int32 read get_Port write set_Port;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the initial diagnostic information is suppressed
+    ///  when starting the driver server executable. Defaults to <see langword="false" />
+    ///  , meaning
+    ///  diagnostic information should be shown by the driver server executable.
+    ///</summary>
     property SuppressInitialDiagnosticInformation: Boolean read get_SuppressInitialDiagnosticInformation write set_SuppressInitialDiagnosticInformation;
+    ///<summary>
+    ///  Gets a value indicating whether the service is running.
+    ///</summary>
     property IsRunning: Boolean read get_IsRunning;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the command prompt window of the service should be hidden.
+    ///</summary>
     property HideCommandPromptWindow: Boolean read get_HideCommandPromptWindow write set_HideCommandPromptWindow;
+    ///<summary>
+    ///  Gets the process ID of the running driver service executable. Returns 0 if the process is not running.
+    ///</summary>
     property ProcessId: Int32 read get_ProcessId;
   end;
 
@@ -1833,12 +4307,30 @@ type
   ['{167FCE7E-44BF-5018-BA60-E7293440B3DF}']
   { static methods } 
 
+    ///<summary>
+    ///  Creates a default instance of the ChromeDriverService.
+    ///</summary>
+    ///<returns>A ChromeDriverService that implements default settings.</returns>
     {class} function CreateDefaultService: DNChromeDriverService; overload;
+    ///<summary>
+    ///  Creates a default instance of the ChromeDriverService using a specified path to the ChromeDriver executable.
+    ///</summary>
+    ///  <param name="driverPath">The directory containing the ChromeDriver executable.</param>
+    ///<returns>A ChromeDriverService using a random port.</returns>
     {class} function CreateDefaultService(driverPath: string): DNChromeDriverService; overload;
+    ///<summary>
+    ///  Creates a default instance of the ChromeDriverService using a specified path to the ChromeDriver executable with the given name.
+    ///</summary>
+    ///  <param name="driverPath">The directory containing the ChromeDriver executable.</param>
+    ///  <param name="driverExecutableFileName">The name of the ChromeDriver executable file.</param>
+    ///<returns>A ChromeDriverService using a random port.</returns>
     {class} function CreateDefaultService(driverPath: string; driverExecutableFileName: string): DNChromeDriverService; overload;
 
   end;
 
+  ///<summary>
+  ///  Exposes the service provided by the native ChromeDriver executable.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Chrome.ChromeDriverService')]
   DNChromeDriverService = interface(DNDriverService)
   ['{574CD4CA-180F-3414-9845-7E5736D1A7AD}']
@@ -1868,7 +4360,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Releases all resources associated with this <see cref="T:OpenQA.Selenium.DriverService" />
+    ///  .
+    ///</summary>
     procedure Dispose;
+    ///<summary>
+    ///  Starts the DriverService.
+    ///</summary>
     procedure Start;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1877,17 +4376,60 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the location of the log file written to by the ChromeDriver executable.
+    ///</summary>
     property LogPath: string read get_LogPath write set_LogPath;
+    ///<summary>
+    ///  Gets or sets the base URL path prefix for commands (e.g., "wd/url").
+    ///</summary>
     property UrlPathPrefix: string read get_UrlPathPrefix write set_UrlPathPrefix;
+    ///<summary>
+    ///  Gets or sets the address of a server to contact for reserving a port.
+    ///</summary>
     property PortServerAddress: string read get_PortServerAddress write set_PortServerAddress;
+    ///<summary>
+    ///  Gets or sets the port on which the Android Debug Bridge is listening for commands.
+    ///</summary>
     property AndroidDebugBridgePort: Int32 read get_AndroidDebugBridgePort write set_AndroidDebugBridgePort;
+    ///<summary>
+    ///  Gets or sets a value indicating whether to enable verbose logging for the ChromeDriver executable.
+    ///  Defaults to <see langword="false" />
+    ///  .
+    ///</summary>
     property EnableVerboseLogging: Boolean read get_EnableVerboseLogging write set_EnableVerboseLogging;
+    ///<summary>
+    ///  Gets or sets the comma-delimited list of IP addresses that are approved to
+    ///  connect to this instance of the Chrome driver. Defaults to an empty string,
+    ///  which means only the local loopback address can connect.
+    ///</summary>
     property WhitelistedIPAddresses: string read get_WhitelistedIPAddresses write set_WhitelistedIPAddresses;
+    ///<summary>
+    ///  Gets the Uri of the service.
+    ///</summary>
     property ServiceUrl: DDN.System.DNUri read get_ServiceUrl;
+    ///<summary>
+    ///  Gets or sets the port of the service.
+    ///</summary>
     property Port: Int32 read get_Port write set_Port;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the initial diagnostic information is suppressed
+    ///  when starting the driver server executable. Defaults to <see langword="false" />
+    ///  , meaning
+    ///  diagnostic information should be shown by the driver server executable.
+    ///</summary>
     property SuppressInitialDiagnosticInformation: Boolean read get_SuppressInitialDiagnosticInformation write set_SuppressInitialDiagnosticInformation;
+    ///<summary>
+    ///  Gets a value indicating whether the service is running.
+    ///</summary>
     property IsRunning: Boolean read get_IsRunning;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the command prompt window of the service should be hidden.
+    ///</summary>
     property HideCommandPromptWindow: Boolean read get_HideCommandPromptWindow write set_HideCommandPromptWindow;
+    ///<summary>
+    ///  Gets the process ID of the running driver service executable. Returns 0 if the process is not running.
+    ///</summary>
     property ProcessId: Int32 read get_ProcessId;
   end;
 
@@ -1898,13 +4440,38 @@ type
   ['{75A3746E-56C3-5258-BF1A-214DC2E43AFB}']
   { static methods } 
 
+    ///<summary>
+    ///  Creates a default instance of the EdgeDriverService.
+    ///</summary>
+    ///<returns>A EdgeDriverService that implements default settings.</returns>
     {class} function CreateDefaultService: DNEdgeDriverService; overload;
+    ///<summary>
+    ///  Creates a default instance of the EdgeDriverService using a specified path to the EdgeDriver executable.
+    ///</summary>
+    ///  <param name="driverPath">The directory containing the EdgeDriver executable.</param>
+    ///<returns>A EdgeDriverService using a random port.</returns>
     {class} function CreateDefaultService(driverPath: string): DNEdgeDriverService; overload;
+    ///<summary>
+    ///  Creates a default instance of the EdgeDriverService using a specified path to the EdgeDriver executable with the given name.
+    ///</summary>
+    ///  <param name="driverPath">The directory containing the EdgeDriver executable.</param>
+    ///  <param name="driverExecutableFileName">The name of the EdgeDriver executable file.</param>
+    ///<returns>A EdgeDriverService using a random port.</returns>
     {class} function CreateDefaultService(driverPath: string; driverExecutableFileName: string): DNEdgeDriverService; overload;
+    ///<summary>
+    ///  Creates a default instance of the EdgeDriverService using a specified path to the EdgeDriver executable with the given name and listening port.
+    ///</summary>
+    ///  <param name="driverPath">The directory containing the EdgeDriver executable.</param>
+    ///  <param name="driverExecutableFileName">The name of the EdgeDriver executable file</param>
+    ///  <param name="port">The port number on which the driver will listen</param>
+    ///<returns>A EdgeDriverService using the specified port.</returns>
     {class} function CreateDefaultService(driverPath: string; driverExecutableFileName: string; port: Int32): DNEdgeDriverService; overload;
 
   end;
 
+  ///<summary>
+  ///  Exposes the service provided by the native MicrosoftWebDriver executable.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Edge.EdgeDriverService')]
   DNEdgeDriverService = interface(DNDriverService)
   ['{405A3E70-58F3-3DFA-ACD9-9BAB4FFE3E8F}']
@@ -1928,7 +4495,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Releases all resources associated with this <see cref="T:OpenQA.Selenium.DriverService" />
+    ///  .
+    ///</summary>
     procedure Dispose;
+    ///<summary>
+    ///  Starts the DriverService.
+    ///</summary>
     procedure Start;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1937,14 +4511,44 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the value of the host adapter on which the Edge driver service should listen for connections.
+    ///</summary>
     property Host: string read get_Host write set_Host;
+    ///<summary>
+    ///  Gets or sets the value of the package the Edge driver service will launch and automate.
+    ///</summary>
     property &Package: string read get_Package write set_Package;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the service should use verbose logging.
+    ///</summary>
     property UseVerboseLogging: Boolean read get_UseVerboseLogging write set_UseVerboseLogging;
+    ///<summary>
+    ///  Gets the Uri of the service.
+    ///</summary>
     property ServiceUrl: DDN.System.DNUri read get_ServiceUrl;
+    ///<summary>
+    ///  Gets or sets the port of the service.
+    ///</summary>
     property Port: Int32 read get_Port write set_Port;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the initial diagnostic information is suppressed
+    ///  when starting the driver server executable. Defaults to <see langword="false" />
+    ///  , meaning
+    ///  diagnostic information should be shown by the driver server executable.
+    ///</summary>
     property SuppressInitialDiagnosticInformation: Boolean read get_SuppressInitialDiagnosticInformation write set_SuppressInitialDiagnosticInformation;
+    ///<summary>
+    ///  Gets a value indicating whether the service is running.
+    ///</summary>
     property IsRunning: Boolean read get_IsRunning;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the command prompt window of the service should be hidden.
+    ///</summary>
     property HideCommandPromptWindow: Boolean read get_HideCommandPromptWindow write set_HideCommandPromptWindow;
+    ///<summary>
+    ///  Gets the process ID of the running driver service executable. Returns 0 if the process is not running.
+    ///</summary>
     property ProcessId: Int32 read get_ProcessId;
   end;
 
@@ -1955,12 +4559,30 @@ type
   ['{2940B0A6-19EC-5AC2-9751-17DF06843CE0}']
   { static methods } 
 
+    ///<summary>
+    ///  Creates a default instance of the FirefoxDriverService.
+    ///</summary>
+    ///<returns>A FirefoxDriverService that implements default settings.</returns>
     {class} function CreateDefaultService: DNFirefoxDriverService; overload;
+    ///<summary>
+    ///  Creates a default instance of the FirefoxDriverService using a specified path to the Firefox driver executable.
+    ///</summary>
+    ///  <param name="driverPath">The directory containing the Firefox driver executable.</param>
+    ///<returns>A FirefoxDriverService using a random port.</returns>
     {class} function CreateDefaultService(driverPath: string): DNFirefoxDriverService; overload;
+    ///<summary>
+    ///  Creates a default instance of the FirefoxDriverService using a specified path to the Firefox driver executable with the given name.
+    ///</summary>
+    ///  <param name="driverPath">The directory containing the Firefox driver executable.</param>
+    ///  <param name="driverExecutableFileName">The name of the Firefox driver executable file.</param>
+    ///<returns>A FirefoxDriverService using a random port.</returns>
     {class} function CreateDefaultService(driverPath: string; driverExecutableFileName: string): DNFirefoxDriverService; overload;
 
   end;
 
+  ///<summary>
+  ///  Exposes the service provided by the native FirefoxDriver executable.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Firefox.FirefoxDriverService')]
   DNFirefoxDriverService = interface(DNDriverService)
   ['{BBA431A5-6748-3CA2-9382-0FFFC65282A5}']
@@ -1986,7 +4608,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Releases all resources associated with this <see cref="T:OpenQA.Selenium.DriverService" />
+    ///  .
+    ///</summary>
     procedure Dispose;
+    ///<summary>
+    ///  Starts the DriverService.
+    ///</summary>
     procedure Start;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1995,15 +4624,50 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the location of the Firefox binary executable.
+    ///</summary>
     property FirefoxBinaryPath: string read get_FirefoxBinaryPath write set_FirefoxBinaryPath;
+    ///<summary>
+    ///  Gets or sets the port used by the driver executable to communicate with the browser.
+    ///</summary>
     property BrowserCommunicationPort: Int32 read get_BrowserCommunicationPort write set_BrowserCommunicationPort;
+    ///<summary>
+    ///  Gets or sets the value of the IP address of the host adapter on which the
+    ///  service should listen for connections.
+    ///</summary>
     property Host: string read get_Host write set_Host;
+    ///<summary>
+    ///  Gets or sets a value indicating whether to connect to an already-running
+    ///  instance of Firefox.
+    ///</summary>
     property ConnectToRunningBrowser: Boolean read get_ConnectToRunningBrowser write set_ConnectToRunningBrowser;
+    ///<summary>
+    ///  Gets the Uri of the service.
+    ///</summary>
     property ServiceUrl: DDN.System.DNUri read get_ServiceUrl;
+    ///<summary>
+    ///  Gets or sets the port of the service.
+    ///</summary>
     property Port: Int32 read get_Port write set_Port;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the initial diagnostic information is suppressed
+    ///  when starting the driver server executable. Defaults to <see langword="false" />
+    ///  , meaning
+    ///  diagnostic information should be shown by the driver server executable.
+    ///</summary>
     property SuppressInitialDiagnosticInformation: Boolean read get_SuppressInitialDiagnosticInformation write set_SuppressInitialDiagnosticInformation;
+    ///<summary>
+    ///  Gets a value indicating whether the service is running.
+    ///</summary>
     property IsRunning: Boolean read get_IsRunning;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the command prompt window of the service should be hidden.
+    ///</summary>
     property HideCommandPromptWindow: Boolean read get_HideCommandPromptWindow write set_HideCommandPromptWindow;
+    ///<summary>
+    ///  Gets the process ID of the running driver service executable. Returns 0 if the process is not running.
+    ///</summary>
     property ProcessId: Int32 read get_ProcessId;
   end;
 
@@ -2014,12 +4678,30 @@ type
   ['{9FA580E6-BBCD-5709-B6BF-D825C90DC2A1}']
   { static methods } 
 
+    ///<summary>
+    ///  Creates a default instance of the InternetExplorerDriverService.
+    ///</summary>
+    ///<returns>A InternetExplorerDriverService that implements default settings.</returns>
     {class} function CreateDefaultService: DNInternetExplorerDriverService; overload;
+    ///<summary>
+    ///  Creates a default instance of the InternetExplorerDriverService using a specified path to the IEDriverServer executable.
+    ///</summary>
+    ///  <param name="driverPath">The directory containing the IEDriverServer executable.</param>
+    ///<returns>A InternetExplorerDriverService using a random port.</returns>
     {class} function CreateDefaultService(driverPath: string): DNInternetExplorerDriverService; overload;
+    ///<summary>
+    ///  Creates a default instance of the InternetExplorerDriverService using a specified path to the IEDriverServer executable with the given name.
+    ///</summary>
+    ///  <param name="driverPath">The directory containing the IEDriverServer executable.</param>
+    ///  <param name="driverExecutableFileName">The name of the IEDriverServer executable file.</param>
+    ///<returns>A InternetExplorerDriverService using a random port.</returns>
     {class} function CreateDefaultService(driverPath: string; driverExecutableFileName: string): DNInternetExplorerDriverService; overload;
 
   end;
 
+  ///<summary>
+  ///  Exposes the service provided by the native IEDriverServer executable.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.IE.InternetExplorerDriverService')]
   DNInternetExplorerDriverService = interface(DNDriverService)
   ['{7ADA687F-CA2A-30EA-9B3E-7C08AA4EE663}']
@@ -2047,7 +4729,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Releases all resources associated with this <see cref="T:OpenQA.Selenium.DriverService" />
+    ///  .
+    ///</summary>
     procedure Dispose;
+    ///<summary>
+    ///  Starts the DriverService.
+    ///</summary>
     procedure Start;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2056,16 +4745,60 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the value of the host adapter on which the IEDriverServer should listen for connections.
+    ///</summary>
     property Host: string read get_Host write set_Host;
+    ///<summary>
+    ///  Gets or sets the location of the log file written to by the IEDriverServer.
+    ///</summary>
     property LogFile: string read get_LogFile write set_LogFile;
+    ///<summary>
+    ///  Gets or sets the logging level used by the IEDriverServer.
+    ///</summary>
     property LoggingLevel: DNInternetExplorerDriverLogLevel read get_LoggingLevel write set_LoggingLevel;
+    ///<summary>
+    ///  Gets or sets the path to which the supporting library of the IEDriverServer.exe is extracted.
+    ///  Defaults to the temp directory if this property is not set.
+    ///</summary>
+    ///<remarks>
+    ///  The IEDriverServer.exe requires extraction of a supporting library to perform some of its functions. Setting
+    ///  This library is extracted to the temp directory if this property is not set. If the property is set, it must
+    ///  be set to a valid directory.
+    ///</remarks>
     property LibraryExtractionPath: string read get_LibraryExtractionPath write set_LibraryExtractionPath;
+    ///<summary>
+    ///  Gets or sets the comma-delimited list of IP addresses that are approved to
+    ///  connect to this instance of the IEDriverServer. Defaults to an empty string,
+    ///  which means only the local loopback address can connect.
+    ///</summary>
     property WhitelistedIPAddresses: string read get_WhitelistedIPAddresses write set_WhitelistedIPAddresses;
+    ///<summary>
+    ///  Gets the Uri of the service.
+    ///</summary>
     property ServiceUrl: DDN.System.DNUri read get_ServiceUrl;
+    ///<summary>
+    ///  Gets or sets the port of the service.
+    ///</summary>
     property Port: Int32 read get_Port write set_Port;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the initial diagnostic information is suppressed
+    ///  when starting the driver server executable. Defaults to <see langword="false" />
+    ///  , meaning
+    ///  diagnostic information should be shown by the driver server executable.
+    ///</summary>
     property SuppressInitialDiagnosticInformation: Boolean read get_SuppressInitialDiagnosticInformation write set_SuppressInitialDiagnosticInformation;
+    ///<summary>
+    ///  Gets a value indicating whether the service is running.
+    ///</summary>
     property IsRunning: Boolean read get_IsRunning;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the command prompt window of the service should be hidden.
+    ///</summary>
     property HideCommandPromptWindow: Boolean read get_HideCommandPromptWindow write set_HideCommandPromptWindow;
+    ///<summary>
+    ///  Gets the process ID of the running driver service executable. Returns 0 if the process is not running.
+    ///</summary>
     property ProcessId: Int32 read get_ProcessId;
   end;
 
@@ -2076,12 +4809,30 @@ type
   ['{541CA94F-507C-53B8-9F6E-7D77B534DBDF}']
   { static methods } 
 
+    ///<summary>
+    ///  Creates a default instance of the OperaDriverService.
+    ///</summary>
+    ///<returns>A OperaDriverService that implements default settings.</returns>
     {class} function CreateDefaultService: DNOperaDriverService; overload;
+    ///<summary>
+    ///  Creates a default instance of the OperaDriverService using a specified path to the OperaDriver executable.
+    ///</summary>
+    ///  <param name="driverPath">The directory containing the OperaDriver executable.</param>
+    ///<returns>A OperaDriverService using a random port.</returns>
     {class} function CreateDefaultService(driverPath: string): DNOperaDriverService; overload;
+    ///<summary>
+    ///  Creates a default instance of the OperaDriverService using a specified path to the OperaDriver executable with the given name.
+    ///</summary>
+    ///  <param name="driverPath">The directory containing the OperaDriver executable.</param>
+    ///  <param name="driverExecutableFileName">The name of the OperaDriver executable file.</param>
+    ///<returns>A OperaDriverService using a random port.</returns>
     {class} function CreateDefaultService(driverPath: string; driverExecutableFileName: string): DNOperaDriverService; overload;
 
   end;
 
+  ///<summary>
+  ///  Exposes the service provided by the native OperaDriver executable.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Opera.OperaDriverService')]
   DNOperaDriverService = interface(DNDriverService)
   ['{180509A2-D309-3A78-95EA-8599CA0F397C}']
@@ -2109,7 +4860,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Releases all resources associated with this <see cref="T:OpenQA.Selenium.DriverService" />
+    ///  .
+    ///</summary>
     procedure Dispose;
+    ///<summary>
+    ///  Starts the DriverService.
+    ///</summary>
     procedure Start;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2118,16 +4876,54 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the location of the log file written to by the OperaDriver executable.
+    ///</summary>
     property LogPath: string read get_LogPath write set_LogPath;
+    ///<summary>
+    ///  Gets or sets the base URL path prefix for commands (e.g., "wd/url").
+    ///</summary>
     property UrlPathPrefix: string read get_UrlPathPrefix write set_UrlPathPrefix;
+    ///<summary>
+    ///  Gets or sets the address of a server to contact for reserving a port.
+    ///</summary>
     property PortServerAddress: string read get_PortServerAddress write set_PortServerAddress;
+    ///<summary>
+    ///  Gets or sets the port on which the Android Debug Bridge is listening for commands.
+    ///</summary>
     property AndroidDebugBridgePort: Int32 read get_AndroidDebugBridgePort write set_AndroidDebugBridgePort;
+    ///<summary>
+    ///  Gets or sets a value indicating whether to enable verbose logging for the OperaDriver executable.
+    ///  Defaults to <see langword="false" />
+    ///  .
+    ///</summary>
     property EnableVerboseLogging: Boolean read get_EnableVerboseLogging write set_EnableVerboseLogging;
+    ///<summary>
+    ///  Gets the Uri of the service.
+    ///</summary>
     property ServiceUrl: DDN.System.DNUri read get_ServiceUrl;
+    ///<summary>
+    ///  Gets or sets the port of the service.
+    ///</summary>
     property Port: Int32 read get_Port write set_Port;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the initial diagnostic information is suppressed
+    ///  when starting the driver server executable. Defaults to <see langword="false" />
+    ///  , meaning
+    ///  diagnostic information should be shown by the driver server executable.
+    ///</summary>
     property SuppressInitialDiagnosticInformation: Boolean read get_SuppressInitialDiagnosticInformation write set_SuppressInitialDiagnosticInformation;
+    ///<summary>
+    ///  Gets a value indicating whether the service is running.
+    ///</summary>
     property IsRunning: Boolean read get_IsRunning;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the command prompt window of the service should be hidden.
+    ///</summary>
     property HideCommandPromptWindow: Boolean read get_HideCommandPromptWindow write set_HideCommandPromptWindow;
+    ///<summary>
+    ///  Gets the process ID of the running driver service executable. Returns 0 if the process is not running.
+    ///</summary>
     property ProcessId: Int32 read get_ProcessId;
   end;
 
@@ -2144,6 +4940,9 @@ type
 
   end;
 
+  ///<summary>
+  ///  Exposes the service provided by a native WebDriver server executable.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.PhantomJS.PhantomJSDriverService')]
   DNPhantomJSDriverService = interface(DNDriverService)
   ['{FC340E9E-983E-38E5-B14C-7486ED3EBD47}']
@@ -2208,7 +5007,14 @@ type
     procedure AddArguments(arguments: TArray<string>); overload;
     procedure AddArguments(arguments: DDN.mscorlib.DNIEnumerable<string>); overload;
     function ToJson: string;
+    ///<summary>
+    ///  Releases all resources associated with this <see cref="T:OpenQA.Selenium.DriverService" />
+    ///  .
+    ///</summary>
     procedure Dispose;
+    ///<summary>
+    ///  Starts the DriverService.
+    ///</summary>
     procedure Start;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2239,11 +5045,32 @@ type
     property LogFile: string read get_LogFile write set_LogFile;
     property AdditionalArguments: DDN.mscorlib.DNReadOnlyCollection<string> read get_AdditionalArguments;
     property ConfigFile: string read get_ConfigFile write set_ConfigFile;
+    ///<summary>
+    ///  Gets the Uri of the service.
+    ///</summary>
     property ServiceUrl: DDN.System.DNUri read get_ServiceUrl;
+    ///<summary>
+    ///  Gets or sets the port of the service.
+    ///</summary>
     property Port: Int32 read get_Port write set_Port;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the initial diagnostic information is suppressed
+    ///  when starting the driver server executable. Defaults to <see langword="false" />
+    ///  , meaning
+    ///  diagnostic information should be shown by the driver server executable.
+    ///</summary>
     property SuppressInitialDiagnosticInformation: Boolean read get_SuppressInitialDiagnosticInformation write set_SuppressInitialDiagnosticInformation;
+    ///<summary>
+    ///  Gets a value indicating whether the service is running.
+    ///</summary>
     property IsRunning: Boolean read get_IsRunning;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the command prompt window of the service should be hidden.
+    ///</summary>
     property HideCommandPromptWindow: Boolean read get_HideCommandPromptWindow write set_HideCommandPromptWindow;
+    ///<summary>
+    ///  Gets the process ID of the running driver service executable. Returns 0 if the process is not running.
+    ///</summary>
     property ProcessId: Int32 read get_ProcessId;
   end;
 
@@ -2254,12 +5081,30 @@ type
   ['{689B9C72-760A-5F12-8EB1-0812F87A8F19}']
   { static methods } 
 
+    ///<summary>
+    ///  Creates a default instance of the SafariDriverService.
+    ///</summary>
+    ///<returns>A SafariDriverService that implements default settings.</returns>
     {class} function CreateDefaultService: DNSafariDriverService; overload;
+    ///<summary>
+    ///  Creates a default instance of the SafariDriverService using a specified path to the ChromeDriver executable.
+    ///</summary>
+    ///  <param name="driverPath">The directory containing the ChromeDriver executable.</param>
+    ///<returns>A ChromeDriverService using a random port.</returns>
     {class} function CreateDefaultService(driverPath: string): DNSafariDriverService; overload;
+    ///<summary>
+    ///  Creates a default instance of the SafariDriverService using a specified path to the ChromeDriver executable with the given name.
+    ///</summary>
+    ///  <param name="driverPath">The directory containing the ChromeDriver executable.</param>
+    ///  <param name="driverExecutableFileName">The name of the ChromeDriver executable file.</param>
+    ///<returns>A ChromeDriverService using a random port.</returns>
     {class} function CreateDefaultService(driverPath: string; driverExecutableFileName: string): DNSafariDriverService; overload;
 
   end;
 
+  ///<summary>
+  ///  Exposes the service provided by the native SafariDriver executable.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Safari.SafariDriverService')]
   DNSafariDriverService = interface(DNDriverService)
   ['{EB224451-4CDB-3063-92C3-67C91BF96FF8}']
@@ -2277,7 +5122,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Releases all resources associated with this <see cref="T:OpenQA.Selenium.DriverService" />
+    ///  .
+    ///</summary>
     procedure Dispose;
+    ///<summary>
+    ///  Starts the DriverService.
+    ///</summary>
     procedure Start;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2286,11 +5138,32 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the Uri of the service.
+    ///</summary>
     property ServiceUrl: DDN.System.DNUri read get_ServiceUrl;
+    ///<summary>
+    ///  Gets or sets the port of the service.
+    ///</summary>
     property Port: Int32 read get_Port write set_Port;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the initial diagnostic information is suppressed
+    ///  when starting the driver server executable. Defaults to <see langword="false" />
+    ///  , meaning
+    ///  diagnostic information should be shown by the driver server executable.
+    ///</summary>
     property SuppressInitialDiagnosticInformation: Boolean read get_SuppressInitialDiagnosticInformation write set_SuppressInitialDiagnosticInformation;
+    ///<summary>
+    ///  Gets a value indicating whether the service is running.
+    ///</summary>
     property IsRunning: Boolean read get_IsRunning;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the command prompt window of the service should be hidden.
+    ///</summary>
     property HideCommandPromptWindow: Boolean read get_HideCommandPromptWindow write set_HideCommandPromptWindow;
+    ///<summary>
+    ///  Gets the process ID of the running driver service executable. Returns 0 if the process is not running.
+    ///</summary>
     property ProcessId: Int32 read get_ProcessId;
   end;
 
@@ -2301,11 +5174,26 @@ type
   ['{4D2C2D9C-EC8F-55EC-9C84-F104B81BD566}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Firefox.FirefoxBinary" />
+    ///  class.
+    ///</summary>
     {class} function init: DNFirefoxBinary; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Firefox.FirefoxBinary" />
+    ///  class located at a specific file location.
+    ///</summary>
+    ///  <param name="pathToFirefoxBinary">Full path and file name to the Firefox executable.</param>
     {class} function init(pathToFirefoxBinary: string): DNFirefoxBinary; overload;
 
   end;
 
+  ///<summary>
+  ///  Represents the binary associated with Firefox.
+  ///</summary>
+  ///<remarks>The <see cref="T:OpenQA.Selenium.Firefox.FirefoxBinary" />
+  ///  class is responsible for instantiating the
+  ///  Firefox process, and the operating system environment in which it runs.</remarks>
   [DNTypeName('OpenQA.Selenium.Firefox.FirefoxBinary')]
   DNFirefoxBinary = interface(DDN.mscorlib.DNIDisposable)
   ['{A4C52ECD-99A9-32BC-9FDF-9363483E16D3}']
@@ -2316,10 +5204,32 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Starts Firefox using the specified profile and command-line arguments.
+    ///</summary>
+    ///  <param name="profile">The <see cref="T:OpenQA.Selenium.Firefox.FirefoxProfile" />
+    ///  to use with this instance of Firefox.</param>
+    ///  <param name="commandLineArguments">The command-line arguments to use in starting Firefox.</param>
     procedure StartProfile(profile: DNFirefoxProfile; commandLineArguments: TArray<string>);
+    ///<summary>
+    ///  Sets a variable to be used in the Firefox execution environment.
+    ///</summary>
+    ///  <param name="propertyName">The name of the environment variable to set.</param>
+    ///  <param name="value">The value of the environment variable to set.</param>
     procedure SetEnvironmentProperty(propertyName: string; value: string);
+    ///<summary>
+    ///  Waits for the process to complete execution.
+    ///</summary>
     procedure WaitForProcessExit;
+    ///<summary>
+    ///  Releases all resources used by the <see cref="T:OpenQA.Selenium.Firefox.FirefoxBinary" />
+    ///  .
+    ///</summary>
     procedure Dispose;
+    ///<summary>
+    ///  Returns a <see cref="T:System.String">String</see> that represents the current <see cref="T:System.Object">Object</see>.
+    ///</summary>
+    ///<returns>A <see cref="T:System.String">String</see> that represents the current <see cref="T:System.Object">Object</see>.</returns>
     function ToString: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2327,6 +5237,9 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the timeout to wait for Firefox to be available for command execution.
+    ///</summary>
     property Timeout: DDN.mscorlib.DNTimeSpan read get_Timeout write set_Timeout;
   end;
 
@@ -2337,10 +5250,23 @@ type
   ['{CBCE514C-9E13-57F2-B470-04029ECE7914}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Firefox.FirefoxDriverCommandExecutor" />
+    ///  class.
+    ///</summary>
+    ///  <param name="binary">The <see cref="T:OpenQA.Selenium.Firefox.FirefoxBinary" />
+    ///  on which to make the connection.</param>
+    ///  <param name="profile">The <see cref="T:OpenQA.Selenium.Firefox.FirefoxProfile" />
+    ///  creating the connection.</param>
+    ///  <param name="host">The name of the host on which to connect to the Firefox extension (usually "localhost").</param>
+    ///  <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
     {class} function init(binary: DNFirefoxBinary; profile: DNFirefoxProfile; host: string; commandTimeout: DDN.mscorlib.DNTimeSpan): DNFirefoxDriverCommandExecutor;
 
   end;
 
+  ///<summary>
+  ///  Provides a way of executing Commands using the FirefoxDriver.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Firefox.FirefoxDriverCommandExecutor')]
   DNFirefoxDriverCommandExecutor = interface(DNICommandExecutor)
   ['{FB2A118D-7EF2-382B-9D84-8E02F2688634}']
@@ -2350,7 +5276,16 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Executes a command
+    ///</summary>
+    ///  <param name="commandToExecute">The command you wish to execute</param>
+    ///<returns>A response from the browser</returns>
     function Execute(commandToExecute: DNCommand): DNResponse;
+    ///<summary>
+    ///  Releases all resources used by the <see cref="T:OpenQA.Selenium.Firefox.FirefoxDriverCommandExecutor" />
+    ///  .
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2359,6 +5294,9 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the repository of objects containin information about commands.
+    ///</summary>
     property CommandInfoRepository: DNCommandInfoRepository read get_CommandInfoRepository;
   end;
 
@@ -2369,10 +5307,22 @@ type
   ['{E2F2A284-E119-54C4-BA6E-5CF6A77BA181}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Firefox.FirefoxDriverServer" />
+    ///  class.
+    ///</summary>
+    ///  <param name="binary">The <see cref="T:OpenQA.Selenium.Firefox.FirefoxBinary" />
+    ///  on which to make the connection.</param>
+    ///  <param name="profile">The <see cref="T:OpenQA.Selenium.Firefox.FirefoxProfile" />
+    ///  creating the connection.</param>
+    ///  <param name="host">The name of the host on which to connect to the Firefox extension (usually "localhost").</param>
     {class} function init(binary: DNFirefoxBinary; profile: DNFirefoxProfile; host: string): DNFirefoxDriverServer;
 
   end;
 
+  ///<summary>
+  ///  Provides methods for launching Firefox with the WebDriver extension installed.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Firefox.FirefoxDriverServer')]
   DNFirefoxDriverServer = interface(DNICommandServer)
   ['{BDED9B78-09E6-3500-968B-F413C1F680C3}']
@@ -2382,7 +5332,14 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Starts the server.
+    ///</summary>
     procedure Start;
+    ///<summary>
+    ///  Releases all resources used by the <see cref="T:OpenQA.Selenium.Firefox.FirefoxDriverServer" />
+    ///  .
+    ///</summary>
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2391,6 +5348,10 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the <see cref="T:System.Uri" />
+    ///  for communicating with this server.
+    ///</summary>
     property ExtensionUri: DDN.System.DNUri read get_ExtensionUri;
   end;
 
@@ -2401,15 +5362,32 @@ type
   ['{48BCF063-CDF1-53DD-B3AB-AD6829207E8A}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Firefox.FirefoxExtension" />
+    ///  class.
+    ///</summary>
+    ///  <param name="fileName">The name of the file containing the Firefox extension.</param>
+    ///<remarks>WebDriver attempts to resolve the <paramref name="fileName" />
+    ///  parameter
+    ///  by looking first for the specified file in the directory of the calling assembly,
+    ///  then using the full path to the file, if a full path is provided.</remarks>
     {class} function init(fileName: string): DNFirefoxExtension;
 
   end;
 
+  ///<summary>
+  ///  Provides the ability to install extensions into a <see cref="T:OpenQA.Selenium.Firefox.FirefoxProfile" />
+  ///  .
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Firefox.FirefoxExtension')]
   DNFirefoxExtension = interface(DDN.mscorlib.DNObject)
   ['{22CE14AF-D17F-3CF3-B5B2-8901E321CB62}']
   { methods } 
 
+    ///<summary>
+    ///  Installs the extension into a profile directory.
+    ///</summary>
+    ///  <param name="profileDirectory">The Firefox profile directory into which to install the extension.</param>
     procedure Install(profileDirectory: string);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2425,16 +5403,43 @@ type
   ['{D9AEAA12-2592-5298-A6C3-25A64DBBDCF8}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Firefox.FirefoxProfile" />
+    ///  class.
+    ///</summary>
     {class} function init: DNFirefoxProfile; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Firefox.FirefoxProfile" />
+    ///  class using a
+    ///  specific profile directory.
+    ///</summary>
+    ///  <param name="profileDirectory">The directory containing the profile.</param>
     {class} function init(profileDirectory: string): DNFirefoxProfile; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Firefox.FirefoxProfile" />
+    ///  class using a
+    ///  specific profile directory.
+    ///</summary>
+    ///  <param name="profileDirectory">The directory containing the profile.</param>
+    ///  <param name="deleteSourceOnClean">Delete the source directory of the profile upon cleaning.</param>
     {class} function init(profileDirectory: string; deleteSourceOnClean: Boolean): DNFirefoxProfile; overload;
 
   { static methods } 
 
+    ///<summary>
+    ///  Converts a base64-encoded string into a <see cref="T:OpenQA.Selenium.Firefox.FirefoxProfile" />
+    ///  .
+    ///</summary>
+    ///  <param name="base64">The base64-encoded string containing the profile contents.</param>
+    ///<returns>The constructed <see cref="T:OpenQA.Selenium.Firefox.FirefoxProfile" />
+    ///  .</returns>
     {class} function FromBase64String(base64: string): DNFirefoxProfile;
 
   end;
 
+  ///<summary>
+  ///  Provides the ability to edit the preferences associated with a Firefox profile.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Firefox.FirefoxProfile')]
   DNFirefoxProfile = interface(DDN.mscorlib.DNObject)
   ['{37AF44C5-06D9-3424-9E89-B7A1DE09312A}']
@@ -2456,13 +5461,56 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Adds a Firefox Extension to this profile
+    ///</summary>
+    ///  <param name="extensionToInstall">The path to the new extension</param>
     procedure AddExtension(extensionToInstall: string);
+    ///<summary>
+    ///  Sets a preference in the profile.
+    ///</summary>
+    ///  <param name="name">The name of the preference to add.</param>
+    ///  <param name="value">A <see cref="T:System.String" />
+    ///  value to add to the profile.</param>
     procedure SetPreference(name: string; value: string); overload;
+    ///<summary>
+    ///  Sets a preference in the profile.
+    ///</summary>
+    ///  <param name="name">The name of the preference to add.</param>
+    ///  <param name="value">A <see cref="T:System.Int32" />
+    ///  value to add to the profile.</param>
     procedure SetPreference(name: string; value: Int32); overload;
+    ///<summary>
+    ///  Sets a preference in the profile.
+    ///</summary>
+    ///  <param name="name">The name of the preference to add.</param>
+    ///  <param name="value">A <see cref="T:System.Boolean" />
+    ///  value to add to the profile.</param>
     procedure SetPreference(name: string; value: Boolean); overload;
+    ///<summary>
+    ///  Set proxy preferences for this profile.
+    ///</summary>
+    ///  <param name="proxy">The <see cref="T:OpenQA.Selenium.Proxy" />
+    ///  object defining the proxy
+    ///  preferences for the profile.</param>
     procedure SetProxyPreferences(proxy: DNProxy);
+    ///<summary>
+    ///  Writes this in-memory representation of a profile to disk.
+    ///</summary>
     procedure WriteToDisk;
+    ///<summary>
+    ///  Cleans this Firefox profile.
+    ///</summary>
+    ///<remarks>If this profile is a named profile that existed prior to
+    ///  launching Firefox, the <see cref="M:OpenQA.Selenium.Firefox.FirefoxProfile.Clean" />
+    ///  method removes the WebDriver
+    ///  Firefox extension. If the profile is an anonymous profile, the profile
+    ///  is deleted.</remarks>
     procedure Clean;
+    ///<summary>
+    ///  Converts the profile into a base64-encoded string.
+    ///</summary>
+    ///<returns>A base64-encoded string containing the contents of the profile.</returns>
     function ToBase64String: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2471,12 +5519,52 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the port on which the profile connects to the WebDriver extension.
+    ///</summary>
     property Port: Int32 read get_Port write set_Port;
+    ///<summary>
+    ///  Gets the directory containing the profile.
+    ///</summary>
     property ProfileDirectory: string read get_ProfileDirectory;
+    ///<summary>
+    ///  Gets or sets a value indicating whether to delete this profile after use with
+    ///  the <see cref="T:OpenQA.Selenium.Firefox.FirefoxDriver" />
+    ///  .
+    ///</summary>
     property DeleteAfterUse: Boolean read get_DeleteAfterUse write set_DeleteAfterUse;
+    ///<summary>
+    ///  Gets or sets a value indicating whether native events are enabled.
+    ///</summary>
     property EnableNativeEvents: Boolean read get_EnableNativeEvents write set_EnableNativeEvents;
+    ///<summary>
+    ///  Gets or sets a value indicating whether to always load the library for allowing Firefox
+    ///  to execute commands without its window having focus.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.Firefox.FirefoxProfile.AlwaysLoadNoFocusLibrary" />
+    ///  property is only used on Linux.</remarks>
     property AlwaysLoadNoFocusLibrary: Boolean read get_AlwaysLoadNoFocusLibrary write set_AlwaysLoadNoFocusLibrary;
+    ///<summary>
+    ///  Gets or sets a value indicating whether Firefox should accept SSL certificates which have
+    ///  expired, signed by an unknown authority or are generally untrusted. Set to true
+    ///  by default.
+    ///</summary>
     property AcceptUntrustedCertificates: Boolean read get_AcceptUntrustedCertificates write set_AcceptUntrustedCertificates;
+    ///<summary>
+    ///  Gets or sets a value indicating whether Firefox assume untrusted SSL certificates
+    ///  come from an untrusted issuer or are self-signed. Set to true by default.
+    ///</summary>
+    ///<remarks><para>
+    ///  Due to limitations within Firefox, it is easy to find out if a certificate has expired
+    ///  or does not match the host it was served for, but hard to find out if the issuer of the
+    ///  certificate is untrusted. By default, it is assumed that the certificates were not
+    ///  issued from a trusted certificate authority.
+    ///</para><para>
+    ///  If you receive an "untrusted site" prompt it Firefox when using a certificate that was
+    ///  issued by valid issuer, but the certificate has expired or is being served served for
+    ///  a different host (e.g. production certificate served in a testing environment) set this
+    ///  to false.
+    ///</para></remarks>
     property AssumeUntrustedCertificateIssuer: Boolean read get_AssumeUntrustedCertificateIssuer write set_AssumeUntrustedCertificateIssuer;
   end;
 
@@ -2487,10 +5575,17 @@ type
   ['{7782EDDD-5E3E-5315-B9A3-5B5C7D0DE6F1}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Firefox.FirefoxProfileManager" />
+    ///  class.
+    ///</summary>
     {class} function init: DNFirefoxProfileManager;
 
   end;
 
+  ///<summary>
+  ///  Allows the user to enumerate and access existing named Firefox profiles.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Firefox.FirefoxProfileManager')]
   DNFirefoxProfileManager = interface(DDN.mscorlib.DNObject)
   ['{52F37E80-74CF-30D4-9537-C3D383F9907C}']
@@ -2500,6 +5595,15 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Firefox.FirefoxProfile" />
+    ///  with a given name.
+    ///</summary>
+    ///  <param name="profileName">The name of the profile to get.</param>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Firefox.FirefoxProfile" />
+    ///  with a given name.
+    ///  Returns <see langword="null" />
+    ///  if no profile with the given name exists.</returns>
     function GetProfile(profileName: string): DNFirefoxProfile;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2508,6 +5612,11 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets a <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing <see cref="T:OpenQA.Selenium.Firefox.FirefoxProfile">FirefoxProfiles</see>
+    ///  representing the existing named profiles for Firefox.
+    ///</summary>
     property ExistingProfiles: DDN.mscorlib.DNReadOnlyCollection<string> read get_ExistingProfiles;
   end;
 
@@ -2518,10 +5627,20 @@ type
   ['{06CD6086-3A21-5AAC-9C20-3FCCBF0EB0EB}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Html5.Location" />
+    ///  class.
+    ///</summary>
+    ///  <param name="latitude">latitude for current location</param>
+    ///  <param name="longitude">longitude for current location</param>
+    ///  <param name="altitude">altitude for current location</param>
     {class} function init(latitude: Double; longitude: Double; altitude: Double): DNLocation;
 
   end;
 
+  ///<summary>
+  ///  Represents the physical location of the browser.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Html5.Location')]
   DNLocation = interface(DDN.mscorlib.DNObject)
   ['{D673D0C3-298F-3299-8F41-636A68721B24}']
@@ -2533,6 +5652,10 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Retuns string represenation for current location.
+    ///</summary>
+    ///<returns>Returns <see cref="T:System.String">string</see> reprsentation for current location.</returns>
     function ToString: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2540,8 +5663,17 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the latitude of the current location.
+    ///</summary>
     property Latitude: Double read get_Latitude;
+    ///<summary>
+    ///  Gets the longitude of the current location.
+    ///</summary>
     property Longitude: Double read get_Longitude;
+    ///<summary>
+    ///  Gets the altitude of the current location.
+    ///</summary>
     property Altitude: Double read get_Altitude;
   end;
 
@@ -2556,13 +5688,36 @@ type
 
   end;
 
+  ///<summary>
+  ///  Provides methods that allow the creation of action sequences to enable
+  ///  advanced user interactions.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Interactions.ActionBuilder')]
   DNActionBuilder = interface(DDN.mscorlib.DNObject)
   ['{091F27E8-710B-3047-BF21-D179BBD0924A}']
   { methods } 
 
+    ///<summary>
+    ///  Adds an action to the built set of actions. Adding an action will
+    ///  add a "tick" to the set of all actions to be executed.
+    ///</summary>
+    ///  <param name="actionToAdd">The action to add to the set of actions</param>
+    ///<returns>A self reference.</returns>
     function AddAction(actionToAdd: DNInteraction): DNActionBuilder;
+    ///<summary>
+    ///  Adds an action to the built set of actions. Adding an action will
+    ///  add a "tick" to the set of all actions to be executed. Only one action
+    ///  for each input device may be added for a single tick.
+    ///</summary>
+    ///  <param name="actionsToAdd">The set actions to add to the existing set of actions.</param>
+    ///<returns>A self reference.</returns>
     function AddActions(actionsToAdd: TArray<DNInteraction>): DNActionBuilder;
+    ///<summary>
+    ///  Returns a string that represents the current <see cref="T:OpenQA.Selenium.Interactions.ActionBuilder" />
+    ///  .
+    ///</summary>
+    ///<returns>A string that represents the current <see cref="T:OpenQA.Selenium.Interactions.ActionBuilder" />
+    ///  .</returns>
     function ToString: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2577,37 +5732,232 @@ type
   ['{58B20C77-12F5-585E-8F92-7A4D660B87BA}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  class.
+    ///</summary>
+    ///  <param name="driver">The <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  object on which the actions built will be performed.</param>
     {class} function init(driver: DNIWebDriver): DNActions;
 
   end;
 
+  ///<summary>
+  ///  Provides a mechanism for building advanced interactions with the browser.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Interactions.Actions')]
   DNActions = interface(DNIAction)
   ['{3FA8F5C4-370C-382B-85E0-755F8ACA0A0C}']
   { methods } 
 
+    ///<summary>
+    ///  Sends a modifier key down message to the browser.
+    ///</summary>
+    ///  <param name="theKey">The key to be sent.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
+    ///<exception cref="T:System.ArgumentException">If the key sent is not is not one
+    ///  of <see cref="F:OpenQA.Selenium.Keys.Shift" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Control" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Alt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.Meta" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Command" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftAlt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.LeftControl" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftShift" />
+    ///  .</exception>
     function KeyDown(theKey: string): DNActions; overload;
+    ///<summary>
+    ///  Sends a modifier key down message to the specified element in the browser.
+    ///</summary>
+    ///  <param name="element">The element to which to send the key command.</param>
+    ///  <param name="theKey">The key to be sent.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
+    ///<exception cref="T:System.ArgumentException">If the key sent is not is not one
+    ///  of <see cref="F:OpenQA.Selenium.Keys.Shift" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Control" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Alt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.Meta" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Command" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftAlt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.LeftControl" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftShift" />
+    ///  .</exception>
     function KeyDown(element: DNIWebElement; theKey: string): DNActions; overload;
+    ///<summary>
+    ///  Sends a modifier key up message to the browser.
+    ///</summary>
+    ///  <param name="theKey">The key to be sent.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
+    ///<exception cref="T:System.ArgumentException">If the key sent is not is not one
+    ///  of <see cref="F:OpenQA.Selenium.Keys.Shift" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Control" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Alt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.Meta" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Command" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftAlt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.LeftControl" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftShift" />
+    ///  .</exception>
     function KeyUp(theKey: string): DNActions; overload;
+    ///<summary>
+    ///  Sends a modifier up down message to the specified element in the browser.
+    ///</summary>
+    ///  <param name="element">The element to which to send the key command.</param>
+    ///  <param name="theKey">The key to be sent.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
+    ///<exception cref="T:System.ArgumentException">If the key sent is not is not one
+    ///  of <see cref="F:OpenQA.Selenium.Keys.Shift" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Control" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Alt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.Meta" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Command" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftAlt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.LeftControl" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftShift" />
+    ///  .</exception>
     function KeyUp(element: DNIWebElement; theKey: string): DNActions; overload;
+    ///<summary>
+    ///  Sends a sequence of keystrokes to the browser.
+    ///</summary>
+    ///  <param name="keysToSend">The keystrokes to send to the browser.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function SendKeys(keysToSend: string): DNActions; overload;
+    ///<summary>
+    ///  Sends a sequence of keystrokes to the specified element in the browser.
+    ///</summary>
+    ///  <param name="element">The element to which to send the keystrokes.</param>
+    ///  <param name="keysToSend">The keystrokes to send to the browser.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function SendKeys(element: DNIWebElement; keysToSend: string): DNActions; overload;
+    ///<summary>
+    ///  Clicks and holds the mouse button down on the specified element.
+    ///</summary>
+    ///  <param name="onElement">The element on which to click and hold.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function ClickAndHold(onElement: DNIWebElement): DNActions; overload;
+    ///<summary>
+    ///  Clicks and holds the mouse button at the last known mouse coordinates.
+    ///</summary>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function ClickAndHold: DNActions; overload;
+    ///<summary>
+    ///  Releases the mouse button on the specified element.
+    ///</summary>
+    ///  <param name="onElement">The element on which to release the button.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function Release(onElement: DNIWebElement): DNActions; overload;
+    ///<summary>
+    ///  Releases the mouse button at the last known mouse coordinates.
+    ///</summary>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function Release: DNActions; overload;
+    ///<summary>
+    ///  Clicks the mouse on the specified element.
+    ///</summary>
+    ///  <param name="onElement">The element on which to click.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function Click(onElement: DNIWebElement): DNActions; overload;
+    ///<summary>
+    ///  Clicks the mouse at the last known mouse coordinates.
+    ///</summary>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function Click: DNActions; overload;
+    ///<summary>
+    ///  Double-clicks the mouse on the specified element.
+    ///</summary>
+    ///  <param name="onElement">The element on which to double-click.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function DoubleClick(onElement: DNIWebElement): DNActions; overload;
+    ///<summary>
+    ///  Double-clicks the mouse at the last known mouse coordinates.
+    ///</summary>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function DoubleClick: DNActions; overload;
+    ///<summary>
+    ///  Moves the mouse to the specified element.
+    ///</summary>
+    ///  <param name="toElement">The element to which to move the mouse.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function MoveToElement(toElement: DNIWebElement): DNActions; overload;
+    ///<summary>
+    ///  Moves the mouse to the specified offset of the top-left corner of the specified element.
+    ///</summary>
+    ///  <param name="toElement">The element to which to move the mouse.</param>
+    ///  <param name="offsetX">The horizontal offset to which to move the mouse.</param>
+    ///  <param name="offsetY">The vertical offset to which to move the mouse.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function MoveToElement(toElement: DNIWebElement; offsetX: Int32; offsetY: Int32): DNActions; overload;
+    ///<summary>
+    ///  Moves the mouse to the specified offset of the last known mouse coordinates.
+    ///</summary>
+    ///  <param name="offsetX">The horizontal offset to which to move the mouse.</param>
+    ///  <param name="offsetY">The vertical offset to which to move the mouse.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function MoveByOffset(offsetX: Int32; offsetY: Int32): DNActions;
+    ///<summary>
+    ///  Right-clicks the mouse on the specified element.
+    ///</summary>
+    ///  <param name="onElement">The element on which to right-click.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function ContextClick(onElement: DNIWebElement): DNActions; overload;
+    ///<summary>
+    ///  Right-clicks the mouse at the last known mouse coordinates.
+    ///</summary>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function ContextClick: DNActions; overload;
+    ///<summary>
+    ///  Performs a drag-and-drop operation from one element to another.
+    ///</summary>
+    ///  <param name="source">The element on which the drag operation is started.</param>
+    ///  <param name="target">The element on which the drop is performed.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function DragAndDrop(source: DNIWebElement; target: DNIWebElement): DNActions;
+    ///<summary>
+    ///  Performs a drag-and-drop operation on one element to a specified offset.
+    ///</summary>
+    ///  <param name="source">The element on which the drag operation is started.</param>
+    ///  <param name="offsetX">The horizontal offset to which to move the mouse.</param>
+    ///  <param name="offsetY">The vertical offset to which to move the mouse.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function DragAndDropToOffset(source: DNIWebElement; offsetX: Int32; offsetY: Int32): DNActions;
+    ///<summary>
+    ///  Builds the sequence of actions.
+    ///</summary>
+    ///<returns>A composite <see cref="T:OpenQA.Selenium.Interactions.IAction" />
+    ///  which can be used to perform the actions.</returns>
     function Build: DNIAction;
+    ///<summary>
+    ///  Performs the currently built action.
+    ///</summary>
     procedure Perform;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2623,47 +5973,312 @@ type
   ['{D32A81B2-61DC-536F-B252-B4D8356DA711}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Interactions.TouchActions" />
+    ///  class.
+    ///</summary>
+    ///  <param name="driver">The <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  object on which the actions built will be performed.</param>
     {class} function init(driver: DNIWebDriver): DNTouchActions;
 
   end;
 
+  ///<summary>
+  ///  Provides a mechanism for building advanced interactions with the browser.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Interactions.TouchActions')]
   DNTouchActions = interface(DNActions)
   ['{26D7D4B8-6D1F-3116-AC26-80428E8CF2F9}']
   { methods } 
 
+    ///<summary>
+    ///  Taps the touch screen on the specified element.
+    ///</summary>
+    ///  <param name="onElement">The element on which to tap.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.TouchActions" />
+    ///  .</returns>
     function SingleTap(onElement: DNIWebElement): DNTouchActions;
+    ///<summary>
+    ///  Presses down at the specified location on the screen.
+    ///</summary>
+    ///  <param name="locationX">The x coordinate relative to the view port.</param>
+    ///  <param name="locationY">The y coordinate relative to the view port.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.TouchActions" />
+    ///  .</returns>
     function Down(locationX: Int32; locationY: Int32): DNTouchActions;
+    ///<summary>
+    ///  Releases a press at the specified location on the screen.
+    ///</summary>
+    ///  <param name="locationX">The x coordinate relative to the view port.</param>
+    ///  <param name="locationY">The y coordinate relative to the view port.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.TouchActions" />
+    ///  .</returns>
     function Up(locationX: Int32; locationY: Int32): DNTouchActions;
+    ///<summary>
+    ///  Moves to the specified location on the screen.
+    ///</summary>
+    ///  <param name="locationX">The x coordinate relative to the view port.</param>
+    ///  <param name="locationY">The y coordinate relative to the view port.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.TouchActions" />
+    ///  .</returns>
     function Move(locationX: Int32; locationY: Int32): DNTouchActions;
+    ///<summary>
+    ///  Scrolls the touch screen beginning at the specified element.
+    ///</summary>
+    ///  <param name="onElement">The element on which to begin scrolling.</param>
+    ///  <param name="offsetX">The x coordinate relative to the view port.</param>
+    ///  <param name="offsetY">The y coordinate relative to the view port.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.TouchActions" />
+    ///  .</returns>
     function Scroll(onElement: DNIWebElement; offsetX: Int32; offsetY: Int32): DNTouchActions; overload;
+    ///<summary>
+    ///  Double-taps the touch screen on the specified element.
+    ///</summary>
+    ///  <param name="onElement">The element on which to double-tap.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.TouchActions" />
+    ///  .</returns>
     function DoubleTap(onElement: DNIWebElement): DNTouchActions;
+    ///<summary>
+    ///  Presses and holds on the touch screen on the specified element.
+    ///</summary>
+    ///  <param name="onElement">The element on which to press and hold</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.TouchActions" />
+    ///  .</returns>
     function LongPress(onElement: DNIWebElement): DNTouchActions;
+    ///<summary>
+    ///  Scrolls the touch screen to the specified offset.
+    ///</summary>
+    ///  <param name="offsetX">The horizontal offset relative to the view port.</param>
+    ///  <param name="offsetY">The vertical offset relative to the view port.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.TouchActions" />
+    ///  .</returns>
     function Scroll(offsetX: Int32; offsetY: Int32): DNTouchActions; overload;
+    ///<summary>
+    ///  Flicks the current view.
+    ///</summary>
+    ///  <param name="speedX">The horizontal speed in pixels per second.</param>
+    ///  <param name="speedY">The vertical speed in pixels per second.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.TouchActions" />
+    ///  .</returns>
     function Flick(speedX: Int32; speedY: Int32): DNTouchActions; overload;
+    ///<summary>
+    ///  Flicks the current view starting at a specific location.
+    ///</summary>
+    ///  <param name="onElement">The element at which to start the flick.</param>
+    ///  <param name="offsetX">The x offset relative to the viewport.</param>
+    ///  <param name="offsetY">The y offset relative to the viewport.</param>
+    ///  <param name="speed">The speed in pixels per second.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.TouchActions" />
+    ///  .</returns>
     function Flick(onElement: DNIWebElement; offsetX: Int32; offsetY: Int32; speed: Int32): DNTouchActions; overload;
+    ///<summary>
+    ///  Sends a modifier key down message to the browser.
+    ///</summary>
+    ///  <param name="theKey">The key to be sent.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
+    ///<exception cref="T:System.ArgumentException">If the key sent is not is not one
+    ///  of <see cref="F:OpenQA.Selenium.Keys.Shift" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Control" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Alt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.Meta" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Command" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftAlt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.LeftControl" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftShift" />
+    ///  .</exception>
     function KeyDown(theKey: string): DNActions; overload;
+    ///<summary>
+    ///  Sends a modifier key down message to the specified element in the browser.
+    ///</summary>
+    ///  <param name="element">The element to which to send the key command.</param>
+    ///  <param name="theKey">The key to be sent.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
+    ///<exception cref="T:System.ArgumentException">If the key sent is not is not one
+    ///  of <see cref="F:OpenQA.Selenium.Keys.Shift" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Control" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Alt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.Meta" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Command" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftAlt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.LeftControl" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftShift" />
+    ///  .</exception>
     function KeyDown(element: DNIWebElement; theKey: string): DNActions; overload;
+    ///<summary>
+    ///  Sends a modifier key up message to the browser.
+    ///</summary>
+    ///  <param name="theKey">The key to be sent.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
+    ///<exception cref="T:System.ArgumentException">If the key sent is not is not one
+    ///  of <see cref="F:OpenQA.Selenium.Keys.Shift" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Control" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Alt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.Meta" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Command" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftAlt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.LeftControl" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftShift" />
+    ///  .</exception>
     function KeyUp(theKey: string): DNActions; overload;
+    ///<summary>
+    ///  Sends a modifier up down message to the specified element in the browser.
+    ///</summary>
+    ///  <param name="element">The element to which to send the key command.</param>
+    ///  <param name="theKey">The key to be sent.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
+    ///<exception cref="T:System.ArgumentException">If the key sent is not is not one
+    ///  of <see cref="F:OpenQA.Selenium.Keys.Shift" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Control" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Alt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.Meta" />
+    ///  , <see cref="F:OpenQA.Selenium.Keys.Command" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftAlt" />
+    ///  ,
+    ///<see cref="F:OpenQA.Selenium.Keys.LeftControl" />
+    ///  ,<see cref="F:OpenQA.Selenium.Keys.LeftShift" />
+    ///  .</exception>
     function KeyUp(element: DNIWebElement; theKey: string): DNActions; overload;
+    ///<summary>
+    ///  Sends a sequence of keystrokes to the browser.
+    ///</summary>
+    ///  <param name="keysToSend">The keystrokes to send to the browser.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function SendKeys(keysToSend: string): DNActions; overload;
+    ///<summary>
+    ///  Sends a sequence of keystrokes to the specified element in the browser.
+    ///</summary>
+    ///  <param name="element">The element to which to send the keystrokes.</param>
+    ///  <param name="keysToSend">The keystrokes to send to the browser.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function SendKeys(element: DNIWebElement; keysToSend: string): DNActions; overload;
+    ///<summary>
+    ///  Clicks and holds the mouse button down on the specified element.
+    ///</summary>
+    ///  <param name="onElement">The element on which to click and hold.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function ClickAndHold(onElement: DNIWebElement): DNActions; overload;
+    ///<summary>
+    ///  Clicks and holds the mouse button at the last known mouse coordinates.
+    ///</summary>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function ClickAndHold: DNActions; overload;
+    ///<summary>
+    ///  Releases the mouse button on the specified element.
+    ///</summary>
+    ///  <param name="onElement">The element on which to release the button.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function Release(onElement: DNIWebElement): DNActions; overload;
+    ///<summary>
+    ///  Releases the mouse button at the last known mouse coordinates.
+    ///</summary>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function Release: DNActions; overload;
+    ///<summary>
+    ///  Clicks the mouse on the specified element.
+    ///</summary>
+    ///  <param name="onElement">The element on which to click.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function Click(onElement: DNIWebElement): DNActions; overload;
+    ///<summary>
+    ///  Clicks the mouse at the last known mouse coordinates.
+    ///</summary>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function Click: DNActions; overload;
+    ///<summary>
+    ///  Double-clicks the mouse on the specified element.
+    ///</summary>
+    ///  <param name="onElement">The element on which to double-click.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function DoubleClick(onElement: DNIWebElement): DNActions; overload;
+    ///<summary>
+    ///  Double-clicks the mouse at the last known mouse coordinates.
+    ///</summary>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function DoubleClick: DNActions; overload;
+    ///<summary>
+    ///  Moves the mouse to the specified element.
+    ///</summary>
+    ///  <param name="toElement">The element to which to move the mouse.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function MoveToElement(toElement: DNIWebElement): DNActions; overload;
+    ///<summary>
+    ///  Moves the mouse to the specified offset of the top-left corner of the specified element.
+    ///</summary>
+    ///  <param name="toElement">The element to which to move the mouse.</param>
+    ///  <param name="offsetX">The horizontal offset to which to move the mouse.</param>
+    ///  <param name="offsetY">The vertical offset to which to move the mouse.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function MoveToElement(toElement: DNIWebElement; offsetX: Int32; offsetY: Int32): DNActions; overload;
+    ///<summary>
+    ///  Moves the mouse to the specified offset of the last known mouse coordinates.
+    ///</summary>
+    ///  <param name="offsetX">The horizontal offset to which to move the mouse.</param>
+    ///  <param name="offsetY">The vertical offset to which to move the mouse.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function MoveByOffset(offsetX: Int32; offsetY: Int32): DNActions;
+    ///<summary>
+    ///  Right-clicks the mouse on the specified element.
+    ///</summary>
+    ///  <param name="onElement">The element on which to right-click.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function ContextClick(onElement: DNIWebElement): DNActions; overload;
+    ///<summary>
+    ///  Right-clicks the mouse at the last known mouse coordinates.
+    ///</summary>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function ContextClick: DNActions; overload;
+    ///<summary>
+    ///  Performs a drag-and-drop operation from one element to another.
+    ///</summary>
+    ///  <param name="source">The element on which the drag operation is started.</param>
+    ///  <param name="target">The element on which the drop is performed.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function DragAndDrop(source: DNIWebElement; target: DNIWebElement): DNActions;
+    ///<summary>
+    ///  Performs a drag-and-drop operation on one element to a specified offset.
+    ///</summary>
+    ///  <param name="source">The element on which the drag operation is started.</param>
+    ///  <param name="offsetX">The horizontal offset to which to move the mouse.</param>
+    ///  <param name="offsetY">The vertical offset to which to move the mouse.</param>
+    ///<returns>A self-reference to this <see cref="T:OpenQA.Selenium.Interactions.Actions" />
+    ///  .</returns>
     function DragAndDropToOffset(source: DNIWebElement; offsetX: Int32; offsetY: Int32): DNActions;
+    ///<summary>
+    ///  Builds the sequence of actions.
+    ///</summary>
+    ///<returns>A composite <see cref="T:OpenQA.Selenium.Interactions.IAction" />
+    ///  which can be used to perform the actions.</returns>
     function Build: DNIAction;
+    ///<summary>
+    ///  Performs the currently built action.
+    ///</summary>
     procedure Perform;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2679,10 +6294,19 @@ type
   ['{7FC03AE9-703A-5740-8E68-1F14C53F2CA5}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Interactions.ActionSequence" />
+    ///  class.
+    ///</summary>
+    ///  <param name="device">The input device that executes this sequence of actions.</param>
+    ///  <param name="initialSize">the initial size of the sequence.</param>
     {class} function init(device: DNInputDevice; initialSize: Int32): DNActionSequence;
 
   end;
 
+  ///<summary>
+  ///  Represents a sequence of actions to be performed in the target browser.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Interactions.ActionSequence')]
   DNActionSequence = interface(DDN.mscorlib.DNObject)
   ['{9F3B3603-F77B-3122-A29A-685AF9128531}']
@@ -2692,8 +6316,24 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Adds an action to the sequence.
+    ///</summary>
+    ///  <param name="interactionToAdd">The action to add to the sequence.</param>
+    ///<returns>A self-reference to this sequence of actions.</returns>
     function AddAction(interactionToAdd: DNInteraction): DNActionSequence;
+    ///<summary>
+    ///  Converts this action sequence into an object suitable for serializing across the wire.
+    ///</summary>
+    ///<returns>A <see cref="T:System.Collections.Generic.Dictionary`2" />
+    ///  containing the actions in this sequence.</returns>
     function ToDictionary: DDN.mscorlib.DNDictionary<string, DDN.mscorlib.DNObject>;
+    ///<summary>
+    ///  Returns a string that represents the current <see cref="T:OpenQA.Selenium.Interactions.ActionSequence" />
+    ///  .
+    ///</summary>
+    ///<returns>A string that represents the current <see cref="T:OpenQA.Selenium.Interactions.ActionSequence" />
+    ///  .</returns>
     function ToString: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2701,6 +6341,9 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the count of actions in the sequence.
+    ///</summary>
     property Count: Int32 read get_Count;
   end;
 
@@ -2711,6 +6354,9 @@ type
   ['{09574587-46E2-5E6F-BD13-015DF2294856}']
   end;
 
+  ///<summary>
+  ///  Base class for all input devices for actions.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Interactions.InputDevice')]
   DNInputDevice = interface(DDN.mscorlib.DNObject)
   ['{CE7E03E2-D466-3F23-A797-D2D2542F76A6}']
@@ -2721,15 +6367,38 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Returns a value for this input device that can be transmitted across the wire to a remote end.
+    ///</summary>
+    ///<returns>A <see cref="T:System.Collections.Generic.Dictionary`2" />
+    ///  representing this action.</returns>
     function ToDictionary: DDN.mscorlib.DNDictionary<string, DDN.mscorlib.DNObject>;
+    ///<summary>
+    ///  Returns a hash code for the current <see cref="T:OpenQA.Selenium.Interactions.InputDevice" />
+    ///  .
+    ///</summary>
+    ///<returns>A hash code for the current <see cref="T:OpenQA.Selenium.Interactions.InputDevice" />
+    ///  .</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  Returns a string that represents the current <see cref="T:OpenQA.Selenium.Interactions.InputDevice" />
+    ///  .
+    ///</summary>
+    ///<returns>A string that represents the current <see cref="T:OpenQA.Selenium.Interactions.InputDevice" />
+    ///  .</returns>
     function ToString: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetType: DDN.mscorlib.DNType;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the unique name of this input device.
+    ///</summary>
     property DeviceName: string read get_DeviceName;
+    ///<summary>
+    ///  Gets the kind of device for this input device.
+    ///</summary>
     property DeviceKind: DNInputDeviceKind read get_DeviceKind;
   end;
 
@@ -2740,6 +6409,9 @@ type
   ['{03CA4AF6-DABF-5B0A-88EE-D65F2F986FDE}']
   end;
 
+  ///<summary>
+  ///  Represents a single interaction for a given input device.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Interactions.Interaction')]
   DNInteraction = interface(DDN.mscorlib.DNObject)
   ['{12ED4073-73A9-3BA4-885D-60F44887267C}']
@@ -2749,7 +6421,20 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Returns a value for this action that can be transmitted across the wire to a remote end.
+    ///</summary>
+    ///<returns>A <see cref="T:System.Collections.Generic.Dictionary`2" />
+    ///  representing this action.</returns>
     function ToDictionary: DDN.mscorlib.DNDictionary<string, DDN.mscorlib.DNObject>;
+    ///<summary>
+    ///  Gets a value indicating whether this action is valid for the specified type of input device.
+    ///</summary>
+    ///  <param name="sourceDeviceKind">The type of device to check.</param>
+    ///<returns><see langword="true" />
+    ///  if the action is valid for the specified type of input device;
+    ///  otherwise, <see langword="false" />
+    ///  .</returns>
     function IsValidFor(sourceDeviceKind: DNInputDeviceKind): Boolean;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2758,6 +6443,9 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the device for which this action is intended.
+    ///</summary>
     property SourceDevice: DNInputDevice read get_SourceDevice;
   end;
 
@@ -2768,10 +6456,24 @@ type
   ['{77E00195-7C41-5FB9-8427-69722FD65681}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Internal.AsyncJavaScriptExecutor" />
+    ///  class.
+    ///</summary>
+    ///  <param name="executor">An <see cref="T:OpenQA.Selenium.IJavaScriptExecutor" />
+    ///  object capable of executing JavaScript.</param>
     {class} function init(executor: DNIJavaScriptExecutor): DNAsyncJavaScriptExecutor;
 
   end;
 
+  ///<summary>
+  ///  Utility class used to execute "asynchronous" scripts. This class should
+  ///  only be used by browsers that do not natively support asynchronous
+  ///  script execution.
+  ///  <para>Warning: this class is intended for internal use
+  ///  only. This class will be removed without warning after all
+  ///  native asynchronous implementations have been completed.
+  ///</para></summary>
   [DNTypeName('OpenQA.Selenium.Internal.AsyncJavaScriptExecutor')]
   DNAsyncJavaScriptExecutor = interface(DDN.mscorlib.DNObject)
   ['{7A871294-0CD9-307A-9330-077F946E2909}']
@@ -2782,6 +6484,13 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Executes a JavaScript script asynchronously.
+    ///</summary>
+    ///  <param name="script">The script to execute.</param>
+    ///  <param name="args">An array of objects used as arguments in the script.</param>
+    ///<returns>The object which is the return value of the script.</returns>
+    ///<exception cref="T:System.InvalidOperationException">if the object executing the function doesn't support JavaScript.</exception><exception cref="T:OpenQA.Selenium.WebDriverException">if the page reloads during the JavaScript execution.</exception><exception cref="T:OpenQA.Selenium.WebDriverTimeoutException">if the timeout expires during the JavaScript execution.</exception>
     function ExecuteScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2790,6 +6499,9 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the timeout for the script executor.
+    ///</summary>
     property Timeout: DDN.mscorlib.DNTimeSpan read get_Timeout write set_Timeout;
   end;
 
@@ -2800,11 +6512,38 @@ type
   ['{25EBD3EB-A0B4-5377-8B36-07E9DA9C89EE}']
   { static methods } 
 
+    ///<summary>
+    ///  Gets a <see cref="T:System.IO.Stream" />
+    ///  that contains the resource to use.
+    ///</summary>
+    ///  <param name="fileName">A file name in the file system containing the resource to use.</param>
+    ///  <param name="resourceId">A string representing the resource name embedded in the
+    ///  executing assembly, if it is not found in the file system.</param>
+    ///<returns>A Stream from which the resource can be read.</returns>
+    ///<exception cref="T:OpenQA.Selenium.WebDriverException">Thrown if neither the file nor the embedded resource can be found.</exception><remarks>
+    ///  The GetResourceStream method searches for the specified resource using the following
+    ///  algorithm:
+    ///  <para><list type="numbered"><item>In the same directory as the calling assembly.</item>
+    ///<item>In the full path specified by the <paramref name="fileName" />
+    ///  argument.</item>
+    ///<item>Inside the calling assembly as an embedded resource.</item>
+    ///</list>
+    ///</para></remarks>
     {class} function GetResourceStream(fileName: string; resourceId: string): DDN.mscorlib.DNStream;
+    ///<summary>
+    ///  Returns a value indicating whether a resource exists with the specified ID.
+    ///</summary>
+    ///  <param name="resourceId">ID of the embedded resource to check for.</param>
+    ///<returns><see langword="true" />
+    ///  if the resource exists in the calling assembly; otherwise <see langword="false" />
+    ///  .</returns>
     {class} function IsValidResourceName(resourceId: string): Boolean;
 
   end;
 
+  ///<summary>
+  ///  Encapsulates methods for finding and extracting WebDriver resources.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Internal.ResourceUtilities')]
   DNResourceUtilities = interface(DDN.mscorlib.DNObject)
   ['{F146A6A2-2556-3AA2-8A9C-C8EE6A505E84}']
@@ -2890,72 +6629,264 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  Represents the NUL keystroke.
+    ///</summary>
     {class} property Null: string read __fakeFieldGet_Null;
+    ///<summary>
+    ///  Represents the Cancel keystroke.
+    ///</summary>
     {class} property Cancel: string read __fakeFieldGet_Cancel;
+    ///<summary>
+    ///  Represents the Help keystroke.
+    ///</summary>
     {class} property Help: string read __fakeFieldGet_Help;
+    ///<summary>
+    ///  Represents the Backspace key.
+    ///</summary>
     {class} property Backspace: string read __fakeFieldGet_Backspace;
+    ///<summary>
+    ///  Represents the Tab key.
+    ///</summary>
     {class} property Tab: string read __fakeFieldGet_Tab;
+    ///<summary>
+    ///  Represents the Clear keystroke.
+    ///</summary>
     {class} property Clear: string read __fakeFieldGet_Clear;
+    ///<summary>
+    ///  Represents the Return key.
+    ///</summary>
     {class} property Return: string read __fakeFieldGet_Return;
+    ///<summary>
+    ///  Represents the Enter key.
+    ///</summary>
     {class} property Enter: string read __fakeFieldGet_Enter;
+    ///<summary>
+    ///  Represents the Shift key.
+    ///</summary>
     {class} property Shift: string read __fakeFieldGet_Shift;
+    ///<summary>
+    ///  Represents the Shift key.
+    ///</summary>
     {class} property LeftShift: string read __fakeFieldGet_LeftShift;
+    ///<summary>
+    ///  Represents the Control key.
+    ///</summary>
     {class} property Control: string read __fakeFieldGet_Control;
+    ///<summary>
+    ///  Represents the Control key.
+    ///</summary>
     {class} property LeftControl: string read __fakeFieldGet_LeftControl;
+    ///<summary>
+    ///  Represents the Alt key.
+    ///</summary>
     {class} property Alt: string read __fakeFieldGet_Alt;
+    ///<summary>
+    ///  Represents the Alt key.
+    ///</summary>
     {class} property LeftAlt: string read __fakeFieldGet_LeftAlt;
+    ///<summary>
+    ///  Represents the Pause key.
+    ///</summary>
     {class} property Pause: string read __fakeFieldGet_Pause;
+    ///<summary>
+    ///  Represents the Escape key.
+    ///</summary>
     {class} property Escape: string read __fakeFieldGet_Escape;
+    ///<summary>
+    ///  Represents the Spacebar key.
+    ///</summary>
     {class} property Space: string read __fakeFieldGet_Space;
+    ///<summary>
+    ///  Represents the Page Up key.
+    ///</summary>
     {class} property PageUp: string read __fakeFieldGet_PageUp;
+    ///<summary>
+    ///  Represents the Page Down key.
+    ///</summary>
     {class} property PageDown: string read __fakeFieldGet_PageDown;
+    ///<summary>
+    ///  Represents the End key.
+    ///</summary>
     {class} property &End: string read __fakeFieldGet_End;
+    ///<summary>
+    ///  Represents the Home key.
+    ///</summary>
     {class} property Home: string read __fakeFieldGet_Home;
+    ///<summary>
+    ///  Represents the left arrow key.
+    ///</summary>
     {class} property Left: string read __fakeFieldGet_Left;
+    ///<summary>
+    ///  Represents the left arrow key.
+    ///</summary>
     {class} property ArrowLeft: string read __fakeFieldGet_ArrowLeft;
+    ///<summary>
+    ///  Represents the up arrow key.
+    ///</summary>
     {class} property Up: string read __fakeFieldGet_Up;
+    ///<summary>
+    ///  Represents the up arrow key.
+    ///</summary>
     {class} property ArrowUp: string read __fakeFieldGet_ArrowUp;
+    ///<summary>
+    ///  Represents the right arrow key.
+    ///</summary>
     {class} property Right: string read __fakeFieldGet_Right;
+    ///<summary>
+    ///  Represents the right arrow key.
+    ///</summary>
     {class} property ArrowRight: string read __fakeFieldGet_ArrowRight;
+    ///<summary>
+    ///  Represents the Left arrow key.
+    ///</summary>
     {class} property Down: string read __fakeFieldGet_Down;
+    ///<summary>
+    ///  Represents the Left arrow key.
+    ///</summary>
     {class} property ArrowDown: string read __fakeFieldGet_ArrowDown;
+    ///<summary>
+    ///  Represents the Insert key.
+    ///</summary>
     {class} property Insert: string read __fakeFieldGet_Insert;
+    ///<summary>
+    ///  Represents the Delete key.
+    ///</summary>
     {class} property Delete: string read __fakeFieldGet_Delete;
+    ///<summary>
+    ///  Represents the semi-colon key.
+    ///</summary>
     {class} property Semicolon: string read __fakeFieldGet_Semicolon;
+    ///<summary>
+    ///  Represents the equal sign key.
+    ///</summary>
     {class} property Equal: string read __fakeFieldGet_Equal;
+    ///<summary>
+    ///  Represents the number pad 0 key.
+    ///</summary>
     {class} property NumberPad0: string read __fakeFieldGet_NumberPad0;
+    ///<summary>
+    ///  Represents the number pad 1 key.
+    ///</summary>
     {class} property NumberPad1: string read __fakeFieldGet_NumberPad1;
+    ///<summary>
+    ///  Represents the number pad 2 key.
+    ///</summary>
     {class} property NumberPad2: string read __fakeFieldGet_NumberPad2;
+    ///<summary>
+    ///  Represents the number pad 3 key.
+    ///</summary>
     {class} property NumberPad3: string read __fakeFieldGet_NumberPad3;
+    ///<summary>
+    ///  Represents the number pad 4 key.
+    ///</summary>
     {class} property NumberPad4: string read __fakeFieldGet_NumberPad4;
+    ///<summary>
+    ///  Represents the number pad 5 key.
+    ///</summary>
     {class} property NumberPad5: string read __fakeFieldGet_NumberPad5;
+    ///<summary>
+    ///  Represents the number pad 6 key.
+    ///</summary>
     {class} property NumberPad6: string read __fakeFieldGet_NumberPad6;
+    ///<summary>
+    ///  Represents the number pad 7 key.
+    ///</summary>
     {class} property NumberPad7: string read __fakeFieldGet_NumberPad7;
+    ///<summary>
+    ///  Represents the number pad 8 key.
+    ///</summary>
     {class} property NumberPad8: string read __fakeFieldGet_NumberPad8;
+    ///<summary>
+    ///  Represents the number pad 9 key.
+    ///</summary>
     {class} property NumberPad9: string read __fakeFieldGet_NumberPad9;
+    ///<summary>
+    ///  Represents the number pad multiplication key.
+    ///</summary>
     {class} property Multiply: string read __fakeFieldGet_Multiply;
+    ///<summary>
+    ///  Represents the number pad addition key.
+    ///</summary>
     {class} property Add: string read __fakeFieldGet_Add;
+    ///<summary>
+    ///  Represents the number pad thousands separator key.
+    ///</summary>
     {class} property Separator: string read __fakeFieldGet_Separator;
+    ///<summary>
+    ///  Represents the number pad subtraction key.
+    ///</summary>
     {class} property Subtract: string read __fakeFieldGet_Subtract;
+    ///<summary>
+    ///  Represents the number pad decimal separator key.
+    ///</summary>
     {class} property Decimal: string read __fakeFieldGet_Decimal;
+    ///<summary>
+    ///  Represents the number pad division key.
+    ///</summary>
     {class} property Divide: string read __fakeFieldGet_Divide;
+    ///<summary>
+    ///  Represents the function key F1.
+    ///</summary>
     {class} property F1: string read __fakeFieldGet_F1;
+    ///<summary>
+    ///  Represents the function key F2.
+    ///</summary>
     {class} property F2: string read __fakeFieldGet_F2;
+    ///<summary>
+    ///  Represents the function key F3.
+    ///</summary>
     {class} property F3: string read __fakeFieldGet_F3;
+    ///<summary>
+    ///  Represents the function key F4.
+    ///</summary>
     {class} property F4: string read __fakeFieldGet_F4;
+    ///<summary>
+    ///  Represents the function key F5.
+    ///</summary>
     {class} property F5: string read __fakeFieldGet_F5;
+    ///<summary>
+    ///  Represents the function key F6.
+    ///</summary>
     {class} property F6: string read __fakeFieldGet_F6;
+    ///<summary>
+    ///  Represents the function key F7.
+    ///</summary>
     {class} property F7: string read __fakeFieldGet_F7;
+    ///<summary>
+    ///  Represents the function key F8.
+    ///</summary>
     {class} property F8: string read __fakeFieldGet_F8;
+    ///<summary>
+    ///  Represents the function key F9.
+    ///</summary>
     {class} property F9: string read __fakeFieldGet_F9;
+    ///<summary>
+    ///  Represents the function key F10.
+    ///</summary>
     {class} property F10: string read __fakeFieldGet_F10;
+    ///<summary>
+    ///  Represents the function key F11.
+    ///</summary>
     {class} property F11: string read __fakeFieldGet_F11;
+    ///<summary>
+    ///  Represents the function key F12.
+    ///</summary>
     {class} property F12: string read __fakeFieldGet_F12;
+    ///<summary>
+    ///  Represents the function key META.
+    ///</summary>
     {class} property Meta: string read __fakeFieldGet_Meta;
+    ///<summary>
+    ///  Represents the function key COMMAND.
+    ///</summary>
     {class} property Command: string read __fakeFieldGet_Command;
 
   end;
 
+  ///<summary>
+  ///  Representations of keys able to be pressed that are not text keys for sending to the browser.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Keys')]
   DNKeys = interface(DDN.mscorlib.DNObject)
   ['{1483D729-39AC-3AC7-B7AA-A031DC4550C4}']
@@ -2975,6 +6906,9 @@ type
   ['{76F57B3D-0183-5FF7-9C57-D2C77D5F4112}']
   end;
 
+  ///<summary>
+  ///  Represents an entry in a log from a driver instance.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.LogEntry')]
   DNLogEntry = interface(DDN.mscorlib.DNObject)
   ['{23468679-10FC-3D4F-ADFB-620CACE21C51}']
@@ -2986,6 +6920,12 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Returns a string that represents the current <see cref="T:OpenQA.Selenium.LogEntry" />
+    ///  .
+    ///</summary>
+    ///<returns>A string that represents the current <see cref="T:OpenQA.Selenium.LogEntry" />
+    ///  .</returns>
     function ToString: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -2993,8 +6933,17 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the timestamp value of the log entry.
+    ///</summary>
     property Timestamp: DDN.mscorlib.DNDateTime read get_Timestamp;
+    ///<summary>
+    ///  Gets the logging level of the log entry.
+    ///</summary>
     property Level: DNLogLevel read get_Level;
+    ///<summary>
+    ///  Gets the message of the log entry.
+    ///</summary>
     property Message: string read get_Message;
   end;
 
@@ -3013,14 +6962,32 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  Log messages from the client language bindings.
+    ///</summary>
     {class} property Client: string read __fakeFieldGet_Client;
+    ///<summary>
+    ///  Logs from the current WebDriver instance.
+    ///</summary>
     {class} property Driver: string read __fakeFieldGet_Driver;
+    ///<summary>
+    ///  Logs from the browser.
+    ///</summary>
     {class} property Browser: string read __fakeFieldGet_Browser;
+    ///<summary>
+    ///  Logs from the server.
+    ///</summary>
     {class} property Server: string read __fakeFieldGet_Server;
+    ///<summary>
+    ///  Profiling logs.
+    ///</summary>
     {class} property Profiler: string read __fakeFieldGet_Profiler;
 
   end;
 
+  ///<summary>
+  ///  Class containing names of common log types.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.LogType')]
   DNLogType = interface(DDN.mscorlib.DNObject)
   ['{BCD44FAC-11D9-3CBC-A89E-284404B55B18}']
@@ -3044,13 +7011,24 @@ type
 
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Platform" />
+    ///  class for a specific platform type.
+    ///</summary>
+    ///  <param name="typeValue">The platform type.</param>
     {class} function init(typeValue: DNPlatformType): DNPlatform;
 
   { static propertys } 
 
+    ///<summary>
+    ///  Gets the current platform.
+    ///</summary>
     {class} property CurrentPlatform: DNPlatform read get_CurrentPlatform;
   end;
 
+  ///<summary>
+  ///  Represents the platform on which tests are to be run.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Platform')]
   DNPlatform = interface(DDN.mscorlib.DNObject)
   ['{0197A6B3-5A04-3414-BE32-6B8665922E2F}']
@@ -3063,7 +7041,19 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Compares the platform to the specified type.
+    ///</summary>
+    ///  <param name="compareTo">A <see cref="P:OpenQA.Selenium.Platform.PlatformType" />
+    ///  value to compare to.</param>
+    ///<returns><see langword="true" />
+    ///  if the platforms match; otherwise <see langword="false" />
+    ///  .</returns>
     function IsPlatformType(compareTo: DNPlatformType): Boolean;
+    ///<summary>
+    ///  Returns the string value for this platform type.
+    ///</summary>
+    ///<returns>The string value for this platform type.</returns>
     function ToString: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3071,9 +7061,21 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the major version of the platform operating system.
+    ///</summary>
     property MajorVersion: Int32 read get_MajorVersion;
+    ///<summary>
+    ///  Gets the major version of the platform operating system.
+    ///</summary>
     property MinorVersion: Int32 read get_MinorVersion;
+    ///<summary>
+    ///  Gets the type of the platform.
+    ///</summary>
     property PlatformType: DNPlatformType read get_PlatformType;
+    ///<summary>
+    ///  Gets the value of the platform type for transmission using the JSON Wire Protocol.
+    ///</summary>
     property ProtocolPlatformType: string read get_ProtocolPlatformType;
   end;
 
@@ -3084,11 +7086,18 @@ type
   ['{7FDC9F73-AE77-558D-8339-45C3E5964F29}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Proxy" />
+    ///  class.
+    ///</summary>
     {class} function init: DNProxy; overload;
     {class} function init(settings: DDN.mscorlib.DNDictionary<string, DDN.mscorlib.DNObject>): DNProxy; overload;
 
   end;
 
+  ///<summary>
+  ///  Describes proxy settings to be used with a driver instance.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Proxy')]
   DNProxy = interface(DDN.mscorlib.DNObject)
   ['{7F914A2A-8938-39AB-9C66-13B792E8F97C}']
@@ -3125,16 +7134,49 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the type of proxy.
+    ///</summary>
     property Kind: DNProxyKind read get_Kind write set_Kind;
+    ///<summary>
+    ///  Gets the type of proxy as a string for JSON serialization.
+    ///</summary>
     property SerializableProxyKind: string read get_SerializableProxyKind;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the proxy uses automatic detection.
+    ///</summary>
     property IsAutoDetect: Boolean read get_IsAutoDetect write set_IsAutoDetect;
+    ///<summary>
+    ///  Gets or sets the value of the proxy for the FTP protocol.
+    ///</summary>
     property FtpProxy: string read get_FtpProxy write set_FtpProxy;
+    ///<summary>
+    ///  Gets or sets the value of the proxy for the HTTP protocol.
+    ///</summary>
     property HttpProxy: string read get_HttpProxy write set_HttpProxy;
+    ///<summary>
+    ///  Gets or sets the value for bypass proxy addresses.
+    ///</summary>
     property NoProxy: string read get_NoProxy write set_NoProxy;
+    ///<summary>
+    ///  Gets or sets the URL used for proxy automatic configuration.
+    ///</summary>
     property ProxyAutoConfigUrl: string read get_ProxyAutoConfigUrl write set_ProxyAutoConfigUrl;
+    ///<summary>
+    ///  Gets or sets the value of the proxy for the SSL protocol.
+    ///</summary>
     property SslProxy: string read get_SslProxy write set_SslProxy;
+    ///<summary>
+    ///  Gets or sets the value of the proxy for the SOCKS protocol.
+    ///</summary>
     property SocksProxy: string read get_SocksProxy write set_SocksProxy;
+    ///<summary>
+    ///  Gets or sets the value of username for the SOCKS proxy.
+    ///</summary>
     property SocksUserName: string read get_SocksUserName write set_SocksUserName;
+    ///<summary>
+    ///  Gets or sets the value of password for the SOCKS proxy.
+    ///</summary>
     property SocksPassword: string read get_SocksPassword write set_SocksPassword;
   end;
 
@@ -3168,29 +7210,92 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  Capability name used for the browser name.
+    ///</summary>
     {class} property BrowserName: string read __fakeFieldGet_BrowserName;
+    ///<summary>
+    ///  Capability name used for the browser platform.
+    ///</summary>
     {class} property Platform: string read __fakeFieldGet_Platform;
+    ///<summary>
+    ///  Capability name used for the browser version.
+    ///</summary>
     {class} property Version: string read __fakeFieldGet_Version;
+    ///<summary>
+    ///  Capability name used to indicate whether JavaScript is enabled for the browser.
+    ///</summary>
     {class} property IsJavaScriptEnabled: string read __fakeFieldGet_IsJavaScriptEnabled;
+    ///<summary>
+    ///  Capability name used to indicate whether the browser can take screenshots.
+    ///</summary>
     {class} property TakesScreenshot: string read __fakeFieldGet_TakesScreenshot;
+    ///<summary>
+    ///  Capability name used to indicate whether the browser can handle alerts.
+    ///</summary>
     {class} property HandlesAlerts: string read __fakeFieldGet_HandlesAlerts;
+    ///<summary>
+    ///  Capability name used to indicate whether the browser can find elements via CSS selectors.
+    ///</summary>
     {class} property SupportsFindingByCss: string read __fakeFieldGet_SupportsFindingByCss;
+    ///<summary>
+    ///  Capability name used for the browser proxy.
+    ///</summary>
     {class} property Proxy: string read __fakeFieldGet_Proxy;
+    ///<summary>
+    ///  Capability name used to indicate whether the browser supports rotation.
+    ///</summary>
     {class} property Rotatable: string read __fakeFieldGet_Rotatable;
+    ///<summary>
+    ///  Capability name used to indicate whether the browser accepts SSL certificates.
+    ///</summary>
     {class} property AcceptSslCertificates: string read __fakeFieldGet_AcceptSslCertificates;
+    ///<summary>
+    ///  Capability name used to indicate whether the browser accepts SSL certificates on W3C Endpoints
+    ///</summary>
     {class} property AcceptInsecureCertificates: string read __fakeFieldGet_AcceptInsecureCertificates;
+    ///<summary>
+    ///  Capability name used to indicate whether the browser uses native events.
+    ///</summary>
     {class} property HasNativeEvents: string read __fakeFieldGet_HasNativeEvents;
+    ///<summary>
+    ///  Capability name used to indicate how the browser handles unexpected alerts.
+    ///</summary>
     {class} property UnexpectedAlertBehavior: string read __fakeFieldGet_UnexpectedAlertBehavior;
+    ///<summary>
+    ///  Capability name used to indicate the page load strategy for the browser.
+    ///</summary>
     {class} property PageLoadStrategy: string read __fakeFieldGet_PageLoadStrategy;
+    ///<summary>
+    ///  Capability name used to indicate the logging preferences for the session.
+    ///</summary>
     {class} property LoggingPreferences: string read __fakeFieldGet_LoggingPreferences;
+    ///<summary>
+    ///  Capability name used to disable the check for overlapping elements.
+    ///</summary>
     {class} property DisableOverlappedElementCheck: string read __fakeFieldGet_DisableOverlappedElementCheck;
+    ///<summary>
+    ///  Capability name used to enable the profiling log for the session.
+    ///</summary>
     {class} property EnableProfiling: string read __fakeFieldGet_EnableProfiling;
+    ///<summary>
+    ///  Capability name used to indicate whether the driver supports geolocation context.
+    ///</summary>
     {class} property SupportsLocationContext: string read __fakeFieldGet_SupportsLocationContext;
+    ///<summary>
+    ///  Capability name used to indicate whether the driver supports application cache.
+    ///</summary>
     {class} property SupportsApplicationCache: string read __fakeFieldGet_SupportsApplicationCache;
+    ///<summary>
+    ///  Capability name used to indicate whether the driver supports web storage.
+    ///</summary>
     {class} property SupportsWebStorage: string read __fakeFieldGet_SupportsWebStorage;
 
   end;
 
+  ///<summary>
+  ///  Provides types of capabilities for the DesiredCapabilities object.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.CapabilityType')]
   DNCapabilityType = interface(DDN.mscorlib.DNObject)
   ['{53EC7A29-AE54-3FE2-B0B7-85C96BA9134F}']
@@ -3210,11 +7315,20 @@ type
   ['{955F564A-E43B-52C6-A5D8-CA2108DAAB5C}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.Command" />
+    ///  class using a command name and a JSON-encoded string for the parameters.
+    ///</summary>
+    ///  <param name="name">Name of the command</param>
+    ///  <param name="jsonParameters">Parameters for the command as a JSON-encoded string.</param>
     {class} function init(name: string; jsonParameters: string): DNCommand; overload;
     {class} function init(sessionId: DNSessionId; name: string; parameters: DDN.mscorlib.DNDictionary<string, DDN.mscorlib.DNObject>): DNCommand; overload;
 
   end;
 
+  ///<summary>
+  ///  Provides a way to send commands to the remote server
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.Command')]
   DNCommand = interface(DDN.mscorlib.DNObject)
   ['{79D3FA5D-DE2C-3940-A09F-AB417D2D741D}']
@@ -3227,6 +7341,10 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Returns a string of the Command object
+    ///</summary>
+    ///<returns>A string representation of the Command Object</returns>
     function ToString: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3234,9 +7352,21 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the SessionID of the command
+    ///</summary>
     property SessionId: DNSessionId read get_SessionId;
+    ///<summary>
+    ///  Gets the command name
+    ///</summary>
     property Name: string read get_Name;
+    ///<summary>
+    ///  Gets the parameters of the command
+    ///</summary>
     property Parameters: DDN.mscorlib.DNDictionary<string, DDN.mscorlib.DNObject> read get_Parameters;
+    ///<summary>
+    ///  Gets the parameters of the command as a JSON-encoded string.
+    ///</summary>
     property ParametersAsJsonString: string read get_ParametersAsJsonString;
   end;
 
@@ -3247,6 +7377,12 @@ type
   ['{D3CB6071-0063-5396-9CAE-AA7ABA640BC6}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.CommandInfo" />
+    ///  class
+    ///</summary>
+    ///  <param name="method">Method of the Command</param>
+    ///  <param name="resourcePath">Relative URL path to the resource used to execute the command</param>
     {class} function init(method: string; resourcePath: string): DNCommandInfo;
 
   { static fields getter & setter } 
@@ -3257,12 +7393,25 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  POST verb for the command info
+    ///</summary>
     {class} property PostCommand: string read __fakeFieldGet_PostCommand;
+    ///<summary>
+    ///  GET verb for the command info
+    ///</summary>
     {class} property GetCommand: string read __fakeFieldGet_GetCommand;
+    ///<summary>
+    ///  DELETE verb for the command info
+    ///</summary>
     {class} property DeleteCommand: string read __fakeFieldGet_DeleteCommand;
 
   end;
 
+  ///<summary>
+  ///  Provides the execution information for a <see cref="T:OpenQA.Selenium.Remote.DriverCommand" />
+  ///  .
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.CommandInfo')]
   DNCommandInfo = interface(DDN.mscorlib.DNObject)
   ['{052D81AE-A348-317A-83E7-D64191D04DE8}']
@@ -3281,14 +7430,29 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the URL representing the path to the resource.
+    ///</summary>
     property ResourcePath: string read get_ResourcePath;
+    ///<summary>
+    ///  Gets the HTTP method associated with the command.
+    ///</summary>
     property Method: string read get_Method;
   end;
 
   TDNCommandInfo = class(TDNGenericImport<DNCommandInfoClass, DNCommandInfo>)
   public const
+    ///<summary>
+    ///  POST verb for the command info
+    ///</summary>
    PostCommand = 'POST';
+    ///<summary>
+    ///  GET verb for the command info
+    ///</summary>
    GetCommand = 'GET';
+    ///<summary>
+    ///  DELETE verb for the command info
+    ///</summary>
    DeleteCommand = 'DELETE';
   end;
 
@@ -3297,6 +7461,11 @@ type
   ['{6072C5BF-28FB-5201-9791-C53B93557F67}']
   end;
 
+  ///<summary>
+  ///  Holds the information about all commands specified by the JSON wire protocol.
+  ///  This class cannot be inherited, as it is intended to be a singleton, and
+  ///  allowing subclasses introduces the possibility of multiple instances.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.CommandInfoRepository')]
   DNCommandInfoRepository = interface(DDN.mscorlib.DNObject)
   ['{D37419C0-9983-3E8D-B15D-42513A7C0F69}']
@@ -3306,7 +7475,29 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Gets the <see cref="T:OpenQA.Selenium.Remote.CommandInfo" />
+    ///  for a <see cref="T:OpenQA.Selenium.Remote.DriverCommand" />
+    ///  .
+    ///</summary>
+    ///  <param name="commandName">The <see cref="T:OpenQA.Selenium.Remote.DriverCommand" />
+    ///  for which to get the information.</param>
+    ///<returns>The <see cref="T:OpenQA.Selenium.Remote.CommandInfo" />
+    ///  for the specified command.</returns>
     function GetCommandInfo(commandName: string): DNCommandInfo;
+    ///<summary>
+    ///  Tries to add a command to the list of known commands.
+    ///</summary>
+    ///  <param name="commandName">Name of the command.</param>
+    ///  <param name="commandInfo">The command information.</param>
+    ///<returns><see langword="true" />
+    ///  if the new command has been added successfully; otherwise, <see langword="false" />
+    ///  .</returns>
+    ///<remarks>
+    ///  This method is used by WebDriver implementations to add additional custom driver-specific commands.
+    ///  This method will not overwrite existing commands for a specific name, and will return <see langword="false" />
+    ///  in that case.
+    ///</remarks>
     function TryAddCommand(commandName: string; commandInfo: DNCommandInfo): Boolean;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3315,6 +7506,9 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the level of the W3C WebDriver specification that this repository supports.
+    ///</summary>
     property SpecificationLevel: Int32 read get_SpecificationLevel;
   end;
 
@@ -3325,10 +7519,19 @@ type
   ['{734F9E16-DC20-51F1-8AE8-9057A98E3C7E}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.W3CWireProtocolCommandInfoRepository" />
+    ///  class.
+    ///</summary>
     {class} function init: DNW3CWireProtocolCommandInfoRepository;
 
   end;
 
+  ///<summary>
+  ///  Holds the information about all commands specified by the JSON wire protocol.
+  ///  This class cannot be inherited, as it is intended to be a singleton, and
+  ///  allowing subclasses introduces the possibility of multiple instances.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.W3CWireProtocolCommandInfoRepository')]
   DNW3CWireProtocolCommandInfoRepository = interface(DNCommandInfoRepository)
   ['{9F9344E6-F12D-3988-8526-7085F20726E6}']
@@ -3338,7 +7541,29 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Gets the <see cref="T:OpenQA.Selenium.Remote.CommandInfo" />
+    ///  for a <see cref="T:OpenQA.Selenium.Remote.DriverCommand" />
+    ///  .
+    ///</summary>
+    ///  <param name="commandName">The <see cref="T:OpenQA.Selenium.Remote.DriverCommand" />
+    ///  for which to get the information.</param>
+    ///<returns>The <see cref="T:OpenQA.Selenium.Remote.CommandInfo" />
+    ///  for the specified command.</returns>
     function GetCommandInfo(commandName: string): DNCommandInfo;
+    ///<summary>
+    ///  Tries to add a command to the list of known commands.
+    ///</summary>
+    ///  <param name="commandName">Name of the command.</param>
+    ///  <param name="commandInfo">The command information.</param>
+    ///<returns><see langword="true" />
+    ///  if the new command has been added successfully; otherwise, <see langword="false" />
+    ///  .</returns>
+    ///<remarks>
+    ///  This method is used by WebDriver implementations to add additional custom driver-specific commands.
+    ///  This method will not overwrite existing commands for a specific name, and will return <see langword="false" />
+    ///  in that case.
+    ///</remarks>
     function TryAddCommand(commandName: string; commandInfo: DNCommandInfo): Boolean;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3347,6 +7572,9 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the level of the W3C WebDriver specification that this repository supports.
+    ///</summary>
     property SpecificationLevel: Int32 read get_SpecificationLevel;
   end;
 
@@ -3357,10 +7585,19 @@ type
   ['{2E34CBB6-6D25-55EA-8554-92FB76EC7F2A}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.WebDriverWireProtocolCommandInfoRepository" />
+    ///  class.
+    ///</summary>
     {class} function init: DNWebDriverWireProtocolCommandInfoRepository;
 
   end;
 
+  ///<summary>
+  ///  Holds the information about all commands specified by the JSON wire protocol.
+  ///  This class cannot be inherited, as it is intended to be a singleton, and
+  ///  allowing subclasses introduces the possibility of multiple instances.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.WebDriverWireProtocolCommandInfoRepository')]
   DNWebDriverWireProtocolCommandInfoRepository = interface(DNCommandInfoRepository)
   ['{EB6520DA-3276-3710-9796-DF654456F446}']
@@ -3370,7 +7607,29 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Gets the <see cref="T:OpenQA.Selenium.Remote.CommandInfo" />
+    ///  for a <see cref="T:OpenQA.Selenium.Remote.DriverCommand" />
+    ///  .
+    ///</summary>
+    ///  <param name="commandName">The <see cref="T:OpenQA.Selenium.Remote.DriverCommand" />
+    ///  for which to get the information.</param>
+    ///<returns>The <see cref="T:OpenQA.Selenium.Remote.CommandInfo" />
+    ///  for the specified command.</returns>
     function GetCommandInfo(commandName: string): DNCommandInfo;
+    ///<summary>
+    ///  Tries to add a command to the list of known commands.
+    ///</summary>
+    ///  <param name="commandName">Name of the command.</param>
+    ///  <param name="commandInfo">The command information.</param>
+    ///<returns><see langword="true" />
+    ///  if the new command has been added successfully; otherwise, <see langword="false" />
+    ///  .</returns>
+    ///<remarks>
+    ///  This method is used by WebDriver implementations to add additional custom driver-specific commands.
+    ///  This method will not overwrite existing commands for a specific name, and will return <see langword="false" />
+    ///  in that case.
+    ///</remarks>
     function TryAddCommand(commandName: string; commandInfo: DNCommandInfo): Boolean;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3379,6 +7638,9 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the level of the W3C WebDriver specification that this repository supports.
+    ///</summary>
     property SpecificationLevel: Int32 read get_SpecificationLevel;
   end;
 
@@ -3389,7 +7651,18 @@ type
   ['{37F44EDF-B143-5DFB-A6AA-962F012DF251}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.DesiredCapabilities" />
+    ///  class
+    ///</summary>
+    ///  <param name="browser">Name of the browser e.g. firefox, internet explorer, safari</param>
+    ///  <param name="version">Version of the browser</param>
+    ///  <param name="platform">The platform it works on</param>
     {class} function init(browser: string; version: string; platform: DNPlatform): DNDesiredCapabilities; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.DesiredCapabilities" />
+    ///  class
+    ///</summary>
     {class} function init: DNDesiredCapabilities; overload;
     {class} function init(rawMap: DDN.mscorlib.DNDictionary<string, DDN.mscorlib.DNObject>): DNDesiredCapabilities; overload;
 
@@ -3410,6 +7683,11 @@ type
 
   end;
 
+  ///<summary>
+  ///  Class to Create the capabilities of the browser you require for <see cref="T:OpenQA.Selenium.IWebDriver" />
+  ///  .
+  ///  If you wish to use default values use the static methods
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.DesiredCapabilities')]
   DNDesiredCapabilities = interface(DNICapabilities)
   ['{402BF930-4DFF-3A09-806C-19807FDC5022}']
@@ -3426,21 +7704,64 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Gets a value indicating whether the browser has a given capability.
+    ///</summary>
+    ///  <param name="capability">The capability to get.</param>
+    ///<returns>Returns <see langword="true" />
+    ///  if the browser has the capability; otherwise, <see langword="false" />
+    ///  .</returns>
     function HasCapability(capability: string): Boolean;
+    ///<summary>
+    ///  Gets a capability of the browser.
+    ///</summary>
+    ///  <param name="capability">The capability to get.</param>
+    ///<returns>An object associated with the capability, or <see langword="null" />
+    ///  if the capability is not set on the browser.</returns>
     function GetCapability(capability: string): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Sets a capability of the browser.
+    ///</summary>
+    ///  <param name="capability">The capability to get.</param>
+    ///  <param name="capabilityValue">The value for the capability.</param>
     procedure SetCapability(capability: string; capabilityValue: DDN.mscorlib.DNObject);
     function ToDictionary: DDN.mscorlib.DNDictionary<string, DDN.mscorlib.DNObject>;
+    ///<summary>
+    ///  Return HashCode for the DesiredCapabilities that has been created
+    ///</summary>
+    ///<returns>Integer of HashCode generated</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  Return a string of capabilities being used
+    ///</summary>
+    ///<returns>String of capabilities being used</returns>
     function ToString: string;
+    ///<summary>
+    ///  Compare two DesiredCapabilities and will return either true or false
+    ///</summary>
+    ///  <param name="obj">DesiredCapabilities you wish to compare</param>
+    ///<returns>true if they are the same or false if they are not</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetType: DDN.mscorlib.DNType;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the browser name
+    ///</summary>
     property BrowserName: string read get_BrowserName;
+    ///<summary>
+    ///  Gets or sets the platform
+    ///</summary>
     property Platform: DNPlatform read get_Platform write set_Platform;
+    ///<summary>
+    ///  Gets the browser version
+    ///</summary>
     property Version: string read get_Version;
     property IsJavaScriptEnabled: Boolean read get_IsJavaScriptEnabled write set_IsJavaScriptEnabled;
+    ///<summary>
+    ///  Gets or sets a value indicating whether the browser accepts SSL certificates.
+    ///</summary>
     property AcceptInsecureCerts: Boolean read get_AcceptInsecureCerts write set_AcceptInsecureCerts;
   end;
 
@@ -3562,117 +7883,444 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  Represents the Define Driver Mapping command
+    ///</summary>
     {class} property DefineDriverMapping: string read __fakeFieldGet_DefineDriverMapping;
+    ///<summary>
+    ///  Represents the Status command.
+    ///</summary>
     {class} property Status: string read __fakeFieldGet_Status;
+    ///<summary>
+    ///  Represents a New Session command
+    ///</summary>
     {class} property NewSession: string read __fakeFieldGet_NewSession;
+    ///<summary>
+    ///  Represents the Get Session List command
+    ///</summary>
     {class} property GetSessionList: string read __fakeFieldGet_GetSessionList;
+    ///<summary>
+    ///  Represents the Get Session Capabilities command
+    ///</summary>
     {class} property GetSessionCapabilities: string read __fakeFieldGet_GetSessionCapabilities;
+    ///<summary>
+    ///  Represents a Browser close command
+    ///</summary>
     {class} property Close: string read __fakeFieldGet_Close;
+    ///<summary>
+    ///  Represents a browser quit command
+    ///</summary>
     {class} property Quit: string read __fakeFieldGet_Quit;
+    ///<summary>
+    ///  Represents a GET command
+    ///</summary>
     {class} property Get: string read __fakeFieldGet_Get;
+    ///<summary>
+    ///  Represents a Browser going back command
+    ///</summary>
     {class} property GoBack: string read __fakeFieldGet_GoBack;
+    ///<summary>
+    ///  Represents a Browser going forward command
+    ///</summary>
     {class} property GoForward: string read __fakeFieldGet_GoForward;
+    ///<summary>
+    ///  Represents a Browser refreshing command
+    ///</summary>
     {class} property Refresh: string read __fakeFieldGet_Refresh;
+    ///<summary>
+    ///  Represents adding a cookie command
+    ///</summary>
     {class} property AddCookie: string read __fakeFieldGet_AddCookie;
+    ///<summary>
+    ///  Represents getting all cookies command
+    ///</summary>
     {class} property GetAllCookies: string read __fakeFieldGet_GetAllCookies;
+    ///<summary>
+    ///  Represents getting cookie command
+    ///</summary>
     {class} property GetCookie: string read __fakeFieldGet_GetCookie;
+    ///<summary>
+    ///  Represents deleting a cookie command
+    ///</summary>
     {class} property DeleteCookie: string read __fakeFieldGet_DeleteCookie;
+    ///<summary>
+    ///  Represents Deleting all cookies command
+    ///</summary>
     {class} property DeleteAllCookies: string read __fakeFieldGet_DeleteAllCookies;
+    ///<summary>
+    ///  Represents FindElement command
+    ///</summary>
     {class} property FindElement: string read __fakeFieldGet_FindElement;
+    ///<summary>
+    ///  Represents FindElements command
+    ///</summary>
     {class} property FindElements: string read __fakeFieldGet_FindElements;
+    ///<summary>
+    ///  Represents FindChildElement command
+    ///</summary>
     {class} property FindChildElement: string read __fakeFieldGet_FindChildElement;
+    ///<summary>
+    ///  Represents FindChildElements command
+    ///</summary>
     {class} property FindChildElements: string read __fakeFieldGet_FindChildElements;
+    ///<summary>
+    ///  Describes an element
+    ///</summary>
     {class} property DescribeElement: string read __fakeFieldGet_DescribeElement;
+    ///<summary>
+    ///  Represents ClearElement command
+    ///</summary>
     {class} property ClearElement: string read __fakeFieldGet_ClearElement;
+    ///<summary>
+    ///  Represents ClickElement command
+    ///</summary>
     {class} property ClickElement: string read __fakeFieldGet_ClickElement;
+    ///<summary>
+    ///  Represents SendKeysToElements command
+    ///</summary>
     {class} property SendKeysToElement: string read __fakeFieldGet_SendKeysToElement;
+    ///<summary>
+    ///  Represents TapElement command
+    ///</summary>
     {class} property TapElement: string read __fakeFieldGet_TapElement;
+    ///<summary>
+    ///  Represents SubmitElement command
+    ///</summary>
     {class} property SubmitElement: string read __fakeFieldGet_SubmitElement;
+    ///<summary>
+    ///  Represents GetCurrentWindowHandle command
+    ///</summary>
     {class} property GetCurrentWindowHandle: string read __fakeFieldGet_GetCurrentWindowHandle;
+    ///<summary>
+    ///  Represents GetWindowHandles command
+    ///</summary>
     {class} property GetWindowHandles: string read __fakeFieldGet_GetWindowHandles;
+    ///<summary>
+    ///  Represents SwitchToWindow command
+    ///</summary>
     {class} property SwitchToWindow: string read __fakeFieldGet_SwitchToWindow;
+    ///<summary>
+    ///  Represents SwitchToFrame command
+    ///</summary>
     {class} property SwitchToFrame: string read __fakeFieldGet_SwitchToFrame;
+    ///<summary>
+    ///  Represents SwitchToParentFrame command
+    ///</summary>
     {class} property SwitchToParentFrame: string read __fakeFieldGet_SwitchToParentFrame;
+    ///<summary>
+    ///  Represents GetActiveElement command
+    ///</summary>
     {class} property GetActiveElement: string read __fakeFieldGet_GetActiveElement;
+    ///<summary>
+    ///  Represents GetCurrentUrl command
+    ///</summary>
     {class} property GetCurrentUrl: string read __fakeFieldGet_GetCurrentUrl;
+    ///<summary>
+    ///  Represents GetPageSource command
+    ///</summary>
     {class} property GetPageSource: string read __fakeFieldGet_GetPageSource;
+    ///<summary>
+    ///  Represents GetTitle command
+    ///</summary>
     {class} property GetTitle: string read __fakeFieldGet_GetTitle;
+    ///<summary>
+    ///  Represents ExecuteScript command
+    ///</summary>
     {class} property ExecuteScript: string read __fakeFieldGet_ExecuteScript;
+    ///<summary>
+    ///  Represents ExecuteAsyncScript command
+    ///</summary>
     {class} property ExecuteAsyncScript: string read __fakeFieldGet_ExecuteAsyncScript;
+    ///<summary>
+    ///  Represents GetElementText command
+    ///</summary>
     {class} property GetElementText: string read __fakeFieldGet_GetElementText;
+    ///<summary>
+    ///  Represents GetElementTagName command
+    ///</summary>
     {class} property GetElementTagName: string read __fakeFieldGet_GetElementTagName;
+    ///<summary>
+    ///  Represents IsElementSelected command
+    ///</summary>
     {class} property IsElementSelected: string read __fakeFieldGet_IsElementSelected;
+    ///<summary>
+    ///  Represents IsElementEnabled command
+    ///</summary>
     {class} property IsElementEnabled: string read __fakeFieldGet_IsElementEnabled;
+    ///<summary>
+    ///  Represents IsElementDisplayed command
+    ///</summary>
     {class} property IsElementDisplayed: string read __fakeFieldGet_IsElementDisplayed;
+    ///<summary>
+    ///  Represents GetElementLocation command
+    ///</summary>
     {class} property GetElementLocation: string read __fakeFieldGet_GetElementLocation;
+    ///<summary>
+    ///  Represents GetElementLocationOnceScrolledIntoView command
+    ///</summary>
     {class} property GetElementLocationOnceScrolledIntoView: string read __fakeFieldGet_GetElementLocationOnceScrolledIntoView;
+    ///<summary>
+    ///  Represents GetElementSize command
+    ///</summary>
     {class} property GetElementSize: string read __fakeFieldGet_GetElementSize;
+    ///<summary>
+    ///  Represents GetElementRect command
+    ///</summary>
     {class} property GetElementRect: string read __fakeFieldGet_GetElementRect;
+    ///<summary>
+    ///  Represents GetElementAttribute command
+    ///</summary>
     {class} property GetElementAttribute: string read __fakeFieldGet_GetElementAttribute;
+    ///<summary>
+    ///  Represents GetElementProperty command
+    ///</summary>
     {class} property GetElementProperty: string read __fakeFieldGet_GetElementProperty;
+    ///<summary>
+    ///  Represents GetElementValueOfCSSProperty command
+    ///</summary>
     {class} property GetElementValueOfCssProperty: string read __fakeFieldGet_GetElementValueOfCssProperty;
+    ///<summary>
+    ///  Represents ElementEquals command
+    ///</summary>
     {class} property ElementEquals: string read __fakeFieldGet_ElementEquals;
+    ///<summary>
+    ///  Represents Screenshot command
+    ///</summary>
     {class} property Screenshot: string read __fakeFieldGet_Screenshot;
+    ///<summary>
+    ///  Represents the ElementScreenshot command
+    ///</summary>
     {class} property ElementScreenshot: string read __fakeFieldGet_ElementScreenshot;
+    ///<summary>
+    ///  Represents GetOrientation command
+    ///</summary>
     {class} property GetOrientation: string read __fakeFieldGet_GetOrientation;
+    ///<summary>
+    ///  Represents SetOrientation command
+    ///</summary>
     {class} property SetOrientation: string read __fakeFieldGet_SetOrientation;
+    ///<summary>
+    ///  Represents GetWindowSize command
+    ///</summary>
     {class} property GetWindowSize: string read __fakeFieldGet_GetWindowSize;
+    ///<summary>
+    ///  Represents SetWindowSize command
+    ///</summary>
     {class} property SetWindowSize: string read __fakeFieldGet_SetWindowSize;
+    ///<summary>
+    ///  Represents GetWindowPosition command
+    ///</summary>
     {class} property GetWindowPosition: string read __fakeFieldGet_GetWindowPosition;
+    ///<summary>
+    ///  Represents SetWindowPosition command
+    ///</summary>
     {class} property SetWindowPosition: string read __fakeFieldGet_SetWindowPosition;
+    ///<summary>
+    ///  Represents GetWindowRect command
+    ///</summary>
     {class} property GetWindowRect: string read __fakeFieldGet_GetWindowRect;
+    ///<summary>
+    ///  Represents SetWindowRect command
+    ///</summary>
     {class} property SetWindowRect: string read __fakeFieldGet_SetWindowRect;
+    ///<summary>
+    ///  Represents MaximizeWindow command
+    ///</summary>
     {class} property MaximizeWindow: string read __fakeFieldGet_MaximizeWindow;
+    ///<summary>
+    ///  Represents MinimizeWindow command
+    ///</summary>
     {class} property MinimizeWindow: string read __fakeFieldGet_MinimizeWindow;
+    ///<summary>
+    ///  Represents FullScreenWindow command
+    ///</summary>
     {class} property FullScreenWindow: string read __fakeFieldGet_FullScreenWindow;
+    ///<summary>
+    ///  Represents the DismissAlert command
+    ///</summary>
     {class} property DismissAlert: string read __fakeFieldGet_DismissAlert;
+    ///<summary>
+    ///  Represents the AcceptAlert command
+    ///</summary>
     {class} property AcceptAlert: string read __fakeFieldGet_AcceptAlert;
+    ///<summary>
+    ///  Represents the GetAlertText command
+    ///</summary>
     {class} property GetAlertText: string read __fakeFieldGet_GetAlertText;
+    ///<summary>
+    ///  Represents the SetAlertValue command
+    ///</summary>
     {class} property SetAlertValue: string read __fakeFieldGet_SetAlertValue;
+    ///<summary>
+    ///  Represents the Authenticate command
+    ///</summary>
     {class} property SetAlertCredentials: string read __fakeFieldGet_SetAlertCredentials;
+    ///<summary>
+    ///  Represents the ImplicitlyWait command
+    ///</summary>
     {class} property ImplicitlyWait: string read __fakeFieldGet_ImplicitlyWait;
+    ///<summary>
+    ///  Represents the SetAsyncScriptTimeout command
+    ///</summary>
     {class} property SetAsyncScriptTimeout: string read __fakeFieldGet_SetAsyncScriptTimeout;
+    ///<summary>
+    ///  Represents the SetTimeout command
+    ///</summary>
     {class} property SetTimeouts: string read __fakeFieldGet_SetTimeouts;
+    ///<summary>
+    ///  Represents the SetTimeout command
+    ///</summary>
     {class} property GetTimeouts: string read __fakeFieldGet_GetTimeouts;
+    ///<summary>
+    ///  Represents the Actions command.
+    ///</summary>
     {class} property Actions: string read __fakeFieldGet_Actions;
+    ///<summary>
+    ///  Represents the CancelActions command.
+    ///</summary>
     {class} property CancelActions: string read __fakeFieldGet_CancelActions;
+    ///<summary>
+    ///  Represents the MouseClick command.
+    ///</summary>
     {class} property MouseClick: string read __fakeFieldGet_MouseClick;
+    ///<summary>
+    ///  Represents the MouseDoubleClick command.
+    ///</summary>
     {class} property MouseDoubleClick: string read __fakeFieldGet_MouseDoubleClick;
+    ///<summary>
+    ///  Represents the MouseDown command.
+    ///</summary>
     {class} property MouseDown: string read __fakeFieldGet_MouseDown;
+    ///<summary>
+    ///  Represents the MouseUp command.
+    ///</summary>
     {class} property MouseUp: string read __fakeFieldGet_MouseUp;
+    ///<summary>
+    ///  Represents the MouseMoveTo command.
+    ///</summary>
     {class} property MouseMoveTo: string read __fakeFieldGet_MouseMoveTo;
+    ///<summary>
+    ///  Represents the SendKeysToActiveElement command.
+    ///</summary>
     {class} property SendKeysToActiveElement: string read __fakeFieldGet_SendKeysToActiveElement;
+    ///<summary>
+    ///  Represents the UploadFile command.
+    ///</summary>
     {class} property UploadFile: string read __fakeFieldGet_UploadFile;
+    ///<summary>
+    ///  Represents the TouchSingleTap command.
+    ///</summary>
     {class} property TouchSingleTap: string read __fakeFieldGet_TouchSingleTap;
+    ///<summary>
+    ///  Represents the TouchPress command.
+    ///</summary>
     {class} property TouchPress: string read __fakeFieldGet_TouchPress;
+    ///<summary>
+    ///  Represents the TouchRelease command.
+    ///</summary>
     {class} property TouchRelease: string read __fakeFieldGet_TouchRelease;
+    ///<summary>
+    ///  Represents the TouchMove command.
+    ///</summary>
     {class} property TouchMove: string read __fakeFieldGet_TouchMove;
+    ///<summary>
+    ///  Represents the TouchScroll command.
+    ///</summary>
     {class} property TouchScroll: string read __fakeFieldGet_TouchScroll;
+    ///<summary>
+    ///  Represents the TouchDoubleTap command.
+    ///</summary>
     {class} property TouchDoubleTap: string read __fakeFieldGet_TouchDoubleTap;
+    ///<summary>
+    ///  Represents the TouchLongPress command.
+    ///</summary>
     {class} property TouchLongPress: string read __fakeFieldGet_TouchLongPress;
+    ///<summary>
+    ///  Represents the TouchFlick command.
+    ///</summary>
     {class} property TouchFlick: string read __fakeFieldGet_TouchFlick;
+    ///<summary>
+    ///  Represents the GetLocation command.
+    ///</summary>
     {class} property GetLocation: string read __fakeFieldGet_GetLocation;
+    ///<summary>
+    ///  Represents the SetLocation command.
+    ///</summary>
     {class} property SetLocation: string read __fakeFieldGet_SetLocation;
+    ///<summary>
+    ///  Represents the GetAppCache command.
+    ///</summary>
     {class} property GetAppCache: string read __fakeFieldGet_GetAppCache;
+    ///<summary>
+    ///  Represents the application cache GetStatus command.
+    ///</summary>
     {class} property GetAppCacheStatus: string read __fakeFieldGet_GetAppCacheStatus;
+    ///<summary>
+    ///  Represents the ClearAppCache command.
+    ///</summary>
     {class} property ClearAppCache: string read __fakeFieldGet_ClearAppCache;
+    ///<summary>
+    ///  Represents the GetLocalStorageItem command.
+    ///</summary>
     {class} property GetLocalStorageItem: string read __fakeFieldGet_GetLocalStorageItem;
+    ///<summary>
+    ///  Represents the GetLocalStorageKeys command.
+    ///</summary>
     {class} property GetLocalStorageKeys: string read __fakeFieldGet_GetLocalStorageKeys;
+    ///<summary>
+    ///  Represents the SetLocalStorageItem command.
+    ///</summary>
     {class} property SetLocalStorageItem: string read __fakeFieldGet_SetLocalStorageItem;
+    ///<summary>
+    ///  Represents the RemoveLocalStorageItem command.
+    ///</summary>
     {class} property RemoveLocalStorageItem: string read __fakeFieldGet_RemoveLocalStorageItem;
+    ///<summary>
+    ///  Represents the ClearLocalStorage command.
+    ///</summary>
     {class} property ClearLocalStorage: string read __fakeFieldGet_ClearLocalStorage;
+    ///<summary>
+    ///  Represents the GetLocalStorageSize command.
+    ///</summary>
     {class} property GetLocalStorageSize: string read __fakeFieldGet_GetLocalStorageSize;
+    ///<summary>
+    ///  Represents the GetSessionStorageItem command.
+    ///</summary>
     {class} property GetSessionStorageItem: string read __fakeFieldGet_GetSessionStorageItem;
+    ///<summary>
+    ///  Represents the GetSessionStorageKeys command.
+    ///</summary>
     {class} property GetSessionStorageKeys: string read __fakeFieldGet_GetSessionStorageKeys;
+    ///<summary>
+    ///  Represents the SetSessionStorageItem command.
+    ///</summary>
     {class} property SetSessionStorageItem: string read __fakeFieldGet_SetSessionStorageItem;
+    ///<summary>
+    ///  Represents the RemoveSessionStorageItem command.
+    ///</summary>
     {class} property RemoveSessionStorageItem: string read __fakeFieldGet_RemoveSessionStorageItem;
+    ///<summary>
+    ///  Represents the ClearSessionStorage command.
+    ///</summary>
     {class} property ClearSessionStorage: string read __fakeFieldGet_ClearSessionStorage;
+    ///<summary>
+    ///  Represents the GetSessionStorageSize command.
+    ///</summary>
     {class} property GetSessionStorageSize: string read __fakeFieldGet_GetSessionStorageSize;
+    ///<summary>
+    ///  Represents the GetAvailableLogTypes command.
+    ///</summary>
     {class} property GetAvailableLogTypes: string read __fakeFieldGet_GetAvailableLogTypes;
+    ///<summary>
+    ///  Represents the GetLog command.
+    ///</summary>
     {class} property GetLog: string read __fakeFieldGet_GetLog;
 
   end;
 
+  ///<summary>
+  ///  Values describing the list of commands understood by a remote server using the JSON wire protocol.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.DriverCommand')]
   DNDriverCommand = interface(DDN.mscorlib.DNObject)
   ['{97F8D87E-4A82-3D4A-9008-5D013F2CAAA8}']
@@ -3692,11 +8340,18 @@ type
   ['{0ABE70A7-5D8A-54CE-B4AD-249247923BE8}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.ErrorResponse" />
+    ///  class.
+    ///</summary>
     {class} function init: DNErrorResponse; overload;
     {class} function init(responseValue: DDN.mscorlib.DNDictionary<string, DDN.mscorlib.DNObject>): DNErrorResponse; overload;
 
   end;
 
+  ///<summary>
+  ///  Provides a way to store errors from a response
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.ErrorResponse')]
   DNErrorResponse = interface(DDN.mscorlib.DNObject)
   ['{5D245DBD-5B7D-328D-B675-F64DC3FCB64F}']
@@ -3720,9 +8375,21 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the message from the response
+    ///</summary>
     property Message: string read get_Message write set_Message;
+    ///<summary>
+    ///  Gets or sets the class name that threw the error
+    ///</summary>
     property ClassName: string read get_ClassName write set_ClassName;
+    ///<summary>
+    ///  Gets or sets the screenshot of the error
+    ///</summary>
     property Screenshot: string read get_Screenshot write set_Screenshot;
+    ///<summary>
+    ///  Gets or sets the stack trace of the error
+    ///</summary>
     property StackTrace: TArray<DNStackTraceElement> read get_StackTrace write set_StackTrace;
   end;
 
@@ -3737,11 +8404,23 @@ type
 
   end;
 
+  ///<summary>
+  ///  Represents a file detector for determining whether a file
+  ///  must be uploaded to a remote server.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.LocalFileDetector')]
   DNLocalFileDetector = interface(DNIFileDetector)
   ['{6E0455DA-B50F-30CD-A6C6-BFD6D7FBC014}']
   { methods } 
 
+    ///<summary>
+    ///  Returns a value indicating whether a specified key sequence represents
+    ///  a file name and path.
+    ///</summary>
+    ///  <param name="keySequence">The sequence to test for file existence.</param>
+    ///<returns><see langword="true" />
+    ///  if the key sequence represents a file; otherwise, <see langword="false" />
+    ///  .</returns>
     function IsFile(keySequence: string): Boolean;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3757,10 +8436,19 @@ type
   ['{4C8E73C6-F4DC-5BA1-AEF4-0894048A2302}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteApplicationCache" />
+    ///  class.
+    ///</summary>
+    ///  <param name="driver">The <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  for which the application cache will be managed.</param>
     {class} function init(driver: DNRemoteWebDriver): DNRemoteApplicationCache;
 
   end;
 
+  ///<summary>
+  ///  Defines the interface through which the user can manipulate application cache.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.RemoteApplicationCache')]
   DNRemoteApplicationCache = interface(DNIApplicationCache)
   ['{8DC4E758-B6E7-3617-8663-48B9B6FBFAEF}']
@@ -3777,6 +8465,9 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the current state of the application cache.
+    ///</summary>
     property Status: DNAppCacheStatus read get_Status;
   end;
 
@@ -3787,10 +8478,19 @@ type
   ['{97393988-987B-5D97-995B-DB4B123D4876}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteLocalStorage" />
+    ///  class.
+    ///</summary>
+    ///  <param name="driver">The <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  for which the application cache will be managed.</param>
     {class} function init(driver: DNRemoteWebDriver): DNRemoteLocalStorage;
 
   end;
 
+  ///<summary>
+  ///  Defines the interface through which the user can manipulate local storage.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.RemoteLocalStorage')]
   DNRemoteLocalStorage = interface(DNILocalStorage)
   ['{B3ECE73E-A11A-3032-96BB-564A2C0C69ED}']
@@ -3800,9 +8500,30 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Returns local storage value given a key.
+    ///</summary>
+    ///  <param name="key">The key value for the item in storage.</param>
+    ///<returns>A local storage <see cref="T:System.String" />
+    ///  value given a key, if present, otherwise returns null.</returns>
     function GetItem(key: string): string;
+    ///<summary>
+    ///  Returns a read-only list of local storage keys.
+    ///</summary>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1">read-only list</see> of local storage keys.</returns>
     function KeySet: DDN.mscorlib.DNReadOnlyCollection<string>;
+    ///<summary>
+    ///  Sets local storage entry using given key/value pair.
+    ///</summary>
+    ///  <param name="key">local storage key</param>
+    ///  <param name="value">local storage value</param>
     procedure SetItem(key: string; value: string);
+    ///<summary>
+    ///  Removes local storage entry for the given key.
+    ///</summary>
+    ///  <param name="key">key to be removed from the list</param>
+    ///<returns>Response value <see cref="T:System.String" />
+    ///  for the given key.</returns>
     function RemoveItem(key: string): string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3811,6 +8532,9 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the number of items in local storage.
+    ///</summary>
     property Count: Int32 read get_Count;
   end;
 
@@ -3821,10 +8545,19 @@ type
   ['{F973CFB1-3B05-57E2-B25B-B44F1AF26BDD}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteLocationContext" />
+    ///  class.
+    ///</summary>
+    ///  <param name="driver">The <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  for which the application cache will be managed.</param>
     {class} function init(driver: DNRemoteWebDriver): DNRemoteLocationContext;
 
   end;
 
+  ///<summary>
+  ///  Defines the interface through which the user can manipulate browser location.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.RemoteLocationContext')]
   DNRemoteLocationContext = interface(DNILocationContext)
   ['{B5EAB5DA-C589-3CB2-A66C-39D27A304F22}']
@@ -3842,6 +8575,9 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets a value indicating the physical location of the browser.
+    ///</summary>
     property PhysicalLocation: DNLocation read get_PhysicalLocation write set_PhysicalLocation;
   end;
 
@@ -3852,10 +8588,18 @@ type
   ['{A67DABA8-B742-5C23-96CD-995B25B3073A}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteLogs" />
+    ///  class.
+    ///</summary>
+    ///  <param name="driver">Instance of the driver currently in use</param>
     {class} function init(driver: DNRemoteWebDriver): DNRemoteLogs;
 
   end;
 
+  ///<summary>
+  ///  Provides a mechanism for examining logs for the driver during the test.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.RemoteLogs')]
   DNRemoteLogs = interface(DNILogs)
   ['{C84A2C10-7467-3DCC-A556-48AC4E432A03}']
@@ -3865,6 +8609,15 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Gets the set of <see cref="T:OpenQA.Selenium.LogEntry" />
+    ///  objects for a specified log.
+    ///</summary>
+    ///  <param name="logKind">The log for which to retrieve the log entries.
+    ///  Log types can be found in the <see cref="T:OpenQA.Selenium.LogType" />
+    ///  class.</param>
+    ///<returns>The list of <see cref="T:OpenQA.Selenium.LogEntry" />
+    ///  objects for the specified log.</returns>
     function GetLog(logKind: string): DDN.mscorlib.DNReadOnlyCollection<DNLogEntry>;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3873,6 +8626,9 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the list of available log types for this driver.
+    ///</summary>
     property AvailableLogTypes: DDN.mscorlib.DNReadOnlyCollection<string> read get_AvailableLogTypes;
   end;
 
@@ -3883,10 +8639,18 @@ type
   ['{8C5959FA-8B19-5D0B-BEAC-8E716D4DEA7E}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteSessionStorage" />
+    ///  class.
+    ///</summary>
+    ///  <param name="driver">The driver instance.</param>
     {class} function init(driver: DNRemoteWebDriver): DNRemoteSessionStorage;
 
   end;
 
+  ///<summary>
+  ///  Defines the interface through which the user can manipulate session storage.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.RemoteSessionStorage')]
   DNRemoteSessionStorage = interface(DNISessionStorage)
   ['{4993D11B-A0C2-3F9B-B63D-ECC594269B83}']
@@ -3896,9 +8660,30 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Returns session storage value given a key.
+    ///</summary>
+    ///  <param name="key">The key of the item in storage.</param>
+    ///<returns>A session storage <see cref="T:System.String" />
+    ///  value given a key, if present, otherwise return null.</returns>
     function GetItem(key: string): string;
+    ///<summary>
+    ///  Returns a read-only list of session storage keys.
+    ///</summary>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1">read-only list</see> of session storage keys.</returns>
     function KeySet: DDN.mscorlib.DNReadOnlyCollection<string>;
+    ///<summary>
+    ///  Sets session storage entry using given key/value pair.
+    ///</summary>
+    ///  <param name="key">Session storage key</param>
+    ///  <param name="value">Session storage value</param>
     procedure SetItem(key: string; value: string);
+    ///<summary>
+    ///  Removes session storage entry for the given key.
+    ///</summary>
+    ///  <param name="key">key to be removed from the list</param>
+    ///<returns>Response value <see cref="T:System.String" />
+    ///  for the given key.</returns>
     function RemoveItem(key: string): string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3907,6 +8692,9 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the number of items in session storage.
+    ///</summary>
     property Count: Int32 read get_Count;
   end;
 
@@ -3917,24 +8705,100 @@ type
   ['{1DA03872-7B63-52DC-9BF2-DAE08CCCB0A2}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteTouchScreen" />
+    ///  class.
+    ///</summary>
+    ///  <param name="driver">The <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  for which the touch screen will be managed.</param>
     {class} function init(driver: DNRemoteWebDriver): DNRemoteTouchScreen;
 
   end;
 
+  ///<summary>
+  ///  Defines the interface through which the user can execute advanced touch screen interactions.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.RemoteTouchScreen')]
   DNRemoteTouchScreen = interface(DNITouchScreen)
   ['{64AAA9E4-2E9C-319B-BDB3-0A9E7F9F3C65}']
   { methods } 
 
+    ///<summary>
+    ///  Allows the execution of single tap on the screen, analogous to click using a Mouse.
+    ///</summary>
+    ///  <param name="where">The <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  object representing the location on the screen,
+    ///  usually an <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  .</param>
     procedure SingleTap(where: DNICoordinates);
+    ///<summary>
+    ///  Allows the execution of the gesture 'down' on the screen. It is typically the first of a
+    ///  sequence of touch gestures.
+    ///</summary>
+    ///  <param name="locationX">The x coordinate relative to the view port.</param>
+    ///  <param name="locationY">The y coordinate relative to the view port.</param>
     procedure Down(locationX: Int32; locationY: Int32);
+    ///<summary>
+    ///  Allows the execution of the gesture 'up' on the screen. It is typically the last of a
+    ///  sequence of touch gestures.
+    ///</summary>
+    ///  <param name="locationX">The x coordinate relative to the view port.</param>
+    ///  <param name="locationY">The y coordinate relative to the view port.</param>
     procedure Up(locationX: Int32; locationY: Int32);
+    ///<summary>
+    ///  Allows the execution of the gesture 'move' on the screen.
+    ///</summary>
+    ///  <param name="locationX">The x coordinate relative to the view port.</param>
+    ///  <param name="locationY">The y coordinate relative to the view port.</param>
     procedure Move(locationX: Int32; locationY: Int32);
+    ///<summary>
+    ///  Creates a scroll gesture that starts on a particular screen location.
+    ///</summary>
+    ///  <param name="where">The <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  object representing the location on the screen
+    ///  where the scroll starts, usually an <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  .</param>
+    ///  <param name="offsetX">The x coordinate relative to the view port.</param>
+    ///  <param name="offsetY">The y coordinate relative to the view port.</param>
     procedure Scroll(where: DNICoordinates; offsetX: Int32; offsetY: Int32); overload;
+    ///<summary>
+    ///  Creates a scroll gesture for a particular x and y offset.
+    ///</summary>
+    ///  <param name="offsetX">The horizontal offset relative to the view port.</param>
+    ///  <param name="offsetY">The vertical offset relative to the view port.</param>
     procedure Scroll(offsetX: Int32; offsetY: Int32); overload;
+    ///<summary>
+    ///  Allows the execution of double tap on the screen, analogous to click using a Mouse.
+    ///</summary>
+    ///  <param name="where">The <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  object representing the location on the screen,
+    ///  usually an <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  .</param>
     procedure DoubleTap(where: DNICoordinates);
+    ///<summary>
+    ///  Allows the execution of a long press gesture on the screen.
+    ///</summary>
+    ///  <param name="where">The <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  object representing the location on the screen,
+    ///  usually an <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  .</param>
     procedure LongPress(where: DNICoordinates);
+    ///<summary>
+    ///  Creates a flick gesture for the current view.
+    ///</summary>
+    ///  <param name="speedX">The horizontal speed in pixels per second.</param>
+    ///  <param name="speedY">The vertical speed in pixels per second.</param>
     procedure Flick(speedX: Int32; speedY: Int32); overload;
+    ///<summary>
+    ///  Creates a flick gesture for the current view starting at a specific location.
+    ///</summary>
+    ///  <param name="where">The <see cref="T:OpenQA.Selenium.Interactions.Internal.ICoordinates" />
+    ///  object representing the location on the screen
+    ///  where the scroll starts, usually an <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  .</param>
+    ///  <param name="offsetX">The x offset relative to the viewport.</param>
+    ///  <param name="offsetY">The y offset relative to the viewport.</param>
+    ///  <param name="speed">The speed in pixels per second.</param>
     procedure Flick(where: DNICoordinates; offsetX: Int32; offsetY: Int32; speed: Int32); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -3950,15 +8814,88 @@ type
   ['{D53191D8-310E-59F4-AA2A-6B2B497D907C}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  class. This constructor defaults proxy to http://127.0.0.1:4444/wd/hub
+    ///</summary>
+    ///  <param name="options">An <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  object containing the desired capabilities of the browser.</param>
     {class} function init(options: DNDriverOptions): DNRemoteWebDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  class. This constructor defaults proxy to http://127.0.0.1:4444/wd/hub
+    ///</summary>
+    ///  <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.ICapabilities" />
+    ///  object containing the desired capabilities of the browser.</param>
     {class} function init(desiredCapabilities: DNICapabilities): DNRemoteWebDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  class. This constructor defaults proxy to http://127.0.0.1:4444/wd/hub
+    ///</summary>
+    ///  <param name="remoteAddress">URI containing the address of the WebDriver remote server (e.g. http://127.0.0.1:4444/wd/hub).</param>
+    ///  <param name="options">An <see cref="T:OpenQA.Selenium.DriverOptions" />
+    ///  object containing the desired capabilities of the browser.</param>
     {class} function init(remoteAddress: DDN.System.DNUri; options: DNDriverOptions): DNRemoteWebDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  class
+    ///</summary>
+    ///  <param name="remoteAddress">URI containing the address of the WebDriver remote server (e.g. http://127.0.0.1:4444/wd/hub).</param>
+    ///  <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.ICapabilities" />
+    ///  object containing the desired capabilities of the browser.</param>
     {class} function init(remoteAddress: DDN.System.DNUri; desiredCapabilities: DNICapabilities): DNRemoteWebDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  class using the specified remote address, desired capabilities, and command timeout.
+    ///</summary>
+    ///  <param name="remoteAddress">URI containing the address of the WebDriver remote server (e.g. http://127.0.0.1:4444/wd/hub).</param>
+    ///  <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.ICapabilities" />
+    ///  object containing the desired capabilities of the browser.</param>
+    ///  <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
     {class} function init(remoteAddress: DDN.System.DNUri; desiredCapabilities: DNICapabilities; commandTimeout: DDN.mscorlib.DNTimeSpan): DNRemoteWebDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  class
+    ///</summary>
+    ///  <param name="commandExecutor">An <see cref="T:OpenQA.Selenium.Remote.ICommandExecutor" />
+    ///  object which executes commands for the driver.</param>
+    ///  <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.ICapabilities" />
+    ///  object containing the desired capabilities of the browser.</param>
     {class} function init(commandExecutor: DNICommandExecutor; desiredCapabilities: DNICapabilities): DNRemoteWebDriver; overload;
 
   end;
 
+  ///<summary>
+  ///  Provides a way to use the driver through
+  ///</summary>
+  ///  /// <example><code>
+  ///  [TestFixture]
+  ///  public class Testing
+  ///  {
+  ///  private IWebDriver driver;
+  ///  <para />
+  ///  [SetUp]
+  ///  public void SetUp()
+  ///  {
+  ///  driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4444/wd/hub"),DesiredCapabilities.InternetExplorer());
+  ///  }
+  ///  <para />
+  ///  [Test]
+  ///  public void TestGoogle()
+  ///  {
+  ///  driver.Navigate().GoToUrl("http://www.google.co.uk");
+  ///  /*
+  ///  *   Rest of the test
+  ///  */
+  ///  }
+  ///  <para />
+  ///  [TearDown]
+  ///  public void TearDown()
+  ///  {
+  ///  driver.Quit();
+  ///  }
+  ///  }
+  ///</code></example>
   [DNTypeName('OpenQA.Selenium.Remote.RemoteWebDriver')]
   DNRemoteWebDriver = interface(DNIWebDriver)
   ['{1BD14372-776F-34BB-9F88-8122C3FF884F}']
@@ -3986,34 +8923,248 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element in the page that matches the <see cref="T:OpenQA.Selenium.By" />
+    ///  object
+    ///</summary>
+    ///  <param name="by">By mechanism to find the object</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  IWebElement elem = driver.FindElement(By.Name("q"));
+    ///</code></example>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds the elements on the page by using the <see cref="T:OpenQA.Selenium.By" />
+    ///  object and returns a ReadOnlyCollection of the Elements on the page
+    ///</summary>
+    ///  <param name="by">By mechanism to find the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> classList = driver.FindElements(By.ClassName("class"));
+    ///</code></example>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Closes the Browser
+    ///</summary>
     procedure Close;
+    ///<summary>
+    ///  Close the Browser and Dispose of WebDriver
+    ///</summary>
     procedure Quit;
+    ///<summary>
+    ///  Method For getting an object to set the Speed
+    ///</summary>
+    ///<returns>Returns an IOptions object that allows the driver to set the speed and cookies and getting cookies</returns>
+    ///<seealso cref="T:OpenQA.Selenium.IOptions" />
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Manage().GetCookies();
+    ///</code></example>
     function Manage: DNIOptions;
+    ///<summary>
+    ///  Method to allow you to Navigate with WebDriver
+    ///</summary>
+    ///<returns>Returns an INavigation Object that allows the driver to navigate in the browser</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Navigate().GoToUrl("http://www.google.co.uk");
+    ///</code></example>
     function Navigate: DNINavigation;
+    ///<summary>
+    ///  Method to give you access to switch frames and windows
+    ///</summary>
+    ///<returns>Returns an Object that allows you to Switch Frames and Windows</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.SwitchTo().Frame("FrameName");
+    ///</code></example>
     function SwitchTo: DNITargetLocator;
+    ///<summary>
+    ///  Executes JavaScript in the context of the currently selected frame or window
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Executes JavaScript asynchronously in the context of the currently selected frame or window.
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteAsyncScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the element</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementById("id")
+    ///</code></example>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the Element</param>
+    ///<returns>ReadOnlyCollection of Elements that match the object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsById("id")
+    ///</code></example>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the CSS Class supplied
+    ///</summary>
+    ///  <param name="className">className of the</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByClassName("classname")
+    ///</code></example>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="className">CSS class Name on the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByLinkText("linktext")
+    ///</code></example>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the part of the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByPartialLinkText("partOfLink")
+    ///</code></example>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByPartialLinkText("partOfTheLink")
+    ///</code></example>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of element</param>
+    ///<returns>ReadOnlyCollect of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of the element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByXPath("//table/tbody/tr/td/a");
+    ///</code></example>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByXpath("//tr/td/a")
+    ///</code></example>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of the page on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
+    ///<summary>
+    ///  Dispose the RemoteWebDriver Instance
+    ///</summary>
     procedure Dispose;
     procedure PerformActions(actionSequenceList: DDN.mscorlib.DNIList<DNActionSequence>);
+    ///<summary>
+    ///  Resets the input state of the action executor.
+    ///</summary>
     procedure ResetInputState;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4022,22 +9173,85 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the URL the browser is currently displaying.
+    ///</summary>
+    ///<seealso cref="P:OpenQA.Selenium.IWebDriver.Url" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.String)" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.Uri)" />
     property Url: string read get_Url write set_Url;
+    ///<summary>
+    ///  Gets the title of the current browser window.
+    ///</summary>
     property Title: string read get_Title;
+    ///<summary>
+    ///  Gets the source of the page last loaded by the browser.
+    ///</summary>
     property PageSource: string read get_PageSource;
+    ///<summary>
+    ///  Gets the current window handle, which is an opaque handle to this
+    ///  window that uniquely identifies it within this driver instance.
+    ///</summary>
     property CurrentWindowHandle: string read get_CurrentWindowHandle;
+    ///<summary>
+    ///  Gets the window handles of open browser windows.
+    ///</summary>
     property WindowHandles: DDN.mscorlib.DNReadOnlyCollection<string> read get_WindowHandles;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IKeyboard" />
+    ///  object for sending keystrokes to the browser.
+    ///</summary>
     property Keyboard: DNIKeyboard read get_Keyboard;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IMouse" />
+    ///  object for sending mouse commands to the browser.
+    ///</summary>
     property Mouse: DNIMouse read get_Mouse;
+    ///<summary>
+    ///  Gets a value indicating whether web storage is supported for this driver.
+    ///</summary>
     property HasWebStorage: Boolean read get_HasWebStorage;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IWebStorage" />
+    ///  object for managing web storage.
+    ///</summary>
     property WebStorage: DNIWebStorage read get_WebStorage;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating the application cache is supported for this driver.
+    ///</summary>
     property HasApplicationCache: Boolean read get_HasApplicationCache;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IApplicationCache" />
+    ///  object for managing application cache.
+    ///</summary>
     property ApplicationCache: DNIApplicationCache read get_ApplicationCache;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating geolocation is supported for this driver.
+    ///</summary>
     property HasLocationContext: Boolean read get_HasLocationContext;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.ILocationContext" />
+    ///  object for managing browser location.
+    ///</summary>
     property LocationContext: DNILocationContext read get_LocationContext;
+    ///<summary>
+    ///  Gets the capabilities that the RemoteWebDriver instance is currently using
+    ///</summary>
     property Capabilities: DNICapabilities read get_Capabilities;
+    ///<summary>
+    ///  Gets or sets the <see cref="T:OpenQA.Selenium.IFileDetector" />
+    ///  responsible for detecting
+    ///  sequences of keystrokes representing file paths and names.
+    ///</summary>
     property FileDetector: DNIFileDetector read get_FileDetector write set_FileDetector;
+    ///<summary>
+    ///  Gets the <see cref="P:OpenQA.Selenium.Remote.RemoteWebDriver.SessionId" />
+    ///  for the current session of this driver.
+    ///</summary>
     property SessionId: DNSessionId read get_SessionId;
+    ///<summary>
+    ///  Gets a value indicating whether this object is a valid action executor.
+    ///</summary>
     property IsActionExecutor: Boolean read get_IsActionExecutor;
   end;
 
@@ -4048,13 +9262,72 @@ type
   ['{01E3675A-56E3-500B-BF9D-080121355F8F}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Chrome.ChromeDriver" />
+    ///  class.
+    ///</summary>
     {class} function init: DNChromeDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Chrome.ChromeDriver" />
+    ///  class using the specified options.
+    ///</summary>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Chrome.ChromeOptions" />
+    ///  to be used with the Chrome driver.</param>
     {class} function init(options: DNChromeOptions): DNChromeDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Chrome.ChromeDriver" />
+    ///  class using the specified driver service.
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.Chrome.ChromeDriverService" />
+    ///  used to initialize the driver.</param>
     {class} function init(service: DNChromeDriverService): DNChromeDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Chrome.ChromeDriver" />
+    ///  class using the specified path
+    ///  to the directory containing ChromeDriver.exe.
+    ///</summary>
+    ///  <param name="chromeDriverDirectory">The full path to the directory containing ChromeDriver.exe.</param>
     {class} function init(chromeDriverDirectory: string): DNChromeDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Chrome.ChromeDriver" />
+    ///  class using the specified path
+    ///  to the directory containing ChromeDriver.exe and options.
+    ///</summary>
+    ///  <param name="chromeDriverDirectory">The full path to the directory containing ChromeDriver.exe.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Chrome.ChromeOptions" />
+    ///  to be used with the Chrome driver.</param>
     {class} function init(chromeDriverDirectory: string; options: DNChromeOptions): DNChromeDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Chrome.ChromeDriver" />
+    ///  class using the specified path
+    ///  to the directory containing ChromeDriver.exe, options, and command timeout.
+    ///</summary>
+    ///  <param name="chromeDriverDirectory">The full path to the directory containing ChromeDriver.exe.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Chrome.ChromeOptions" />
+    ///  to be used with the Chrome driver.</param>
+    ///  <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
     {class} function init(chromeDriverDirectory: string; options: DNChromeOptions; commandTimeout: DDN.mscorlib.DNTimeSpan): DNChromeDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Chrome.ChromeDriver" />
+    ///  class using the specified
+    ///<see cref="T:OpenQA.Selenium.Chrome.ChromeDriverService" />
+    ///  and options.
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.Chrome.ChromeDriverService" />
+    ///  to use.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Chrome.ChromeOptions" />
+    ///  used to initialize the driver.</param>
     {class} function init(service: DNChromeDriverService; options: DNChromeOptions): DNChromeDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Chrome.ChromeDriver" />
+    ///  class using the specified <see cref="T:OpenQA.Selenium.Chrome.ChromeDriverService" />
+    ///  .
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.Chrome.ChromeDriverService" />
+    ///  to use.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Chrome.ChromeOptions" />
+    ///  to be used with the Chrome driver.</param>
+    ///  <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
     {class} function init(service: DNChromeDriverService; options: DNChromeOptions; commandTimeout: DDN.mscorlib.DNTimeSpan): DNChromeDriver; overload;
 
   { static fields getter & setter } 
@@ -4063,10 +9336,44 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  Accept untrusted SSL Certificates
+    ///</summary>
     {class} property AcceptUntrustedCertificates: Boolean read __fakeFieldGet_AcceptUntrustedCertificates;
 
   end;
 
+  ///<summary>
+  ///  Provides a mechanism to write tests against Chrome
+  ///</summary>
+  ///<example><code>
+  ///  [TestFixture]
+  ///  public class Testing
+  ///  {
+  ///  private IWebDriver driver;
+  ///  <para />
+  ///  [SetUp]
+  ///  public void SetUp()
+  ///  {
+  ///  driver = new ChromeDriver();
+  ///  }
+  ///  <para />
+  ///  [Test]
+  ///  public void TestGoogle()
+  ///  {
+  ///  driver.Navigate().GoToUrl("http://www.google.co.uk");
+  ///  /*
+  ///  *   Rest of the test
+  ///  */
+  ///  }
+  ///  <para />
+  ///  [TearDown]
+  ///  public void TearDown()
+  ///  {
+  ///  driver.Quit();
+  ///  }
+  ///  }
+  ///</code></example>
   [DNTypeName('OpenQA.Selenium.Chrome.ChromeDriver')]
   DNChromeDriver = interface(DNRemoteWebDriver)
   ['{5CA4179D-9357-3B55-BFA3-848D8863BC87}']
@@ -4094,34 +9401,248 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element in the page that matches the <see cref="T:OpenQA.Selenium.By" />
+    ///  object
+    ///</summary>
+    ///  <param name="by">By mechanism to find the object</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  IWebElement elem = driver.FindElement(By.Name("q"));
+    ///</code></example>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds the elements on the page by using the <see cref="T:OpenQA.Selenium.By" />
+    ///  object and returns a ReadOnlyCollection of the Elements on the page
+    ///</summary>
+    ///  <param name="by">By mechanism to find the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> classList = driver.FindElements(By.ClassName("class"));
+    ///</code></example>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Closes the Browser
+    ///</summary>
     procedure Close;
+    ///<summary>
+    ///  Close the Browser and Dispose of WebDriver
+    ///</summary>
     procedure Quit;
+    ///<summary>
+    ///  Method For getting an object to set the Speed
+    ///</summary>
+    ///<returns>Returns an IOptions object that allows the driver to set the speed and cookies and getting cookies</returns>
+    ///<seealso cref="T:OpenQA.Selenium.IOptions" />
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Manage().GetCookies();
+    ///</code></example>
     function Manage: DNIOptions;
+    ///<summary>
+    ///  Method to allow you to Navigate with WebDriver
+    ///</summary>
+    ///<returns>Returns an INavigation Object that allows the driver to navigate in the browser</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Navigate().GoToUrl("http://www.google.co.uk");
+    ///</code></example>
     function Navigate: DNINavigation;
+    ///<summary>
+    ///  Method to give you access to switch frames and windows
+    ///</summary>
+    ///<returns>Returns an Object that allows you to Switch Frames and Windows</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.SwitchTo().Frame("FrameName");
+    ///</code></example>
     function SwitchTo: DNITargetLocator;
+    ///<summary>
+    ///  Executes JavaScript in the context of the currently selected frame or window
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Executes JavaScript asynchronously in the context of the currently selected frame or window.
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteAsyncScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the element</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementById("id")
+    ///</code></example>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the Element</param>
+    ///<returns>ReadOnlyCollection of Elements that match the object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsById("id")
+    ///</code></example>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the CSS Class supplied
+    ///</summary>
+    ///  <param name="className">className of the</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByClassName("classname")
+    ///</code></example>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="className">CSS class Name on the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByLinkText("linktext")
+    ///</code></example>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the part of the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByPartialLinkText("partOfLink")
+    ///</code></example>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByPartialLinkText("partOfTheLink")
+    ///</code></example>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of element</param>
+    ///<returns>ReadOnlyCollect of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of the element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByXPath("//table/tbody/tr/td/a");
+    ///</code></example>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByXpath("//tr/td/a")
+    ///</code></example>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of the page on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
+    ///<summary>
+    ///  Dispose the RemoteWebDriver Instance
+    ///</summary>
     procedure Dispose;
     procedure PerformActions(actionSequenceList: DDN.mscorlib.DNIList<DNActionSequence>);
+    ///<summary>
+    ///  Resets the input state of the action executor.
+    ///</summary>
     procedure ResetInputState;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4130,22 +9651,91 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the <see cref="T:OpenQA.Selenium.IFileDetector" />
+    ///  responsible for detecting
+    ///  sequences of keystrokes representing file paths and names.
+    ///</summary>
+    ///<remarks>The Chrome driver does not allow a file detector to be set,
+    ///  as the server component of the Chrome driver (ChromeDriver.exe) only
+    ///  allows uploads from the local computer environment. Attempting to set
+    ///  this property has no effect, but does not throw an exception. If you
+    ///  are attempting to run the Chrome driver remotely, use <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  in conjunction with a standalone WebDriver server.</remarks>
     property FileDetector: DNIFileDetector read get_FileDetector write set_FileDetector;
+    ///<summary>
+    ///  Gets or sets the URL the browser is currently displaying.
+    ///</summary>
+    ///<seealso cref="P:OpenQA.Selenium.IWebDriver.Url" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.String)" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.Uri)" />
     property Url: string read get_Url write set_Url;
+    ///<summary>
+    ///  Gets the title of the current browser window.
+    ///</summary>
     property Title: string read get_Title;
+    ///<summary>
+    ///  Gets the source of the page last loaded by the browser.
+    ///</summary>
     property PageSource: string read get_PageSource;
+    ///<summary>
+    ///  Gets the current window handle, which is an opaque handle to this
+    ///  window that uniquely identifies it within this driver instance.
+    ///</summary>
     property CurrentWindowHandle: string read get_CurrentWindowHandle;
+    ///<summary>
+    ///  Gets the window handles of open browser windows.
+    ///</summary>
     property WindowHandles: DDN.mscorlib.DNReadOnlyCollection<string> read get_WindowHandles;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IKeyboard" />
+    ///  object for sending keystrokes to the browser.
+    ///</summary>
     property Keyboard: DNIKeyboard read get_Keyboard;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IMouse" />
+    ///  object for sending mouse commands to the browser.
+    ///</summary>
     property Mouse: DNIMouse read get_Mouse;
+    ///<summary>
+    ///  Gets a value indicating whether web storage is supported for this driver.
+    ///</summary>
     property HasWebStorage: Boolean read get_HasWebStorage;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IWebStorage" />
+    ///  object for managing web storage.
+    ///</summary>
     property WebStorage: DNIWebStorage read get_WebStorage;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating the application cache is supported for this driver.
+    ///</summary>
     property HasApplicationCache: Boolean read get_HasApplicationCache;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IApplicationCache" />
+    ///  object for managing application cache.
+    ///</summary>
     property ApplicationCache: DNIApplicationCache read get_ApplicationCache;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating geolocation is supported for this driver.
+    ///</summary>
     property HasLocationContext: Boolean read get_HasLocationContext;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.ILocationContext" />
+    ///  object for managing browser location.
+    ///</summary>
     property LocationContext: DNILocationContext read get_LocationContext;
+    ///<summary>
+    ///  Gets the capabilities that the RemoteWebDriver instance is currently using
+    ///</summary>
     property Capabilities: DNICapabilities read get_Capabilities;
+    ///<summary>
+    ///  Gets the <see cref="P:OpenQA.Selenium.Remote.RemoteWebDriver.SessionId" />
+    ///  for the current session of this driver.
+    ///</summary>
     property SessionId: DNSessionId read get_SessionId;
+    ///<summary>
+    ///  Gets a value indicating whether this object is a valid action executor.
+    ///</summary>
     property IsActionExecutor: Boolean read get_IsActionExecutor;
   end;
 
@@ -4156,17 +9746,79 @@ type
   ['{6C0CDCA1-9EE6-5D0E-BDC7-1F94ACA406E3}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Edge.EdgeDriver" />
+    ///  class.
+    ///</summary>
     {class} function init: DNEdgeDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Edge.EdgeDriver" />
+    ///  class using the specified options.
+    ///</summary>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Edge.EdgeOptions" />
+    ///  to be used with the Edge driver.</param>
     {class} function init(options: DNEdgeOptions): DNEdgeDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Edge.EdgeDriver" />
+    ///  class using the specified driver service.
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.Edge.EdgeDriverService" />
+    ///  used to initialize the driver.</param>
     {class} function init(service: DNEdgeDriverService): DNEdgeDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Edge.EdgeDriver" />
+    ///  class using the specified path
+    ///  to the directory containing EdgeDriver.exe.
+    ///</summary>
+    ///  <param name="edgeDriverDirectory">The full path to the directory containing EdgeDriver.exe.</param>
     {class} function init(edgeDriverDirectory: string): DNEdgeDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Edge.EdgeDriver" />
+    ///  class using the specified path
+    ///  to the directory containing EdgeDriver.exe and options.
+    ///</summary>
+    ///  <param name="edgeDriverDirectory">The full path to the directory containing EdgeDriver.exe.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Edge.EdgeOptions" />
+    ///  to be used with the Edge driver.</param>
     {class} function init(edgeDriverDirectory: string; options: DNEdgeOptions): DNEdgeDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Edge.EdgeDriver" />
+    ///  class using the specified path
+    ///  to the directory containing EdgeDriver.exe, options, and command timeout.
+    ///</summary>
+    ///  <param name="edgeDriverDirectory">The full path to the directory containing EdgeDriver.exe.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Edge.EdgeOptions" />
+    ///  to be used with the Edge driver.</param>
+    ///  <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
     {class} function init(edgeDriverDirectory: string; options: DNEdgeOptions; commandTimeout: DDN.mscorlib.DNTimeSpan): DNEdgeDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Edge.EdgeDriver" />
+    ///  class using the specified
+    ///<see cref="T:OpenQA.Selenium.Edge.EdgeDriverService" />
+    ///  and options.
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.Edge.EdgeDriverService" />
+    ///  to use.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Edge.EdgeOptions" />
+    ///  used to initialize the driver.</param>
     {class} function init(service: DNEdgeDriverService; options: DNEdgeOptions): DNEdgeDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Edge.EdgeDriver" />
+    ///  class using the specified <see cref="T:OpenQA.Selenium.Edge.EdgeDriverService" />
+    ///  .
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.Edge.EdgeDriverService" />
+    ///  to use.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Edge.EdgeOptions" />
+    ///  to be used with the Edge driver.</param>
+    ///  <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
     {class} function init(service: DNEdgeDriverService; options: DNEdgeOptions; commandTimeout: DDN.mscorlib.DNTimeSpan): DNEdgeDriver; overload;
 
   end;
 
+  ///<summary>
+  ///  Provides a mechanism to write tests against Edge
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Edge.EdgeDriver')]
   DNEdgeDriver = interface(DNRemoteWebDriver)
   ['{5CCDB0EE-D4A6-3C6C-A398-B49D66B64C34}']
@@ -4194,34 +9846,248 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element in the page that matches the <see cref="T:OpenQA.Selenium.By" />
+    ///  object
+    ///</summary>
+    ///  <param name="by">By mechanism to find the object</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  IWebElement elem = driver.FindElement(By.Name("q"));
+    ///</code></example>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds the elements on the page by using the <see cref="T:OpenQA.Selenium.By" />
+    ///  object and returns a ReadOnlyCollection of the Elements on the page
+    ///</summary>
+    ///  <param name="by">By mechanism to find the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> classList = driver.FindElements(By.ClassName("class"));
+    ///</code></example>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Closes the Browser
+    ///</summary>
     procedure Close;
+    ///<summary>
+    ///  Close the Browser and Dispose of WebDriver
+    ///</summary>
     procedure Quit;
+    ///<summary>
+    ///  Method For getting an object to set the Speed
+    ///</summary>
+    ///<returns>Returns an IOptions object that allows the driver to set the speed and cookies and getting cookies</returns>
+    ///<seealso cref="T:OpenQA.Selenium.IOptions" />
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Manage().GetCookies();
+    ///</code></example>
     function Manage: DNIOptions;
+    ///<summary>
+    ///  Method to allow you to Navigate with WebDriver
+    ///</summary>
+    ///<returns>Returns an INavigation Object that allows the driver to navigate in the browser</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Navigate().GoToUrl("http://www.google.co.uk");
+    ///</code></example>
     function Navigate: DNINavigation;
+    ///<summary>
+    ///  Method to give you access to switch frames and windows
+    ///</summary>
+    ///<returns>Returns an Object that allows you to Switch Frames and Windows</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.SwitchTo().Frame("FrameName");
+    ///</code></example>
     function SwitchTo: DNITargetLocator;
+    ///<summary>
+    ///  Executes JavaScript in the context of the currently selected frame or window
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Executes JavaScript asynchronously in the context of the currently selected frame or window.
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteAsyncScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the element</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementById("id")
+    ///</code></example>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the Element</param>
+    ///<returns>ReadOnlyCollection of Elements that match the object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsById("id")
+    ///</code></example>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the CSS Class supplied
+    ///</summary>
+    ///  <param name="className">className of the</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByClassName("classname")
+    ///</code></example>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="className">CSS class Name on the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByLinkText("linktext")
+    ///</code></example>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the part of the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByPartialLinkText("partOfLink")
+    ///</code></example>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByPartialLinkText("partOfTheLink")
+    ///</code></example>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of element</param>
+    ///<returns>ReadOnlyCollect of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of the element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByXPath("//table/tbody/tr/td/a");
+    ///</code></example>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByXpath("//tr/td/a")
+    ///</code></example>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of the page on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
+    ///<summary>
+    ///  Dispose the RemoteWebDriver Instance
+    ///</summary>
     procedure Dispose;
     procedure PerformActions(actionSequenceList: DDN.mscorlib.DNIList<DNActionSequence>);
+    ///<summary>
+    ///  Resets the input state of the action executor.
+    ///</summary>
     procedure ResetInputState;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4230,22 +10096,85 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the URL the browser is currently displaying.
+    ///</summary>
+    ///<seealso cref="P:OpenQA.Selenium.IWebDriver.Url" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.String)" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.Uri)" />
     property Url: string read get_Url write set_Url;
+    ///<summary>
+    ///  Gets the title of the current browser window.
+    ///</summary>
     property Title: string read get_Title;
+    ///<summary>
+    ///  Gets the source of the page last loaded by the browser.
+    ///</summary>
     property PageSource: string read get_PageSource;
+    ///<summary>
+    ///  Gets the current window handle, which is an opaque handle to this
+    ///  window that uniquely identifies it within this driver instance.
+    ///</summary>
     property CurrentWindowHandle: string read get_CurrentWindowHandle;
+    ///<summary>
+    ///  Gets the window handles of open browser windows.
+    ///</summary>
     property WindowHandles: DDN.mscorlib.DNReadOnlyCollection<string> read get_WindowHandles;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IKeyboard" />
+    ///  object for sending keystrokes to the browser.
+    ///</summary>
     property Keyboard: DNIKeyboard read get_Keyboard;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IMouse" />
+    ///  object for sending mouse commands to the browser.
+    ///</summary>
     property Mouse: DNIMouse read get_Mouse;
+    ///<summary>
+    ///  Gets a value indicating whether web storage is supported for this driver.
+    ///</summary>
     property HasWebStorage: Boolean read get_HasWebStorage;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IWebStorage" />
+    ///  object for managing web storage.
+    ///</summary>
     property WebStorage: DNIWebStorage read get_WebStorage;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating the application cache is supported for this driver.
+    ///</summary>
     property HasApplicationCache: Boolean read get_HasApplicationCache;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IApplicationCache" />
+    ///  object for managing application cache.
+    ///</summary>
     property ApplicationCache: DNIApplicationCache read get_ApplicationCache;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating geolocation is supported for this driver.
+    ///</summary>
     property HasLocationContext: Boolean read get_HasLocationContext;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.ILocationContext" />
+    ///  object for managing browser location.
+    ///</summary>
     property LocationContext: DNILocationContext read get_LocationContext;
+    ///<summary>
+    ///  Gets the capabilities that the RemoteWebDriver instance is currently using
+    ///</summary>
     property Capabilities: DNICapabilities read get_Capabilities;
+    ///<summary>
+    ///  Gets or sets the <see cref="T:OpenQA.Selenium.IFileDetector" />
+    ///  responsible for detecting
+    ///  sequences of keystrokes representing file paths and names.
+    ///</summary>
     property FileDetector: DNIFileDetector read get_FileDetector write set_FileDetector;
+    ///<summary>
+    ///  Gets the <see cref="P:OpenQA.Selenium.Remote.RemoteWebDriver.SessionId" />
+    ///  for the current session of this driver.
+    ///</summary>
     property SessionId: DNSessionId read get_SessionId;
+    ///<summary>
+    ///  Gets a value indicating whether this object is a valid action executor.
+    ///</summary>
     property IsActionExecutor: Boolean read get_IsActionExecutor;
   end;
 
@@ -4256,13 +10185,44 @@ type
   ['{60A05F75-7A7D-557C-9D9B-6DA42FB1EFE7}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Firefox.FirefoxDriver" />
+    ///  class.
+    ///</summary>
     {class} function init: DNFirefoxDriver; overload;
     {class} function init(profile: DNFirefoxProfile): DNFirefoxDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  class. This constructor defaults proxy to http://127.0.0.1:4444/wd/hub
+    ///</summary>
+    ///  <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.ICapabilities" />
+    ///  object containing the desired capabilities of the browser.</param>
     {class} function init(capabilities: DNICapabilities): DNFirefoxDriver; overload;
     {class} function init(binary: DNFirefoxBinary; profile: DNFirefoxProfile): DNFirefoxDriver; overload;
     {class} function init(binary: DNFirefoxBinary; profile: DNFirefoxProfile; commandTimeout: DDN.mscorlib.DNTimeSpan): DNFirefoxDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Firefox.FirefoxDriver" />
+    ///  class using the specified options. Uses the Mozilla-provided Marionette driver implementation.
+    ///</summary>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Firefox.FirefoxOptions" />
+    ///  to be used with the Firefox driver.</param>
     {class} function init(options: DNFirefoxOptions): DNFirefoxDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Firefox.FirefoxDriver" />
+    ///  class using the specified driver service. Uses the Mozilla-provided Marionette driver implementation.
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.Firefox.FirefoxDriverService" />
+    ///  used to initialize the driver.</param>
     {class} function init(service: DNFirefoxDriverService): DNFirefoxDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Firefox.FirefoxDriver" />
+    ///  class using the specified options, driver service, and timeout. Uses the Mozilla-provided Marionette driver implementation.
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.Firefox.FirefoxDriverService" />
+    ///  to use.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Firefox.FirefoxOptions" />
+    ///  to be used with the Firefox driver.</param>
+    ///  <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
     {class} function init(service: DNFirefoxDriverService; options: DNFirefoxOptions; commandTimeout: DDN.mscorlib.DNTimeSpan): DNFirefoxDriver; overload;
 
   { static fields getter & setter } 
@@ -4276,15 +10236,73 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  The name of the ICapabilities setting to use to define a custom Firefox profile.
+    ///</summary>
     {class} property ProfileCapabilityName: string read __fakeFieldGet_ProfileCapabilityName;
+    ///<summary>
+    ///  The name of the ICapabilities setting to use to define a custom location for the
+    ///  Firefox executable.
+    ///</summary>
     {class} property BinaryCapabilityName: string read __fakeFieldGet_BinaryCapabilityName;
+    ///<summary>
+    ///  The default port on which to communicate with the Firefox extension.
+    ///</summary>
     {class} property DefaultPort: Int32 read __fakeFieldGet_DefaultPort;
+    ///<summary>
+    ///  Indicates whether native events is enabled by default for this platform.
+    ///</summary>
     {class} property DefaultEnableNativeEvents: Boolean read __fakeFieldGet_DefaultEnableNativeEvents;
+    ///<summary>
+    ///  Indicates whether the driver will accept untrusted SSL certificates.
+    ///</summary>
     {class} property AcceptUntrustedCertificates: Boolean read __fakeFieldGet_AcceptUntrustedCertificates;
+    ///<summary>
+    ///  Indicates whether the driver assume the issuer of untrusted certificates is untrusted.
+    ///</summary>
     {class} property AssumeUntrustedCertificateIssuer: Boolean read __fakeFieldGet_AssumeUntrustedCertificateIssuer;
 
   end;
 
+  ///<summary>
+  ///  Provides a way to access Firefox to run tests.
+  ///</summary>
+  ///<remarks>
+  ///  When the FirefoxDriver object has been instantiated the browser will load. The test can then navigate to the URL under test and
+  ///  start your test.
+  ///  <para>
+  ///  In the case of the FirefoxDriver, you can specify a named profile to be used, or you can let the
+  ///  driver create a temporary, anonymous profile. A custom extension allowing the driver to communicate
+  ///  to the browser will be installed into the profile.
+  ///</para></remarks>
+  ///<example><code>
+  ///  [TestFixture]
+  ///  public class Testing
+  ///  {
+  ///  private IWebDriver driver;
+  ///  <para />
+  ///  [SetUp]
+  ///  public void SetUp()
+  ///  {
+  ///  driver = new FirefoxDriver();
+  ///  }
+  ///  <para />
+  ///  [Test]
+  ///  public void TestGoogle()
+  ///  {
+  ///  driver.Navigate().GoToUrl("http://www.google.co.uk");
+  ///  /*
+  ///  *   Rest of the test
+  ///  */
+  ///  }
+  ///  <para />
+  ///  [TearDown]
+  ///  public void TearDown()
+  ///  {
+  ///  driver.Quit();
+  ///  }
+  ///  }
+  ///</code></example>
   [DNTypeName('OpenQA.Selenium.Firefox.FirefoxDriver')]
   DNFirefoxDriver = interface(DNRemoteWebDriver)
   ['{68EC8EB2-1DA5-3616-965F-599F5152F2C9}']
@@ -4313,34 +10331,248 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element in the page that matches the <see cref="T:OpenQA.Selenium.By" />
+    ///  object
+    ///</summary>
+    ///  <param name="by">By mechanism to find the object</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  IWebElement elem = driver.FindElement(By.Name("q"));
+    ///</code></example>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds the elements on the page by using the <see cref="T:OpenQA.Selenium.By" />
+    ///  object and returns a ReadOnlyCollection of the Elements on the page
+    ///</summary>
+    ///  <param name="by">By mechanism to find the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> classList = driver.FindElements(By.ClassName("class"));
+    ///</code></example>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Closes the Browser
+    ///</summary>
     procedure Close;
+    ///<summary>
+    ///  Close the Browser and Dispose of WebDriver
+    ///</summary>
     procedure Quit;
+    ///<summary>
+    ///  Method For getting an object to set the Speed
+    ///</summary>
+    ///<returns>Returns an IOptions object that allows the driver to set the speed and cookies and getting cookies</returns>
+    ///<seealso cref="T:OpenQA.Selenium.IOptions" />
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Manage().GetCookies();
+    ///</code></example>
     function Manage: DNIOptions;
+    ///<summary>
+    ///  Method to allow you to Navigate with WebDriver
+    ///</summary>
+    ///<returns>Returns an INavigation Object that allows the driver to navigate in the browser</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Navigate().GoToUrl("http://www.google.co.uk");
+    ///</code></example>
     function Navigate: DNINavigation;
+    ///<summary>
+    ///  Method to give you access to switch frames and windows
+    ///</summary>
+    ///<returns>Returns an Object that allows you to Switch Frames and Windows</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.SwitchTo().Frame("FrameName");
+    ///</code></example>
     function SwitchTo: DNITargetLocator;
+    ///<summary>
+    ///  Executes JavaScript in the context of the currently selected frame or window
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Executes JavaScript asynchronously in the context of the currently selected frame or window.
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteAsyncScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the element</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementById("id")
+    ///</code></example>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the Element</param>
+    ///<returns>ReadOnlyCollection of Elements that match the object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsById("id")
+    ///</code></example>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the CSS Class supplied
+    ///</summary>
+    ///  <param name="className">className of the</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByClassName("classname")
+    ///</code></example>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="className">CSS class Name on the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByLinkText("linktext")
+    ///</code></example>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the part of the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByPartialLinkText("partOfLink")
+    ///</code></example>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByPartialLinkText("partOfTheLink")
+    ///</code></example>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of element</param>
+    ///<returns>ReadOnlyCollect of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of the element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByXPath("//table/tbody/tr/td/a");
+    ///</code></example>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByXpath("//tr/td/a")
+    ///</code></example>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of the page on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
+    ///<summary>
+    ///  Dispose the RemoteWebDriver Instance
+    ///</summary>
     procedure Dispose;
     procedure PerformActions(actionSequenceList: DDN.mscorlib.DNIList<DNActionSequence>);
+    ///<summary>
+    ///  Resets the input state of the action executor.
+    ///</summary>
     procedure ResetInputState;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4349,23 +10581,99 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the <see cref="T:OpenQA.Selenium.IFileDetector" />
+    ///  responsible for detecting
+    ///  sequences of keystrokes representing file paths and names.
+    ///</summary>
+    ///<remarks>The Firefox driver does not allow a file detector to be set,
+    ///  as the server component of the Firefox driver only allows uploads from
+    ///  the local computer environment. Attempting to set this property has no
+    ///  effect, but does not throw an exception. If you  are attempting to run
+    ///  the Firefox driver remotely, use <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  in
+    ///  conjunction with a standalone WebDriver server.</remarks>
     property FileDetector: DNIFileDetector read get_FileDetector write set_FileDetector;
+    ///<summary>
+    ///  Gets a value indicating whether the Firefox driver instance uses
+    ///  Mozilla's Marionette implementation. This is a temporary property
+    ///  and will be removed when Marionette is available for the release
+    ///  channel of Firefox.
+    ///</summary>
     property IsMarionette: Boolean read get_IsMarionette;
+    ///<summary>
+    ///  Gets or sets the URL the browser is currently displaying.
+    ///</summary>
+    ///<seealso cref="P:OpenQA.Selenium.IWebDriver.Url" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.String)" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.Uri)" />
     property Url: string read get_Url write set_Url;
+    ///<summary>
+    ///  Gets the title of the current browser window.
+    ///</summary>
     property Title: string read get_Title;
+    ///<summary>
+    ///  Gets the source of the page last loaded by the browser.
+    ///</summary>
     property PageSource: string read get_PageSource;
+    ///<summary>
+    ///  Gets the current window handle, which is an opaque handle to this
+    ///  window that uniquely identifies it within this driver instance.
+    ///</summary>
     property CurrentWindowHandle: string read get_CurrentWindowHandle;
+    ///<summary>
+    ///  Gets the window handles of open browser windows.
+    ///</summary>
     property WindowHandles: DDN.mscorlib.DNReadOnlyCollection<string> read get_WindowHandles;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IKeyboard" />
+    ///  object for sending keystrokes to the browser.
+    ///</summary>
     property Keyboard: DNIKeyboard read get_Keyboard;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IMouse" />
+    ///  object for sending mouse commands to the browser.
+    ///</summary>
     property Mouse: DNIMouse read get_Mouse;
+    ///<summary>
+    ///  Gets a value indicating whether web storage is supported for this driver.
+    ///</summary>
     property HasWebStorage: Boolean read get_HasWebStorage;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IWebStorage" />
+    ///  object for managing web storage.
+    ///</summary>
     property WebStorage: DNIWebStorage read get_WebStorage;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating the application cache is supported for this driver.
+    ///</summary>
     property HasApplicationCache: Boolean read get_HasApplicationCache;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IApplicationCache" />
+    ///  object for managing application cache.
+    ///</summary>
     property ApplicationCache: DNIApplicationCache read get_ApplicationCache;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating geolocation is supported for this driver.
+    ///</summary>
     property HasLocationContext: Boolean read get_HasLocationContext;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.ILocationContext" />
+    ///  object for managing browser location.
+    ///</summary>
     property LocationContext: DNILocationContext read get_LocationContext;
+    ///<summary>
+    ///  Gets the capabilities that the RemoteWebDriver instance is currently using
+    ///</summary>
     property Capabilities: DNICapabilities read get_Capabilities;
+    ///<summary>
+    ///  Gets the <see cref="P:OpenQA.Selenium.Remote.RemoteWebDriver.SessionId" />
+    ///  for the current session of this driver.
+    ///</summary>
     property SessionId: DNSessionId read get_SessionId;
+    ///<summary>
+    ///  Gets a value indicating whether this object is a valid action executor.
+    ///</summary>
     property IsActionExecutor: Boolean read get_IsActionExecutor;
   end;
 
@@ -4376,17 +10684,115 @@ type
   ['{1F556FB7-7EDD-553B-8AB7-0952FC71C851}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.IE.InternetExplorerDriver" />
+    ///  class.
+    ///</summary>
     {class} function init: DNInternetExplorerDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.IE.InternetExplorerDriver" />
+    ///  class with the desired
+    ///  options.
+    ///</summary>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.IE.InternetExplorerOptions" />
+    ///  used to initialize the driver.</param>
     {class} function init(options: DNInternetExplorerOptions): DNInternetExplorerDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.IE.InternetExplorerDriver" />
+    ///  class using the specified driver service.
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.IE.InternetExplorerDriverService" />
+    ///  used to initialize the driver.</param>
     {class} function init(service: DNInternetExplorerDriverService): DNInternetExplorerDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.IE.InternetExplorerDriver" />
+    ///  class using the specified path
+    ///  to the directory containing IEDriverServer.exe.
+    ///</summary>
+    ///  <param name="internetExplorerDriverServerDirectory">The full path to the directory containing IEDriverServer.exe.</param>
     {class} function init(internetExplorerDriverServerDirectory: string): DNInternetExplorerDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.IE.InternetExplorerDriver" />
+    ///  class using the specified path
+    ///  to the directory containing IEDriverServer.exe and options.
+    ///</summary>
+    ///  <param name="internetExplorerDriverServerDirectory">The full path to the directory containing IEDriverServer.exe.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.IE.InternetExplorerOptions" />
+    ///  used to initialize the driver.</param>
     {class} function init(internetExplorerDriverServerDirectory: string; options: DNInternetExplorerOptions): DNInternetExplorerDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.IE.InternetExplorerDriver" />
+    ///  class using the specified path
+    ///  to the directory containing IEDriverServer.exe, options, and command timeout.
+    ///</summary>
+    ///  <param name="internetExplorerDriverServerDirectory">The full path to the directory containing IEDriverServer.exe.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.IE.InternetExplorerOptions" />
+    ///  used to initialize the driver.</param>
+    ///  <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
     {class} function init(internetExplorerDriverServerDirectory: string; options: DNInternetExplorerOptions; commandTimeout: DDN.mscorlib.DNTimeSpan): DNInternetExplorerDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.IE.InternetExplorerDriver" />
+    ///  class using the specified
+    ///<see cref="T:OpenQA.Selenium.IE.InternetExplorerDriverService" />
+    ///  and options.
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.DriverService" />
+    ///  to use.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.IE.InternetExplorerOptions" />
+    ///  used to initialize the driver.</param>
     {class} function init(service: DNInternetExplorerDriverService; options: DNInternetExplorerOptions): DNInternetExplorerDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.IE.InternetExplorerDriver" />
+    ///  class using the specified
+    ///<see cref="T:OpenQA.Selenium.DriverService" />
+    ///  , <see cref="T:OpenQA.Selenium.IE.InternetExplorerOptions" />
+    ///  , and command timeout.
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.IE.InternetExplorerDriverService" />
+    ///  to use.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.IE.InternetExplorerOptions" />
+    ///  used to initialize the driver.</param>
+    ///  <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
     {class} function init(service: DNInternetExplorerDriverService; options: DNInternetExplorerOptions; commandTimeout: DDN.mscorlib.DNTimeSpan): DNInternetExplorerDriver; overload;
 
   end;
 
+  ///<summary>
+  ///  Provides a way to access Internet Explorer to run your tests by creating a InternetExplorerDriver instance
+  ///</summary>
+  ///<remarks>
+  ///  When the WebDriver object has been instantiated the browser will load. The test can then navigate to the URL under test and
+  ///  start your test.
+  ///</remarks>
+  ///<example><code>
+  ///  [TestFixture]
+  ///  public class Testing
+  ///  {
+  ///  private IWebDriver driver;
+  ///  <para />
+  ///  [SetUp]
+  ///  public void SetUp()
+  ///  {
+  ///  driver = new InternetExplorerDriver();
+  ///  }
+  ///  <para />
+  ///  [Test]
+  ///  public void TestGoogle()
+  ///  {
+  ///  driver.Navigate().GoToUrl("http://www.google.co.uk");
+  ///  /*
+  ///  *   Rest of the test
+  ///  */
+  ///  }
+  ///  <para />
+  ///  [TearDown]
+  ///  public void TearDown()
+  ///  {
+  ///  driver.Quit();
+  ///  driver.Dispose();
+  ///  }
+  ///  }
+  ///</code></example>
   [DNTypeName('OpenQA.Selenium.IE.InternetExplorerDriver')]
   DNInternetExplorerDriver = interface(DNRemoteWebDriver)
   ['{81E20335-4D38-3E1F-8D08-BCA15FAE88A6}']
@@ -4414,34 +10820,248 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element in the page that matches the <see cref="T:OpenQA.Selenium.By" />
+    ///  object
+    ///</summary>
+    ///  <param name="by">By mechanism to find the object</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  IWebElement elem = driver.FindElement(By.Name("q"));
+    ///</code></example>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds the elements on the page by using the <see cref="T:OpenQA.Selenium.By" />
+    ///  object and returns a ReadOnlyCollection of the Elements on the page
+    ///</summary>
+    ///  <param name="by">By mechanism to find the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> classList = driver.FindElements(By.ClassName("class"));
+    ///</code></example>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Closes the Browser
+    ///</summary>
     procedure Close;
+    ///<summary>
+    ///  Close the Browser and Dispose of WebDriver
+    ///</summary>
     procedure Quit;
+    ///<summary>
+    ///  Method For getting an object to set the Speed
+    ///</summary>
+    ///<returns>Returns an IOptions object that allows the driver to set the speed and cookies and getting cookies</returns>
+    ///<seealso cref="T:OpenQA.Selenium.IOptions" />
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Manage().GetCookies();
+    ///</code></example>
     function Manage: DNIOptions;
+    ///<summary>
+    ///  Method to allow you to Navigate with WebDriver
+    ///</summary>
+    ///<returns>Returns an INavigation Object that allows the driver to navigate in the browser</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Navigate().GoToUrl("http://www.google.co.uk");
+    ///</code></example>
     function Navigate: DNINavigation;
+    ///<summary>
+    ///  Method to give you access to switch frames and windows
+    ///</summary>
+    ///<returns>Returns an Object that allows you to Switch Frames and Windows</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.SwitchTo().Frame("FrameName");
+    ///</code></example>
     function SwitchTo: DNITargetLocator;
+    ///<summary>
+    ///  Executes JavaScript in the context of the currently selected frame or window
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Executes JavaScript asynchronously in the context of the currently selected frame or window.
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteAsyncScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the element</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementById("id")
+    ///</code></example>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the Element</param>
+    ///<returns>ReadOnlyCollection of Elements that match the object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsById("id")
+    ///</code></example>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the CSS Class supplied
+    ///</summary>
+    ///  <param name="className">className of the</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByClassName("classname")
+    ///</code></example>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="className">CSS class Name on the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByLinkText("linktext")
+    ///</code></example>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the part of the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByPartialLinkText("partOfLink")
+    ///</code></example>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByPartialLinkText("partOfTheLink")
+    ///</code></example>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of element</param>
+    ///<returns>ReadOnlyCollect of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of the element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByXPath("//table/tbody/tr/td/a");
+    ///</code></example>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByXpath("//tr/td/a")
+    ///</code></example>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of the page on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
+    ///<summary>
+    ///  Dispose the RemoteWebDriver Instance
+    ///</summary>
     procedure Dispose;
     procedure PerformActions(actionSequenceList: DDN.mscorlib.DNIList<DNActionSequence>);
+    ///<summary>
+    ///  Resets the input state of the action executor.
+    ///</summary>
     procedure ResetInputState;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4450,22 +11070,91 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the <see cref="T:OpenQA.Selenium.IFileDetector" />
+    ///  responsible for detecting
+    ///  sequences of keystrokes representing file paths and names.
+    ///</summary>
+    ///<remarks>The IE driver does not allow a file detector to be set,
+    ///  as the server component of the IE driver (IEDriverServer.exe) only
+    ///  allows uploads from the local computer environment. Attempting to set
+    ///  this property has no effect, but does not throw an exception. If you
+    ///  are attempting to run the IE driver remotely, use <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  in conjunction with a standalone WebDriver server.</remarks>
     property FileDetector: DNIFileDetector read get_FileDetector write set_FileDetector;
+    ///<summary>
+    ///  Gets or sets the URL the browser is currently displaying.
+    ///</summary>
+    ///<seealso cref="P:OpenQA.Selenium.IWebDriver.Url" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.String)" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.Uri)" />
     property Url: string read get_Url write set_Url;
+    ///<summary>
+    ///  Gets the title of the current browser window.
+    ///</summary>
     property Title: string read get_Title;
+    ///<summary>
+    ///  Gets the source of the page last loaded by the browser.
+    ///</summary>
     property PageSource: string read get_PageSource;
+    ///<summary>
+    ///  Gets the current window handle, which is an opaque handle to this
+    ///  window that uniquely identifies it within this driver instance.
+    ///</summary>
     property CurrentWindowHandle: string read get_CurrentWindowHandle;
+    ///<summary>
+    ///  Gets the window handles of open browser windows.
+    ///</summary>
     property WindowHandles: DDN.mscorlib.DNReadOnlyCollection<string> read get_WindowHandles;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IKeyboard" />
+    ///  object for sending keystrokes to the browser.
+    ///</summary>
     property Keyboard: DNIKeyboard read get_Keyboard;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IMouse" />
+    ///  object for sending mouse commands to the browser.
+    ///</summary>
     property Mouse: DNIMouse read get_Mouse;
+    ///<summary>
+    ///  Gets a value indicating whether web storage is supported for this driver.
+    ///</summary>
     property HasWebStorage: Boolean read get_HasWebStorage;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IWebStorage" />
+    ///  object for managing web storage.
+    ///</summary>
     property WebStorage: DNIWebStorage read get_WebStorage;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating the application cache is supported for this driver.
+    ///</summary>
     property HasApplicationCache: Boolean read get_HasApplicationCache;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IApplicationCache" />
+    ///  object for managing application cache.
+    ///</summary>
     property ApplicationCache: DNIApplicationCache read get_ApplicationCache;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating geolocation is supported for this driver.
+    ///</summary>
     property HasLocationContext: Boolean read get_HasLocationContext;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.ILocationContext" />
+    ///  object for managing browser location.
+    ///</summary>
     property LocationContext: DNILocationContext read get_LocationContext;
+    ///<summary>
+    ///  Gets the capabilities that the RemoteWebDriver instance is currently using
+    ///</summary>
     property Capabilities: DNICapabilities read get_Capabilities;
+    ///<summary>
+    ///  Gets the <see cref="P:OpenQA.Selenium.Remote.RemoteWebDriver.SessionId" />
+    ///  for the current session of this driver.
+    ///</summary>
     property SessionId: DNSessionId read get_SessionId;
+    ///<summary>
+    ///  Gets a value indicating whether this object is a valid action executor.
+    ///</summary>
     property IsActionExecutor: Boolean read get_IsActionExecutor;
   end;
 
@@ -4476,12 +11165,65 @@ type
   ['{4272F4DA-D9FC-522D-A49B-C9532FEA508D}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Opera.OperaDriver" />
+    ///  class.
+    ///</summary>
     {class} function init: DNOperaDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Opera.OperaDriver" />
+    ///  class using the specified options.
+    ///</summary>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Opera.OperaOptions" />
+    ///  to be used with the Opera driver.</param>
     {class} function init(options: DNOperaOptions): DNOperaDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Opera.OperaDriver" />
+    ///  class using the specified path
+    ///  to the directory containing OperaDriver.exe.
+    ///</summary>
+    ///  <param name="operaDriverDirectory">The full path to the directory containing OperaDriver.exe.</param>
     {class} function init(operaDriverDirectory: string): DNOperaDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Opera.OperaDriver" />
+    ///  class using the specified path
+    ///  to the directory containing OperaDriver.exe and options.
+    ///</summary>
+    ///  <param name="operaDriverDirectory">The full path to the directory containing OperaDriver.exe.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Opera.OperaOptions" />
+    ///  to be used with the Opera driver.</param>
     {class} function init(operaDriverDirectory: string; options: DNOperaOptions): DNOperaDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Opera.OperaDriver" />
+    ///  class using the specified path
+    ///  to the directory containing OperaDriver.exe, options, and command timeout.
+    ///</summary>
+    ///  <param name="operaDriverDirectory">The full path to the directory containing OperaDriver.exe.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Opera.OperaOptions" />
+    ///  to be used with the Opera driver.</param>
+    ///  <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
     {class} function init(operaDriverDirectory: string; options: DNOperaOptions; commandTimeout: DDN.mscorlib.DNTimeSpan): DNOperaDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Opera.OperaDriver" />
+    ///  class using the specified
+    ///<see cref="T:OpenQA.Selenium.Opera.OperaDriverService" />
+    ///  and options.
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.Opera.OperaDriverService" />
+    ///  to use.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Opera.OperaOptions" />
+    ///  used to initialize the driver.</param>
     {class} function init(service: DNOperaDriverService; options: DNOperaOptions): DNOperaDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Opera.OperaDriver" />
+    ///  class using the specified <see cref="T:OpenQA.Selenium.Opera.OperaDriverService" />
+    ///  .
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.Opera.OperaDriverService" />
+    ///  to use.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Opera.OperaOptions" />
+    ///  to be used with the Opera driver.</param>
+    ///  <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
     {class} function init(service: DNOperaDriverService; options: DNOperaOptions; commandTimeout: DDN.mscorlib.DNTimeSpan): DNOperaDriver; overload;
 
   { static fields getter & setter } 
@@ -4490,10 +11232,44 @@ type
 
   { static fields } 
 
+    ///<summary>
+    ///  Accept untrusted SSL Certificates
+    ///</summary>
     {class} property AcceptUntrustedCertificates: Boolean read __fakeFieldGet_AcceptUntrustedCertificates;
 
   end;
 
+  ///<summary>
+  ///  Provides a mechanism to write tests against Opera
+  ///</summary>
+  ///<example><code>
+  ///  [TestFixture]
+  ///  public class Testing
+  ///  {
+  ///  private IWebDriver driver;
+  ///  <para />
+  ///  [SetUp]
+  ///  public void SetUp()
+  ///  {
+  ///  driver = new OperaDriver();
+  ///  }
+  ///  <para />
+  ///  [Test]
+  ///  public void TestGoogle()
+  ///  {
+  ///  driver.Navigate().GoToUrl("http://www.google.co.uk");
+  ///  /*
+  ///  *   Rest of the test
+  ///  */
+  ///  }
+  ///  <para />
+  ///  [TearDown]
+  ///  public void TearDown()
+  ///  {
+  ///  driver.Quit();
+  ///  }
+  ///  }
+  ///</code></example>
   [DNTypeName('OpenQA.Selenium.Opera.OperaDriver')]
   DNOperaDriver = interface(DNRemoteWebDriver)
   ['{49287B07-6B1A-3253-A6FB-A2F8B18B37C6}']
@@ -4521,34 +11297,248 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element in the page that matches the <see cref="T:OpenQA.Selenium.By" />
+    ///  object
+    ///</summary>
+    ///  <param name="by">By mechanism to find the object</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  IWebElement elem = driver.FindElement(By.Name("q"));
+    ///</code></example>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds the elements on the page by using the <see cref="T:OpenQA.Selenium.By" />
+    ///  object and returns a ReadOnlyCollection of the Elements on the page
+    ///</summary>
+    ///  <param name="by">By mechanism to find the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> classList = driver.FindElements(By.ClassName("class"));
+    ///</code></example>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Closes the Browser
+    ///</summary>
     procedure Close;
+    ///<summary>
+    ///  Close the Browser and Dispose of WebDriver
+    ///</summary>
     procedure Quit;
+    ///<summary>
+    ///  Method For getting an object to set the Speed
+    ///</summary>
+    ///<returns>Returns an IOptions object that allows the driver to set the speed and cookies and getting cookies</returns>
+    ///<seealso cref="T:OpenQA.Selenium.IOptions" />
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Manage().GetCookies();
+    ///</code></example>
     function Manage: DNIOptions;
+    ///<summary>
+    ///  Method to allow you to Navigate with WebDriver
+    ///</summary>
+    ///<returns>Returns an INavigation Object that allows the driver to navigate in the browser</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Navigate().GoToUrl("http://www.google.co.uk");
+    ///</code></example>
     function Navigate: DNINavigation;
+    ///<summary>
+    ///  Method to give you access to switch frames and windows
+    ///</summary>
+    ///<returns>Returns an Object that allows you to Switch Frames and Windows</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.SwitchTo().Frame("FrameName");
+    ///</code></example>
     function SwitchTo: DNITargetLocator;
+    ///<summary>
+    ///  Executes JavaScript in the context of the currently selected frame or window
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Executes JavaScript asynchronously in the context of the currently selected frame or window.
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteAsyncScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the element</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementById("id")
+    ///</code></example>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the Element</param>
+    ///<returns>ReadOnlyCollection of Elements that match the object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsById("id")
+    ///</code></example>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the CSS Class supplied
+    ///</summary>
+    ///  <param name="className">className of the</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByClassName("classname")
+    ///</code></example>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="className">CSS class Name on the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByLinkText("linktext")
+    ///</code></example>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the part of the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByPartialLinkText("partOfLink")
+    ///</code></example>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByPartialLinkText("partOfTheLink")
+    ///</code></example>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of element</param>
+    ///<returns>ReadOnlyCollect of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of the element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByXPath("//table/tbody/tr/td/a");
+    ///</code></example>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByXpath("//tr/td/a")
+    ///</code></example>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of the page on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
+    ///<summary>
+    ///  Dispose the RemoteWebDriver Instance
+    ///</summary>
     procedure Dispose;
     procedure PerformActions(actionSequenceList: DDN.mscorlib.DNIList<DNActionSequence>);
+    ///<summary>
+    ///  Resets the input state of the action executor.
+    ///</summary>
     procedure ResetInputState;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4557,22 +11547,91 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the <see cref="T:OpenQA.Selenium.IFileDetector" />
+    ///  responsible for detecting
+    ///  sequences of keystrokes representing file paths and names.
+    ///</summary>
+    ///<remarks>The Opera driver does not allow a file detector to be set,
+    ///  as the server component of the Opera driver (OperaDriver.exe) only
+    ///  allows uploads from the local computer environment. Attempting to set
+    ///  this property has no effect, but does not throw an exception. If you
+    ///  are attempting to run the Opera driver remotely, use <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  in conjunction with a standalone WebDriver server.</remarks>
     property FileDetector: DNIFileDetector read get_FileDetector write set_FileDetector;
+    ///<summary>
+    ///  Gets or sets the URL the browser is currently displaying.
+    ///</summary>
+    ///<seealso cref="P:OpenQA.Selenium.IWebDriver.Url" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.String)" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.Uri)" />
     property Url: string read get_Url write set_Url;
+    ///<summary>
+    ///  Gets the title of the current browser window.
+    ///</summary>
     property Title: string read get_Title;
+    ///<summary>
+    ///  Gets the source of the page last loaded by the browser.
+    ///</summary>
     property PageSource: string read get_PageSource;
+    ///<summary>
+    ///  Gets the current window handle, which is an opaque handle to this
+    ///  window that uniquely identifies it within this driver instance.
+    ///</summary>
     property CurrentWindowHandle: string read get_CurrentWindowHandle;
+    ///<summary>
+    ///  Gets the window handles of open browser windows.
+    ///</summary>
     property WindowHandles: DDN.mscorlib.DNReadOnlyCollection<string> read get_WindowHandles;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IKeyboard" />
+    ///  object for sending keystrokes to the browser.
+    ///</summary>
     property Keyboard: DNIKeyboard read get_Keyboard;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IMouse" />
+    ///  object for sending mouse commands to the browser.
+    ///</summary>
     property Mouse: DNIMouse read get_Mouse;
+    ///<summary>
+    ///  Gets a value indicating whether web storage is supported for this driver.
+    ///</summary>
     property HasWebStorage: Boolean read get_HasWebStorage;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IWebStorage" />
+    ///  object for managing web storage.
+    ///</summary>
     property WebStorage: DNIWebStorage read get_WebStorage;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating the application cache is supported for this driver.
+    ///</summary>
     property HasApplicationCache: Boolean read get_HasApplicationCache;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IApplicationCache" />
+    ///  object for managing application cache.
+    ///</summary>
     property ApplicationCache: DNIApplicationCache read get_ApplicationCache;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating geolocation is supported for this driver.
+    ///</summary>
     property HasLocationContext: Boolean read get_HasLocationContext;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.ILocationContext" />
+    ///  object for managing browser location.
+    ///</summary>
     property LocationContext: DNILocationContext read get_LocationContext;
+    ///<summary>
+    ///  Gets the capabilities that the RemoteWebDriver instance is currently using
+    ///</summary>
     property Capabilities: DNICapabilities read get_Capabilities;
+    ///<summary>
+    ///  Gets the <see cref="P:OpenQA.Selenium.Remote.RemoteWebDriver.SessionId" />
+    ///  for the current session of this driver.
+    ///</summary>
     property SessionId: DNSessionId read get_SessionId;
+    ///<summary>
+    ///  Gets a value indicating whether this object is a valid action executor.
+    ///</summary>
     property IsActionExecutor: Boolean read get_IsActionExecutor;
   end;
 
@@ -4594,6 +11653,37 @@ type
 
   end;
 
+  ///<summary>
+  ///  Provides a way to use the driver through
+  ///</summary>
+  ///  /// <example><code>
+  ///  [TestFixture]
+  ///  public class Testing
+  ///  {
+  ///  private IWebDriver driver;
+  ///  <para />
+  ///  [SetUp]
+  ///  public void SetUp()
+  ///  {
+  ///  driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4444/wd/hub"),DesiredCapabilities.InternetExplorer());
+  ///  }
+  ///  <para />
+  ///  [Test]
+  ///  public void TestGoogle()
+  ///  {
+  ///  driver.Navigate().GoToUrl("http://www.google.co.uk");
+  ///  /*
+  ///  *   Rest of the test
+  ///  */
+  ///  }
+  ///  <para />
+  ///  [TearDown]
+  ///  public void TearDown()
+  ///  {
+  ///  driver.Quit();
+  ///  }
+  ///  }
+  ///</code></example>
   [DNTypeName('OpenQA.Selenium.PhantomJS.PhantomJSDriver')]
   DNPhantomJSDriver = interface(DNRemoteWebDriver)
   ['{AD409FCF-C6CB-34E2-8801-0B5927FE4DCA}']
@@ -4622,34 +11712,248 @@ type
   { methods } 
 
     function ExecutePhantomJS(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Finds the first element in the page that matches the <see cref="T:OpenQA.Selenium.By" />
+    ///  object
+    ///</summary>
+    ///  <param name="by">By mechanism to find the object</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  IWebElement elem = driver.FindElement(By.Name("q"));
+    ///</code></example>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds the elements on the page by using the <see cref="T:OpenQA.Selenium.By" />
+    ///  object and returns a ReadOnlyCollection of the Elements on the page
+    ///</summary>
+    ///  <param name="by">By mechanism to find the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> classList = driver.FindElements(By.ClassName("class"));
+    ///</code></example>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Closes the Browser
+    ///</summary>
     procedure Close;
+    ///<summary>
+    ///  Close the Browser and Dispose of WebDriver
+    ///</summary>
     procedure Quit;
+    ///<summary>
+    ///  Method For getting an object to set the Speed
+    ///</summary>
+    ///<returns>Returns an IOptions object that allows the driver to set the speed and cookies and getting cookies</returns>
+    ///<seealso cref="T:OpenQA.Selenium.IOptions" />
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Manage().GetCookies();
+    ///</code></example>
     function Manage: DNIOptions;
+    ///<summary>
+    ///  Method to allow you to Navigate with WebDriver
+    ///</summary>
+    ///<returns>Returns an INavigation Object that allows the driver to navigate in the browser</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Navigate().GoToUrl("http://www.google.co.uk");
+    ///</code></example>
     function Navigate: DNINavigation;
+    ///<summary>
+    ///  Method to give you access to switch frames and windows
+    ///</summary>
+    ///<returns>Returns an Object that allows you to Switch Frames and Windows</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.SwitchTo().Frame("FrameName");
+    ///</code></example>
     function SwitchTo: DNITargetLocator;
+    ///<summary>
+    ///  Executes JavaScript in the context of the currently selected frame or window
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Executes JavaScript asynchronously in the context of the currently selected frame or window.
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteAsyncScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the element</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementById("id")
+    ///</code></example>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the Element</param>
+    ///<returns>ReadOnlyCollection of Elements that match the object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsById("id")
+    ///</code></example>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the CSS Class supplied
+    ///</summary>
+    ///  <param name="className">className of the</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByClassName("classname")
+    ///</code></example>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="className">CSS class Name on the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByLinkText("linktext")
+    ///</code></example>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the part of the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByPartialLinkText("partOfLink")
+    ///</code></example>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByPartialLinkText("partOfTheLink")
+    ///</code></example>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of element</param>
+    ///<returns>ReadOnlyCollect of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of the element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByXPath("//table/tbody/tr/td/a");
+    ///</code></example>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByXpath("//tr/td/a")
+    ///</code></example>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of the page on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
+    ///<summary>
+    ///  Dispose the RemoteWebDriver Instance
+    ///</summary>
     procedure Dispose;
     procedure PerformActions(actionSequenceList: DDN.mscorlib.DNIList<DNActionSequence>);
+    ///<summary>
+    ///  Resets the input state of the action executor.
+    ///</summary>
     procedure ResetInputState;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4658,22 +11962,85 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the <see cref="T:OpenQA.Selenium.IFileDetector" />
+    ///  responsible for detecting
+    ///  sequences of keystrokes representing file paths and names.
+    ///</summary>
     property FileDetector: DNIFileDetector read get_FileDetector write set_FileDetector;
+    ///<summary>
+    ///  Gets or sets the URL the browser is currently displaying.
+    ///</summary>
+    ///<seealso cref="P:OpenQA.Selenium.IWebDriver.Url" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.String)" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.Uri)" />
     property Url: string read get_Url write set_Url;
+    ///<summary>
+    ///  Gets the title of the current browser window.
+    ///</summary>
     property Title: string read get_Title;
+    ///<summary>
+    ///  Gets the source of the page last loaded by the browser.
+    ///</summary>
     property PageSource: string read get_PageSource;
+    ///<summary>
+    ///  Gets the current window handle, which is an opaque handle to this
+    ///  window that uniquely identifies it within this driver instance.
+    ///</summary>
     property CurrentWindowHandle: string read get_CurrentWindowHandle;
+    ///<summary>
+    ///  Gets the window handles of open browser windows.
+    ///</summary>
     property WindowHandles: DDN.mscorlib.DNReadOnlyCollection<string> read get_WindowHandles;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IKeyboard" />
+    ///  object for sending keystrokes to the browser.
+    ///</summary>
     property Keyboard: DNIKeyboard read get_Keyboard;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IMouse" />
+    ///  object for sending mouse commands to the browser.
+    ///</summary>
     property Mouse: DNIMouse read get_Mouse;
+    ///<summary>
+    ///  Gets a value indicating whether web storage is supported for this driver.
+    ///</summary>
     property HasWebStorage: Boolean read get_HasWebStorage;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IWebStorage" />
+    ///  object for managing web storage.
+    ///</summary>
     property WebStorage: DNIWebStorage read get_WebStorage;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating the application cache is supported for this driver.
+    ///</summary>
     property HasApplicationCache: Boolean read get_HasApplicationCache;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IApplicationCache" />
+    ///  object for managing application cache.
+    ///</summary>
     property ApplicationCache: DNIApplicationCache read get_ApplicationCache;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating geolocation is supported for this driver.
+    ///</summary>
     property HasLocationContext: Boolean read get_HasLocationContext;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.ILocationContext" />
+    ///  object for managing browser location.
+    ///</summary>
     property LocationContext: DNILocationContext read get_LocationContext;
+    ///<summary>
+    ///  Gets the capabilities that the RemoteWebDriver instance is currently using
+    ///</summary>
     property Capabilities: DNICapabilities read get_Capabilities;
+    ///<summary>
+    ///  Gets the <see cref="P:OpenQA.Selenium.Remote.RemoteWebDriver.SessionId" />
+    ///  for the current session of this driver.
+    ///</summary>
     property SessionId: DNSessionId read get_SessionId;
+    ///<summary>
+    ///  Gets a value indicating whether this object is a valid action executor.
+    ///</summary>
     property IsActionExecutor: Boolean read get_IsActionExecutor;
   end;
 
@@ -4684,17 +12051,114 @@ type
   ['{894AF0FD-E498-5DDC-99E8-42EBD8D32BB0}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Safari.SafariDriver" />
+    ///  class.
+    ///</summary>
     {class} function init: DNSafariDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Safari.SafariDriver" />
+    ///  class using the specified <see cref="T:OpenQA.Selenium.Safari.SafariOptions" />
+    ///  .
+    ///</summary>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Safari.SafariOptions" />
+    ///  to use for this <see cref="T:OpenQA.Selenium.Safari.SafariDriver" />
+    ///  instance.</param>
     {class} function init(options: DNSafariOptions): DNSafariDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Safari.SafariDriver" />
+    ///  class using the specified driver service.
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.Safari.SafariDriverService" />
+    ///  used to initialize the driver.</param>
     {class} function init(service: DNSafariDriverService): DNSafariDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Safari.SafariDriver" />
+    ///  class using the specified path
+    ///  to the directory containing ChromeDriver.exe.
+    ///</summary>
+    ///  <param name="safariDriverDirectory">The full path to the directory containing SafariDriver executable.</param>
     {class} function init(safariDriverDirectory: string): DNSafariDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Safari.SafariDriver" />
+    ///  class using the specified path
+    ///  to the directory containing ChromeDriver.exe and options.
+    ///</summary>
+    ///  <param name="safariDriverDirectory">The full path to the directory containing SafariDriver executable.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Safari.SafariOptions" />
+    ///  to be used with the Safari driver.</param>
     {class} function init(safariDriverDirectory: string; options: DNSafariOptions): DNSafariDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Safari.SafariDriver" />
+    ///  class using the specified path
+    ///  to the directory containing ChromeDriver.exe, options, and command timeout.
+    ///</summary>
+    ///  <param name="safariDriverDirectory">The full path to the directory containing SafariDriver executable.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Safari.SafariOptions" />
+    ///  to be used with the Safari driver.</param>
+    ///  <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
     {class} function init(safariDriverDirectory: string; options: DNSafariOptions; commandTimeout: DDN.mscorlib.DNTimeSpan): DNSafariDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Safari.SafariDriver" />
+    ///  class using the specified
+    ///<see cref="T:OpenQA.Selenium.Safari.SafariDriverService" />
+    ///  and options.
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.Safari.SafariDriverService" />
+    ///  to use.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Safari.SafariOptions" />
+    ///  used to initialize the driver.</param>
     {class} function init(service: DNSafariDriverService; options: DNSafariOptions): DNSafariDriver; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Safari.SafariDriver" />
+    ///  class using the specified <see cref="T:OpenQA.Selenium.Safari.SafariDriverService" />
+    ///  .
+    ///</summary>
+    ///  <param name="service">The <see cref="T:OpenQA.Selenium.Safari.SafariDriverService" />
+    ///  to use.</param>
+    ///  <param name="options">The <see cref="T:OpenQA.Selenium.Safari.SafariOptions" />
+    ///  to be used with the Safari driver.</param>
+    ///  <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
     {class} function init(service: DNSafariDriverService; options: DNSafariOptions; commandTimeout: DDN.mscorlib.DNTimeSpan): DNSafariDriver; overload;
 
   end;
 
+  ///<summary>
+  ///  Provides a way to access Safari to run your tests by creating a SafariDriver instance
+  ///</summary>
+  ///<remarks>
+  ///  When the WebDriver object has been instantiated the browser will load. The test can then navigate to the URL under test and
+  ///  start your test.
+  ///</remarks>
+  ///<example><code>
+  ///  [TestFixture]
+  ///  public class Testing
+  ///  {
+  ///  private IWebDriver driver;
+  ///  <para />
+  ///  [SetUp]
+  ///  public void SetUp()
+  ///  {
+  ///  driver = new SafariDriver();
+  ///  }
+  ///  <para />
+  ///  [Test]
+  ///  public void TestGoogle()
+  ///  {
+  ///  driver.Navigate().GoToUrl("http://www.google.co.uk");
+  ///  /*
+  ///  *   Rest of the test
+  ///  */
+  ///  }
+  ///  <para />
+  ///  [TearDown]
+  ///  public void TearDown()
+  ///  {
+  ///  driver.Quit();
+  ///  driver.Dispose();
+  ///  }
+  ///  }
+  ///</code></example>
   [DNTypeName('OpenQA.Selenium.Safari.SafariDriver')]
   DNSafariDriver = interface(DNRemoteWebDriver)
   ['{FDF946B8-ACAC-33A7-A120-C28E10F3B037}']
@@ -4722,34 +12186,248 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Finds the first element in the page that matches the <see cref="T:OpenQA.Selenium.By" />
+    ///  object
+    ///</summary>
+    ///  <param name="by">By mechanism to find the object</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  IWebElement elem = driver.FindElement(By.Name("q"));
+    ///</code></example>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds the elements on the page by using the <see cref="T:OpenQA.Selenium.By" />
+    ///  object and returns a ReadOnlyCollection of the Elements on the page
+    ///</summary>
+    ///  <param name="by">By mechanism to find the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> classList = driver.FindElements(By.ClassName("class"));
+    ///</code></example>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Closes the Browser
+    ///</summary>
     procedure Close;
+    ///<summary>
+    ///  Close the Browser and Dispose of WebDriver
+    ///</summary>
     procedure Quit;
+    ///<summary>
+    ///  Method For getting an object to set the Speed
+    ///</summary>
+    ///<returns>Returns an IOptions object that allows the driver to set the speed and cookies and getting cookies</returns>
+    ///<seealso cref="T:OpenQA.Selenium.IOptions" />
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Manage().GetCookies();
+    ///</code></example>
     function Manage: DNIOptions;
+    ///<summary>
+    ///  Method to allow you to Navigate with WebDriver
+    ///</summary>
+    ///<returns>Returns an INavigation Object that allows the driver to navigate in the browser</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.Navigate().GoToUrl("http://www.google.co.uk");
+    ///</code></example>
     function Navigate: DNINavigation;
+    ///<summary>
+    ///  Method to give you access to switch frames and windows
+    ///</summary>
+    ///<returns>Returns an Object that allows you to Switch Frames and Windows</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new InternetExplorerDriver();
+    ///  driver.SwitchTo().Frame("FrameName");
+    ///</code></example>
     function SwitchTo: DNITargetLocator;
+    ///<summary>
+    ///  Executes JavaScript in the context of the currently selected frame or window
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Executes JavaScript asynchronously in the context of the currently selected frame or window.
+    ///</summary>
+    ///  <param name="script">The JavaScript code to execute.</param>
+    ///  <param name="args">The arguments to the script.</param>
+    ///<returns>The value returned by the script.</returns>
     function ExecuteAsyncScript(script: string; args: TArray<DDN.mscorlib.DNObject>): DDN.mscorlib.DNObject;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the element</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementById("id")
+    ///</code></example>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the Element</param>
+    ///<returns>ReadOnlyCollection of Elements that match the object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsById("id")
+    ///</code></example>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the CSS Class supplied
+    ///</summary>
+    ///  <param name="className">className of the</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByClassName("classname")
+    ///</code></example>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="className">CSS class Name on the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByLinkText("linktext")
+    ///</code></example>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the part of the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByPartialLinkText("partOfLink")
+    ///</code></example>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByPartialLinkText("partOfTheLink")
+    ///</code></example>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of element</param>
+    ///<returns>ReadOnlyCollect of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of the element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM tag Name of element being searched</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByXPath("//table/tbody/tr/td/a");
+    ///</code></example>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>ReadOnlyCollection of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByXpath("//tr/td/a")
+    ///</code></example>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of the page on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
+    ///<summary>
+    ///  Dispose the RemoteWebDriver Instance
+    ///</summary>
     procedure Dispose;
     procedure PerformActions(actionSequenceList: DDN.mscorlib.DNIList<DNActionSequence>);
+    ///<summary>
+    ///  Resets the input state of the action executor.
+    ///</summary>
     procedure ResetInputState;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -4758,22 +12436,91 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the <see cref="T:OpenQA.Selenium.IFileDetector" />
+    ///  responsible for detecting
+    ///  sequences of keystrokes representing file paths and names.
+    ///</summary>
+    ///<remarks>The Safari driver does not allow a file detector to be set,
+    ///  as the server component of the Safari driver (the Safari extension) only
+    ///  allows uploads from the local computer environment. Attempting to set
+    ///  this property has no effect, but does not throw an exception. If you
+    ///  are attempting to run the Safari driver remotely, use <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  in conjunction with a standalone WebDriver server.</remarks>
     property FileDetector: DNIFileDetector read get_FileDetector write set_FileDetector;
+    ///<summary>
+    ///  Gets or sets the URL the browser is currently displaying.
+    ///</summary>
+    ///<seealso cref="P:OpenQA.Selenium.IWebDriver.Url" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.String)" />
+    ///<seealso cref="M:OpenQA.Selenium.INavigation.GoToUrl(System.Uri)" />
     property Url: string read get_Url write set_Url;
+    ///<summary>
+    ///  Gets the title of the current browser window.
+    ///</summary>
     property Title: string read get_Title;
+    ///<summary>
+    ///  Gets the source of the page last loaded by the browser.
+    ///</summary>
     property PageSource: string read get_PageSource;
+    ///<summary>
+    ///  Gets the current window handle, which is an opaque handle to this
+    ///  window that uniquely identifies it within this driver instance.
+    ///</summary>
     property CurrentWindowHandle: string read get_CurrentWindowHandle;
+    ///<summary>
+    ///  Gets the window handles of open browser windows.
+    ///</summary>
     property WindowHandles: DDN.mscorlib.DNReadOnlyCollection<string> read get_WindowHandles;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IKeyboard" />
+    ///  object for sending keystrokes to the browser.
+    ///</summary>
     property Keyboard: DNIKeyboard read get_Keyboard;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.IMouse" />
+    ///  object for sending mouse commands to the browser.
+    ///</summary>
     property Mouse: DNIMouse read get_Mouse;
+    ///<summary>
+    ///  Gets a value indicating whether web storage is supported for this driver.
+    ///</summary>
     property HasWebStorage: Boolean read get_HasWebStorage;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IWebStorage" />
+    ///  object for managing web storage.
+    ///</summary>
     property WebStorage: DNIWebStorage read get_WebStorage;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating the application cache is supported for this driver.
+    ///</summary>
     property HasApplicationCache: Boolean read get_HasApplicationCache;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.IApplicationCache" />
+    ///  object for managing application cache.
+    ///</summary>
     property ApplicationCache: DNIApplicationCache read get_ApplicationCache;
+    ///<summary>
+    ///  Gets a value indicating whether manipulating geolocation is supported for this driver.
+    ///</summary>
     property HasLocationContext: Boolean read get_HasLocationContext;
+    ///<summary>
+    ///  Gets an <see cref="T:OpenQA.Selenium.Html5.ILocationContext" />
+    ///  object for managing browser location.
+    ///</summary>
     property LocationContext: DNILocationContext read get_LocationContext;
+    ///<summary>
+    ///  Gets the capabilities that the RemoteWebDriver instance is currently using
+    ///</summary>
     property Capabilities: DNICapabilities read get_Capabilities;
+    ///<summary>
+    ///  Gets the <see cref="P:OpenQA.Selenium.Remote.RemoteWebDriver.SessionId" />
+    ///  for the current session of this driver.
+    ///</summary>
     property SessionId: DNSessionId read get_SessionId;
+    ///<summary>
+    ///  Gets a value indicating whether this object is a valid action executor.
+    ///</summary>
     property IsActionExecutor: Boolean read get_IsActionExecutor;
   end;
 
@@ -4784,10 +12531,22 @@ type
   ['{140CD7DC-E4D7-596F-B0FC-7315EE94E991}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteWebElement" />
+    ///  class.
+    ///</summary>
+    ///  <param name="parentDriver">The <see cref="T:OpenQA.Selenium.Remote.RemoteWebDriver" />
+    ///  instance hosting this element.</param>
+    ///  <param name="id">The ID assigned to the element.</param>
     {class} function init(parentDriver: DNRemoteWebDriver; id: string): DNRemoteWebElement;
 
   end;
 
+  ///<summary>
+  ///  RemoteWebElement allows you to have access to specific items that are found on the page
+  ///</summary>
+  ///<seealso cref="T:OpenQA.Selenium.IWebElement" />
+  ///<seealso cref="T:OpenQA.Selenium.ILocatable" />
   [DNTypeName('OpenQA.Selenium.Remote.RemoteWebElement')]
   DNRemoteWebElement = interface(DNIWebElement)
   ['{E82C9484-60E7-36D6-BCCD-149C812C6CCA}']
@@ -4806,46 +12565,350 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Simulates typing text into the element.
+    ///</summary>
+    ///  <param name="text">The text to type into the element.</param>
+    ///<remarks>The text to be typed may include special characters like arrow keys,
+    ///  backspaces, function keys, and so on. Valid special keys are defined in
+    ///<see cref="T:OpenQA.Selenium.Keys" />
+    ///  .</remarks>
+    ///<seealso cref="T:OpenQA.Selenium.Keys" />
+    ///<exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception><exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure SendKeys(text: string);
+    ///<summary>
+    ///  Submits this element to the web server.
+    ///</summary>
+    ///<remarks>If this current element is a form, or an element within a form,
+    ///  then this will be submitted to the web server. If this causes the current
+    ///  page to change, then this method will attempt to block until the new page
+    ///  is loaded.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Submit;
+    ///<summary>
+    ///  Clicks this element.
+    ///</summary>
+    ///<remarks>
+    ///  Click this element. If the click causes a new page to load, the <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.Click" />
+    ///  method will attempt to block until the page has loaded. After calling the
+    ///<see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.Click" />
+    ///  method, you should discard all references to this
+    ///  element unless you know that the element and the page will still be present.
+    ///  Otherwise, any further operations performed on this element will have an undefined
+    ///  behavior.
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception><exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Click;
+    ///<summary>
+    ///  Gets the value of the specified attribute for this element.
+    ///</summary>
+    ///  <param name="attributeName">The name of the attribute.</param>
+    ///<returns>The attribute's current value. Returns a <see langword="null" />
+    ///  if the
+    ///  value is not set.</returns>
+    ///<remarks>The <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(System.String)" />
+    ///  method will return the current value
+    ///  of the attribute, even if the value has been modified after the page has been
+    ///  loaded. Note that the value of the following attributes will be returned even if
+    ///  there is no explicit attribute on the element:
+    ///<list type="table"><listheader><term>Attribute name</term><term>Value returned if not explicitly specified</term><term>Valid element types</term></listheader><item><description>checked</description>
+    ///<description>checked</description>
+    ///<description>Check Box</description>
+    ///</item>
+    ///<item><description>selected</description>
+    ///<description>selected</description>
+    ///<description>Options in Select elements</description>
+    ///</item>
+    ///<item><description>disabled</description>
+    ///<description>disabled</description>
+    ///<description>Input and other UI elements</description>
+    ///</item>
+    ///</list>
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetAttribute(attributeName: string): string;
+    ///<summary>
+    ///  Gets the value of a CSS property of this element.
+    ///</summary>
+    ///  <param name="propertyName">The name of the CSS property to get the value of.</param>
+    ///<returns>The value of the specified CSS property.</returns>
+    ///<remarks>The value returned by the <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.GetCssValue(System.String)" />
+    ///  method is likely to be unpredictable in a cross-browser environment.
+    ///  Color values should be returned as hex strings. For example, a
+    ///  "background-color" property set as "green" in the HTML source, will
+    ///  return "#008000" for its value.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetCssValue(propertyName: string): string;
+    ///<summary>
+    ///  Finds all <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> within the current context
+    ///  using the given mechanism.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  of all <see cref="T:OpenQA.Selenium.IWebElement">WebElements</see>
+    ///  matching the current criteria, or an empty list if nothing matches.</returns>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  using the given method.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>The first matching <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  on the current context.</returns>
+    ///<exception cref="T:OpenQA.Selenium.NoSuchElementException">If no element matches the criteria.</exception>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByLinkText("linktext")
+    ///</code></example>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByLinkText("linktext")
+    ///</code></example>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the element</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementById("id")
+    ///</code></example>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the Element</param>
+    ///<returns>ReadOnlyCollection of Elements that match the object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsById("id")
+    ///</code></example>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of element</param>
+    ///<returns>ReadOnlyCollect of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">tag name of the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM Tag of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the CSS Class supplied
+    ///</summary>
+    ///  <param name="className">CSS class name of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByClassName("classname")
+    ///</code></example>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="className">CSS class name of the elements on the page</param>
+    ///<returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByXPath("//table/tbody/tr/td/a");
+    ///</code></example>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to element on the page</param>
+    ///<returns>ReadOnlyCollection of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByXpath("//tr/td/a")
+    ///</code></example>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the part of the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByPartialLinkText("partOfLink")
+    ///</code></example>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByPartialLinkText("partOfTheLink")
+    ///</code></example>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The id to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of this element on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
+    ///<summary>
+    ///  Returns a string that represents the current <see cref="T:OpenQA.Selenium.Remote.RemoteWebElement" />
+    ///  .
+    ///</summary>
+    ///<returns>A string that represents the current <see cref="T:OpenQA.Selenium.Remote.RemoteWebElement" />
+    ///  .</returns>
     function ToString: string;
+    ///<summary>
+    ///  Method to get the hash code of the element
+    ///</summary>
+    ///<returns>Integer of the hash code for the element</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  Compares if two elements are equal
+    ///</summary>
+    ///  <param name="obj">Object to compare against</param>
+    ///<returns>A boolean if it is equal or not</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetType: DDN.mscorlib.DNType;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  used to find this element.
+    ///</summary>
     property WrappedDriver: DNIWebDriver read get_WrappedDriver;
+    ///<summary>
+    ///  Gets the tag name of this element.
+    ///</summary>
+    ///<remarks>
+    ///  The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.TagName" />
+    ///  property returns the tag name of the
+    ///  element, not the value of the name attribute. For example, it will return
+    ///  "input" for an element specified by the HTML markup &lt;input name="foo" /&gt;.
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property TagName: string read get_TagName;
+    ///<summary>
+    ///  Gets the innerText of this element, without any leading or trailing whitespace,
+    ///  and with other whitespace collapsed.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Text: string read get_Text;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is enabled.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Enabled" />
+    ///  property will generally
+    ///  return <see langword="true" />
+    ///  for everything except explicitly disabled input elements.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Enabled: Boolean read get_Enabled;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is selected.
+    ///</summary>
+    ///<remarks>This operation only applies to input elements such as checkboxes,
+    ///  options in a select element and radio buttons.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Selected: Boolean read get_Selected;
+    ///<summary>
+    ///  Gets a <see cref="T:System.Drawing.Point" />
+    ///  object containing the coordinates of the upper-left corner
+    ///  of this element relative to the upper-left corner of the page.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Location: DDN.System.Drawing.DNPoint read get_Location;
+    ///<summary>
+    ///  Gets a <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Size" />
+    ///  object containing the height and width of this element.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Size: DDN.System.Drawing.DNSize read get_Size;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is displayed.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Displayed" />
+    ///  property avoids the problem
+    ///  of having to parse an element's "style" attribute to determine
+    ///  visibility of an element.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Displayed: Boolean read get_Displayed;
+    ///<summary>
+    ///  Gets the point where the element would be when scrolled into view.
+    ///</summary>
     property LocationOnScreenOnceScrolledIntoView: DDN.System.Drawing.DNPoint read get_LocationOnScreenOnceScrolledIntoView;
+    ///<summary>
+    ///  Gets the coordinates identifying the location of this element using
+    ///  various frames of reference.
+    ///</summary>
     property Coordinates: DNICoordinates read get_Coordinates;
   end;
 
@@ -4856,10 +12919,19 @@ type
   ['{6181F351-062B-5B24-B5E6-5CE4C1E65FAB}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Chrome.ChromeWebElement" />
+    ///  class.
+    ///</summary>
+    ///  <param name="parent">Driver in use</param>
+    ///  <param name="elementId">Id of the element</param>
     {class} function init(parent: DNChromeDriver; elementId: string): DNChromeWebElement;
 
   end;
 
+  ///<summary>
+  ///  Provides a mechanism to get elements off the page for test
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Chrome.ChromeWebElement')]
   DNChromeWebElement = interface(DNRemoteWebElement)
   ['{729E4EE8-4C52-3211-BFA3-7EAEF0E89168}']
@@ -4878,46 +12950,350 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Simulates typing text into the element.
+    ///</summary>
+    ///  <param name="text">The text to type into the element.</param>
+    ///<remarks>The text to be typed may include special characters like arrow keys,
+    ///  backspaces, function keys, and so on. Valid special keys are defined in
+    ///<see cref="T:OpenQA.Selenium.Keys" />
+    ///  .</remarks>
+    ///<seealso cref="T:OpenQA.Selenium.Keys" />
+    ///<exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception><exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure SendKeys(text: string);
+    ///<summary>
+    ///  Submits this element to the web server.
+    ///</summary>
+    ///<remarks>If this current element is a form, or an element within a form,
+    ///  then this will be submitted to the web server. If this causes the current
+    ///  page to change, then this method will attempt to block until the new page
+    ///  is loaded.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Submit;
+    ///<summary>
+    ///  Clicks this element.
+    ///</summary>
+    ///<remarks>
+    ///  Click this element. If the click causes a new page to load, the <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.Click" />
+    ///  method will attempt to block until the page has loaded. After calling the
+    ///<see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.Click" />
+    ///  method, you should discard all references to this
+    ///  element unless you know that the element and the page will still be present.
+    ///  Otherwise, any further operations performed on this element will have an undefined
+    ///  behavior.
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception><exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Click;
+    ///<summary>
+    ///  Gets the value of the specified attribute for this element.
+    ///</summary>
+    ///  <param name="attributeName">The name of the attribute.</param>
+    ///<returns>The attribute's current value. Returns a <see langword="null" />
+    ///  if the
+    ///  value is not set.</returns>
+    ///<remarks>The <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(System.String)" />
+    ///  method will return the current value
+    ///  of the attribute, even if the value has been modified after the page has been
+    ///  loaded. Note that the value of the following attributes will be returned even if
+    ///  there is no explicit attribute on the element:
+    ///<list type="table"><listheader><term>Attribute name</term><term>Value returned if not explicitly specified</term><term>Valid element types</term></listheader><item><description>checked</description>
+    ///<description>checked</description>
+    ///<description>Check Box</description>
+    ///</item>
+    ///<item><description>selected</description>
+    ///<description>selected</description>
+    ///<description>Options in Select elements</description>
+    ///</item>
+    ///<item><description>disabled</description>
+    ///<description>disabled</description>
+    ///<description>Input and other UI elements</description>
+    ///</item>
+    ///</list>
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetAttribute(attributeName: string): string;
+    ///<summary>
+    ///  Gets the value of a CSS property of this element.
+    ///</summary>
+    ///  <param name="propertyName">The name of the CSS property to get the value of.</param>
+    ///<returns>The value of the specified CSS property.</returns>
+    ///<remarks>The value returned by the <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.GetCssValue(System.String)" />
+    ///  method is likely to be unpredictable in a cross-browser environment.
+    ///  Color values should be returned as hex strings. For example, a
+    ///  "background-color" property set as "green" in the HTML source, will
+    ///  return "#008000" for its value.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetCssValue(propertyName: string): string;
+    ///<summary>
+    ///  Finds all <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> within the current context
+    ///  using the given mechanism.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  of all <see cref="T:OpenQA.Selenium.IWebElement">WebElements</see>
+    ///  matching the current criteria, or an empty list if nothing matches.</returns>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  using the given method.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>The first matching <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  on the current context.</returns>
+    ///<exception cref="T:OpenQA.Selenium.NoSuchElementException">If no element matches the criteria.</exception>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByLinkText("linktext")
+    ///</code></example>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByLinkText("linktext")
+    ///</code></example>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the element</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementById("id")
+    ///</code></example>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the Element</param>
+    ///<returns>ReadOnlyCollection of Elements that match the object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsById("id")
+    ///</code></example>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of element</param>
+    ///<returns>ReadOnlyCollect of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">tag name of the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM Tag of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the CSS Class supplied
+    ///</summary>
+    ///  <param name="className">CSS class name of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByClassName("classname")
+    ///</code></example>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="className">CSS class name of the elements on the page</param>
+    ///<returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByXPath("//table/tbody/tr/td/a");
+    ///</code></example>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to element on the page</param>
+    ///<returns>ReadOnlyCollection of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByXpath("//tr/td/a")
+    ///</code></example>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the part of the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByPartialLinkText("partOfLink")
+    ///</code></example>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByPartialLinkText("partOfTheLink")
+    ///</code></example>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The id to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of this element on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
+    ///<summary>
+    ///  Returns a string that represents the current <see cref="T:OpenQA.Selenium.Remote.RemoteWebElement" />
+    ///  .
+    ///</summary>
+    ///<returns>A string that represents the current <see cref="T:OpenQA.Selenium.Remote.RemoteWebElement" />
+    ///  .</returns>
     function ToString: string;
+    ///<summary>
+    ///  Method to get the hash code of the element
+    ///</summary>
+    ///<returns>Integer of the hash code for the element</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  Compares if two elements are equal
+    ///</summary>
+    ///  <param name="obj">Object to compare against</param>
+    ///<returns>A boolean if it is equal or not</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetType: DDN.mscorlib.DNType;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  used to find this element.
+    ///</summary>
     property WrappedDriver: DNIWebDriver read get_WrappedDriver;
+    ///<summary>
+    ///  Gets the tag name of this element.
+    ///</summary>
+    ///<remarks>
+    ///  The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.TagName" />
+    ///  property returns the tag name of the
+    ///  element, not the value of the name attribute. For example, it will return
+    ///  "input" for an element specified by the HTML markup &lt;input name="foo" /&gt;.
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property TagName: string read get_TagName;
+    ///<summary>
+    ///  Gets the innerText of this element, without any leading or trailing whitespace,
+    ///  and with other whitespace collapsed.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Text: string read get_Text;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is enabled.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Enabled" />
+    ///  property will generally
+    ///  return <see langword="true" />
+    ///  for everything except explicitly disabled input elements.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Enabled: Boolean read get_Enabled;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is selected.
+    ///</summary>
+    ///<remarks>This operation only applies to input elements such as checkboxes,
+    ///  options in a select element and radio buttons.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Selected: Boolean read get_Selected;
+    ///<summary>
+    ///  Gets a <see cref="T:System.Drawing.Point" />
+    ///  object containing the coordinates of the upper-left corner
+    ///  of this element relative to the upper-left corner of the page.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Location: DDN.System.Drawing.DNPoint read get_Location;
+    ///<summary>
+    ///  Gets a <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Size" />
+    ///  object containing the height and width of this element.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Size: DDN.System.Drawing.DNSize read get_Size;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is displayed.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Displayed" />
+    ///  property avoids the problem
+    ///  of having to parse an element's "style" attribute to determine
+    ///  visibility of an element.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Displayed: Boolean read get_Displayed;
+    ///<summary>
+    ///  Gets the point where the element would be when scrolled into view.
+    ///</summary>
     property LocationOnScreenOnceScrolledIntoView: DDN.System.Drawing.DNPoint read get_LocationOnScreenOnceScrolledIntoView;
+    ///<summary>
+    ///  Gets the coordinates identifying the location of this element using
+    ///  various frames of reference.
+    ///</summary>
     property Coordinates: DNICoordinates read get_Coordinates;
   end;
 
@@ -4928,10 +13304,19 @@ type
   ['{DE29FDB1-3EEB-52C0-A14F-8D18701CAAAB}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Edge.EdgeWebElement" />
+    ///  class
+    ///</summary>
+    ///  <param name="parent">Driver in use</param>
+    ///  <param name="elementId">Id of the element</param>
     {class} function init(parent: DNEdgeDriver; elementId: string): DNEdgeWebElement;
 
   end;
 
+  ///<summary>
+  ///  Provides a mechanism to get elements off the page for test
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Edge.EdgeWebElement')]
   DNEdgeWebElement = interface(DNRemoteWebElement)
   ['{E21B2785-74D3-3D50-A921-BD6D56AC2D03}']
@@ -4950,46 +13335,350 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Simulates typing text into the element.
+    ///</summary>
+    ///  <param name="text">The text to type into the element.</param>
+    ///<remarks>The text to be typed may include special characters like arrow keys,
+    ///  backspaces, function keys, and so on. Valid special keys are defined in
+    ///<see cref="T:OpenQA.Selenium.Keys" />
+    ///  .</remarks>
+    ///<seealso cref="T:OpenQA.Selenium.Keys" />
+    ///<exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception><exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure SendKeys(text: string);
+    ///<summary>
+    ///  Submits this element to the web server.
+    ///</summary>
+    ///<remarks>If this current element is a form, or an element within a form,
+    ///  then this will be submitted to the web server. If this causes the current
+    ///  page to change, then this method will attempt to block until the new page
+    ///  is loaded.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Submit;
+    ///<summary>
+    ///  Clicks this element.
+    ///</summary>
+    ///<remarks>
+    ///  Click this element. If the click causes a new page to load, the <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.Click" />
+    ///  method will attempt to block until the page has loaded. After calling the
+    ///<see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.Click" />
+    ///  method, you should discard all references to this
+    ///  element unless you know that the element and the page will still be present.
+    ///  Otherwise, any further operations performed on this element will have an undefined
+    ///  behavior.
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception><exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Click;
+    ///<summary>
+    ///  Gets the value of the specified attribute for this element.
+    ///</summary>
+    ///  <param name="attributeName">The name of the attribute.</param>
+    ///<returns>The attribute's current value. Returns a <see langword="null" />
+    ///  if the
+    ///  value is not set.</returns>
+    ///<remarks>The <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(System.String)" />
+    ///  method will return the current value
+    ///  of the attribute, even if the value has been modified after the page has been
+    ///  loaded. Note that the value of the following attributes will be returned even if
+    ///  there is no explicit attribute on the element:
+    ///<list type="table"><listheader><term>Attribute name</term><term>Value returned if not explicitly specified</term><term>Valid element types</term></listheader><item><description>checked</description>
+    ///<description>checked</description>
+    ///<description>Check Box</description>
+    ///</item>
+    ///<item><description>selected</description>
+    ///<description>selected</description>
+    ///<description>Options in Select elements</description>
+    ///</item>
+    ///<item><description>disabled</description>
+    ///<description>disabled</description>
+    ///<description>Input and other UI elements</description>
+    ///</item>
+    ///</list>
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetAttribute(attributeName: string): string;
+    ///<summary>
+    ///  Gets the value of a CSS property of this element.
+    ///</summary>
+    ///  <param name="propertyName">The name of the CSS property to get the value of.</param>
+    ///<returns>The value of the specified CSS property.</returns>
+    ///<remarks>The value returned by the <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.GetCssValue(System.String)" />
+    ///  method is likely to be unpredictable in a cross-browser environment.
+    ///  Color values should be returned as hex strings. For example, a
+    ///  "background-color" property set as "green" in the HTML source, will
+    ///  return "#008000" for its value.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetCssValue(propertyName: string): string;
+    ///<summary>
+    ///  Finds all <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> within the current context
+    ///  using the given mechanism.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  of all <see cref="T:OpenQA.Selenium.IWebElement">WebElements</see>
+    ///  matching the current criteria, or an empty list if nothing matches.</returns>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  using the given method.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>The first matching <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  on the current context.</returns>
+    ///<exception cref="T:OpenQA.Selenium.NoSuchElementException">If no element matches the criteria.</exception>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByLinkText("linktext")
+    ///</code></example>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByLinkText("linktext")
+    ///</code></example>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the element</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementById("id")
+    ///</code></example>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the Element</param>
+    ///<returns>ReadOnlyCollection of Elements that match the object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsById("id")
+    ///</code></example>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of element</param>
+    ///<returns>ReadOnlyCollect of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">tag name of the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM Tag of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the CSS Class supplied
+    ///</summary>
+    ///  <param name="className">CSS class name of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByClassName("classname")
+    ///</code></example>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="className">CSS class name of the elements on the page</param>
+    ///<returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByXPath("//table/tbody/tr/td/a");
+    ///</code></example>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to element on the page</param>
+    ///<returns>ReadOnlyCollection of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByXpath("//tr/td/a")
+    ///</code></example>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the part of the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByPartialLinkText("partOfLink")
+    ///</code></example>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByPartialLinkText("partOfTheLink")
+    ///</code></example>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The id to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of this element on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
+    ///<summary>
+    ///  Returns a string that represents the current <see cref="T:OpenQA.Selenium.Remote.RemoteWebElement" />
+    ///  .
+    ///</summary>
+    ///<returns>A string that represents the current <see cref="T:OpenQA.Selenium.Remote.RemoteWebElement" />
+    ///  .</returns>
     function ToString: string;
+    ///<summary>
+    ///  Method to get the hash code of the element
+    ///</summary>
+    ///<returns>Integer of the hash code for the element</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  Compares if two elements are equal
+    ///</summary>
+    ///  <param name="obj">Object to compare against</param>
+    ///<returns>A boolean if it is equal or not</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetType: DDN.mscorlib.DNType;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  used to find this element.
+    ///</summary>
     property WrappedDriver: DNIWebDriver read get_WrappedDriver;
+    ///<summary>
+    ///  Gets the tag name of this element.
+    ///</summary>
+    ///<remarks>
+    ///  The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.TagName" />
+    ///  property returns the tag name of the
+    ///  element, not the value of the name attribute. For example, it will return
+    ///  "input" for an element specified by the HTML markup &lt;input name="foo" /&gt;.
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property TagName: string read get_TagName;
+    ///<summary>
+    ///  Gets the innerText of this element, without any leading or trailing whitespace,
+    ///  and with other whitespace collapsed.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Text: string read get_Text;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is enabled.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Enabled" />
+    ///  property will generally
+    ///  return <see langword="true" />
+    ///  for everything except explicitly disabled input elements.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Enabled: Boolean read get_Enabled;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is selected.
+    ///</summary>
+    ///<remarks>This operation only applies to input elements such as checkboxes,
+    ///  options in a select element and radio buttons.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Selected: Boolean read get_Selected;
+    ///<summary>
+    ///  Gets a <see cref="T:System.Drawing.Point" />
+    ///  object containing the coordinates of the upper-left corner
+    ///  of this element relative to the upper-left corner of the page.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Location: DDN.System.Drawing.DNPoint read get_Location;
+    ///<summary>
+    ///  Gets a <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Size" />
+    ///  object containing the height and width of this element.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Size: DDN.System.Drawing.DNSize read get_Size;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is displayed.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Displayed" />
+    ///  property avoids the problem
+    ///  of having to parse an element's "style" attribute to determine
+    ///  visibility of an element.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Displayed: Boolean read get_Displayed;
+    ///<summary>
+    ///  Gets the point where the element would be when scrolled into view.
+    ///</summary>
     property LocationOnScreenOnceScrolledIntoView: DDN.System.Drawing.DNPoint read get_LocationOnScreenOnceScrolledIntoView;
+    ///<summary>
+    ///  Gets the coordinates identifying the location of this element using
+    ///  various frames of reference.
+    ///</summary>
     property Coordinates: DNICoordinates read get_Coordinates;
   end;
 
@@ -5000,10 +13689,20 @@ type
   ['{119E3584-6077-5E0E-9DDC-9D55B411F820}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Firefox.FirefoxWebElement" />
+    ///  class.
+    ///</summary>
+    ///  <param name="parentDriver">The <see cref="T:OpenQA.Selenium.Firefox.FirefoxDriver" />
+    ///  instance hosting this element.</param>
+    ///  <param name="id">The ID assigned to the element.</param>
     {class} function init(parentDriver: DNFirefoxDriver; id: string): DNFirefoxWebElement;
 
   end;
 
+  ///<summary>
+  ///  Allows the user to control elements on a page in Firefox.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Firefox.FirefoxWebElement')]
   DNFirefoxWebElement = interface(DNRemoteWebElement)
   ['{AE2BB7B4-BAE4-38C0-BF81-4C188896B60F}']
@@ -5022,46 +13721,360 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Determines whether two <see cref="T:OpenQA.Selenium.Firefox.FirefoxWebElement" />
+    ///  instances are equal.
+    ///</summary>
+    ///  <param name="obj">The <see cref="T:OpenQA.Selenium.Firefox.FirefoxWebElement" />
+    ///  to compare with the current <see cref="T:OpenQA.Selenium.Firefox.FirefoxWebElement" />
+    ///  .</param>
+    ///<returns><see langword="true" />
+    ///  if the specified <see cref="T:OpenQA.Selenium.Firefox.FirefoxWebElement" />
+    ///  is equal to the
+    ///  current <see cref="T:OpenQA.Selenium.Firefox.FirefoxWebElement" />
+    ///  ; otherwise, <see langword="false" />
+    ///  .</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
+    ///<summary>
+    ///  Serves as a hash function for a <see cref="T:OpenQA.Selenium.Firefox.FirefoxWebElement" />
+    ///  .
+    ///</summary>
+    ///<returns>A hash code for the current <see cref="T:OpenQA.Selenium.Firefox.FirefoxWebElement" />
+    ///  .</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  Simulates typing text into the element.
+    ///</summary>
+    ///  <param name="text">The text to type into the element.</param>
+    ///<remarks>The text to be typed may include special characters like arrow keys,
+    ///  backspaces, function keys, and so on. Valid special keys are defined in
+    ///<see cref="T:OpenQA.Selenium.Keys" />
+    ///  .</remarks>
+    ///<seealso cref="T:OpenQA.Selenium.Keys" />
+    ///<exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception><exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure SendKeys(text: string);
+    ///<summary>
+    ///  Submits this element to the web server.
+    ///</summary>
+    ///<remarks>If this current element is a form, or an element within a form,
+    ///  then this will be submitted to the web server. If this causes the current
+    ///  page to change, then this method will attempt to block until the new page
+    ///  is loaded.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Submit;
+    ///<summary>
+    ///  Clicks this element.
+    ///</summary>
+    ///<remarks>
+    ///  Click this element. If the click causes a new page to load, the <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.Click" />
+    ///  method will attempt to block until the page has loaded. After calling the
+    ///<see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.Click" />
+    ///  method, you should discard all references to this
+    ///  element unless you know that the element and the page will still be present.
+    ///  Otherwise, any further operations performed on this element will have an undefined
+    ///  behavior.
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception><exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Click;
+    ///<summary>
+    ///  Gets the value of the specified attribute for this element.
+    ///</summary>
+    ///  <param name="attributeName">The name of the attribute.</param>
+    ///<returns>The attribute's current value. Returns a <see langword="null" />
+    ///  if the
+    ///  value is not set.</returns>
+    ///<remarks>The <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(System.String)" />
+    ///  method will return the current value
+    ///  of the attribute, even if the value has been modified after the page has been
+    ///  loaded. Note that the value of the following attributes will be returned even if
+    ///  there is no explicit attribute on the element:
+    ///<list type="table"><listheader><term>Attribute name</term><term>Value returned if not explicitly specified</term><term>Valid element types</term></listheader><item><description>checked</description>
+    ///<description>checked</description>
+    ///<description>Check Box</description>
+    ///</item>
+    ///<item><description>selected</description>
+    ///<description>selected</description>
+    ///<description>Options in Select elements</description>
+    ///</item>
+    ///<item><description>disabled</description>
+    ///<description>disabled</description>
+    ///<description>Input and other UI elements</description>
+    ///</item>
+    ///</list>
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetAttribute(attributeName: string): string;
+    ///<summary>
+    ///  Gets the value of a CSS property of this element.
+    ///</summary>
+    ///  <param name="propertyName">The name of the CSS property to get the value of.</param>
+    ///<returns>The value of the specified CSS property.</returns>
+    ///<remarks>The value returned by the <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.GetCssValue(System.String)" />
+    ///  method is likely to be unpredictable in a cross-browser environment.
+    ///  Color values should be returned as hex strings. For example, a
+    ///  "background-color" property set as "green" in the HTML source, will
+    ///  return "#008000" for its value.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetCssValue(propertyName: string): string;
+    ///<summary>
+    ///  Finds all <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> within the current context
+    ///  using the given mechanism.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  of all <see cref="T:OpenQA.Selenium.IWebElement">WebElements</see>
+    ///  matching the current criteria, or an empty list if nothing matches.</returns>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  using the given method.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>The first matching <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  on the current context.</returns>
+    ///<exception cref="T:OpenQA.Selenium.NoSuchElementException">If no element matches the criteria.</exception>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByLinkText("linktext")
+    ///</code></example>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByLinkText("linktext")
+    ///</code></example>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the element</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementById("id")
+    ///</code></example>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the Element</param>
+    ///<returns>ReadOnlyCollection of Elements that match the object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsById("id")
+    ///</code></example>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of element</param>
+    ///<returns>ReadOnlyCollect of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">tag name of the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM Tag of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the CSS Class supplied
+    ///</summary>
+    ///  <param name="className">CSS class name of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByClassName("classname")
+    ///</code></example>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="className">CSS class name of the elements on the page</param>
+    ///<returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByXPath("//table/tbody/tr/td/a");
+    ///</code></example>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to element on the page</param>
+    ///<returns>ReadOnlyCollection of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByXpath("//tr/td/a")
+    ///</code></example>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the part of the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByPartialLinkText("partOfLink")
+    ///</code></example>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByPartialLinkText("partOfTheLink")
+    ///</code></example>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The id to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of this element on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
+    ///<summary>
+    ///  Returns a string that represents the current <see cref="T:OpenQA.Selenium.Remote.RemoteWebElement" />
+    ///  .
+    ///</summary>
+    ///<returns>A string that represents the current <see cref="T:OpenQA.Selenium.Remote.RemoteWebElement" />
+    ///  .</returns>
     function ToString: string;
     function GetType: DDN.mscorlib.DNType;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  used to find this element.
+    ///</summary>
     property WrappedDriver: DNIWebDriver read get_WrappedDriver;
+    ///<summary>
+    ///  Gets the tag name of this element.
+    ///</summary>
+    ///<remarks>
+    ///  The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.TagName" />
+    ///  property returns the tag name of the
+    ///  element, not the value of the name attribute. For example, it will return
+    ///  "input" for an element specified by the HTML markup &lt;input name="foo" /&gt;.
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property TagName: string read get_TagName;
+    ///<summary>
+    ///  Gets the innerText of this element, without any leading or trailing whitespace,
+    ///  and with other whitespace collapsed.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Text: string read get_Text;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is enabled.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Enabled" />
+    ///  property will generally
+    ///  return <see langword="true" />
+    ///  for everything except explicitly disabled input elements.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Enabled: Boolean read get_Enabled;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is selected.
+    ///</summary>
+    ///<remarks>This operation only applies to input elements such as checkboxes,
+    ///  options in a select element and radio buttons.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Selected: Boolean read get_Selected;
+    ///<summary>
+    ///  Gets a <see cref="T:System.Drawing.Point" />
+    ///  object containing the coordinates of the upper-left corner
+    ///  of this element relative to the upper-left corner of the page.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Location: DDN.System.Drawing.DNPoint read get_Location;
+    ///<summary>
+    ///  Gets a <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Size" />
+    ///  object containing the height and width of this element.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Size: DDN.System.Drawing.DNSize read get_Size;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is displayed.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Displayed" />
+    ///  property avoids the problem
+    ///  of having to parse an element's "style" attribute to determine
+    ///  visibility of an element.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Displayed: Boolean read get_Displayed;
+    ///<summary>
+    ///  Gets the point where the element would be when scrolled into view.
+    ///</summary>
     property LocationOnScreenOnceScrolledIntoView: DDN.System.Drawing.DNPoint read get_LocationOnScreenOnceScrolledIntoView;
+    ///<summary>
+    ///  Gets the coordinates identifying the location of this element using
+    ///  various frames of reference.
+    ///</summary>
     property Coordinates: DNICoordinates read get_Coordinates;
   end;
 
@@ -5072,10 +14085,30 @@ type
   ['{1DB0F8B0-B5D3-5775-9551-A9FBEC95C399}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.IE.InternetExplorerWebElement" />
+    ///  class.
+    ///</summary>
+    ///  <param name="parent">Driver in use.</param>
+    ///  <param name="id">ID of the element.</param>
     {class} function init(parent: DNInternetExplorerDriver; id: string): DNInternetExplorerWebElement;
 
   end;
 
+  ///<summary>
+  ///  InternetExplorerWebElement allows you to have access to specific items that are found on the page.
+  ///</summary>
+  ///<seealso cref="T:OpenQA.Selenium.IWebElement" />
+  ///<seealso cref="T:OpenQA.Selenium.ILocatable" />
+  ///<example><code>
+  ///  [Test]
+  ///  public void TestGoogle()
+  ///  {
+  ///  driver = new InternetExplorerDriver();
+  ///  InternetExplorerWebElement elem = driver.FindElement(By.Name("q"));
+  ///  elem.SendKeys("Cheese please!");
+  ///  }
+  ///</code></example>
   [DNTypeName('OpenQA.Selenium.IE.InternetExplorerWebElement')]
   DNInternetExplorerWebElement = interface(DNRemoteWebElement)
   ['{3B7F1FBF-31F1-385F-8C29-238241B83E69}']
@@ -5094,46 +14127,350 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Simulates typing text into the element.
+    ///</summary>
+    ///  <param name="text">The text to type into the element.</param>
+    ///<remarks>The text to be typed may include special characters like arrow keys,
+    ///  backspaces, function keys, and so on. Valid special keys are defined in
+    ///<see cref="T:OpenQA.Selenium.Keys" />
+    ///  .</remarks>
+    ///<seealso cref="T:OpenQA.Selenium.Keys" />
+    ///<exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception><exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure SendKeys(text: string);
+    ///<summary>
+    ///  Submits this element to the web server.
+    ///</summary>
+    ///<remarks>If this current element is a form, or an element within a form,
+    ///  then this will be submitted to the web server. If this causes the current
+    ///  page to change, then this method will attempt to block until the new page
+    ///  is loaded.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Submit;
+    ///<summary>
+    ///  Clicks this element.
+    ///</summary>
+    ///<remarks>
+    ///  Click this element. If the click causes a new page to load, the <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.Click" />
+    ///  method will attempt to block until the page has loaded. After calling the
+    ///<see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.Click" />
+    ///  method, you should discard all references to this
+    ///  element unless you know that the element and the page will still be present.
+    ///  Otherwise, any further operations performed on this element will have an undefined
+    ///  behavior.
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception><exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Click;
+    ///<summary>
+    ///  Gets the value of the specified attribute for this element.
+    ///</summary>
+    ///  <param name="attributeName">The name of the attribute.</param>
+    ///<returns>The attribute's current value. Returns a <see langword="null" />
+    ///  if the
+    ///  value is not set.</returns>
+    ///<remarks>The <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(System.String)" />
+    ///  method will return the current value
+    ///  of the attribute, even if the value has been modified after the page has been
+    ///  loaded. Note that the value of the following attributes will be returned even if
+    ///  there is no explicit attribute on the element:
+    ///<list type="table"><listheader><term>Attribute name</term><term>Value returned if not explicitly specified</term><term>Valid element types</term></listheader><item><description>checked</description>
+    ///<description>checked</description>
+    ///<description>Check Box</description>
+    ///</item>
+    ///<item><description>selected</description>
+    ///<description>selected</description>
+    ///<description>Options in Select elements</description>
+    ///</item>
+    ///<item><description>disabled</description>
+    ///<description>disabled</description>
+    ///<description>Input and other UI elements</description>
+    ///</item>
+    ///</list>
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetAttribute(attributeName: string): string;
+    ///<summary>
+    ///  Gets the value of a CSS property of this element.
+    ///</summary>
+    ///  <param name="propertyName">The name of the CSS property to get the value of.</param>
+    ///<returns>The value of the specified CSS property.</returns>
+    ///<remarks>The value returned by the <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.GetCssValue(System.String)" />
+    ///  method is likely to be unpredictable in a cross-browser environment.
+    ///  Color values should be returned as hex strings. For example, a
+    ///  "background-color" property set as "green" in the HTML source, will
+    ///  return "#008000" for its value.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetCssValue(propertyName: string): string;
+    ///<summary>
+    ///  Finds all <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> within the current context
+    ///  using the given mechanism.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  of all <see cref="T:OpenQA.Selenium.IWebElement">WebElements</see>
+    ///  matching the current criteria, or an empty list if nothing matches.</returns>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  using the given method.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>The first matching <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  on the current context.</returns>
+    ///<exception cref="T:OpenQA.Selenium.NoSuchElementException">If no element matches the criteria.</exception>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByLinkText("linktext")
+    ///</code></example>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByLinkText("linktext")
+    ///</code></example>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the element</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementById("id")
+    ///</code></example>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the Element</param>
+    ///<returns>ReadOnlyCollection of Elements that match the object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsById("id")
+    ///</code></example>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of element</param>
+    ///<returns>ReadOnlyCollect of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">tag name of the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM Tag of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the CSS Class supplied
+    ///</summary>
+    ///  <param name="className">CSS class name of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByClassName("classname")
+    ///</code></example>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="className">CSS class name of the elements on the page</param>
+    ///<returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByXPath("//table/tbody/tr/td/a");
+    ///</code></example>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to element on the page</param>
+    ///<returns>ReadOnlyCollection of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByXpath("//tr/td/a")
+    ///</code></example>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the part of the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByPartialLinkText("partOfLink")
+    ///</code></example>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByPartialLinkText("partOfTheLink")
+    ///</code></example>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The id to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of this element on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
+    ///<summary>
+    ///  Returns a string that represents the current <see cref="T:OpenQA.Selenium.Remote.RemoteWebElement" />
+    ///  .
+    ///</summary>
+    ///<returns>A string that represents the current <see cref="T:OpenQA.Selenium.Remote.RemoteWebElement" />
+    ///  .</returns>
     function ToString: string;
+    ///<summary>
+    ///  Method to get the hash code of the element
+    ///</summary>
+    ///<returns>Integer of the hash code for the element</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  Compares if two elements are equal
+    ///</summary>
+    ///  <param name="obj">Object to compare against</param>
+    ///<returns>A boolean if it is equal or not</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetType: DDN.mscorlib.DNType;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  used to find this element.
+    ///</summary>
     property WrappedDriver: DNIWebDriver read get_WrappedDriver;
+    ///<summary>
+    ///  Gets the tag name of this element.
+    ///</summary>
+    ///<remarks>
+    ///  The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.TagName" />
+    ///  property returns the tag name of the
+    ///  element, not the value of the name attribute. For example, it will return
+    ///  "input" for an element specified by the HTML markup &lt;input name="foo" /&gt;.
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property TagName: string read get_TagName;
+    ///<summary>
+    ///  Gets the innerText of this element, without any leading or trailing whitespace,
+    ///  and with other whitespace collapsed.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Text: string read get_Text;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is enabled.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Enabled" />
+    ///  property will generally
+    ///  return <see langword="true" />
+    ///  for everything except explicitly disabled input elements.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Enabled: Boolean read get_Enabled;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is selected.
+    ///</summary>
+    ///<remarks>This operation only applies to input elements such as checkboxes,
+    ///  options in a select element and radio buttons.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Selected: Boolean read get_Selected;
+    ///<summary>
+    ///  Gets a <see cref="T:System.Drawing.Point" />
+    ///  object containing the coordinates of the upper-left corner
+    ///  of this element relative to the upper-left corner of the page.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Location: DDN.System.Drawing.DNPoint read get_Location;
+    ///<summary>
+    ///  Gets a <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Size" />
+    ///  object containing the height and width of this element.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Size: DDN.System.Drawing.DNSize read get_Size;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is displayed.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Displayed" />
+    ///  property avoids the problem
+    ///  of having to parse an element's "style" attribute to determine
+    ///  visibility of an element.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Displayed: Boolean read get_Displayed;
+    ///<summary>
+    ///  Gets the point where the element would be when scrolled into view.
+    ///</summary>
     property LocationOnScreenOnceScrolledIntoView: DDN.System.Drawing.DNPoint read get_LocationOnScreenOnceScrolledIntoView;
+    ///<summary>
+    ///  Gets the coordinates identifying the location of this element using
+    ///  various frames of reference.
+    ///</summary>
     property Coordinates: DNICoordinates read get_Coordinates;
   end;
 
@@ -5144,10 +14481,19 @@ type
   ['{B6979D04-0795-5682-851C-3D96B7B59099}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Opera.OperaWebElement" />
+    ///  class
+    ///</summary>
+    ///  <param name="parent">Driver in use</param>
+    ///  <param name="elementId">Id of the element</param>
     {class} function init(parent: DNOperaDriver; elementId: string): DNOperaWebElement;
 
   end;
 
+  ///<summary>
+  ///  Provides a mechanism to get elements off the page for test
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Opera.OperaWebElement')]
   DNOperaWebElement = interface(DNRemoteWebElement)
   ['{C2ED8185-49C6-3509-9250-6B7E98506BBE}']
@@ -5166,46 +14512,350 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Simulates typing text into the element.
+    ///</summary>
+    ///  <param name="text">The text to type into the element.</param>
+    ///<remarks>The text to be typed may include special characters like arrow keys,
+    ///  backspaces, function keys, and so on. Valid special keys are defined in
+    ///<see cref="T:OpenQA.Selenium.Keys" />
+    ///  .</remarks>
+    ///<seealso cref="T:OpenQA.Selenium.Keys" />
+    ///<exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception><exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure SendKeys(text: string);
+    ///<summary>
+    ///  Submits this element to the web server.
+    ///</summary>
+    ///<remarks>If this current element is a form, or an element within a form,
+    ///  then this will be submitted to the web server. If this causes the current
+    ///  page to change, then this method will attempt to block until the new page
+    ///  is loaded.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Submit;
+    ///<summary>
+    ///  Clicks this element.
+    ///</summary>
+    ///<remarks>
+    ///  Click this element. If the click causes a new page to load, the <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.Click" />
+    ///  method will attempt to block until the page has loaded. After calling the
+    ///<see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.Click" />
+    ///  method, you should discard all references to this
+    ///  element unless you know that the element and the page will still be present.
+    ///  Otherwise, any further operations performed on this element will have an undefined
+    ///  behavior.
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception><exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Click;
+    ///<summary>
+    ///  Gets the value of the specified attribute for this element.
+    ///</summary>
+    ///  <param name="attributeName">The name of the attribute.</param>
+    ///<returns>The attribute's current value. Returns a <see langword="null" />
+    ///  if the
+    ///  value is not set.</returns>
+    ///<remarks>The <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(System.String)" />
+    ///  method will return the current value
+    ///  of the attribute, even if the value has been modified after the page has been
+    ///  loaded. Note that the value of the following attributes will be returned even if
+    ///  there is no explicit attribute on the element:
+    ///<list type="table"><listheader><term>Attribute name</term><term>Value returned if not explicitly specified</term><term>Valid element types</term></listheader><item><description>checked</description>
+    ///<description>checked</description>
+    ///<description>Check Box</description>
+    ///</item>
+    ///<item><description>selected</description>
+    ///<description>selected</description>
+    ///<description>Options in Select elements</description>
+    ///</item>
+    ///<item><description>disabled</description>
+    ///<description>disabled</description>
+    ///<description>Input and other UI elements</description>
+    ///</item>
+    ///</list>
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetAttribute(attributeName: string): string;
+    ///<summary>
+    ///  Gets the value of a CSS property of this element.
+    ///</summary>
+    ///  <param name="propertyName">The name of the CSS property to get the value of.</param>
+    ///<returns>The value of the specified CSS property.</returns>
+    ///<remarks>The value returned by the <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.GetCssValue(System.String)" />
+    ///  method is likely to be unpredictable in a cross-browser environment.
+    ///  Color values should be returned as hex strings. For example, a
+    ///  "background-color" property set as "green" in the HTML source, will
+    ///  return "#008000" for its value.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetCssValue(propertyName: string): string;
+    ///<summary>
+    ///  Finds all <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> within the current context
+    ///  using the given mechanism.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  of all <see cref="T:OpenQA.Selenium.IWebElement">WebElements</see>
+    ///  matching the current criteria, or an empty list if nothing matches.</returns>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  using the given method.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>The first matching <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  on the current context.</returns>
+    ///<exception cref="T:OpenQA.Selenium.NoSuchElementException">If no element matches the criteria.</exception>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByLinkText("linktext")
+    ///</code></example>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByLinkText("linktext")
+    ///</code></example>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the element</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementById("id")
+    ///</code></example>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the Element</param>
+    ///<returns>ReadOnlyCollection of Elements that match the object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsById("id")
+    ///</code></example>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of element</param>
+    ///<returns>ReadOnlyCollect of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">tag name of the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM Tag of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the CSS Class supplied
+    ///</summary>
+    ///  <param name="className">CSS class name of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByClassName("classname")
+    ///</code></example>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="className">CSS class name of the elements on the page</param>
+    ///<returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByXPath("//table/tbody/tr/td/a");
+    ///</code></example>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to element on the page</param>
+    ///<returns>ReadOnlyCollection of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByXpath("//tr/td/a")
+    ///</code></example>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the part of the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByPartialLinkText("partOfLink")
+    ///</code></example>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByPartialLinkText("partOfTheLink")
+    ///</code></example>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The id to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of this element on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
+    ///<summary>
+    ///  Returns a string that represents the current <see cref="T:OpenQA.Selenium.Remote.RemoteWebElement" />
+    ///  .
+    ///</summary>
+    ///<returns>A string that represents the current <see cref="T:OpenQA.Selenium.Remote.RemoteWebElement" />
+    ///  .</returns>
     function ToString: string;
+    ///<summary>
+    ///  Method to get the hash code of the element
+    ///</summary>
+    ///<returns>Integer of the hash code for the element</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  Compares if two elements are equal
+    ///</summary>
+    ///  <param name="obj">Object to compare against</param>
+    ///<returns>A boolean if it is equal or not</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetType: DDN.mscorlib.DNType;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  used to find this element.
+    ///</summary>
     property WrappedDriver: DNIWebDriver read get_WrappedDriver;
+    ///<summary>
+    ///  Gets the tag name of this element.
+    ///</summary>
+    ///<remarks>
+    ///  The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.TagName" />
+    ///  property returns the tag name of the
+    ///  element, not the value of the name attribute. For example, it will return
+    ///  "input" for an element specified by the HTML markup &lt;input name="foo" /&gt;.
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property TagName: string read get_TagName;
+    ///<summary>
+    ///  Gets the innerText of this element, without any leading or trailing whitespace,
+    ///  and with other whitespace collapsed.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Text: string read get_Text;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is enabled.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Enabled" />
+    ///  property will generally
+    ///  return <see langword="true" />
+    ///  for everything except explicitly disabled input elements.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Enabled: Boolean read get_Enabled;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is selected.
+    ///</summary>
+    ///<remarks>This operation only applies to input elements such as checkboxes,
+    ///  options in a select element and radio buttons.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Selected: Boolean read get_Selected;
+    ///<summary>
+    ///  Gets a <see cref="T:System.Drawing.Point" />
+    ///  object containing the coordinates of the upper-left corner
+    ///  of this element relative to the upper-left corner of the page.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Location: DDN.System.Drawing.DNPoint read get_Location;
+    ///<summary>
+    ///  Gets a <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Size" />
+    ///  object containing the height and width of this element.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Size: DDN.System.Drawing.DNSize read get_Size;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is displayed.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Displayed" />
+    ///  property avoids the problem
+    ///  of having to parse an element's "style" attribute to determine
+    ///  visibility of an element.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Displayed: Boolean read get_Displayed;
+    ///<summary>
+    ///  Gets the point where the element would be when scrolled into view.
+    ///</summary>
     property LocationOnScreenOnceScrolledIntoView: DDN.System.Drawing.DNPoint read get_LocationOnScreenOnceScrolledIntoView;
+    ///<summary>
+    ///  Gets the coordinates identifying the location of this element using
+    ///  various frames of reference.
+    ///</summary>
     property Coordinates: DNICoordinates read get_Coordinates;
   end;
 
@@ -5220,6 +14870,11 @@ type
 
   end;
 
+  ///<summary>
+  ///  RemoteWebElement allows you to have access to specific items that are found on the page
+  ///</summary>
+  ///<seealso cref="T:OpenQA.Selenium.IWebElement" />
+  ///<seealso cref="T:OpenQA.Selenium.ILocatable" />
   [DNTypeName('OpenQA.Selenium.PhantomJS.PhantomJSWebElement')]
   DNPhantomJSWebElement = interface(DNRemoteWebElement)
   ['{47FE3409-C0F4-3452-9BF6-41594426C734}']
@@ -5238,46 +14893,350 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Simulates typing text into the element.
+    ///</summary>
+    ///  <param name="text">The text to type into the element.</param>
+    ///<remarks>The text to be typed may include special characters like arrow keys,
+    ///  backspaces, function keys, and so on. Valid special keys are defined in
+    ///<see cref="T:OpenQA.Selenium.Keys" />
+    ///  .</remarks>
+    ///<seealso cref="T:OpenQA.Selenium.Keys" />
+    ///<exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception><exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure SendKeys(text: string);
+    ///<summary>
+    ///  Submits this element to the web server.
+    ///</summary>
+    ///<remarks>If this current element is a form, or an element within a form,
+    ///  then this will be submitted to the web server. If this causes the current
+    ///  page to change, then this method will attempt to block until the new page
+    ///  is loaded.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Submit;
+    ///<summary>
+    ///  Clicks this element.
+    ///</summary>
+    ///<remarks>
+    ///  Click this element. If the click causes a new page to load, the <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.Click" />
+    ///  method will attempt to block until the page has loaded. After calling the
+    ///<see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.Click" />
+    ///  method, you should discard all references to this
+    ///  element unless you know that the element and the page will still be present.
+    ///  Otherwise, any further operations performed on this element will have an undefined
+    ///  behavior.
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown when the target element is not enabled.</exception><exception cref="T:OpenQA.Selenium.ElementNotVisibleException">Thrown when the target element is not visible.</exception><exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     procedure Click;
+    ///<summary>
+    ///  Gets the value of the specified attribute for this element.
+    ///</summary>
+    ///  <param name="attributeName">The name of the attribute.</param>
+    ///<returns>The attribute's current value. Returns a <see langword="null" />
+    ///  if the
+    ///  value is not set.</returns>
+    ///<remarks>The <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(System.String)" />
+    ///  method will return the current value
+    ///  of the attribute, even if the value has been modified after the page has been
+    ///  loaded. Note that the value of the following attributes will be returned even if
+    ///  there is no explicit attribute on the element:
+    ///<list type="table"><listheader><term>Attribute name</term><term>Value returned if not explicitly specified</term><term>Valid element types</term></listheader><item><description>checked</description>
+    ///<description>checked</description>
+    ///<description>Check Box</description>
+    ///</item>
+    ///<item><description>selected</description>
+    ///<description>selected</description>
+    ///<description>Options in Select elements</description>
+    ///</item>
+    ///<item><description>disabled</description>
+    ///<description>disabled</description>
+    ///<description>Input and other UI elements</description>
+    ///</item>
+    ///</list>
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetAttribute(attributeName: string): string;
+    ///<summary>
+    ///  Gets the value of a CSS property of this element.
+    ///</summary>
+    ///  <param name="propertyName">The name of the CSS property to get the value of.</param>
+    ///<returns>The value of the specified CSS property.</returns>
+    ///<remarks>The value returned by the <see cref="M:OpenQA.Selenium.Remote.RemoteWebElement.GetCssValue(System.String)" />
+    ///  method is likely to be unpredictable in a cross-browser environment.
+    ///  Color values should be returned as hex strings. For example, a
+    ///  "background-color" property set as "green" in the HTML source, will
+    ///  return "#008000" for its value.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     function GetCssValue(propertyName: string): string;
+    ///<summary>
+    ///  Finds all <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> within the current context
+    ///  using the given mechanism.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  of all <see cref="T:OpenQA.Selenium.IWebElement">WebElements</see>
+    ///  matching the current criteria, or an empty list if nothing matches.</returns>
     function FindElements(by: DNBy): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  using the given method.
+    ///</summary>
+    ///  <param name="by">The locating mechanism to use.</param>
+    ///<returns>The first matching <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  on the current context.</returns>
+    ///<exception cref="T:OpenQA.Selenium.NoSuchElementException">If no element matches the criteria.</exception>
     function FindElement(by: DNBy): DNIWebElement;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByLinkText("linktext")
+    ///</code></example>
     function FindElementByLinkText(linkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="linkText">Link text of element </param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByLinkText("linktext")
+    ///</code></example>
     function FindElementsByLinkText(linkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the element</param>
+    ///<returns>IWebElement object so that you can interact with that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementById("id")
+    ///</code></example>
     function FindElementById(id: string): DNIWebElement;
+    ///<summary>
+    ///  Finds the first element in the page that matches the ID supplied
+    ///</summary>
+    ///  <param name="id">ID of the Element</param>
+    ///<returns>ReadOnlyCollection of Elements that match the object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsById("id")
+    ///</code></example>
     function FindElementsById(id: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementByName(name: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the name supplied
+    ///</summary>
+    ///  <param name="name">Name of element</param>
+    ///<returns>ReadOnlyCollect of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByName("name")
+    ///</code></example>
     function FindElementsByName(name: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">tag name of the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementByTagName(tagName: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the DOM Tag supplied
+    ///</summary>
+    ///  <param name="tagName">DOM Tag of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByTagName("tag")
+    ///</code></example>
     function FindElementsByTagName(tagName: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element in the page that matches the CSS Class supplied
+    ///</summary>
+    ///  <param name="className">CSS class name of the element on the page</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementByClassName("classname")
+    ///</code></example>
     function FindElementByClassName(className: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the class name supplied
+    ///</summary>
+    ///  <param name="className">CSS class name of the elements on the page</param>
+    ///<returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByClassName("classname")
+    ///</code></example>
     function FindElementsByClassName(className: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to the element</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByXPath("//table/tbody/tr/td/a");
+    ///</code></example>
     function FindElementByXPath(xpath: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the XPath supplied
+    ///</summary>
+    ///  <param name="xpath">xpath to element on the page</param>
+    ///<returns>ReadOnlyCollection of IWebElement objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByXpath("//tr/td/a")
+    ///</code></example>
     function FindElementsByXPath(xpath: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first of elements that match the part of the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>IWebElement object so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  IWebElement elem = driver.FindElementsByPartialLinkText("partOfLink")
+    ///</code></example>
     function FindElementByPartialLinkText(partialLinkText: string): DNIWebElement;
+    ///<summary>
+    ///  Finds a list of elements that match the link text supplied
+    ///</summary>
+    ///  <param name="partialLinkText">part of the link text</param>
+    ///<returns>ReadOnlyCollection<![CDATA[<IWebElement>]]> objects so that you can interact that object</returns>
+    ///<example><code>
+    ///  IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+    ///  ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByPartialLinkText("partOfTheLink")
+    ///</code></example>
     function FindElementsByPartialLinkText(partialLinkText: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Finds the first element matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The id to match.</param>
+    ///<returns>The first <see cref="T:OpenQA.Selenium.IWebElement" />
+    ///  matching the criteria.</returns>
     function FindElementByCssSelector(cssSelector: string): DNIWebElement;
+    ///<summary>
+    ///  Finds all elements matching the specified CSS selector.
+    ///</summary>
+    ///  <param name="cssSelector">The CSS selector to match.</param>
+    ///<returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />
+    ///  containing all
+    ///<see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
     function FindElementsByCssSelector(cssSelector: string): DDN.mscorlib.DNReadOnlyCollection<DNIWebElement>;
+    ///<summary>
+    ///  Gets a <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object representing the image of this element on the screen.
+    ///</summary>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  object containing the image.</returns>
     function GetScreenshot: DNScreenshot;
+    ///<summary>
+    ///  Returns a string that represents the current <see cref="T:OpenQA.Selenium.Remote.RemoteWebElement" />
+    ///  .
+    ///</summary>
+    ///<returns>A string that represents the current <see cref="T:OpenQA.Selenium.Remote.RemoteWebElement" />
+    ///  .</returns>
     function ToString: string;
+    ///<summary>
+    ///  Method to get the hash code of the element
+    ///</summary>
+    ///<returns>Integer of the hash code for the element</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  Compares if two elements are equal
+    ///</summary>
+    ///  <param name="obj">Object to compare against</param>
+    ///<returns>A boolean if it is equal or not</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetType: DDN.mscorlib.DNType;
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the <see cref="T:OpenQA.Selenium.IWebDriver" />
+    ///  used to find this element.
+    ///</summary>
     property WrappedDriver: DNIWebDriver read get_WrappedDriver;
+    ///<summary>
+    ///  Gets the tag name of this element.
+    ///</summary>
+    ///<remarks>
+    ///  The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.TagName" />
+    ///  property returns the tag name of the
+    ///  element, not the value of the name attribute. For example, it will return
+    ///  "input" for an element specified by the HTML markup &lt;input name="foo" /&gt;.
+    ///</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property TagName: string read get_TagName;
+    ///<summary>
+    ///  Gets the innerText of this element, without any leading or trailing whitespace,
+    ///  and with other whitespace collapsed.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Text: string read get_Text;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is enabled.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Enabled" />
+    ///  property will generally
+    ///  return <see langword="true" />
+    ///  for everything except explicitly disabled input elements.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Enabled: Boolean read get_Enabled;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is selected.
+    ///</summary>
+    ///<remarks>This operation only applies to input elements such as checkboxes,
+    ///  options in a select element and radio buttons.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Selected: Boolean read get_Selected;
+    ///<summary>
+    ///  Gets a <see cref="T:System.Drawing.Point" />
+    ///  object containing the coordinates of the upper-left corner
+    ///  of this element relative to the upper-left corner of the page.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Location: DDN.System.Drawing.DNPoint read get_Location;
+    ///<summary>
+    ///  Gets a <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Size" />
+    ///  object containing the height and width of this element.
+    ///</summary>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Size: DDN.System.Drawing.DNSize read get_Size;
+    ///<summary>
+    ///  Gets a value indicating whether or not this element is displayed.
+    ///</summary>
+    ///<remarks>The <see cref="P:OpenQA.Selenium.Remote.RemoteWebElement.Displayed" />
+    ///  property avoids the problem
+    ///  of having to parse an element's "style" attribute to determine
+    ///  visibility of an element.</remarks>
+    ///<exception cref="T:OpenQA.Selenium.StaleElementReferenceException">Thrown when the target element is no longer valid in the document DOM.</exception>
     property Displayed: Boolean read get_Displayed;
+    ///<summary>
+    ///  Gets the point where the element would be when scrolled into view.
+    ///</summary>
     property LocationOnScreenOnceScrolledIntoView: DDN.System.Drawing.DNPoint read get_LocationOnScreenOnceScrolledIntoView;
+    ///<summary>
+    ///  Gets the coordinates identifying the location of this element using
+    ///  various frames of reference.
+    ///</summary>
     property Coordinates: DNICoordinates read get_Coordinates;
   end;
 
@@ -5288,10 +15247,19 @@ type
   ['{3EB892ED-C798-5041-BB35-3016E2406A9E}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.RemoteWebStorage" />
+    ///  class.
+    ///</summary>
+    ///  <param name="driver">The driver instance.</param>
     {class} function init(driver: DNRemoteWebDriver): DNRemoteWebStorage;
 
   end;
 
+  ///<summary>
+  ///  Provides remote access to the <see cref="T:OpenQA.Selenium.Html5.IWebStorage" />
+  ///  API.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.RemoteWebStorage')]
   DNRemoteWebStorage = interface(DNIWebStorage)
   ['{522F8706-6212-3D78-A3A2-999CE98D1920}']
@@ -5309,7 +15277,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the local storage for the site currently opened in the browser.
+    ///</summary>
     property LocalStorage: DNILocalStorage read get_LocalStorage;
+    ///<summary>
+    ///  Gets the session storage for the site currently opened in the browser.
+    ///</summary>
     property SessionStorage: DNISessionStorage read get_SessionStorage;
   end;
 
@@ -5320,15 +15294,35 @@ type
   ['{88A7A72A-F2F7-5A08-9387-01CAAC165294}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.Response" />
+    ///  class
+    ///</summary>
     {class} function init: DNResponse; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.Response" />
+    ///  class
+    ///</summary>
+    ///  <param name="sessionId">Session ID in use</param>
     {class} function init(sessionId: DNSessionId): DNResponse; overload;
 
   { static methods } 
 
+    ///<summary>
+    ///  Returns a new <see cref="T:OpenQA.Selenium.Remote.Response" />
+    ///  from a JSON-encoded string.
+    ///</summary>
+    ///  <param name="value">The JSON string to deserialize into a <see cref="T:OpenQA.Selenium.Remote.Response" />
+    ///  .</param>
+    ///<returns>A <see cref="T:OpenQA.Selenium.Remote.Response" />
+    ///  object described by the JSON string.</returns>
     {class} function FromJson(value: string): DNResponse;
 
   end;
 
+  ///<summary>
+  ///  Handles reponses from the browser
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.Response')]
   DNResponse = interface(DDN.mscorlib.DNObject)
   ['{04FAC653-482A-384D-B125-7691558100CB}']
@@ -5344,7 +15338,16 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Returns this object as a JSON-encoded string.
+    ///</summary>
+    ///<returns>A JSON-encoded string representing this <see cref="T:OpenQA.Selenium.Remote.Response" />
+    ///  object.</returns>
     function ToJson: string;
+    ///<summary>
+    ///  Returns the object as a string.
+    ///</summary>
+    ///<returns>A string with the Session ID, status value, and the value from JSON.</returns>
     function ToString: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5352,9 +15355,21 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the value from JSON.
+    ///</summary>
     property Value: DDN.mscorlib.DNObject read get_Value write set_Value;
+    ///<summary>
+    ///  Gets or sets the session ID.
+    ///</summary>
     property SessionId: string read get_SessionId write set_SessionId;
+    ///<summary>
+    ///  Gets or sets the status value of the response.
+    ///</summary>
     property Status: DNWebDriverResult read get_Status write set_Status;
+    ///<summary>
+    ///  Gets a value indicating whether this response is compliant with the WebDriver specification.
+    ///</summary>
     property IsSpecificationCompliant: Boolean read get_IsSpecificationCompliant;
   end;
 
@@ -5365,17 +15380,38 @@ type
   ['{DA44B70D-0792-50A2-B319-81D26B0A670B}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.SessionId" />
+    ///  class
+    ///</summary>
+    ///  <param name="opaqueKey">Key for the session in use</param>
     {class} function init(opaqueKey: string): DNSessionId;
 
   end;
 
+  ///<summary>
+  ///  Provides a mechanism for maintaining a session for a test
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.SessionId')]
   DNSessionId = interface(DDN.mscorlib.DNObject)
   ['{B4011509-9F5F-32EC-B339-8F67CAC0F627}']
   { methods } 
 
+    ///<summary>
+    ///  Get the value of the key
+    ///</summary>
+    ///<returns>The key in use</returns>
     function ToString: string;
+    ///<summary>
+    ///  Get the hash code of the key
+    ///</summary>
+    ///<returns>The hash code of the key</returns>
     function GetHashCode: Int32;
+    ///<summary>
+    ///  Compares two Sessions
+    ///</summary>
+    ///  <param name="obj">Session to compare</param>
+    ///<returns>True if they are equal or False if they are not</returns>
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetType: DDN.mscorlib.DNType;
 
@@ -5388,11 +15424,18 @@ type
   ['{09D20FE6-BEF3-57DF-983C-115C3749463D}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Remote.StackTraceElement" />
+    ///  class.
+    ///</summary>
     {class} function init: DNStackTraceElement; overload;
     {class} function init(elementAttributes: DDN.mscorlib.DNDictionary<string, DDN.mscorlib.DNObject>): DNStackTraceElement; overload;
 
   end;
 
+  ///<summary>
+  ///  Gives properties to get a stack trace
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Remote.StackTraceElement')]
   DNStackTraceElement = interface(DDN.mscorlib.DNObject)
   ['{A642FCA5-2944-3B92-9978-D3BD26C1D1D1}']
@@ -5409,6 +15452,10 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Gets a string representation of the object.
+    ///</summary>
+    ///<returns>A string representation of the object.</returns>
     function ToString: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5416,9 +15463,21 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets or sets the value of the filename in the stack
+    ///</summary>
     property FileName: string read get_FileName write set_FileName;
+    ///<summary>
+    ///  Gets or sets the value of the Class name in the stack trace
+    ///</summary>
     property ClassName: string read get_ClassName write set_ClassName;
+    ///<summary>
+    ///  Gets or sets the line number
+    ///</summary>
     property LineNumber: Int32 read get_LineNumber write set_LineNumber;
+    ///<summary>
+    ///  Gets or sets the Method name in the stack trace
+    ///</summary>
     property MethodName: string read get_MethodName write set_MethodName;
   end;
 
@@ -5429,10 +15488,18 @@ type
   ['{2BC47AE8-30C5-56E2-AD59-24D27B1C45A8}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.Screenshot" />
+    ///  class.
+    ///</summary>
+    ///  <param name="base64EncodedScreenshot">The image of the page as a Base64-encoded string.</param>
     {class} function init(base64EncodedScreenshot: string): DNScreenshot;
 
   end;
 
+  ///<summary>
+  ///  Represents an image of the page currently loaded in the browser.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.Screenshot')]
   DNScreenshot = interface(DDN.mscorlib.DNObject)
   ['{C14A9663-F153-31EE-9FA0-9136BFFA941E}']
@@ -5443,8 +15510,19 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Saves the screenshot to a file, overwriting the file if it already exists.
+    ///</summary>
+    ///  <param name="fileName">The full path and file name to save the screenshot to.</param>
+    ///  <param name="format">A <see cref="T:OpenQA.Selenium.ScreenshotImageFormat" />
+    ///  value indicating the format
+    ///  to save the image to.</param>
     procedure SaveAsFile(fileName: string; format: DNScreenshotImageFormat); overload;
     procedure SaveAsFile(fileName: string; format: DDN.System.Drawing.DNImageFormat); overload;
+    ///<summary>
+    ///  Returns a <see cref="T:System.String">String</see> that represents the current <see cref="T:System.Object">Object</see>.
+    ///</summary>
+    ///<returns>A <see cref="T:System.String">String</see> that represents the current <see cref="T:System.Object">Object</see>.</returns>
     function ToString: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -5452,7 +15530,13 @@ type
 
   { propertys } 
 
+    ///<summary>
+    ///  Gets the value of the screenshot image as a Base64-encoded string.
+    ///</summary>
     property AsBase64EncodedString: string read get_AsBase64EncodedString;
+    ///<summary>
+    ///  Gets the value of the screenshot image as an array of bytes.
+    ///</summary>
     property AsByteArray: TArray<Byte> read get_AsByteArray;
   end;
 
@@ -5463,12 +15547,35 @@ type
   ['{2B3BE7D7-0125-5139-BF10-EE8C5FF5101D}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.WebDriverException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNWebDriverException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.WebDriverException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNWebDriverException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.WebDriverException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNWebDriverException; overload;
 
   end;
 
+  ///<summary>
+  ///  Represents exceptions that are thrown when an error occurs during actions.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.WebDriverException')]
   DNWebDriverException = interface(DDN.mscorlib.DNException)
   ['{1CBF7CB5-6AF7-3657-8864-19583770A9EE}']
@@ -5513,12 +15620,35 @@ type
   ['{E617AAB1-3B14-5B91-9BE2-0D8D52DE9BF7}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.DriverServiceNotFoundException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNDriverServiceNotFoundException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.DriverServiceNotFoundException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNDriverServiceNotFoundException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.DriverServiceNotFoundException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNDriverServiceNotFoundException; overload;
 
   end;
 
+  ///<summary>
+  ///  The exception that is thrown when an element is not visible.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.DriverServiceNotFoundException')]
   DNDriverServiceNotFoundException = interface(DNWebDriverException)
   ['{01AF7764-D8BE-33C0-8BE9-EE57656795F4}']
@@ -5563,12 +15693,35 @@ type
   ['{8DAA26F0-D29E-5B85-AF0A-E714B4FC041B}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.ElementNotVisibleException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNElementNotVisibleException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.ElementNotVisibleException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNElementNotVisibleException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.ElementNotVisibleException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNElementNotVisibleException; overload;
 
   end;
 
+  ///<summary>
+  ///  The exception that is thrown when an element is not visible.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.ElementNotVisibleException')]
   DNElementNotVisibleException = interface(DNWebDriverException)
   ['{B70BED98-F432-37C7-BBE9-06FEA0DEDBE0}']
@@ -5613,12 +15766,35 @@ type
   ['{D6030CF1-EB04-5DC5-9D8B-76DCDA3B8C04}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.InvalidCookieDomainException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNInvalidCookieDomainException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.InvalidCookieDomainException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNInvalidCookieDomainException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.InvalidCookieDomainException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNInvalidCookieDomainException; overload;
 
   end;
 
+  ///<summary>
+  ///  The exception that is thrown when the users attempts to set a cookie with an invalid domain.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.InvalidCookieDomainException')]
   DNInvalidCookieDomainException = interface(DNWebDriverException)
   ['{2F510999-557F-3175-A935-132FD0FCC742}']
@@ -5663,12 +15839,35 @@ type
   ['{E1B8F5F9-51C6-5825-8A3A-CF02B35A7CE0}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.InvalidElementStateException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNInvalidElementStateException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.InvalidElementStateException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNInvalidElementStateException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.InvalidElementStateException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNInvalidElementStateException; overload;
 
   end;
 
+  ///<summary>
+  ///  The exception that is thrown when a reference to an element is no longer valid.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.InvalidElementStateException')]
   DNInvalidElementStateException = interface(DNWebDriverException)
   ['{E62FA7FA-10CA-35B6-A6D7-350DFE36F034}']
@@ -5713,12 +15912,35 @@ type
   ['{F19E1F5C-BD3C-5D51-9F3F-E2834B719455}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.NotFoundException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNNotFoundException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.NotFoundException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNNotFoundException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.NotFoundException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNNotFoundException; overload;
 
   end;
 
+  ///<summary>
+  ///  The exception that is thrown when an item is not found.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.NotFoundException')]
   DNNotFoundException = interface(DNWebDriverException)
   ['{9DE1FB8A-D760-3A86-9156-7F87BC879093}']
@@ -5763,12 +15985,35 @@ type
   ['{3074F464-ACBB-50EF-9D8B-5761DADE65DF}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.NoAlertPresentException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNNoAlertPresentException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.NoAlertPresentException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNNoAlertPresentException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.NoAlertPresentException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNNoAlertPresentException; overload;
 
   end;
 
+  ///<summary>
+  ///  The exception that is thrown when an alert is not found.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.NoAlertPresentException')]
   DNNoAlertPresentException = interface(DNNotFoundException)
   ['{B6972103-0E99-3428-9329-48D42A3E50E2}']
@@ -5813,12 +16058,35 @@ type
   ['{F714264E-8875-5CF5-B2C8-0135735EBA92}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.NoSuchElementException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNNoSuchElementException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.NoSuchElementException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNNoSuchElementException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.NoSuchElementException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNNoSuchElementException; overload;
 
   end;
 
+  ///<summary>
+  ///  The exception that is thrown when an element is not found.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.NoSuchElementException')]
   DNNoSuchElementException = interface(DNNotFoundException)
   ['{8A8ECC7F-5867-32F9-B4D3-E005F1C1A904}']
@@ -5863,12 +16131,35 @@ type
   ['{70D49EC5-11DF-5D2B-B719-02A8B0CD0D5E}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.InvalidSelectorException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNInvalidSelectorException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.InvalidSelectorException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNInvalidSelectorException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.InvalidSelectorException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNInvalidSelectorException; overload;
 
   end;
 
+  ///<summary>
+  ///  The exception that is thrown when an element is not visible.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.InvalidSelectorException')]
   DNInvalidSelectorException = interface(DNNoSuchElementException)
   ['{892596EA-B030-3AE2-9B8D-0804F1233F9F}']
@@ -5913,12 +16204,35 @@ type
   ['{C31D0363-09FA-5D19-84A7-A3F52E6F5A86}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.NoSuchFrameException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNNoSuchFrameException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.NoSuchFrameException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNNoSuchFrameException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.NoSuchFrameException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNNoSuchFrameException; overload;
 
   end;
 
+  ///<summary>
+  ///  The exception that is thrown when a frame is not found.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.NoSuchFrameException')]
   DNNoSuchFrameException = interface(DNNotFoundException)
   ['{E59F3092-1DA9-361E-806F-089C2F1B6583}']
@@ -5963,12 +16277,35 @@ type
   ['{2D498F72-E730-5360-B804-C6798ED20D73}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.NoSuchWindowException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNNoSuchWindowException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.NoSuchWindowException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNNoSuchWindowException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.NoSuchWindowException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNNoSuchWindowException; overload;
 
   end;
 
+  ///<summary>
+  ///  The exception that is thrown when a window is not found.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.NoSuchWindowException')]
   DNNoSuchWindowException = interface(DNNotFoundException)
   ['{6F046270-A26E-3553-90D1-8D296EFD3EF8}']
@@ -6013,12 +16350,35 @@ type
   ['{1DE5D323-E16C-568D-951A-9FF5F062A9C4}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.StaleElementReferenceException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNStaleElementReferenceException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.StaleElementReferenceException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNStaleElementReferenceException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.StaleElementReferenceException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNStaleElementReferenceException; overload;
 
   end;
 
+  ///<summary>
+  ///  The exception that is thrown when a reference to an element is no longer valid.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.StaleElementReferenceException')]
   DNStaleElementReferenceException = interface(DNWebDriverException)
   ['{D1CCACE3-B806-3D20-88ED-238233D8C28A}']
@@ -6063,12 +16423,35 @@ type
   ['{F91BDC46-135D-5A1E-BAFB-7B2E87FC44E8}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.UnableToSetCookieException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNUnableToSetCookieException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.UnableToSetCookieException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNUnableToSetCookieException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.UnableToSetCookieException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNUnableToSetCookieException; overload;
 
   end;
 
+  ///<summary>
+  ///  The exception that is thrown when the user is unable to set a cookie.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.UnableToSetCookieException')]
   DNUnableToSetCookieException = interface(DNWebDriverException)
   ['{2AE49667-FBB4-3293-A95E-E74CD7348AF5}']
@@ -6113,13 +16496,43 @@ type
   ['{BBDFD427-226B-51CC-8077-48DA32288E10}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.UnhandledAlertException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNUnhandledAlertException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.UnhandledAlertException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNUnhandledAlertException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.UnhandledAlertException" />
+    ///  class with
+    ///  a specified error message and alert text.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
+    ///  <param name="alertText">The text of the unhandled alert.</param>
     {class} function init(message: string; alertText: string): DNUnhandledAlertException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.UnhandledAlertException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNUnhandledAlertException; overload;
 
   end;
 
+  ///<summary>
+  ///  The exception that is thrown when an unhandled alert is present.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.UnhandledAlertException')]
   DNUnhandledAlertException = interface(DNWebDriverException)
   ['{FBAE5179-5976-3304-A43C-1483C9095793}']
@@ -6140,6 +16553,15 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  Populates a SerializationInfo with the data needed to serialize the target object.
+    ///</summary>
+    ///  <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" />
+    ///  that holds the serialized
+    ///  object data about the exception being thrown.</param>
+    ///  <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" />
+    ///  that contains contextual
+    ///  information about the source or destination.</param>
     procedure GetObjectData(info: DDN.mscorlib.DNSerializationInfo; context: DDN.mscorlib.DNStreamingContext);
     function GetBaseException: DDN.mscorlib.DNException;
     function ToString: string;
@@ -6150,6 +16572,9 @@ type
   { propertys } 
 
     property Alert: DNIAlert read get_Alert;
+    ///<summary>
+    ///  Gets the text of the unhandled alert.
+    ///</summary>
     property AlertText: string read get_AlertText;
     property Message: string read get_Message;
     property Data: DDN.mscorlib.DNIDictionary read get_Data;
@@ -6168,12 +16593,35 @@ type
   ['{4D8CF72A-0A18-51F2-B5B8-C5C74085C678}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.WebDriverTimeoutException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNWebDriverTimeoutException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.WebDriverTimeoutException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNWebDriverTimeoutException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.WebDriverTimeoutException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNWebDriverTimeoutException; overload;
 
   end;
 
+  ///<summary>
+  ///  Represents exceptions that are thrown when an error occurs during actions.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.WebDriverTimeoutException')]
   DNWebDriverTimeoutException = interface(DNWebDriverException)
   ['{9DEE28E5-0D49-3ADF-B52B-0442ED18DF83}']
@@ -6218,12 +16666,35 @@ type
   ['{E5919786-F083-5507-BC18-46004D186A8B}']
   { constructors } 
 
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.XPathLookupException" />
+    ///  class.
+    ///</summary>
     {class} function init: DNXPathLookupException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.XPathLookupException" />
+    ///  class with
+    ///  a specified error message.
+    ///</summary>
+    ///  <param name="message">The message that describes the error.</param>
     {class} function init(message: string): DNXPathLookupException; overload;
+    ///<summary>
+    ///  Initializes a new instance of the <see cref="T:OpenQA.Selenium.XPathLookupException" />
+    ///  class with
+    ///  a specified error message and a reference to the inner exception that is the
+    ///  cause of this exception.
+    ///</summary>
+    ///  <param name="message">The error message that explains the reason for the exception.</param>
+    ///  <param name="innerException">The exception that is the cause of the current exception,
+    ///  or <see langword="null" />
+    ///  if no inner exception is specified.</param>
     {class} function init(message: string; innerException: DDN.mscorlib.DNException): DNXPathLookupException; overload;
 
   end;
 
+  ///<summary>
+  ///  The exception that is thrown when an error occurs during an XPath lookup.
+  ///</summary>
   [DNTypeName('OpenQA.Selenium.XPathLookupException')]
   DNXPathLookupException = interface(DNWebDriverException)
   ['{C21FF35E-E762-3720-8EF0-ECDA967FBF2C}']

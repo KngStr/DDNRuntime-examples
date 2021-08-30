@@ -3093,7 +3093,6 @@ type
    function __fakeFieldGet_VerticalViewSizeProperty: DNAutomationProperty;
    function __fakeFieldGet_HorizontallyScrollableProperty: DNAutomationProperty;
    function __fakeFieldGet_VerticallyScrollableProperty: DNAutomationProperty;
-   function __fakeFieldGet_NoScroll: Double;
 
   { static fields } 
 
@@ -3132,10 +3131,6 @@ type
     ///  属性。
     ///</summary>
     {class} property VerticallyScrollableProperty: DNAutomationProperty read __fakeFieldGet_VerticallyScrollableProperty;
-    ///<summary>
-    ///  指定不应执行滚动。
-    ///</summary>
-    {class} property NoScroll: Double read __fakeFieldGet_NoScroll;
 
   end;
 

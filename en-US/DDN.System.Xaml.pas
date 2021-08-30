@@ -4454,18 +4454,6 @@ type
     {class} function get_Space: DNXamlDirective;
     {class} function get_AllDirectives: DDN.mscorlib.DNReadOnlyCollection<DNXamlDirective>;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Xaml2006Namespace: string;
-   function __fakeFieldGet_Xml1998Namespace: string;
-
-  { static fields } 
-
-    ///<summary>Gets a string value for the string that identifies the XAML (2006) language namespace. That namespace corresponds to the XAML (2006) "x" prefixed namespace as defined in [MS-XAML] Section 5.1.1.</summary>
-    {class} property Xaml2006Namespace: string read __fakeFieldGet_Xaml2006Namespace;
-    ///<summary>Gets a string value for the string that identifies the XML (1998) language namespace. That namespace corresponds to the XML "xml" prefixed namespace as referenced in [MS-XAML] Section 5.1.2.</summary>
-    {class} property Xml1998Namespace: string read __fakeFieldGet_Xml1998Namespace;
-
   { static propertys } 
 
     ///<summary>Gets a collection of the namespace identifiers for XAML.</summary>

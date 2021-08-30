@@ -7385,27 +7385,6 @@ type
     ///  <param name="resourcePath">Relative URL path to the resource used to execute the command</param>
     {class} function init(method: string; resourcePath: string): DNCommandInfo;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_PostCommand: string;
-   function __fakeFieldGet_GetCommand: string;
-   function __fakeFieldGet_DeleteCommand: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  POST verb for the command info
-    ///</summary>
-    {class} property PostCommand: string read __fakeFieldGet_PostCommand;
-    ///<summary>
-    ///  GET verb for the command info
-    ///</summary>
-    {class} property GetCommand: string read __fakeFieldGet_GetCommand;
-    ///<summary>
-    ///  DELETE verb for the command info
-    ///</summary>
-    {class} property DeleteCommand: string read __fakeFieldGet_DeleteCommand;
-
   end;
 
   ///<summary>

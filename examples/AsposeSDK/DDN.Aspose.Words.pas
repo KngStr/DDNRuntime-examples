@@ -12877,22 +12877,6 @@ type
    function __fakeFieldGet_ColumnBreak: string;
    function __fakeFieldGet_CrLf: string;
    function __fakeFieldGet_NonBreakingSpace: string;
-   function __fakeFieldGet_CellChar: Char;
-   function __fakeFieldGet_TabChar: Char;
-   function __fakeFieldGet_LineFeedChar: Char;
-   function __fakeFieldGet_LineBreakChar: Char;
-   function __fakeFieldGet_PageBreakChar: Char;
-   function __fakeFieldGet_SectionBreakChar: Char;
-   function __fakeFieldGet_ParagraphBreakChar: Char;
-   function __fakeFieldGet_ColumnBreakChar: Char;
-   function __fakeFieldGet_FieldStartChar: Char;
-   function __fakeFieldGet_FieldSeparatorChar: Char;
-   function __fakeFieldGet_FieldEndChar: Char;
-   function __fakeFieldGet_NonBreakingHyphenChar: Char;
-   function __fakeFieldGet_OptionalHyphenChar: Char;
-   function __fakeFieldGet_SpaceChar: Char;
-   function __fakeFieldGet_NonBreakingSpaceChar: Char;
-   function __fakeFieldGet_DefaultTextInputChar: Char;
 
   { static fields } 
 
@@ -12950,78 +12934,6 @@ type
     ///  Non-breaking space character: "\x00a0".
     ///</summary>
     {class} property NonBreakingSpace: string read __fakeFieldGet_NonBreakingSpace;
-    ///<summary>
-    ///  End of a table cell or end of a table row character: (char)7 or "\a".
-    ///</summary>
-    {class} property CellChar: Char read __fakeFieldGet_CellChar;
-    ///<summary>
-    ///  Tab character: (char)9 or "\t".
-    ///</summary>
-    {class} property TabChar: Char read __fakeFieldGet_TabChar;
-    ///<summary>
-    ///  Line feed character: (char)10 or "\n".
-    ///</summary>
-    {class} property LineFeedChar: Char read __fakeFieldGet_LineFeedChar;
-    ///<summary>
-    ///  Line break character: (char)11 or "\v".
-    ///</summary>
-    {class} property LineBreakChar: Char read __fakeFieldGet_LineBreakChar;
-    ///<summary>
-    ///  Page break character: (char)12 or "\f".
-    ///</summary>
-    {class} property PageBreakChar: Char read __fakeFieldGet_PageBreakChar;
-    ///<summary>
-    ///  End of section character: (char)12 or "\f".
-    ///</summary>
-    {class} property SectionBreakChar: Char read __fakeFieldGet_SectionBreakChar;
-    ///<summary>
-    ///  End of paragraph character: (char)13 or "\r".
-    ///</summary>
-    {class} property ParagraphBreakChar: Char read __fakeFieldGet_ParagraphBreakChar;
-    ///<summary>
-    ///  End of column character: (char)14.
-    ///</summary>
-    {class} property ColumnBreakChar: Char read __fakeFieldGet_ColumnBreakChar;
-    ///<summary>
-    ///  Start of MS Word field character: (char)19.
-    ///</summary>
-    {class} property FieldStartChar: Char read __fakeFieldGet_FieldStartChar;
-    ///<summary>
-    ///  Field separator character separates field code from field value. Optional in some fields. Value: (char)20.
-    ///</summary>
-    {class} property FieldSeparatorChar: Char read __fakeFieldGet_FieldSeparatorChar;
-    ///<summary>
-    ///  End of MS Word field character: (char)21.
-    ///</summary>
-    {class} property FieldEndChar: Char read __fakeFieldGet_FieldEndChar;
-    ///<summary>
-    ///  Nonbreaking Hyphen in Microsoft Word is (char)30.
-    ///</summary>
-    ///<remarks><p>Nonbreaking Hyphen in Microsoft Word does not correspond to the
-    ///  Unicode character U+2011 non-breaking hyphen but instead represents
-    ///  internal information that tells Microsoft Word to display a hyphen and not to break a line.</p>
-    ///  <p>Useful info: http://www.cs.tut.fi/~jkorpela/dashes.html#linebreaks.</p>
-    ///</remarks>
-    {class} property NonBreakingHyphenChar: Char read __fakeFieldGet_NonBreakingHyphenChar;
-    ///<summary>
-    ///  Optional Hyphen in Microsoft Word is (char)31.
-    ///</summary>
-    ///<remarks><p>Optional Hyphen in Microsoft Word does not correspond to the Unicode character U+00AD soft hyphen.
-    ///  Instead, it inserts internal information that tells Word about a possible hyphenation point.</p>
-    ///</remarks>
-    {class} property OptionalHyphenChar: Char read __fakeFieldGet_OptionalHyphenChar;
-    ///<summary>
-    ///  Space character: (char)32.
-    ///</summary>
-    {class} property SpaceChar: Char read __fakeFieldGet_SpaceChar;
-    ///<summary>
-    ///  Non-breaking space character: (char)160.
-    ///</summary>
-    {class} property NonBreakingSpaceChar: Char read __fakeFieldGet_NonBreakingSpaceChar;
-    ///<summary>
-    ///  This is the "o" character used as a default value in text input form fields.
-    ///</summary>
-    {class} property DefaultTextInputChar: Char read __fakeFieldGet_DefaultTextInputChar;
 
   end;
 

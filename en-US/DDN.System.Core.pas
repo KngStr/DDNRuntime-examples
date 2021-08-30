@@ -16110,15 +16110,6 @@ type
     ///  is not a valid pipe handle.-or-The maximum number of server instances has been exceeded.</exception>
     {class} function init(direction: DNPipeDirection; isAsync: Boolean; isConnected: Boolean; safePipeHandle: DNSafePipeHandle): DNNamedPipeServerStream; overload;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_MaxAllowedServerInstances: Int32;
-
-  { static fields } 
-
-    ///<summary>Represents the maximum number of server instances that the system resources allow.</summary>
-    {class} property MaxAllowedServerInstances: Int32 read __fakeFieldGet_MaxAllowedServerInstances;
-
   end;
 
   ///<summary>Exposes a <see cref="T:System.IO.Stream" />

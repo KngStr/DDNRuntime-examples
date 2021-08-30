@@ -1096,36 +1096,6 @@ type
   { methods } 
 
     ///<summary>
-    ///  开始异步写操作。
-    ///</summary>
-    ///  <param name="buffer">
-    ///  从中写入数据的缓冲区。
-    ///</param>
-    ///  <param name="offset">
-    ///  从中开始写入的缓冲区中的字节偏移量。
-    ///</param>
-    ///  <param name="count">
-    ///  最多写入的字节数。
-    ///</param>
-    ///  <param name="callback">
-    ///  异步回叫，写操作完成时调用。
-    ///</param>
-    ///  <param name="state">
-    ///  一个用户提供的对象，它将该异步写入请求与其他请求区别开来。
-    ///</param>
-    ///<returns>
-    ///  表示异步写入的 <see cref="T:System.IAsyncResult" />
-    ///  （可能仍处于挂起状态）。
-    ///</returns>
-    function BeginWrite(buffer: TArray<Byte>; offset: Int32; count: Int32; callback: DDN.mscorlib.DNAsyncCallback; state: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    ///<summary>
-    ///  结束异步写操作。
-    ///</summary>
-    ///  <param name="asyncResult">
-    ///  对挂起的异步 I/O 请求的引用。
-    ///</param>
-    procedure EndWrite(asyncResult: DDN.mscorlib.DNIAsyncResult);
-    ///<summary>
     ///  从流中读取字节序列，并按所读取的字节数向前移动在流中的读/写位置。
     ///</summary>
     ///  <param name="buffer">
@@ -1142,19 +1112,6 @@ type
     ///  ，拥有读入缓冲区的字节总数。
     ///</returns>
     function Read(buffer: TArray<Byte>; offset: Int32; count: Int32): Int32;
-    ///<summary>
-    ///  将字节序列写入流，并按所写入的字节数向前移动在流中的读/写位置。
-    ///</summary>
-    ///  <param name="buffer">
-    ///  要从其复制到流的字节数组。
-    ///</param>
-    ///  <param name="offset"><paramref name="buffer" />
-    ///  中从零开始的字节偏移量，从此处开始将字节复制到流中。
-    ///</param>
-    ///  <param name="count">
-    ///  要写入流的字节数。
-    ///</param>
-    procedure Write(buffer: TArray<Byte>; offset: Int32; count: Int32);
     ///<summary>
     ///  清除此流的所有缓冲区并将所有缓冲数据都写入基础设备中。
     ///</summary>
@@ -1185,6 +1142,49 @@ type
     ///  所需的当前流的长度（以字节为单位）。
     ///</param>
     procedure SetLength(value: Int64);
+    ///<summary>
+    ///  开始异步写操作。
+    ///</summary>
+    ///  <param name="buffer">
+    ///  从中写入数据的缓冲区。
+    ///</param>
+    ///  <param name="offset">
+    ///  从中开始写入的缓冲区中的字节偏移量。
+    ///</param>
+    ///  <param name="count">
+    ///  最多写入的字节数。
+    ///</param>
+    ///  <param name="callback">
+    ///  异步回叫，写操作完成时调用。
+    ///</param>
+    ///  <param name="state">
+    ///  一个用户提供的对象，它将该异步写入请求与其他请求区别开来。
+    ///</param>
+    ///<returns>
+    ///  表示异步写入的 <see cref="T:System.IAsyncResult" />
+    ///  （可能仍处于挂起状态）。
+    ///</returns>
+    function BeginWrite(buffer: TArray<Byte>; offset: Int32; count: Int32; callback: DDN.mscorlib.DNAsyncCallback; state: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
+    ///<summary>
+    ///  结束异步写操作。
+    ///</summary>
+    ///  <param name="asyncResult">
+    ///  对挂起的异步 I/O 请求的引用。
+    ///</param>
+    procedure EndWrite(asyncResult: DDN.mscorlib.DNIAsyncResult);
+    ///<summary>
+    ///  将字节序列写入流，并按所写入的字节数向前移动在流中的读/写位置。
+    ///</summary>
+    ///  <param name="buffer">
+    ///  要从其复制到流的字节数组。
+    ///</param>
+    ///  <param name="offset"><paramref name="buffer" />
+    ///  中从零开始的字节偏移量，从此处开始将字节复制到流中。
+    ///</param>
+    ///  <param name="count">
+    ///  要写入流的字节数。
+    ///</param>
+    procedure Write(buffer: TArray<Byte>; offset: Int32; count: Int32);
     ///<summary>
     ///  使 <see cref="T:System.Printing.PrintQueueStream" />
     ///  通过来响应打包过程处理 <see cref="E:System.Windows.Xps.Serialization.XpsPackagingPolicy.PackagingProgressEvent" />
@@ -3231,6 +3231,11 @@ type
   { methods } 
 
     ///<summary>
+    ///  释放由 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  使用的所有资源。
+    ///</summary>
+    procedure Dispose;
+    ///<summary>
     ///  当在派生类中重写时写入的任何更改您的程序具有对对象的属性添加到实际的软件或硬件组件，该对象表示。
     ///</summary>
     procedure Commit;
@@ -3238,11 +3243,6 @@ type
     ///  当在派生类中重写时，使其值与实际的软件或硬件组件，该对象表示的值更新派生的类的对象的属性。
     ///</summary>
     procedure Refresh;
-    ///<summary>
-    ///  释放由 <see cref="T:System.Printing.PrintSystemObject" />
-    ///  使用的所有资源。
-    ///</summary>
-    procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -3302,6 +3302,11 @@ type
   { methods } 
 
     ///<summary>
+    ///  释放由 <see cref="T:System.Printing.PrintSystemObject" />
+    ///  使用的所有资源。
+    ///</summary>
+    procedure Dispose;
+    ///<summary>
     ///  当在派生类中重写时写入的任何更改您的程序具有对对象的属性添加到实际的软件或硬件组件，该对象表示。
     ///</summary>
     procedure Commit;
@@ -3309,11 +3314,6 @@ type
     ///  当在派生类中重写时，使其值与实际的软件或硬件组件，该对象表示的值更新派生的类的对象的属性。
     ///</summary>
     procedure Refresh;
-    ///<summary>
-    ///  释放由 <see cref="T:System.Printing.PrintSystemObject" />
-    ///  使用的所有资源。
-    ///</summary>
-    procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -3676,9 +3676,9 @@ type
   { static methods } 
 
     {class} function CreateXpsDocumentWriter(jobDescription: string; out documentImageableArea: DNPrintDocumentImageableArea; out pageRangeSelection: DDN.PresentationFramework.DNPageRangeSelection; out pageRange: DDN.PresentationFramework.DNPageRange): DNXpsDocumentWriter; overload;
+    {class} function CreateXpsDocumentWriter(out documentImageableArea: DNPrintDocumentImageableArea): DNXpsDocumentWriter; overload;
     {class} function CreateXpsDocumentWriter(jobDescription: string; out documentImageableArea: DNPrintDocumentImageableArea): DNXpsDocumentWriter; overload;
     {class} function CreateXpsDocumentWriter(out documentImageableArea: DNPrintDocumentImageableArea; out pageRangeSelection: DDN.PresentationFramework.DNPageRangeSelection; out pageRange: DDN.PresentationFramework.DNPageRange): DNXpsDocumentWriter; overload;
-    {class} function CreateXpsDocumentWriter(out documentImageableArea: DNPrintDocumentImageableArea): DNXpsDocumentWriter; overload;
     {class} function CreateXpsDocumentWriter(out width: Double; out height: Double): DNXpsDocumentWriter; overload;
     ///<summary>
     ///  创建 <see cref="T:System.Windows.Xps.XpsDocumentWriter" />
@@ -3793,6 +3793,133 @@ type
 
   { methods } 
 
+    ///<summary>
+    ///  暂停的打印队列。
+    ///  保持暂停状态，直到 <see cref="M:System.Printing.PrintQueue.Resume" />
+    ///  执行。
+    ///</summary>
+    ///<exception cref="T:System.Printing.PrintSystemException">
+    ///  不能暂停的打印机。
+    ///</exception>
+    procedure Pause;
+    ///<summary>
+    ///  重新启动已暂停的打印队列。
+    ///</summary>
+    ///<exception cref="T:System.Printing.PrintSystemException">
+    ///  打印机无法继续。
+    ///</exception>
+    procedure Resume;
+    ///<summary>
+    ///  将插入新的打印作业 XML 纸张规范 (XPS) 文档到队列中，为其提供指定的名称和设置，并且指定是否应验证。
+    ///</summary>
+    ///  <param name="jobName">
+    ///  路径和要打印的文档名称。
+    ///</param>
+    ///  <param name="documentPath">
+    ///  路径和要打印的文档名称。
+    ///</param>
+    ///  <param name="fastCopy"><see langword="true" />
+    ///  若要快速后台处理，而无需按页进度反馈，也不验证的文件是否有效 XPS; 否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  打印作业的设置。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  ，它表示该打印作业，而且其状态。
+    ///</returns>
+    function AddJob(jobName: string; documentPath: string; fastCopy: Boolean; printTicket: DDN.ReachFramework.DNPrintTicket): DNPrintSystemJobInfo; overload;
+    ///<summary>
+    ///  将插入新的打印作业 XML 纸张规范 (XPS) 文档到队列中，为其提供指定的名称，并且指定是否应验证。
+    ///</summary>
+    ///  <param name="jobName">
+    ///  打印作业的名称。
+    ///</param>
+    ///  <param name="documentPath">
+    ///  路径和要打印的文档名称。
+    ///</param>
+    ///  <param name="fastCopy"><see langword="true" />
+    ///  若要快速后台处理，而无需按页进度反馈，也不验证的文件是否有效 XPS; 否则为 <see langword="false" />
+    ///  。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  ，它表示该打印作业，而且其状态。
+    ///</returns>
+    function AddJob(jobName: string; documentPath: string; fastCopy: Boolean): DNPrintSystemJobInfo; overload;
+    ///<summary>
+    ///  将插入新的打印作业 XML 纸张规范 (XPS) 文档到队列中，并使其具有指定的名称和设置。
+    ///</summary>
+    ///  <param name="jobName">
+    ///  路径和要打印的文档名称。
+    ///</param>
+    ///  <param name="printTicket">
+    ///  打印作业的设置。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  ，它表示该打印作业，而且其状态。
+    ///</returns>
+    function AddJob(jobName: string; printTicket: DDN.ReachFramework.DNPrintTicket): DNPrintSystemJobInfo; overload;
+    ///<summary>
+    ///  将插入一个新的打印作业，其内容在 <see cref="T:System.Byte" />
+    ///  到队列的数组。
+    ///</summary>
+    ///  <param name="jobName">
+    ///  打印作业的名称。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  ，它表示该打印作业，而且其状态。
+    ///</returns>
+    function AddJob(jobName: string): DNPrintSystemJobInfo; overload;
+    ///<summary>
+    ///  将插入新 （通常已命名） 的打印作业，其内容在 <see cref="T:System.Byte" />
+    ///  到队列的数组。
+    ///</summary>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  ，它表示该打印作业，而且其状态。
+    ///</returns>
+    function AddJob: DNPrintSystemJobInfo; overload;
+    ///<summary>
+    ///  获取具有指定的 ID 号的打印作业。
+    ///</summary>
+    ///  <param name="jobId">
+    ///  在队列中的作业数。
+    ///</param>
+    ///<returns>
+    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  ，它指定该作业，而且其状态的属性。
+    ///</returns>
+    function GetJob(jobId: Int32): DNPrintSystemJobInfo;
+    ///<summary>
+    ///  创建一个包含集合 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  在队列中的每个作业的对象。
+    ///</summary>
+    ///<returns>
+    ///  返回 <see cref="T:System.Printing.PrintJobInfoCollection" />
+    ///  的 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  对象。
+    ///  没有分别对应于在队列中的每个作业。
+    ///</returns>
+    function GetPrintJobInfoCollection: DNPrintJobInfoCollection;
+    ///<summary>
+    ///  打印队列中删除所有作业。
+    ///</summary>
+    ///<exception cref="T:System.Printing.PrintSystemException">
+    ///  无法从队列中删除某些打印作业。
+    ///</exception>
+    procedure Purge;
+    ///<summary>
+    ///  更新的属性 <see cref="T:System.Printing.PrintQueue" />
+    ///  对象使用的打印机并在计算机运行的打印队列实用工具中的值。
+    ///</summary>
+    ///<exception cref="T:System.Printing.PrintSystemException">
+    ///  无法刷新的某些属性。
+    ///</exception>
+    procedure Refresh;
     ///<summary>
     ///  获取 <see cref="T:System.Printing.PrintCapabilities" />
     ///  对象，用于标识打印机的功能。
@@ -3914,125 +4041,6 @@ type
     ///</exception>
     function MergeAndValidatePrintTicket(basePrintTicket: DDN.ReachFramework.DNPrintTicket; deltaPrintTicket: DDN.ReachFramework.DNPrintTicket): DDN.ReachFramework.DNValidationResult; overload;
     ///<summary>
-    ///  暂停的打印队列。
-    ///  保持暂停状态，直到 <see cref="M:System.Printing.PrintQueue.Resume" />
-    ///  执行。
-    ///</summary>
-    ///<exception cref="T:System.Printing.PrintSystemException">
-    ///  不能暂停的打印机。
-    ///</exception>
-    procedure Pause;
-    ///<summary>
-    ///  重新启动已暂停的打印队列。
-    ///</summary>
-    ///<exception cref="T:System.Printing.PrintSystemException">
-    ///  打印机无法继续。
-    ///</exception>
-    procedure Resume;
-    ///<summary>
-    ///  将插入新的打印作业 XML 纸张规范 (XPS) 文档到队列中，为其提供指定的名称和设置，并且指定是否应验证。
-    ///</summary>
-    ///  <param name="jobName">
-    ///  路径和要打印的文档名称。
-    ///</param>
-    ///  <param name="documentPath">
-    ///  路径和要打印的文档名称。
-    ///</param>
-    ///  <param name="fastCopy"><see langword="true" />
-    ///  若要快速后台处理，而无需按页进度反馈，也不验证的文件是否有效 XPS; 否则为 <see langword="false" />
-    ///  。
-    ///</param>
-    ///  <param name="printTicket">
-    ///  打印作业的设置。
-    ///</param>
-    ///<returns>
-    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  ，它表示该打印作业，而且其状态。
-    ///</returns>
-    function AddJob(jobName: string; documentPath: string; fastCopy: Boolean; printTicket: DDN.ReachFramework.DNPrintTicket): DNPrintSystemJobInfo; overload;
-    ///<summary>
-    ///  将插入新的打印作业 XML 纸张规范 (XPS) 文档到队列中，为其提供指定的名称，并且指定是否应验证。
-    ///</summary>
-    ///  <param name="jobName">
-    ///  打印作业的名称。
-    ///</param>
-    ///  <param name="documentPath">
-    ///  路径和要打印的文档名称。
-    ///</param>
-    ///  <param name="fastCopy"><see langword="true" />
-    ///  若要快速后台处理，而无需按页进度反馈，也不验证的文件是否有效 XPS; 否则为 <see langword="false" />
-    ///  。
-    ///</param>
-    ///<returns>
-    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  ，它表示该打印作业，而且其状态。
-    ///</returns>
-    function AddJob(jobName: string; documentPath: string; fastCopy: Boolean): DNPrintSystemJobInfo; overload;
-    ///<summary>
-    ///  将插入新的打印作业 XML 纸张规范 (XPS) 文档到队列中，并使其具有指定的名称和设置。
-    ///</summary>
-    ///  <param name="jobName">
-    ///  路径和要打印的文档名称。
-    ///</param>
-    ///  <param name="printTicket">
-    ///  打印作业的设置。
-    ///</param>
-    ///<returns>
-    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  ，它表示该打印作业，而且其状态。
-    ///</returns>
-    function AddJob(jobName: string; printTicket: DDN.ReachFramework.DNPrintTicket): DNPrintSystemJobInfo; overload;
-    ///<summary>
-    ///  将插入一个新的打印作业，其内容在 <see cref="T:System.Byte" />
-    ///  到队列的数组。
-    ///</summary>
-    ///  <param name="jobName">
-    ///  打印作业的名称。
-    ///</param>
-    ///<returns>
-    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  ，它表示该打印作业，而且其状态。
-    ///</returns>
-    function AddJob(jobName: string): DNPrintSystemJobInfo; overload;
-    ///<summary>
-    ///  将插入新 （通常已命名） 的打印作业，其内容在 <see cref="T:System.Byte" />
-    ///  到队列的数组。
-    ///</summary>
-    ///<returns>
-    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  ，它表示该打印作业，而且其状态。
-    ///</returns>
-    function AddJob: DNPrintSystemJobInfo; overload;
-    ///<summary>
-    ///  获取具有指定的 ID 号的打印作业。
-    ///</summary>
-    ///  <param name="jobId">
-    ///  在队列中的作业数。
-    ///</param>
-    ///<returns>
-    ///  一个 <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  ，它指定该作业，而且其状态的属性。
-    ///</returns>
-    function GetJob(jobId: Int32): DNPrintSystemJobInfo;
-    ///<summary>
-    ///  创建一个包含集合 <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  在队列中的每个作业的对象。
-    ///</summary>
-    ///<returns>
-    ///  返回 <see cref="T:System.Printing.PrintJobInfoCollection" />
-    ///  的 <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  对象。
-    ///  没有分别对应于在队列中的每个作业。
-    ///</returns>
-    function GetPrintJobInfoCollection: DNPrintJobInfoCollection;
-    ///<summary>
-    ///  打印队列中删除所有作业。
-    ///</summary>
-    ///<exception cref="T:System.Printing.PrintSystemException">
-    ///  无法从队列中删除某些打印作业。
-    ///</exception>
-    procedure Purge;
-    ///<summary>
     ///  当前属性的写入 <see cref="T:System.Printing.PrintQueue" />
     ///  到打印服务器上的实际打印队列的对象。
     ///</summary>
@@ -4045,14 +4053,6 @@ type
     ///  对象不创建具有足够权限。
     ///</exception>
     procedure Commit;
-    ///<summary>
-    ///  更新的属性 <see cref="T:System.Printing.PrintQueue" />
-    ///  对象使用的打印机并在计算机运行的打印队列实用工具中的值。
-    ///</summary>
-    ///<exception cref="T:System.Printing.PrintSystemException">
-    ///  无法刷新的某些属性。
-    ///</exception>
-    procedure Refresh;
     ///<summary>
     ///  释放由 <see cref="T:System.Printing.PrintSystemObject" />
     ///  使用的所有资源。
@@ -5776,6 +5776,11 @@ type
   { methods } 
 
     ///<summary>
+    ///  将任何更改的属性写入 <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  对象传递给该对象表示的实际打印作业。
+    ///</summary>
+    procedure Commit;
+    ///<summary>
     ///  暂停打印作业之前 <see cref="M:System.Printing.PrintSystemJobInfo.Resume" />
     ///  运行。
     ///</summary>
@@ -5792,11 +5797,6 @@ type
     ///  重新启动从一开始打印作业。
     ///</summary>
     procedure Restart;
-    ///<summary>
-    ///  将任何更改的属性写入 <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  对象传递给该对象表示的实际打印作业。
-    ///</summary>
-    procedure Commit;
     ///<summary>
     ///  更新的属性 <see cref="T:System.Printing.PrintSystemJobInfo" />
     ///  对象，以便让它们的值与实际的打印作业，该对象表示的值匹配。

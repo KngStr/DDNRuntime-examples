@@ -5145,18 +5145,6 @@ type
     ///  class.</summary>
     {class} function init: DNXmlSchema;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-   function __fakeFieldGet_InstanceNamespace: string;
-
-  { static fields } 
-
-    ///<summary>The XML schema namespace. This field is constant.</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-    ///<summary>The XML schema instance namespace. This field is constant. </summary>
-    {class} property InstanceNamespace: string read __fakeFieldGet_InstanceNamespace;
-
   { static methods } 
 
     ///<summary>Reads an XML Schema from the supplied <see cref="T:System.IO.TextReader" />

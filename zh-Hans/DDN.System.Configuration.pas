@@ -2705,22 +2705,6 @@ type
     ///</summary>
     {class} function init: DNTimeSpanValidatorAttribute;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_TimeSpanMinValue: string;
-   function __fakeFieldGet_TimeSpanMaxValue: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  获取允许的绝对最小值。
-    ///</summary>
-    {class} property TimeSpanMinValue: string read __fakeFieldGet_TimeSpanMinValue;
-    ///<summary>
-    ///  获取允许的绝对最大值。
-    ///</summary>
-    {class} property TimeSpanMaxValue: string read __fakeFieldGet_TimeSpanMaxValue;
-
   end;
 
   ///<summary>
@@ -12603,27 +12587,6 @@ type
 
     {class} function get_Providers: DNProtectedConfigurationProviderCollection;
     {class} function get_DefaultProvider: string;
-
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_RsaProviderName: string;
-   function __fakeFieldGet_DataProtectionProviderName: string;
-   function __fakeFieldGet_ProtectedDataSectionName: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  RSA 提供程序的名称。
-    ///</summary>
-    {class} property RsaProviderName: string read __fakeFieldGet_RsaProviderName;
-    ///<summary>
-    ///  数据保护提供程序的名称。
-    ///</summary>
-    {class} property DataProtectionProviderName: string read __fakeFieldGet_DataProtectionProviderName;
-    ///<summary>
-    ///  受保护的数据部分的名称。
-    ///</summary>
-    {class} property ProtectedDataSectionName: string read __fakeFieldGet_ProtectedDataSectionName;
 
   { static propertys } 
 

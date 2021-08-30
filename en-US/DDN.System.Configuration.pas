@@ -1842,18 +1842,6 @@ type
     ///  class.</summary>
     {class} function init: DNTimeSpanValidatorAttribute;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_TimeSpanMinValue: string;
-   function __fakeFieldGet_TimeSpanMaxValue: string;
-
-  { static fields } 
-
-    ///<summary>Gets the absolute minimum value allowed.</summary>
-    {class} property TimeSpanMinValue: string read __fakeFieldGet_TimeSpanMinValue;
-    ///<summary>Gets the absolute maximum value allowed.</summary>
-    {class} property TimeSpanMaxValue: string read __fakeFieldGet_TimeSpanMaxValue;
-
   end;
 
   ///<summary>Declaratively instructs the .NET Framework to perform time validation on a configuration property. This class cannot be inherited.</summary>
@@ -8929,21 +8917,6 @@ type
 
     {class} function get_Providers: DNProtectedConfigurationProviderCollection;
     {class} function get_DefaultProvider: string;
-
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_RsaProviderName: string;
-   function __fakeFieldGet_DataProtectionProviderName: string;
-   function __fakeFieldGet_ProtectedDataSectionName: string;
-
-  { static fields } 
-
-    ///<summary>The name of the RSA provider.</summary>
-    {class} property RsaProviderName: string read __fakeFieldGet_RsaProviderName;
-    ///<summary>The name of the data protection provider.</summary>
-    {class} property DataProtectionProviderName: string read __fakeFieldGet_DataProtectionProviderName;
-    ///<summary>The name of the protected data section.</summary>
-    {class} property ProtectedDataSectionName: string read __fakeFieldGet_ProtectedDataSectionName;
 
   { static propertys } 
 

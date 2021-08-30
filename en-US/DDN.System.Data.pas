@@ -4947,15 +4947,6 @@ type
     ///  values representing the serialization format of the aggregate.</param>
     {class} function init(format: DNFormat): DNSqlUserDefinedAggregateAttribute;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_MaxByteSizeValue: Int32;
-
-  { static fields } 
-
-    ///<summary>The maximum size, in bytes, required to store the state of this aggregate instance during computation.</summary>
-    {class} property MaxByteSizeValue: Int32 read __fakeFieldGet_MaxByteSizeValue;
-
   end;
 
   ///<summary>Indicates that the type should be registered as a user-defined aggregate. The properties on the attribute reflect the physical attributes used when the type is registered with SQL Server. This class cannot be inherited.</summary>
@@ -13717,16 +13708,6 @@ type
     ///<summary>Key store provider for Windows Certificate Store.</summary>
     {class} function init: DNSqlColumnEncryptionCertificateStoreProvider;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_ProviderName: string;
-
-  { static fields } 
-
-    ///<summary>The provider name.</summary>
-    ///<returns>The provider name.</returns>
-    {class} property ProviderName: string read __fakeFieldGet_ProviderName;
-
   end;
 
   ///<summary>The implementation of the key store provider for Windows Certificate Store. This class enables using certificates stored in the Windows Certificate Store as column master keys. For details, see Always Encrypted.</summary>
@@ -13774,16 +13755,6 @@ type
     ///  class.</summary>
     {class} function init: DNSqlColumnEncryptionCngProvider;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_ProviderName: string;
-
-  { static fields } 
-
-    ///<summary>A constant string for the provider name 'MSSQL_CNG_STORE'.</summary>
-    ///<returns>The provider name.</returns>
-    {class} property ProviderName: string read __fakeFieldGet_ProviderName;
-
   end;
 
   ///<summary>The CMK Store provider implementation for using the Microsoft Cryptography API: Next Generation (CNG) with Always Encrypted.   </summary>
@@ -13828,16 +13799,6 @@ type
     ///<summary>Initializes a new instance of the <see cref="T:System.Data.SqlClient.SqlColumnEncryptionCspProvider" />
     ///  class.</summary>
     {class} function init: DNSqlColumnEncryptionCspProvider;
-
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_ProviderName: string;
-
-  { static fields } 
-
-    ///<summary>A constant string for the provider name 'MSSQL_CSP_PROVIDER'.</summary>
-    ///<returns>The provider name.</returns>
-    {class} property ProviderName: string read __fakeFieldGet_ProviderName;
 
   end;
 
@@ -18073,16 +18034,6 @@ type
   //-------------namespace: System.Data.Common----------------
   DNDbDataAdapterClass = interface(DNDataAdapterClass)
   ['{E2F24866-4CE2-5DE5-92BB-5847AD6F39C2}']
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_DefaultSourceTableName: string;
-
-  { static fields } 
-
-    ///<summary>The default name used by the <see cref="T:System.Data.Common.DataAdapter" />
-    ///  object for table mappings.</summary>
-    {class} property DefaultSourceTableName: string read __fakeFieldGet_DefaultSourceTableName;
-
   end;
 
   ///<summary>Aids implementation of the <see cref="T:System.Data.IDbDataAdapter" />

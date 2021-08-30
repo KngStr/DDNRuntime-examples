@@ -1302,16 +1302,6 @@ type
     ///  class.</summary>
     {class} function init: DNWebServiceAttribute;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_DefaultNamespace: string;
-
-  { static fields } 
-
-    ///<summary>The default value for the <see cref="P:System.Web.Services.WebServiceAttribute.Namespace" />
-    ///  property. This field is constant.</summary>
-    {class} property DefaultNamespace: string read __fakeFieldGet_DefaultNamespace;
-
   end;
 
   ///<summary>Used to add additional information to an XML Web service, such as a string describing its functionality.</summary>
@@ -7616,16 +7606,6 @@ type
     ///  class.</summary>
     {class} function init: DNServiceDescription;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>The XML namespace in which the <see cref="T:System.Web.Services.Description.ServiceDescription" />
-    ///  class is defined ("http://schemas.xmlsoap.org/wsdl/"). This field is constant.</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-
   { static methods } 
 
     ///<summary>Initializes an instance of the <see cref="T:System.Web.Services.Description.ServiceDescription" />
@@ -8695,15 +8675,6 @@ type
     ///  class. </summary>
     {class} function init: DNHttpBinding;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>Specifies the URI for the XML namespace representing the HTTP transport for use with SOAP. This field is constant.</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-
   end;
 
   ///<summary>Represents an extensibility element added to a <see cref="T:System.Web.Services.Description.Binding" />
@@ -8952,16 +8923,6 @@ type
     ///  class. </summary>
     {class} function init: DNMimeContentBinding;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>Specifies the URI for the XML namespace of the <see cref="T:System.Web.Services.Description.MimeContentBinding" />
-    ///  class. This field is constant.</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-
   end;
 
   ///<summary>Represents an extensibility element added to an <see cref="T:System.Web.Services.Description.InputBinding" />
@@ -9171,16 +9132,6 @@ type
     ///<summary>Initializes a new instance of the <see cref="T:System.Web.Services.Description.MimeTextBinding" />
     ///  class. </summary>
     {class} function init: DNMimeTextBinding;
-
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>Specifies the URI for the XML namespace of the <see cref="T:System.Web.Services.Description.MimeTextBinding" />
-    ///  class. This field is constant.</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
 
   end;
 
@@ -9436,19 +9387,6 @@ type
     ///  class.</summary>
     {class} function init: DNDescription_SoapBinding;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-   function __fakeFieldGet_HttpTransport: string;
-
-  { static fields } 
-
-    ///<summary>Gets the URI for the XML namespace of the <see cref="T:System.Web.Services.Description.SoapBinding" />
-    ///  class. This field is constant.</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-    ///<summary>Gets the URI for the standard protocol specifying HTTP transmission of SOAP data. This field is constant.</summary>
-    {class} property HttpTransport: string read __fakeFieldGet_HttpTransport;
-
   { static propertys } 
 
     ///<summary>Gets the binding schema that is to be used to transmit data by using the SOAP protocol version 1.1.</summary>
@@ -9532,18 +9470,6 @@ type
     ///<summary>Initializes a new instance of the <see cref="T:System.Web.Services.Description.Soap12Binding" />
     ///  class. </summary>
     {class} function init: DNSoap12Binding;
-
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-   function __fakeFieldGet_HttpTransport: string;
-
-  { static fields } 
-
-    ///<summary>Represents the XML namespace of a binding to the SOAP protocol version 1.2. This field is constant.</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-    ///<summary>Represents the transport protocol for the SOAP message is HTTP. This field is constant.</summary>
-    {class} property HttpTransport: string read __fakeFieldGet_HttpTransport;
 
   end;
 
@@ -10729,17 +10655,6 @@ type
     ///  .</summary>
     {class} function init: DNWebReferenceOptions;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_TargetNamespace: string;
-
-  { static fields } 
-
-    ///<summary>A <see cref="T:System.String" />
-    ///  that contains the target namespace for the <see cref="T:System.Web.Services.Description.WebReferenceOptions" />
-    ///  .</summary>
-    {class} property TargetNamespace: string read __fakeFieldGet_TargetNamespace;
-
   { static methods } 
 
     ///<summary>Returns a new instance of <see cref="T:System.Web.Services.Description.WebReferenceOptions" />
@@ -11023,15 +10938,6 @@ type
     ///  class.</summary>
     {class} function init: DNDiscoveryDocument;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>Namespace of the discovery XML element of a discovery document.</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-
   { static methods } 
 
     ///<summary>Reads and returns a <see cref="T:System.Web.Services.Discovery.DiscoveryDocument" />
@@ -11219,15 +11125,6 @@ type
     ///  . Initializes the <see cref="P:System.Web.Services.Discovery.ContractReference.DocRef" />
     ///  property value. </param>
     {class} function init(href: string; docRef: string): DNContractReference; overload;
-
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>XML namespace for service description references in discovery documents.</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
 
   end;
 
@@ -11427,15 +11324,6 @@ type
     ///  <param name="url">The URL for the XSD schema. Initializes the <see cref="P:System.Web.Services.Discovery.SchemaReference.Ref" />
     ///  property. </param>
     {class} function init(url: string): DNSchemaReference; overload;
-
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>XML namespace for XSD schema references in discovery documents.</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
 
   end;
 
@@ -11776,15 +11664,6 @@ type
     ///  class. </summary>
     {class} function init: DNDynamicDiscoveryDocument;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>Contains the dynamic discovery document namespace "urn:schemas-dynamicdiscovery:disco.2000-03-17". This field is constant.</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-
   { static methods } 
 
     ///<summary>Deserializes an XML document into a <see cref="T:System.Web.Services.Discovery.DynamicDiscoveryDocument" />
@@ -11880,15 +11759,6 @@ type
     ///<summary>Initializes a new instance of the <see cref="T:System.Web.Services.Discovery.SoapBinding" />
     ///  class. </summary>
     {class} function init: DNDiscovery_SoapBinding;
-
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>The XML namespace of the element that specifies a SOAP binding within a discovery document.</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
 
   end;
 

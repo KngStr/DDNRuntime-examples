@@ -1831,19 +1831,6 @@ type
     ///</summary>
     {class} function init: DNWebServiceAttribute;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_DefaultNamespace: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  默认值为 <see cref="P:System.Web.Services.WebServiceAttribute.Namespace" />
-    ///  属性。
-    ///  此字段为常数。
-    ///</summary>
-    {class} property DefaultNamespace: string read __fakeFieldGet_DefaultNamespace;
-
   end;
 
   ///<summary>
@@ -10534,19 +10521,6 @@ type
     ///</summary>
     {class} function init: DNServiceDescription;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  在其中的 XML 命名空间 <see cref="T:System.Web.Services.Description.ServiceDescription" />
-    ///  类是定义 ("http://schemas.xmlsoap.org/wsdl/")。
-    ///  此字段为常数。
-    ///</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-
   { static methods } 
 
     ///<summary>
@@ -12209,18 +12183,6 @@ type
     ///</summary>
     {class} function init: DNHttpBinding;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  指定表示与 SOAP 一起使用的 HTTP 传输的 XML 命名空间的 URI。
-    ///  此字段为常数。
-    ///</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-
   end;
 
   ///<summary>
@@ -12551,19 +12513,6 @@ type
     ///</summary>
     {class} function init: DNMimeContentBinding;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  指定的 XML 命名空间的 URI <see cref="T:System.Web.Services.Description.MimeContentBinding" />
-    ///  类。
-    ///  此字段为常数。
-    ///</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-
   end;
 
   ///<summary>
@@ -12845,19 +12794,6 @@ type
     ///  类的新实例。
     ///</summary>
     {class} function init: DNMimeTextBinding;
-
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  指定的 XML 命名空间的 URI <see cref="T:System.Web.Services.Description.MimeTextBinding" />
-    ///  类。
-    ///  此字段为常数。
-    ///</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
 
   end;
 
@@ -13191,25 +13127,6 @@ type
     ///</summary>
     {class} function init: DNDescription_SoapBinding;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-   function __fakeFieldGet_HttpTransport: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  获取的 XML 命名空间的 URI <see cref="T:System.Web.Services.Description.SoapBinding" />
-    ///  类。
-    ///  此字段为常数。
-    ///</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-    ///<summary>
-    ///  获取指定 HTTP 数据传输的 SOAP 的标准协议的 URI。
-    ///  此字段为常数。
-    ///</summary>
-    {class} property HttpTransport: string read __fakeFieldGet_HttpTransport;
-
   { static propertys } 
 
     ///<summary>
@@ -13328,24 +13245,6 @@ type
     ///  类的新实例。
     ///</summary>
     {class} function init: DNSoap12Binding;
-
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-   function __fakeFieldGet_HttpTransport: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  表示与 SOAP 协议 1.2 版的绑定的 XML 命名空间。
-    ///  此字段为常数。
-    ///</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-    ///<summary>
-    ///  表示 SOAP 消息是 HTTP 传输协议。
-    ///  此字段为常数。
-    ///</summary>
-    {class} property HttpTransport: string read __fakeFieldGet_HttpTransport;
 
   end;
 
@@ -14982,19 +14881,6 @@ type
     ///</summary>
     {class} function init: DNWebReferenceOptions;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_TargetNamespace: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  一个 <see cref="T:System.String" />
-    ///  ，其中包含的目标命名空间 <see cref="T:System.Web.Services.Description.WebReferenceOptions" />
-    ///  。
-    ///</summary>
-    {class} property TargetNamespace: string read __fakeFieldGet_TargetNamespace;
-
   { static methods } 
 
     ///<summary>
@@ -15385,17 +15271,6 @@ type
     ///</summary>
     {class} function init: DNDiscoveryDocument;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  一个发现文档的发现 XML 元素 Namespace。
-    ///</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-
   { static methods } 
 
     ///<summary>
@@ -15666,17 +15541,6 @@ type
     ///  属性值。
     ///</param>
     {class} function init(href: string; docRef: string): DNContractReference; overload;
-
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  在发现文档中的服务说明引用的 XML 命名空间。
-    ///</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
 
   end;
 
@@ -15975,17 +15839,6 @@ type
     ///  属性。
     ///</param>
     {class} function init(url: string): DNSchemaReference; overload;
-
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  对于在发现文档中的 XSD 架构引用的 XML 命名空间。
-    ///</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
 
   end;
 
@@ -16455,18 +16308,6 @@ type
     ///</summary>
     {class} function init: DNDynamicDiscoveryDocument;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  包含动态发现文档命名空间"urn︰ 架构-dynamicdiscovery:disco.2000-03-17"。
-    ///  此字段为常数。
-    ///</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-
   { static methods } 
 
     ///<summary>
@@ -16594,17 +16435,6 @@ type
     ///  类的新实例。
     ///</summary>
     {class} function init: DNDiscovery_SoapBinding;
-
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  指定在发现文档中 SOAP 绑定的元素的 XML 命名空间。
-    ///</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
 
   end;
 

@@ -8298,17 +8298,6 @@ type
     ///</param>
     {class} function init(format: DNFormat): DNSqlUserDefinedAggregateAttribute;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_MaxByteSizeValue: Int32;
-
-  { static fields } 
-
-    ///<summary>
-    ///  最大大小，以字节为单位，需要在计算过程中存储此聚合实例的状态。
-    ///</summary>
-    {class} property MaxByteSizeValue: Int32 read __fakeFieldGet_MaxByteSizeValue;
-
   end;
 
   ///<summary>
@@ -21987,20 +21976,6 @@ type
     ///</summary>
     {class} function init: DNSqlColumnEncryptionCertificateStoreProvider;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_ProviderName: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  提供程序名称。
-    ///</summary>
-    ///<returns>
-    ///  提供程序名称。
-    ///</returns>
-    {class} property ProviderName: string read __fakeFieldGet_ProviderName;
-
   end;
 
   ///<summary>
@@ -22085,20 +22060,6 @@ type
     ///</summary>
     {class} function init: DNSqlColumnEncryptionCngProvider;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_ProviderName: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  提供程序名称“MSSQL_CNG_STORE”的常量字符串。
-    ///</summary>
-    ///<returns>
-    ///  提供程序名称。
-    ///</returns>
-    {class} property ProviderName: string read __fakeFieldGet_ProviderName;
-
   end;
 
   ///<summary>
@@ -22175,20 +22136,6 @@ type
     ///  类的新实例。
     ///</summary>
     {class} function init: DNSqlColumnEncryptionCspProvider;
-
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_ProviderName: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  提供程序名称“MSSQL_CSP_PROVIDER”的常量字符串。
-    ///</summary>
-    ///<returns>
-    ///  提供程序名称。
-    ///</returns>
-    {class} property ProviderName: string read __fakeFieldGet_ProviderName;
 
   end;
 
@@ -27878,18 +27825,6 @@ type
   //-------------namespace: System.Data.Common----------------
   DNDbDataAdapterClass = interface(DNDataAdapterClass)
   ['{E2F24866-4CE2-5DE5-92BB-5847AD6F39C2}']
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_DefaultSourceTableName: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  使用默认名称 <see cref="T:System.Data.Common.DataAdapter" />
-    ///  表映射的对象。
-    ///</summary>
-    {class} property DefaultSourceTableName: string read __fakeFieldGet_DefaultSourceTableName;
-
   end;
 
   ///<summary>

@@ -26404,17 +26404,6 @@ type
     ///</exception>
     {class} function init(direction: DNPipeDirection; isAsync: Boolean; isConnected: Boolean; safePipeHandle: DNSafePipeHandle): DNNamedPipeServerStream; overload;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_MaxAllowedServerInstances: Int32;
-
-  { static fields } 
-
-    ///<summary>
-    ///  表示系统资源允许的服务器实例的最大数量。
-    ///</summary>
-    {class} property MaxAllowedServerInstances: Int32 read __fakeFieldGet_MaxAllowedServerInstances;
-
   end;
 
   ///<summary>

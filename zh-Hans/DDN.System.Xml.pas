@@ -7369,24 +7369,6 @@ type
     ///</summary>
     {class} function init: DNXmlSchema;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Namespace: string;
-   function __fakeFieldGet_InstanceNamespace: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  XML 架构命名空间。
-    ///  此字段为常数。
-    ///</summary>
-    {class} property Namespace: string read __fakeFieldGet_Namespace;
-    ///<summary>
-    ///  XML 架构实例命名空间。
-    ///  此字段为常数。
-    ///</summary>
-    {class} property InstanceNamespace: string read __fakeFieldGet_InstanceNamespace;
-
   { static methods } 
 
     ///<summary>

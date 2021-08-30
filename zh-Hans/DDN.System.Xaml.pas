@@ -6321,24 +6321,6 @@ type
     {class} function get_Space: DNXamlDirective;
     {class} function get_AllDirectives: DDN.mscorlib.DNReadOnlyCollection<DNXamlDirective>;
 
-  { static fields getter & setter } 
-
-   function __fakeFieldGet_Xaml2006Namespace: string;
-   function __fakeFieldGet_Xml1998Namespace: string;
-
-  { static fields } 
-
-    ///<summary>
-    ///  获取一个字符串值，用于标识 XAML (2006) 语言命名空间的字符串。
-    ///  该命名空间对应于 XAML （2006 年）"x"带前缀的命名空间中定义 [MS-XAML] Section 5.1.1。
-    ///</summary>
-    {class} property Xaml2006Namespace: string read __fakeFieldGet_Xaml2006Namespace;
-    ///<summary>
-    ///  获取一个字符串值，用于标识 XML (1998) 语言命名空间的字符串。
-    ///  该命名空间对应的 XML 前缀"xml"命名空间中引用 [MS-XAML] Section 5.1.2。
-    ///</summary>
-    {class} property Xml1998Namespace: string read __fakeFieldGet_Xml1998Namespace;
-
   { static propertys } 
 
     ///<summary>

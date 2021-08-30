@@ -2144,7 +2144,6 @@ type
    function __fakeFieldGet_VerticalViewSizeProperty: DNAutomationProperty;
    function __fakeFieldGet_HorizontallyScrollableProperty: DNAutomationProperty;
    function __fakeFieldGet_VerticallyScrollableProperty: DNAutomationProperty;
-   function __fakeFieldGet_NoScroll: Double;
 
   { static fields } 
 
@@ -2169,8 +2168,6 @@ type
     ///<summary>Identifies the <see cref="P:System.Windows.Automation.Provider.IScrollProvider.VerticallyScrollable" />
     ///  property.</summary>
     {class} property VerticallyScrollableProperty: DNAutomationProperty read __fakeFieldGet_VerticallyScrollableProperty;
-    ///<summary>Specifies that scrolling should not be performed.</summary>
-    {class} property NoScroll: Double read __fakeFieldGet_NoScroll;
 
   end;
 

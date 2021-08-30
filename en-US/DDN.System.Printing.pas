@@ -715,18 +715,6 @@ type
 
   { methods } 
 
-    ///<summary>Begins an asynchronous write operation. </summary>
-    ///  <param name="buffer">The buffer from which to write data.</param>
-    ///  <param name="offset">The byte offset in the buffer from which to begin writing.</param>
-    ///  <param name="count">The maximum number of bytes to write.</param>
-    ///  <param name="callback">An asynchronous callback, which is called when the writing operation is complete.</param>
-    ///  <param name="state">A user-provided object that distinguishes this asynchronous writing request from other requests.</param>
-    ///<returns>An <see cref="T:System.IAsyncResult" />
-    ///  that represents the asynchronous write, which might still be pending.</returns>
-    function BeginWrite(buffer: TArray<Byte>; offset: Int32; count: Int32; callback: DDN.mscorlib.DNAsyncCallback; state: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    ///<summary>Ends an asynchronous write operation.</summary>
-    ///  <param name="asyncResult">A reference to the pending asynchronous I/O request.</param>
-    procedure EndWrite(asyncResult: DDN.mscorlib.DNIAsyncResult);
     ///<summary>Reads a sequence of bytes from the stream and advances the read/write position in the stream by the number of bytes that were read.</summary>
     ///  <param name="buffer">An array of bytes. </param>
     ///  <param name="offset">The zero-based byte offset in the buffer where you want to begin storing the data that is read from the stream.</param>
@@ -734,12 +722,6 @@ type
     ///<returns>An <see cref="T:System.Int32" />
     ///  that holds the total number of bytes that are read into the buffer. </returns>
     function Read(buffer: TArray<Byte>; offset: Int32; count: Int32): Int32;
-    ///<summary>Writes a sequence of bytes to the stream and advances the read/write position in the stream by the number of bytes that are written.</summary>
-    ///  <param name="buffer">An array of bytes from which to copy to the stream.</param>
-    ///  <param name="offset">The zero-based byte offset in the <paramref name="buffer" />
-    ///  where you want to begin copying bytes to the stream.</param>
-    ///  <param name="count">The number of bytes to write to the stream.</param>
-    procedure Write(buffer: TArray<Byte>; offset: Int32; count: Int32);
     ///<summary>Clears all the buffers for this stream and writes any buffered data to the underlying device.</summary>
     procedure Flush;
     ///<summary>Sets the read/write position within the stream.</summary>
@@ -754,6 +736,24 @@ type
     ///<summary>Sets the length of the stream.</summary>
     ///  <param name="value">The needed length, in bytes, of the current stream.</param>
     procedure SetLength(value: Int64);
+    ///<summary>Begins an asynchronous write operation. </summary>
+    ///  <param name="buffer">The buffer from which to write data.</param>
+    ///  <param name="offset">The byte offset in the buffer from which to begin writing.</param>
+    ///  <param name="count">The maximum number of bytes to write.</param>
+    ///  <param name="callback">An asynchronous callback, which is called when the writing operation is complete.</param>
+    ///  <param name="state">A user-provided object that distinguishes this asynchronous writing request from other requests.</param>
+    ///<returns>An <see cref="T:System.IAsyncResult" />
+    ///  that represents the asynchronous write, which might still be pending.</returns>
+    function BeginWrite(buffer: TArray<Byte>; offset: Int32; count: Int32; callback: DDN.mscorlib.DNAsyncCallback; state: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
+    ///<summary>Ends an asynchronous write operation.</summary>
+    ///  <param name="asyncResult">A reference to the pending asynchronous I/O request.</param>
+    procedure EndWrite(asyncResult: DDN.mscorlib.DNIAsyncResult);
+    ///<summary>Writes a sequence of bytes to the stream and advances the read/write position in the stream by the number of bytes that are written.</summary>
+    ///  <param name="buffer">An array of bytes from which to copy to the stream.</param>
+    ///  <param name="offset">The zero-based byte offset in the <paramref name="buffer" />
+    ///  where you want to begin copying bytes to the stream.</param>
+    ///  <param name="count">The number of bytes to write to the stream.</param>
+    procedure Write(buffer: TArray<Byte>; offset: Int32; count: Int32);
     ///<summary>Enables the <see cref="T:System.Printing.PrintQueueStream" />
     ///  to respond to the packaging progress by handling the <see cref="E:System.Windows.Xps.Serialization.XpsPackagingPolicy.PackagingProgressEvent" />
     ///  . </summary>
@@ -2205,13 +2205,13 @@ type
 
   { methods } 
 
+    ///<summary>Releases all resources used by the <see cref="T:System.Printing.PrintSystemObject" />
+    ///  . </summary>
+    procedure Dispose;
     ///<summary>When overridden in a derived class, writes any changes that your program has made to the object's properties to the actual software or hardware component that the object represents. </summary>
     procedure Commit;
     ///<summary>When overridden in a derived class, updates the properties of an object of the derived class so that its values match the values of the actual software or hardware component that the object represents. </summary>
     procedure Refresh;
-    ///<summary>Releases all resources used by the <see cref="T:System.Printing.PrintSystemObject" />
-    ///  . </summary>
-    procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -2255,13 +2255,13 @@ type
 
   { methods } 
 
+    ///<summary>Releases all resources used by the <see cref="T:System.Printing.PrintSystemObject" />
+    ///  . </summary>
+    procedure Dispose;
     ///<summary>When overridden in a derived class, writes any changes that your program has made to the object's properties to the actual software or hardware component that the object represents. </summary>
     procedure Commit;
     ///<summary>When overridden in a derived class, updates the properties of an object of the derived class so that its values match the values of the actual software or hardware component that the object represents. </summary>
     procedure Refresh;
-    ///<summary>Releases all resources used by the <see cref="T:System.Printing.PrintSystemObject" />
-    ///  . </summary>
-    procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -2503,9 +2503,9 @@ type
   { static methods } 
 
     {class} function CreateXpsDocumentWriter(jobDescription: string; out documentImageableArea: DNPrintDocumentImageableArea; out pageRangeSelection: DDN.PresentationFramework.DNPageRangeSelection; out pageRange: DDN.PresentationFramework.DNPageRange): DNXpsDocumentWriter; overload;
+    {class} function CreateXpsDocumentWriter(out documentImageableArea: DNPrintDocumentImageableArea): DNXpsDocumentWriter; overload;
     {class} function CreateXpsDocumentWriter(jobDescription: string; out documentImageableArea: DNPrintDocumentImageableArea): DNXpsDocumentWriter; overload;
     {class} function CreateXpsDocumentWriter(out documentImageableArea: DNPrintDocumentImageableArea; out pageRangeSelection: DDN.PresentationFramework.DNPageRangeSelection; out pageRange: DDN.PresentationFramework.DNPageRange): DNXpsDocumentWriter; overload;
-    {class} function CreateXpsDocumentWriter(out documentImageableArea: DNPrintDocumentImageableArea): DNXpsDocumentWriter; overload;
     {class} function CreateXpsDocumentWriter(out width: Double; out height: Double): DNXpsDocumentWriter; overload;
     ///<summary>Creates an <see cref="T:System.Windows.Xps.XpsDocumentWriter" />
     ///  object and associates it with the specified print queue. </summary>
@@ -2609,6 +2609,67 @@ type
 
   { methods } 
 
+    ///<summary>Pauses the print queue. It remains paused until <see cref="M:System.Printing.PrintQueue.Resume" />
+    ///  is executed. </summary>
+    ///<exception cref="T:System.Printing.PrintSystemException">The printer cannot be paused. </exception>
+    procedure Pause;
+    ///<summary>Restarts a print queue that was paused. </summary>
+    ///<exception cref="T:System.Printing.PrintSystemException">The printer cannot resume. </exception>
+    procedure Resume;
+    ///<summary>Inserts a new print job for an XML Paper Specification (XPS) Document into the queue, gives it the specified name and settings, and specifies whether or not it should be validated.</summary>
+    ///  <param name="jobName">The path and name of the document that is being printed.</param>
+    ///  <param name="documentPath">The path and name of the document that is being printed.</param>
+    ///  <param name="fastCopy"><see langword="true" />
+    ///  to spool quickly without page-by-page progress feedback and without validating that the file is valid XPS; otherwise, <see langword="false" />
+    ///  .</param>
+    ///  <param name="printTicket">The settings of the print job.</param>
+    ///<returns>A <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  that represents the print job and its status.</returns>
+    function AddJob(jobName: string; documentPath: string; fastCopy: Boolean; printTicket: DDN.ReachFramework.DNPrintTicket): DNPrintSystemJobInfo; overload;
+    ///<summary>Inserts a new print job for an XML Paper Specification (XPS) Document into the queue, gives it the specified name, and specifies whether or not it should be validated.</summary>
+    ///  <param name="jobName">The name of the print job.</param>
+    ///  <param name="documentPath">The path and name of the document that is being printed.</param>
+    ///  <param name="fastCopy"><see langword="true" />
+    ///  to spool quickly without page-by-page progress feedback and without validating that the file is valid XPS; otherwise, <see langword="false" />
+    ///  . </param>
+    ///<returns>A <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  that represents the print job and its status.</returns>
+    function AddJob(jobName: string; documentPath: string; fastCopy: Boolean): DNPrintSystemJobInfo; overload;
+    ///<summary>Inserts a new print job for an XML Paper Specification (XPS) Document into the queue, and gives it the specified name and settings.</summary>
+    ///  <param name="jobName">The path and name of the document that is being printed.</param>
+    ///  <param name="printTicket">The settings of the print job.</param>
+    ///<returns>A <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  that represents the print job and its status. </returns>
+    function AddJob(jobName: string; printTicket: DDN.ReachFramework.DNPrintTicket): DNPrintSystemJobInfo; overload;
+    ///<summary>Inserts a new print job, whose content is a <see cref="T:System.Byte" />
+    ///  array, into the queue. </summary>
+    ///  <param name="jobName">The name of the print job.</param>
+    ///<returns>A <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  that represents the print job and its status.</returns>
+    function AddJob(jobName: string): DNPrintSystemJobInfo; overload;
+    ///<summary>Inserts a new (generically named) print job, whose content is a <see cref="T:System.Byte" />
+    ///  array, into the queue. </summary>
+    ///<returns>A <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  that represents the print job and its status.</returns>
+    function AddJob: DNPrintSystemJobInfo; overload;
+    ///<summary>Gets the print job with the specified ID number. </summary>
+    ///  <param name="jobId">The number of the job in the queue.</param>
+    ///<returns>A <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  that specifies the properties of the job and its status.</returns>
+    function GetJob(jobId: Int32): DNPrintSystemJobInfo;
+    ///<summary>Creates a collection that contains a <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  object for each job in the queue. </summary>
+    ///<returns>Returns a <see cref="T:System.Printing.PrintJobInfoCollection" />
+    ///  of <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  objects. There is one for each job in the queue.</returns>
+    function GetPrintJobInfoCollection: DNPrintJobInfoCollection;
+    ///<summary>Removes all the jobs in the print queue. </summary>
+    ///<exception cref="T:System.Printing.PrintSystemException">Some print jobs could not be removed from the queue. </exception>
+    procedure Purge;
+    ///<summary>Updates the properties of the <see cref="T:System.Printing.PrintQueue" />
+    ///  object with values from the printer and the print queue utility that runs on the computer. </summary>
+    ///<exception cref="T:System.Printing.PrintSystemException">Some of the properties could not be refreshed. </exception>
+    procedure Refresh;
     ///<summary>Gets a <see cref="T:System.Printing.PrintCapabilities" />
     ///  object that identifies the capabilities of the printer. </summary>
     ///<returns>A <see cref="T:System.Printing.PrintCapabilities" />
@@ -2670,72 +2731,11 @@ type
     ///  is <see langword="null" />
     ///  .</exception><exception cref="T:System.Printing.PrintQueueException">The validation, merger, and viability checking operation failed.</exception>
     function MergeAndValidatePrintTicket(basePrintTicket: DDN.ReachFramework.DNPrintTicket; deltaPrintTicket: DDN.ReachFramework.DNPrintTicket): DDN.ReachFramework.DNValidationResult; overload;
-    ///<summary>Pauses the print queue. It remains paused until <see cref="M:System.Printing.PrintQueue.Resume" />
-    ///  is executed. </summary>
-    ///<exception cref="T:System.Printing.PrintSystemException">The printer cannot be paused. </exception>
-    procedure Pause;
-    ///<summary>Restarts a print queue that was paused. </summary>
-    ///<exception cref="T:System.Printing.PrintSystemException">The printer cannot resume. </exception>
-    procedure Resume;
-    ///<summary>Inserts a new print job for an XML Paper Specification (XPS) Document into the queue, gives it the specified name and settings, and specifies whether or not it should be validated.</summary>
-    ///  <param name="jobName">The path and name of the document that is being printed.</param>
-    ///  <param name="documentPath">The path and name of the document that is being printed.</param>
-    ///  <param name="fastCopy"><see langword="true" />
-    ///  to spool quickly without page-by-page progress feedback and without validating that the file is valid XPS; otherwise, <see langword="false" />
-    ///  .</param>
-    ///  <param name="printTicket">The settings of the print job.</param>
-    ///<returns>A <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  that represents the print job and its status.</returns>
-    function AddJob(jobName: string; documentPath: string; fastCopy: Boolean; printTicket: DDN.ReachFramework.DNPrintTicket): DNPrintSystemJobInfo; overload;
-    ///<summary>Inserts a new print job for an XML Paper Specification (XPS) Document into the queue, gives it the specified name, and specifies whether or not it should be validated.</summary>
-    ///  <param name="jobName">The name of the print job.</param>
-    ///  <param name="documentPath">The path and name of the document that is being printed.</param>
-    ///  <param name="fastCopy"><see langword="true" />
-    ///  to spool quickly without page-by-page progress feedback and without validating that the file is valid XPS; otherwise, <see langword="false" />
-    ///  . </param>
-    ///<returns>A <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  that represents the print job and its status.</returns>
-    function AddJob(jobName: string; documentPath: string; fastCopy: Boolean): DNPrintSystemJobInfo; overload;
-    ///<summary>Inserts a new print job for an XML Paper Specification (XPS) Document into the queue, and gives it the specified name and settings.</summary>
-    ///  <param name="jobName">The path and name of the document that is being printed.</param>
-    ///  <param name="printTicket">The settings of the print job.</param>
-    ///<returns>A <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  that represents the print job and its status. </returns>
-    function AddJob(jobName: string; printTicket: DDN.ReachFramework.DNPrintTicket): DNPrintSystemJobInfo; overload;
-    ///<summary>Inserts a new print job, whose content is a <see cref="T:System.Byte" />
-    ///  array, into the queue. </summary>
-    ///  <param name="jobName">The name of the print job.</param>
-    ///<returns>A <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  that represents the print job and its status.</returns>
-    function AddJob(jobName: string): DNPrintSystemJobInfo; overload;
-    ///<summary>Inserts a new (generically named) print job, whose content is a <see cref="T:System.Byte" />
-    ///  array, into the queue. </summary>
-    ///<returns>A <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  that represents the print job and its status.</returns>
-    function AddJob: DNPrintSystemJobInfo; overload;
-    ///<summary>Gets the print job with the specified ID number. </summary>
-    ///  <param name="jobId">The number of the job in the queue.</param>
-    ///<returns>A <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  that specifies the properties of the job and its status.</returns>
-    function GetJob(jobId: Int32): DNPrintSystemJobInfo;
-    ///<summary>Creates a collection that contains a <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  object for each job in the queue. </summary>
-    ///<returns>Returns a <see cref="T:System.Printing.PrintJobInfoCollection" />
-    ///  of <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  objects. There is one for each job in the queue.</returns>
-    function GetPrintJobInfoCollection: DNPrintJobInfoCollection;
-    ///<summary>Removes all the jobs in the print queue. </summary>
-    ///<exception cref="T:System.Printing.PrintSystemException">Some print jobs could not be removed from the queue. </exception>
-    procedure Purge;
     ///<summary>Writes the current properties of the <see cref="T:System.Printing.PrintQueue" />
     ///  object to the actual print queue on the print server. </summary>
     ///<exception cref="T:System.Printing.PrintSystemException">Some of the properties could not be committed. </exception><exception cref="T:System.Printing.PrintCommitAttributesException">Some of the properties could not be committed. - or -The <see cref="T:System.Printing.PrintQueue" />
     ///  object was not created with sufficient rights.</exception>
     procedure Commit;
-    ///<summary>Updates the properties of the <see cref="T:System.Printing.PrintQueue" />
-    ///  object with values from the printer and the print queue utility that runs on the computer. </summary>
-    ///<exception cref="T:System.Printing.PrintSystemException">Some of the properties could not be refreshed. </exception>
-    procedure Refresh;
     ///<summary>Releases all resources used by the <see cref="T:System.Printing.PrintSystemObject" />
     ///  . </summary>
     procedure Dispose;
@@ -3705,6 +3705,9 @@ type
 
   { methods } 
 
+    ///<summary>Writes any changes to the properties of the <see cref="T:System.Printing.PrintSystemJobInfo" />
+    ///  object to the actual print job that the object represents.</summary>
+    procedure Commit;
     ///<summary>Halts printing of the job until <see cref="M:System.Printing.PrintSystemJobInfo.Resume" />
     ///  runs. </summary>
     procedure Pause;
@@ -3714,9 +3717,6 @@ type
     procedure Cancel;
     ///<summary>Restarts a print job from the beginning. </summary>
     procedure Restart;
-    ///<summary>Writes any changes to the properties of the <see cref="T:System.Printing.PrintSystemJobInfo" />
-    ///  object to the actual print job that the object represents.</summary>
-    procedure Commit;
     ///<summary>Updates the properties of the <see cref="T:System.Printing.PrintSystemJobInfo" />
     ///  object so that their values match the values of the actual print job that the object represents.</summary>
     procedure Refresh;

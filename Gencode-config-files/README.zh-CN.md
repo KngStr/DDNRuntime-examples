@@ -41,8 +41,9 @@ json配置文件格式：
 				    "TypeName": "",           // 要修复的.NET类型全名，比如`System.Object`
                     "Namespace": "",          // 单元名，不需要加`DDN.` 					
 				 ],
-                 "ExcludeMethods": []         // 要排除的指定方法，`.NET类型全名`+`.`+`方法名`				 
- 			  
+                 "ExcludeMethods": [],        // 要排除的指定方法，`.NET类型全名`+`.`+`方法名`				 
+                 "ExcludeProps": [],          // 要排除的指定属性，`.NET类型全名`+`.`+`方法名`				 
+                 "ExcludeFields": []          // 要排除的指定字段，`.NET类型全名`+`.`+`方法名`				 
 			  }
 		   ]
 	   }

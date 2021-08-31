@@ -41,7 +41,9 @@ json configuration file format:
 				    "TypeName": "",           // The full name of the .NET type to be repaired, such as `System.Object`
                     "Namespace": "",          // Unit name, no need to add `DDN.`		
 				 ],
-                 "ExcludeMethods": []         // The specified method to be excluded, `.NET type full name`+`.`+`method name`			 
+                 "ExcludeMethods": [],        // The specified methods to be excluded, `.NET type full name`+`.`+`method name`			 
+                 "ExcludeProps": [],          // The specified propertys to be excluded, `.NET type full name`+`.`+`method name`			 
+                 "ExcludeFields": []          // The specified fields to be excluded, `.NET type full name`+`.`+`method name`			 
  			  
 			  }
 		   ]

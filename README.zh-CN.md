@@ -21,7 +21,7 @@
 * 支持动态数组（一维数组）。
 * 支持委托类型。
 * 支持委事件。
-* 泛型类型（暂不支持嵌套的泛型，比如：`DNICollection<DNKeyValuePair<TKey, TValue>>`这类的多层嵌套）。
+* 泛型类型（有限的支持。暂不支持嵌套的泛型，比如：`DNICollection<DNKeyValuePair<TKey, TValue>>`这类的多层嵌套）。
 
 
 ## 要求

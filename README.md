@@ -21,7 +21,7 @@
 * Support dynamic array (one-dimensional array).
 * Support Delegate type.
 * Support Event.
-* Generic type (Currently does not support nested generics, such as: `DNICollection<DNKeyValuePair<TKey, TValue>>` such multi-level nesting).
+* Generic type (Limited support.Currently does not support nested generics, such as: `DNICollection<DNKeyValuePair<TKey, TValue>>` such multi-level nesting).
 
 ## Requires
 

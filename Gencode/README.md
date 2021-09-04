@@ -4,7 +4,7 @@
 
 Command Line: 
 ```
-GenCodeNET net4.0.json
+GenCode net4.0.json
 ```
 
 json configuration file format:  
@@ -13,9 +13,10 @@ json configuration file format:
    "OutputDir": "",                 // Units output directory
    "Lang": "",                      // The generated annotation language, such as: zh-Hans, can be empty, the default is en-US
    "GenerateCommnet": true,         // Whether to generate comments, the default is false
+   "AssemblyRoot": ""               // assembly directory
    "Items": [                       // List item
        {
-	       "Assembly": "",          // Assembly (dll) absolute path
+	       "Assembly": "",          // The file name or full path of the assembly (dll)
 		   "IsMsLib": false,        // Whether it is the standard library that comes with MS, the default is false
 		   "Units": [               // Units to be generated
 		      {

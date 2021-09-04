@@ -2,9 +2,10 @@
 	"OutputDir": "J:\\MyGitRepo\\DDNRuntime\\TestGenCode",
 	"Lang": "zh-Hans",
 	"GenerateCommnet": true,
+	"AssemblyRoot":"C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\",
 	"Items": [
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\mscorlib.dll",
+			"Assembly": "mscorlib.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -15,7 +16,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.dll",
+			"Assembly": "System.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -47,7 +48,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Configuration.dll",
+			"Assembly": "System.Configuration.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -55,7 +56,7 @@
 					"ExcludeNamespaces": [],
 					"ExcludeTypes": [],
 					"Append": {
-						"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.dll",
+						"Assembly": "System.dll",
 						"IncludeNamespaces": [
 							"System.Configuration"
 						]
@@ -64,7 +65,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Xml.dll",
+			"Assembly": "System.Xml.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -84,7 +85,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Drawing.dll",
+			"Assembly": "System.Drawing.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -95,7 +96,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Web.dll",
+			"Assembly": "System.Web.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -133,7 +134,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.ComponentModel.DataAnnotations.dll",
+			"Assembly": "System.ComponentModel.DataAnnotations.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -144,7 +145,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Web.Services.dll",
+			"Assembly": "System.Web.Services.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -155,7 +156,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Web.ApplicationServices.dll",
+			"Assembly": "System.Web.ApplicationServices.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -166,7 +167,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Data.dll",
+			"Assembly": "System.Data.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -186,7 +187,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.EnterpriseServices.dll",
+			"Assembly": "System.EnterpriseServices.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -197,7 +198,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Transactions.dll",
+			"Assembly": "System.Transactions.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -208,7 +209,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Core.dll",
+			"Assembly": "System.Core.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -219,7 +220,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Windows.Forms.dll",
+			"Assembly": "System.Windows.Forms.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -230,7 +231,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Security.dll",
+			"Assembly": "System.Security.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -241,7 +242,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Windows.Input.Manipulations.dll",
+			"Assembly": "System.Windows.Input.Manipulations.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -252,7 +253,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Xaml.dll",
+			"Assembly": "System.Xaml.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -263,7 +264,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\ReachFramework.dll",
+			"Assembly": "ReachFramework.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -316,7 +317,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Printing.dll",
+			"Assembly": "System.Printing.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -357,13 +358,21 @@
 						}
 					],
 					"ExcludeMethods":[
-					   "System.Windows.Xps.XpsDocumentWriter.CreateVisualsCollator"
+					   "System.Windows.Xps.XpsDocumentWriter.CreateVisualsCollator",
+					   "System.Windows.Xps.XpsDocumentWriter.add_WritingCancelled",
+					   "System.Windows.Xps.XpsDocumentWriter.remove_WritingCancelled",
+					   "System.Windows.Xps.XpsDocumentWriter.add_WritingCompleted",
+					   "System.Windows.Xps.XpsDocumentWriter.remove_WritingCompleted",
+					   "System.Windows.Xps.XpsDocumentWriter.add_WritingProgressChanged",
+					   "System.Windows.Xps.XpsDocumentWriter.remove_WritingProgressChanged",
+					   "System.Windows.Xps.XpsDocumentWriter.add_WritingPrintTicketRequired",
+					   "System.Windows.Xps.XpsDocumentWriter.remove_WritingPrintTicketRequired"
 					]
 				}
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\PresentationFramework.dll",
+			"Assembly": "PresentationFramework.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -410,7 +419,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\WindowsBase.dll",
+			"Assembly": "WindowsBase.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -421,7 +430,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\PresentationCore.dll",
+			"Assembly": "PresentationCore.dll",
 			"IsMsLib": true,
 			"Units": [
 				{
@@ -432,7 +441,7 @@
 			]
 		},
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\UIAutomationTypes.dll",
+			"Assembly": "UIAutomationTypes.dll",
 			"IsMsLib": true,
 			"Units": [
 				{

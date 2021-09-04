@@ -48,6 +48,9 @@
         <Projects Include="MSJScript\ProJScript.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="MSSpeech\ProSpeech.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -191,14 +194,23 @@
     <Target Name="ProJScript:Make">
         <MSBuild Projects="MSJScript\ProJScript.dproj" Targets="Make"/>
     </Target>
+    <Target Name="ProSpeech">
+        <MSBuild Projects="MSSpeech\ProSpeech.dproj"/>
+    </Target>
+    <Target Name="ProSpeech:Clean">
+        <MSBuild Projects="MSSpeech\ProSpeech.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProSpeech:Make">
+        <MSBuild Projects="MSSpeech\ProSpeech.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="ProReflection;ProStream;ProDES;ProPowDLL;ProXml;ProAES;ProHash;ProWeb_HTTP;ProWinForm;ProAspose;ProWebDriver;ProWPF;ProGenerics;ProDataTable;ProJScript"/>
+        <CallTarget Targets="ProReflection;ProStream;ProDES;ProPowDLL;ProXml;ProAES;ProHash;ProWeb_HTTP;ProWinForm;ProAspose;ProWebDriver;ProWPF;ProGenerics;ProDataTable;ProJScript;ProSpeech"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="ProReflection:Clean;ProStream:Clean;ProDES:Clean;ProPowDLL:Clean;ProXml:Clean;ProAES:Clean;ProHash:Clean;ProWeb_HTTP:Clean;ProWinForm:Clean;ProAspose:Clean;ProWebDriver:Clean;ProWPF:Clean;ProGenerics:Clean;ProDataTable:Clean;ProJScript:Clean"/>
+        <CallTarget Targets="ProReflection:Clean;ProStream:Clean;ProDES:Clean;ProPowDLL:Clean;ProXml:Clean;ProAES:Clean;ProHash:Clean;ProWeb_HTTP:Clean;ProWinForm:Clean;ProAspose:Clean;ProWebDriver:Clean;ProWPF:Clean;ProGenerics:Clean;ProDataTable:Clean;ProJScript:Clean;ProSpeech:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="ProReflection:Make;ProStream:Make;ProDES:Make;ProPowDLL:Make;ProXml:Make;ProAES:Make;ProHash:Make;ProWeb_HTTP:Make;ProWinForm:Make;ProAspose:Make;ProWebDriver:Make;ProWPF:Make;ProGenerics:Make;ProDataTable:Make;ProJScript:Make"/>
+        <CallTarget Targets="ProReflection:Make;ProStream:Make;ProDES:Make;ProPowDLL:Make;ProXml:Make;ProAES:Make;ProHash:Make;ProWeb_HTTP:Make;ProWinForm:Make;ProAspose:Make;ProWebDriver:Make;ProWPF:Make;ProGenerics:Make;ProDataTable:Make;ProJScript:Make;ProSpeech:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

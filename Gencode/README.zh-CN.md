@@ -4,7 +4,7 @@
 
 命令行：  
 ```
-GenCodeNET net4.0.json
+GenCode net4.0.json
 ```
 
 json配置文件格式：   
@@ -13,9 +13,10 @@ json配置文件格式：
    "OutputDir": "",                 // 单元输出目录
    "Lang": "",                      // 生成的注释语言，比如：zh-Hans，可空，默认为en-US
    "GenerateCommnet": true,         // 是否生成注释，默认为false
+   "AssemblyRoot": ""               // 程序集目录 
    "Items": [                       // 清单项目
        {
-	       "Assembly": "",          // 程序集(dll)绝对路径
+	       "Assembly": "",          // 程序集(dll)的文件名或者全路径
 		   "IsMsLib": false,        // 是否为MS自带的标准库，默认为false
 		   "Units": [               // 要生成的单元
 		      {

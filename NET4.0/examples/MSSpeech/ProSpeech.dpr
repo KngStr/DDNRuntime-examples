@@ -29,7 +29,7 @@ end;
 class procedure TEvent.doSpeakProgress(sender: DNObject;
   e: DNSpeakProgressEventArgs);
 begin
-  Writeln('doSpeakProgress: oosition: ', e.CharacterPosition, ',text: ', e.Text);
+  Writeln('doSpeakProgress: Position: ', e.CharacterPosition, ',text: ', e.Text);
 end;
 
 class procedure TEvent.doSpeakStarted(sender: DNObject;
@@ -50,7 +50,7 @@ begin
     speech.add_SpeakCompleted(TEvent.doSpeakCompleted);
     speech.add_SpeakStarted(TEvent.doSpeakStarted);
     speech.add_SpeakProgress(TEvent.doSpeakProgress);
-    speech.SpeakAsync('几行归塞尽，念尔独何之。暮雨相呼失，寒塘欲下迟。渚云低暗度，关月冷相随。未必逢矰缴，孤飞自可疑。');
+    speech.SpeakAsync('唐 崔涂《孤雁二首·其二》' +  sLineBreak + '几行归塞尽，念尔独何之。暮雨相呼失，寒塘欲下迟。渚云低暗度，关月冷相随。未必逢矰缴，孤飞自可疑。');
 
   except
     on E: Exception do

@@ -1,0 +1,85 @@
+{
+	"OutputDir": "J:\\MyGitRepo\\DDNRuntime\\TestGenCode\\itext7",
+	"Lang": "",
+	"GenerateCommnet": true,
+    "AssemblyRoot":"J:\\MyGitRepo\\DDNRuntime\\Debug\\",
+	"Items": [
+		{
+			"Assembly": "itext.html2pdf.dll",
+			"IsMsLib": false,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "itext.styledxmlparser.dll",
+			"IsMsLib": false,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "itext.kernel.dll",
+			"IsMsLib": false,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "itext.layout.dll",
+			"IsMsLib": false,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "itext.io.dll",
+			"IsMsLib": false,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "itext.svg.dll",
+			"IsMsLib": false,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "BouncyCastle.Crypto.dll",
+			"IsMsLib": false,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		}
+	]
+}

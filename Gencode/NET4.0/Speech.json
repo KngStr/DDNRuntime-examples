@@ -2,9 +2,10 @@
 	"OutputDir": "J:\\MyGitRepo\\DDNRuntime\\TestGenCode",
 	"Lang": "zh-Hans",
 	"GenerateCommnet": true,
+	"AssemblyRoot":"C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\",
 	"Items": [
 		{
-			"Assembly": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\System.Speech.dll",
+			"Assembly": "System.Speech.dll",
 			"IsMsLib": true,
 			"Units": [
 				{

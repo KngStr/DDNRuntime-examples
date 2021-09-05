@@ -30,7 +30,7 @@
 
 ## Requires
 
-* .NET Framework  ( Only supports Windows )
+* .NET Framework 4.x  ( Only supports Windows )
 
 	* [.NET Framework v4.0](https://www.microsoft.com/en-us/download/details.aspx?id=17851) . 
 	* [Visual C++ Redistributable for Visual Studio 2015(v140)](https://www.microsoft.com/en-us/download/details.aspx?id=48145).

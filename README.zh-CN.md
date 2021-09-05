@@ -31,7 +31,7 @@
 
 ## 要求
 
-* .NET Framework  (仅支持Windows)
+* .NET Framework 4.x  (仅支持Windows)
 
 	* [.NET Framework v4.0](https://www.microsoft.com/zh-cn/download/details.aspx?id=17851)。
 	* [VC++ 2015运行库(v140)](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145)。

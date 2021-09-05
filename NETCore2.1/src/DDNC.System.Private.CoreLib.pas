@@ -3579,7 +3579,7 @@ type
   ['{B196B285-BAB4-101A-B69C-00AA00341D07}']
   { methods } 
 
-    function Next(celt: Int32; rgelt: TArray<DNIConnectionPoint>; pceltFetched: IntPtr): Int32;
+    function Next(celt: Int32; [out]rgelt: TArray<DNIConnectionPoint>; pceltFetched: IntPtr): Int32;
     function Skip(celt: Int32): Int32;
     procedure Reset;
     procedure Clone(out ppenum: DNIEnumConnectionPoints);
@@ -3592,7 +3592,7 @@ type
   ['{B196B287-BAB4-101A-B69C-00AA00341D07}']
   { methods } 
 
-    function Next(celt: Int32; rgelt: TArray<DNCONNECTDATA>; pceltFetched: IntPtr): Int32;
+    function Next(celt: Int32; [out]rgelt: TArray<DNCONNECTDATA>; pceltFetched: IntPtr): Int32;
     function Skip(celt: Int32): Int32;
     procedure Reset;
     procedure Clone(out ppenum: DNIEnumConnections);
@@ -3605,7 +3605,7 @@ type
   ['{00000102-0000-0000-C000-000000000046}']
   { methods } 
 
-    function Next(celt: Int32; rgelt: TArray<DNIMoniker>; pceltFetched: IntPtr): Int32;
+    function Next(celt: Int32; [out]rgelt: TArray<DNIMoniker>; pceltFetched: IntPtr): Int32;
     function Skip(celt: Int32): Int32;
     procedure Reset;
     procedure Clone(out ppenum: DNIEnumMoniker);
@@ -3618,7 +3618,7 @@ type
   ['{00000101-0000-0000-C000-000000000046}']
   { methods } 
 
-    function Next(celt: Int32; rgelt: TArray<string>; pceltFetched: IntPtr): Int32;
+    function Next(celt: Int32; [out]rgelt: TArray<string>; pceltFetched: IntPtr): Int32;
     function Skip(celt: Int32): Int32;
     procedure Reset;
     procedure Clone(out ppenum: DNIEnumString);
@@ -3631,7 +3631,7 @@ type
   ['{00020404-0000-0000-C000-000000000046}']
   { methods } 
 
-    function Next(celt: Int32; rgVar: TArray<DNObject>; pceltFetched: IntPtr): Int32;
+    function Next(celt: Int32; [out]rgVar: TArray<DNObject>; pceltFetched: IntPtr): Int32;
     function Skip(celt: Int32): Int32;
     function Reset: Int32;
     function Clone: DNIEnumVARIANT;
@@ -3704,7 +3704,7 @@ type
   ['{0000000C-0000-0000-C000-000000000046}']
   { methods } 
 
-    procedure Read(pv: TArray<Byte>; cb: Int32; pcbRead: IntPtr);
+    procedure Read([out]pv: TArray<Byte>; cb: Int32; pcbRead: IntPtr);
     procedure Write(pv: TArray<Byte>; cb: Int32; pcbWritten: IntPtr);
     procedure Seek(dlibMove: Int64; dwOrigin: Int32; plibNewPosition: IntPtr);
     procedure SetSize(libNewSize: Int64);
@@ -3739,10 +3739,10 @@ type
     procedure GetTypeComp(out ppTComp: DNITypeComp);
     procedure GetFuncDesc(index: Int32; out ppFuncDesc: IntPtr);
     procedure GetVarDesc(index: Int32; out ppVarDesc: IntPtr);
-    procedure GetNames(memid: Int32; rgBstrNames: TArray<string>; cMaxNames: Int32; out pcNames: Int32);
+    procedure GetNames(memid: Int32; [out]rgBstrNames: TArray<string>; cMaxNames: Int32; out pcNames: Int32);
     procedure GetRefTypeOfImplType(index: Int32; out href: Int32);
     procedure GetImplTypeFlags(index: Int32; out pImplTypeFlags: DNIMPLTYPEFLAGS);
-    procedure GetIDsOfNames(rgszNames: TArray<string>; cNames: Int32; pMemId: TArray<Int32>);
+    procedure GetIDsOfNames([in]rgszNames: TArray<string>; cNames: Int32; [out]pMemId: TArray<Int32>);
     procedure Invoke(pvInstance: DNObject; memid: Int32; wFlags: Int16; out pDispParams: DNDISPPARAMS; pVarResult: IntPtr; pExcepInfo: IntPtr; out puArgErr: Int32);
     procedure GetDocumentation(index: Int32; out strName: string; out strDocString: string; out dwHelpContext: Int32; out strHelpFile: string);
     procedure GetDllEntry(memid: Int32; invKind: DNINVOKEKIND; pBstrDllName: IntPtr; pBstrName: IntPtr; pwOrdinal: IntPtr);
@@ -3767,10 +3767,10 @@ type
     procedure GetTypeComp(out ppTComp: DNITypeComp);
     procedure GetFuncDesc(index: Int32; out ppFuncDesc: IntPtr);
     procedure GetVarDesc(index: Int32; out ppVarDesc: IntPtr);
-    procedure GetNames(memid: Int32; rgBstrNames: TArray<string>; cMaxNames: Int32; out pcNames: Int32);
+    procedure GetNames(memid: Int32; [out]rgBstrNames: TArray<string>; cMaxNames: Int32; out pcNames: Int32);
     procedure GetRefTypeOfImplType(index: Int32; out href: Int32);
     procedure GetImplTypeFlags(index: Int32; out pImplTypeFlags: DNIMPLTYPEFLAGS);
-    procedure GetIDsOfNames(rgszNames: TArray<string>; cNames: Int32; pMemId: TArray<Int32>);
+    procedure GetIDsOfNames([in]rgszNames: TArray<string>; cNames: Int32; [out]pMemId: TArray<Int32>);
     procedure Invoke(pvInstance: DNObject; memid: Int32; wFlags: Int16; out pDispParams: DNDISPPARAMS; pVarResult: IntPtr; pExcepInfo: IntPtr; out puArgErr: Int32);
     procedure GetDocumentation(index: Int32; out strName: string; out strDocString: string; out dwHelpContext: Int32; out strHelpFile: string);
     procedure GetDllEntry(memid: Int32; invKind: DNINVOKEKIND; pBstrDllName: IntPtr; pBstrName: IntPtr; pwOrdinal: IntPtr);
@@ -3814,7 +3814,7 @@ type
     procedure GetTypeComp(out ppTComp: DNITypeComp);
     procedure GetDocumentation(index: Int32; out strName: string; out strDocString: string; out dwHelpContext: Int32; out strHelpFile: string);
     function IsName(szNameBuf: string; lHashVal: Int32): Boolean;
-    procedure FindName(szNameBuf: string; lHashVal: Int32; ppTInfo: TArray<DNITypeInfo>; rgMemId: TArray<Int32>; out pcFound: Int16);
+    procedure FindName(szNameBuf: string; lHashVal: Int32; [out]ppTInfo: TArray<DNITypeInfo>; [out]rgMemId: TArray<Int32>; out pcFound: Int16);
     procedure ReleaseTLibAttr(pTLibAttr: IntPtr);
 
   end;
@@ -3833,7 +3833,7 @@ type
     procedure GetTypeComp(out ppTComp: DNITypeComp);
     procedure GetDocumentation(index: Int32; out strName: string; out strDocString: string; out dwHelpContext: Int32; out strHelpFile: string);
     function IsName(szNameBuf: string; lHashVal: Int32): Boolean;
-    procedure FindName(szNameBuf: string; lHashVal: Int32; ppTInfo: TArray<DNITypeInfo>; rgMemId: TArray<Int32>; out pcFound: Int16);
+    procedure FindName(szNameBuf: string; lHashVal: Int32; [out]ppTInfo: TArray<DNITypeInfo>; [out]rgMemId: TArray<Int32>; out pcFound: Int16);
     procedure ReleaseTLibAttr(pTLibAttr: IntPtr);
     procedure GetCustData(out guid: DNGuid; out pVarVal: DNObject);
     procedure GetDocumentation2(index: Int32; out pbstrHelpString: string; out pdwHelpStringContext: Int32; out pbstrHelpStringDll: string);
@@ -25739,7 +25739,7 @@ type
     {class} function ReadIntPtr(ptr: DNObject; ofs: Int32): IntPtr; overload;
     {class} function ReadIntPtr(ptr: IntPtr; ofs: Int32): IntPtr; overload;
     {class} function ReadIntPtr(ptr: IntPtr): IntPtr; overload;
-    {class} function ReadInt64(ptr: DNObject; ofs: Int32): Int64; overload;
+    {class} function ReadInt64([in]ptr: DNObject; ofs: Int32): Int64; overload;
     {class} function ReadInt64(ptr: IntPtr; ofs: Int32): Int64; overload;
     {class} function ReadInt64(ptr: IntPtr): Int64; overload;
     {class} procedure WriteByte(ptr: IntPtr; ofs: Int32; val: Byte); overload;
@@ -25749,7 +25749,7 @@ type
     {class} procedure WriteInt16(ptr: DNObject; ofs: Int32; val: Int16); overload;
     {class} procedure WriteInt16(ptr: IntPtr; val: Int16); overload;
     {class} procedure WriteInt16(ptr: IntPtr; ofs: Int32; val: Char); overload;
-    {class} procedure WriteInt16(ptr: DNObject; ofs: Int32; val: Char); overload;
+    {class} procedure WriteInt16([in][out]ptr: DNObject; ofs: Int32; val: Char); overload;
     {class} procedure WriteInt16(ptr: IntPtr; val: Char); overload;
     {class} procedure WriteInt32(ptr: IntPtr; ofs: Int32; val: Int32); overload;
     {class} procedure WriteInt32(ptr: DNObject; ofs: Int32; val: Int32); overload;

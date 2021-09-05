@@ -24,7 +24,7 @@ begin
   LMem.WriteByte(121);
   LMem.Flush;
   LMem.Position := 0;
-
+//
   Writeln('Data Length: ', LMem.Length);
   SetLength(LBytes, LMem.Length);
   LReadLen :=  LMem.Read(LBytes, 0, Length(LBytes));

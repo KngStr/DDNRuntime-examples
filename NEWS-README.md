@@ -4,6 +4,12 @@
 
 ### What's new
 
+* v0.1.22  
+   * 1. Add support for .NET Core 2.1.
+   * 2. Fix some memory leaks.
+   * 3. Fix the problem that the type name is incorrect when searching for some types.
+   * 4. Change the DLL loading method during DDN runtime, no longer need to be attached.  
+
 * v0.1.21  
    * 1. Add basic type conversion function, see `DDN.Helpers` unit for details.
 

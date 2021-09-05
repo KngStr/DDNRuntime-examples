@@ -7,7 +7,12 @@
  DDNRuntime(Delphi .NET Runtime)  
 
 ----
- **最新版本：v0.1.21**    
+ **最新版本：v0.1.22**    
+  
+ #### 更新日志
+ 
+ [前往查看](NEWS-README.zh-CN.md)
+ 
 ----  
 
  **这不是一个开源和免费的项目。这里只存放一些示例。**  
@@ -26,20 +31,27 @@
 
 ## 要求
 
-* [.NET Framework v4.0](https://www.microsoft.com/zh-cn/download/details.aspx?id=17851)。
-* [VC++ 2015运行库(v140)](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145)。
+* .NET Framework  (仅支持Windows)
+
+	* [.NET Framework v4.0](https://www.microsoft.com/zh-cn/download/details.aspx?id=17851)。
+	* [VC++ 2015运行库(v140)](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145)。
+
+* .NET Core 2.1  ( 支持跨平台 )
+
+	* [NET Core 2.1](https://dotnet.microsoft.com/download/dotnet/2.1) ，配置运行时版本见 [DDNC.InitNETCore](/NETCore2.1/src/DDNC.InitNETCore.pas)。
+
 * 最低要求`Rad Studio XE3`（推荐使用高版本）。
-* `DDNRuntimex86.dll`或`DDNRuntimex64.dll`。
 
 ## 暂不支持
 
 
 ## 正在实现中的特性
 
+* 暂无。
 
 ## 试用  
 
-获取[DDNRuntime试用文件](trial)，复制你所使用的Delphi版本Duc文件到`DDNRuntime\Win32`或者`DDNRuntime\Win64`，复制`DDNRuntimex86.dll`到`examples\bin-Win32`或者复制`DDNRuntimex64.dll`到`examples\bin-Win64`。
+获取[DDNRuntime试用文件](https://github.com/ying32/DDNRuntime-examples/releases)，复制你所使用的Delphi版本Duc文件到`DDNRuntime\Win32`或者`DDNRuntime\Win64`。
 
 ## 购买
 

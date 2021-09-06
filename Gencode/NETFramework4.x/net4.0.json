@@ -1,0 +1,456 @@
+{
+	"OutputDir": "J:\\MyGitRepo\\DDNRuntime\\TestGenCode",
+	"Lang": "zh-Hans",
+	"GenerateCommnet": true,
+	"AssemblyRoot":"C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\",
+	"NETVersion": "4.0",
+	"Items": [
+		{
+			"Assembly": "mscorlib.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [
+						"System.Net.Configuration",
+						"System.Configuration",
+						"System.Security.Authentication.ExtendedProtection.Configuration"
+					],
+					"ExcludeTypes": [
+						"System.Diagnostics.DiagnosticsConfigurationHandler"
+					]
+				},
+				{
+					"OnlyGenerateNamespace": "System.Net.Configuration"
+				},
+				{
+					"OnlyGenerateNamespace": "System.Security.Authentication.ExtendedProtection.Configuration"
+				},
+				{
+					"OnlyGenerateType": "System.Diagnostics.DiagnosticsConfigurationHandler",
+					"IncludeUses": [
+						"System.Configuration"
+					],
+					"ExcludeUses": [
+						"System"
+					]
+				}
+			]
+		},
+		{
+			"Assembly": "System.Configuration.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": [],
+					"Append": {
+						"Assembly": "System.dll",
+						"IncludeNamespaces": [
+							"System.Configuration"
+						]
+					}
+				}
+			]
+		},
+		{
+			"Assembly": "System.Xml.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [
+						"System.Xml.Serialization.Configuration",
+						"System.Xml.XmlConfiguration"
+					],
+					"ExcludeTypes": []
+				},
+				{
+					"OnlyGenerateNamespace": "System.Xml.Serialization.Configuration"
+				},
+				{
+					"OnlyGenerateNamespace": "System.Xml.XmlConfiguration"
+				}
+			]
+		},
+		{
+			"Assembly": "System.Drawing.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Web.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": [
+						"System.Web.Configuration.SystemWebSectionGroup"
+					],
+					"FixNamesapces": [
+						{
+							"TypeName": "System.Configuration.SettingsContext",
+							"Namespace": "System.Configuration"
+						},
+						{
+							"TypeName": "System.Configuration.SettingsPropertyCollection",
+							"Namespace": "System.Configuration"
+						},
+						{
+							"TypeName": "System.Configuration.SettingsPropertyValueCollection",
+							"Namespace": "System.Configuration"
+						},
+						{
+							"TypeName": "System.Configuration.IConfigurationSectionHandler",
+							"Namespace": "System.Configuration"
+						},
+						{
+							"TypeName": "System.Configuration.SettingsProviderCollection",
+							"Namespace": "System.Configuration"
+						}
+					]
+				},
+				{
+					"OnlyGenerateType": "System.Web.Configuration.SystemWebSectionGroup"
+				}
+			]
+		},
+		{
+			"Assembly": "System.ComponentModel.DataAnnotations.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Web.Services.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Web.ApplicationServices.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Data.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": [],
+					"IncludeUses": [
+						"System.Configuration"
+					],
+					"FixNamesapces": [
+						{
+							"TypeName": "System.Configuration.IConfigurationSectionHandler",
+							"Namespace": "System.Configuration"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Assembly": "System.EnterpriseServices.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Transactions.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Core.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Windows.Forms.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Security.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Windows.Input.Manipulations.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Xaml.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "ReachFramework.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [
+						"System.Windows.Xps.Packaging",
+						"System.Windows.Xps.Serialization"
+					],
+					"ExcludeTypes": []
+				},
+				{
+				    "DotNotGenerate": false,
+					"OnlyGenerateNamespace": "System.Windows.Xps.Packaging",
+					"IncludeUses": [
+						"System.Windows.Xps"
+					],
+					"ExcludeUses": [
+						"System.Printing"
+					],
+					"FixNamesapces": [
+						{
+							"TypeName": "System.Windows.Xps.XpsDocumentWriter",
+							"Namespace": "System.Windows.Xps"
+						}
+					]
+				},
+				{
+				    "DotNotGenerate": false,
+					"OnlyGenerateNamespace": "System.Windows.Xps.Serialization",
+					"ExcludeTypes": [
+						"System.Windows.Documents.Serialization.ISerializerFactory",
+						"System.Windows.Xps.Serialization.XpsSerializationPrintTicketRequiredEventArgs",
+						"System.Windows.Xps.Serialization.BasePackagingPolicy",
+						"System.Windows.Xps.Serialization.XpsSerializationManagerAsync",
+						"System.Windows.Xps.Serialization.XpsSerializationPrintTicketRequiredEventHandler"
+					],
+					"IncludeUses": [
+						 "System.Windows.Xps.Packaging"
+					],
+					"ExcludeUses": [
+						"ReachFramework"
+					],
+					"FixNamesapces": [
+						{
+							"TypeName": "System.Windows.Documents.Serialization.ISerializerFactory",
+							"Namespace": "System.Windows.Documents.Serialization.ISerializerFactory"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Assembly": "System.Printing.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [
+						"System.Windows.Xps"
+					],
+					"ExcludeTypes": [],
+					"IncludeUses": [
+					  "System.Windows.Xps",
+					  "System.Windows.Xps.Packaging"
+					],
+					"FixNamesapces": [
+						{
+							"TypeName": "System.Windows.Xps.Packaging.PackagingProgressEventArgs",
+							"Namespace": "System.Windows.Xps.Packaging"
+						},
+						{
+							"TypeName": "System.Windows.Documents.Serialization.SerializerWriterCollator",
+							"Namespace": "System.Windows.Documents.Serialization"
+						}
+					]
+				},
+				{
+				    "DotNotGenerate": false,
+					"OnlyGenerateNamespace": "System.Windows.Xps",
+					"ExcludeTypes": [],
+					"ExcludeUses": [
+						"System.Printing"
+					],
+					"IncludeUses": [
+						 
+					],
+					"FixNamesapces": [
+						{
+							"TypeName": "System.Windows.Documents.Serialization.SerializerWriterCollator",
+							"Namespace": "System.Windows.Documents.Serialization"
+						}
+					],
+					"ExcludeMethods":[
+					   "System.Windows.Xps.XpsDocumentWriter.CreateVisualsCollator",
+					   "System.Windows.Xps.XpsDocumentWriter.add_WritingCancelled",
+					   "System.Windows.Xps.XpsDocumentWriter.remove_WritingCancelled",
+					   "System.Windows.Xps.XpsDocumentWriter.add_WritingCompleted",
+					   "System.Windows.Xps.XpsDocumentWriter.remove_WritingCompleted",
+					   "System.Windows.Xps.XpsDocumentWriter.add_WritingProgressChanged",
+					   "System.Windows.Xps.XpsDocumentWriter.remove_WritingProgressChanged",
+					   "System.Windows.Xps.XpsDocumentWriter.add_WritingPrintTicketRequired",
+					   "System.Windows.Xps.XpsDocumentWriter.remove_WritingPrintTicketRequired"
+					]
+				}
+			]
+		},
+		{
+			"Assembly": "PresentationFramework.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [
+						"System.Windows.Documents.Serialization"
+					],
+					"ExcludeTypes": [
+						"System.Windows.Controls.PrintDialog"
+					]
+				},
+				{
+					"OnlyGenerateType": "System.Windows.Controls.PrintDialog"
+				},
+				{
+				    "DotNotGenerate": false,
+					"OnlyGenerateNamespace": "System.Windows.Documents.Serialization",
+					"ExcludeUses": [
+						"System.Windows.Documents.Serialization.ISerializerFactory"
+					],
+					"IncludeUses": [
+						"System.Windows.Xps.Serialization"
+					],
+					"FixNamesapces": [
+						{
+							"TypeName": "System.Windows.Xps.Serialization.PrintTicketLevel",
+							"Namespace": "System.Windows.Documents.Serialization"
+						}
+					]
+				},
+				{
+					"DotNotGenerate": true,
+					"OnlyGenerateType": "System.Windows.Documents.Serialization.ISerializerFactory",
+					"ExcludeTypes": [],
+					"IncludeUses": [
+						"System.Windows.Documents.Serialization"
+					],
+					"ExcludeUses": [
+						"ReachFramework",
+						"PresentationFramework"
+					],
+					"FixNamesapces": []
+				}
+			]
+		},
+		{
+			"Assembly": "WindowsBase.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "PresentationCore.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "UIAutomationTypes.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		}
+	]
+}

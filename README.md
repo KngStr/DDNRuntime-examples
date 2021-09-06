@@ -7,7 +7,7 @@
  DDNRuntime(Delphi .NET Runtime)  
 
 ----
- **Latest version: v0.1.22**    
+ **Latest version: v0.1.23**    
  
  #### What's news 
  
@@ -32,12 +32,14 @@
 
 * .NET Framework 4.x  ( Only supports Windows )
 
-	* [.NET Framework v4.0](https://www.microsoft.com/en-us/download/details.aspx?id=17851) . 
+	* [.NET Framework v4.x](https://dotnet.microsoft.com/download/dotnet-framework) . 
 	* [Visual C++ Redistributable for Visual Studio 2015(v140)](https://www.microsoft.com/en-us/download/details.aspx?id=48145).
 
-* .NET Core 2.1  ( Support cross-platform )
+* .NET Core  ( Support cross-platform )
 
-	* [NET Core 2.1](https://dotnet.microsoft.com/download/dotnet/2.1), Please refer to [DDNC.InitNETCore](/NETCore2.1/src/DDNC.InitNETCore.pas) to configure the runtime version.. 
+	* [NET Core 2.1](https://dotnet.microsoft.com/download/dotnet/2.1), Please refer to [DDNC.InitNETCore](src/DDNC.InitNETCore.pas) to configure the runtime version.. 
+	* [NET Core 3.1](https://dotnet.microsoft.com/download/dotnet/3.1), Please refer to [DDNC.InitNETCore](src/DDNC.InitNETCore.pas) to configure the runtime version.. 
+	* [NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0), Please refer to [DDNC.InitNETCore](src/DDNC.InitNETCore.pas) to configure the runtime version.. 
 
 * The minimum requirement is `Rad Studio XE3`(High version is recommended).
 

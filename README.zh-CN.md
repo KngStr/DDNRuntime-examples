@@ -7,7 +7,7 @@
  DDNRuntime(Delphi .NET Runtime)  
 
 ----
- **最新版本：v0.1.22**    
+ **最新版本：v0.1.23**    
   
  #### 更新日志
  
@@ -33,12 +33,14 @@
 
 * .NET Framework 4.x  (仅支持Windows)
 
-	* [.NET Framework v4.0](https://www.microsoft.com/zh-cn/download/details.aspx?id=17851)。
+	* [.NET Framework v4.x](https://dotnet.microsoft.com/download/dotnet-framework)。
 	* [VC++ 2015运行库(v140)](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145)。
 
-* .NET Core 2.1  ( 支持跨平台 )
+* .NET Core ( 支持跨平台 )
 
-	* [NET Core 2.1](https://dotnet.microsoft.com/download/dotnet/2.1) ，配置运行时版本见 [DDNC.InitNETCore](/NETCore2.1/src/DDNC.InitNETCore.pas)。
+	* [NET Core 2.1](https://dotnet.microsoft.com/download/dotnet/2.1) ，配置运行时版本见 [DDNC.InitNETCore](src/DDNC.InitNETCore.pas)。
+	* [NET Core 3.1](https://dotnet.microsoft.com/download/dotnet/3.1) ，配置运行时版本见 [DDNC.InitNETCore](src/DDNC.InitNETCore.pas)。
+	* [NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0) ，配置运行时版本见 [DDNC.InitNETCore](src/DDNC.InitNETCore.pas)。
 
 * 最低要求`Rad Studio XE3`（推荐使用高版本）。
 

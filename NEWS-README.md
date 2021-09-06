@@ -4,6 +4,9 @@
 
 ### What's new
 
+* v0.1.23
+   * 1. Add support for .NET Core x86.
+
 * v0.1.22  
    * 1. Add support for .NET Core 2.1.
    * 2. Fix some memory leaks.

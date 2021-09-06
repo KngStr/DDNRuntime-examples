@@ -2,7 +2,8 @@
   "OutputDir": "J:\\MyGitRepo\\DDNRuntime\\TestGenCode\\NETCore2.1",
   "Lang": "zh-Hans",
   "GenerateCommnet": true,
-  "AssemblyRoot":"C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\2.1.13\\",
+  "AssemblyRoot":"C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\2.1.30\\",
+  "NETVersion": "2.1.30",
   "Items": [
     {
       "Assembly": "System.Private.CoreLib.dll",

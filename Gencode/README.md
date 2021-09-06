@@ -14,6 +14,7 @@ json configuration file format:
    "Lang": "",                      // The generated annotation language, such as: zh-Hans, can be empty, the default is en-US
    "GenerateCommnet": true,         // Whether to generate comments, the default is false
    "AssemblyRoot": ""               // assembly directory
+   "NETVersion": "",                // The version of the .NET assembly, generally only used in the standard library
    "Items": [                       // List item
        {
 	       "Assembly": "",          // The file name or full path of the assembly (dll)

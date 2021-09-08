@@ -35,7 +35,7 @@
 	* [.NET Framework v4.x](https://dotnet.microsoft.com/download/dotnet-framework) . 
 	* [Visual C++ Redistributable for Visual Studio 2015(v140)](https://www.microsoft.com/en-us/download/details.aspx?id=48145).
 
-* .NET Core  ( Support cross-platform )
+* .NET Core  ( Plan to support cross-platform )
 
 	* [NET Core 2.1](https://dotnet.microsoft.com/download/dotnet/2.1), Please refer to [DDNC.InitNETCore](src/DDNC.InitNETCore.pas) to configure the runtime version.. 
 	* [NET Core 3.1](https://dotnet.microsoft.com/download/dotnet/3.1), Please refer to [DDNC.InitNETCore](src/DDNC.InitNETCore.pas) to configure the runtime version.. 

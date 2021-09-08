@@ -36,7 +36,7 @@
 	* [.NET Framework v4.x](https://dotnet.microsoft.com/download/dotnet-framework)。
 	* [VC++ 2015运行库(v140)](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145)。
 
-* .NET Core ( 支持跨平台 )
+* .NET Core ( 计划支持跨平台 )
 
 	* [NET Core 2.1](https://dotnet.microsoft.com/download/dotnet/2.1) ，配置运行时版本见 [DDNC.InitNETCore](src/DDNC.InitNETCore.pas)。
 	* [NET Core 3.1](https://dotnet.microsoft.com/download/dotnet/3.1) ，配置运行时版本见 [DDNC.InitNETCore](src/DDNC.InitNETCore.pas)。

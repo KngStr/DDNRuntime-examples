@@ -4,7 +4,7 @@
 
 # DDNRuntime
 
- DDNRuntime(Delphi .NET Runtime)  
+ DDNRuntime(Delphi .NET/.NET Core Runtime)  
 
 ----
  **最新版本：v0.1.24**    

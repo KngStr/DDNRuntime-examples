@@ -3,9 +3,31 @@
 -----
 
 Command Line: 
+
+* .NET Framework
+
 ```
-GenCode net4.0.json
+GenCodeNET net4.0.json
 ```
+
+* .NET Core
+
+```
+dotnet GenCodeNETC.dll netcore2.1.json
+```
+GenCodeNETC.runtimeconfig  
+```json
+{
+  "runtimeOptions": {
+    "tfm": "",
+    "framework": {
+      "name": "Microsoft.NETCore.App",
+      "version": "2.1.30"  // Modify the version number to run the specified .NET Core version.
+    }
+  }
+}
+```
+----
 
 json configuration file format:  
 ```json

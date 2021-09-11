@@ -3,9 +3,31 @@
 -----
 
 命令行：  
+
+* .NET Framework
+
 ```
-GenCode net4.0.json
+GenCodeNET net4.0.json
 ```
+
+* .NET Core
+
+```
+dotnet GenCodeNETC.dll netcore2.1.json
+```
+GenCodeNETC.runtimeconfig  
+```json
+{
+  "runtimeOptions": {
+    "tfm": "",
+    "framework": {
+      "name": "Microsoft.NETCore.App",
+      "version": "2.1.30"  // 修改版本号运行指定的.NET Core版本。
+    }
+  }
+}
+```
+----
 
 json配置文件格式：   
 ```json

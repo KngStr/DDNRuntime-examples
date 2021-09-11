@@ -4,7 +4,7 @@
 
 # DDNRuntime
 
- DDNRuntime(Delphi .NET Runtime)  
+ DDNRuntime(Delphi .NET/.NET Core Runtime)  
 
 ----
  **Latest version: v0.1.24**    

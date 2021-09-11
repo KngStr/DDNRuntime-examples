@@ -1279,7 +1279,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Net.Requests.dll', True);
+  LoadAssemblyModule('System.Net.Requests.dll', True, 'System.Net.Requests, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

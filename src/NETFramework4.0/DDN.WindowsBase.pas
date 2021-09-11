@@ -5625,7 +5625,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('WPF\WindowsBase.dll', True);
+  LoadAssemblyModule('WPF\WindowsBase.dll', True, 'WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35');
 
 finalization
 

@@ -407,7 +407,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Collections.NonGeneric.dll', True);
+  LoadAssemblyModule('System.Collections.NonGeneric.dll', True, 'System.Collections.NonGeneric, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

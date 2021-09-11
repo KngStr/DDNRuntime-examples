@@ -8,8 +8,7 @@ uses
   System.SysUtils,
   DDN.Runtime,
   DDN.mscorlib,
-  DDN.PowDLL,
-  uReg in '..\uReg.pas';
+  DDN.PowDLL;
 
 procedure TestProc;
 var

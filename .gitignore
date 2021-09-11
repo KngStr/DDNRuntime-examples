@@ -64,7 +64,7 @@ __recovery/
 
 # Castalia statistics file (since XE7 Castalia is distributed with Delphi)
 *.stat
-
+*.tmp
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
 Win32
@@ -73,5 +73,7 @@ Debug
 Release
 bin-Win32
 bin-Win64
+bin-Linux64
+bin-OSX64
 DDN.Runtime.pas
 DDN.Runtime.dcu

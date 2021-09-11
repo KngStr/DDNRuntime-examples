@@ -534,7 +534,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Memory.dll', True);
+  LoadAssemblyModule('System.Memory.dll', True, 'System.Memory, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
 
 finalization
 

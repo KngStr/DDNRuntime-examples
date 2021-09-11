@@ -574,7 +574,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Collections.Specialized.dll', True);
+  LoadAssemblyModule('System.Collections.Specialized.dll', True, 'System.Collections.Specialized, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

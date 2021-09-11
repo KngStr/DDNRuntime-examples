@@ -28,6 +28,8 @@ const
   {$ENDIF}
 {$ELSEIF Defined(LINUX)}
    DotNetCoreDefaultPath = '/usr/share/dotnet/shared/Microsoft.NETCore.App/2.1.30';
+//   DotNetCoreDefaultPath = '/usr/share/dotnet/shared/Microsoft.NETCore.App/3.1.18';
+//   DotNetCoreDefaultPath = '/usr/share/dotnet/shared/Microsoft.NETCore.App/5.0.9';
 {$ELSEIF Defined(MACOS)}
    DotNetCoreDefaultPath = '';
 {$ENDIF}

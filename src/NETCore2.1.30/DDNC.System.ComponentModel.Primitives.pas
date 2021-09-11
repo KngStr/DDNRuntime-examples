@@ -1042,7 +1042,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.ComponentModel.Primitives.dll', True);
+  LoadAssemblyModule('System.ComponentModel.Primitives.dll', True, 'System.ComponentModel.Primitives, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

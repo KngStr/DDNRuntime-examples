@@ -481,7 +481,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.IO.FileSystem.AccessControl.dll', True);
+  LoadAssemblyModule('System.IO.FileSystem.AccessControl.dll', True, 'System.IO.FileSystem.AccessControl, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

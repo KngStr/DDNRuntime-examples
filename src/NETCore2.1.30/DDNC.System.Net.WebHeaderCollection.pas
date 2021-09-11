@@ -207,7 +207,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Net.WebHeaderCollection.dll', True);
+  LoadAssemblyModule('System.Net.WebHeaderCollection.dll', True, 'System.Net.WebHeaderCollection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

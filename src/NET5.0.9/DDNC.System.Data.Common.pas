@@ -7259,7 +7259,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Data.Common.dll', True);
+  LoadAssemblyModule('System.Data.Common.dll', True, 'System.Data.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

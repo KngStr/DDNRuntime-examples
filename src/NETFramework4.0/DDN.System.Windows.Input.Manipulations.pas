@@ -586,7 +586,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('WPF\System.Windows.Input.Manipulations.dll', True);
+  LoadAssemblyModule('WPF\System.Windows.Input.Manipulations.dll', True, 'System.Windows.Input.Manipulations, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089');
 
 finalization
 

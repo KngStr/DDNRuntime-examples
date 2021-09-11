@@ -3406,7 +3406,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Security.dll', True);
+  LoadAssemblyModule('System.Security.dll', True, 'System.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

@@ -38,7 +38,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Security.Principal.dll', True);
+  LoadAssemblyModule('System.Security.Principal.dll', True, 'System.Security.Principal, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

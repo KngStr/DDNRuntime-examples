@@ -38,7 +38,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Runtime.dll', True);
+  LoadAssemblyModule('System.Runtime.dll', True, 'System.Runtime, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

@@ -3941,7 +3941,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Xaml.dll', True);
+  LoadAssemblyModule('System.Xaml.dll', True, 'System.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089');
 
 finalization
 

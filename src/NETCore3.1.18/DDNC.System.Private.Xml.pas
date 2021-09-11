@@ -13876,7 +13876,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Private.Xml.dll', True);
+  LoadAssemblyModule('System.Private.Xml.dll', True, 'System.Private.Xml, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
 
 finalization
 

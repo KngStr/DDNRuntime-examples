@@ -2867,7 +2867,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.EnterpriseServices.dll', True);
+  LoadAssemblyModule('System.EnterpriseServices.dll', True, 'System.EnterpriseServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

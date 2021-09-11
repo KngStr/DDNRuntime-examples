@@ -1593,7 +1593,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Security.Cryptography.X509Certificates.dll', True);
+  LoadAssemblyModule('System.Security.Cryptography.X509Certificates.dll', True, 'System.Security.Cryptography.X509Certificates, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

@@ -70959,7 +70959,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Windows.Forms.dll', True);
+  LoadAssemblyModule('System.Windows.Forms.dll', True, 'System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089');
 
 finalization
 

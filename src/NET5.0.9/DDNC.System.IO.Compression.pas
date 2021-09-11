@@ -384,7 +384,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.IO.Compression.dll', True);
+  LoadAssemblyModule('System.IO.Compression.dll', True, 'System.IO.Compression, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089');
 
 finalization
 

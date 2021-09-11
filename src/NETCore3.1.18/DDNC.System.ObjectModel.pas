@@ -635,7 +635,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.ObjectModel.dll', True);
+  LoadAssemblyModule('System.ObjectModel.dll', True, 'System.ObjectModel, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

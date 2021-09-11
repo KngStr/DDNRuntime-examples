@@ -920,7 +920,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.IO.Pipes.dll', True);
+  LoadAssemblyModule('System.IO.Pipes.dll', True, 'System.IO.Pipes, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

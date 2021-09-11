@@ -8519,7 +8519,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Drawing.dll', True);
+  LoadAssemblyModule('System.Drawing.dll', True, 'System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

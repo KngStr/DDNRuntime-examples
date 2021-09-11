@@ -26,6 +26,7 @@ end;
 begin
   ReportMemoryLeaksOnShutdown := True;
   try
+    SetShowDetailedExceptionMessage(True);
     TestProc;
     { TODO -oUser -cConsole Main : Insert code here }
   except

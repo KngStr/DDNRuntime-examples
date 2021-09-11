@@ -205,7 +205,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Net.ServicePoint.dll', True);
+  LoadAssemblyModule('System.Net.ServicePoint.dll', True, 'System.Net.ServicePoint, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
 
 finalization
 

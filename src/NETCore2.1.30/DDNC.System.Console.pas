@@ -476,7 +476,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Console.dll', True);
+  LoadAssemblyModule('System.Console.dll', True, 'System.Console, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

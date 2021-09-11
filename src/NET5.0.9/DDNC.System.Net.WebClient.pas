@@ -627,7 +627,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Net.WebClient.dll', True);
+  LoadAssemblyModule('System.Net.WebClient.dll', True, 'System.Net.WebClient, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
 
 finalization
 

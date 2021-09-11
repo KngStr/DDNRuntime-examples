@@ -2171,7 +2171,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Net.Http.dll', True);
+  LoadAssemblyModule('System.Net.Http.dll', True, 'System.Net.Http, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

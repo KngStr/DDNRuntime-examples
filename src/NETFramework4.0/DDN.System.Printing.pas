@@ -2099,7 +2099,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('WPF\System.Printing.dll', True);
+  LoadAssemblyModule('WPF\System.Printing.dll', True, 'System.Printing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35');
 
 finalization
 

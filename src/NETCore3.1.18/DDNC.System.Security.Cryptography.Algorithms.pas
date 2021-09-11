@@ -2734,7 +2734,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Security.Cryptography.Algorithms.dll', True);
+  LoadAssemblyModule('System.Security.Cryptography.Algorithms.dll', True, 'System.Security.Cryptography.Algorithms, Version=4.3.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

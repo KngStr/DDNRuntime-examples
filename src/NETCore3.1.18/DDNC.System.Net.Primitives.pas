@@ -1206,7 +1206,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Net.Primitives.dll', True);
+  LoadAssemblyModule('System.Net.Primitives.dll', True, 'System.Net.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

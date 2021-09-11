@@ -313,7 +313,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Threading.dll', True);
+  LoadAssemblyModule('System.Threading.dll', True, 'System.Threading, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

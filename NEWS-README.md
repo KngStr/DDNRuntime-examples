@@ -4,6 +4,11 @@
 
 ### What's new
 
+* v0.1.24
+   * 1. Fix that some exceptions will be reported when returning the interface type.
+   * 2. Add some parameters to `LoadAssemblyModule` to query whether the current assembly has been loaded.
+   * 3. Fixed the type that was not visible in the external assembly when searching for the type.
+
 * v0.1.23
    * 1. Add support for .NET Core x86.
 

@@ -7,7 +7,7 @@
  DDNRuntime(Delphi .NET Runtime)  
 
 ----
- **Latest version: v0.1.23**    
+ **Latest version: v0.1.24**    
  
  #### What's news 
  
@@ -117,7 +117,8 @@ Get [DDNRuntime trial file](https://github.com/ying32/DDNRuntime-examples/releas
   /// </summary>
   /// <param name="AFileName">An absolute assembly file name (full path)</param>
   /// <param name="AIsSystem">When True, AFileName does not need to pass in an absolute path, the default value is False</param>
-  function LoadAssemblyModule(const AFileName: string; AIsSystem: Boolean = False): Boolean;
+  /// <param name="AFullName">For the assembly that has been loaded, the default value is empty</param>
+  function LoadAssemblyModule(const AFileName: string; AIsSystem: Boolean = False; AFullName: string = ''): Boolean;
   
   /// <summary>
   ///   Set whether to display the detailed information of .NET exceptions

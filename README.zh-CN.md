@@ -7,7 +7,7 @@
  DDNRuntime(Delphi .NET Runtime)  
 
 ----
- **最新版本：v0.1.23**    
+ **最新版本：v0.1.24**    
   
  #### 更新日志
  
@@ -118,7 +118,8 @@
   /// </summary>
   /// <param name="AFileName">一个绝对的程序集文件名（全路径）</param>
   /// <param name="AIsSystem">当为True时，AFileName不需要传入绝对路径，默认值为False</param>
-  function LoadAssemblyModule(const AFileName: string; AIsSystem: Boolean = False): Boolean;
+  /// <param name="AFullName">对于比对是否已加载的程序集，默认值为空</param>
+  function LoadAssemblyModule(const AFileName: string; AIsSystem: Boolean = False; AFullName: string = ''): Boolean;
   
   /// <summary>
   ///   设置是否显示.NET异常的详细信息

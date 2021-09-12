@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMRUNTIME}
 unit DDNC.System.Runtime;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -354,7 +352,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Runtime.dll', True, 'System.Runtime, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.Runtime, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

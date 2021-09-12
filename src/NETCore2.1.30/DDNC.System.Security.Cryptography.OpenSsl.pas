@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMSECURITYCRYPTOGRAPHYOPENSSL}
 unit DDNC.System.Security.Cryptography.OpenSsl;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -343,7 +341,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Security.Cryptography.OpenSsl.dll', True, 'System.Security.Cryptography.OpenSsl, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.Security.Cryptography.OpenSsl, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

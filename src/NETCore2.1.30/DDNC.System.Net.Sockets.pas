@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMNETSOCKETS}
 unit DDNC.System.Net.Sockets;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -1316,7 +1314,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Net.Sockets.dll', True, 'System.Net.Sockets, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.Net.Sockets, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

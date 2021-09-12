@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMNETWEBPROXY}
 unit DDNC.System.Net.WebProxy;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -115,7 +113,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Net.WebProxy.dll', True, 'System.Net.WebProxy, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
+  LoadAssemblyModule('System.Net.WebProxy, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
 
 finalization
 

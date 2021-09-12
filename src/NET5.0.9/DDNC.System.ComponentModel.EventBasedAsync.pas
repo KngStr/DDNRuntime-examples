@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMCOMPONENTMODELEVENTBASEDASYNC}
 unit DDNC.System.ComponentModel.EventBasedAsync;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -326,7 +324,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.ComponentModel.EventBasedAsync.dll', True, 'System.ComponentModel.EventBasedAsync, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.ComponentModel.EventBasedAsync, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

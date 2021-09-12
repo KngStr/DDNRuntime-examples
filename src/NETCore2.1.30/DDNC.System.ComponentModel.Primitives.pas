@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMCOMPONENTMODELPRIMITIVES}
 unit DDNC.System.ComponentModel.Primitives;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -1042,7 +1040,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.ComponentModel.Primitives.dll', True, 'System.ComponentModel.Primitives, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.ComponentModel.Primitives, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

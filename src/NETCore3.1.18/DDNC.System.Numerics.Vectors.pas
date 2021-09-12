@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMNUMERICSVECTORS}
 unit DDNC.System.Numerics.Vectors;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -664,7 +662,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Numerics.Vectors.dll', True, 'System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

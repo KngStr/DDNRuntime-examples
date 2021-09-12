@@ -17,11 +17,13 @@ uses
   System.Rtti,
   System.TypInfo,
   DDN.Runtime
-{$IFNDEF USE_NETCORE}
+//{$IFNDEF USE_NETCORE}
   ,DDN.mscorlib
-{$ELSE}
-  ,DDNC.System.Private.CoreLib
-{$ENDIF};
+//{$ELSE}
+//  ,DDNC.System.Private.CoreLib
+//{$ENDIF}
+;
+
 
 type
   /// <summary>

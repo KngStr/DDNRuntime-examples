@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMDIAGNOSTICSSTACKTRACE}
 unit DDNC.System.Diagnostics.StackTrace;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -449,7 +447,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Diagnostics.StackTrace.dll', True, 'System.Diagnostics.StackTrace, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.Diagnostics.StackTrace, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

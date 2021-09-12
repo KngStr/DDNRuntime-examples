@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMPRIVATECORELIB}
 unit DDNC.System.Private.CoreLib;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}

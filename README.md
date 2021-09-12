@@ -4,10 +4,10 @@
 
 # DDNRuntime
 
- DDNRuntime(Delphi .NET/.NET Core Runtime)  
+ DDNRuntime(Delphi .NET Framework/.NET Core Runtime)  
 
 ----
- **Latest version: v0.1.24**    
+ **Latest version: v0.1.25**    
  
  #### What's news 
  
@@ -52,7 +52,7 @@
 
 ## Trial
 
-Get [DDNRuntime trial file](https://github.com/ying32/DDNRuntime-examples/releases), copy the Duc file of the Delphi version you are using to `DDNRuntime\Win32` or `DDNRuntime\Win64`.
+Get [DDNRuntime trial file](https://github.com/ying32/DDNRuntime-examples/releases), copy the Duc file of the Delphi version you are using to `src` directory.
 
 ## Buy
 
@@ -115,10 +115,8 @@ Get [DDNRuntime trial file](https://github.com/ying32/DDNRuntime-examples/releas
   /// <summary>
   ///   Load assembly
   /// </summary>
-  /// <param name="AFileName">An absolute assembly file name (full path)</param>
-  /// <param name="AIsSystem">When True, AFileName does not need to pass in an absolute path, the default value is False</param>
-  /// <param name="AFullName">For the assembly that has been loaded, the default value is empty</param>
-  function LoadAssemblyModule(const AFileName: string; AIsSystem: Boolean = False; AFullName: string = ''): Boolean;
+  /// <param name="AFileName">An assembly qualified name or an absolute assembly file name (full path)</param>
+  function LoadAssemblyModule(const AFileName: string): Boolean;
   
   /// <summary>
   ///   Set whether to display the detailed information of .NET exceptions

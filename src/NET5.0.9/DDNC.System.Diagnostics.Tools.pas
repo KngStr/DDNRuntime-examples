@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMDIAGNOSTICSTOOLS}
 unit DDNC.System.Diagnostics.Tools;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -38,7 +36,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Diagnostics.Tools.dll', True, 'System.Diagnostics.Tools, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.Diagnostics.Tools, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

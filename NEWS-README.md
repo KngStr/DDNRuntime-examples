@@ -4,6 +4,9 @@
 
 ### What's new
 
+* v0.1.25
+   * 1. Adjust `LoadAssemblyModule`, remove 2 parameters, and now use assembly qualified name or full path.
+
 * v0.1.24
    * 1. Fix that some exceptions will be reported when returning the interface type.
    * 2. Add some parameters to `LoadAssemblyModule` to query whether the current assembly has been loaded.

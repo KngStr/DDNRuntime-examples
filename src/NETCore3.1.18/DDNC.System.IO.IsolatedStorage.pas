@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMIOISOLATEDSTORAGE}
 unit DDNC.System.IO.IsolatedStorage;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -360,7 +358,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.IO.IsolatedStorage.dll', True, 'System.IO.IsolatedStorage, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.IO.IsolatedStorage, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

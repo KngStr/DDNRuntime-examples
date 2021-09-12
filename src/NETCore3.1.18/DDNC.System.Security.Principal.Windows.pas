@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMSECURITYPRINCIPALWINDOWS}
 unit DDNC.System.Security.Principal.Windows;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -614,7 +612,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Security.Principal.Windows.dll', True, 'System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

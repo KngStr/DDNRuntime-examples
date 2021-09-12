@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMTHREADINGTASKSPARALLEL}
 unit DDNC.System.Threading.Tasks.Parallel;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -174,7 +172,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Threading.Tasks.Parallel.dll', True, 'System.Threading.Tasks.Parallel, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.Threading.Tasks.Parallel, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

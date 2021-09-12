@@ -5,7 +5,11 @@ interface
 uses
   System.SysUtils,
   DDN.Runtime,
-  DDN.mscorlib;
+{$IFDEF USE_NETCORE}
+  DDNC.System.Private.CoreLib
+{$ELSE}
+  DDN.mscorlib
+{$ENDIF};
 
   procedure TestProc;
 implementation

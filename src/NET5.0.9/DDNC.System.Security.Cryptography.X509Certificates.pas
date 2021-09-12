@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMSECURITYCRYPTOGRAPHYX509CERTIFICATES}
 unit DDNC.System.Security.Cryptography.X509Certificates;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -1593,7 +1591,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Security.Cryptography.X509Certificates.dll', True, 'System.Security.Cryptography.X509Certificates, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.Security.Cryptography.X509Certificates, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

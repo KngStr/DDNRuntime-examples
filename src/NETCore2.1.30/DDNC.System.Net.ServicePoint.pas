@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMNETSERVICEPOINT}
 unit DDNC.System.Net.ServicePoint;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -204,7 +202,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Net.ServicePoint.dll', True, 'System.Net.ServicePoint, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
+  LoadAssemblyModule('System.Net.ServicePoint, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
 
 finalization
 

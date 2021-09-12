@@ -5,11 +5,11 @@ interface
 uses
   System.SysUtils,
   DDN.Runtime
-{$IFNDEF USE_NETCORE}
+//{$IFNDEF USE_NETCORE}
   ,DDN.mscorlib
-{$ELSE}
-  ,DDNC.System.Private.CoreLib
-{$ENDIF}
+//{$ELSE}
+//  ,DDNC.System.Private.CoreLib
+//{$ENDIF}
   ,DDN.System.Data
   ,DDN.Helpers;
 

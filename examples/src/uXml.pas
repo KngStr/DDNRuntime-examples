@@ -6,6 +6,9 @@ uses
   System.SysUtils,
   DDN.Runtime,
   DDN.mscorlib,
+{$IFDEF USE_NETCORE}
+  DDNC.System.Private.Xml,
+{$ENDIF}
   DDN.System.Xml
   ;
 

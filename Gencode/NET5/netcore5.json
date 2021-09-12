@@ -1,515 +1,1029 @@
 {
-  "OutputDir": "J:\\MyGitRepo\\DDNRuntime\\TestGenCode\\NETCore5",
-  "Lang": "zh-Hans",
-  "GenerateCommnet": true,
-  "AssemblyRoot": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\5.0.9\\",
-  "NETVersion": "5.0.9",
-  "Items": [
-    {
-      "Assembly": "System.Private.CoreLib.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Net.Http.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Private.Uri.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Net.Primitives.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Security.Cryptography.X509Certificates.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Net.Security.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "Microsoft.Win32.Primitives.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Collections.NonGeneric.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Security.Principal.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Runtime.Extensions.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Security.Cryptography.Encoding.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Security.Cryptography.Algorithms.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Security.Cryptography.Primitives.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Private.Xml.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Collections.Specialized.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Data.Common.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.ComponentModel.Primitives.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.ComponentModel.TypeConverter.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.ObjectModel.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Transactions.Local.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.ComponentModel.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Resources.Writer.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Net.Requests.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Net.WebHeaderCollection.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Net.ServicePoint.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Collections.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Runtime.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.IO.Compression.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Memory.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Diagnostics.Process.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Diagnostics.FileVersionInfo.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Console.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.IO.FileSystem.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Net.WebClient.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.ComponentModel.EventBasedAsync.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.IO.Pipes.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Drawing.Primitives.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Security.AccessControl.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Security.Principal.Windows.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Security.Claims.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Net.Ping.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "Microsoft.Win32.Registry.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.Threading.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.IO.MemoryMappedFiles.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.IO.FileSystem.Watcher.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    },
-    {
-      "Assembly": "System.IO.FileSystem.AccessControl.dll",
-      "IsMsLib": true,
-      "Units": [
-        {
-          "IsMain": true,
-          "ExcludeNamespaces": [],
-          "ExcludeTypes": []
-        }
-      ]
-    }
-  ]
+	"OutputDir": "J:\\MyGitRepo\\DDNRuntime\\TestGenCode\\NETCore5",
+	"Lang": "zh-Hans",
+	"GenerateCommnet": true,
+	"AssemblyRoot": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\5.0.9\\",
+	"NETVersion": "5.0.9",
+	"Items": [
+		{
+			"Assembly": "System.Private.CoreLib.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.Http.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Private.Uri.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.Primitives.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Security.Cryptography.X509Certificates.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.Security.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "Microsoft.Win32.Primitives.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Collections.NonGeneric.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Security.Principal.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Runtime.Extensions.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Security.Cryptography.Encoding.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Security.Cryptography.Algorithms.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Security.Cryptography.Primitives.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Private.Xml.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Collections.Specialized.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Data.Common.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.ComponentModel.Primitives.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.ComponentModel.TypeConverter.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.ObjectModel.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Transactions.Local.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.ComponentModel.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Resources.Writer.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.Requests.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.WebHeaderCollection.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.ServicePoint.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Collections.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Runtime.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.IO.Compression.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Memory.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Diagnostics.Process.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Diagnostics.FileVersionInfo.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Console.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.IO.FileSystem.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.WebClient.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.ComponentModel.EventBasedAsync.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.IO.Pipes.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Drawing.Primitives.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Security.AccessControl.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Security.Principal.Windows.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Security.Claims.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.Ping.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "Microsoft.Win32.Registry.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Threading.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.IO.MemoryMappedFiles.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.IO.FileSystem.Watcher.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.IO.FileSystem.AccessControl.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Security.Cryptography.Cng.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Security.Cryptography.Csp.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Runtime.InteropServices.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Runtime.InteropServices.RuntimeInformation.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Runtime.Numerics.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Security.Cryptography.OpenSsl.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Text.RegularExpressions.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Threading.Tasks.Dataflow.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Threading.Tasks.Extensions.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Threading.Tasks.Parallel.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Threading.Thread.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Web.HttpUtility.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Reflection.TypeExtensions.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Reflection.Metadata.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Reflection.DispatchProxy.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Private.Xml.Linq.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Numerics.Vectors.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.WebSockets.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.WebSockets.Client.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.WebProxy.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.Sockets.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.NetworkInformation.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.NameResolution.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.Mail.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Net.HttpListener.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Linq.Queryable.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Linq.Parallel.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Linq.Expressions.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Linq.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.IO.IsolatedStorage.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.IO.FileSystem.DriveInfo.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.IO.Compression.ZipFile.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Diagnostics.Tracing.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Diagnostics.TraceSource.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Diagnostics.Tools.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Diagnostics.TextWriterTraceListener.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Diagnostics.StackTrace.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Diagnostics.DiagnosticSource.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Diagnostics.Debug.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.ComponentModel.Annotations.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Collections.Immutable.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Collections.Concurrent.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Private.CoreLib.dll",
+			"IsMsLib": true,
+			"IsForwarded": true,
+			"UnitAliasName": "mscorlib",
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Private.Xml.dll",
+			"IsMsLib": true,
+			"IsForwarded": true,
+			"UnitAliasName": "System.Xml",
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Data.Common.dll",
+			"IsMsLib": true,
+			"IsForwarded": true,
+			"UnitAliasName": "System.Data",
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "System.Drawing.Primitives.dll",
+			"IsMsLib": true,
+			"IsForwarded": true,
+			"UnitAliasName": "System.Drawing",
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		}
+	]
 }

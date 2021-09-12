@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMREFLECTIONTYPEEXTENSIONS}
 unit DDNC.System.Reflection.TypeExtensions;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -253,7 +251,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Reflection.TypeExtensions.dll', True, 'System.Reflection.TypeExtensions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.Reflection.TypeExtensions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

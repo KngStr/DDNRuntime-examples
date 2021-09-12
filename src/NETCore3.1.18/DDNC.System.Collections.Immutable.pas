@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMCOLLECTIONSIMMUTABLE}
 unit DDNC.System.Collections.Immutable;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -1397,7 +1395,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Collections.Immutable.dll', True, 'System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

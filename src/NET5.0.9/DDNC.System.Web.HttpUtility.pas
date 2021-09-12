@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMWEBHTTPUTILITY}
 unit DDNC.System.Web.HttpUtility;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -97,7 +95,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Web.HttpUtility.dll', True, 'System.Web.HttpUtility, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
+  LoadAssemblyModule('System.Web.HttpUtility, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
 
 finalization
 

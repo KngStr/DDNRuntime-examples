@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMCOLLECTIONSCONCURRENT}
 unit DDNC.System.Collections.Concurrent;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -361,7 +359,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Collections.Concurrent.dll', True, 'System.Collections.Concurrent, Version=4.0.15.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.Collections.Concurrent, Version=4.0.15.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMNETHTTPLISTENER}
 unit DDNC.System.Net.HttpListener;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -569,7 +567,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Net.HttpListener.dll', True, 'System.Net.HttpListener, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
+  LoadAssemblyModule('System.Net.HttpListener, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
 
 finalization
 

@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMREFLECTIONDISPATCHPROXY}
 unit DDNC.System.Reflection.DispatchProxy;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -59,7 +57,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Reflection.DispatchProxy.dll', True, 'System.Reflection.DispatchProxy, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.Reflection.DispatchProxy, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

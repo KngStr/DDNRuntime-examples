@@ -3,7 +3,7 @@
 	"Lang": "zh-Hans",
 	"GenerateCommnet": true,
 	"AssemblyRoot":"C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0\\",
-	"NETVersion": "4.0",
+	"NETVersion": "4.x",
 	"Items": [
 		{
 			"Assembly": "mscorlib.dll",
@@ -443,6 +443,29 @@
 		},
 		{
 			"Assembly": "UIAutomationTypes.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		},
+		{
+			"Assembly": "Microsoft.JScript.dll",
+			"IsMsLib": true,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": [],
+					"ExcludeProps": ["Microsoft.JScript.GlobalObject.Boolean"]
+				}
+			]
+		},
+		{
+			"Assembly": "System.Speech.dll",
 			"IsMsLib": true,
 			"Units": [
 				{

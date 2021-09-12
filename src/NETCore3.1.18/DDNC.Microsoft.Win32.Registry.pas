@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCMICROSOFTWIN32REGISTRY}
 unit DDNC.Microsoft.Win32.Registry;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -461,7 +459,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('Microsoft.Win32.Registry.dll', True, 'Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

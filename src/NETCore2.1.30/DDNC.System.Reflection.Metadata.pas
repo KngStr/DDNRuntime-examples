@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMREFLECTIONMETADATA}
 unit DDNC.System.Reflection.Metadata;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -8480,7 +8478,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Reflection.Metadata.dll', True, 'System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  LoadAssemblyModule('System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

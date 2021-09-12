@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMIOCOMPRESSIONZIPFILE}
 unit DDNC.System.IO.Compression.ZipFile;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -102,7 +100,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.IO.Compression.ZipFile.dll', True, 'System.IO.Compression.ZipFile, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089');
+  LoadAssemblyModule('System.IO.Compression.ZipFile, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089');
 
 finalization
 

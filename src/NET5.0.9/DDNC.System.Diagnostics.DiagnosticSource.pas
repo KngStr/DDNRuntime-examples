@@ -9,9 +9,7 @@
 //  Author: ying32
 //----------------------------------------------------------------------------
 
-{$IFNDEF DDNCSYSTEMDIAGNOSTICSDIAGNOSTICSOURCE}
 unit DDNC.System.Diagnostics.DiagnosticSource;
-{$ENDIF}
 
 {$IFDEF FPC}
   {$mode delphi}//{$H+}
@@ -662,7 +660,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Diagnostics.DiagnosticSource.dll', True, 'System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
+  LoadAssemblyModule('System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
 
 finalization
 

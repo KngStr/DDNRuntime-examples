@@ -6,7 +6,7 @@
         <MainSource>ProDataTable.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Linux64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>4227</TargetedPlatforms>
         <AppType>Console</AppType>
     </PropertyGroup>

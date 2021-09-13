@@ -45,6 +45,8 @@
 
 ## Not supported
 
+* Two-dimensional array.
+* Nested generics.
 
 ## Implementing features
 

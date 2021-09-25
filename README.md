@@ -58,7 +58,7 @@ Get [DDNRuntime trial file](https://github.com/ying32/DDNRuntime-examples/releas
 
 ## Buy
 
-* Contact: [KngStr](mailto:kngstr@qq.com)
+* Contact: [KngStr](mailto:kngstr@outlook.com)
 * Price List:
 
 | Subscription type  | Price / 1 Year(US dollar) | Renewal price/1 year |             explain              |

@@ -59,7 +59,7 @@
 
 ## 购买
 
-* 联系人：[KngStr](mailto:kngstr@qq.com)
+* 联系人：[KngStr](mailto:kngstr@outlook.com)
 * 价格表：
 
 | 订阅类型 | 价格/一年(人民币)  | 续订价格/1年(人民币) |        说明        |

@@ -57,7 +57,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Reflection.DispatchProxy, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  InternalTryLoadAssemblyModule('System.Reflection.DispatchProxy, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

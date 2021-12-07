@@ -453,7 +453,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Memory, Version=4.2.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
+  InternalTryLoadAssemblyModule('System.Memory, Version=4.2.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
 
 finalization
 

@@ -140,7 +140,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Net.WebSockets.Client, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  InternalTryLoadAssemblyModule('System.Net.WebSockets.Client, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

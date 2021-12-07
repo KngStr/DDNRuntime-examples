@@ -475,14 +475,14 @@ type
 
   { methods } 
 
+    function BeginWrite(buffer: TArray<Byte>; offset: Int32; count: Int32; callback: DDN.mscorlib.DNAsyncCallback; state: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
+    procedure EndWrite(asyncResult: DDN.mscorlib.DNIAsyncResult);
     function Read(buffer: TArray<Byte>; offset: Int32; count: Int32): Int32;
+    procedure Write(buffer: TArray<Byte>; offset: Int32; count: Int32);
     procedure Flush;
     function Seek(offset: Int64; origin: DDN.mscorlib.DNSeekOrigin): Int64;
     procedure Close;
     procedure SetLength(value: Int64);
-    function BeginWrite(buffer: TArray<Byte>; offset: Int32; count: Int32; callback: DDN.mscorlib.DNAsyncCallback; state: DDN.mscorlib.DNObject): DDN.mscorlib.DNIAsyncResult;
-    procedure EndWrite(asyncResult: DDN.mscorlib.DNIAsyncResult);
-    procedure Write(buffer: TArray<Byte>; offset: Int32; count: Int32);
     procedure HandlePackagingProgressEvent(sender: DDN.mscorlib.DNObject; e: DDN.System.Windows.Xps.Packaging.DNPackagingProgressEventArgs);
     function CopyToAsync(destination: DDN.mscorlib.DNStream; bufferSize: Int32; cancellationToken: DDN.mscorlib.DNCancellationToken): DDN.mscorlib.DNTask; overload;
     procedure Dispose;
@@ -1354,9 +1354,9 @@ type
 
   { methods } 
 
-    procedure Dispose;
     procedure Commit;
     procedure Refresh;
+    procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -1387,9 +1387,9 @@ type
 
   { methods } 
 
-    procedure Dispose;
     procedure Commit;
     procedure Refresh;
+    procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -1524,9 +1524,9 @@ type
   { static methods } 
 
     {class} function CreateXpsDocumentWriter(jobDescription: string; out documentImageableArea: DNPrintDocumentImageableArea; out pageRangeSelection: DDN.PresentationFramework.DNPageRangeSelection; out pageRange: DDN.PresentationFramework.DNPageRange): DNXpsDocumentWriter; overload;
-    {class} function CreateXpsDocumentWriter(out documentImageableArea: DNPrintDocumentImageableArea): DNXpsDocumentWriter; overload;
     {class} function CreateXpsDocumentWriter(jobDescription: string; out documentImageableArea: DNPrintDocumentImageableArea): DNXpsDocumentWriter; overload;
     {class} function CreateXpsDocumentWriter(out documentImageableArea: DNPrintDocumentImageableArea; out pageRangeSelection: DDN.PresentationFramework.DNPageRangeSelection; out pageRange: DDN.PresentationFramework.DNPageRange): DNXpsDocumentWriter; overload;
+    {class} function CreateXpsDocumentWriter(out documentImageableArea: DNPrintDocumentImageableArea): DNXpsDocumentWriter; overload;
     {class} function CreateXpsDocumentWriter(out width: Double; out height: Double): DNXpsDocumentWriter; overload;
     {class} function CreateXpsDocumentWriter(printQueue: DNPrintQueue): DNXpsDocumentWriter; overload;
 
@@ -1622,6 +1622,12 @@ type
 
   { methods } 
 
+    function GetPrintCapabilities: DDN.ReachFramework.DNPrintCapabilities; overload;
+    function GetPrintCapabilities(printTicket: DDN.ReachFramework.DNPrintTicket): DDN.ReachFramework.DNPrintCapabilities; overload;
+    function GetPrintCapabilitiesAsXml: DDN.mscorlib.DNMemoryStream; overload;
+    function GetPrintCapabilitiesAsXml(printTicket: DDN.ReachFramework.DNPrintTicket): DDN.mscorlib.DNMemoryStream; overload;
+    function MergeAndValidatePrintTicket(basePrintTicket: DDN.ReachFramework.DNPrintTicket; deltaPrintTicket: DDN.ReachFramework.DNPrintTicket; scope: DDN.ReachFramework.DNPrintTicketScope): DDN.ReachFramework.DNValidationResult; overload;
+    function MergeAndValidatePrintTicket(basePrintTicket: DDN.ReachFramework.DNPrintTicket; deltaPrintTicket: DDN.ReachFramework.DNPrintTicket): DDN.ReachFramework.DNValidationResult; overload;
     procedure Pause;
     procedure Resume;
     function AddJob(jobName: string; documentPath: string; fastCopy: Boolean; printTicket: DDN.ReachFramework.DNPrintTicket): DNPrintSystemJobInfo; overload;
@@ -1632,14 +1638,8 @@ type
     function GetJob(jobId: Int32): DNPrintSystemJobInfo;
     function GetPrintJobInfoCollection: DNPrintJobInfoCollection;
     procedure Purge;
-    procedure Refresh;
-    function GetPrintCapabilities: DDN.ReachFramework.DNPrintCapabilities; overload;
-    function GetPrintCapabilities(printTicket: DDN.ReachFramework.DNPrintTicket): DDN.ReachFramework.DNPrintCapabilities; overload;
-    function GetPrintCapabilitiesAsXml: DDN.mscorlib.DNMemoryStream; overload;
-    function GetPrintCapabilitiesAsXml(printTicket: DDN.ReachFramework.DNPrintTicket): DDN.mscorlib.DNMemoryStream; overload;
-    function MergeAndValidatePrintTicket(basePrintTicket: DDN.ReachFramework.DNPrintTicket; deltaPrintTicket: DDN.ReachFramework.DNPrintTicket; scope: DDN.ReachFramework.DNPrintTicketScope): DDN.ReachFramework.DNValidationResult; overload;
-    function MergeAndValidatePrintTicket(basePrintTicket: DDN.ReachFramework.DNPrintTicket; deltaPrintTicket: DDN.ReachFramework.DNPrintTicket): DDN.ReachFramework.DNValidationResult; overload;
     procedure Commit;
+    procedure Refresh;
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
@@ -1960,11 +1960,11 @@ type
 
   { methods } 
 
-    procedure Commit;
     procedure Pause;
     procedure Resume;
     procedure Cancel;
     procedure Restart;
+    procedure Commit;
     procedure Refresh;
     procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -2099,7 +2099,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Printing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35');
+  InternalTryLoadAssemblyModule('System.Printing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35');
 
 finalization
 

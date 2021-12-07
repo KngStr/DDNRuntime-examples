@@ -4,13 +4,17 @@
 //     Author: ying32                                        //
 //    .NET Core                                              //
 //-----------------------------------------------------------//
-//     功能：初始化.NET Core运行环境                         //
+//     Initialize the .NET Core runtime environment          //
 //-----------------------------------------------------------//
 unit DDNC.InitNETCore;
 
 interface
 
 uses
+{$IFDEF MSWINDOWS}
+  Winapi.Windows,
+{$ENDIF}
+  System.SysUtils,
   DDN.Runtime;
 
 implementation
@@ -34,11 +38,25 @@ const
    DotNetCoreDefaultPath = '';
 {$ENDIF}
 
+procedure DoInternalLoadAssemblyException(AException: Exception);
+begin
+{$IFDEF MSWINDOWS}
+  {$IFDEF not Defined(CONSOLE)}
+    OutputDebugString(PWideChar(AException.Message));
+  {$ELSE}
+    Writeln(AException.Message);
+  {$ENDIF}
+{$ELSE}
+    Writeln(AException.Message);
+{$ENDIF}
+end;
+
 initialization
+  InternalLoadAssemblyExceptionProc := @DoInternalLoadAssemblyException;
   /// <summary>
   ///   Init it
   /// </summary>
-  InitNETCore(DotNetCoreDefaultPath, [{附加的搜索目录，默认为.NET核心目录和当前运行路径}]);
+  InitNETCore(DotNetCoreDefaultPath, [{附加的搜索目录，默认为.NET核心目录和当前运行路径(Additional search directory, the default is the .NET core directory and the current running path)}]);
 
 finalization
 

@@ -20,6 +20,7 @@ unit DDN.System.Xml deprecated 'Please use DDNC.System.Private.Xml unit';
 interface
 
 uses
+  DDN.Runtime,
   DDNC.System.Private.Xml;
 
 type

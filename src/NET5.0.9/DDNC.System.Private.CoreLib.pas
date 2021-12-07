@@ -45174,7 +45174,12 @@ type
 
   end;
 
+// Compiler bug, fixed in XE8.
+// Bug description: When unit names and type names are long enough.
+{$IF RTLVersion >= 29.0}
   TDNValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest> = class(TDNGenericImport<DNValueTupleClass<T1, T2, T3, T4, T5, T6, T7, TRest>, DNValueTuple<T1, T2, T3, T4, T5, T6, T7, TRest>>) end;
+{$ENDIF}
+
 
   //-------------namespace: System----------------
   DNValueTupleClass = interface(DNValueTypeClass)

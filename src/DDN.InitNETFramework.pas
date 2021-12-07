@@ -2,9 +2,9 @@
 //                                                           //
 //     DDN.InitNETFramework                                  //
 //     Author: ying32                                        //
-//    .NET Core                                              //
+//    .NET Framework 4.x                                     //
 //-----------------------------------------------------------//
-//     功能：初始化.NET Framework运行环境                    //
+//    Initialize the .NET Framework runtime environment      //
 //-----------------------------------------------------------//
 unit DDN.InitNETFramework;
 
@@ -15,12 +15,31 @@ unit DDN.InitNETFramework;
 interface
 
 uses
+{$IFDEF MSWINDOWS}
+  Winapi.Windows,
+{$ENDIF}
+  System.SysUtils,
   DDN.Runtime;
 
 implementation
 
 
+procedure DoInternalLoadAssemblyException(AException: Exception);
+begin
+{$IFDEF MSWINDOWS}
+  {$IFDEF not Defined(CONSOLE)}
+    OutputDebugString(PWideChar(AException.Message));
+  {$ELSE}
+    Writeln(AException.Message);
+  {$ENDIF}
+{$ELSE}
+    Writeln(AException.Message);
+{$ENDIF}
+end;
+
+
 initialization
+  InternalLoadAssemblyExceptionProc := @DoInternalLoadAssemblyException;
   /// <summary>
   ///   Init it
   /// </summary>

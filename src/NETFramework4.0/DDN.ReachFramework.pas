@@ -1056,10 +1056,10 @@ type
   { methods } 
 
     function ConvertDevModeToPrintTicket(devMode: TArray<Byte>): DNPrintTicket; overload;
-    function ConvertPrintTicketToDevMode(printTicket: DNPrintTicket; baseType: DNBaseDevModeType): TArray<Byte>; overload;
-    procedure Dispose;
     function ConvertDevModeToPrintTicket(devMode: TArray<Byte>; scope: DNPrintTicketScope): DNPrintTicket; overload;
+    function ConvertPrintTicketToDevMode(printTicket: DNPrintTicket; baseType: DNBaseDevModeType): TArray<Byte>; overload;
     function ConvertPrintTicketToDevMode(printTicket: DNPrintTicket; baseType: DNBaseDevModeType; scope: DNPrintTicketScope): TArray<Byte>; overload;
+    procedure Dispose;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -1419,7 +1419,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('ReachFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35');
+  InternalTryLoadAssemblyModule('ReachFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35');
 
 finalization
 

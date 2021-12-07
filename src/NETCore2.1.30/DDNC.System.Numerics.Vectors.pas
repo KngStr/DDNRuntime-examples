@@ -662,7 +662,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  InternalTryLoadAssemblyModule('System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

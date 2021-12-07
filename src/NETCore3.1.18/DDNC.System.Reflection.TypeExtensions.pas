@@ -251,7 +251,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Reflection.TypeExtensions, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  InternalTryLoadAssemblyModule('System.Reflection.TypeExtensions, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

@@ -1091,7 +1091,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Net.Mail, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
+  InternalTryLoadAssemblyModule('System.Net.Mail, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
 
 finalization
 

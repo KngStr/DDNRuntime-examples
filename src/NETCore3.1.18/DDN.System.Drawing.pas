@@ -20,6 +20,7 @@ unit DDN.System.Drawing deprecated 'Please use DDNC.System.Drawing.Primitives un
 interface
 
 uses
+  DDN.Runtime,
   DDNC.System.Drawing.Primitives;
 
 type

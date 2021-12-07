@@ -203,7 +203,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Net.ServicePoint, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
+  InternalTryLoadAssemblyModule('System.Net.ServicePoint, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
 
 finalization
 

@@ -1936,7 +1936,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('UIAutomationTypes, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35');
+  InternalTryLoadAssemblyModule('UIAutomationTypes, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35');
 
 finalization
 

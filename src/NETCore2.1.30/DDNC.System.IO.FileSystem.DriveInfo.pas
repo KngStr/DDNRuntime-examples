@@ -162,7 +162,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.IO.FileSystem.DriveInfo, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  InternalTryLoadAssemblyModule('System.IO.FileSystem.DriveInfo, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

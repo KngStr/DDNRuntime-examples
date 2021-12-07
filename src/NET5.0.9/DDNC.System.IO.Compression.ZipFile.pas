@@ -100,7 +100,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.IO.Compression.ZipFile, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089');
+  InternalTryLoadAssemblyModule('System.IO.Compression.ZipFile, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089');
 
 finalization
 

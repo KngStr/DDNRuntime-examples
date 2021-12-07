@@ -4,9 +4,13 @@ interface
 
 uses
   System.SysUtils,
-  DDN.mscorlib,
   DDN.Runtime,
-  DDN.Aspose.Words;
+  DDN.mscorlib,
+{$IFDEF USE_NETCORE}
+  DDNC.Aspose.Words
+{$ELSE}
+  DDN.Aspose.Words
+{$ENDIF};
 
   procedure TestWords;
 implementation
@@ -21,7 +25,7 @@ var
   LDoc: DNDocument;
 begin
   Writeln('Aspose.Words.dll: ', LoadAssemblyModule(ExtractFilePath(ParamStr(0)) + 'Aspose.Words.dll'));
-  TDNLicense.Create.SetLicense('');
+//  TDNLicense.Create.SetLicense('');
 
   LDoc := TDNDocument.DNClass.init(GetTestFile);
   Writeln('Count: ', LDoc.PageCount);

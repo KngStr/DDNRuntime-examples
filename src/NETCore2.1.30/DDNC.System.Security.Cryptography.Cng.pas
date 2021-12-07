@@ -1201,7 +1201,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Security.Cryptography.Cng, Version=4.3.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  InternalTryLoadAssemblyModule('System.Security.Cryptography.Cng, Version=4.3.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

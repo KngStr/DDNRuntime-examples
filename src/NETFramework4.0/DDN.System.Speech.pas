@@ -1695,9 +1695,9 @@ type
 
   { methods } 
 
+    function FormatSpecificData: TArray<Byte>;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
-    function FormatSpecificData: TArray<Byte>;
     function GetType: DDN.mscorlib.DNType;
     function ToString: string;
 
@@ -1729,9 +1729,9 @@ type
   ['{E14FD64A-FCFB-38A4-A390-4AB10261F761}']
   { methods } 
 
+    procedure Add(phrases: TArray<string>); overload;
     procedure Add(alternateChoices: TArray<DNGrammarBuilder>); overload;
     function ToGrammarBuilder: DNGrammarBuilder;
-    procedure Add(phrases: TArray<string>); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -1893,17 +1893,17 @@ type
 
   { methods } 
 
-    procedure Append(alternateChoices: DNChoices); overload;
-    procedure Append(key: DNSemanticResultKey); overload;
-    procedure Append(value: DNSemanticResultValue); overload;
-    procedure AppendDictation; overload;
-    procedure AppendWildcard;
     procedure Append(phrase: string); overload;
     procedure Append(phrase: string; subsetMatchingCriteria: DNSubsetMatchingMode); overload;
     procedure Append(phrase: string; minRepeat: Int32; maxRepeat: Int32); overload;
     procedure Append(builder: DNGrammarBuilder); overload;
+    procedure Append(alternateChoices: DNChoices); overload;
+    procedure Append(key: DNSemanticResultKey); overload;
+    procedure Append(value: DNSemanticResultValue); overload;
     procedure Append(builder: DNGrammarBuilder; minRepeat: Int32; maxRepeat: Int32); overload;
+    procedure AppendDictation; overload;
     procedure AppendDictation(category: string); overload;
+    procedure AppendWildcard;
     procedure AppendRuleReference(path: string); overload;
     procedure AppendRuleReference(path: string; rule: string); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -2303,12 +2303,15 @@ type
   { methods } 
 
     procedure Dispose;
+    procedure SetInputToWaveFile(path: string);
     procedure SetInputToWaveStream(audioSource: DDN.mscorlib.DNStream);
     procedure SetInputToAudioStream(audioSource: DDN.mscorlib.DNStream; audioFormat: DNSpeechAudioFormatInfo);
     procedure SetInputToNull;
     procedure SetInputToDefaultAudioDevice;
     function Recognize: DNRecognitionResult; overload;
+    function Recognize(initialSilenceTimeout: DDN.mscorlib.DNTimeSpan): DNRecognitionResult; overload;
     procedure RecognizeAsync; overload;
+    procedure RecognizeAsync(mode: DNRecognizeMode); overload;
     procedure RecognizeAsyncCancel;
     procedure RecognizeAsyncStop;
     function QueryRecognizerSetting(settingName: string): DDN.mscorlib.DNObject;
@@ -2319,17 +2322,14 @@ type
     procedure UnloadGrammar(grammar: DNGrammar);
     procedure UnloadAllGrammars;
     function EmulateRecognize(inputText: string): DNRecognitionResult; overload;
+    function EmulateRecognize(inputText: string; compareOptions: DDN.mscorlib.DNCompareOptions): DNRecognitionResult; overload;
+    function EmulateRecognize(wordUnits: TArray<DNRecognizedWordUnit>; compareOptions: DDN.mscorlib.DNCompareOptions): DNRecognitionResult; overload;
     procedure EmulateRecognizeAsync(inputText: string); overload;
+    procedure EmulateRecognizeAsync(inputText: string; compareOptions: DDN.mscorlib.DNCompareOptions); overload;
+    procedure EmulateRecognizeAsync(wordUnits: TArray<DNRecognizedWordUnit>; compareOptions: DDN.mscorlib.DNCompareOptions); overload;
     procedure RequestRecognizerUpdate; overload;
     procedure RequestRecognizerUpdate(userToken: DDN.mscorlib.DNObject); overload;
     procedure RequestRecognizerUpdate(userToken: DDN.mscorlib.DNObject; audioPositionAheadToRaiseUpdate: DDN.mscorlib.DNTimeSpan); overload;
-    procedure SetInputToWaveFile(path: string);
-    function Recognize(initialSilenceTimeout: DDN.mscorlib.DNTimeSpan): DNRecognitionResult; overload;
-    procedure RecognizeAsync(mode: DNRecognizeMode); overload;
-    function EmulateRecognize(inputText: string; compareOptions: DDN.mscorlib.DNCompareOptions): DNRecognitionResult; overload;
-    function EmulateRecognize(wordUnits: TArray<DNRecognizedWordUnit>; compareOptions: DDN.mscorlib.DNCompareOptions): DNRecognitionResult; overload;
-    procedure EmulateRecognizeAsync(inputText: string; compareOptions: DDN.mscorlib.DNCompareOptions); overload;
-    procedure EmulateRecognizeAsync(wordUnits: TArray<DNRecognizedWordUnit>; compareOptions: DDN.mscorlib.DNCompareOptions); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -2414,15 +2414,15 @@ type
     procedure LoadGrammarAsync(grammar: DNGrammar);
     procedure UnloadGrammar(grammar: DNGrammar);
     procedure UnloadAllGrammars;
-    procedure RequestRecognizerUpdate; overload;
-    procedure RequestRecognizerUpdate(userToken: DDN.mscorlib.DNObject); overload;
-    procedure RequestRecognizerUpdate(userToken: DDN.mscorlib.DNObject; audioPositionAheadToRaiseUpdate: DDN.mscorlib.DNTimeSpan); overload;
     function EmulateRecognize(inputText: string): DNRecognitionResult; overload;
     function EmulateRecognize(inputText: string; compareOptions: DDN.mscorlib.DNCompareOptions): DNRecognitionResult; overload;
     function EmulateRecognize(wordUnits: TArray<DNRecognizedWordUnit>; compareOptions: DDN.mscorlib.DNCompareOptions): DNRecognitionResult; overload;
     procedure EmulateRecognizeAsync(inputText: string); overload;
     procedure EmulateRecognizeAsync(inputText: string; compareOptions: DDN.mscorlib.DNCompareOptions); overload;
     procedure EmulateRecognizeAsync(wordUnits: TArray<DNRecognizedWordUnit>; compareOptions: DDN.mscorlib.DNCompareOptions); overload;
+    procedure RequestRecognizerUpdate; overload;
+    procedure RequestRecognizerUpdate(userToken: DDN.mscorlib.DNObject); overload;
+    procedure RequestRecognizerUpdate(userToken: DDN.mscorlib.DNObject; audioPositionAheadToRaiseUpdate: DDN.mscorlib.DNTimeSpan); overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -2541,8 +2541,8 @@ type
   ['{806684BA-6D7A-5915-BAD0-855C22DCB85A}']
   { static methods } 
 
-    {class} procedure Compile(srgsGrammar: DNSrgsDocument; outputStream: DDN.mscorlib.DNStream); overload;
     {class} procedure Compile(inputPath: string; outputStream: DDN.mscorlib.DNStream); overload;
+    {class} procedure Compile(srgsGrammar: DNSrgsDocument; outputStream: DDN.mscorlib.DNStream); overload;
     {class} procedure Compile(reader: DDN.System.Xml.DNXmlReader; outputStream: DDN.mscorlib.DNStream); overload;
     {class} procedure CompileClassLibrary(inputPaths: TArray<string>; outputPath: string; referencedAssemblies: TArray<string>; keyFile: string); overload;
     {class} procedure CompileClassLibrary(srgsGrammar: DNSrgsDocument; outputPath: string; referencedAssemblies: TArray<string>; keyFile: string); overload;
@@ -2735,14 +2735,6 @@ type
 
     procedure ClearContent;
     procedure AppendText(textToSpeak: string); overload;
-    procedure StartVoice(gender: DNVoiceGender); overload;
-    procedure StartVoice(gender: DNVoiceGender; age: DNVoiceAge); overload;
-    procedure StartVoice(gender: DNVoiceGender; age: DNVoiceAge; voiceAlternate: Int32); overload;
-    procedure StartVoice(culture: DDN.mscorlib.DNCultureInfo); overload;
-    procedure StartParagraph; overload;
-    procedure StartSentence; overload;
-    procedure AppendBreak; overload;
-    procedure AppendSsml(ssmlFile: DDN.System.Xml.DNXmlReader); overload;
     procedure AppendText(textToSpeak: string; rate: DNPromptRate); overload;
     procedure AppendText(textToSpeak: string; volume: DNPromptVolume); overload;
     procedure AppendText(textToSpeak: string; emphasis: DNPromptEmphasis); overload;
@@ -2750,15 +2742,22 @@ type
     procedure EndStyle;
     procedure StartVoice(voice: DNVoiceInfo); overload;
     procedure StartVoice(name: string); overload;
+    procedure StartVoice(gender: DNVoiceGender); overload;
+    procedure StartVoice(gender: DNVoiceGender; age: DNVoiceAge); overload;
+    procedure StartVoice(gender: DNVoiceGender; age: DNVoiceAge; voiceAlternate: Int32); overload;
+    procedure StartVoice(culture: DDN.mscorlib.DNCultureInfo); overload;
     procedure EndVoice;
+    procedure StartParagraph; overload;
     procedure StartParagraph(culture: DDN.mscorlib.DNCultureInfo); overload;
     procedure EndParagraph;
+    procedure StartSentence; overload;
     procedure StartSentence(culture: DDN.mscorlib.DNCultureInfo); overload;
     procedure EndSentence;
     procedure AppendTextWithHint(textToSpeak: string; sayAs: DNSynthesis_SayAs); overload;
     procedure AppendTextWithHint(textToSpeak: string; sayAs: string); overload;
     procedure AppendTextWithPronunciation(textToSpeak: string; pronunciation: string);
     procedure AppendTextWithAlias(textToSpeak: string; substitute: string);
+    procedure AppendBreak; overload;
     procedure AppendBreak(strength: DNPromptBreak); overload;
     procedure AppendBreak(duration: DDN.mscorlib.DNTimeSpan); overload;
     procedure AppendAudio(path: string); overload;
@@ -2768,6 +2767,7 @@ type
     procedure AppendPromptBuilder(promptBuilder: DNPromptBuilder);
     procedure AppendSsml(path: string); overload;
     procedure AppendSsml(ssmlFile: DDN.System.DNUri); overload;
+    procedure AppendSsml(ssmlFile: DDN.System.Xml.DNXmlReader); overload;
     procedure AppendSsmlMarkup(ssmlMarkup: string);
     function ToXml: string;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
@@ -2866,34 +2866,34 @@ type
   { methods } 
 
     procedure Dispose;
+    procedure SelectVoice(name: string);
     procedure SelectVoiceByHints(gender: DNVoiceGender); overload;
     procedure SelectVoiceByHints(gender: DNVoiceGender; age: DNVoiceAge); overload;
     procedure SelectVoiceByHints(gender: DNVoiceGender; age: DNVoiceAge; voiceAlternate: Int32); overload;
+    procedure SelectVoiceByHints(gender: DNVoiceGender; age: DNVoiceAge; voiceAlternate: Int32; culture: DDN.mscorlib.DNCultureInfo); overload;
     function SpeakAsync(textToSpeak: string): DNPrompt; overload;
     procedure SpeakAsync(prompt: DNPrompt); overload;
     function SpeakSsmlAsync(textToSpeak: string): DNPrompt;
     function SpeakAsync(promptBuilder: DNPromptBuilder): DNPrompt; overload;
     procedure Speak(textToSpeak: string); overload;
+    procedure Speak(prompt: DNPrompt); overload;
     procedure Speak(promptBuilder: DNPromptBuilder); overload;
     procedure SpeakSsml(textToSpeak: string);
     procedure Pause;
     procedure Resume;
     procedure SpeakAsyncCancel(prompt: DNPrompt);
     procedure SpeakAsyncCancelAll;
+    procedure SetOutputToWaveFile(path: string); overload;
+    procedure SetOutputToWaveFile(path: string; formatInfo: DNSpeechAudioFormatInfo); overload;
     procedure SetOutputToWaveStream(audioDestination: DDN.mscorlib.DNStream);
     procedure SetOutputToAudioStream(audioDestination: DDN.mscorlib.DNStream; formatInfo: DNSpeechAudioFormatInfo);
     procedure SetOutputToDefaultAudioDevice;
     procedure SetOutputToNull;
     function GetCurrentlySpokenPrompt: DNPrompt;
     function GetInstalledVoices: DDN.mscorlib.DNReadOnlyCollection<DNInstalledVoice>; overload;
+    function GetInstalledVoices(culture: DDN.mscorlib.DNCultureInfo): DDN.mscorlib.DNReadOnlyCollection<DNInstalledVoice>; overload;
     procedure AddLexicon(uri: DDN.System.DNUri; mediaType: string);
     procedure RemoveLexicon(uri: DDN.System.DNUri);
-    procedure SelectVoice(name: string);
-    procedure SelectVoiceByHints(gender: DNVoiceGender; age: DNVoiceAge; voiceAlternate: Int32; culture: DDN.mscorlib.DNCultureInfo); overload;
-    procedure Speak(prompt: DNPrompt); overload;
-    procedure SetOutputToWaveFile(path: string); overload;
-    procedure SetOutputToWaveFile(path: string; formatInfo: DNSpeechAudioFormatInfo); overload;
-    function GetInstalledVoices(culture: DDN.mscorlib.DNCultureInfo): DDN.mscorlib.DNReadOnlyCollection<DNInstalledVoice>; overload;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -3289,7 +3289,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Speech, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35');
+  InternalTryLoadAssemblyModule('System.Speech, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35');
 
 finalization
 

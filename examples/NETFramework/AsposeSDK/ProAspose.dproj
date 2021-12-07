@@ -203,11 +203,10 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\uReg.pas"/>
-        <DCCReference Include="uPdf.pas"/>
-        <DCCReference Include="uWords.pas"/>
-        <DCCReference Include="uSlides.pas"/>
-        <DCCReference Include="uCells.pas"/>
+        <DCCReference Include="..\..\src\uPdf.pas"/>
+        <DCCReference Include="..\..\src\uWords.pas"/>
+        <DCCReference Include="..\..\src\uSlides.pas"/>
+        <DCCReference Include="..\..\src\uCells.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -249,7 +248,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win32\Debug\ProAspose.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="..\bin-Win32\ProAspose.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>ProAspose.exe</RemoteName>
                         <Overwrite>true</Overwrite>

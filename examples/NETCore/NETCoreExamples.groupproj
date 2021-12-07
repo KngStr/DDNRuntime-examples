@@ -30,6 +30,12 @@
         <Projects Include="DataTable\ProDataTable.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="WebDriver\ProWebDriver.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AsposeSDK\ProAspose.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -119,14 +125,32 @@
     <Target Name="ProDataTable:Make">
         <MSBuild Projects="DataTable\ProDataTable.dproj" Targets="Make"/>
     </Target>
+    <Target Name="ProWebDriver">
+        <MSBuild Projects="WebDriver\ProWebDriver.dproj"/>
+    </Target>
+    <Target Name="ProWebDriver:Clean">
+        <MSBuild Projects="WebDriver\ProWebDriver.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProWebDriver:Make">
+        <MSBuild Projects="WebDriver\ProWebDriver.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProAspose">
+        <MSBuild Projects="AsposeSDK\ProAspose.dproj"/>
+    </Target>
+    <Target Name="ProAspose:Clean">
+        <MSBuild Projects="AsposeSDK\ProAspose.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProAspose:Make">
+        <MSBuild Projects="AsposeSDK\ProAspose.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="ProReflection;ProStream;ProDES;ProXml;ProAES;ProHash;ProWeb_HTTP;ProGenerics;ProDataTable"/>
+        <CallTarget Targets="ProReflection;ProStream;ProDES;ProXml;ProAES;ProHash;ProWeb_HTTP;ProGenerics;ProDataTable;ProWebDriver;ProAspose"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="ProReflection:Clean;ProStream:Clean;ProDES:Clean;ProXml:Clean;ProAES:Clean;ProHash:Clean;ProWeb_HTTP:Clean;ProGenerics:Clean;ProDataTable:Clean"/>
+        <CallTarget Targets="ProReflection:Clean;ProStream:Clean;ProDES:Clean;ProXml:Clean;ProAES:Clean;ProHash:Clean;ProWeb_HTTP:Clean;ProGenerics:Clean;ProDataTable:Clean;ProWebDriver:Clean;ProAspose:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="ProReflection:Make;ProStream:Make;ProDES:Make;ProXml:Make;ProAES:Make;ProHash:Make;ProWeb_HTTP:Make;ProGenerics:Make;ProDataTable:Make"/>
+        <CallTarget Targets="ProReflection:Make;ProStream:Make;ProDES:Make;ProXml:Make;ProAES:Make;ProHash:Make;ProWeb_HTTP:Make;ProGenerics:Make;ProDataTable:Make;ProWebDriver:Make;ProAspose:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

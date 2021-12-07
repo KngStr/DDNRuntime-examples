@@ -8479,7 +8479,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Reflection.Metadata, Version=1.4.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  InternalTryLoadAssemblyModule('System.Reflection.Metadata, Version=1.4.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

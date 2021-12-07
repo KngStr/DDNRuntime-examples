@@ -976,7 +976,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Transactions.Local, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
+  InternalTryLoadAssemblyModule('System.Transactions.Local, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
 
 finalization
 

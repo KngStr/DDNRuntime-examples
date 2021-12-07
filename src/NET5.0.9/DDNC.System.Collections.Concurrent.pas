@@ -360,7 +360,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Collections.Concurrent, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  InternalTryLoadAssemblyModule('System.Collections.Concurrent, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

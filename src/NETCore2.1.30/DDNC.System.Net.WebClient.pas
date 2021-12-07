@@ -625,7 +625,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Net.WebClient, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
+  InternalTryLoadAssemblyModule('System.Net.WebClient, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51');
 
 finalization
 

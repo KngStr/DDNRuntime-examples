@@ -8,12 +8,10 @@ uses
   System.SysUtils,
   System.Math,
   DDN.Runtime,
-  DDN.mscorlib,
-  uReg in '..\uReg.pas',
-  uPdf in 'uPdf.pas',
-  uWords in 'uWords.pas',
-  uSlides in 'uSlides.pas',
-  uCells in 'uCells.pas';
+  uPdf in '..\..\src\uPdf.pas',
+  uWords in '..\..\src\uWords.pas',
+  uSlides in '..\..\src\uSlides.pas',
+  uCells in '..\..\src\uCells.pas';
 
 procedure TestProc;
 begin

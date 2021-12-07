@@ -130,8 +130,8 @@ type
     function CanConvertFrom(context: DDN.System.DNITypeDescriptorContext; sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(context: DDN.System.DNITypeDescriptorContext; destinationType: DDN.mscorlib.DNType): Boolean; overload;
     function ConvertFrom(context: DDN.System.DNITypeDescriptorContext; culture: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
-    function GetProperties(context: DDN.System.DNITypeDescriptorContext; value: DDN.mscorlib.DNObject; attributes: TArray<DDN.mscorlib.DNAttribute>): DDN.System.DNPropertyDescriptorCollection; overload;
     function ConvertTo(context: DDN.System.DNITypeDescriptorContext; culture: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; destinationType: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    function GetProperties(context: DDN.System.DNITypeDescriptorContext; value: DDN.mscorlib.DNObject; attributes: TArray<DDN.mscorlib.DNAttribute>): DDN.System.DNPropertyDescriptorCollection; overload;
     function GetPropertiesSupported(context: DDN.System.DNITypeDescriptorContext): Boolean; overload;
     function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean; overload;
@@ -188,8 +188,8 @@ type
     function CanConvertFrom(context: DDN.System.DNITypeDescriptorContext; sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(context: DDN.System.DNITypeDescriptorContext; destinationType: DDN.mscorlib.DNType): Boolean; overload;
     function ConvertFrom(context: DDN.System.DNITypeDescriptorContext; culture: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
-    function GetProperties(context: DDN.System.DNITypeDescriptorContext; value: DDN.mscorlib.DNObject; attributes: TArray<DDN.mscorlib.DNAttribute>): DDN.System.DNPropertyDescriptorCollection; overload;
     function ConvertTo(context: DDN.System.DNITypeDescriptorContext; culture: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; destinationType: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    function GetProperties(context: DDN.System.DNITypeDescriptorContext; value: DDN.mscorlib.DNObject; attributes: TArray<DDN.mscorlib.DNAttribute>): DDN.System.DNPropertyDescriptorCollection; overload;
     function GetPropertiesSupported(context: DDN.System.DNITypeDescriptorContext): Boolean; overload;
     function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean; overload;
@@ -246,8 +246,8 @@ type
     function CanConvertFrom(context: DDN.System.DNITypeDescriptorContext; sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(context: DDN.System.DNITypeDescriptorContext; destinationType: DDN.mscorlib.DNType): Boolean; overload;
     function ConvertFrom(context: DDN.System.DNITypeDescriptorContext; culture: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject): DDN.mscorlib.DNObject; overload;
-    function GetProperties(context: DDN.System.DNITypeDescriptorContext; value: DDN.mscorlib.DNObject; attributes: TArray<DDN.mscorlib.DNAttribute>): DDN.System.DNPropertyDescriptorCollection; overload;
     function ConvertTo(context: DDN.System.DNITypeDescriptorContext; culture: DDN.mscorlib.DNCultureInfo; value: DDN.mscorlib.DNObject; destinationType: DDN.mscorlib.DNType): DDN.mscorlib.DNObject; overload;
+    function GetProperties(context: DDN.System.DNITypeDescriptorContext; value: DDN.mscorlib.DNObject; attributes: TArray<DDN.mscorlib.DNAttribute>): DDN.System.DNPropertyDescriptorCollection; overload;
     function GetPropertiesSupported(context: DDN.System.DNITypeDescriptorContext): Boolean; overload;
     function CanConvertFrom(sourceType: DDN.mscorlib.DNType): Boolean; overload;
     function CanConvertTo(destinationType: DDN.mscorlib.DNType): Boolean; overload;
@@ -399,12 +399,12 @@ type
     function AcquireResourceStreamForXpsResourceDictionary(resourceId: string): DNXpsResourceStream;
     procedure ReleaseResourceStreamForXpsResourceDictionary;
     procedure RelateResourceToCurrentPage(targetUri: DDN.System.DNUri; relationshipName: string);
+    procedure RelateRestrictedFontToCurrentDocument(targetUri: DDN.System.DNUri);
     procedure PersistPrintTicket(printTicket: DNPrintTicket);
     function AcquireXmlWriterForPage: DDN.System.Xml.DNXmlWriter;
     procedure PreCommitCurrentPage;
     function AcquireXmlWriterForResourceDictionary: DDN.System.Xml.DNXmlWriter;
     function AcquireStreamForLinkTargets: DDN.mscorlib.DNIList<string>;
-    procedure RelateRestrictedFontToCurrentDocument(targetUri: DDN.System.DNUri);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -463,10 +463,10 @@ type
 
   { methods } 
 
+    procedure SaveAsXaml(serializedObject: DDN.mscorlib.DNObject);
     procedure Commit;
     procedure SetFontSubsettingPolicy(policy: DNFontSubsetterCommitPolicies);
     procedure SetFontSubsettingCountPolicy(countPolicy: Int32);
-    procedure SaveAsXaml(serializedObject: DDN.mscorlib.DNObject);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;

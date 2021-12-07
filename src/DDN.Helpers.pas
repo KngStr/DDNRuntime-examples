@@ -3,8 +3,8 @@
 //     DDN.Helpers                                           //
 //     Delphi .NET Helpers                                   //
 //     Author: ying32                                        //
-//     Version: 0.1                                          //
-//     .NET Framework: .NET 4.0                              //
+//-----------------------------------------------------------//
+//     .NET Framework and .NET Core                          //
 //-----------------------------------------------------------//
 //             Helpers                                       //
 //-----------------------------------------------------------//
@@ -45,9 +45,11 @@ type
   function DNStrToStr(const AValue: DNString): string;
 
   /// <summary>
-  ///   TVarArgs to DNObjects
+  ///   TVarArgs to DNObjects , >= XE8
   /// </summary>
+{$IF RTLVersion >= 29.0}
   function ToDNObjects(AArgs: array of const): TArray<DNObject>;
+{$ENDIF}
   /// <summary>
   ///   TValues to DNObjects
   /// </summary>
@@ -79,6 +81,7 @@ begin
   Result := TDNObject.Wrap(DNValueToObject(AValue));
 end;
 
+{$IF RTLVersion >= 29.0}
 function ToDNObjects(AArgs: array of const): TArray<DNObject>;
 
   procedure doCheckParams;
@@ -102,6 +105,7 @@ begin
       Result[I] := ToDNObject(TValue.FromVarRec(AArgs[I]));
   end;
 end;
+{$ENDIF}
 
 function AsDNObjects(AArgs: array of TValue): TArray<DNObject>;
 

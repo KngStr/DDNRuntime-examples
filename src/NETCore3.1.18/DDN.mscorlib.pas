@@ -20,6 +20,7 @@ unit DDN.mscorlib deprecated 'Please use DDNC.System.Private.CoreLib unit';
 interface
 
 uses
+  DDN.Runtime,
   DDNC.System.Private.CoreLib;
 
 type

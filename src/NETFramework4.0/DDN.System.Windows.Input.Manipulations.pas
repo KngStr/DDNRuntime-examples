@@ -522,9 +522,9 @@ type
 
   { methods } 
 
+    procedure ProcessManipulators(timestamp: Int64; manipulators: DDN.mscorlib.DNIEnumerable<DNManipulator2D>);
     procedure CompleteManipulation(timestamp: Int64);
     procedure SetParameters(parameters: DNManipulationParameters2D);
-    procedure ProcessManipulators(timestamp: Int64; manipulators: DDN.mscorlib.DNIEnumerable<DNManipulator2D>);
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;
@@ -586,7 +586,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Windows.Input.Manipulations, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089');
+  InternalTryLoadAssemblyModule('System.Windows.Input.Manipulations, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089');
 
 finalization
 

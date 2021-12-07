@@ -10654,7 +10654,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('Microsoft.JScript, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  InternalTryLoadAssemblyModule('Microsoft.JScript, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

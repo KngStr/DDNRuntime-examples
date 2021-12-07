@@ -1,0 +1,18 @@
+{
+	"OutputDir": "J:\\MyGitRepo\\DDNRuntime\\TestGenCode",
+	"Lang": "zh-Hans",
+	"GenerateCommnet": true,
+	"Items": [
+		{
+			"Assembly": "J:\\MyGitRepo\\DDNRuntime-examples\\examples\\NETCore\\bin-Win32\\WebDriver.dll",
+			"IsMsLib": false,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		}	
+	]
+}

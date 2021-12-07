@@ -20,6 +20,7 @@ unit DDN.System.Data deprecated 'Please use DDNC.System.Data.Common unit';
 interface
 
 uses
+  DDN.Runtime,
   DDNC.System.Data.Common;
 
 type

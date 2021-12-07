@@ -514,13 +514,13 @@ type
   { methods } 
 
     function SignDigitally(certificate: DDN.mscorlib.DNX509Certificate; embedCertificate: Boolean; restrictions: DNXpsDigSigPartAlteringRestrictions): DNXpsDigitalSignature; overload;
-    function AddFixedDocumentSequence: DNIXpsFixedDocumentSequenceWriter;
-    procedure Close;
     function SignDigitally(certificate: DDN.mscorlib.DNX509Certificate; embedCertificate: Boolean; restrictions: DNXpsDigSigPartAlteringRestrictions; id: DDN.mscorlib.DNGuid): DNXpsDigitalSignature; overload;
     function SignDigitally(certificate: DDN.mscorlib.DNX509Certificate; embedCertificate: Boolean; restrictions: DNXpsDigSigPartAlteringRestrictions; id: DDN.mscorlib.DNGuid; testIsSignable: Boolean): DNXpsDigitalSignature; overload;
     procedure RemoveSignature(signature: DNXpsDigitalSignature);
     function AddThumbnail(imageType: DNXpsImageType): DNXpsThumbnail;
+    function AddFixedDocumentSequence: DNIXpsFixedDocumentSequenceWriter;
     function GetFixedDocumentSequence: DDN.PresentationFramework.DNFixedDocumentSequence;
+    procedure Close;
     function Equals(obj: DDN.mscorlib.DNObject): Boolean;
     function GetHashCode: Int32;
     function GetType: DDN.mscorlib.DNType;

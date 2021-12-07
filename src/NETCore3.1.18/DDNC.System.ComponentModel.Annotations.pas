@@ -1930,7 +1930,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.ComponentModel.Annotations, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  InternalTryLoadAssemblyModule('System.ComponentModel.Annotations, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

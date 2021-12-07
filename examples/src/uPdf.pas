@@ -6,7 +6,11 @@ uses
   System.SysUtils,
   DDN.mscorlib,
   DDN.Runtime,
-  DDN.Aspose.PDF;
+{$IFDEF USE_NETCORE}
+  DDNC.Aspose.PDF
+{$ELSE}
+  DDN.Aspose.PDF
+{$ENDIF};
 
   procedure TestPdf;
 implementation
@@ -74,7 +78,7 @@ begin
   LDocSaveOpts := TDNDocSaveOptions.Create;
   LDocSaveOpts.Format := DNDocSaveOptions_DocFormat.DocX;
   LDocSaveOpts.Mode := DNDocSaveOptions_RecognitionMode.Flow;
-  LDocSaveOpts.CustomProgressHandler := TEvent.DoDocSaveOptionsCallback;
+//  LDocSaveOpts.CustomProgressHandler := TEvent.DoDocSaveOptionsCallback;
   LDoc.Save('test.docx', LDocSaveOpts);
 
 

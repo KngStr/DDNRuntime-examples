@@ -193,7 +193,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.Linq.Parallel, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
+  InternalTryLoadAssemblyModule('System.Linq.Parallel, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a');
 
 finalization
 

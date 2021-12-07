@@ -1991,7 +1991,7 @@ implementation
 
 
 initialization
-  LoadAssemblyModule('System.ComponentModel.DataAnnotations, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35');
+  InternalTryLoadAssemblyModule('System.ComponentModel.DataAnnotations, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35');
 
 finalization
 

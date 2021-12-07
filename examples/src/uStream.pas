@@ -10,6 +10,16 @@ uses
   procedure TestProc;
 implementation
 
+function GetTestBytes: TBytes;
+begin
+  SetLength(Result, 5);
+  Result[0] := 1;
+  Result[1] := 2;
+  Result[2] := 3;
+  Result[3] := 4;
+  Result[4] := 5;
+end;
+
 procedure TestMemoryStream;
 var
   LMem: DNMemoryStream;
@@ -20,7 +30,10 @@ begin
   Writeln('---------------TestMemoryStream---------------');
   LMem := TDNMemoryStream.Create;
   // 已经实现写数组操作
-  LMem.Write([1,2,3,4,5], 0, 5);
+
+  // 低版本不支持此语法
+//  LMem.Write([1,2,3,4,5], 0, 5);
+  LMem.Write(GetTestBytes, 0, 5);
   LMem.WriteByte(121);
   LMem.Flush;
   LMem.Position := 0;

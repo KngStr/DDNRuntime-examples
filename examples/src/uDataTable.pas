@@ -139,10 +139,15 @@ begin
   dt.Columns.Add('ID', TDNInt32.typeid);
   dt.Columns.Add('Name', TDNString.typeid);
   dt.Columns.Add('Age', TDNInt32.typeid);
+
+  /// <summary>
+  ///   ToDNObjects >= XE8
+  /// </summary>
+{$IF RTLVersion >= 29.0}
   dt.Rows.Add(ToDNObjects([1, '三张', 20]));
   dt.Rows.Add(ToDNObjects([2, '李四', 25]));
   dt.Rows.Add(ToDNObjects([3, '王五', 30]));
-
+{$ENDIF}
   dv := dt.DefaultView;
   dv.Sort := 'ID DESC';
   dv.ToTable;

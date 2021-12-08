@@ -8,6 +8,14 @@
 //-----------------------------------------------------------//
 unit DDNC.InitNETCore;
 
+{$IF RTLVersion < 29.0}
+  {$IFNDEF ZH_HANS}
+    {$MESSAGE WARN 'Currently, due to compiler restrictions, generics are not supported. If you need to use generics, please use XE8 or above'}
+  {$ELSE}
+    {$MESSAGE WARN '当前因编译器限制，不支持泛型，如需要使用泛型，请使用XE8或者以上版本'}
+  {$ENDIF ZH_HANS}
+{$ENDIF}
+
 interface
 
 uses

@@ -7,7 +7,7 @@
  DDNRuntime(Delphi .NET Framework/.NET Core Runtime)  
 
 ----
- **最新版本：v0.1.25**    
+ **最新版本：v0.1.30**    
   
  #### 更新日志
  
@@ -26,7 +26,7 @@
 * 支持动态数组（一维数组）。
 * 支持委托类型。
 * 支持委事件。
-* 泛型类型（有限的支持。暂不支持嵌套的泛型，比如：`DNICollection<DNKeyValuePair<TKey, TValue>>`这类的多层嵌套）。
+* 泛型类型（有限的支持。只支持XE8及以上且暂不支持嵌套的泛型，比如：`DNICollection<DNKeyValuePair<TKey, TValue>>`这类的多层嵌套）。
 
 
 ## 要求
@@ -42,7 +42,7 @@
 	* [NET Core 3.1](https://dotnet.microsoft.com/download/dotnet/3.1) ，配置运行时版本见 [DDNC.InitNETCore](src/DDNC.InitNETCore.pas)。
 	* [NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0) ，配置运行时版本见 [DDNC.InitNETCore](src/DDNC.InitNETCore.pas)。
 
-* 最低要求`Rad Studio XE3`（推荐使用高版本）。
+* 最低要求`Rad Studio XE3`（推荐XE8或者更高版）。
 
 ## 暂不支持
 
@@ -55,7 +55,7 @@
 
 ## 试用  
 
-获取[DDNRuntime试用文件](https://github.com/ying32/DDNRuntime-examples/releases)，复制你所使用的Delphi版本Duc文件到`src`目录下。
+获取[DDNRuntime试用文件](https://github.com/ying32/DDNRuntime-examples/releases)，复制你所使用的Delphi版本DCU文件到`src`目录下。
 
 ## 购买
 

@@ -4,6 +4,12 @@
 
 ### 更新日志
 
+* v0.1.30
+   * 1、修复因低版Delphi编译Bug造成无法编译`DDN.mscorlib.pas`，原bug描述`F2084 Internal error URW849 when unit names and type names are long enough`。
+   * 2、修复Windows下因低版本.NET Framework未携带.NET Standard库造成无法运行。
+   * 3、因编译器限制，调整泛型的支持，最低为XE8。
+   * 4、`DDN.InitNETFramework`和`DDNC.InitNETCore`增加自定义初始时加载程序集异常处理回调。
+
 * v0.1.25
    * 1、调整`LoadAssemblyModule`，移除2个参数，现可传入程序集强名称或者全路径。
 

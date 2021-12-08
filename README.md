@@ -7,7 +7,7 @@
  DDNRuntime(Delphi .NET Framework/.NET Core Runtime)  
 
 ----
- **Latest version: v0.1.25**    
+ **Latest version: v0.1.30**    
  
  #### What's news 
  
@@ -26,7 +26,7 @@
 * Support dynamic array (one-dimensional array).
 * Support Delegate type.
 * Support Event.
-* Generic type (Limited support.Currently does not support nested generics, such as: `DNICollection<DNKeyValuePair<TKey, TValue>>` such multi-level nesting).
+* Generic type (Limited support. Only XE8 and above are supported and nested generics are not supported yet, such as: `DNICollection<DNKeyValuePair<TKey, TValue>>` such multi-level nesting).
 
 ## Requires
 
@@ -41,7 +41,7 @@
 	* [NET Core 3.1](https://dotnet.microsoft.com/download/dotnet/3.1), Please refer to [DDNC.InitNETCore](src/DDNC.InitNETCore.pas) to configure the runtime version.. 
 	* [NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0), Please refer to [DDNC.InitNETCore](src/DDNC.InitNETCore.pas) to configure the runtime version.. 
 
-* The minimum requirement is `Rad Studio XE3`(High version is recommended).
+* The minimum requirement is `Rad Studio XE3`(Recommend XE8 or higher).
 
 ## Not supported
 
@@ -54,7 +54,7 @@
 
 ## Trial
 
-Get [DDNRuntime trial file](https://github.com/ying32/DDNRuntime-examples/releases), copy the Duc file of the Delphi version you are using to `src` directory.
+Get [DDNRuntime trial file](https://github.com/ying32/DDNRuntime-examples/releases), copy the DUC file of the Delphi version you are using to `src` directory.
 
 ## Buy
 

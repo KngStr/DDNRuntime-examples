@@ -7,7 +7,7 @@
 **The following is provided by Google Translate. If there are any errors, please refer to the Chinese version.**    
 
 * v0.1.30
-   * 1. Fix the failure to compile `DDN.mscorlib.pas` due to the low-level Delphi compilation bug, The original bug description `F2084 Internal error URW849 when unit names and type names are long enough`.
+   * 1. Fix the failure to compile `DDN.mscorlib.pas` due to the low-level Delphi compiler bug, The original bug description `F2084 Internal error URW849 when unit names and type names are long enough`.
    * 2. Fix the inability to run under Windows because the lower version of .NET Framework does not carry the .NET Standard library.
    * 3. Due to the limitation of the compiler, adjust the support of generics, the minimum is XE8.
    * 4. `DDN.InitNETFramework` and `DDNC.InitNETCore` add custom initial loading assembly exception handling callbacks.

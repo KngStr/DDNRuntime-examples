@@ -32,6 +32,7 @@ type
   PInt16 = ^SmallInt;
   PUInt16 = ^Word;
   PInt32 = ^Integer;
+  PUInt32 = ^Cardinal;
 
 type
 

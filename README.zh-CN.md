@@ -55,7 +55,18 @@
 
 ## 试用  
 
-获取[DDNRuntime试用文件](https://github.com/ying32/DDNRuntime-examples/releases)，复制你所使用的Delphi版本DCU文件到`src`目录下。
+试用版可使用五分钟，超出后会无法继续执行。
+获取[DDNRuntime试用文件](releases)，复制你所使用的Delphi版本DCU文件到`src`目录下。
+
+* 下载例子
+    直接下载本仓库，或者使用镜像：[gitee](https://gitee.com/kngstr/DDNRuntime-examples) [github](https://github.com/KngStr/DDNRuntime-examples)
+* 下载Releases/发行版文件
+    * [下载文件](releases) 镜像：[gitee](https://gitee.com/kngstr/DDNRuntime-examples/releases) [github](https://github.com/KngStr/DDNRuntime-examples/releases)
+    * ddn-xxx-dcus （编译好的dcu文件）
+    * gencode（.net转pascal工具）
+* 以10.3为例
+    * 将ddn-xxx-dcus里的`\zh-Hans\10.3.3(20.0)\`的文件夹解压到 `\DDNRuntime-examples\src\`
+* 运行例子即可
 
 ## 购买
 

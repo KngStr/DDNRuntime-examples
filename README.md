@@ -54,7 +54,18 @@
 
 ## Trial
 
-Get [DDNRuntime trial file](https://github.com/ying32/DDNRuntime-examples/releases), copy the DUC file of the Delphi version you are using to `src` directory.
+The trial version can be used for five minutes, beyond which it will not be able to continue execution.
+Get [DDNRuntime trial file](releases), copy the DCU file of the Delphi version you are using to `src` directory.
+
+* Download examples
+    Download this repository directly, or mirror:  [github](https://github.com/KngStr/DDNRuntime-examples) [gitee](https://gitee.com/kngstr/DDNRuntime-examples)
+* Download Releases Files
+    * [Download files](releases) or mirror: [github](https://github.com/KngStr/DDNRuntime-examples/releases) [gitee](https://gitee.com/kngstr/DDNRuntime-examples/releases)
+    * ddn-xxx-dcus (compiled dcu files)
+    * Gencode (. net to pascal tool)
+* Taking 10.3 as an example
+    * Unzip the folder of `\en-US\10.3.3(20.0)\` in ddn-xxx-dcus to `\DDNRuntime-examples\src\`
+* Run the example
 
 ## Buy
 

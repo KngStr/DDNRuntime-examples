@@ -1,0 +1,18 @@
+{
+	"OutputDir": ".\\",
+	"Lang": "zh-Hans",
+	"GenerateCommnet": true,
+	"Items": [
+		{
+			"Assembly": "WindowsFormsApp1\\bin\\Debug\\WindowsFormsApp1.dll",
+			"IsMsLib": false,
+			"Units": [
+				{
+					"IsMain": true,
+					"ExcludeNamespaces": [],
+					"ExcludeTypes": []
+				}
+			]
+		}	
+	]
+}
